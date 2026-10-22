@@ -4,13 +4,73 @@ on:
   pull_request:
     branches: [develop, main]
   push:
-    branches: [develop]
+    branches: [develop, main]
 
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  # 常驻检查：无论改了哪些目录都会跑，保证分支保护里永远有一条可勾、且一定会出结果的检查。
+  # 保护规则里 "Require status checks" 的候选项来自最近 7 天实际运行过的 job，
+  # 如果只留下面那几个按目录条件触发的 job，改 README 的 PR 一条检查都不会有。
+  guard:
+    name: guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 拦截敏感文件入库
+        run: |
+          hits=$(git ls-files | grep -E '(^|/)\.env$|\.pem$|\.key$|\.p12$|project\.private\.config\.json$' || true)
+          if [ -n "$hits" ]; then
+            echo "::error::以下文件不应入库，请删除后重新提交："
+            echo "$hits"
+            exit 1
+          fi
+          echo "敏感文件检查通过"
+
+      - name: 拦截超大文件（>5MB）
+        run: |
+          found=0
+          while IFS= read -r -d '' f; do
+            [ -f "$f" ] || continue
+            sz=$(wc -c < "$f")
+            if [ "$sz" -gt 5242880 ]; then
+              echo "::error file=$f::体积 $((sz/1024/1024))MB，超过 5MB 上限，请改用共享盘或 Git LFS"
+              found=1
+            fi
+          done < <(git ls-files -z)
+          if [ "$found" -ne 0 ]; then exit 1; fi
+          echo "文件体积检查通过"
+
+      - name: 提交信息必须符合规范
+        if: github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          git fetch -q origin "$BASE"
+          bad=$(git log --format=%s "origin/$BASE..HEAD" | grep -vE '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([^)]+\))?!?: .+' || true)
+          if [ -n "$bad" ]; then
+            echo "::error::以下提交信息不符合「<类型>(<范围>): <描述>」规范："
+            echo "$bad"
+            echo "允许的类型：feat fix docs style refactor perf test build ci chore revert"
+            exit 1
+          fi
+          echo "提交信息检查通过"
+
+      - name: 提醒 PR 关联 Issue（不阻断）
+        if: github.event_name == 'pull_request'
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          if ! printf '%s' "$BODY" | grep -qiE '(closes|fixes|resolves) +#[0-9]+'; then
+            echo "::warning::PR 描述里没有 Closes #编号，博客里这条提交将无法对应到 Issue。建议补一行：Closes #12"
+          fi
+
   changes:
     runs-on: ubuntu-latest
     outputs:
