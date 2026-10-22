@@ -1,0 +1,15 @@
+# 目录级审批权：PR 改动到下列路径会自动请求对应责任人评审
+# 语法：<路径> <@用户名或 @组织/团队>
+
+*                           @ouc-tongpin/core
+
+/apps/miniprogram/          @m3-frontend
+/apps/admin-web/            @m4-admin
+/services/api-server/       @m5-backend
+/services/algo/             @m6-algo
+/packages/contract/         @m5-backend @m3-frontend @m4-admin
+/design/                    @m2-design
+/infra/                     @m6-algo
+/docs/                      @m1-po
+/scripts/e2e/               @m1-po
+/.github/                   @m1-po @m6-algo
