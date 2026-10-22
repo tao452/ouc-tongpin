@@ -3,13 +3,13 @@
 
 *                           @ouc-tongpin/core
 
-/apps/miniprogram/          @m3-frontend
-/apps/admin-web/            @m4-admin
-/services/api-server/       @m5-backend
-/services/algo/             @m6-algo
-/packages/contract/         @m5-backend @m3-frontend @m4-admin
-/design/                    @m2-design
-/infra/                     @m6-algo
-/docs/                      @m1-po
-/scripts/e2e/               @m1-po
-/.github/                   @m1-po @m6-algo
+/apps/miniprogram/          @Gnemyu
+/apps/admin-web/            @lgy-wch
+/services/api-server/       @Raylee06
+/services/algo/             @ATmixiu
+/packages/contract/         @Raylee06 @Gnemyu @lgy-wch
+/design/                    @mimisoup
+/infra/                     @ATmixiu
+/docs/                      @tao452
+/scripts/e2e/               @tao452
+/.github/                   @tao452 @ATmixiu
