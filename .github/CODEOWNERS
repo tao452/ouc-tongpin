@@ -1,7 +1,7 @@
 # 目录级审批权：PR 改动到下列路径会自动请求对应责任人评审
 # 语法：<路径> <@用户名或 @组织/团队>
 
-*                           @ouc-tongpin/core
+*                           @tao452
 
 /apps/miniprogram/          @Gnemyu
 /apps/admin-web/            @lgy-wch
