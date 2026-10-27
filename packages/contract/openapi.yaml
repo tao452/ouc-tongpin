@@ -1,0 +1,365 @@
+openapi: 3.1.0
+# ============================================================
+# OUC同频 · 接口契约 v0.1（草案）
+# 状态：草案，待 M5（后端主责）评审定稿
+# 说明：本文件是仓库内唯一事实源；Apifox 导入此文件做协作界面，双向同步。
+#      改接口先改这里 → 发 PR（M5 + 调用方批准）→ 再改实现。
+#      契约未合并前，前端按本文件生成 Mock，不等后端。
+# 覆盖：迭代一（S1）核心链路 = 登录 / 打卡 / 树洞 / 搭子 / 风控 / 资料
+# ============================================================
+info:
+  title: OUC同频 API
+  version: 0.1.0
+  description: >
+    校园搭子匹配与情绪安全社交平台。
+    实现要点（方案已定）：打卡幂等；树洞 24h 焚毁仅留哈希；匿名 ID 脱敏；学号认证抽象为 AuthProvider。
+servers:
+  - url: http://localhost:8080
+    description: 本地（docker-compose）
+  - url: https://api-test.ouc-tongpin.example
+    description: 测试环境
+
+tags:
+  - name: auth
+    description: 登录与校内认证（US-33）
+  - name: emotion
+    description: 情绪打卡与曲线（US-01/02/03）
+  - name: treehole
+    description: 匿名树洞（US-05/07）
+  - name: match
+    description: 搭子匹配（US-10）
+  - name: moderation
+    description: 内容风控（US-24）
+  - name: user
+    description: 用户资料（US-35）
+
+paths:
+  # ---------------- 登录与认证 US-33 ----------------
+  /api/auth/login:
+    post:
+      tags: [auth]
+      summary: 微信授权登录（code2session）
+      description: 小程序 wx.login 拿 code → 换 openid → 签发 JWT。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [code]
+              properties:
+                code:
+                  type: string
+                  description: wx.login() 返回的临时登录凭证
+      responses:
+        '200':
+          description: 登录成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: { type: string, description: JWT，后续请求带 Authorization: Bearer }
+                  userId: { type: string, description: 内部用户 ID（非 openid 明文） }
+                  isNewUser: { type: boolean }
+                  needStudentVerify: { type: boolean, description: 未完成学号认证时为 true }
+        '401':
+          description: code 无效或已使用
+
+  /api/auth/student-verify:
+    post:
+      tags: [auth]
+      summary: 学号校内认证
+      description: >
+        学校未开放统一认证接口：抽象为 AuthProvider，先用「学号 + 教务系统截图」半自动审核过渡，
+        后续可替换实现而不改接口。需校验重复绑定。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [studentId]
+              properties:
+                studentId: { type: string, description: 学号 }
+                screenshotUrl:
+                  type: string
+                  description: 教务系统截图（过渡方案用；后续可去掉）
+      responses:
+        '200':
+          description: 提交成功，待审核
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [PENDING, VERIFIED, REJECTED]
+                  reason: { type: string, description: 驳回原因（REJECTED 时必填） }
+        '409':
+          description: 该学号已被其他账号绑定（重复绑定校验失败）
+
+  # ---------------- 情绪打卡 US-01 / US-02 / US-03 ----------------
+  /api/emotions/words:
+    get:
+      tags: [emotion]
+      summary: 情绪词表
+      description: 6 个情绪词 + 1–5 级强度量表；前端下拉用，避免硬编码。
+      responses:
+        '200':
+          description: 情绪词列表
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  words:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code: { type: string, example: HAPPY }
+                        label: { type: string, example: 开心 }
+                        colorToken: { type: string, description: 对应 design/ 情绪色卡 token }
+                  intensityScale:
+                    type: object
+                    properties:
+                      min: { type: integer, example: 1 }
+                      max: { type: integer, example: 5 }
+
+  /api/emotions/checkins:
+    post:
+      tags: [emotion]
+      summary: 提交情绪打卡（幂等）
+      description: >
+        同一天重复提交只记一次（幂等）：已打卡则返回已有记录，不新增。
+        断签则连续天数归零。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [emotion, intensity]
+              properties:
+                emotion:
+                  type: string
+                  enum: [HAPPY, CALM, ANXIOUS, LONELY, IRRITABLE, DOWN]
+                  description: 开心/平静/焦虑/孤独/烦躁/低落
+                intensity: { type: integer, minimum: 1, maximum: 5 }
+                note: { type: string, maxLength: 100, description: 可选备注 }
+                checkinDate:
+                  type: string
+                  format: date
+                  description: 不传则按服务端当天
+      responses:
+        '200':
+          description: 打卡成功（或返回当日已有记录）
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Checkin'
+        '400':
+          description: 参数非法（强度越界、备注超长等）
+    get:
+      tags: [emotion]
+      summary: 打卡记录（日历 / 曲线数据源）
+      parameters:
+        - name: from
+          in: query
+          schema: { type: string, format: date }
+        - name: to
+          in: query
+          schema: { type: string, format: date }
+      responses:
+        '200':
+          description: 区间内打卡记录 + 连续天数
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/Checkin' }
+                  streakDays: { type: integer, description: 连续打卡天数，断签归零 }
+                  total: { type: integer }
+
+  # ---------------- 匿名树洞 US-05 / US-07 ----------------
+  /api/treehole/posts:
+    post:
+      tags: [treehole]
+      summary: 发布树洞（可切匿名/实名）
+      description: >
+        发布前必须过敏感词（调用 /api/moderation/check）。
+        匿名态下不返回、不存储任何可反推身份的字段（US-25）。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [content, emotionTag]
+              properties:
+                content: { type: string, maxLength: 500 }
+                emotionTag:
+                  type: string
+                  enum: [HAPPY, CALM, ANXIOUS, LONELY, IRRITABLE, DOWN]
+                anonymous: { type: boolean, default: true, description: 一键切换匿名/实名 }
+      responses:
+        '201':
+          description: 发布成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TreeholePost'
+        '422':
+          description: 命中敏感词，拒绝入库
+    get:
+      tags: [treehole]
+      summary: 树洞推荐流（按情绪标签）
+      parameters:
+        - name: emotionTag
+          in: query
+          schema: { type: string }
+        - name: cursor
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: 树洞列表；已焚毁内容不返回
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/TreeholePost' }
+                  nextCursor: { type: string, nullable: true }
+
+  # ---------------- 搭子需求 US-10 ----------------
+  /api/match/needs:
+    post:
+      tags: [match]
+      summary: 发布搭子需求
+      description: >
+        字段：场景 / 时间 / 地点（含经纬度，供距离排序）/ 技能标签（≤5）/ 补充说明。
+        列表排序依赖地理距离字段（W4 做性能：P95 < 300ms）。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [scene, time, location]
+              properties:
+                scene: { type: string, example: 自习 }
+                time: { type: string, format: date-time }
+                location:
+                  type: object
+                  properties:
+                    address: { type: string }
+                    lat: { type: number }
+                    lng: { type: number }
+                skillTags:
+                  type: array
+                  maxItems: 5
+                  items: { type: string }
+                remark: { type: string, maxLength: 200 }
+      responses:
+        '201':
+          description: 发布成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string }
+                  scene: { type: string }
+                  status: { type: string, example: OPEN }
+
+  # ---------------- 内容风控 US-24 ----------------
+  /api/moderation/check:
+    post:
+      tags: [moderation]
+      summary: 敏感词与变体归一化检测
+      description: DFA + 变体归一化 + 分级词库（M6 主责服务，发布树洞/搭子前调用）。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text: { type: string }
+      responses:
+        '200':
+          description: 检测结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  passed: { type: boolean }
+                  normalized: { type: string, description: 归一化后的文本 }
+                  hits:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        word: { type: string }
+                        level: { type: string, enum: [LOW, MEDIUM, HIGH] }
+
+  # ---------------- 用户资料 US-35 ----------------
+  /api/user/profile:
+    put:
+      tags: [user]
+      summary: 维护个人资料与兴趣/技能标签
+      description: 头像走 OSS STS 临时凭证上传；标签写入 user_tag 关联表。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nickname: { type: string }
+                avatarUrl: { type: string }
+                bio: { type: string, maxLength: 100 }
+                interestTags: { type: array, items: { type: string } }
+                skillTags: { type: array, items: { type: string } }
+      responses:
+        '200':
+          description: 更新成功
+
+components:
+  schemas:
+    Checkin:
+      type: object
+      properties:
+        id: { type: string }
+        checkinDate: { type: string, format: date }
+        emotion: { type: string }
+        intensity: { type: integer, minimum: 1, maximum: 5 }
+        note: { type: string, nullable: true }
+        streakDays: { type: integer }
+    TreeholePost:
+      type: object
+      properties:
+        id: { type: string }
+        content: { type: string }
+        emotionTag: { type: string }
+        anonymous: { type: boolean }
+        authorMask:
+          type: string
+          nullable: true
+          description: 匿名 ID；实名态为昵称，匿名态为不可反推的掩码
+        createdAt: { type: string, format: date-time }
+        expiresAt:
+          type: string
+          format: date-time
+          description: 24h 后焚毁；到期列表与详情均不可见，库里仅留内容哈希
+        hugCount: { type: integer, description: 抱抱数，每人每帖每日限 1 次（Redis SETNX + 24h） }
