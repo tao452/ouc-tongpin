@@ -107,3 +107,8 @@ git switch develop && git merge --no-ff release/0.1 && git push
 ```
 
 随后在 GitHub → Releases 起草 v0.1.0，写清本版内容、已知问题、体验方式。
+
+## 9 延伸阅读
+
+- **每个故事怎么落地**（工具、目录、六步流程、S1 故事到接口映射）：[`docs/故事落地与开发指南.md`](docs/故事落地与开发指南.md)
+- **接口契约 v0.1**：`packages/contract/openapi.yaml`（Apifox 导入此文件做协作界面）
