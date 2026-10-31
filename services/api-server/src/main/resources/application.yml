@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ouc-tongpin-api-server
+  # TODO(M5): 接入 JPA/MySQL/Redis 时取消注释并填写真实配置
+  # datasource:
+  #   url: jdbc:mysql://localhost:3306/ouc_tongpin?useSSL=false&serverTimezone=Asia/Shanghai
+  #   username: root
+  #   password: root
+  #   # 若本机 3306 被占用，改为 3307（见《组长环境与工具清单》）
+  # jpa:
+  #   hibernate:
+  #     ddl-auto: update
+  # data:
+  #   redis:
+  #     host: localhost
+  #     port: 6379
+
+ouc:
+  jwt:
+    secret: change-me-in-prod

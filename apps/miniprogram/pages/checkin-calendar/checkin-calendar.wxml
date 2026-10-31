@@ -1,0 +1,34 @@
+<view class="page">
+  <view class="header">
+    <view class="nav" bindtap="prevMonth">‹</view>
+    <view class="ym">{{year}} 年 {{month}} 月</view>
+    <view class="nav" bindtap="nextMonth">›</view>
+  </view>
+
+  <view class="streak">
+    <text class="big">{{streakDays}}</text>
+    <text class="label">连续打卡天 · 累计 {{total}} 次</text>
+  </view>
+
+  <view class="week-row">
+    <view class="week-cell" wx:for="{{week}}" wx:key="*this">{{item}}</view>
+  </view>
+  <view class="grid">
+    <view
+      wx:for="{{cells}}"
+      wx:key="date"
+      class="cell {{item.empty ? 'empty' : ''}} {{item.emotion ? 'checked' : ''}}"
+      style="{{item.color ? 'background:' + item.color : ''}}">
+      <text wx:if="{{!item.empty}}">{{item.day}}</text>
+    </view>
+  </view>
+
+  <view class="remind">
+    <view class="remind-title">打卡提醒</view>
+    <switch checked="{{remindOn}}" bindchange="toggleRemind" />
+    <picker mode="time" value="{{remindTime}}" bindchange="onTime">
+      <view class="remind-time">每日 {{remindTime}}</view>
+    </picker>
+  </view>
+  <view class="hint">提醒时间由后端定时任务推送（US-02 后端部分，待 M5 骨架就绪后接入）</view>
+</view>

@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/checkin-calendar/checkin-calendar",
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "OUC同频",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5f6fa"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

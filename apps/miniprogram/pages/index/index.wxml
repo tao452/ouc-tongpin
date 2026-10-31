@@ -1,0 +1,5 @@
+<view class="home">
+  <view class="title">OUC同频</view>
+  <view class="sub">校园搭子匹配与情绪安全社交平台</view>
+  <button type="primary" bindtap="goCalendar">进入打卡日历</button>
+</view>
