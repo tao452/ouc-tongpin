@@ -2,9 +2,11 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
+from app.body_limit import BodyLimitMiddleware
 from app.routers.moderation import router
 
 app = FastAPI(title="OUC同频内容安全服务", version="0.1.0")
+app.add_middleware(BodyLimitMiddleware)
 app.include_router(router)
 
 

@@ -1,9 +1,13 @@
+import hashlib
 import json
+import os
 import re
 from pathlib import Path
 
+from pydantic import TypeAdapter
 from pypinyin import lazy_pinyin
 
+from app.models.dictionary import DictionaryEntry
 from app.models.moderation import Hit, ModerationResponse
 from app.services.normalization import normalize
 
@@ -13,25 +17,26 @@ _RANK = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
 
 class ModerationService:
     def __init__(self, dictionary: Path | None = None):
-        source = dictionary or Path(__file__).resolve().parents[1] / "data" / "words.json"
+        configured = os.environ.get("MODERATION_DICTIONARY_PATH")
+        source = dictionary or (Path(configured) if configured else
+                                Path(__file__).resolve().parents[1] / "data" / "words.json")
         self.trie: dict = {}
         self.pinyin: dict[str, tuple[str, str]] = {}
-        records = json.loads(source.read_text(encoding="utf-8"))
+        dictionary_bytes = source.read_bytes()
+        self.dictionary_sha256 = hashlib.sha256(dictionary_bytes).hexdigest()
+        records = json.loads(dictionary_bytes.decode("utf-8-sig"))
         if not isinstance(records, list) or not records:
             raise ValueError("Dictionary must be a nonempty list")
-        for record in records:
-            word, level = record["word"], record["level"]
-            if not isinstance(word, str) or not normalize(word) or level not in _RANK:
-                raise ValueError("Invalid dictionary entry")
-            for variant in [word, *record.get("aliases", [])]:
+        entries = TypeAdapter(list[DictionaryEntry]).validate_python(records)
+        for record in entries:
+            word, level = record.word, record.level
+            for variant in [word, *record.aliases]:
                 token = normalize(variant)
-                if not token:
-                    raise ValueError("Empty dictionary alias")
                 node = self.trie
                 for ch in token:
                     node = node.setdefault(ch, {})
                 self._put(node, _END, (word, level))
-            if record.get("pinyin"):
+            if record.pinyin:
                 token = "".join(lazy_pinyin(word))
                 self._put(self.pinyin, token, (word, level))
 
