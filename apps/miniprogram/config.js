@@ -1,15 +1,22 @@
-// ============================================================
-// 环境配置：Mock 优先，后端就绪后改 USE_MOCK = false
-// ============================================================
-const USE_MOCK = true
+const ENV = 'mock'
 
-// TODO(M5): 替换为 Apifox 给出的云端 Mock 地址
-//   在 Apifox 项目内任意接口点「Mock」标签 或 项目设置→Mock 设置 复制
-const MOCK_BASE = 'https://xxxx.mock.apifox.cn'
+const ENV_CONFIG = {
+  dev: {
+    baseURL: 'http://localhost:8080'
+  },
+  test: {
+    baseURL: ''
+  },
+  prod: {
+    baseURL: ''
+  },
+  mock: {
+    baseURL: 'http://127.0.0.1:4523/m1/8992998-8800539-8811149'
+  }
+}
 
-// 后端本地地址（M5 起好 Spring Boot 后使用）
-const LOCAL_BASE = 'http://localhost:8080'
+if (!ENV_CONFIG[ENV]) {
+  throw new Error(`未知的运行环境：${ENV}`)
+}
 
-const BASE_URL = USE_MOCK ? MOCK_BASE : LOCAL_BASE
-
-module.exports = { BASE_URL, USE_MOCK, MOCK_BASE, LOCAL_BASE }
+module.exports = ENV_CONFIG[ENV]

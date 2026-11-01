@@ -35,7 +35,7 @@ Page({
     const mm = String(month).padStart(2, '0')
     const from = `${year}-${mm}-01`
     const to = `${year}-${mm}-31`
-    request(`/api/emotions/checkins?from=${from}&to=${to}`, 'GET')
+    request({ url: `/api/emotions/checkins?from=${from}&to=${to}`, method: 'GET' })
       .then((res) => {
         const map = {}
         ;(res.items || []).forEach((it) => { map[it.checkinDate] = it.emotion })
