@@ -14,13 +14,16 @@ class LogRedactorTest {
     @ValueSource(strings = {"phone=13800000000", "学号=202600000001", "studentId=abc-test",
             "身份证=11000020000101000X", "user=test@example.com", "Authorization: Bearer abc.def.ghi",
             "{\"password\":\"test password with spaces\"}", "token=abcxyz&ok=true",
-            "{\"studentId\": \"202600000001\"}", "Bearer abc.def.ghi"})
+            "{\"studentId\": \"202600000001\"}", "Bearer abc.def.ghi",
+            "Authorization: Basic dGVzdDpwYXNz", "Basic dGVzdDpwYXNz",
+            "password=\"test password\nwith spaces\""})
     void removesSensitiveValues(String input) {
         String output = LogRedactor.redact(input);
         assertNotEquals(input, output);
         assertTrue(output.contains("[REDACTED]"));
         for (String value : new String[]{"13800000000", "202600000001", "abc.def.ghi",
-                "11000020000101000X", "test@example.com", "test password", "abcxyz", "abc-test"}) {
+                "11000020000101000X", "test@example.com", "test password", "abcxyz", "abc-test",
+                "dGVzdDpwYXNz", "with spaces"}) {
             assertFalse(output.contains(value), output);
         }
     }
