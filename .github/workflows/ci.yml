@@ -1,5 +1,9 @@
 name: CI
 
+permissions:
+  contents: read
+  pull-requests: read
+
 on:
   pull_request:
     branches: [develop, main]
@@ -140,5 +144,42 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check app tests scripts
       - run: pytest -q
+
+  stack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate isolated CI credentials
+        run: python scripts/ci/create-test-env.py
+      - name: Validate and start stack
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml config -q
+          docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait --wait-timeout 240
+      - name: Verify HTTP paths through Nginx
+        run: python scripts/e2e/foundation-smoke.py
+      - name: Save container status on failure
+        if: failure()
+        run: docker compose --env-file .env -f infra/docker-compose.yml ps -a
+      - name: Clean isolated CI volumes
+        if: always()
+        run: docker compose --env-file .env -f infra/docker-compose.yml down -v
+
+  quality:
+    if: always()
+    needs: [guard, changes, admin-web, api-server, algo, stack]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all selected checks to pass
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          python - <<'PY'
+          import json, os
+          results = json.loads(os.environ['RESULTS'])
+          failed = [name for name, job in results.items() if job['result'] not in ('success', 'skipped')]
+          if failed:
+              raise SystemExit('Failed checks: ' + ', '.join(failed))
+          PY
