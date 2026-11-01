@@ -38,6 +38,7 @@ services:
       REDIS_HOST: redis
       REDIS_PASSWORD: ${REDIS_PASSWORD:?Set REDIS_PASSWORD}
       ANON_ID_SECRET: ${ANON_ID_SECRET:?Set ANON_ID_SECRET (at least 32 bytes)}
+      MODERATION_BASE_URL: http://algo:8000
     depends_on:
       mysql: {condition: service_healthy}
       redis: {condition: service_healthy}
