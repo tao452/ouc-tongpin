@@ -40,3 +40,7 @@ Thumbs.db
 *.mp4
 *.psd
 tmp/
+.coverage
+coverage.xml
+.pytest_cache/
+.ruff_cache/

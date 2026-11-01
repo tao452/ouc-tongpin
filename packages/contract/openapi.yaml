@@ -59,7 +59,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  token: { type: string, description: JWT，后续请求带 Authorization: Bearer }
+                  token: { type: string, description: "JWT，后续请求带 Authorization: Bearer" }
                   userId: { type: string, description: 内部用户 ID（非 openid 明文） }
                   isNewUser: { type: boolean }
                   needStudentVerify: { type: boolean, description: 未完成学号认证时为 true }
@@ -293,8 +293,9 @@ paths:
             schema:
               type: object
               required: [text]
+              additionalProperties: false
               properties:
-                text: { type: string }
+                text: { type: string, minLength: 1, maxLength: 2000, description: 不允许纯空白 }
       responses:
         '200':
           description: 检测结果
@@ -312,6 +313,12 @@ paths:
                       properties:
                         word: { type: string }
                         level: { type: string, enum: [LOW, MEDIUM, HIGH] }
+
+      # 16 KiB 请求限制由网关执行；服务限制 text 字符数。
+        '422':
+          description: 参数无效（不回显输入）
+        '413':
+          description: 请求体超过网关 16 KiB 上限
 
   # ---------------- 用户资料 US-35 ----------------
   /api/user/profile:
