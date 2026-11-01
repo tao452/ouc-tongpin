@@ -71,8 +71,8 @@ jobs:
           BODY: ${{ github.event.pull_request.body }}
           TITLE: ${{ github.event.pull_request.title }}
         run: |
-          if ! printf '%s' "$BODY" | grep -qiE '(closes|fixes|resolves) +#[0-9]+'; then
-            echo "::warning::PR 描述里没有 Closes #编号，博客里这条提交将无法对应到 Issue。建议补一行：Closes #12"
+          if ! printf '%s' "$BODY" | grep -qiE '(closes|fixes|resolves|refs) +#[0-9]+'; then
+            echo "::warning::PR 描述缺少 Issue 引用。共享/未完成任务用 Refs #编号，整体验收后再关闭。"
           fi
 
   changes:
@@ -96,6 +96,10 @@ jobs:
               - 'services/api-server/**'
             algo:
               - 'services/algo/**'
+              - 'packages/contract/**'
+              - 'scripts/qa/**'
+              - 'docs/qa/s1-test-cases.json'
+              - '.github/workflows/**'
 
   admin-web:
     needs: changes
@@ -145,7 +149,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements-dev.txt
-      - run: ruff check app tests scripts
+      - run: ruff check app tests scripts ../../scripts/qa
       - run: pytest -q
 
   stack:
