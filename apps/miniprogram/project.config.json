@@ -1,0 +1,14 @@
+{
+  "description": "OUC同频 小程序端",
+  "appid": "touristappid",
+  "projectname": "ouc-tongpin-miniprogram",
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "setting": {
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "appidNote": "将 appid 替换为团队在 mp.weixin.qq.com 注册的小程序 AppID；本地调试可用测试号(touristappid)"
+}
