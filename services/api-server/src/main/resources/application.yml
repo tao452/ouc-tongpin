@@ -11,3 +11,9 @@ spring:
     redis:
       host: localhost
       port: 6379
+      database: 0
+
+# JWT 密钥配置（W2 认证用，后面代码里会读这个值）
+jwt:
+  secret: ouctongpin-secret-key-1234567890abcdefghijklmn
+  expiration: 86400000 # 1天（毫秒）
