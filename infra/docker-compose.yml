@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: tongpin-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: tongpin
+    ports:
+      - "3306:3306"
+    restart: always
+
+  redis:
+    image: redis:7
+    container_name: tongpin-redis
+    ports:
+      - "6379:6379"
+    restart: always
