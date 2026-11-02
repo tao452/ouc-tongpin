@@ -1,5 +1,9 @@
 name: CI
 
+permissions:
+  contents: read
+  pull-requests: read
+
 on:
   pull_request:
     branches: [develop, main]
@@ -67,8 +71,8 @@ jobs:
           BODY: ${{ github.event.pull_request.body }}
           TITLE: ${{ github.event.pull_request.title }}
         run: |
-          if ! printf '%s' "$BODY" | grep -qiE '(closes|fixes|resolves) +#[0-9]+'; then
-            echo "::warning::PR 描述里没有 Closes #编号，博客里这条提交将无法对应到 Issue。建议补一行：Closes #12"
+          if ! printf '%s' "$BODY" | grep -qiE '(closes|fixes|resolves|refs) +#[0-9]+'; then
+            echo "::warning::PR 描述缺少 Issue 引用。共享/未完成任务用 Refs #编号，整体验收后再关闭。"
           fi
 
   changes:
@@ -92,6 +96,10 @@ jobs:
               - 'services/api-server/**'
             algo:
               - 'services/algo/**'
+              - 'packages/contract/**'
+              - 'scripts/qa/**'
+              - 'docs/qa/s1-test-cases.json'
+              - '.github/workflows/**'
 
   admin-web:
     needs: changes
@@ -140,5 +148,42 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check app tests scripts ../../scripts/qa
       - run: pytest -q
+
+  stack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate isolated CI credentials
+        run: python scripts/ci/create-test-env.py
+      - name: Validate and start stack
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml config -q
+          docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait --wait-timeout 240
+      - name: Verify HTTP paths through Nginx
+        run: python scripts/e2e/foundation-smoke.py
+      - name: Save container status on failure
+        if: failure()
+        run: docker compose --env-file .env -f infra/docker-compose.yml ps -a
+      - name: Clean isolated CI volumes
+        if: always()
+        run: docker compose --env-file .env -f infra/docker-compose.yml down -v
+
+  quality:
+    if: always()
+    needs: [guard, changes, admin-web, api-server, algo, stack]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all selected checks to pass
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          python - <<'PY'
+          import json, os
+          results = json.loads(os.environ['RESULTS'])
+          failed = [name for name, job in results.items() if job['result'] not in ('success', 'skipped')]
+          if failed:
+              raise SystemExit('Failed checks: ' + ', '.join(failed))
+          PY

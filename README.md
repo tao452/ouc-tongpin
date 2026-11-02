@@ -21,10 +21,11 @@ Scrum 三迭代、每迭代 4 周、每迭代末一个可发布版本（v0.1.0 /
 ## 2 环境拉起（10 分钟）
 
 ```bash
-git clone git@github.com:ouc-tongpin/ouc-tongpin.git
+git clone https://github.com/tao452/ouc-tongpin.git
 cd ouc-tongpin
-cp .env.example .env          # 不要提交 .env
-docker compose -f infra/docker-compose.yml up -d   # MySQL 8 + Redis
+cp .env.example .env          # 修改密码并填写 ANON_ID_SECRET；不要提交 .env
+docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait
+# MySQL + Redis + 后端 + 算法 + 管理端；详见 infra/README.md
 ```
 
 按角色装依赖：

@@ -1,0 +1,10 @@
+.git
+.venv
+**/node_modules
+**/target
+**/dist
+**/__pycache__
+**/.env
+ouc-tongpin-scaffold
+design
+docs
