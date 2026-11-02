@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "lint": "eslint . --ext .js",
+    "lint": "eslint . --ext .js,.cjs --max-warnings 0",
+    "test": "node --test tests/*.test.cjs",
+    "check:project": "node scripts/check-project.cjs",
     "format": "prettier --write \"**/*.{js,json,wxml,wxss,md}\"",
     "prepare": "husky"
   },

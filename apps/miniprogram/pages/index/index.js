@@ -47,8 +47,6 @@ Page({
           return
         }
 
-        console.log('微信登录 code：', res.code)
-
         request({
           url: '/api/auth/login',
           method: 'POST',
@@ -62,7 +60,6 @@ Page({
               console.log('模拟登录成功，Token 已保存')
             }
 
-            console.log('模拟登录返回数据：', data)
             console.log('本地读取的 Token：', getToken() ? '已读取' : '未读取')
           })
           .catch((err) => {
@@ -76,11 +73,10 @@ Page({
     })
   },
 
-  getUserProfile(e) {
+  getUserProfile() {
     wx.getUserProfile({
       desc: '展示用户信息',
       success: (res) => {
-        console.log(res)
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
