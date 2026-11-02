@@ -1,0 +1,53 @@
+{
+  "purpose": "W1 deliberate failing unit test on an isolated experiment branch",
+  "probe_pr_url": "https://github.com/tao452/ouc-tongpin/pull/53",
+  "probe_pr_state": "closed",
+  "merged": false,
+  "run_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022",
+  "head_sha": "1bd1f8bf1ecac208fb4cb509a7a95412f4d608c3",
+  "event": "pull_request",
+  "actual_conclusion": "failure",
+  "expected_conclusion": "failure",
+  "jobs": [
+    {
+      "name": "guard",
+      "conclusion": "success"
+    },
+    {
+      "name": "changes",
+      "conclusion": "success"
+    },
+    {
+      "name": "w1-poc",
+      "conclusion": "success"
+    },
+    {
+      "name": "stack / Deploy and verify temporary test environment",
+      "conclusion": "success"
+    },
+    {
+      "name": "algo",
+      "conclusion": "failure"
+    },
+    {
+      "name": "admin-web",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "api-server",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "quality",
+      "conclusion": "failure"
+    }
+  ],
+  "algo_log_sha256": "7a0e1519a2a958194dc957a7a0758a75d6ae8d73d4fbda479771da97161df351",
+  "error_log_excerpt": [
+    "2026-11-02T12:42:40.3150753Z >       raise AssertionError(\"W1_GATE_PROBE: deliberate test failure\")",
+    "2026-11-02T12:42:40.3151405Z E       AssertionError: W1_GATE_PROBE: deliberate test failure",
+    "2026-11-02T12:42:40.3173158Z FAILED tests/test_w1_gate_probe.py::test_w1_deliberate_failure - AssertionError: W1_GATE_PROBE: deliberate test failure",
+    "2026-11-02T12:42:40.3174005Z 1 failed, 110 passed, 1 warning in 1.58s"
+  ],
+  "scope": "CI test and aggregate quality rejection; repository protection settings are owner-managed"
+}

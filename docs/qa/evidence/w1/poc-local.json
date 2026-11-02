@@ -1,9 +1,9 @@
 {
-  "executed_at_utc": "2026-11-02T12:35:01.710164+00:00",
-  "source_commit": "c2a71053ef05bbc347592719b01f5adefa304c76",
+  "executed_at_utc": "2026-11-02T12:46:23.011141+00:00",
+  "source_commit": "10271e3c4f557e9cc03e2653f956d5a15097572a",
   "python": "3.12.14",
   "platform": "Windows-11-10.0.26200-SP0",
-  "corpus_sha256": "b5695c20c28adbe9ffdd569bc66fb893c908218aba2f7b124c3c0104339bf186",
+  "corpus_sha256": "f46a54868a96ba5cdb75f7f595ce3eade44390287c895b00fb458e66899f644b",
   "dictionary_sha256": "e6a12298a17ca3660643009bf4aaae5ba5a345a839d1586b9ba93e2427e7b48e",
   "scope": "W1 developer-constructed PoC; formal business corpus evaluated separately",
   "variant_cases": 64,
@@ -16,7 +16,7 @@
     "characters": 1980,
     "warmup": 50,
     "iterations": 1000,
-    "p95_ms": 4.393799987155944
+    "p95_ms": 2.6351999840699136
   },
   "results": [
     {"id": "P001", "category": "canonical", "expected_word_detected": true, "passed": false, "decision_matches": true},
