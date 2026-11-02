@@ -14,7 +14,7 @@
 | 例会时间 | 2026-11-01（周日）线上周例会 |
 | 参会 | M1 林敬焘、M2 mimisoup、M3 Gnemyu、M4 lgy-wch、M5 Raylee06、M6 ATmixiu |
 | 缺席 | 无 |
-| 本周产出 | 9 条 PR 合入 `develop`：#41、#42、#43、#44、#46、#47、#48、#49、#50（#45 因重复关闭）；`develop` 上 CI 全绿 |
+| 本周产出 | 10 条 PR 合入 `develop`：#41、#42、#43、#44、#46、#47、#48、#49、#50、#51（#45 因重复关闭）；`develop` 上 CI 全绿 |
 | 看板 | 目标：每人至少 1 条 S1 故事进入 In Progress；实际：US-02 / US-28 / US-34 已关闭，其余故事在 In Progress / In Review |
 
 > 本周不开每日站会：日常进度靠 Projects 看板拖动与 Issue 评论异步同步，周例会只处理「进展 / 计划 / 卡点 / 需要跨人协调的事」。
@@ -36,7 +36,7 @@
 | M3 Gnemyu | 进行中 | **W2**：提交 PR#48 初始化小程序工程（登录流程 + 多环境配置 + 工具链 eslint/prettier/husky + logs/storage/util 工具）；认领 S1 #2/#4/#34/#11/#6 | 等 M5 环境与 M2 组件库后开工情绪/搭子/树洞页面 | 脚手架已就绪，但依赖 M5 环境+契约、M2 组件库方可联调业务页面 |
 | M4 lgy-wch | 进行中 | **W1**：研读 openapi.yaml 的 admin 分组，准备管理端。**W2**：管理端三个页面（数据看板 #38 / 登录 #28 / 审核 #29），均 mock 演示，已合入 develop（PR#43、PR#44） | 将页面接入 vue-router；待契约定稿后替换 mock 为真实接口 | PR#43 初版 `apps/admin-web` 缺工程脚手架导致 CI 失败，已由 M1 补齐后转绿 |
 | M5 Raylee06 | 进行中 | **W2**：提交 PR#47 初始化后端依赖（MySQL/Redis）+ 数据库配置 + Docker 环境（#33 环境地基）；ER 图与接口契约在制定中 | 定稿 ER 图与 openapi 契约、补全后端骨架（US-32/US-25/US-07） | 环境已起步，但 ER 图/契约未定稿，M3 前端仍被阻塞 |
-| M6 ATmixiu | 进行中 | **W2**：提交 PR#49 安全地基 S1（新建算法审核服务 `services/algo`：敏感词分级过滤；Java 审核客户端 + HMAC 匿名 ID + 日志脱敏；Compose 全栈与 nginx HTTP 冒烟 CI）· Refs #25/#26/#33；**11/02 评审通过并合入 develop**（101 项 Python 测试、40 项 Java 测试、本地全栈 smoke 通过）；另提交 PR#50 统一 9 份文档进度与待办表述 | 推进 #25/#26/#33 真实业务验收（正式词库、PII 扫描、测试环境） | 共享 issue 口径需与 M1/M5 对齐；80 条用例初稿尚未执行 |
+| M6 ATmixiu | 进行中 | **W2**：提交 PR#49 安全地基 S1（新建算法审核服务 `services/algo`：敏感词分级过滤；Java 审核客户端 + HMAC 匿名 ID + 日志脱敏；Compose 全栈与 nginx HTTP 冒烟 CI）· Refs #25/#26/#33；**11/02 评审通过并合入 develop**（101 项 Python 测试、40 项 Java 测试、本地全栈 smoke 通过）；另提交 PR#50 统一 9 份文档进度与待办表述；PR#51 记录 nightly 首次执行与 80 条功能用例首轮结果（37 PASS / 2 FAIL / 2 BLOCKED / 39 NOT_RUN） | 推进 #25/#26/#33 真实业务验收（正式词库、PII 扫描、测试环境） | 共享 issue 口径需与 M1/M5 对齐；80 条用例首轮已执行（2 项 M5 打卡参数校验 FAIL 待修复后复测） |
 
 ## 二、每人代码 / 文档签入记录（对应 Issue 链接）
 
@@ -55,8 +55,9 @@
 - **M3 Gnemyu**：PR#48 (11/01) `feat(m3): initialize miniprogram project` · 小程序工程初始化（登录流程/多环境配置/工具链）· https://github.com/tao452/ouc-tongpin/pull/48
 - **M6 ATmixiu**：PR#49 (11/01) `feat(algo): M6 内容过滤、隐私工具与全栈验证（S1）` · Refs #25/#26/#33 · **11/02 由 M1 审核通过并 merge（`db004f9`），develop CI 全绿** · https://github.com/tao452/ouc-tongpin/pull/49
   - PR#50 (11/02) `docs: 调整仓库进度与待办表述` · Refs #25/#26/#33 · 同步 #49 已合状态、统一 9 份文档进度说明 · https://github.com/tao452/ouc-tongpin/pull/50
+  - PR#51 (11/02) `test: 记录 nightly 与现有功能用例执行` · Refs #25/#26/#33 · 首次 nightly 手动运行成功、80 条目录用例执行（37 PASS / 2 FAIL / 2 BLOCKED / 39 NOT_RUN，2 个 FAIL 为 M5 打卡参数校验待办）；新增 `scripts/qa/` 执行脚本与证据入库 · https://github.com/tao452/ouc-tongpin/pull/51
 
-> 本周共合入 9 条 PR（#41/#42/#43/#44/#46/#47/#48/#49/#50）。#45（US-27 登录菜单）因与 #44 内容重复且分支冲突关闭，相关改动已由 #44 承接。
+> 本周共合入 10 条 PR（#41/#42/#43/#44/#46/#47/#48/#49/#50/#51）。#45（US-27 登录菜单）因与 #44 内容重复且分支冲突关闭，相关改动已由 #44 承接。
 
 | 成员 | 本周 PR | 主要模块 |
 |---|---|---|
@@ -65,8 +66,8 @@
 | M3 Gnemyu | #48 | 小程序工程初始化、多环境配置、工具链 |
 | M4 lgy-wch | #43、#44 | 管理端数据看板、登录、审核（mock） |
 | M5 Raylee06 | #47 | 后端依赖、数据库配置、Docker 环境 |
-| M6 ATmixiu | #49、#50 | 算法审核服务、隐私工具、全栈编排与 CI；文档进度同步 |
-| **合计** | **9** | 6 人全部有签入 |
+| M6 ATmixiu | #49、#50、#51 | 算法审核服务、隐私工具、全栈编排与 CI；文档进度同步；nightly 与功能用例执行记录 |
+| **合计** | **10** | 6 人全部有签入 |
 
 ## 三、燃尽图
 
