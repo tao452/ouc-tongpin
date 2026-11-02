@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements-dev.txt
-      - run: ruff check app tests scripts ../../scripts/qa
+      - run: ruff check app tests scripts ../../scripts/qa ../../scripts/w1 ../../scripts/release
       - run: pytest -q
   api:
     runs-on: ubuntu-latest

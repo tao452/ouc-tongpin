@@ -1,0 +1,39 @@
+name: Deploy test environment
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy and verify temporary test environment
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate isolated credentials
+        run: python scripts/ci/create-test-env.py
+      - name: Build and deploy five services
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml config -q
+          docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait --wait-timeout 240
+      - name: Verify HTTP routes and record catalogue evidence
+        run: |
+          python scripts/e2e/foundation-smoke.py
+          python scripts/qa/execute_stack_cases.py --output qa-private/stack-results.json
+      - name: Upload test environment evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalogue-stack-evidence
+          path: qa-private/stack-results.json
+          if-no-files-found: warn
+      - name: Show service state on failure
+        if: failure()
+        run: docker compose --env-file .env -f infra/docker-compose.yml ps -a
+      - name: Remove temporary environment
+        if: always()
+        run: docker compose --env-file .env -f infra/docker-compose.yml down -v
