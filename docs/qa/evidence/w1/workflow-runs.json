@@ -1,0 +1,108 @@
+{
+  "scope": "W1 verification before recording this snapshot; subsequent documentation commits do not change tested code",
+  "runs": [
+    {
+      "id": 41448131348,
+      "name": "CI",
+      "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41448131348",
+      "event": "pull_request",
+      "head_sha": "792eead532043e59f35e664f0fa7d6424b89ff1a",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-02T12:51:46Z",
+      "updated_at": "2026-11-02T12:53:19Z",
+      "jobs": [
+        {
+          "name": "guard",
+          "conclusion": "success"
+        },
+        {
+          "name": "stack / Deploy and verify temporary test environment",
+          "conclusion": "success"
+        },
+        {
+          "name": "w1-poc",
+          "conclusion": "success"
+        },
+        {
+          "name": "changes",
+          "conclusion": "success"
+        },
+        {
+          "name": "algo",
+          "conclusion": "success"
+        },
+        {
+          "name": "api-server",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "admin-web",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "quality",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 41448130879,
+      "name": "Release candidate",
+      "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41448130879",
+      "event": "pull_request",
+      "head_sha": "792eead532043e59f35e664f0fa7d6424b89ff1a",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-02T12:51:45Z",
+      "updated_at": "2026-11-02T12:52:40Z",
+      "jobs": [
+        {
+          "name": "Build and verify release candidate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish existing version tag",
+          "conclusion": "skipped"
+        }
+      ]
+    },
+    {
+      "id": 41448273465,
+      "name": "Nightly regression",
+      "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41448273465",
+      "event": "workflow_dispatch",
+      "head_sha": "792eead532043e59f35e664f0fa7d6424b89ff1a",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-02T12:52:51Z",
+      "updated_at": "2026-11-02T12:53:22Z",
+      "jobs": [
+        {
+          "name": "algo",
+          "conclusion": "success"
+        },
+        {
+          "name": "api",
+          "conclusion": "success"
+        }
+      ],
+      "log_summaries": [
+        {
+          "job": "algo",
+          "sha256": "efd186e10a5e6abad6d4481b2f366fc900e5f3f1991d36e280ca8d272e2ea9d5",
+          "summary_lines": [
+            "2026-11-02T12:53:05.5885456Z 110 passed, 1 warning in 1.56s"
+          ]
+        },
+        {
+          "job": "api",
+          "sha256": "8e23a2049f4005a2df1748a5468eabe75dcee587f29d1806d078b8aa04b812de",
+          "summary_lines": []
+        }
+      ]
+    }
+  ],
+  "saved_release_manifest_run": 41446670977,
+  "saved_poc_ci_run": 41446671071
+}
