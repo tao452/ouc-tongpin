@@ -90,8 +90,10 @@ jobs:
           filters: |
             mp:
               - 'apps/miniprogram/**'
+              - '.github/workflows/ci.yml'
             admin:
               - 'apps/admin-web/**'
+              - '.github/workflows/ci.yml'
             api:
               - 'services/api-server/**'
             algo:
@@ -102,6 +104,27 @@ jobs:
               - 'scripts/release/**'
               - 'docs/qa/s1-test-cases.json'
               - '.github/workflows/**'
+
+  miniprogram:
+    needs: changes
+    if: needs.changes.outputs.mp == 'true'
+    runs-on: ubuntu-latest
+    env:
+      HUSKY: '0'
+    defaults:
+      run:
+        working-directory: apps/miniprogram
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/miniprogram/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run check:project
 
   admin-web:
     needs: changes
@@ -173,7 +196,7 @@ jobs:
 
   quality:
     if: always()
-    needs: [guard, changes, admin-web, api-server, algo, stack, w1-poc]
+    needs: [guard, changes, miniprogram, admin-web, api-server, algo, stack, w1-poc]
     runs-on: ubuntu-latest
     steps:
       - name: Require all selected checks to pass
@@ -183,7 +206,16 @@ jobs:
           python - <<'PY'
           import json, os
           results = json.loads(os.environ['RESULTS'])
-          failed = [name for name, job in results.items() if job['result'] not in ('success', 'skipped')]
+          outputs = results['changes'].get('outputs', {})
+          modules = {'mp': 'miniprogram', 'admin': 'admin-web', 'api': 'api-server', 'algo': 'algo'}
+          if any(outputs.get(key) not in ('true', 'false') for key in modules):
+              raise SystemExit('Missing or invalid change-filter output')
+          required = {'guard', 'changes', 'stack', 'w1-poc'}
+          required.update(job for key, job in modules.items() if outputs[key] == 'true')
+          failed = [name for name, job in results.items()
+                    if job['result'] not in ('success', 'skipped')
+                    or (name in required and job['result'] != 'success')]
+          failed.extend(sorted(required - results.keys()))
           if failed:
               raise SystemExit('Failed checks: ' + ', '.join(failed))
           PY
