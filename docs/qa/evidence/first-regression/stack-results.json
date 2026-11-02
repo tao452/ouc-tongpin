@@ -1,0 +1,14 @@
+{
+  "executed_at_utc": "2026-11-02T11:46:47.710286+00:00",
+  "source_commit": "1521fd02685ac432b01ca90e2b1963247ccd320b",
+  "scope": "Linux CI isolated Compose stack",
+  "ci_run_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41439293058",
+  "artifact_id": 13137948183,
+  "artifact_payload_sha256": "22e6da73cfd694dc2e9bb5e172e6b034d4ac99b1ee019f90b3cacaafaa35fb3a",
+  "results": [
+    {"case_id": "S1-077", "status": "PASS", "observations": {"valid_config_exit": 0, "missing_secret_exit": 1, "missing_variable": "ANON_ID_SECRET", "no_secret_value_in_output": true}, "reason": null},
+    {"case_id": "S1-078", "status": "PASS", "observations": {"algo": {"state": "running", "health": "healthy"}, "api": {"state": "running", "health": "healthy"}, "mysql": {"state": "running", "health": "healthy"}, "redis": {"state": "running", "health": "healthy"}, "web": {"state": "running", "health": "healthy"}}, "reason": null},
+    {"case_id": "S1-079", "status": "PASS", "observations": {"exit_code": 0, "http_checks_passed": 7}, "reason": null},
+    {"case_id": "S1-068", "status": "PASS", "observations": {"gateway_http_status": 413, "scope": "gateway only; direct check recorded separately"}, "reason": null}
+  ]
+}

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" tests="7" failures="0" errors="0" skipped="0" time="0.145">
+  <testcase name="S1_071_purposeIsolation" classname="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" time="0.001" />
+  <testcase name="S1_074_consoleRedaction" classname="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" time="0.119" />
+  <testcase name="S1_072_keyChange" classname="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" time="0.002" />
+  <testcase name="S1_069_stableAlias" classname="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" time="0.001" />
+  <testcase name="S1_073_weakKeyRejected" classname="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" time="0.001" />
+  <testcase name="S1_075_exceptionRedaction" classname="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" time="0.018" />
+  <testcase name="S1_070_userIsolation" classname="com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest" time="0.002" />
+</testsuite>
