@@ -40,5 +40,5 @@ PR 的 CI 执行原有 guard、模块检查，以及 Docker 全栈构建与真�
 算法修改执行 Ruff、Pytest 和 ≥80% 覆盖率门槛；Java 的隐私测试并入 Maven verify。
 `quality` 汇总所有结果，可由管理员审核后设为分支保护的必过检查；本 PR 不修改仓库保护配置。
 管理端 lint/test 当前为脚手架占位配置，ESLint、Vitest 接入及前端测试待对应模块完善。
-nightly 配置已随 PR #49 合入，首次定时运行待验证；deploy-test、release 待测试服务器与凭证准备后实现。
+nightly 已完成首次手动验证，定时触发结果继续观察；deploy-test、release 待测试服务器与凭证准备后实现。
 共享 Issue #33 保持打开，直到双方确认环境、CI、测试环境部署与独立复核。
