@@ -164,6 +164,15 @@ jobs:
           docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait --wait-timeout 240
       - name: Verify HTTP paths through Nginx
         run: python scripts/e2e/foundation-smoke.py
+      - name: Execute catalogue environment cases
+        run: python scripts/qa/execute_stack_cases.py --output qa-private/stack-results.json
+      - name: Upload catalogue environment evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalogue-stack-evidence
+          path: qa-private/stack-results.json
+          if-no-files-found: warn
       - name: Save container status on failure
         if: failure()
         run: docker compose --env-file .env -f infra/docker-compose.yml ps -a
