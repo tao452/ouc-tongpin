@@ -1,7 +1,7 @@
 <template>
   <div class="login-page">
     <el-card class="login-card" shadow="always">
-      <div class="login-title">ºóÌ¨¹ÜÀíÏµÍ³</div>
+      <div class="login-title">åå°ç®¡ç†ç³»ç»Ÿ</div>
 
       <el-form
         ref="formRef"
@@ -11,20 +11,20 @@
         size="large"
         @submit.prevent="handleLogin"
       >
-        <el-form-item label="ÕËºÅ" prop="username">
+        <el-form-item label="è´¦å·" prop="username">
           <el-input
             v-model="form.username"
-            placeholder="ÇëÊäÈëÕËºÅ"
+            placeholder="è¯·è¾“å…¥è´¦å·"
             :prefix-icon="User"
             clearable
           />
         </el-form-item>
 
-        <el-form-item label="ÃÜÂë" prop="password">
+        <el-form-item label="å¯†ç " prop="password">
           <el-input
             v-model="form.password"
             type="password"
-            placeholder="ÇëÊäÈëÃÜÂë"
+            placeholder="è¯·è¾“å…¥å¯†ç "
             :prefix-icon="Lock"
             show-password
             @keyup.enter="handleLogin"
@@ -38,12 +38,12 @@
             :loading="loading"
             @click="handleLogin"
           >
-            µÇ Â¼
+            ç™» å½•
           </el-button>
         </el-form-item>
       </el-form>
 
-      <div class="login-tip">ÌáÊ¾£ºÈÎÒâÕËºÅ + ÈÎÒâÃÜÂë¼´¿ÉµÇÂ¼£¨mock£©</div>
+      <div class="login-tip">æç¤ºï¼šä»»æ„è´¦å· + ä»»æ„å¯†ç å³å¯ç™»å½•ï¼ˆmockï¼‰</div>
     </el-card>
   </div>
 </template>
@@ -62,15 +62,15 @@ const form = ref({
 })
 
 const rules = {
-  username: [{ required: true, message: 'ÇëÊäÈëÕËºÅ', trigger: 'blur' }],
+  username: [{ required: true, message: 'è¯·è¾“å…¥è´¦å·', trigger: 'blur' }],
   password: [
-    { required: true, message: 'ÇëÊäÈëÃÜÂë', trigger: 'blur' },
-    { min: 6, max: 20, message: 'ÃÜÂë³¤¶ÈĞèÎª 6-20 Î»', trigger: 'blur' }
+    { required: true, message: 'è¯·è¾“å…¥å¯†ç ', trigger: 'blur' },
+    { min: 6, max: 20, message: 'å¯†ç é•¿åº¦éœ€ä¸º 6-20 ä½', trigger: 'blur' }
   ]
 }
 
 const handleLogin = async () => {
-  // ±íµ¥Ğ£Ñé
+  // è¡¨å•æ ¡éªŒ
   try {
     await formRef.value.validate()
   } catch {
@@ -79,12 +79,11 @@ const handleLogin = async () => {
 
   loading.value = true
 
-  // mock µÇÂ¼£ºÄ£Äâ 500ms ÍøÂçÇëÇó
+  // mock ç™»å½•ï¼šæ¨¡æ‹Ÿ 500ms ç½‘ç»œè¯·æ±‚
   setTimeout(() => {
     loading.value = false
-    ElMessage.success('µÇÂ¼³É¹¦')
-    console.log('mock µÇÂ¼ĞÅÏ¢£º', form.value)
-    // ºóĞø¿ÉÔÚÕâÀïĞ´£ºrouter.push('/dashboard')
+    ElMessage.success('ç™»å½•æˆåŠŸ')
+    // åç»­å¯åœ¨è¿™é‡Œå†™ï¼šrouter.push('/dashboard')
   }, 500)
 }
 </script>

@@ -44,14 +44,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, shallowRef, onMounted, onBeforeUnmount } from 'vue'
 import * as echarts from 'echarts'
 import { User, Position, ChatDotRound, Warning } from '@element-plus/icons-vue'
 
 /* ---------------- mock 假数据（写死） ---------------- */
 
 // 顶部统计卡片
-const stats = ref([
+const stats = shallowRef([
   {
     title: '今日活跃用户',
     value: 1286,

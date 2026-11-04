@@ -1,5 +1,12 @@
 # OUC同频 · 小程序端（apps/miniprogram）
 
+## 质量检查
+
+在 Node 22 下运行 `npm ci`、`npm run lint`、`npm test`、`npm run check:project`。
+检查包括 JavaScript/CJS 静态检查、请求重试与鉴权头、loading 并发、HTTP 错误、token 存取，以及页面和组件引用。
+CI 的 miniprogram 任务执行这些命令，失败会使 quality 检查失败。
+页面引用检查不执行微信打包；开发者工具编译、真实微信登录和三套环境联调由 M3/M5 另行验证。
+
 情绪打卡日历与提醒（US-02）前端，微信小程序原生 + TDesign（后续接入）。
 
 ## 一、本地导入（微信开发者工具）

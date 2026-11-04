@@ -34,7 +34,18 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: apps/admin-web/package-lock.json
+          cache-dependency-path: |
+            apps/admin-web/package-lock.json
+            apps/miniprogram/package-lock.json
+      - name: Check miniprogram source and request behavior
+        working-directory: apps/miniprogram
+        env:
+          HUSKY: '0'
+        run: |
+          npm ci
+          npm run lint
+          npm test
+          npm run check:project
       - name: Test and build Java
         run: mvn -B -q -f services/api-server/pom.xml verify
       - name: Test algorithm and W1 data
@@ -46,6 +57,8 @@ jobs:
         working-directory: apps/admin-web
         run: |
           npm ci
+          npm run lint
+          npm test -- --run
           npm run build
       - name: Assemble and verify candidate
         run: python scripts/release/package_candidate.py --output qa-private/release-candidate
