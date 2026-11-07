@@ -1,0 +1,24 @@
+.page { padding: 24rpx; background: #f6f7fb; min-height: 100vh; box-sizing: border-box; }
+.empty-tip { background: #eef4ff; color: #4a69bd; border-radius: 16rpx; padding: 24rpx; font-size: 26rpx; margin-bottom: 24rpx; }
+.card { background: #fff; border-radius: 20rpx; padding: 28rpx; margin-bottom: 24rpx; }
+.row { display: flex; align-items: center; justify-content: space-between; }
+.avatar-row { justify-content: flex-start; gap: 24rpx; padding-bottom: 20rpx; }
+.avatar-wrapper { width: 112rpx; height: 112rpx; padding: 0; border-radius: 50%; overflow: hidden; background: #eef1f8; line-height: 112rpx; }
+.avatar { width: 112rpx; height: 112rpx; }
+.avatar-placeholder { font-size: 56rpx; color: #9aa6c4; text-align: center; }
+.avatar-hint { color: #999; font-size: 26rpx; }
+.field { margin-top: 20rpx; }
+.label { display: block; font-size: 28rpx; font-weight: 600; color: #333; margin-bottom: 12rpx; }
+.counter { font-size: 24rpx; color: #aaa; }
+.input, .textarea { width: 100%; box-sizing: border-box; background: #f7f8fc; border-radius: 12rpx; padding: 18rpx 20rpx; font-size: 28rpx; }
+.textarea { min-height: 120rpx; }
+.tag-editor { display: flex; align-items: center; gap: 16rpx; }
+.tag-input { flex: 1; }
+.add-btn { flex-shrink: 0; background: #4a69bd; color: #fff; }
+.tags { display: flex; flex-wrap: wrap; gap: 12rpx; margin-top: 20rpx; min-height: 40rpx; }
+.tag { background: #eef4ff; color: #4a69bd; border-radius: 999rpx; padding: 8rpx 20rpx; font-size: 26rpx; }
+.tag-del { margin-left: 12rpx; color: #8a97bb; }
+.hint { color: #aaa; font-size: 24rpx; }
+.save-btn { margin: 12rpx 0 16rpx; }
+.footer { text-align: center; margin-bottom: 12rpx; }
+.link-btn { background: transparent; color: #4a69bd; font-size: 26rpx; }

@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/checkin-calendar/checkin-calendar",
+    "pages/profile/profile",
     "pages/logs/logs"
   ],
   "window": {

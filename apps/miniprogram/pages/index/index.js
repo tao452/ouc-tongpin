@@ -73,6 +73,12 @@ Page({
     })
   },
 
+  goProfile() {
+    wx.navigateTo({
+      url: '../profile/profile'
+    })
+  },
+
   getUserProfile() {
     wx.getUserProfile({
       desc: '展示用户信息',
