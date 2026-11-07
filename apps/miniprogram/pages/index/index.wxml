@@ -26,4 +26,5 @@
   </view>
   <t-button theme="primary">同频一下</t-button>
   <button bindtap="mockLogin">模拟登录</button>
+  <button bindtap="goProfile">维护个人资料</button>
 </scroll-view>
