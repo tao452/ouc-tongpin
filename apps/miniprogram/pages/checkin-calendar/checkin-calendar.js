@@ -47,7 +47,9 @@ Page({
         this.buildGrid()
       })
       .catch(() => {
-        wx.showToast({ title: '加载失败，检查 Mock 地址', icon: 'none' })
+        // 网络错误已由 utils/request.js 统一提示；这里退回空日历，避免页面停留在旧数据。
+        this.setData({ checkedDates: {}, streakDays: 0, total: 0 })
+        this.buildGrid()
       })
   },
 
@@ -69,6 +71,10 @@ Page({
       })
     }
     this.setData({ cells })
+  },
+
+  goCheckin() {
+    wx.navigateTo({ url: '/pages/checkin/checkin' })
   },
 
   prevMonth() { this.step(-1) },
