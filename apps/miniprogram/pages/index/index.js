@@ -42,17 +42,13 @@ Page({
   mockLogin() {
     wx.login({
       success: (res) => {
-        if (!res.code) {
-          console.error('获取登录 code 失败：', res.errMsg)
-          return
-        }
+        // 游客模式拿不到 code 时用演示凭证，与 app.js 的降级保持一致。
+        const code = res.code || 'demo-wx-code'
 
         request({
           url: '/api/auth/login',
           method: 'POST',
-          data: {
-            code: res.code
-          }
+          data: { code }
         })
           .then((data) => {
             if (data.token) {
@@ -70,6 +66,18 @@ Page({
       fail: (err) => {
         console.error('wx.login 调用失败：', err)
       }
+    })
+  },
+
+  goCheckin() {
+    wx.navigateTo({
+      url: '../checkin/checkin'
+    })
+  },
+
+  goCalendar() {
+    wx.navigateTo({
+      url: '../checkin-calendar/checkin-calendar'
     })
   },
 

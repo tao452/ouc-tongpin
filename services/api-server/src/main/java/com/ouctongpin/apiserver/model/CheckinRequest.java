@@ -3,6 +3,7 @@ package com.ouctongpin.apiserver.model;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 /** 提交打卡请求（对应 POST /api/emotions/checkins 请求体） */
 public class CheckinRequest {
@@ -14,7 +15,8 @@ public class CheckinRequest {
     @Max(5)
     public int intensity;
 
-    public String note;          // 可选，<=100 字（接入后校验）
+    @Size(max = 100)
+    public String note;          // 可选，<=100 字（契约 maxLength: 100）
 
     public String checkinDate;   // 可选，YYYY-MM-DD，不传按服务端当天
 }
