@@ -96,6 +96,7 @@ jobs:
               - '.github/workflows/ci.yml'
             api:
               - 'services/api-server/**'
+              - '.github/workflows/ci.yml'
             algo:
               - 'services/algo/**'
               - 'packages/contract/**'
@@ -103,6 +104,7 @@ jobs:
               - 'scripts/w1/**'
               - 'scripts/release/**'
               - 'docs/qa/s1-test-cases.json'
+              - 'docs/qa/data/**'
               - '.github/workflows/**'
 
   miniprogram:
@@ -175,7 +177,21 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements-dev.txt
       - run: ruff check app tests scripts ../../scripts/qa ../../scripts/w1 ../../scripts/release
-      - run: pytest -q
+      - run: pytest -q --junitxml=pytest-junit.xml
+      - name: W2 content safety regression gate
+        run: >-
+          python scripts/evaluate_dataset.py ../../docs/qa/data/w2-moderation-regression.jsonl
+          --min-benign 200 --min-blocked 100
+          --output ../../qa-private/w2-moderation-function.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: w2-algo-test-evidence
+          path: |
+            services/algo/coverage.xml
+            services/algo/pytest-junit.xml
+            qa-private/w2-moderation-function.json
+          if-no-files-found: warn
 
   stack:
     uses: ./.github/workflows/deploy-test.yml

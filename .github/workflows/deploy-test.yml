@@ -24,12 +24,25 @@ jobs:
         run: |
           python scripts/e2e/foundation-smoke.py
           python scripts/qa/execute_stack_cases.py --output qa-private/stack-results.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify the built moderation image with W2 HTTP samples
+        run: |
+          python -m pip install -r services/algo/requirements.txt
+          python services/algo/scripts/evaluate_dataset.py docs/qa/data/w2-moderation-regression.jsonl --base-url http://127.0.0.1:8080 --min-benign 200 --min-blocked 100 --output qa-private/w2-moderation-http.json
+          python scripts/qa/verify_treehole_moderation.py --output qa-private/w2-treehole-http.json
+          docker compose --env-file .env -f infra/docker-compose.yml images --format json > qa-private/w2-images.json
       - name: Upload test environment evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: catalogue-stack-evidence
-          path: qa-private/stack-results.json
+          path: |
+            qa-private/stack-results.json
+            qa-private/w2-moderation-http.json
+            qa-private/w2-treehole-http.json
+            qa-private/w2-images.json
           if-no-files-found: warn
       - name: Show service state on failure
         if: failure()

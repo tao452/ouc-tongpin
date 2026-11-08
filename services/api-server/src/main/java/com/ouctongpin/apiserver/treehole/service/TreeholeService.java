@@ -6,6 +6,7 @@ import com.ouctongpin.apiserver.treehole.dto.PostCreateReq;
 import com.ouctongpin.apiserver.treehole.dto.PostResponse;
 import com.ouctongpin.apiserver.treehole.entity.TreeholePost;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholePostMapper;
+import com.ouctongpin.apiserver.moderation.ModerationClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -21,13 +22,12 @@ import java.util.stream.Collectors;
 public class TreeholeService {
     @Autowired private TreeholePostMapper postMapper;
     @Autowired private StringRedisTemplate redisTemplate;
+    @Autowired private ModerationClient moderationClient;
 
     // 发布（契约：POST /api/treehole/posts）
     public TreeholePost createPost(Long userId, PostCreateReq req) {
-        // 1. 模拟 M6 敏感词前置调用（真实应调用 /api/moderation/check）
-        if (req.getContent().contains("违规词")) {
-            throw new RuntimeException("内容包含敏感词，拒绝发布");
-        }
+        // Audit before any database or Redis write; HIGH and dependency failures abort publication.
+        moderationClient.requireAllowed(req.getContent());
 
         TreeholePost post = new TreeholePost();
         post.setUserId(userId);

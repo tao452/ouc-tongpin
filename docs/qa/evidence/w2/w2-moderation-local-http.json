@@ -1,0 +1,23 @@
+{
+  "samples": 300,
+  "confusion_matrix": {
+    "tp": 100,
+    "fp": 0,
+    "tn": 200,
+    "fn": 0
+  },
+  "recall": 1.0,
+  "benign_samples": 200,
+  "blocked_samples": 100,
+  "minimum_benign_samples": 200,
+  "minimum_blocked_samples": 100,
+  "sample_requirements_met": true,
+  "false_positive_rate": 0.0,
+  "both_classes_present": true,
+  "thresholds_met_on_supplied_rows": true,
+  "http_p95_ms": 28.529500006698072,
+  "dataset_sha256": "7e9e7038775fc6371c0ce4344f7f71636955b167e4f7db4a3cb1b648e5bca0b9",
+  "dictionary_sha256": null,
+  "evaluation_mode": "http",
+  "limitations": "Labels supplied by caller; review/independence not verified. Sequential samples; no concurrency or production acceptance claim."
+}
