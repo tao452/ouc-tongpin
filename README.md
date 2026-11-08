@@ -121,3 +121,10 @@ git switch develop && git merge --no-ff release/0.1 && git push
 - PoC 报告：`docs/qa/W1-PoC命中率报告.md`
 - 部署、发布候选包与回滚：`infra/发布候选包与回滚.md`
 - W1 执行记录：`docs/qa/W1交付与验证记录.md`
+
+## 11 W2 内容安全交付入口（11/02–11/06）
+
+- 任务、实际验证与协作边界：`docs/qa/W2-内容安全交付与验证.md`
+- 300 条合成开发回归样本与指标口径：`docs/qa/data/README.md`
+- 按七个模块分类的 80 条用例目录：`docs/qa/s1-test-cases.json`
+- 树洞发布前审核接入：`services/api-server/MODERATION.md`
