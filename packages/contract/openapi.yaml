@@ -192,7 +192,9 @@ paths:
       tags: [treehole]
       summary: 发布树洞（可切匿名/实名）
       description: >
-        发布前必须过敏感词（调用 /api/moderation/check）。
+        发布前必须调用 /api/moderation/check：HIGH 拒绝入库，MEDIUM 提示并放行，LOW 放行。
+        审核不可达、超时或响应无效时返回 503，拒绝入库，调用方可稍后重试。
+        当前三级动作沿用开发基线，正式词表与业务口径待 M1 审核。
         匿名态下不返回、不存储任何可反推身份的字段（US-25）。
       requestBody:
         required: true
@@ -215,7 +217,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/TreeholePost'
         '422':
-          description: 命中敏感词，拒绝入库
+          description: 命中 HIGH 敏感词，拒绝入库
+        '503':
+          description: 内容安全服务不可用，拒绝入库；稍后重试
     get:
       tags: [treehole]
       summary: 树洞推荐流（按情绪标签）
