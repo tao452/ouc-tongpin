@@ -1,5 +1,9 @@
 name: CI
 
+permissions:
+  contents: read
+  pull-requests: read
+
 on:
   pull_request:
     branches: [develop, main]
@@ -67,8 +71,8 @@ jobs:
           BODY: ${{ github.event.pull_request.body }}
           TITLE: ${{ github.event.pull_request.title }}
         run: |
-          if ! printf '%s' "$BODY" | grep -qiE '(closes|fixes|resolves) +#[0-9]+'; then
-            echo "::warning::PR 描述里没有 Closes #编号，博客里这条提交将无法对应到 Issue。建议补一行：Closes #12"
+          if ! printf '%s' "$BODY" | grep -qiE '(closes|fixes|resolves|refs) +#[0-9]+'; then
+            echo "::warning::PR 描述缺少 Issue 引用。共享/未完成任务用 Refs #编号，整体验收后再关闭。"
           fi
 
   changes:
@@ -86,12 +90,41 @@ jobs:
           filters: |
             mp:
               - 'apps/miniprogram/**'
+              - '.github/workflows/ci.yml'
             admin:
               - 'apps/admin-web/**'
+              - '.github/workflows/ci.yml'
             api:
               - 'services/api-server/**'
             algo:
               - 'services/algo/**'
+              - 'packages/contract/**'
+              - 'scripts/qa/**'
+              - 'scripts/w1/**'
+              - 'scripts/release/**'
+              - 'docs/qa/s1-test-cases.json'
+              - '.github/workflows/**'
+
+  miniprogram:
+    needs: changes
+    if: needs.changes.outputs.mp == 'true'
+    runs-on: ubuntu-latest
+    env:
+      HUSKY: '0'
+    defaults:
+      run:
+        working-directory: apps/miniprogram
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/miniprogram/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run check:project
 
   admin-web:
     needs: changes
@@ -104,7 +137,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: apps/admin-web/package-lock.json
       - run: npm ci
@@ -140,5 +173,49 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check app tests scripts ../../scripts/qa ../../scripts/w1 ../../scripts/release
       - run: pytest -q
+
+  stack:
+    uses: ./.github/workflows/deploy-test.yml
+
+  w1-poc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r services/algo/requirements.txt
+      - run: python scripts/w1/run_poc.py --output qa-private/w1-poc.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w1-poc-evidence
+          path: qa-private/w1-poc.json
+
+  quality:
+    if: always()
+    needs: [guard, changes, miniprogram, admin-web, api-server, algo, stack, w1-poc]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all selected checks to pass
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          python - <<'PY'
+          import json, os
+          results = json.loads(os.environ['RESULTS'])
+          outputs = results['changes'].get('outputs', {})
+          modules = {'mp': 'miniprogram', 'admin': 'admin-web', 'api': 'api-server', 'algo': 'algo'}
+          if any(outputs.get(key) not in ('true', 'false') for key in modules):
+              raise SystemExit('Missing or invalid change-filter output')
+          required = {'guard', 'changes', 'stack', 'w1-poc'}
+          required.update(job for key, job in modules.items() if outputs[key] == 'true')
+          failed = [name for name, job in results.items()
+                    if job['result'] not in ('success', 'skipped')
+                    or (name in required and job['result'] != 'success')]
+          failed.extend(sorted(required - results.keys()))
+          if failed:
+              raise SystemExit('Failed checks: ' + ', '.join(failed))
+          PY

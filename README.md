@@ -21,10 +21,11 @@ Scrum 三迭代、每迭代 4 周、每迭代末一个可发布版本（v0.1.0 /
 ## 2 环境拉起（10 分钟）
 
 ```bash
-git clone git@github.com:ouc-tongpin/ouc-tongpin.git
+git clone https://github.com/tao452/ouc-tongpin.git
 cd ouc-tongpin
-cp .env.example .env          # 不要提交 .env
-docker compose -f infra/docker-compose.yml up -d   # MySQL 8 + Redis
+cp .env.example .env          # 修改密码并填写 ANON_ID_SECRET；不要提交 .env
+docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait
+# MySQL + Redis + 后端 + 算法 + 管理端；详见 infra/README.md
 ```
 
 按角色装依赖：
@@ -112,3 +113,11 @@ git switch develop && git merge --no-ff release/0.1 && git push
 
 - **每个故事怎么落地**（工具、目录、六步流程、S1 故事到接口映射）：[`docs/故事落地与开发指南.md`](docs/故事落地与开发指南.md)
 - **接口契约 v0.1**：`packages/contract/openapi.yaml`（Apifox 导入此文件做协作界面）
+
+## 10 W1 交付入口
+
+- 技术选型基线：`docs/adr/0001-技术选型与运行基线.md`
+- 情绪词库与强度量表：`packages/contract/emotions.v1.json`、`docs/requirements/情绪词库与强度量表-v1.md`
+- PoC 报告：`docs/qa/W1-PoC命中率报告.md`
+- 部署、发布候选包与回滚：`infra/发布候选包与回滚.md`
+- W1 执行记录：`docs/qa/W1交付与验证记录.md`

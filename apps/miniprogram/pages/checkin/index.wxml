@@ -1,0 +1,68 @@
+<view class="checkin-page">
+
+    <!-- 页面标题 -->
+    <view class="page-title">每日打卡</view>
+
+    <!-- 日期区域 -->
+    <view class="date-section">
+      <view class="date-today">今天</view>
+      <view class="date-number">{{currentDate}}</view>
+      <view class="date-description">
+        {{weekDay}}・坚持记录每一天
+      </view>
+    </view>
+
+    <!-- 今日打卡状态卡片 -->
+    <view class="status-card">
+      <view class="status-text">
+        {{hasCheckedIn ? '今日已打卡' : '今日尚未打卡'}}
+      </view>
+
+      <button
+        class="status-button {{hasCheckedIn ? 'completed' : ''}}"
+        bindtap="goToForm"
+        disabled="{{hasCheckedIn}}"
+      >
+        {{hasCheckedIn ? '今日已完成' : '立即打卡'}}
+      </button>
+    </view>
+
+    <!-- 我的打卡数据 -->
+    <view class="section">
+      <view class="section-title">我的打卡数据</view>
+
+      <view class="data-card">
+        <view class="data-item">
+          <view class="data-number">{{continuousDays}}</view>
+          <view class="data-label">连续打卡</view>
+          <view class="data-unit">天</view>
+        </view>
+
+        <view class="data-item">
+          <view class="data-number">{{totalDays}}</view>
+          <view class="data-label">累计打卡</view>
+          <view class="data-unit">次</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 更多功能 -->
+    <view class="section">
+      <view class="section-title">更多功能</view>
+
+      <view class="more-card">
+        <view class="more-item" bindtap="goToRule">
+          <text>打卡规则说明</text>
+          <text class="more-arrow">›</text>
+        </view>
+
+        <view class="more-divider"></view>
+
+        <view class="more-item" bindtap="goToRecords">
+          <text>打卡记录</text>
+          <text class="more-arrow">›</text>
+        </view>
+      </view>
+    </view>
+
+  </view>

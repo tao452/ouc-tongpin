@@ -1,0 +1,52 @@
+
+<view class="page">
+    <!-- 顶部标题 -->
+    <view class="header">
+      <view class="back" bindtap="goBack">‹</view>
+      <view class="header-title">打卡结果</view>
+    </view>
+
+    <!-- 成功状态 -->
+    <view wx:if="{{success}}" class="result-content">
+      <view class="result-icon success-icon">✓</view>
+      <view class="result-title">打卡成功！</view>
+      <view class="result-desc">今日打卡内容已成功提交</view>
+
+      <view class="info-card">
+        <view class="info-row">
+          <text class="info-label">打卡日期</text>
+          <text>{{checkinDate}}</text>
+        </view>
+        <view class="info-row">
+          <text class="info-label">打卡状态</text>
+          <text>已完成</text>
+        </view>
+      </view>
+
+      <button class="action-button" bindtap="goHome">
+        返回首页
+      </button>
+    </view>
+
+    <!-- 失败状态 -->
+    <view wx:else class="result-content">
+      <view class="result-icon fail-icon">×</view>
+      <view class="result-title">打卡提交失败</view>
+      <view class="result-desc">很抱歉，暂时无法完成打卡</view>
+
+      <view class="info-card">
+        <view class="info-row">
+          <text class="info-label">失败原因</text>
+          <text class="info-value">{{errorReason}}</text>
+        </view>
+        <view class="info-row">
+          <text class="info-label">处理建议</text>
+          <text class="info-value">{{errorSuggestion}}</text>
+        </view>
+      </view>
+
+      <button class="action-button" bindtap="retry">
+        重新提交
+      </button>
+    </view>
+  </view>

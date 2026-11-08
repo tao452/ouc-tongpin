@@ -1,0 +1,82 @@
+<view class="checkin-page">
+
+    <!-- 日期 -->
+    <view class="date-text">
+      {{currentDate}}
+    </view>
+
+    <!-- 页面介绍 -->
+    <view class="page-header">
+      <view class="page-title">记录此刻的心情</view>
+      <view class="page-subtitle">认真感受自己，不必评判情绪</view>
+    </view>
+
+    <!-- 情绪选择 -->
+    <view class="section">
+      <view class="section-title">今天的心情</view>
+
+      <view class="emotion-list">
+        <view
+          wx:for="{{words}}"
+          wx:key="code"
+          class="emotion-item {{selectedEmotion === item.code ? 'selected' : ''}}"
+          data-code="{{item.code}}"
+          bindtap="selectEmotion"
+        >
+          <text>{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 情绪强度 -->
+    <view class="section">
+      <view class="section-title">情绪强度</view>
+
+      <view class="intensity-value">
+        {{intensity}} / 5
+      </view>
+
+      <slider
+        min="{{intensityMin}}"
+        max="{{intensityMax}}"
+        value="{{intensity}}"
+        activeColor="#5B8DEF"
+        backgroundColor="#EAECF0"
+        block-size="24"
+        bindchange="onIntensityChange"
+      />
+
+      <view class="intensity-hint">
+        <text>较弱</text>
+        <text>较强</text>
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="section">
+      <view class="section-title">写下此刻的感受</view>
+
+      <textarea
+        class="note-input"
+        placeholder="有什么想记录的吗？（选填）"
+        value="{{note}}"
+        maxlength="100"
+        bindinput="onNoteInput"
+      />
+
+      <view class="note-count">
+        {{note.length}}/100
+      </view>
+    </view>
+
+    <!-- 提交按钮 -->
+    <button
+      class="submit-button {{selectedEmotion ? 'enabled' : 'disabled'}}"
+      bindtap="submitCheckin"
+      loading="{{submitting}}"
+      disabled="{{submitting}}"
+    >
+      {{submitting ? '提交中...' : '提交打卡'}}
+    </button>
+
+  </view>

@@ -1,0 +1,127 @@
+
+.checkin-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 32rpx;
+  background: #f7f8fa;
+}
+
+/* 日期 */
+.date-text {
+  margin-bottom: 24rpx;
+  color: #98a2b3;
+  font-size: 26rpx;
+}
+
+/* 页面介绍 */
+.page-header {
+  margin-bottom: 40rpx;
+}
+
+.page-title {
+  color: #222831;
+  font-size: 44rpx;
+  font-weight: 600;
+}
+
+.page-subtitle {
+  margin-top: 12rpx;
+  color: #667085;
+  font-size: 26rpx;
+}
+
+/* 内容卡片 */
+.section {
+  margin-bottom: 32rpx;
+  padding: 32rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+}
+
+.section-title {
+  margin-bottom: 28rpx;
+  color: #222831;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+/* 情绪选择 */
+.emotion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.emotion-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140rpx;
+  padding: 20rpx 28rpx;
+  box-sizing: border-box;
+  color: #667085;
+  background: #f7f8fa;
+  border: 2rpx solid #eaecf0;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+}
+
+.emotion-item.selected {
+  color: #222831;
+  background: #e4e7ec;
+  border-color: #667085;
+  font-weight: 600;
+}
+
+/* 情绪强度 */
+.intensity-value {
+  margin-bottom: 16rpx;
+  color: #222831;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.intensity-hint {
+  display: flex;
+  justify-content: space-between;
+  color: #98a2b3;
+  font-size: 24rpx;
+}
+
+/* 备注输入框 */
+.note-input {
+  width: 100%;
+  min-height: 180rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #222831;
+  background: #f7f8fa;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+}
+
+.note-count {
+  margin-top: 12rpx;
+  color: #98a2b3;
+  font-size: 24rpx;
+  text-align: right;
+}
+
+/* 提交按钮 */
+/* 提交按钮默认样式 */
+.submit-button {
+  margin-top: 48rpx;
+  color: #ffffff;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+}
+
+/* 未选择情绪：浅灰色 */
+.submit-button.disabled {
+  background: #bfc3c9;
+}
+
+/* 已选择情绪：深灰色 */
+.submit-button.enabled {
+  background: #333333;
+}
