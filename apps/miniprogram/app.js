@@ -1,8 +1,7 @@
 const { request } = require('./utils/request.js')
 const { setToken } = require('./utils/storage.js')
 
-// 演示桩：游客模式（project.config.json 用 touristappid）或后端未接微信 code2session 时，
-// wx.login 可能拿不到 code。US-33 正式实现后删除此常量与降级分支。
+// 演示桩：游客模式或后端暂未接入微信 code2session 时使用
 const DEMO_CODE = 'demo-wx-code'
 
 App({
@@ -17,18 +16,28 @@ App({
       console.error('[未处理的 Promise 异常]', res.reason)
     })
 
-    this.login()
+    // 保存登录 Promise，供页面等待登录结果
+    this.loginPromise = this.login()
   },
 
   login() {
-    wx.login({
-      success: (res) => this.signIn(res.code || DEMO_CODE),
-      fail: () => this.signIn(DEMO_CODE)
+    return new Promise((resolve) => {
+      wx.login({
+        success: (res) => {
+          const code = res.code || DEMO_CODE
+          this.signIn(code).then(resolve)
+        },
+
+        fail: (err) => {
+          console.error('wx.login 调用失败', err)
+          this.signIn(DEMO_CODE).then(resolve)
+        }
+      })
     })
   },
 
   signIn(code) {
-    request({
+    return request({
       url: '/api/auth/login',
       method: 'POST',
       data: { code },
@@ -46,15 +55,25 @@ App({
           needStudentVerify: data.needStudentVerify
         }
 
+        this.globalData.loginError = null
+
         console.log('登录接口调用成功')
+        return data
       })
       .catch((err) => {
         console.error('登录请求失败', err)
+        this.globalData.loginError = err
+        return null
+      })
+      .finally(() => {
+        this.globalData.loginReady = true
       })
   },
 
   globalData: {
     token: '',
-    userInfo: null
+    userInfo: null,
+    loginReady: false,
+    loginError: null
   }
 })

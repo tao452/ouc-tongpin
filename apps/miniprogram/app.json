@@ -1,7 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/checkin/checkin",
+    "pages/checkin/index",
+    "pages/treehole/index",
+    "pages/plaza/index",
+    "pages/mine/index",
+    "pages/student-verify/index",
+    "pages/checkin/form",
+    "pages/checkin/rule",
+    "pages/checkin/records",
+    "pages/checkin/result",
     "pages/checkin-calendar/checkin-calendar",
     "pages/profile/profile",
     "pages/logs/logs"
@@ -10,6 +18,34 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "OUC 同频",
     "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#426B7A",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/checkin/index",
+        "text": "打卡"
+      },
+      {
+        "pagePath": "pages/treehole/index",
+        "text": "树洞"
+      },
+      {
+        "pagePath": "pages/plaza/index",
+        "text": "广场"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的"
+      }
+    ]
   },
   "style": "v2",
   "componentFramework": "glass-easel",

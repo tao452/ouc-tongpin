@@ -1,0 +1,141 @@
+
+/* 页面整体 */
+.page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 36rpx 60rpx;
+  background: #f7f8fa;
+}
+
+/* 顶部导航 */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64rpx;
+  height: 64rpx;
+  font-size: 56rpx;
+  line-height: 56rpx;
+  color: #333333;
+}
+
+.header-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* 结果内容区域 */
+.result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 100rpx;
+  padding: 48rpx 36rpx 56rpx;
+  background: #ffffff;
+  border-radius: 28rpx;
+}
+
+/* 状态图标 */
+.result-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+  font-size: 88rpx;
+  font-weight: 500;
+}
+
+.success-icon {
+  color: #ffffff;
+  background: #79b99a;
+}
+
+.fail-icon {
+  color: #ffffff;
+  background: #e69a91;
+}
+
+/* 标题和说明 */
+.result-title {
+  margin-top: 36rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+}
+
+.result-desc {
+  margin-top: 18rpx;
+  font-size: 27rpx;
+  line-height: 1.6;
+  color: #999999;
+  text-align: center;
+}
+
+/* 信息卡片 */
+.info-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 52rpx;
+  padding: 12rpx 28rpx;
+  background: #f7f8fa;
+  border-radius: 20rpx;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 28rpx 0;
+  font-size: 27rpx;
+  line-height: 1.6;
+  color: #444444;
+}
+
+.info-row + .info-row {
+  border-top: 1rpx solid #eeeeee;
+}
+
+.info-label {
+  flex-shrink: 0;
+  margin-right: 24rpx;
+  color: #888888;
+}
+
+.info-value {
+  flex: 1;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* 底部操作按钮 */
+.action-button {
+  width: 100%;
+  height: 88rpx;
+  margin-top: 52rpx;
+  padding: 0;
+  border: none;
+  border-radius: 44rpx;
+  background: #789d91;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 88rpx;
+}
+
+.action-button::after {
+  border: none;
+}

@@ -1,0 +1,14 @@
+<view class="page">
+    <view class="header">
+      <view class="title">{{title}}</view>
+      <view class="description">{{description}}</view>
+    </view>
+
+    <view class="content">
+      <view class="placeholder-icon">🌱</view>
+      <view class="placeholder-title">搭子广场即将开放</view>
+      <view class="placeholder-desc">
+        这里将展示校园需求与搭子信息，帮助你找到志同道合的伙伴。
+      </view>
+    </view>
+  </view>

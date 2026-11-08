@@ -1,40 +1,43 @@
-const { getToken } = require('./storage.js');
-const config = require('../config.js');
+const { getToken } = require('./storage.js')
+const config = require('../config.js')
 
-let loadingCount = 0;
+let loadingCount = 0
 
 function showLoading() {
-  loadingCount++;
+  loadingCount++
+
   if (loadingCount === 1) {
     wx.showLoading({
       title: '加载中...',
-      mask: true,
-    });
+      mask: true
+    })
   }
 }
 
 function hideLoading() {
-  loadingCount = Math.max(0, loadingCount - 1);
+  loadingCount = Math.max(0, loadingCount - 1)
+
   if (loadingCount === 0) {
-    wx.hideLoading();
+    wx.hideLoading()
   }
 }
 
 function request(options = {}) {
-  const method = (options.method || 'GET').toUpperCase();
-  const showLoadingEnabled = options.showLoading !== false;
+  const method = (options.method || 'GET').toUpperCase()
+  const showLoadingEnabled = options.showLoading !== false
 
   // GET 请求默认重试一次；POST 等请求暂不自动重试，避免重复提交
-  const retryCount = options.retry !== undefined ? options.retry : method === 'GET' ? 1 : 0;
+  const retryCount =
+    options.retry !== undefined ? options.retry : method === 'GET' ? 1 : 0
 
   if (showLoadingEnabled) {
-    showLoading();
+    showLoading()
   }
 
-  const token = getToken();
+  const token = getToken()
 
   return new Promise((resolve, reject) => {
-    let attempts = 0;
+    let attempts = 0
 
     const sendRequest = () => {
       wx.request({
@@ -45,58 +48,58 @@ function request(options = {}) {
         header: {
           'content-type': 'application/json',
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
-          ...(options.header || {}),
+          ...(options.header || {})
         },
 
         success(res) {
           if (res.statusCode >= 200 && res.statusCode < 300) {
-            resolve(res.data);
+            resolve(res.data)
           } else {
             reject({
               statusCode: res.statusCode,
               data: res.data,
-              message: `请求失败（HTTP ${res.statusCode}）`,
-            });
+              message: `请求失败（HTTP ${res.statusCode}）`
+            })
           }
         },
 
         fail(err) {
           if (attempts < retryCount) {
-            attempts++;
-            sendRequest();
+            attempts++
+            sendRequest()
           } else {
             reject({
               message: '网络连接失败，请检查网络后重试',
-              error: err,
-            });
+              error: err
+            })
           }
         },
 
         complete() {
-          // 每次请求完成时由最终结果统一处理 Loading
-        },
-      });
-    };
+          // Loading 在最终结果统一处理
+        }
+      })
+    }
 
-    sendRequest();
+    sendRequest()
   })
     .catch((err) => {
-      console.error('[请求错误]', err);
+      console.error('[请求错误]', err)
 
       wx.showToast({
         title: err.message || '请求失败，请稍后重试',
-        icon: 'none',
-      });
+        icon: 'none'
+      })
 
-      throw err;
+      throw err
     })
     .finally(() => {
       if (showLoadingEnabled) {
-        hideLoading();
+        hideLoading()
       }
-    });
+    })
 }
 
 module.exports = {
-  request,
-};
+  request
+}
