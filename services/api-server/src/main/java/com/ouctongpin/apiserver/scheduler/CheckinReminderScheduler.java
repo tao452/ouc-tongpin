@@ -1,6 +1,6 @@
 package com.ouctongpin.apiserver.scheduler;
 
-import com.ouctongpin.apiserver.service.CheckinService;
+import com.ouctongpin.apiserver.checkin.service.CheckinService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

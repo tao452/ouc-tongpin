@@ -18,3 +18,7 @@ privacy:
 
 moderation:
   base-url: ${MODERATION_BASE_URL:http://localhost:8000}
+
+jwt:
+  secret: ouctongpin-secret-key-1234567890abcdefghijklmn
+  expiration: 86400000
