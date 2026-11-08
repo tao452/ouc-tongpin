@@ -74,7 +74,9 @@ Page({
   },
 
   goCheckin() {
-    wx.navigateTo({ url: '/pages/checkin/checkin' })
+    // 打卡首页是 tabBar 页，必须用 switchTab；
+    // PR#59 重构后 /pages/checkin/checkin 已删除，此处指向 /pages/checkin/index。
+    wx.switchTab({ url: '/pages/checkin/index' })
   },
 
   prevMonth() { this.step(-1) },
