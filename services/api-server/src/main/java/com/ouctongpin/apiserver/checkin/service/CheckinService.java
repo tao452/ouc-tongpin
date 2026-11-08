@@ -51,12 +51,12 @@ public class CheckinService {
 
     // 契约：GET /api/emotions/checkins?from&to -> { items, streakDays, total }
     public List<Checkin> list(Long userId, String from, String to) {
-        LocalDate start = (from != null) ? LocalDate.parse(from) : LocalDate.MIN;
-        LocalDate end = (to != null) ? LocalDate.parse(to) : LocalDate.MAX;
+        LocalDate start = (from != null) ? LocalDate.parse(from) : null;
+        LocalDate end = (to != null) ? LocalDate.parse(to) : null;
         List<Checkin> items = checkinMapper.selectList(new LambdaQueryWrapper<Checkin>()
                 .eq(Checkin::getUserId, userId)
-                .ge(Checkin::getCheckinDate, start)
-                .le(Checkin::getCheckinDate, end)
+                .ge(start != null, Checkin::getCheckinDate, start)
+                .le(end != null, Checkin::getCheckinDate, end)
                 .orderByAsc(Checkin::getCheckinDate));
         items.forEach(c -> c.setStreakDays(calcStreak(userId, c.getCheckinDate())));
         return items;
