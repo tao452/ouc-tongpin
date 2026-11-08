@@ -216,6 +216,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TreeholePost'
+        '400':
+          description: 正文为空白或超过 500 字符，拒绝入库
         '422':
           description: 命中 HIGH 敏感词，拒绝入库
         '503':

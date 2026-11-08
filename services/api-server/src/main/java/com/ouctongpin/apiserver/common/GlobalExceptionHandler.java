@@ -23,9 +23,9 @@ public class GlobalExceptionHandler {
 
     // 拦截 @Valid 校验失败抛出的异常
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public Result<?> handleValidException(MethodArgumentNotValidException e) {
+    public ResponseEntity<Result<?>> handleValidException(MethodArgumentNotValidException e) {
         String msg = e.getBindingResult().getFieldError().getDefaultMessage();
-        return Result.fail(1001, msg);
+        return ResponseEntity.badRequest().body(Result.fail(1001, msg));
     }
 
     // 拦截系统内部其他异常

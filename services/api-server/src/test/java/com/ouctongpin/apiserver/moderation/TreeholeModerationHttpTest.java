@@ -20,6 +20,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 class TreeholeModerationHttpTest {
     @ParameterizedTest
+    @ValueSource(ints = {0, 501})
+    void blankAndOversizedPostsReturn400WithoutCallingBusinessService(int length) throws Exception {
+        TreeholeService service = mock(TreeholeService.class);
+        TreeholeController controller = new TreeholeController();
+        ReflectionTestUtils.setField(controller, "treeholeService", service);
+        var mvc = MockMvcBuilders.standaloneSetup(controller)
+                .setControllerAdvice(new GlobalExceptionHandler()).build();
+        String text = length == 0 ? " " : "x".repeat(length);
+        mvc.perform(post("/api/treehole/posts").contentType(MediaType.APPLICATION_JSON)
+                .content("{\"content\":\"" + text + "\",\"emotionTag\":\"CALM\"}"))
+                .andExpect(status().isBadRequest());
+        verifyNoInteractions(service);
+    }
+
+    @ParameterizedTest
     @ValueSource(ints = {422, 503})
     void advicePreservesStatusWithoutEchoingContentOrDependencyDetails(int status) throws Exception {
         TreeholeService service = mock(TreeholeService.class);
