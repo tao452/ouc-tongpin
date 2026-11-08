@@ -35,7 +35,7 @@ Page({
     const mm = String(month).padStart(2, '0')
     const from = `${year}-${mm}-01`
     const to = `${year}-${mm}-31`
-    request(`/api/emotions/checkins?from=${from}&to=${to}`, 'GET')
+    request({ url: `/api/emotions/checkins?from=${from}&to=${to}`, method: 'GET' })
       .then((res) => {
         const map = {}
         ;(res.items || []).forEach((it) => { map[it.checkinDate] = it.emotion })
@@ -47,7 +47,9 @@ Page({
         this.buildGrid()
       })
       .catch(() => {
-        wx.showToast({ title: '加载失败，检查 Mock 地址', icon: 'none' })
+        // 网络错误已由 utils/request.js 统一提示；这里退回空日历，避免页面停留在旧数据。
+        this.setData({ checkedDates: {}, streakDays: 0, total: 0 })
+        this.buildGrid()
       })
   },
 
@@ -69,6 +71,12 @@ Page({
       })
     }
     this.setData({ cells })
+  },
+
+  goCheckin() {
+    // 打卡首页是 tabBar 页，必须用 switchTab；
+    // PR#59 重构后 /pages/checkin/checkin 已删除，此处指向 /pages/checkin/index。
+    wx.switchTab({ url: '/pages/checkin/index' })
   },
 
   prevMonth() { this.step(-1) },

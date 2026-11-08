@@ -1,1 +1,5 @@
-{ "navigationBarTitleText": "OUC同频" }
+{
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}

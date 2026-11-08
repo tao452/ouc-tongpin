@@ -2,22 +2,23 @@ server:
   port: 8080
 
 spring:
-  application:
-    name: ouc-tongpin-api-server
-  # TODO(M5): 接入 JPA/MySQL/Redis 时取消注释并填写真实配置
-  # datasource:
-  #   url: jdbc:mysql://localhost:3306/ouc_tongpin?useSSL=false&serverTimezone=Asia/Shanghai
-  #   username: root
-  #   password: root
-  #   # 若本机 3306 被占用，改为 3307（见《组长环境与工具清单》）
-  # jpa:
-  #   hibernate:
-  #     ddl-auto: update
-  # data:
-  #   redis:
-  #     host: localhost
-  #     port: 6379
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3307/ouc_tongpin?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai}
+    username: ${MYSQL_USER:tongpin}
+    password: ${MYSQL_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
 
-ouc:
-  jwt:
-    secret: change-me-in-prod
+privacy:
+  anonymous-id-secret: ${ANON_ID_SECRET:}
+
+moderation:
+  base-url: ${MODERATION_BASE_URL:http://localhost:8000}
+
+jwt:
+  secret: ouctongpin-secret-key-1234567890abcdefghijklmn
+  expiration: 86400000

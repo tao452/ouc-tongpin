@@ -59,7 +59,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  token: { type: string, description: JWT，后续请求带 Authorization: Bearer }
+                  token: { type: string, description: "JWT，后续请求带 Authorization: Bearer" }
                   userId: { type: string, description: 内部用户 ID（非 openid 明文） }
                   isNewUser: { type: boolean }
                   needStudentVerify: { type: boolean, description: 未完成学号认证时为 true }
@@ -192,7 +192,9 @@ paths:
       tags: [treehole]
       summary: 发布树洞（可切匿名/实名）
       description: >
-        发布前必须过敏感词（调用 /api/moderation/check）。
+        发布前必须调用 /api/moderation/check：HIGH 拒绝入库，MEDIUM 提示并放行，LOW 放行。
+        审核不可达、超时或响应无效时返回 503，拒绝入库，调用方可稍后重试。
+        当前三级动作沿用开发基线，正式词表与业务口径待 M1 审核。
         匿名态下不返回、不存储任何可反推身份的字段（US-25）。
       requestBody:
         required: true
@@ -214,8 +216,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TreeholePost'
+        '400':
+          description: 正文为空白或超过 500 字符，拒绝入库
         '422':
-          description: 命中敏感词，拒绝入库
+          description: 命中 HIGH 敏感词，拒绝入库
+        '503':
+          description: 内容安全服务不可用，拒绝入库；稍后重试
     get:
       tags: [treehole]
       summary: 树洞推荐流（按情绪标签）
@@ -293,8 +299,9 @@ paths:
             schema:
               type: object
               required: [text]
+              additionalProperties: false
               properties:
-                text: { type: string }
+                text: { type: string, minLength: 1, maxLength: 2000, description: 不允许纯空白 }
       responses:
         '200':
           description: 检测结果
@@ -312,6 +319,12 @@ paths:
                       properties:
                         word: { type: string }
                         level: { type: string, enum: [LOW, MEDIUM, HIGH] }
+
+      # 16 KiB 请求限制由网关执行；服务限制 text 字符数。
+        '422':
+          description: 参数无效（不回显输入）
+        '413':
+          description: 请求体超过网关 16 KiB 上限
 
   # ---------------- 用户资料 US-35 ----------------
   /api/user/profile:

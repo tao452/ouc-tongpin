@@ -1,5 +1,102 @@
-<view class="home">
-  <view class="title">OUC同频</view>
-  <view class="sub">校园搭子匹配与情绪安全社交平台</view>
-  <button type="primary" bindtap="goCalendar">进入打卡日历</button>
+<view class="page">
+  <!-- 顶部品牌区域 -->
+  <view class="header">
+    <view class="brand">
+      <text class="brand-name">OUC 同频</text>
+      <text class="brand-subtitle">让每一次相遇，都恰好同频</text>
+    </view>
+    <view class="status">
+      <view
+        class="status-dot"
+        wx:if="{{loginSuccess}}"
+      ></view>
+      <text class="status-text">
+        {{loginReady ? (loginSuccess ? '已登录' : '登录异常') : '登录中'}}
+      </text>
+    </view>
+  </view>
+
+  <!-- 欢迎区域 -->
+  <view class="welcome">
+    <text class="welcome-title">今天，也要好好照顾自己。</text>
+    <text class="welcome-desc">记录心情，表达自己，遇见同频的人。</text>
+  </view>
+
+  <!-- 学号认证提醒 -->
+  <view
+    class="verify-card"
+    wx:if="{{loginSuccess && needStudentVerify}}"
+    bindtap="goStudentVerify"
+  >
+    <view class="verify-content">
+      <text class="verify-title">完成校内身份认证</text>
+      <text class="verify-desc">认证后即可体验更多校园社交功能</text>
+    </view>
+    <text class="verify-action">去认证 ›</text>
+  </view>
+
+  <!-- 登录异常提示 -->
+  <view
+    class="notice-card"
+    wx:if="{{loginReady && !loginSuccess}}"
+  >
+    <text class="notice-text">暂时无法获取登录状态，请稍后重试。</text>
+  </view>
+
+  <!-- 核心功能 -->
+  <view class="section">
+    <view class="section-heading">
+      <text class="section-title">发现同频</text>
+      <text class="section-desc">从了解自己开始</text>
+    </view>
+
+    <!-- 情绪打卡 -->
+    <view class="feature-card checkin-card" bindtap="goCheckin">
+      <view class="feature-top">
+        <text class="feature-tag">DAILY MOOD</text>
+        <text class="feature-arrow">↗</text>
+      </view>
+      <text class="feature-title">情绪打卡</text>
+      <text class="feature-desc">记录此刻的心情，关注自己的情绪变化。</text>
+      <text class="feature-link">记录今天的心情 →</text>
+    </view>
+
+    <!-- 其他功能入口 -->
+    <view class="feature-grid">
+      <view class="small-card">
+        <text class="small-card-tag">TREEHOLE</text>
+        <text class="small-card-title">匿名树洞</text>
+        <text class="small-card-desc">说出心里话</text>
+        <text class="coming-soon">即将开放</text>
+      </view>
+
+      <view class="small-card">
+        <text class="small-card-tag">PLAZA</text>
+        <text class="small-card-title">搭子广场</text>
+        <text class="small-card-desc">寻找校园搭子</text>
+        <text class="coming-soon">即将开放</text>
+      </view>
+
+      <!-- 打卡日历 -->
+      <view class="small-card" bindtap="goCalendar">
+        <text class="small-card-tag">MOOD CALENDAR</text>
+        <text class="small-card-title">打卡日历</text>
+        <text class="small-card-desc">回顾自己的情绪记录</text>
+        <text class="feature-link">查看日历 →</text>
+      </view>
+
+      <!-- 个人资料 -->
+      <view class="small-card" bindtap="goProfile">
+        <text class="small-card-tag">MY PROFILE</text>
+        <text class="small-card-title">个人资料</text>
+        <text class="small-card-desc">查看和维护个人信息</text>
+        <text class="feature-link">进入个人中心 →</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部说明 -->
+  <view class="footer">
+    <text>OUC 同频 · 校园搭子与情绪安全社交平台</text>
+  </view>
 </view>

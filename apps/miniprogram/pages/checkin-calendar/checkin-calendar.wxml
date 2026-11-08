@@ -30,5 +30,6 @@
       <view class="remind-time">每日 {{remindTime}}</view>
     </picker>
   </view>
+  <button style="margin: 24rpx 0;" type="primary" bindtap="goCheckin">去打卡</button>
   <view class="hint">提醒时间由后端定时任务推送（US-02 后端部分，待 M5 骨架就绪后接入）</view>
 </view>
