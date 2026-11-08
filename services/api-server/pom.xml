@@ -18,8 +18,7 @@
   <description>OUC同频 后端服务（US-02 种子骨架，待 M5 补全）</description>
 
   <properties>
-    <!-- 改成了你本地的 JDK 21 -->
-    <java.version>21</java.version>
+    <java.version>17</java.version>
   </properties>
 
   <dependencies>

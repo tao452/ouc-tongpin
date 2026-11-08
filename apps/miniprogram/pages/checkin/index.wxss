@@ -1,0 +1,147 @@
+.checkin-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 32rpx;
+    background-color: #ffffff;
+  }
+
+  .page-title {
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: 700;
+    color: #222831;
+    margin-bottom: 52rpx;
+  }
+
+  .date-section {
+    margin-bottom: 40rpx;
+  }
+
+  .date-today {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #222831;
+  }
+
+  .date-number {
+    margin-top: 12rpx;
+    font-size: 64rpx;
+    font-weight: 700;
+    color: #222831;
+  }
+
+  .date-description {
+    margin-top: 12rpx;
+    font-size: 25rpx;
+    color: #98a2b3;
+  }
+
+  .status-card,
+  .data-card,
+  .more-card {
+    border: 1rpx solid #d9d9d9;
+    border-radius: 24rpx;
+    background-color: #ffffff;
+  }
+
+  .status-card {
+    min-height: 260rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48rpx;
+  }
+
+  .status-text {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #222831;
+    margin-bottom: 30rpx;
+  }
+
+  .status-button {
+    width: 50%;
+    height: 76rpx;
+    line-height: 76rpx;
+    padding: 0;
+    border-radius: 40rpx;
+    background-color: #f0f0f0;
+    color: #222831;
+    font-size: 28rpx;
+    font-weight: 500;
+  }
+
+  .status-button::after {
+    border: none;
+  }
+
+  .status-button.completed {
+    background-color: #333333;
+    color: #ffffff;
+    opacity: 0.55;
+  }
+
+  .section {
+    margin-bottom: 44rpx;
+  }
+
+  .section-title {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #222831;
+    margin-bottom: 24rpx;
+  }
+
+  .data-card {
+    display: flex;
+    padding: 36rpx 0;
+  }
+
+  .data-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .data-number {
+    font-size: 56rpx;
+    font-weight: 700;
+    color: #222831;
+  }
+
+  .data-label {
+    margin-top: 12rpx;
+    font-size: 27rpx;
+    color: #667085;
+  }
+
+  .data-unit {
+    margin-top: 6rpx;
+    font-size: 23rpx;
+    color: #98a2b3;
+  }
+
+  .more-card {
+    padding: 0 28rpx;
+  }
+
+  .more-item {
+    height: 104rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 29rpx;
+    color: #222831;
+  }
+
+  .more-arrow {
+    font-size: 42rpx;
+    color: #98a2b3;
+  }
+
+  .more-divider {
+    height: 1rpx;
+    background-color: #eaecf0;
+  }

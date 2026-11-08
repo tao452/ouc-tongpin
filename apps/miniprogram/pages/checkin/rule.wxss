@@ -1,0 +1,35 @@
+.rule-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 32rpx;
+    background-color: #ffffff;
+  }
+
+  .rule-card {
+    border: 1rpx solid #d9d9d9;
+    border-radius: 24rpx;
+    padding: 0 28rpx;
+    background-color: #ffffff;
+  }
+
+  .rule-item {
+    padding: 36rpx 0;
+    border-bottom: 1rpx solid #eaecf0;
+  }
+
+  .rule-item:last-child {
+    border-bottom: none;
+  }
+
+  .rule-title {
+    font-size: 30rpx;
+    font-weight: 700;
+    color: #222831;
+  }
+
+  .rule-description {
+    margin-top: 16rpx;
+    font-size: 26rpx;
+    line-height: 1.6;
+    color: #667085;
+  }
