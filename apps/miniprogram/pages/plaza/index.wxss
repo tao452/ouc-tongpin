@@ -1,0 +1,51 @@
+.page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 40rpx 32rpx;
+    background-color: #f7f8fa;
+  }
+
+  .header {
+    margin-bottom: 48rpx;
+  }
+
+  .title {
+    font-size: 40rpx;
+    font-weight: 600;
+    color: #222222;
+  }
+
+  .description {
+    margin-top: 16rpx;
+    font-size: 26rpx;
+    color: #888888;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100rpx 48rpx;
+    background-color: #ffffff;
+    border-radius: 24rpx;
+  }
+
+  .placeholder-icon {
+    font-size: 72rpx;
+    margin-bottom: 32rpx;
+  }
+
+  .placeholder-title {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #333333;
+  }
+
+  .placeholder-desc {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    line-height: 1.8;
+    color: #999999;
+    text-align: center;
+  }

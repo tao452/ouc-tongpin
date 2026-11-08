@@ -1,0 +1,52 @@
+<view class="records-page">
+
+    <!-- 数据概览 -->
+    <view class="data-card">
+      <view class="data-item">
+        <view class="data-number">{{totalDays}}</view>
+        <view class="data-label">累计打卡</view>
+      </view>
+
+      <view class="data-item">
+        <view class="data-number">{{continuousDays}}</view>
+        <view class="data-label">连续打卡</view>
+      </view>
+    </view>
+
+    <!-- 历史记录 -->
+    <view class="section-title">历史打卡记录</view>
+
+    <view wx:if="{{loading && records.length === 0}}" class="state-text">
+      正在加载记录...
+    </view>
+
+    <view wx:elif="{{error && records.length === 0}}" class="state-container">
+      <view class="state-text">记录加载失败</view>
+      <button class="retry-button" bindtap="retryLoad">
+        重新加载
+      </button>
+    </view>
+
+    <view wx:elif="{{records.length === 0}}" class="empty-container">
+      <view class="empty-text">还没有打卡记录</view>
+      <view class="empty-hint">完成每日打卡后，记录会显示在这里</view>
+    </view>
+
+    <view wx:else class="record-list">
+      <view
+        class="record-card"
+        wx:for="{{records}}"
+        wx:key="id"
+      >
+        <view class="record-header">
+          <view class="record-date">{{item.date}}</view>
+          <view class="record-status">{{item.status}}</view>
+        </view>
+
+        <view class="record-summary">
+          {{item.summary}}
+        </view>
+      </view>
+    </view>
+
+  </view>

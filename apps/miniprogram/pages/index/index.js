@@ -1,101 +1,69 @@
-// index.js
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
-const { request } = require('../../utils/request.js')
-const { setToken, getToken } = require('../../utils/storage.js')
+const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {
-      avatarUrl: defaultAvatarUrl,
-      nickName: '',
-    },
-    hasUserInfo: false,
-    canIUseGetUserProfile: wx.canIUse('getUserProfile'),
-    canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+    loginReady: false,
+    loginSuccess: false,
+    needStudentVerify: false,
+    userId: ''
   },
 
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onShow() {
+    this.syncLoginState()
   },
 
-  onChooseAvatar(e) {
-    const { avatarUrl } = e.detail
-    const { nickName } = this.data.userInfo
+  // 同步全局登录状态
+  syncLoginState() {
+    const globalData = app.globalData
+
+    if (!globalData.loginReady && app.loginPromise) {
+      app.loginPromise.then(() => {
+        this.updateLoginState()
+      })
+      return
+    }
+
+    this.updateLoginState()
+  },
+
+  // 更新页面上的登录状态
+  updateLoginState() {
+    const globalData = app.globalData
+    const userInfo = globalData.userInfo || {}
+
     this.setData({
-      "userInfo.avatarUrl": avatarUrl,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
+      loginReady: globalData.loginReady,
+      loginSuccess: !!globalData.token,
+      needStudentVerify: !!userInfo.needStudentVerify,
+      userId: userInfo.userId || ''
     })
   },
 
-  onInputChange(e) {
-    const nickName = e.detail.value
-    const { avatarUrl } = this.data.userInfo
-    this.setData({
-      "userInfo.nickName": nickName,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
-    })
-  },
-
-  mockLogin() {
-    wx.login({
-      success: (res) => {
-        // 游客模式拿不到 code 时用演示凭证，与 app.js 的降级保持一致。
-        const code = res.code || 'demo-wx-code'
-
-        request({
-          url: '/api/auth/login',
-          method: 'POST',
-          data: { code }
-        })
-          .then((data) => {
-            if (data.token) {
-              setToken(data.token)
-              console.log('模拟登录成功，Token 已保存')
-            }
-
-            console.log('本地读取的 Token：', getToken() ? '已读取' : '未读取')
-          })
-          .catch((err) => {
-            console.error('模拟登录失败：', err)
-          })
-      },
-
-      fail: (err) => {
-        console.error('wx.login 调用失败：', err)
-      }
-    })
-  },
-
+  // 跳转到打卡 TabBar 页面
   goCheckin() {
-    wx.navigateTo({
-      url: '../checkin/checkin'
+    wx.switchTab({
+      url: '/pages/checkin/index'
     })
   },
 
+  // 跳转到学号认证页面
+  goStudentVerify() {
+    wx.navigateTo({
+      url: '/pages/student-verify/index'
+    })
+  },
+
+  // 跳转到打卡日历页面
   goCalendar() {
     wx.navigateTo({
-      url: '../checkin-calendar/checkin-calendar'
+      url: '/pages/checkin-calendar/checkin-calendar'
     })
   },
 
+  // 跳转到个人资料页面
   goProfile() {
     wx.navigateTo({
-      url: '../profile/profile'
+      url: '/pages/profile/profile'
     })
-  },
-
-  getUserProfile() {
-    wx.getUserProfile({
-      desc: '展示用户信息',
-      success: (res) => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    })
-  },
+  }
 })
