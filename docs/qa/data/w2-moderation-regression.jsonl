@@ -198,3 +198,103 @@
 {"id":"W2-B-198","text":"考试结束后准备给家里寄明信片。","expected_passed":true}
 {"id":"W2-B-199","text":"这次没有成功，下次继续尝试。","expected_passed":true}
 {"id":"W2-B-200","text":"今天想对自己温柔一点。","expected_passed":true}
+{"id":"W2-H-001","text":"你这人傻逼！","expected_passed":false}
+{"id":"W2-H-002","text":"给你的评价：傻逼。","expected_passed":false}
+{"id":"W2-H-003","text":"傻逼，别再来找我。","expected_passed":false}
+{"id":"W2-H-004","text":"你就是 傻逼 啊。","expected_passed":false}
+{"id":"W2-H-005","text":"你这人傻 逼！","expected_passed":false}
+{"id":"W2-H-006","text":"给你的评价：傻 逼。","expected_passed":false}
+{"id":"W2-H-007","text":"傻 逼，别再来找我。","expected_passed":false}
+{"id":"W2-H-008","text":"你就是 傻 逼 啊。","expected_passed":false}
+{"id":"W2-H-009","text":"你这人傻*逼！","expected_passed":false}
+{"id":"W2-H-010","text":"给你的评价：傻*逼。","expected_passed":false}
+{"id":"W2-H-011","text":"傻*逼，别再来找我。","expected_passed":false}
+{"id":"W2-H-012","text":"你就是 傻*逼 啊。","expected_passed":false}
+{"id":"W2-H-013","text":"你这人傻​逼！","expected_passed":false}
+{"id":"W2-H-014","text":"给你的评价：傻​逼。","expected_passed":false}
+{"id":"W2-H-015","text":"傻​逼，别再来找我。","expected_passed":false}
+{"id":"W2-H-016","text":"你就是 傻​逼 啊。","expected_passed":false}
+{"id":"W2-H-017","text":"你这人傻必！","expected_passed":false}
+{"id":"W2-H-018","text":"给你的评价：傻必。","expected_passed":false}
+{"id":"W2-H-019","text":"傻必，别再来找我。","expected_passed":false}
+{"id":"W2-H-020","text":"你就是 傻必 啊。","expected_passed":false}
+{"id":"W2-H-021","text":"你这人煞笔！","expected_passed":false}
+{"id":"W2-H-022","text":"给你的评价：煞笔。","expected_passed":false}
+{"id":"W2-H-023","text":"煞笔，别再来找我。","expected_passed":false}
+{"id":"W2-H-024","text":"你就是 煞笔 啊。","expected_passed":false}
+{"id":"W2-H-025","text":"你这人沙比！","expected_passed":false}
+{"id":"W2-H-026","text":"给你的评价：沙比。","expected_passed":false}
+{"id":"W2-H-027","text":"沙比，别再来找我。","expected_passed":false}
+{"id":"W2-H-028","text":"你就是 沙比 啊。","expected_passed":false}
+{"id":"W2-H-029","text":"你这人shabi！","expected_passed":false}
+{"id":"W2-H-030","text":"给你的评价：shabi。","expected_passed":false}
+{"id":"W2-H-031","text":"shabi，别再来找我。","expected_passed":false}
+{"id":"W2-H-032","text":"你就是 shabi 啊。","expected_passed":false}
+{"id":"W2-H-033","text":"你这人ＳＨＡＢＩ！","expected_passed":false}
+{"id":"W2-H-034","text":"给你的评价：ＳＨＡＢＩ。","expected_passed":false}
+{"id":"W2-H-035","text":"ＳＨＡＢＩ，别再来找我。","expected_passed":false}
+{"id":"W2-H-036","text":"你就是 ＳＨＡＢＩ 啊。","expected_passed":false}
+{"id":"W2-H-037","text":"你这人sha bi！","expected_passed":false}
+{"id":"W2-H-038","text":"给你的评价：sha bi。","expected_passed":false}
+{"id":"W2-H-039","text":"sha bi，别再来找我。","expected_passed":false}
+{"id":"W2-H-040","text":"你就是 sha bi 啊。","expected_passed":false}
+{"id":"W2-H-041","text":"你这人s.h.a.b.i！","expected_passed":false}
+{"id":"W2-H-042","text":"给你的评价：s.h.a.b.i。","expected_passed":false}
+{"id":"W2-H-043","text":"s.h.a.b.i，别再来找我。","expected_passed":false}
+{"id":"W2-H-044","text":"你就是 s.h.a.b.i 啊。","expected_passed":false}
+{"id":"W2-H-045","text":"你这人SHǍBĪ！","expected_passed":false}
+{"id":"W2-H-046","text":"给你的评价：SHǍBĪ。","expected_passed":false}
+{"id":"W2-H-047","text":"SHǍBĪ，别再来找我。","expected_passed":false}
+{"id":"W2-H-048","text":"你就是 SHǍBĪ 啊。","expected_passed":false}
+{"id":"W2-H-049","text":"你这人shabi shabi！","expected_passed":false}
+{"id":"W2-H-050","text":"给你的评价：shabi shabi。","expected_passed":false}
+{"id":"W2-H-051","text":"shabi shabi，别再来找我。","expected_passed":false}
+{"id":"W2-H-052","text":"你就是 shabi shabi 啊。","expected_passed":false}
+{"id":"W2-H-053","text":"你这人操你妈！","expected_passed":false}
+{"id":"W2-H-054","text":"给你的评价：操你妈。","expected_passed":false}
+{"id":"W2-H-055","text":"操你妈，别再来找我。","expected_passed":false}
+{"id":"W2-H-056","text":"你就是 操你妈 啊。","expected_passed":false}
+{"id":"W2-H-057","text":"你这人操你媽！","expected_passed":false}
+{"id":"W2-H-058","text":"给你的评价：操你媽。","expected_passed":false}
+{"id":"W2-H-059","text":"操你媽，别再来找我。","expected_passed":false}
+{"id":"W2-H-060","text":"你就是 操你媽 啊。","expected_passed":false}
+{"id":"W2-H-061","text":"你这人艹你妈！","expected_passed":false}
+{"id":"W2-H-062","text":"给你的评价：艹你妈。","expected_passed":false}
+{"id":"W2-H-063","text":"艹你妈，别再来找我。","expected_passed":false}
+{"id":"W2-H-064","text":"你就是 艹你妈 啊。","expected_passed":false}
+{"id":"W2-H-065","text":"你这人caonima！","expected_passed":false}
+{"id":"W2-H-066","text":"给你的评价：caonima。","expected_passed":false}
+{"id":"W2-H-067","text":"caonima，别再来找我。","expected_passed":false}
+{"id":"W2-H-068","text":"你就是 caonima 啊。","expected_passed":false}
+{"id":"W2-H-069","text":"你这人cao ni ma！","expected_passed":false}
+{"id":"W2-H-070","text":"给你的评价：cao ni ma。","expected_passed":false}
+{"id":"W2-H-071","text":"cao ni ma，别再来找我。","expected_passed":false}
+{"id":"W2-H-072","text":"你就是 cao ni ma 啊。","expected_passed":false}
+{"id":"W2-H-073","text":"你这人去死！","expected_passed":false}
+{"id":"W2-H-074","text":"给你的评价：去死。","expected_passed":false}
+{"id":"W2-H-075","text":"去死，别再来找我。","expected_passed":false}
+{"id":"W2-H-076","text":"你就是 去死 啊。","expected_passed":false}
+{"id":"W2-H-077","text":"你这人去-死！","expected_passed":false}
+{"id":"W2-H-078","text":"给你的评价：去-死。","expected_passed":false}
+{"id":"W2-H-079","text":"去-死，别再来找我。","expected_passed":false}
+{"id":"W2-H-080","text":"你就是 去-死 啊。","expected_passed":false}
+{"id":"W2-H-081","text":"你这人qusi！","expected_passed":false}
+{"id":"W2-H-082","text":"给你的评价：qusi。","expected_passed":false}
+{"id":"W2-H-083","text":"qusi，别再来找我。","expected_passed":false}
+{"id":"W2-H-084","text":"你就是 qusi 啊。","expected_passed":false}
+{"id":"W2-H-085","text":"你这人QU SI！","expected_passed":false}
+{"id":"W2-H-086","text":"给你的评价：QU SI。","expected_passed":false}
+{"id":"W2-H-087","text":"QU SI，别再来找我。","expected_passed":false}
+{"id":"W2-H-088","text":"你就是 QU SI 啊。","expected_passed":false}
+{"id":"W2-H-089","text":"你这人去⁠死！","expected_passed":false}
+{"id":"W2-H-090","text":"给你的评价：去⁠死。","expected_passed":false}
+{"id":"W2-H-091","text":"去⁠死，别再来找我。","expected_passed":false}
+{"id":"W2-H-092","text":"你就是 去⁠死 啊。","expected_passed":false}
+{"id":"W2-H-093","text":"你这人q.u.s.i！","expected_passed":false}
+{"id":"W2-H-094","text":"给你的评价：q.u.s.i。","expected_passed":false}
+{"id":"W2-H-095","text":"q.u.s.i，别再来找我。","expected_passed":false}
+{"id":"W2-H-096","text":"你就是 q.u.s.i 啊。","expected_passed":false}
+{"id":"W2-H-097","text":"你这人qusi qusi！","expected_passed":false}
+{"id":"W2-H-098","text":"给你的评价：qusi qusi。","expected_passed":false}
+{"id":"W2-H-099","text":"qusi qusi，别再来找我。","expected_passed":false}
+{"id":"W2-H-100","text":"你就是 qusi qusi 啊。","expected_passed":false}
