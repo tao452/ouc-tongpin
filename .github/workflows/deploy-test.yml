@@ -33,6 +33,8 @@ jobs:
           python services/algo/scripts/evaluate_dataset.py docs/qa/data/w2-moderation-regression.jsonl --base-url http://127.0.0.1:8080 --min-benign 200 --min-blocked 100 --output qa-private/w2-moderation-http.json
           python scripts/qa/verify_treehole_moderation.py --output qa-private/w2-treehole-http.json
           docker compose --env-file .env -f infra/docker-compose.yml images --format json > qa-private/w2-images.json
+      - name: Execute existing API and high-priority catalogue regression
+        run: python scripts/qa/run_existing_api_regression.py --output qa-private/existing-api-regression.json
       - name: Upload test environment evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -43,6 +45,7 @@ jobs:
             qa-private/w2-moderation-http.json
             qa-private/w2-treehole-http.json
             qa-private/w2-images.json
+            qa-private/existing-api-regression.json
           if-no-files-found: warn
       - name: Show service state on failure
         if: failure()

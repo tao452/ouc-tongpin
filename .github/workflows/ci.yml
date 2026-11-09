@@ -162,6 +162,15 @@ jobs:
           java-version: '17'
           cache: maven
       - run: mvn -B -q verify
+      - name: Record actual Java and catalogue privacy results
+        run: >-
+          python ../../scripts/qa/collect_java_evidence.py --reports target/surefire-reports
+          --output ../../qa-private/regression-java.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regression-java-evidence
+          path: qa-private/regression-java.json
 
   algo:
     needs: changes
