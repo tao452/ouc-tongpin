@@ -4,6 +4,7 @@ import concurrent.futures
 import json
 import urllib.parse
 from datetime import date, timedelta
+from pathlib import Path
 
 from regression_http import Client, expect
 
@@ -11,6 +12,17 @@ from regression_http import Client, expect
 def register(runner, stack):
     client = runner.client
     route = "/api/emotions/checkins"
+
+    def words():
+        expected = json.loads(Path("packages/contract/emotions.v1.json").read_text(encoding="utf-8"))
+        status, body = client.request("/api/emotions/words")
+        expect(status == 200, "Emotion words endpoint is unavailable")
+        keys = ("code", "label", "colorToken")
+        actual = [{key: row[key] for key in keys} for row in body["words"]]
+        baseline = [{key: row[key] for key in keys} for row in expected["words"]]
+        expect(actual == baseline, "Live emotion words differ from versioned contract data")
+        expect(body["intensityScale"] == {"min": 1, "max": 5}, "Live intensity scale differs")
+    runner.run("API-EMOTION-WORDS", words)
 
     def check(number, changes=None, remove=(), expected=200):
         payload = {
