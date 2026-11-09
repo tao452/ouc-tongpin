@@ -124,8 +124,8 @@ git switch develop && git merge --no-ff release/0.1 && git push
 
 ## 11 W2 内容安全交付入口（11/02–11/06）
 
-- 任务、实际验证与协作边界：`docs/qa/W2-内容安全交付与验证.md`
-- 300 条合成开发回归样本与指标口径：`docs/qa/data/README.md`
+- 第二周完成情况与测试结果：`docs/qa/W2-内容安全交付与验证.md`
+- 300 条合成测试样本与计算方式：`docs/qa/data/README.md`
 - 按七个模块分类的 80 条用例目录：`docs/qa/s1-test-cases.json`
 - 树洞发布前审核接入：`services/api-server/MODERATION.md`
 - 现有接口和高优先级回归（55 PASS / 25 BLOCKED）：`docs/qa/现有接口与高优先级回归-2026-11-09.md`
