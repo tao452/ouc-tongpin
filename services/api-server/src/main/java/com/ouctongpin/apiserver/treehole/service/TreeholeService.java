@@ -7,6 +7,9 @@ import com.ouctongpin.apiserver.treehole.dto.PostResponse;
 import com.ouctongpin.apiserver.treehole.entity.TreeholePost;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholePostMapper;
 import com.ouctongpin.apiserver.moderation.ModerationClient;
+import com.ouctongpin.apiserver.privacy.AnonymousIdGenerator;
+import com.ouctongpin.apiserver.auth.mapper.UserMapper;
+import com.ouctongpin.apiserver.auth.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -23,6 +26,8 @@ public class TreeholeService {
     @Autowired private TreeholePostMapper postMapper;
     @Autowired private StringRedisTemplate redisTemplate;
     @Autowired private ModerationClient moderationClient;
+    @Autowired private AnonymousIdGenerator anonymousIds;
+    @Autowired private UserMapper userMapper;
 
     // 发布（契约：POST /api/treehole/posts）
     public TreeholePost createPost(Long userId, PostCreateReq req) {
@@ -34,11 +39,12 @@ public class TreeholeService {
         post.setContent(req.getContent());
         post.setEmotionTag(req.getEmotionTag());
         post.setAnonymous(req.getAnonymous() != null && req.getAnonymous() ? 1 : 0);
-        // 匿名态下生成不可反推马甲（真实业务应对 userId 做哈希加盐）
-        post.setAnonymousId("匿名用户_" + (userId % 1000));
+        post.setAnonymousId(anonymousIds.generate(String.valueOf(userId), "treehole"));
         post.setIsBurnAfterRead(1);   // US-07：默认 24h 焚毁
         post.setStatus(0);
-        post.setExpiresAt(LocalDateTime.now().plusHours(24));
+        LocalDateTime created = LocalDateTime.now(ZoneOffset.ofHours(8));
+        post.setCreatedAt(created);
+        post.setExpiresAt(created.plusHours(24));
         post.setDeleted(0);
         postMapper.insert(post);
 
@@ -47,6 +53,25 @@ public class TreeholeService {
         redisTemplate.opsForZSet().add("treehole:burn_queue", String.valueOf(post.getId()), burnTime);
 
         return post;
+    }
+
+    public PostResponse toResponse(TreeholePost post) {
+        PostResponse response = new PostResponse();
+        response.setId(post.getId());
+        response.setContent(post.getContent());
+        response.setEmotionTag(post.getEmotionTag());
+        boolean anonymous = Integer.valueOf(1).equals(post.getAnonymous());
+        response.setAnonymous(anonymous);
+        String mask = post.getAnonymousId();
+        if (!anonymous) {
+            User user = userMapper.selectById(post.getUserId());
+            mask = user == null || user.getNickname() == null ? "用户" : user.getNickname();
+        }
+        response.setAuthorMask(mask);
+        response.setCreatedAt(post.getCreatedAt());
+        response.setExpiresAt(post.getExpiresAt());
+        response.setHugCount(0);
+        return response;
     }
 
     // 列表（契约：GET /api/treehole/posts?emotionTag&cursor）
@@ -61,22 +86,14 @@ public class TreeholeService {
         LambdaQueryWrapper<TreeholePost> wrapper = new LambdaQueryWrapper<TreeholePost>()
                 .eq(TreeholePost::getStatus, 0)
                 .eq(TreeholePost::getDeleted, 0)
+                .gt(TreeholePost::getExpiresAt, LocalDateTime.now(ZoneOffset.ofHours(8)))
                 .eq(emotionTag != null && !emotionTag.isBlank(), TreeholePost::getEmotionTag, emotionTag)
-                .orderByDesc(TreeholePost::getCreatedAt);
+                .orderByDesc(TreeholePost::getCreatedAt)
+                .orderByDesc(TreeholePost::getId);
         postMapper.selectPage(page, wrapper);
 
-        List<PostResponse> records = page.getRecords().stream().map(p -> {
-            PostResponse r = new PostResponse();
-            r.setId(p.getId());
-            r.setContent(p.getContent());
-            r.setEmotionTag(p.getEmotionTag());
-            r.setAnonymous(p.getAnonymous() == 1);
-            r.setAuthorMask(p.getAnonymousId());
-            r.setCreatedAt(p.getCreatedAt());
-            r.setExpiresAt(p.getExpiresAt());
-            r.setHugCount(0);
-            return r;
-        }).collect(Collectors.toList());
+        List<PostResponse> records = page.getRecords().stream()
+                .map(this::toResponse).collect(Collectors.toList());
 
         Map<String, Object> res = new HashMap<>();
         res.put("items", records);

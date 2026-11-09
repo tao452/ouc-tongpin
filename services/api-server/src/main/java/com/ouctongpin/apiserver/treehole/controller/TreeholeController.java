@@ -19,8 +19,8 @@ public class TreeholeController {
     // TODO(W3): userId 临时写死 1L，待接入 JWT 拦截器后从 Authorization 解析
     @PostMapping("/posts")
     @ResponseStatus(HttpStatus.CREATED)
-    public TreeholePost create(@Valid @RequestBody PostCreateReq req) {
-        return treeholeService.createPost(1L, req);
+    public PostResponse create(@Valid @RequestBody PostCreateReq req) {
+        return treeholeService.toResponse(treeholeService.createPost(1L, req));
     }
 
     // 契约：GET /api/treehole/posts?emotionTag&cursor -> { items, nextCursor }

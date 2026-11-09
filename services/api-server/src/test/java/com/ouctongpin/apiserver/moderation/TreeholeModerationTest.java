@@ -4,6 +4,7 @@ import com.ouctongpin.apiserver.treehole.dto.PostCreateReq;
 import com.ouctongpin.apiserver.treehole.entity.TreeholePost;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholePostMapper;
 import com.ouctongpin.apiserver.treehole.service.TreeholeService;
+import com.ouctongpin.apiserver.privacy.AnonymousIdGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -28,6 +29,7 @@ class TreeholeModerationTest {
     @Mock private TreeholePostMapper posts;
     @Mock private StringRedisTemplate redis;
     @Mock private ZSetOperations<String, String> burnQueue;
+    @Mock private AnonymousIdGenerator anonymousIds;
     @InjectMocks private TreeholeService service;
 
     private PostCreateReq request(String content) {
@@ -61,6 +63,7 @@ class TreeholeModerationTest {
             return 1;
         });
         when(redis.opsForZSet()).thenReturn(burnQueue);
+        when(anonymousIds.generate("1", "treehole")).thenReturn("anon_v1_synthetic");
         TreeholePost post = service.createPost(1L, request("synthetic content"));
         assertEquals("synthetic content", post.getContent());
         var order = inOrder(moderation, posts, redis, burnQueue);
