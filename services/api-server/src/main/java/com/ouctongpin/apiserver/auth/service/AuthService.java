@@ -48,7 +48,7 @@ public class AuthService {
         res.put("token", token);
         res.put("userId", String.valueOf(userId));
         res.put("isNewUser", isNewUser);
-        res.put("needStudentVerify", false);
+        res.put("needStudentVerify", auth.getStudentNo() == null || auth.getStudentNo().isBlank());
         return res;
     }
 }

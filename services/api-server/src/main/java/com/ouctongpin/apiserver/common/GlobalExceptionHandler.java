@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -28,9 +30,19 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(Result.fail(1001, msg));
     }
 
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<Result<?>> handleUnreadableBody(HttpMessageNotReadableException e) {
+        return ResponseEntity.badRequest().body(Result.fail(400, "请求格式不合法"));
+    }
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<Result<?>> handleMissingResource(NoResourceFoundException e) {
+        return ResponseEntity.status(404).body(Result.fail(404, "接口不存在"));
+    }
+
     // 拦截系统内部其他异常
     @ExceptionHandler(Exception.class)
-    public Result<?> handleException(Exception e) {
-        return Result.fail(500, "服务器内部错误");
+    public ResponseEntity<Result<?>> handleException(Exception e) {
+        return ResponseEntity.internalServerError().body(Result.fail(500, "服务器内部错误"));
     }
 }

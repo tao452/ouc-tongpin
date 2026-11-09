@@ -19,6 +19,8 @@ W2 已将 `TreeholeService.createPost` 的占位检查替换为真实客户端�
 `GlobalExceptionHandler` 保留 422/503 HTTP 状态，响应不回显正文或上游细节。
 正常发布返回契约规定的 201，树洞正文最大 500 字符。
 空白/超长正文在控制器校验时返回 400，不进入业务服务。
+2026-11-09 回归补齐 emotionTag 枚举校验；发布返回安全 PostResponse，与列表使用相同字段，
+不再直接序列化含 userId 的数据库实体。算法读取超时在隔离 CI 中通过 pause/unpause 实际验证。
 新增业务顺序单测和控制器/异常处理测试，验证 HIGH、不可达/超时以及允许类的处理。
 CI 的 `scripts/qa/verify_treehole_moderation.py` 在临时容器环境验证六个场景：
 正常、HIGH、MEDIUM、LOW、正常上下文、算法容器停止；同时检查 MySQL 行数和 Redis 队列条数。

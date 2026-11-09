@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `checkin` (
   `created_at`   DATETIME    DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_checkin_user` (`user_id`),
-  KEY `idx_checkin_user_date` (`user_id`, `checkin_date`)
+  UNIQUE KEY `uk_checkin_user_date` (`user_id`, `checkin_date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 树洞帖子表
