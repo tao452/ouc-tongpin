@@ -14,7 +14,8 @@ def register(runner, stack):
     route = "/api/emotions/checkins"
 
     def words():
-        expected = json.loads(Path("packages/contract/emotions.v1.json").read_text(encoding="utf-8"))
+        data = Path("packages/contract/emotions.v1.json").read_text(encoding="utf-8")
+        expected = json.loads(data)
         status, body = client.request("/api/emotions/words")
         expect(status == 200, "Emotion words endpoint is unavailable")
         keys = ("code", "label", "colorToken")
