@@ -37,9 +37,10 @@ MySQL 使用具名持久卷。正常停止不删除卷；如需清理一次性�
 ## CI 与验收边界
 
 PR 的 CI 执行原有 guard、模块检查，以及 Docker 全栈构建与真实 HTTP 冒烟测试。
-算法修改执行 Ruff、Pytest 和 ≥80% 覆盖率门槛；Java 的隐私测试并入 Maven verify。
+算法修改执行 Ruff、Pytest 和 ≥90% 覆盖率门槛；Java 的隐私测试并入 Maven verify。
 `quality` 汇总所有结果，可由管理员审核后设为分支保护的必过检查；本 PR 不修改仓库保护配置。
-管理端 lint/test 当前为脚手架占位配置，ESLint、Vitest 接入及前端测试待对应模块完善。
+管理端执行真实 ESLint、Vitest 和构建；小程序执行 lint、请求测试与项目配置检查。
 nightly 已完成首次手动验证；deploy-test 临时部署和 release 候选包构建已实跑。
 长期环境部署、tag 发布入口及回滚步骤见 `发布候选包与回滚.md`。
-共享 Issue #33 保持打开，直到双方确认环境、CI、测试环境部署与独立复核。
+现有接口回归在一次性容器内执行，并上传逐条证据；完整范围见 `docs/qa/现有接口与高优先级回归-2026-11-09.md`。
+已有数据库升级的唯一索引脚本位于 `db/migrations/20261109-checkin-unique.sql`，先检查重复数据与现有索引。
