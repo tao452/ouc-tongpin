@@ -4,7 +4,7 @@
 在执行 insert/update **之前**调用 `moderationClient.requireAllowed(content)`，
 并且只持久化实际通过检测的同一份内容，不能捕获检查异常后继续写库。
 
-- 返回 Result：允许继续，hits 仍可能含 LOW/MEDIUM 提示；等级动作待 M1 最终确认。
+- 返回 Result：允许继续，hits 仍可能含 LOW/MEDIUM 提示；按 M1 已确认的 S1 规则执行。
 - 高风险阻断：抛出 `ResponseStatusException`，状态 422，不携带正文。
 - 超时、不可达、非 2xx、缺字段、格式错误、矛盾结果：503，不允许继续。
 - 空白、空值、超过 2000 Unicode 码点：400，不调用算法服务。
@@ -27,5 +27,6 @@ CI 的 `scripts/qa/verify_treehole_moderation.py` 在临时容器环境验证六
 该脚本仅允许在一次性 GitHub Actions 环境执行，会短暂停止并恢复算法容器。
 
 三级动作沿用本次 W2 任务：HIGH 拦截、MEDIUM 提示、LOW 放行。
-正式词表仍待 M1 审核。当前树洞响应尚不包含提示命中字段，前端提示展示需与 M3/M5 对齐；
+M1 已在 [PR #49](https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309)确认 S1 的阻断／放行规则；正式词库和词条等级留到后续验收。
+当前树洞响应尚不包含提示命中字段，前端提示展示需与 M3/M5 对齐；
 算法接口的 hits 已提供等级。搭子发布接口尚未实现，可复用同一客户端。
