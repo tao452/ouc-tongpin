@@ -87,3 +87,22 @@ def test_unreachable_selected_service_is_a_failure(qa):
     runner.run("fixture", unreachable)
     assert runner.results[0]["status"] == "FAIL"
     assert "PRIVATE-CONNECTION-DETAIL" not in json.dumps(runner.results)
+
+
+def test_live_words_compare_shared_fields_and_validate_api_color_tokens(qa, monkeypatch):
+    root = Path(__file__).resolve().parents[3]
+    monkeypatch.chdir(root)
+    baseline = json.loads((root / "packages/contract/emotions.v1.json").read_text(encoding="utf-8"))
+    body = {"words": [{"code": row["code"], "label": row["label"], "colorToken": "emotion.test"}
+                      for row in baseline["words"]], "intensityScale": {"min": 1, "max": 5}}
+
+    class WordsOnly:
+        client = type("Client", (), {"request": lambda self, route: (200, body)})()
+
+        def run(self, identifier, check, *args):
+            if identifier == "API-EMOTION-WORDS":
+                check()
+    qa("regression_checkin").register(WordsOnly(), None)
+    body["words"][0]["code"] = "UNKNOWN"
+    with pytest.raises(AssertionError, match="versioned contract"):
+        qa("regression_checkin").register(WordsOnly(), None)

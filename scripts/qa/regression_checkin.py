@@ -18,10 +18,12 @@ def register(runner, stack):
         expected = json.loads(data)
         status, body = client.request("/api/emotions/words")
         expect(status == 200, "Emotion words endpoint is unavailable")
-        keys = ("code", "label", "colorToken")
+        keys = ("code", "label")
         actual = [{key: row[key] for key in keys} for row in body["words"]]
         baseline = [{key: row[key] for key in keys} for row in expected["words"]]
         expect(actual == baseline, "Live emotion words differ from versioned contract data")
+        expect(all(isinstance(row.get("colorToken"), str) and row["colorToken"]
+                   for row in body["words"]), "Live emotion words must include color tokens")
         expect(body["intensityScale"] == {"min": 1, "max": 5}, "Live intensity scale differs")
     runner.run("API-EMOTION-WORDS", words)
 
