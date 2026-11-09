@@ -8,7 +8,10 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class CheckinService {
@@ -44,6 +47,7 @@ public class CheckinService {
                 fallback.setStreakDays(calcStreak(userId, d));
                 return fallback;
             }
+            throw e;
         }
         c.setStreakDays(calcStreak(userId, d));
         return c;
@@ -51,8 +55,11 @@ public class CheckinService {
 
     // 契约：GET /api/emotions/checkins?from&to -> { items, streakDays, total }
     public List<Checkin> list(Long userId, String from, String to) {
-        LocalDate start = (from != null) ? LocalDate.parse(from) : null;
-        LocalDate end = (to != null) ? LocalDate.parse(to) : null;
+        LocalDate start = parseDate(from);
+        LocalDate end = parseDate(to);
+        if (start != null && end != null && start.isAfter(end)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid date range");
+        }
         List<Checkin> items = checkinMapper.selectList(new LambdaQueryWrapper<Checkin>()
                 .eq(Checkin::getUserId, userId)
                 .ge(start != null, Checkin::getCheckinDate, start)
@@ -60,6 +67,14 @@ public class CheckinService {
                 .orderByAsc(Checkin::getCheckinDate));
         items.forEach(c -> c.setStreakDays(calcStreak(userId, c.getCheckinDate())));
         return items;
+    }
+
+    private LocalDate parseDate(String value) {
+        try {
+            return value == null ? null : LocalDate.parse(value);
+        } catch (DateTimeParseException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid date");
+        }
     }
 
     public int streakDays(Long userId) {
