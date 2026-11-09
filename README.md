@@ -128,3 +128,4 @@ git switch develop && git merge --no-ff release/0.1 && git push
 - 300 条合成开发回归样本与指标口径：`docs/qa/data/README.md`
 - 按七个模块分类的 80 条用例目录：`docs/qa/s1-test-cases.json`
 - 树洞发布前审核接入：`services/api-server/MODERATION.md`
+- 现有接口和高优先级回归（55 PASS / 25 BLOCKED）：`docs/qa/现有接口与高优先级回归-2026-11-09.md`
