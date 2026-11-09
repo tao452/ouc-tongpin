@@ -129,3 +129,8 @@ git switch develop && git merge --no-ff release/0.1 && git push
 - 按七个模块分类的 80 条用例目录：`docs/qa/s1-test-cases.json`
 - 树洞发布前审核接入：`services/api-server/MODERATION.md`
 - 现有接口和高优先级回归（55 PASS / 25 BLOCKED）：`docs/qa/现有接口与高优先级回归-2026-11-09.md`
+
+## 12 M6 隐私与自动化工具
+
+- 合成数据 PII 扫描基线包：`docs/qa/pii-baseline/README.md`
+- 人工复核与误报登记：`docs/qa/pii-baseline/人工复核模板.md`

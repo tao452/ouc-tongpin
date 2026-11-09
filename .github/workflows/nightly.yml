@@ -31,6 +31,13 @@ jobs:
           python scripts/evaluate_dataset.py ../../docs/qa/data/w2-moderation-regression.jsonl
           --min-benign 200 --min-blocked 100
           --output ../../qa-private/w2-moderation-function.json
+      - name: Verify synthetic PII baseline
+        run: python ../../scripts/qa/run_pii_baseline.py --output ../../qa-private/pii-baseline.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nightly-pii-baseline-evidence
+          path: qa-private/pii-baseline.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
