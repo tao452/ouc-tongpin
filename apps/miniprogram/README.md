@@ -15,7 +15,7 @@ CI 的 miniprogram 任务执行这些命令，失败会使 quality 检查失败�
 2. 打开工具 → 「导入项目」→ 目录选本文件夹 `apps/miniprogram`。
 3. AppID：
    - 有团队小程序账号 → 填 `mp.weixin.qq.com` 注册的 AppID；
-   - 仅本地调试 → 选「测试号」（对应 `project.config.json` 里的 `touristappid`）。
+   - 当前 `project.config.json` 已填入团队真实 AppID；仅本地调试需要测试号时，可临时改回 `touristappid`，该改动不要提交。
 4. 编译即可在模拟器看到「打卡日历」页。
 
 ## 二、Mock 优先（不等后端）
