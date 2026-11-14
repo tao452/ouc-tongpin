@@ -1,52 +1,140 @@
+
 <view class="records-page">
 
-    <!-- 数据概览 -->
-    <view class="data-card">
-      <view class="data-item">
-        <view class="data-number">{{totalDays}}</view>
-        <view class="data-label">累计打卡</view>
-      </view>
-
-      <view class="data-item">
-        <view class="data-number">{{continuousDays}}</view>
-        <view class="data-label">连续打卡</view>
-      </view>
+  <!-- 数据概览 -->
+  <view class="data-card">
+    <view class="data-item">
+      <view class="data-number">{{totalDays}}</view>
+      <view class="data-label">累计打卡</view>
     </view>
 
-    <!-- 历史记录 -->
-    <view class="section-title">历史打卡记录</view>
-
-    <view wx:if="{{loading && records.length === 0}}" class="state-text">
-      正在加载记录...
+    <view class="data-item">
+      <view class="data-number">{{continuousDays}}</view>
+      <view class="data-label">连续打卡</view>
     </view>
+  </view>
 
-    <view wx:elif="{{error && records.length === 0}}" class="state-container">
-      <view class="state-text">记录加载失败</view>
-      <button class="retry-button" bindtap="retryLoad">
-        重新加载
-      </button>
-    </view>
+  <!-- 情绪分析 -->
+  <view class="analysis-section">
 
-    <view wx:elif="{{records.length === 0}}" class="empty-container">
-      <view class="empty-text">还没有打卡记录</view>
-      <view class="empty-hint">完成每日打卡后，记录会显示在这里</view>
-    </view>
+    <view class="section-title">情绪分析</view>
 
-    <view wx:else class="record-list">
+    <!-- 时间范围切换 -->
+    <view class="range-tabs">
       <view
-        class="record-card"
-        wx:for="{{records}}"
-        wx:key="id"
+        class="range-tab {{rangeDays === 7 ? 'active' : ''}}"
+        data-range="7"
+        bindtap="changeRange"
       >
-        <view class="record-header">
-          <view class="record-date">{{item.date}}</view>
-          <view class="record-status">{{item.status}}</view>
+        近一周
+      </view>
+
+      <view
+        class="range-tab {{rangeDays === 30 ? 'active' : ''}}"
+        data-range="30"
+        bindtap="changeRange"
+      >
+        近一月
+      </view>
+    </view>
+
+    <!-- 情绪强度趋势 -->
+    <view class="chart-card">
+      <view class="chart-title">情绪强度变化</view>
+      <view class="chart-desc">根据每日打卡强度（1～5）统计</view>
+
+      <view wx:if="{{analysisTotal === 0}}" class="chart-empty">
+        暂无情绪数据
+      </view>
+
+      <canvas
+        wx:else
+        canvas-id="emotionTrendCanvas"
+        class="trend-canvas"
+        width="345"
+        height="180"
+      ></canvas>
+    </view>
+
+    <!-- 情绪分布 -->
+    <view class="chart-card">
+      <view class="chart-title">情绪分布</view>
+      <view class="chart-desc">当前时间范围内各类情绪出现的次数</view>
+
+      <view wx:if="{{analysisTotal === 0}}" class="chart-empty">
+        暂无情绪数据
+      </view>
+
+      <block wx:else>
+        <view class="distribution-total">
+          共 {{analysisTotal}} 条情绪记录
         </view>
 
-        <view class="record-summary">
-          {{item.summary}}
+        <view
+          class="distribution-item"
+          wx:for="{{distributionData}}"
+          wx:key="code"
+        >
+          <view class="distribution-header">
+            <view class="distribution-name">
+              <view
+                class="emotion-dot emotion-{{item.code}}"
+              ></view>
+              {{item.label}}
+            </view>
+
+            <view class="distribution-value">
+              {{item.count}} 次 · {{item.percent}}%
+            </view>
+          </view>
+
+          <progress
+            percent="{{item.percent}}"
+            stroke-width="8"
+            activeColor="{{item.color}}"
+            backgroundColor="#f0f0f0"
+            border-radius="8"
+          />
         </view>
-      </view>
+      </block>
     </view>
 
   </view>
+
+  <!-- 历史记录 -->
+  <view class="section-title">历史打卡记录</view>
+
+  <view wx:if="{{loading && records.length === 0}}" class="state-text">
+    正在加载记录...
+  </view>
+
+  <view wx:elif="{{error && records.length === 0}}" class="state-container">
+    <view class="state-text">记录加载失败</view>
+    <button class="retry-button" bindtap="retryLoad">
+      重新加载
+    </button>
+  </view>
+
+  <view wx:elif="{{records.length === 0}}" class="empty-container">
+    <view class="empty-text">还没有打卡记录</view>
+    <view class="empty-hint">完成每日打卡后，记录会显示在这里</view>
+  </view>
+
+  <view wx:else class="record-list">
+    <view
+      class="record-card"
+      wx:for="{{records}}"
+      wx:key="id"
+    >
+      <view class="record-header">
+        <view class="record-date">{{item.date}}</view>
+        <view class="record-status">{{item.status}}</view>
+      </view>
+
+      <view class="record-summary">
+        {{item.summary}}
+      </view>
+    </view>
+  </view>
+
+</view>

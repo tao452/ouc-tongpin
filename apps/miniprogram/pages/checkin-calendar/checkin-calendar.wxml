@@ -13,6 +13,12 @@
   <view wx:if="{{loadError}}" class="error-bar">
     <text class="error-text">本月打卡数据加载失败</text>
     <button class="retry-button" size="mini" bindtap="retryLoad">重试</button>
+    <text class="label">连续打卡天 · 本月 {{monthTotal}} 次</text>
+  </view>
+
+  <view wx:if="{{loadError}}" class="error-bar">
+    <text class="error-text">本月打卡数据加载失败</text>
+    <button class="retry-button" size="mini" bindtap="retryLoad">重试</button>
   </view>
 
   <view class="week-row">
@@ -21,11 +27,11 @@
   <view class="grid">
     <view
       wx:for="{{cells}}"
+      wx:for-item="item"
       wx:key="key"
-      class="cell {{item.empty ? 'empty' : ''}} {{item.emotion ? 'checked' : ''}}"
-      style="{{item.color ? 'background:' + item.color : ''}}">
+      class="cell {{item.empty ? 'empty' : ''}} {{item.emotion ? 'checked emotion-' + item.emotion : ''}}">
       <text wx:if="{{!item.empty}}">{{item.day}}</text>
-    </view>
+</view>
   </view>
 
   <view class="remind">

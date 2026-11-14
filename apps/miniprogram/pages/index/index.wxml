@@ -1,3 +1,4 @@
+
 <view class="page">
   <!-- 顶部品牌区域 -->
   <view class="header">
@@ -61,8 +62,9 @@
       <text class="feature-link">记录今天的心情 →</text>
     </view>
 
-    <!-- 其他功能入口 -->
+    <!-- 其他功能入口：双列布局 -->
     <view class="feature-grid">
+      <!-- 匿名树洞 -->
       <view class="small-card" bindtap="goTreehole">
         <text class="small-card-tag">TREEHOLE</text>
         <text class="small-card-title">匿名树洞</text>
@@ -70,11 +72,12 @@
         <text class="feature-link">进入树洞 →</text>
       </view>
 
-      <view class="small-card">
+      <!-- 搭子广场 -->
+      <view class="small-card" bindtap="goPlaza">
         <text class="small-card-tag">PLAZA</text>
         <text class="small-card-title">搭子广场</text>
-        <text class="small-card-desc">寻找校园搭子</text>
-        <text class="coming-soon">即将开放</text>
+        <text class="small-card-desc">寻找志同道合的校园搭子</text>
+        <text class="feature-link">进入搭子广场 →</text>
       </view>
 
       <!-- 打卡日历 -->

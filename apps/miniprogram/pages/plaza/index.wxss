@@ -1,51 +1,229 @@
 .page {
-    min-height: 100vh;
-    box-sizing: border-box;
-    padding: 40rpx 32rpx;
-    background-color: #f7f8fa;
-  }
+  min-height: 100vh;
+  padding: 32rpx;
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+  background-color: #f7f8fa;
+}
 
-  .header {
-    margin-bottom: 48rpx;
-  }
+.header {
+  margin-bottom: 30rpx;
+}
 
-  .title {
-    font-size: 40rpx;
-    font-weight: 600;
-    color: #222222;
-  }
+.title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #263b35;
+}
 
-  .description {
-    margin-top: 16rpx;
-    font-size: 26rpx;
-    color: #888888;
-  }
+.description {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #89948f;
+}
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 100rpx 48rpx;
-    background-color: #ffffff;
-    border-radius: 24rpx;
-  }
+/* 搜索框 */
+.search-box {
+  display: flex;
+  align-items: center;
+  height: 82rpx;
+  padding: 0 24rpx;
+  border-radius: 18rpx;
+  background-color: #ffffff;
+  margin-bottom: 28rpx;
+}
 
-  .placeholder-icon {
-    font-size: 72rpx;
-    margin-bottom: 32rpx;
-  }
+.search-icon {
+  font-size: 38rpx;
+  color: #89948f;
+  margin-right: 14rpx;
+}
 
-  .placeholder-title {
-    font-size: 32rpx;
-    font-weight: 600;
-    color: #333333;
-  }
+.search-input {
+  flex: 1;
+  font-size: 26rpx;
+  color: #333333;
+}
 
-  .placeholder-desc {
-    margin-top: 20rpx;
-    font-size: 26rpx;
-    line-height: 1.8;
-    color: #999999;
-    text-align: center;
-  }
+/* 功能入口 */
+.entry-list {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 42rpx;
+}
+
+.entry-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 24rpx 16rpx;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+}
+
+.need-entry {
+  background-color: #edf5ef;
+}
+
+.match-entry {
+  background-color: #f0f1fa;
+}
+
+.entry-icon {
+  font-size: 38rpx;
+  margin-right: 12rpx;
+}
+
+.entry-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.entry-title {
+  font-size: 27rpx;
+  font-weight: 600;
+  color: #34463e;
+}
+
+.entry-desc {
+  margin-top: 8rpx;
+  font-size: 19rpx;
+  color: #89948f;
+}
+
+.entry-arrow {
+  font-size: 32rpx;
+  color: #89948f;
+}
+
+/* 推荐需求 */
+.section {
+  margin-bottom: 36rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #263b35;
+}
+
+.section-more {
+  font-size: 23rpx;
+  color: #82968b;
+}
+
+.need-card {
+  padding: 26rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+}
+
+.need-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.need-scene {
+  font-size: 29rpx;
+  font-weight: 600;
+  color: #34463e;
+}
+
+.need-status {
+  padding: 7rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 21rpx;
+  color: #4c9270;
+  background-color: #eaf5ee;
+}
+
+.need-description {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  line-height: 1.6;
+  color: #59665f;
+}
+
+.need-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  margin-top: 20rpx;
+  font-size: 22rpx;
+  color: #89948f;
+}
+
+.need-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22rpx;
+}
+
+.need-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.tag {
+  padding: 7rpx 14rpx;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+  color: #718b7c;
+  background-color: #f0f5f1;
+}
+
+.need-people {
+  font-size: 21rpx;
+  color: #89948f;
+  white-space: nowrap;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 60rpx 0;
+  text-align: center;
+}
+
+.empty-text {
+  font-size: 25rpx;
+  color: #a0aaa5;
+}
+
+/* 发布按钮 */
+.publish-area {
+  margin-top: 42rpx;
+  text-align: center;
+}
+
+.publish-button {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 18rpx;
+  background-color: #719982;
+  color: #ffffff;
+  font-size: 29rpx;
+  font-weight: 600;
+}
+
+.publish-button::after {
+  border: none;
+}
+
+.publish-tip {
+  margin-top: 18rpx;
+  font-size: 22rpx;
+  color: #9aa49e;
+}

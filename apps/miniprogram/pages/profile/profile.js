@@ -68,7 +68,8 @@ Page({
       wx.showToast({ title: '请先输入标签', icon: 'none' })
       return
     }
-    const merged = [...this.data.profile[field], ...incoming]
+    //const merged = [...this.data.profile[field], ...incoming]
+    const merged = this.data.profile[field].concat(incoming)
     if (merged.length > LIMITS.tags) {
       wx.showToast({ title: `每类标签最多 ${LIMITS.tags} 个`, icon: 'none' })
     }

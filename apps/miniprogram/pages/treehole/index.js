@@ -20,7 +20,7 @@ Page({
   data: {
     title: '匿名树洞',
     description: '在这里，说出那些不方便说的话。',
-    filters: [ALL_FILTER, ...EMOTION_TAGS],
+    filters: [ALL_FILTER].concat(EMOTION_TAGS),
     tags: EMOTION_TAGS,
     activeTag: '',
     posts: [],
@@ -48,7 +48,9 @@ Page({
       this._skipFirstShow = false
       return
     }
-    if (!this.data.loading && !this.data.loadingMore) this.loadPosts(true)
+    if (!this.data.loading && !this.data.loadingMore) {
+      this.loadPosts(true)
+    }
   },
 
   onPullDownRefresh() {

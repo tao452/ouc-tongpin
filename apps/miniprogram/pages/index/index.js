@@ -72,5 +72,13 @@ Page({
     wx.navigateTo({
       url: '/pages/profile/profile'
     })
+  },
+
+  // 进入搭子广场
+  goPlaza() {
+    wx.switchTab({
+      url: '/pages/plaza/index'
+    })
   }
+
 })
