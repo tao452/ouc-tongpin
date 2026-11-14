@@ -46,6 +46,13 @@ Page({
     })
   },
 
+  // 跳转到树洞 TabBar 页面；树洞页已接入真实发布 / 列表接口
+  goTreehole() {
+    wx.switchTab({
+      url: '/pages/treehole/index'
+    })
+  },
+
   // 跳转到学号认证页面
   goStudentVerify() {
     wx.navigateTo({
