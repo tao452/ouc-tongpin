@@ -76,8 +76,8 @@
       <view class="small-card" bindtap="goPlaza">
         <text class="small-card-tag">PLAZA</text>
         <text class="small-card-title">搭子广场</text>
-        <text class="small-card-desc">寻找志同道合的校园搭子</text>
-        <text class="feature-link">进入搭子广场 →</text>
+        <text class="small-card-desc">发布搭子需求</text>
+        <text class="feature-link">去发布需求 →</text>
       </view>
 
       <!-- 打卡日历 -->

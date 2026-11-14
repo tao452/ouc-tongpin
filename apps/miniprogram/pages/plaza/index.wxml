@@ -37,12 +37,13 @@
     </view>
   </view>
 
-  <!-- 推荐需求 -->
+  <!-- 示例需求：演示数据，列表 / 筛选接口属 V1.0 #12，暂未开放 -->
   <view class="section">
     <view class="section-header">
-      <view class="section-title">推荐需求</view>
-      <view class="section-more" bindtap="goToNeeds">查看更多 ›</view>
+      <view class="section-title">示例需求</view>
+      <view class="section-more" bindtap="goToNeeds">列表后续开放</view>
     </view>
+    <view class="demo-note">以下为演示数据 · 需求列表与筛选属 V1.0（#12），接口暂未开放</view>
 
     <view wx:if="{{filteredNeeds.length > 0}}">
       <view
