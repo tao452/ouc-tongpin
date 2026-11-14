@@ -1,6 +1,6 @@
 <svg viewBox="0 0 680 380" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
 <title>V0.1 迭代燃尽图（S1，11 个故事 / 55 故事点）</title>
-<desc>理想剩余从 W1 初 11 线性降到 W4 末 0（V0.1 迭代到期 11/15）；实际线截至 W2 末（11/02）剩 8，W3/W4 待补</desc>
+<desc>理想剩余从 W1 初 11 线性降到 W4 末 0（V0.1 迭代到期 11/15）；实际线 W1 初 11、W1 末 11、W2 末 9（校正）、W3 末 5（#2/#6/#8 经 #64 建表 + #65 容器回归补齐证据后追认关单），W4 待补</desc>
 
 <text x="340" y="26" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="600" fill="#111827">V0.1 迭代燃尽图（S1，11 故事 / 55 点）</text>
 
@@ -8,8 +8,8 @@
 <line x1="90" y1="300" x2="620" y2="300" stroke="#d1d5db" stroke-width="1"/>
 
 <text x="80" y="60" text-anchor="end" dominant-baseline="central" font-size="12" fill="#6b7280">11</text>
-<text x="80" y="126" text-anchor="end" dominant-baseline="central" font-size="12" fill="#6b7280">8</text>
-<text x="80" y="213" text-anchor="end" dominant-baseline="central" font-size="12" fill="#6b7280">4</text>
+<text x="80" y="104" text-anchor="end" dominant-baseline="central" font-size="12" fill="#6b7280">9</text>
+<text x="80" y="192" text-anchor="end" dominant-baseline="central" font-size="12" fill="#6b7280">5</text>
 <text x="80" y="300" text-anchor="end" dominant-baseline="central" font-size="12" fill="#6b7280">0</text>
 
 <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#6b7280">W1初</text>
@@ -21,16 +21,19 @@
 <polyline points="100,60 620,300" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5 4"/>
 <text x="300" y="205" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#9ca3af">理想线（V0.1 到 11/15 → 0）</text>
 
-<polyline points="100,60 230,60 360,126" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<polyline points="100,60 230,60 360,104 490,192" fill="none" stroke="#2563eb" stroke-width="2.5"/>
 <circle cx="100" cy="60" r="3.5" fill="#2563eb"/>
 <circle cx="230" cy="60" r="3.5" fill="#2563eb"/>
-<circle cx="360" cy="126" r="3.5" fill="#2563eb"/>
+<circle cx="360" cy="104" r="3.5" fill="#2563eb"/>
+<circle cx="490" cy="192" r="3.5" fill="#2563eb"/>
 <text x="100" y="48" text-anchor="middle" font-size="11" fill="#2563eb">11</text>
 <text x="230" y="48" text-anchor="middle" font-size="11" fill="#2563eb">11</text>
-<text x="360" y="114" text-anchor="middle" font-size="11" fill="#2563eb">8</text>
+<text x="360" y="92" text-anchor="middle" font-size="11" fill="#2563eb">9</text>
+<text x="490" y="180" text-anchor="middle" font-size="11" fill="#2563eb">5</text>
 
 <line x1="410" y1="350" x2="440" y2="350" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5 4"/>
 <text x="446" y="350" text-anchor="start" dominant-baseline="central" font-size="11" fill="#6b7280">理想</text>
 <line x1="490" y1="350" x2="520" y2="350" stroke="#2563eb" stroke-width="2.5"/>
-<text x="526" y="350" text-anchor="start" dominant-baseline="central" font-size="11" fill="#6b7280">实际剩余（截至 W2）</text>
+<text x="526" y="350" text-anchor="start" dominant-baseline="central" font-size="11" fill="#6b7280">实际剩余（截至 W3）</text>
+<text x="340" y="370" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#9ca3af">W2 校正 9 / W3 末 5（#64 建表 + #65 容器回归后追认 3 条关单）；4 项遗留列 W4</text>
 </svg>
