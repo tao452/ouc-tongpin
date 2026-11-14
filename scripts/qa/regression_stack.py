@@ -25,7 +25,10 @@ class Stack:
 
     def count(self, table):
         expect(
-            table in {"checkin", "treehole_post", "treehole_archive", "users", "auth"},
+            table in {
+                "checkin", "treehole_post", "treehole_archive", "users", "auth",
+                "buddy_demand",
+            },
             "Unknown fixture table",
         )
         return int(self.sql(f"SELECT COUNT(*) FROM {table}"))
