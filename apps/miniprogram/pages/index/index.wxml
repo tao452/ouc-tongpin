@@ -63,11 +63,11 @@
 
     <!-- 其他功能入口 -->
     <view class="feature-grid">
-      <view class="small-card">
+      <view class="small-card" bindtap="goTreehole">
         <text class="small-card-tag">TREEHOLE</text>
         <text class="small-card-title">匿名树洞</text>
         <text class="small-card-desc">说出心里话</text>
-        <text class="coming-soon">即将开放</text>
+        <text class="feature-link">进入树洞 →</text>
       </view>
 
       <view class="small-card">

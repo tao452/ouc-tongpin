@@ -1,11 +1,104 @@
 <view class="page">
-    <view class="header">
-      <text class="title">{{title}}</text>
-      <text class="description">{{description}}</text>
+  <view class="header">
+    <text class="title">{{title}}</text>
+    <text class="description">{{description}}</text>
+  </view>
+
+  <view class="notice">
+    <text class="notice-text">发布前经过内容安全检查 · 内容 24 小时后自动焚毁</text>
+  </view>
+
+  <!-- 发布入口 / 发布表单 -->
+  <view wx:if="{{!composerOpen}}" class="composer-entry" bindtap="openComposer">
+    <text class="composer-entry-text">写下此刻的心情…</text>
+    <text class="composer-entry-action">去发布</text>
+  </view>
+
+  <view wx:else class="composer">
+    <view class="composer-title">发布到树洞</view>
+
+    <textarea
+      class="composer-input"
+      placeholder="说点什么吧（最多 500 字）"
+      value="{{content}}"
+      maxlength="{{maxContentLength}}"
+      bindinput="onContentInput"
+      auto-height
+    />
+    <view class="composer-count">{{content.length}}/{{maxContentLength}}</view>
+
+    <view class="section-label">此刻的情绪</view>
+    <view class="tag-list">
+      <view
+        wx:for="{{tags}}"
+        wx:key="code"
+        class="tag-item {{selectedTag === item.code ? 'selected' : ''}}"
+        style="background:{{item.bg}}"
+        data-code="{{item.code}}"
+        bindtap="selectTag"
+      >{{item.label}}</view>
     </view>
 
-    <view class="empty-card">
-      <text class="empty-title">树洞正在准备中</text>
-      <text class="empty-description">很快就能在这里分享心情、倾听故事。</text>
+    <view class="anonymous-row">
+      <view>
+        <view class="anonymous-title">匿名发布</view>
+        <view class="anonymous-hint">实名发布将显示昵称，匿名发布只显示不可反推的标记</view>
+      </view>
+      <switch checked="{{anonymous}}" color="#426B7A" bindchange="onAnonymousChange" />
     </view>
+
+    <view class="composer-buttons">
+      <button class="btn-secondary" bindtap="closeComposer" disabled="{{submitting}}">取消</button>
+      <button class="btn-primary" bindtap="submitPost" loading="{{submitting}}" disabled="{{submitting}}">
+        {{submitting ? '发布中...' : '发布'}}
+      </button>
+    </view>
+    <view class="composer-hint">命中不适宜内容或服务不可用时会拒绝发布，内容不会保存。</view>
   </view>
+
+  <!-- 情绪筛选 -->
+  <view class="filter-bar">
+    <view
+      wx:for="{{filters}}"
+      wx:key="code"
+      class="filter-item {{activeTag === item.code ? 'active' : ''}}"
+      data-code="{{item.code}}"
+      bindtap="selectFilter"
+    >{{item.label}}</view>
+  </view>
+
+  <!-- 列表状态 -->
+  <view wx:if="{{loading && posts.length === 0}}" class="state-card">
+    <text class="state-text">正在加载树洞…</text>
+  </view>
+
+  <view wx:elif="{{error && posts.length === 0}}" class="state-card">
+    <text class="state-text">树洞加载失败</text>
+    <text class="state-hint">请确认本地服务已启动，或稍后重试</text>
+    <button class="retry-button" bindtap="retryLoad">重新加载</button>
+  </view>
+
+  <view wx:elif="{{posts.length === 0}}" class="state-card">
+    <text class="state-title">这里还很安静</text>
+    <text class="state-hint">写下第一条心情，或下拉刷新试试</text>
+  </view>
+
+  <view wx:else class="post-list">
+    <view class="post-card" wx:for="{{posts}}" wx:key="id">
+      <view class="post-head">
+        <text class="post-tag" style="background:{{item.emotionBg}}">{{item.emotionLabel}}</text>
+        <text class="post-author">{{item.authorText}}</text>
+        <text wx:if="{{item.anonymous}}" class="post-anon">匿名</text>
+      </view>
+      <view class="post-content">{{item.content}}</view>
+      <view class="post-foot">
+        <text>{{item.createdText}}</text>
+        <text>{{item.remainingText}}</text>
+      </view>
+    </view>
+
+    <view wx:if="{{loadingMore}}" class="more-hint">正在加载更多…</view>
+    <view wx:elif="{{hasMore}}" class="more-hint">上拉加载更多</view>
+    <view wx:else class="more-hint">已显示全部</view>
+  </view>
+</view>
