@@ -4,6 +4,7 @@
     "pages/checkin/index",
     "pages/treehole/index",
     "pages/plaza/index",
+    "pages/plaza/publish/publish",
     "pages/mine/index",
     "pages/student-verify/index",
     "pages/checkin/form",
@@ -13,6 +14,9 @@
     "pages/checkin-calendar/checkin-calendar",
     "pages/profile/profile",
     "pages/logs/logs"
+  ],
+  "requiredPrivateInfos": [
+    "chooseLocation"
   ],
   "window": {
     "navigationBarTextStyle": "black",

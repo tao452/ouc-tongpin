@@ -111,3 +111,128 @@
   .retry-button::after {
     border: none;
   }
+/* 情绪分析区域 */
+.analysis-section {
+  margin-top: 40rpx;
+}
+
+/* 时间范围切换 */
+.range-tabs {
+  display: flex;
+  padding: 6rpx;
+  margin-bottom: 24rpx;
+  border-radius: 16rpx;
+  background-color: #f3f5f8;
+}
+
+.range-tab {
+  flex: 1;
+  padding: 18rpx 0;
+  text-align: center;
+  font-size: 27rpx;
+  color: #667085;
+  border-radius: 12rpx;
+}
+
+.range-tab.active {
+  color: #4a69bd;
+  font-weight: 600;
+  background-color: #ffffff;
+}
+
+/* 图表卡片 */
+.chart-card {
+  padding: 28rpx;
+  margin-bottom: 24rpx;
+  border: 1rpx solid #e5e7eb;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+}
+
+.chart-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #222831;
+}
+
+.chart-desc {
+  margin-top: 10rpx;
+  font-size: 23rpx;
+  color: #98a2b3;
+}
+
+.chart-empty {
+  padding: 70rpx 0;
+  text-align: center;
+  font-size: 26rpx;
+  color: #98a2b3;
+}
+
+/* 折线图画布 */
+.trend-canvas {
+  width: 100%;
+  height: 360rpx;
+  margin-top: 24rpx;
+}
+
+/* 情绪分布 */
+.distribution-total {
+  margin: 28rpx 0;
+  font-size: 25rpx;
+  color: #667085;
+}
+
+.distribution-item {
+  margin-bottom: 28rpx;
+}
+
+.distribution-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14rpx;
+}
+
+.distribution-name {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #344054;
+}
+
+.emotion-dot {
+  width: 18rpx;
+  height: 18rpx;
+  margin-right: 14rpx;
+  border-radius: 50%;
+}
+
+/* 六种情绪颜色 */
+.emotion-HAPPY {
+  background-color: #FFD93D;
+}
+
+.emotion-CALM {
+  background-color: #95E1D3;
+}
+
+.emotion-ANXIOUS {
+  background-color: #FF9F68;
+}
+
+.emotion-LONELY {
+  background-color: #A6B1E1;
+}
+
+.emotion-IRRITABLE {
+  background-color: #FF6B6B;
+}
+
+.emotion-DOWN {
+  background-color: #6C7A89;
+}
+
+.distribution-value {
+  font-size: 24rpx;
+  color: #667085;
+}

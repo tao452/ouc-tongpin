@@ -21,9 +21,9 @@
   <view class="grid">
     <view
       wx:for="{{cells}}"
+      wx:for-item="item"
       wx:key="key"
-      class="cell {{item.empty ? 'empty' : ''}} {{item.emotion ? 'checked' : ''}}"
-      style="{{item.color ? 'background:' + item.color : ''}}">
+      class="cell {{item.empty ? 'empty' : ''}} {{item.emotion ? 'checked emotion-' + item.emotion : ''}}">
       <text wx:if="{{!item.empty}}">{{item.day}}</text>
     </view>
   </view>

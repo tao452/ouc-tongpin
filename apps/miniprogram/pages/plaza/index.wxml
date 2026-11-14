@@ -1,14 +1,92 @@
 <view class="page">
-    <view class="header">
-      <view class="title">{{title}}</view>
-      <view class="description">{{description}}</view>
+  <!-- 顶部标题 -->
+  <view class="header">
+    <view class="title">搭子广场</view>
+    <view class="description">发现志同道合的校园搭子</view>
+  </view>
+
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <view class="search-icon">⌕</view>
+    <input
+      class="search-input"
+      placeholder="搜索你感兴趣的需求"
+      value="{{keyword}}"
+      bindinput="onSearch"
+    />
+  </view>
+
+  <!-- 功能入口 -->
+  <view class="entry-list">
+    <view class="entry-card need-entry" bindtap="goToNeeds">
+      <view class="entry-icon">📋</view>
+      <view class="entry-info">
+        <view class="entry-title">需求广场</view>
+        <view class="entry-desc">看看大家正在寻找什么</view>
+      </view>
+      <view class="entry-arrow">›</view>
     </view>
 
-    <view class="content">
-      <view class="placeholder-icon">🌱</view>
-      <view class="placeholder-title">搭子广场即将开放</view>
-      <view class="placeholder-desc">
-        这里将展示校园需求与搭子信息，帮助你找到志同道合的伙伴。
+    <view class="entry-card match-entry" bindtap="goToMatch">
+      <view class="entry-icon">🤝</view>
+      <view class="entry-info">
+        <view class="entry-title">搭子匹配</view>
+        <view class="entry-desc">找到兴趣相投的伙伴</view>
       </view>
+      <view class="entry-arrow">›</view>
     </view>
   </view>
+
+  <!-- 示例需求：演示数据，列表 / 筛选接口属 V1.0 #12，暂未开放 -->
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title">示例需求</view>
+      <view class="section-more" bindtap="goToNeeds">列表后续开放</view>
+    </view>
+    <view class="demo-note">以下为演示数据 · 需求列表与筛选属 V1.0（#12），接口暂未开放</view>
+
+    <view wx:if="{{filteredNeeds.length > 0}}">
+      <view
+        class="need-card"
+        wx:for="{{filteredNeeds}}"
+        wx:key="id"
+      >
+        <view class="need-top">
+          <view class="need-scene">{{item.scene}}</view>
+          <view class="need-status">{{item.status}}</view>
+        </view>
+
+        <view class="need-description">{{item.description}}</view>
+
+        <view class="need-meta">
+          <view>时间：{{item.time}}</view>
+          <view>地点：{{item.location}}</view>
+        </view>
+
+        <view class="need-bottom">
+          <view class="need-tags">
+            <text
+              class="tag"
+              wx:for="{{item.tags}}"
+              wx:for-item="tag"
+              wx:key="*this"
+            >{{tag}}</text>
+          </view>
+          <view class="need-people">{{item.people}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:else class="empty-state">
+      <view class="empty-text">暂时没有找到相关需求</view>
+    </view>
+  </view>
+
+  <!-- 发布需求按钮 -->
+  <view class="publish-area">
+    <button class="publish-button" bindtap="goToPublish">
+      + 发布我的需求
+    </button>
+    <view class="publish-tip">说出你的想法，寻找合适的校园搭子</view>
+  </view>
+</view>
