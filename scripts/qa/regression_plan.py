@@ -46,11 +46,8 @@ def register_blocked(runner):
         "Treehole detail endpoint is not implemented; 404 is not expiry acceptance",
         list(runner.client.observations),
     )
-    needs = missing_route("/api/match/needs")
-    for number in range(47, 55):
-        runner.blocked(
-            f"S1-{number:03}", "Match needs publishing endpoint is not implemented", needs
-        )
+    # S1-047..054 are now executed against the real endpoint by regression_match.register;
+    # do not keep a "missing route" observation here, it would falsely fail the plan.
     runner.blocked(
         "S1-076", "JWT caller identity and identity-mapping authorization await integration"
     )

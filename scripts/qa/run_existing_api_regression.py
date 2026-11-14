@@ -11,6 +11,7 @@ from pathlib import Path
 
 import regression_auth
 import regression_checkin
+import regression_match
 import regression_moderation
 import regression_treehole
 from regression_http import Client, Runner
@@ -21,7 +22,13 @@ from regression_stack import Stack
 def execute(base):
     client, stack = Client(base), Stack()
     runner = Runner(client)
-    for module in (regression_auth, regression_checkin, regression_treehole, regression_moderation):
+    for module in (
+        regression_auth,
+        regression_checkin,
+        regression_treehole,
+        regression_moderation,
+        regression_match,
+    ):
         module.register(runner, stack)
     register_blocked(runner)
     identifiers = [result["case_id"] for result in runner.results]

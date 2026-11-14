@@ -1,0 +1,48 @@
+package com.ouctongpin.apiserver.buddy.dto;
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * Request body of POST /api/match/needs (US-10).
+ * Field names and bounds come from packages/contract/openapi.yaml:249-287.
+ * Do not add fields that are not in the contract: the miniprogram publish page already
+ * serialises exactly scene / time / location / skillTags / remark.
+ */
+@Data
+public class BuddyCreateReq {
+
+    @NotBlank(message = "场景不能为空")
+    @Size(max = 64, message = "场景不能超过 64 字符")
+    private String scene;
+
+    /** ISO-8601. The miniprogram sends toISOString() (UTC, trailing Z); accept local too. */
+    @NotBlank(message = "时间不能为空")
+    private String time;
+
+    @NotNull(message = "地点不能为空")
+    @Valid
+    private Location location;
+
+    @Size(max = 5, message = "技能标签最多 5 个")
+    private List<String> skillTags;
+
+    @Size(max = 200, message = "补充说明不能超过 200 字符")
+    private String remark;
+
+    @Data
+    public static class Location {
+        @NotBlank(message = "地点地址不能为空")
+        @Size(max = 255, message = "地点地址不能超过 255 字符")
+        private String address;
+
+        private BigDecimal lat;
+        private BigDecimal lng;
+    }
+}

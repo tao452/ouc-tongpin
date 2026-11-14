@@ -281,10 +281,22 @@ paths:
             application/json:
               schema:
                 type: object
+                required: [id, scene, status]
                 properties:
-                  id: { type: string }
+                  id: { type: string, description: 字符串形式的自增主键 }
                   scene: { type: string }
                   status: { type: string, example: OPEN }
+        '400':
+          description: >
+            请求参数不合法（缺 scene / time / location，非法 time 格式，
+            skillTags 超过 5 个，remark 超过 200 字符等），不落库。
+        '422':
+          description: >
+            发布前内容安全检查命中 HIGH 词，未发布。scene 与 remark 一并送审，
+            同 POST /api/treehole/posts 的审核规则。
+        '503':
+          description: >
+            内容安全服务不可用，未发布且未落库；审核失败不得静默放行，可稍后重试。
 
   # ---------------- 内容风控 US-24 ----------------
   /api/moderation/check:

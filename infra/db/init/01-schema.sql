@@ -81,3 +81,23 @@ CREATE TABLE IF NOT EXISTS `treehole_archive` (
   PRIMARY KEY (`id`),
   KEY `idx_archive_post` (`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 搭子需求表（US-10 / POST /api/match/needs）
+-- 只存发布内容；列表 / 筛选 / 排序属 V1.0 #12，暂无 GET 契约。
+CREATE TABLE IF NOT EXISTS `buddy_demand` (
+  `id`               BIGINT        NOT NULL AUTO_INCREMENT,
+  `user_id`          BIGINT        NOT NULL,
+  `scene`            VARCHAR(64)   DEFAULT NULL,
+  `event_time`       DATETIME      DEFAULT NULL,
+  `location_address` VARCHAR(255)  DEFAULT NULL,
+  `latitude`         DECIMAL(10,6) DEFAULT NULL,
+  `longitude`        DECIMAL(10,6) DEFAULT NULL,
+  `skill_tags`       VARCHAR(512)  DEFAULT NULL,
+  `remark`           VARCHAR(200)  DEFAULT NULL,
+  `status`           VARCHAR(16)   NOT NULL DEFAULT 'OPEN',
+  `created_at`       DATETIME      DEFAULT NULL,
+  `deleted`          INT           NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `idx_need_user` (`user_id`),
+  KEY `idx_need_status_created` (`status`, `created_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
