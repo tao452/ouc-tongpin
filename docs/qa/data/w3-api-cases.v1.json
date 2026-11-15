@@ -1,0 +1,41 @@
+{
+  "version": "w3-api-v1",
+  "scope": "登录6条、打卡14条、树洞10条；真实HTTP/MySQL/Redis；登录使用现有code2session模拟，业务接口使用demo用户1。",
+  "limitations": [
+    "不代表真实微信code2session、校内身份认证或JWT鉴权/越权验收通过。",
+    "仅在可回收的隔离测试环境执行，会创建合成账户、打卡和树洞记录。",
+    "与S1的80条用例目录分别统计，报告不输出token、账户ID、匿名ID或请求/响应正文。"
+  ],
+  "cases": [
+    {"case_id": "W3-AUTH-01", "module": "auth", "title": "模拟首次登录", "expectation": "响应字段及token形态正确，新建一条users和一条auth记录，需学号认证"},
+    {"case_id": "W3-AUTH-02", "module": "auth", "title": "模拟重复登录", "expectation": "同code返回同一身份、isNewUser=false，不重复建档"},
+    {"case_id": "W3-AUTH-03", "module": "auth", "title": "缺少code", "expectation": "HTTP400，users/auth记录数不变"},
+    {"case_id": "W3-AUTH-04", "module": "auth", "title": "空白code", "expectation": "HTTP400，users/auth记录数不变"},
+    {"case_id": "W3-AUTH-05", "module": "auth", "title": "null code", "expectation": "HTTP400，users/auth记录数不变"},
+    {"case_id": "W3-AUTH-06", "module": "auth", "title": "畸形登录JSON", "expectation": "HTTP400，不回显输入且不建档"},
+    {"case_id": "W3-CHECKIN-01", "module": "checkin", "title": "六种情绪打卡", "expectation": "六个契约情绪均可提交，每次持久化一条，响应与提交一致"},
+    {"case_id": "W3-CHECKIN-02", "module": "checkin", "title": "强度下限1", "expectation": "HTTP200，强度1持久化成功"},
+    {"case_id": "W3-CHECKIN-03", "module": "checkin", "title": "强度上限5", "expectation": "HTTP200，强度5持久化成功"},
+    {"case_id": "W3-CHECKIN-04", "module": "checkin", "title": "强度低于下限", "expectation": "强度0返回400，数据库不变"},
+    {"case_id": "W3-CHECKIN-05", "module": "checkin", "title": "强度高于上限", "expectation": "强度6返回400，数据库不变"},
+    {"case_id": "W3-CHECKIN-06", "module": "checkin", "title": "非法情绪", "expectation": "未知情绪返回400，数据库不变"},
+    {"case_id": "W3-CHECKIN-07", "module": "checkin", "title": "缺少情绪", "expectation": "HTTP400，数据库不变"},
+    {"case_id": "W3-CHECKIN-08", "module": "checkin", "title": "缺少强度", "expectation": "HTTP400，数据库不变"},
+    {"case_id": "W3-CHECKIN-09", "module": "checkin", "title": "备注100字边界", "expectation": "HTTP200，100字备注完整保存"},
+    {"case_id": "W3-CHECKIN-10", "module": "checkin", "title": "备注101字越界", "expectation": "HTTP400，数据库不变"},
+    {"case_id": "W3-CHECKIN-11", "module": "checkin", "title": "同日重复幂等", "expectation": "重复提交返回原记录，无新增行"},
+    {"case_id": "W3-CHECKIN-12", "module": "checkin", "title": "日期区间查询", "expectation": "包含两端日期，只返回该区间三条合成记录"},
+    {"case_id": "W3-CHECKIN-13", "module": "checkin", "title": "非法及反向日期区间", "expectation": "均返回400、不回显输入、数据库不变"},
+    {"case_id": "W3-CHECKIN-14", "module": "checkin", "title": "八请求并发幂等", "expectation": "八个HTTP200返回同一记录ID，数据库只新增一行"},
+    {"case_id": "W3-TREEHOLE-01", "module": "treehole", "title": "默认匿名发布", "expectation": "HTTP201，HMAC匿名马甲，不含内部身份字段，MySQL与Redis各新增一条"},
+    {"case_id": "W3-TREEHOLE-02", "module": "treehole", "title": "显式匿名与马甲稳定性", "expectation": "两次匿名发布马甲一致，公开响应无内部身份，每次均落库与入队"},
+    {"case_id": "W3-TREEHOLE-03", "module": "treehole", "title": "实名昵称发布", "expectation": "anonymous=false且仅展示公开昵称，不暴露内部身份，落库入队"},
+    {"case_id": "W3-TREEHOLE-04", "module": "treehole", "title": "HIGH内容阻断", "expectation": "HTTP422、不回显输入、MySQL与Redis均不写入"},
+    {"case_id": "W3-TREEHOLE-05", "module": "treehole", "title": "正文500字边界", "expectation": "HTTP201，正文完整保存并加入焚毁队列"},
+    {"case_id": "W3-TREEHOLE-06", "module": "treehole", "title": "正文501字越界", "expectation": "HTTP400、MySQL与Redis均不写入"},
+    {"case_id": "W3-TREEHOLE-07", "module": "treehole", "title": "缺少正文", "expectation": "HTTP400、MySQL与Redis均不写入"},
+    {"case_id": "W3-TREEHOLE-08", "module": "treehole", "title": "非法情绪标签", "expectation": "HTTP400、MySQL与Redis均不写入"},
+    {"case_id": "W3-TREEHOLE-09", "module": "treehole", "title": "按情绪筛选及列表隐私", "expectation": "最新页包含合成记录，所有项标签匹配且不泄露内部身份"},
+    {"case_id": "W3-TREEHOLE-10", "module": "treehole", "title": "分页连续性", "expectation": "首页10条、cursor=2，两页无重复且包含新建的12条记录"}
+  ]
+}
