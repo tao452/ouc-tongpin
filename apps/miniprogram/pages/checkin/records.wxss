@@ -168,6 +168,16 @@
   color: #98a2b3;
 }
 
+.chart-empty .retry-button {
+  margin: 28rpx auto 0;
+}
+
+.window-hint {
+  margin-top: 16rpx;
+  font-size: 23rpx;
+  color: #98a2b3;
+}
+
 /* 折线图画布 */
 .trend-canvas {
   width: 100%;

@@ -1,14 +1,11 @@
 
 const { request } = require('../../utils/request.js')
-
-const EMOTIONS = [
-  { code: 'HAPPY', label: '开心', color: '#FFD93D' },
-  { code: 'CALM', label: '平静', color: '#95E1D3' },
-  { code: 'ANXIOUS', label: '焦虑', color: '#FF9F68' },
-  { code: 'LONELY', label: '孤独', color: '#A6B1E1' },
-  { code: 'IRRITABLE', label: '烦躁', color: '#FF6B6B' },
-  { code: 'DOWN', label: '低落', color: '#6C7A89' }
-]
+const {
+  EMOTIONS,
+  normalizeRange,
+  getWindowRange,
+  buildAnalysis
+} = require('../../utils/emotion-analysis.js')
 
 Page({
   data: {
@@ -18,11 +15,15 @@ Page({
     loading: false,
     error: false,
 
-    // 情绪分析
+    // 情绪分析：近 7 / 近 30 天滚动窗口，口径见 docs/requirements/情绪曲线与分布-验收口径-v1.md
     rangeDays: 7,
+    windowFrom: '',
+    windowTo: '',
     trendData: [],
     distributionData: [],
-    analysisTotal: 0
+    analysisTotal: 0,
+    missingDays: 0,
+    analysisError: false
   },
 
   onLoad() {
@@ -33,17 +34,23 @@ Page({
     this.loadRecords()
   },
 
-  // 加载打卡记录
+  // 加载打卡记录：按当前窗口请求，不再用 from=2000-01-01 拉全量后本地截窗
   loadRecords() {
-    if (this.data.loading) return
+    if (this.data.loading) {
+      // 切换窗口时若上一次请求还在飞，标记后由 finally 补跑，避免 7↔30 串数据
+      this._pendingReload = true
+      return
+    }
 
-    const today = new Date()
-    const to = this.formatDate(today)
-    const from = '2000-01-01'
+    const rangeDays = normalizeRange(this.data.rangeDays)
+    const { from, to } = getWindowRange(rangeDays, new Date())
 
     this.setData({
       loading: true,
-      error: false
+      error: false,
+      analysisError: false,
+      windowFrom: from,
+      windowTo: to
     })
 
     request({
@@ -52,27 +59,22 @@ Page({
       showLoading: false
     })
       .then((data) => {
-        const items = Array.isArray(data.items) ? data.items : []
+        const payload = data || {}
+        const items = Array.isArray(payload.items) ? payload.items : []
 
         const emotionLabels = {}
         EMOTIONS.forEach((item) => {
           emotionLabels[item.code] = item.label
         })
 
-        // 整理历史记录
+        // 整理窗口内的历史记录
         const records = items.map((item) => {
-          const emotionText =
-            emotionLabels[item.emotion] || '情绪打卡'
-
+          const emotionText = emotionLabels[item.emotion] || '情绪打卡'
           const intensity = Number(item.intensity)
-
           const intensityText =
-            Number.isFinite(intensity) &&
-            intensity >= 1 &&
-            intensity <= 5
+            Number.isFinite(intensity) && intensity >= 1 && intensity <= 5
               ? `强度 ${intensity}/5`
               : '强度未记录'
-
           const note = item.note ? ` · ${item.note}` : ''
 
           return {
@@ -85,18 +87,28 @@ Page({
           }
         })
 
-        this.setData({
-          totalDays: Number(data.total) || 0,
-          continuousDays: Number(data.streakDays) || 0,
-          records
-        })
+        // 契约 total 是本次区间条数，不是历史累计；streakDays 才是全局连续天数
+        const analysis = buildAnalysis(items, rangeDays, new Date())
 
-        this.buildAnalysis(items)
+        this.setData({
+          totalDays: Number(payload.total) || 0,
+          continuousDays: Number(payload.streakDays) || 0,
+          records,
+          rangeDays: analysis.rangeDays,
+          trendData: analysis.trendData,
+          distributionData: analysis.distributionData,
+          analysisTotal: analysis.analysisTotal,
+          missingDays: analysis.missingDays,
+          analysisError: false
+        }, () => {
+          if (analysis.hasData) this.drawTrendChart()
+        })
       })
       .catch((err) => {
         console.error('获取打卡记录失败：', err)
 
-        this.setData({ error: true })
+        // 请求失败显示错误态 + 重试，不把失败静默当成「0 条记录」
+        this.setData({ error: true, analysisError: true })
 
         wx.showToast({
           title: '记录加载失败',
@@ -104,151 +116,38 @@ Page({
         })
       })
       .finally(() => {
-        this.setData({ loading: false })
+        this.setData({ loading: false }, () => {
+          if (this._pendingReload) {
+            this._pendingReload = false
+            this.loadRecords()
+          }
+        })
       })
   },
 
-  // 切换近一周 / 近一月
+  // 切换近 7 天 / 近 30 天：必须按新窗口重新请求，不能复用上一次的 items
   changeRange(e) {
-    const rangeDays = Number(e.currentTarget.dataset.range)
+    const rangeDays = normalizeRange(Number(e.currentTarget.dataset.range))
+    if (rangeDays === this.data.rangeDays) return
 
-    if (rangeDays !== 7 && rangeDays !== 30) return
-
-    this.setData({ rangeDays }, () => {
-      if (this._checkinItems) {
-        this.buildAnalysis(this._checkinItems)
-      }
+    this.setData({
+      rangeDays,
+      trendData: [],
+      distributionData: [],
+      analysisTotal: 0,
+      missingDays: 0
+    }, () => {
+      this.loadRecords()
     })
   },
 
-  // 计算情绪趋势和情绪分布
-  buildAnalysis(items) {
-    this._checkinItems = items
-
-    const rangeDays = this.data.rangeDays
-    const today = new Date()
-    const dailyData = {}
-    const trendData = []
-
-    // 初始化最近 N 天的数据
-    for (let i = rangeDays - 1; i >= 0; i--) {
-      const date = new Date(
-        today.getFullYear(),
-        today.getMonth(),
-        today.getDate() - i
-      )
-
-      const dateString = this.formatDate(date)
-
-      dailyData[dateString] = {
-        totalIntensity: 0,
-        count: 0,
-        emotion: null
-      }
-
-      trendData.push({
-        date: dateString,
-        label: `${date.getMonth() + 1}/${date.getDate()}`,
-        intensity: null,
-        emotion: null
-      })
-    }
-
-    // 初始化六种情绪的统计
-    const emotionCounts = {}
-
-    EMOTIONS.forEach((item) => {
-      emotionCounts[item.code] = 0
-    })
-
-    // 统计打卡数据
-    items.forEach((item) => {
-      const date = item.checkinDate
-
-      if (!date || !dailyData[date]) return
-
-      const emotion = item.emotion
-      const intensity = Number(item.intensity)
-
-      // 统计情绪出现次数
-      if (
-        Object.prototype.hasOwnProperty.call(
-          emotionCounts,
-          emotion
-        )
-      ) {
-        emotionCounts[emotion]++
-
-        // 同一天有多条记录时，采用最后遍历到的情绪
-        dailyData[date].emotion = emotion
-      }
-
-      // 统计情绪强度
-      if (
-        Number.isFinite(intensity) &&
-        intensity >= 1 &&
-        intensity <= 5
-      ) {
-        dailyData[date].totalIntensity += intensity
-        dailyData[date].count++
-      }
-    })
-
-    // 计算每天的平均情绪强度
-    trendData.forEach((item) => {
-      const daily = dailyData[item.date]
-
-      if (daily.count > 0) {
-        item.intensity = Number(
-          (daily.totalIntensity / daily.count).toFixed(1)
-        )
-      }
-
-      item.emotion = daily.emotion
-    })
-
-    // 计算情绪分布
-    const analysisTotal = Object.values(emotionCounts).reduce(
-      (sum, count) => sum + count,
-      0
-    )
-
-    const distributionData = EMOTIONS.map((emotion) => {
-      const count = emotionCounts[emotion.code]
-
-      return {
-        code: emotion.code,
-        label: emotion.label,
-        color: emotion.color,
-        count,
-        percent: analysisTotal > 0
-          ? Math.round((count / analysisTotal) * 100)
-          : 0
-      }
-    })
-
-    this.setData(
-      {
-        trendData,
-        distributionData,
-        analysisTotal
-      },
-      () => {
-        this.drawTrendChart()
-      }
-    )
-  },
-
-  // 绘制情绪强度折线图
+  // 绘制情绪强度折线图：纵轴固定 1–5，断签处留空断开、不补 0
   drawTrendChart() {
     const { trendData, analysisTotal } = this.data
 
     if (!analysisTotal || !trendData.length) return
 
-    const ctx = wx.createCanvasContext(
-      'emotionTrendCanvas',
-      this
-    )
+    const ctx = wx.createCanvasContext('emotionTrendCanvas', this)
 
     const width = 345
     const left = 32
@@ -259,7 +158,6 @@ Page({
     const chartWidth = right - left
     const chartHeight = bottom - top
 
-    // 绘制背景网格和纵轴刻度
     ctx.setFontSize(10)
     ctx.setLineWidth(1)
 
@@ -276,23 +174,14 @@ Page({
       ctx.fillText(String(i), 10, y + 3)
     }
 
-    // 计算横坐标
     const getX = (index) => {
-      if (trendData.length === 1) {
-        return left + chartWidth / 2
-      }
-
-      return left +
-        (index / (trendData.length - 1)) * chartWidth
+      if (trendData.length === 1) return left + chartWidth / 2
+      return left + (index / (trendData.length - 1)) * chartWidth
     }
 
-    // 计算纵坐标
-    const getY = (value) => {
-      return bottom - ((value - 1) / 4) * chartHeight
-    }
+    const getY = (value) => bottom - ((value - 1) / 4) * chartHeight
 
-    // 绘制蓝色趋势折线
-    // 没有打卡的日期不连接，避免产生错误趋势
+    // 分段绘制：intensity 为 null 的日期直接断开，避免把「没记录」画成强度 0
     let segment = []
 
     const drawSegment = () => {
@@ -300,11 +189,9 @@ Page({
 
       ctx.beginPath()
       ctx.moveTo(segment[0].x, segment[0].y)
-
       for (let i = 1; i < segment.length; i++) {
         ctx.lineTo(segment[i].x, segment[i].y)
       }
-
       ctx.stroke()
       segment = []
     }
@@ -317,32 +204,21 @@ Page({
         drawSegment()
         return
       }
-
-      segment.push({
-        x: getX(index),
-        y: getY(item.intensity)
-      })
+      segment.push({ x: getX(index), y: getY(item.intensity) })
     })
-
     drawSegment()
 
-    // 绘制不同情绪颜色的数据点
+    // 数据点按当天情绪着色（六种情绪固定色）
     trendData.forEach((item, index) => {
       if (item.intensity === null) return
 
       const x = getX(index)
       const y = getY(item.intensity)
-
       const emotion = EMOTIONS.find(
         (emotionItem) => emotionItem.code === item.emotion
       )
+      const pointColor = emotion ? emotion.color : '#4a69bd'
 
-      // 根据当天情绪决定数据点颜色
-      const pointColor = emotion
-        ? emotion.color
-        : '#4a69bd'
-
-      // 白色描边，让数据点更加清晰
       ctx.beginPath()
       ctx.arc(x, y, 5, 0, Math.PI * 2)
       ctx.setFillStyle(pointColor)
@@ -353,45 +229,23 @@ Page({
       ctx.stroke()
     })
 
-    // 绘制日期标签，避免过于密集
-    const step = Math.max(
-      1,
-      Math.ceil(trendData.length / 6)
-    )
+    const step = Math.max(1, Math.ceil(trendData.length / 6))
 
     ctx.setFontSize(9)
     ctx.setFillStyle('#98a2b3')
 
     trendData.forEach((item, index) => {
-      if (
-        index % step !== 0 &&
-        index !== trendData.length - 1
-      ) {
-        return
-      }
-
-      const x = getX(index)
-      ctx.fillText(item.label, x - 10, 165)
+      if (index % step !== 0 && index !== trendData.length - 1) return
+      ctx.fillText(item.label, getX(index) - 10, 165)
     })
 
     ctx.draw()
   },
 
-  // 日期格式化
-  formatDate(date) {
-    const year = date.getFullYear()
-    const month = String(date.getMonth() + 1).padStart(2, '0')
-    const day = String(date.getDate()).padStart(2, '0')
-
-    return `${year}-${month}-${day}`
-  },
-
   // 历史记录日期格式化
   formatRecordDate(dateString) {
-    const parts = dateString.split('-')
-
+    const parts = String(dateString).slice(0, 10).split('-')
     if (parts.length !== 3) return dateString
-
     return `${Number(parts[1])}月${Number(parts[2])}日`
   },
 
