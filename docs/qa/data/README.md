@@ -8,8 +8,10 @@ PII 扫描用的是另一份合成基线 `pii-baseline.v1.json`，复现方法�
 这 100 条来自组合构造，并非随机收集的 100 条独立文本。
 
 每条样本先填写预期结果，再运行过滤器。评估器会拒绝重复 ID 和相同正文。
-当前使用 5 词示例库，按 [M1 已确认的 S1 规则](https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309)执行 HIGH 阻断、MEDIUM/LOW 放行。
-这批样本用于开发回归；正式词库、词条等级和独立样本按 #25 的后续安排测试。
+第二周历史结果使用 5 词示例库，按 [M1 已确认的 S1 规则](https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309)执行 HIGH 阻断、MEDIUM/LOW 放行。
+2026-11-15 默认词库升级为 46 项的版本 1.0.1，仍保持上述处理规则，本组 300 条样本继续用于开发回归。
+独立评估改用外部作者人工标注的 COLD 固定测试集，见 `external/cold-test.v1.json`；
+这组开发合成样本不作为独立样本，实际结果见 `../US24-正式词库与独立样本评估.md`。
 第二周收尾复测的结果与文件哈希见 [收尾记录](../evidence/w2-closeout-20261109/closeout.json)。
 
 CI 要求：正常文本不少于 200 条、拦截文本不少于 100 条、HIGH 检出率不低于 95%、误杀率低于 2%。
