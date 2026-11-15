@@ -227,9 +227,40 @@ jobs:
           name: w1-poc-evidence
           path: qa-private/w1-poc.json
 
+  w3-delivery:
+    name: W3 delivery evidence
+    needs: [api-server, algo, stack]
+    if: >-
+      always() && needs['api-server'].result == 'success' &&
+      needs.algo.result == 'success' && needs.stack.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          path: qa-private/w3-ci-input
+          merge-multiple: true
+      - name: Verify one-revision W3 quality report
+        run: >-
+          python scripts/qa/report_w3_delivery.py
+          --api-report qa-private/w3-ci-input/w3-api-regression.json
+          --pii-report qa-private/w3-ci-input/pii-baseline.json
+          --load-report qa-private/w3-ci-input/w3-load.json
+          --java-report qa-private/w3-ci-input/regression-java.json
+          --output qa-private/w3-delivery.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: w3-delivery-evidence
+          path: qa-private/w3-delivery.json
+          if-no-files-found: error
+
   quality:
     if: always()
-    needs: [guard, changes, miniprogram, admin-web, api-server, algo, stack, w1-poc]
+    needs: [guard, changes, miniprogram, admin-web, api-server, algo, stack, w1-poc, w3-delivery]
     runs-on: ubuntu-latest
     steps:
       - name: Require all selected checks to pass
@@ -245,6 +276,8 @@ jobs:
               raise SystemExit('Missing or invalid change-filter output')
           required = {'guard', 'changes', 'stack', 'w1-poc'}
           required.update(job for key, job in modules.items() if outputs[key] == 'true')
+          if outputs['api'] == 'true' and outputs['algo'] == 'true':
+              required.add('w3-delivery')
           failed = [name for name, job in results.items()
                     if job['result'] not in ('success', 'skipped')
                     or (name in required and job['result'] != 'success')]
