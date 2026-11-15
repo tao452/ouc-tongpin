@@ -3,6 +3,8 @@ import argparse
 import hashlib
 import json
 import math
+import os
+import re
 import sys
 import time
 import urllib.request
@@ -10,14 +12,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app.models.moderation import ModerationRequest, ModerationResponse  # noqa: E402
-from app.services.moderation import ModerationService  # noqa: E402
+from app.services.moderation import DEFAULT_DICTIONARY, ModerationService  # noqa: E402
 
 
 class HttpModerationService:
-    dictionary_sha256 = None  # The HTTP contract does not expose the remote dictionary version.
+    dictionary_sha256 = None
 
-    def __init__(self, base_url):
+    def __init__(self, base_url, expected_dictionary_sha256=None):
         self.base_url = base_url.rstrip("/")
+        self.expected_dictionary_sha256 = expected_dictionary_sha256
 
     def check(self, text):
         request = urllib.request.Request(
@@ -26,6 +29,13 @@ class HttpModerationService:
             headers={"Content-Type": "application/json"},
         )
         with urllib.request.urlopen(request, timeout=10) as response:
+            digest = response.headers.get("X-Moderation-Dictionary-SHA256")
+            if ((digest is not None and re.fullmatch(r"[0-9a-f]{64}", digest) is None)
+                    or (self.expected_dictionary_sha256 is not None
+                        and digest != self.expected_dictionary_sha256)
+                    or (self.dictionary_sha256 is not None and digest != self.dictionary_sha256)):
+                raise ValueError("Unexpected or changing remote dictionary version")
+            self.dictionary_sha256 = digest
             result = ModerationResponse.model_validate(json.load(response), strict=True)
         if result.passed == any(hit.level == "HIGH" for hit in result.hits):
             raise ValueError("Inconsistent remote moderation decision")
@@ -103,6 +113,9 @@ def main(argv=None):
     parser.add_argument("--output", type=Path)
     args = parser.parse_args(argv)
     try:
+        configured = os.environ.get("MODERATION_DICTIONARY_PATH")
+        dictionary = args.dictionary or (Path(configured) if configured else DEFAULT_DICTIONARY)
+        validate_output_path(args.output, [args.dataset, dictionary])
         records, digest = load_samples(args.dataset)
         service = (HttpModerationService(args.base_url) if args.base_url
                    else ModerationService(args.dictionary))
@@ -131,6 +144,16 @@ def main(argv=None):
     if not result["both_classes_present"] or not result["sample_requirements_met"]:
         return 2
     return 0 if result["thresholds_met_on_supplied_rows"] else 1
+
+
+def validate_output_path(output, inputs):
+    if output is None:
+        return
+    for source in [*inputs, Path(__file__).resolve()]:
+        if output.resolve() == source.resolve() or (
+            output.exists() and source.exists() and output.samefile(source)
+        ):
+            raise ValueError("Report must not overwrite evaluation inputs or code")
 
 
 if __name__ == "__main__":
