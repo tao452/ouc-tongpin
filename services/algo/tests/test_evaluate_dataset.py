@@ -94,3 +94,22 @@ def test_versioned_w2_corpus_meets_development_regression_gate():
     assert result["benign_samples"] == 200
     assert result["blocked_samples"] == 100
     assert result["thresholds_met_on_supplied_rows"] is True
+
+
+def test_cli_cannot_replace_its_input_dataset(tmp_path, capsys):
+    path = write_samples(tmp_path, [sample(1), sample(2, "傻逼", False)])
+    before = path.read_bytes()
+    assert evaluation.main([str(path), "--output", str(path)]) == 2
+    assert path.read_bytes() == before
+    assert "傻逼" not in capsys.readouterr().out
+
+
+def test_cli_cannot_replace_environment_configured_dictionary(tmp_path, monkeypatch, capsys):
+    dictionary = tmp_path / "private-dictionary.json"
+    dictionary.write_text('[{"word":"synthetic","level":"HIGH"}]', encoding="utf-8")
+    before = dictionary.read_bytes()
+    monkeypatch.setenv("MODERATION_DICTIONARY_PATH", str(dictionary))
+    path = write_samples(tmp_path, [sample(1), sample(2, "synthetic", False)])
+    assert evaluation.main([str(path), "--output", str(dictionary)]) == 2
+    assert dictionary.read_bytes() == before
+    assert "private-dictionary" not in capsys.readouterr().err
