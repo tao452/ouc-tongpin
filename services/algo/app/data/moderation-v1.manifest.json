@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dictionary": "moderation-v1.json",
-  "sha256": "a28ee08bc1a11796bf659747a235549004bcf4b5f4f4e1d592151aef963d2ad1",
+  "sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
   "frozen_at_utc": "2026-11-15T13:17:08.939789+00:00",
-  "authorship": "M6-authored project rules, frozen before downloading or evaluating the external COLD test split.",
+  "authorship": "M6-authored rules. Initial draft f8c9fe5 preceded raw COLD download. A traditional-spelling alias was corrected by unit QA before any external test evaluation; no COLD outcomes used for tuning.",
   "source_rule": "https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309",
   "decision_policy": {
     "HIGH": "block",
@@ -37,5 +37,6 @@
     "sampling": "Every row; exclude only text outside the existing 1..2000-character nonblank input contract. Keep duplicate rows and account for all exclusions.",
     "label_policy": "Keep upstream labels unchanged; offensive=1, nonoffensive=0. No training or tuning on this split.",
     "assessment": "External diagnostic and comparison with the five-entry starter; not a production acceptance claim."
-  }
+  },
+  "unit_qa_revision": "Added the explicit traditional spelling for the directed phrase after unit QA exposed an OpenCC ambiguity."
 }
