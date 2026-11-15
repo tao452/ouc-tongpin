@@ -1,11 +1,11 @@
 
 <view class="records-page">
 
-  <!-- 数据概览 -->
+  <!-- 数据概览：total 是本次窗口条数，streakDays 是全局连续天数 -->
   <view class="data-card">
     <view class="data-item">
       <view class="data-number">{{totalDays}}</view>
-      <view class="data-label">累计打卡</view>
+      <view class="data-label">近 {{rangeDays}} 天打卡</view>
     </view>
 
     <view class="data-item">
@@ -14,7 +14,7 @@
     </view>
   </view>
 
-  <!-- 情绪分析 -->
+  <!-- 情绪分析：近 7 / 近 30 天滚动窗口（含今天） -->
   <view class="analysis-section">
 
     <view class="section-title">情绪分析</view>
@@ -26,7 +26,7 @@
         data-range="7"
         bindtap="changeRange"
       >
-        近一周
+        近 7 天
       </view>
 
       <view
@@ -34,40 +34,55 @@
         data-range="30"
         bindtap="changeRange"
       >
-        近一月
+        近 30 天
       </view>
     </view>
 
     <!-- 情绪强度趋势 -->
     <view class="chart-card">
       <view class="chart-title">情绪强度变化</view>
-      <view class="chart-desc">根据每日打卡强度（1～5）统计</view>
+      <view class="chart-desc">近 {{rangeDays}} 天（含今天）· 每日强度 1～5，断签留空断开、不补 0</view>
 
-      <view wx:if="{{analysisTotal === 0}}" class="chart-empty">
-        暂无情绪数据
+      <view wx:if="{{analysisError}}" class="chart-empty">
+        <view>情绪数据加载失败</view>
+        <button class="retry-button" bindtap="retryLoad">重新加载</button>
       </view>
 
-      <canvas
-        wx:else
-        canvas-id="emotionTrendCanvas"
-        class="trend-canvas"
-        width="345"
-        height="180"
-      ></canvas>
+      <view wx:elif="{{analysisTotal === 0}}" class="chart-empty">
+        近 {{rangeDays}} 天还没有打卡记录
+      </view>
+
+      <block wx:else>
+        <view class="window-hint">
+          {{windowFrom}} ~ {{windowTo}} · {{missingDays}} 天未打卡
+        </view>
+
+        <canvas
+          canvas-id="emotionTrendCanvas"
+          class="trend-canvas"
+          width="345"
+          height="180"
+        ></canvas>
+      </block>
     </view>
 
     <!-- 情绪分布 -->
     <view class="chart-card">
       <view class="chart-title">情绪分布</view>
-      <view class="chart-desc">当前时间范围内各类情绪出现的次数</view>
+      <view class="chart-desc">按窗口内有效打卡记录条数计占比，未打卡日不进分母</view>
 
-      <view wx:if="{{analysisTotal === 0}}" class="chart-empty">
-        暂无情绪数据
+      <view wx:if="{{analysisError}}" class="chart-empty">
+        <view>情绪数据加载失败</view>
+        <button class="retry-button" bindtap="retryLoad">重新加载</button>
+      </view>
+
+      <view wx:elif="{{analysisTotal === 0}}" class="chart-empty">
+        近 {{rangeDays}} 天还没有打卡记录
       </view>
 
       <block wx:else>
         <view class="distribution-total">
-          共 {{analysisTotal}} 条情绪记录
+          共 {{analysisTotal}} 条记录 · {{missingDays}} 天未打卡
         </view>
 
         <view
@@ -77,9 +92,7 @@
         >
           <view class="distribution-header">
             <view class="distribution-name">
-              <view
-                class="emotion-dot emotion-{{item.code}}"
-              ></view>
+              <view class="emotion-dot emotion-{{item.code}}"></view>
               {{item.label}}
             </view>
 
@@ -101,8 +114,8 @@
 
   </view>
 
-  <!-- 历史记录 -->
-  <view class="section-title">历史打卡记录</view>
+  <!-- 窗口内打卡记录 -->
+  <view class="section-title">近 {{rangeDays}} 天打卡记录</view>
 
   <view wx:if="{{loading && records.length === 0}}" class="state-text">
     正在加载记录...
@@ -116,7 +129,7 @@
   </view>
 
   <view wx:elif="{{records.length === 0}}" class="empty-container">
-    <view class="empty-text">还没有打卡记录</view>
+    <view class="empty-text">近 {{rangeDays}} 天还没有打卡记录</view>
     <view class="empty-hint">完成每日打卡后，记录会显示在这里</view>
   </view>
 
