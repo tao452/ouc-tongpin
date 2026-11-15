@@ -4,11 +4,13 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.ouctongpin.apiserver.treehole.entity.TreeholeArchive;
 import com.ouctongpin.apiserver.treehole.entity.TreeholePost;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholeArchiveMapper;
+import com.ouctongpin.apiserver.treehole.mapper.TreeholeIdentityMapper;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholePostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.util.DigestUtils;
 
 import java.nio.charset.StandardCharsets;
@@ -18,7 +20,9 @@ import java.util.Set;
 public class BurnTask {
     @Autowired private StringRedisTemplate redisTemplate;
     @Autowired private TreeholePostMapper postMapper;
+    @Autowired private TreeholeIdentityMapper identityMapper;
     @Autowired private TreeholeArchiveMapper archiveMapper;
+    @Autowired private TransactionTemplate transactions;
 
     // 每 10 秒跑一次扫描
     @Scheduled(fixedRate = 10000)
@@ -31,23 +35,35 @@ public class BurnTask {
 
         for (String idStr : ids) {
             Long postId = Long.parseLong(idStr);
-            TreeholePost post = postMapper.selectById(postId);
-
-            if (post != null && post.getStatus() == 0) {
-                // 1. 记录哈希留档
-                String hash = DigestUtils.md5DigestAsHex(post.getContent().getBytes(StandardCharsets.UTF_8));
-                TreeholeArchive archive = new TreeholeArchive();
-                archive.setPostId(postId);
-                archive.setContentHash(hash);
-                archiveMapper.insert(archive);
-
-                // 2. 软删除，清空内容
-                post.setStatus(1); // 已焚毁
-                post.setContent("该内容已焚毁");
-                postMapper.updateById(post);
-            }
-            // 3. 从 Redis 移除
+            // Each post commits independently. Do not remove its retry entry before DB commit.
+            transactions.executeWithoutResult(status -> burnPost(postId));
             redisTemplate.opsForZSet().remove("treehole:burn_queue", idStr);
+        }
+    }
+
+    private void burnPost(Long postId) {
+        // Row lock prevents two workers from archiving the same post concurrently.
+        TreeholePost post = postMapper.selectOne(new LambdaQueryWrapper<TreeholePost>()
+                .eq(TreeholePost::getId, postId).last("FOR UPDATE"));
+        if (post == null) return;
+        if (Integer.valueOf(0).equals(post.getStatus())) {
+            String hash = DigestUtils.md5DigestAsHex(post.getContent().getBytes(StandardCharsets.UTF_8));
+            TreeholeArchive archive = new TreeholeArchive();
+            archive.setPostId(postId);
+            archive.setContentHash(hash);
+            if (archiveMapper.insert(archive) != 1) {
+                throw new IllegalStateException("Burn archive could not be persisted");
+            }
+            post.setStatus(1);
+            post.setContent("该内容已焚毁");
+        }
+        if (Integer.valueOf(1).equals(post.getStatus())) {
+            // A burned record retains no link to its former author, including its HMAC alias.
+            identityMapper.deleteById(postId);
+            post.setAnonymousId("burned");
+            if (postMapper.updateById(post) != 1) {
+                throw new IllegalStateException("Burned content could not be updated");
+            }
         }
     }
 }

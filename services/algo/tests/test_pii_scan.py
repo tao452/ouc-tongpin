@@ -103,3 +103,44 @@ def test_unwritable_report_is_an_error(tmp_path, capsys):
     parent.write_text("fixture", encoding="utf-8")
     assert scanner.main([str(source), "--output", str(parent / "report.json")]) == 2
     assert capsys.readouterr().out == ""
+
+
+@pytest.mark.parametrize("alias", ["direct", "dotdot", "hardlink", "symlink"])
+def test_output_cannot_replace_any_input(tmp_path, capsys, alias):
+    first = tmp_path / "clean.txt"
+    first.write_text("status=200", encoding="utf-8")
+    source = tmp_path / "PRIVATE-FILENAME.txt"
+    source.write_text("token=PRIVATE-SYNTHETIC-VALUE", encoding="utf-8")
+    original = source.read_bytes()
+    output = source
+    if alias == "dotdot":
+        (tmp_path / "child").mkdir()
+        output = tmp_path / "child" / ".." / source.name
+    elif alias in {"hardlink", "symlink"}:
+        output = tmp_path / "report.json"
+        try:
+            if alias == "hardlink":
+                output.hardlink_to(source)
+            else:
+                output.symlink_to(source)
+        except OSError:
+            pytest.skip(f"{alias} is unavailable on this filesystem")
+    assert scanner.main([str(first), str(source), "--output", str(output)]) == 2
+    assert source.read_bytes() == original
+    assert first.read_text(encoding="utf-8") == "status=200"
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert "PRIVATE-FILENAME" not in captured.err
+    assert "PRIVATE-SYNTHETIC-VALUE" not in captured.err
+
+
+@pytest.mark.parametrize("code_file", scanner.CODE_FILES, ids=lambda path: path.name)
+def test_output_cannot_replace_scanner_code(tmp_path, capsys, code_file):
+    source = tmp_path / "synthetic.txt"
+    source.write_text("status=200", encoding="utf-8")
+    original = code_file.read_bytes()
+    assert scanner.main([str(source), "--output", str(code_file)]) == 2
+    assert code_file.read_bytes() == original
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert str(code_file) not in captured.err

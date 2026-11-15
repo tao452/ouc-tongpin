@@ -10,6 +10,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from pii_baseline import evaluate, load_corpus
+from pii_scan import validate_output_path
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -20,6 +21,7 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        validate_output_path(args.output, [args.corpus])
         data, corpus_hash = load_corpus(args.corpus)
         report = evaluate(data)
         files = [

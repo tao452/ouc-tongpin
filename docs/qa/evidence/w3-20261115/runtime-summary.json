@@ -1,0 +1,47 @@
+{
+  "executed_at_utc": "2026-11-15T12:39:53.871253+00:00",
+  "scope": "Five local WSL containers with synthetic fixtures; API uses locally verified JAR in a temporary runtime image, algo uses its repository Dockerfile, nginx serves the existing admin dist. This is not a fresh build of all repository Dockerfiles or a GitHub Actions run.",
+  "counts": {
+    "content_user_id_columns": 0,
+    "active_posts_missing_private_mapping": 0,
+    "burned_posts_with_private_mapping": 0,
+    "burned_posts_with_linkable_alias": 0,
+    "burned_posts": 1,
+    "archive_rows": 1
+  },
+  "services": [
+    {
+      "Service": "algo",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "api",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "mysql",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "redis",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "web",
+      "State": "running",
+      "Health": "healthy"
+    }
+  ],
+  "images": {
+    "mysql": "sha256:e645fd9ffc4fc6745702d8c0068326b8707251166fdf11c80e8f52a609d19d1d",
+    "redis": "sha256:bb8953020f6597e47d5d699a9910a25d77a69608dbd58e0f722940598ed85fc0",
+    "api": "sha256:dee4fd1683a913b1b0fea28a73f9d0a0c0a307fdaddfddbd5abb4b48bf7f414d",
+    "algo": "sha256:3a03bc28248b853d652297d603beacac85acb5afe08ffdbb7e4439148e1263e7",
+    "web": "sha256:1390db6b01a8b0c865b157c7f036b0772534418b1701f598737de546d208b6e4"
+  },
+  "passed": true
+}

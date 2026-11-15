@@ -1,0 +1,41 @@
+{
+  "executed_at_utc": "2026-11-15T12:59:23.391060+00:00",
+  "scope": "Local unit and static verification after rebasing only M6 W3 commits onto the latest origin/develop; prior HTTP/load/migration snapshots remain the original 8c15fdf run. Fresh stack results are owned by PR CI.",
+  "verified_source_revision": "9d47180bf346075cc3211ea77c145c5b6a4022cf",
+  "develop_base": "40feb0bd5eb88ec0736286edb8faae9046ef7282",
+  "java_tests": {
+    "tests": 115,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "python_tests": {
+    "tests": 249,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 4,
+    "passed": 245
+  },
+  "ruff_exit_code": 0,
+  "actionlint_exit_code": 0,
+  "git_diff_check_exit_code": 0,
+  "all_source_files_count": 121,
+  "all_source_fingerprint_sha256": "566263a4d3b00e8cff5d7bdcca29b108827162c306091ae631ce36745bb99889",
+  "source_changes_since_original_run": {
+    "infra/db/init/01-schema.sql": "3904edd3933a5fb570a15b5780979ad899a0df89f3221bb5f25c6bd92e60aad7",
+    "packages/contract/openapi.yaml": "afbb1a2cf3b2582d62a62dc40b5b7eb2e84a0bd095c9e60729568e01b64d71df",
+    "scripts/qa/regression_match.py": "299477ed81298828f90ab8ee9be811996c38ae654061e12938b7989e942390f9",
+    "scripts/qa/regression_plan.py": "33f55af887939203b6a412c031bcc532a143ab4b4107239da97cf92beca155a2",
+    "scripts/qa/regression_stack.py": "0478f114cb49560006b2f74301a48f4bcb87eeedb54f2422030bbcf3fcf67eac",
+    "scripts/qa/run_existing_api_regression.py": "871b60c18dd05a121597b407491b21fa6212ab7363ba747bb3c11a8edc1feb51",
+    "services/api-server/src/main/java/com/ouctongpin/apiserver/buddy/controller/BuddyController.java": "f960091250495f61b53e73ae09875d362572b863b9ad859c1330109ff08b5dd8",
+    "services/api-server/src/main/java/com/ouctongpin/apiserver/buddy/dto/BuddyCreateReq.java": "2560a422d0b573f531768ad0c749faa8506a3be7c86b28fa083a356346a2ac3d",
+    "services/api-server/src/main/java/com/ouctongpin/apiserver/buddy/dto/BuddyResponse.java": "536b7f4c165ca61df9c382c3dd49dc7284d5171f4df45394fb3de2f827aeef90",
+    "services/api-server/src/main/java/com/ouctongpin/apiserver/buddy/entity/BuddyDemand.java": "dd0b75c95ebbbb59aba7ce0950a18d0cfca46805d20553b448135ca97e0dd256",
+    "services/api-server/src/main/java/com/ouctongpin/apiserver/buddy/mapper/BuddyDemandMapper.java": "c0ad3ee250ad0d9fc124a19517426c6933796815d4b5d8d1338c767f48973fa8",
+    "services/api-server/src/main/java/com/ouctongpin/apiserver/buddy/service/BuddyService.java": "d907bc80e159a05ae22803d4cfbe64c253844a96f9775b388172187c2f744648",
+    "services/api-server/src/test/java/com/ouctongpin/apiserver/buddy/dto/BuddyCreateReqTest.java": "378e90ece4141352652c5387ef41542e85f06f7f55776e5418da668471ccb6fa",
+    "services/api-server/src/test/java/com/ouctongpin/apiserver/buddy/service/BuddyServiceTest.java": "6b4d118a4a6522f1b95bd96258b4a5a1ac662eec34c4950ba1bafad41593a023"
+  },
+  "prior_artifacts_hashes_verified": true
+}

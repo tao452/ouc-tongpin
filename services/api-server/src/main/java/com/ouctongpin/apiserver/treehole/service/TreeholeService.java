@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ouctongpin.apiserver.treehole.dto.PostCreateReq;
 import com.ouctongpin.apiserver.treehole.dto.PostResponse;
 import com.ouctongpin.apiserver.treehole.entity.TreeholePost;
+import com.ouctongpin.apiserver.treehole.entity.TreeholeIdentity;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholePostMapper;
+import com.ouctongpin.apiserver.treehole.mapper.TreeholeIdentityMapper;
 import com.ouctongpin.apiserver.moderation.ModerationClient;
 import com.ouctongpin.apiserver.privacy.AnonymousIdGenerator;
 import com.ouctongpin.apiserver.auth.mapper.UserMapper;
@@ -13,6 +15,7 @@ import com.ouctongpin.apiserver.auth.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -24,18 +27,22 @@ import java.util.stream.Collectors;
 @Service
 public class TreeholeService {
     @Autowired private TreeholePostMapper postMapper;
+    @Autowired private TreeholeIdentityMapper identityMapper;
     @Autowired private StringRedisTemplate redisTemplate;
     @Autowired private ModerationClient moderationClient;
     @Autowired private AnonymousIdGenerator anonymousIds;
     @Autowired private UserMapper userMapper;
 
     // 发布（契约：POST /api/treehole/posts）
+    @Transactional
     public TreeholePost createPost(Long userId, PostCreateReq req) {
+        if (userId == null || userId <= 0) {
+            throw new IllegalArgumentException("A valid internal user ID is required");
+        }
         // Audit before any database or Redis write; HIGH and dependency failures abort publication.
         moderationClient.requireAllowed(req.getContent());
 
         TreeholePost post = new TreeholePost();
-        post.setUserId(userId);
         post.setContent(req.getContent());
         post.setEmotionTag(req.getEmotionTag());
         post.setAnonymous(req.getAnonymous() != null && req.getAnonymous() ? 1 : 0);
@@ -47,6 +54,15 @@ public class TreeholeService {
         post.setExpiresAt(created.plusHours(24));
         post.setDeleted(0);
         postMapper.insert(post);
+
+        // Identity stays in a separate private table, committed with the content row.
+        TreeholeIdentity identity = new TreeholeIdentity();
+        identity.setPostId(post.getId());
+        identity.setUserId(userId);
+        identity.setCreatedAt(created);
+        if (identityMapper.insert(identity) != 1) {
+            throw new IllegalStateException("Identity mapping could not be persisted");
+        }
 
         // 2. 加入 Redis ZSet 延时焚毁队列（24h 后触发）
         long burnTime = post.getExpiresAt().toInstant(ZoneOffset.of("+8")).toEpochMilli();
@@ -64,7 +80,8 @@ public class TreeholeService {
         response.setAnonymous(anonymous);
         String mask = post.getAnonymousId();
         if (!anonymous) {
-            User user = userMapper.selectById(post.getUserId());
+            TreeholeIdentity identity = identityMapper.selectById(post.getId());
+            User user = identity == null ? null : userMapper.selectById(identity.getUserId());
             mask = user == null || user.getNickname() == null ? "用户" : user.getNickname();
         }
         response.setAuthorMask(mask);

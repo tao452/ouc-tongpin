@@ -117,3 +117,42 @@ def test_cli_output_error_never_claims_success(baseline, tmp_path, capsys):
     parent.write_text("fixture", encoding="utf-8")
     assert cli.main(["--output", str(parent / "report.json")]) == 2
     assert capsys.readouterr().out == ""
+
+
+@pytest.mark.parametrize("alias", ["direct", "dotdot", "hardlink", "symlink"])
+def test_cli_output_cannot_replace_corpus(baseline, tmp_path, capsys, alias):
+    cli = importlib.import_module("run_pii_baseline")
+    corpus = tmp_path / "PRIVATE-CORPUS.json"
+    corpus.write_bytes(CORPUS.read_bytes())
+    original = corpus.read_bytes()
+    output = corpus
+    if alias == "dotdot":
+        (tmp_path / "child").mkdir()
+        output = tmp_path / "child" / ".." / corpus.name
+    elif alias in {"hardlink", "symlink"}:
+        output = tmp_path / "report.json"
+        try:
+            if alias == "hardlink":
+                output.hardlink_to(corpus)
+            else:
+                output.symlink_to(corpus)
+        except OSError:
+            pytest.skip(f"{alias} is unavailable on this filesystem")
+    assert cli.main(["--corpus", str(corpus), "--output", str(output)]) == 2
+    assert corpus.read_bytes() == original
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert "PRIVATE-CORPUS" not in captured.err
+    assert "13800000000" not in captured.err
+
+
+@pytest.mark.parametrize("name", ["pii_scan.py", "pii_baseline.py", "run_pii_baseline.py"])
+def test_cli_output_cannot_replace_code(baseline, capsys, name):
+    cli = importlib.import_module("run_pii_baseline")
+    code_file = ROOT / "scripts/qa" / name
+    original = code_file.read_bytes()
+    assert cli.main(["--output", str(code_file)]) == 2
+    assert code_file.read_bytes() == original
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert str(code_file) not in captured.err
