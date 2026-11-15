@@ -1,0 +1,25 @@
+{
+  "name": "COLD official test split",
+  "repository": "https://github.com/thu-coai/COLDataset",
+  "revision": "a0c55a945497ab58e94aef491180e1cf88ffb864",
+  "url": "https://raw.githubusercontent.com/thu-coai/COLDataset/a0c55a945497ab58e94aef491180e1cf88ffb864/COLDataset/test.csv",
+  "sha256": "b06d31481f0d558b6dc8140408938abe8dba8083cd9976b4ba8f5c837fbe78ed",
+  "bytes": 866973,
+  "rows": 5323,
+  "license": "Apache-2.0",
+  "license_url": "https://raw.githubusercontent.com/thu-coai/COLDataset/a0c55a945497ab58e94aef491180e1cf88ffb864/LICENSE",
+  "license_file": "COLD-LICENSE.txt",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "paper": "https://arxiv.org/abs/2201.06025",
+  "dictionary_frozen_commit": "c78d12e3f876781b06522b409fd26075bdbd9870",
+  "dictionary_frozen_sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+  "independence": "Collected and labeled by external dataset authors. No COLD train/dev data or test outcomes used to author or tune moderation-v1. No claim of independent human review by M1/M3.",
+  "labels": {
+    "0": "non-offensive",
+    "1": "offensive"
+  },
+  "sampling": "Full test split, preserving order, duplicate rows and original labels. Exclude only blank text or text longer than the existing 2000-character request limit; count every exclusion.",
+  "purpose": "External diagnostic. Its broad offensiveness labels do not equal the project's literal HIGH blocking policy; report both HIGH blocking and any-level candidate metrics.",
+  "privacy": "Download raw CSV only to ignored qa-private/. Do not commit or log comment texts, identities or upstream row IDs. Publish aggregate counts and hashes only.",
+  "initial_dictionary_freeze_commit": "f8c9fe5"
+}
