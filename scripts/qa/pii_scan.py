@@ -20,6 +20,22 @@ RULES = {
     ),
     "authorization": re.compile(r"(?i)(?<![\w])(?:Bearer|Basic)\s+[A-Za-z0-9._~+/-]{4,}=*"),
 }
+CODE_FILES = tuple(
+    Path(__file__).resolve().with_name(name)
+    for name in ("pii_scan.py", "pii_baseline.py", "run_pii_baseline.py")
+)
+
+
+def validate_output_path(output, inputs):
+    """Keep report writes from replacing input data or the scanner's own code."""
+    if output is None:
+        return
+    resolved_output = output.resolve()
+    for source in (*inputs, *CODE_FILES):
+        if resolved_output == source.resolve() or (
+            output.exists() and source.exists() and output.samefile(source)
+        ):
+            raise ValueError("Report output conflicts with an input or code file")
 
 
 def scan(paths):
@@ -53,9 +69,12 @@ def main(argv=None):
     parser.add_argument("--output", type=Path)
     args = parser.parse_args(argv)
     try:
+        validate_output_path(args.output, args.files)
         result = scan(args.files)
     except (OSError, ValueError):
-        print("Scan failed: an input file is unreadable or not UTF-8 text", file=sys.stderr)
+        print(
+            "Scan failed: input is unreadable, not UTF-8 text or output is unsafe", file=sys.stderr
+        )
         return 2
     content = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     if args.output:
