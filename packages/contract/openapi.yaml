@@ -33,13 +33,20 @@ tags:
   - name: user
     description: 用户资料（US-35）
 
+security:
+  - bearerAuth: []
+
 paths:
   # ---------------- 登录与认证 US-33 ----------------
   /api/auth/login:
     post:
+      security: []
       tags: [auth]
       summary: 微信授权登录（code2session）
-      description: 小程序 wx.login 拿 code → 换 openid → 签发 JWT。
+      description: >
+        wx.login code 由服务端换取平台身份，按 HMAC 私有关联签发 HS256 JWT。
+        默认使用真实微信服务；CI 模拟身份须显式启用。后续请求携带 Authorization Bearer。
+        用户身份只从已验证令牌取得，客户端 userId 字段不能改变数据归属。
       requestBody:
         required: true
         content:
@@ -50,6 +57,7 @@ paths:
               properties:
                 code:
                   type: string
+                  maxLength: 128
                   description: wx.login() 返回的临时登录凭证
       responses:
         '200':
@@ -103,6 +111,7 @@ paths:
   # ---------------- 情绪打卡 US-01 / US-02 / US-03 ----------------
   /api/emotions/words:
     get:
+      security: []
       tags: [emotion]
       summary: 情绪词表
       description: 6 个情绪词 + 1–5 级强度量表；前端下拉用，避免硬编码。
@@ -301,6 +310,7 @@ paths:
   # ---------------- 内容风控 US-24 ----------------
   /api/moderation/check:
     post:
+      security: []
       tags: [moderation]
       summary: 敏感词与变体归一化检测
       description: DFA + 变体归一化 + 分级词库（M6 主责服务，发布树洞/搭子前调用）。
@@ -361,6 +371,14 @@ paths:
           description: 更新成功
 
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: >
+        校验签名、有效期、issuer/audience 及账号状态。缺失或无效凭证返回 401，
+        无权限返回 403；角色不从客户端提交或任意 JWT role 声明授予。
   schemas:
     Checkin:
       type: object
