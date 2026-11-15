@@ -71,6 +71,6 @@ PII 材料来自测试服务真实返回、实际私有 auth 行、应用和网�
 `production_acceptance=false` 保留实际验收边界。无匹配不能证明无姓名、地址或其他隐私。
 M1 后续须在明确授权的真实业务范围执行扫描并人工复核；M3 按 Issue 独立复现。
 
-本地预检查为 Java 141 项通过，Python 251 项通过、4 项 Windows 链接限制跳过，app 覆盖率
+本地预检查为 Java 141 项通过，整合 PR #84 后 Python 266 项通过、4 项 Windows 链接限制跳过，app 覆盖率
 98.53%；Ruff 和 actionlint 通过。云端实际专项结果及最新提交以 PR 的 CI artifact 为准。
 [#26](https://github.com/tao452/ouc-tongpin/issues/26) 在真实平台与独立验收完成前继续打开。
