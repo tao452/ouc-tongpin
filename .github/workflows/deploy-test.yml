@@ -46,6 +46,10 @@ jobs:
       - name: Collect sanitized database initialization diagnostics
         if: failure()
         run: python scripts/qa/collect_mysql_initialization.py
+      - name: Verify deployed dictionary identity and external HTTP diagnostic
+        run: |
+          python scripts/qa/fetch_cold_test.py --output qa-private/cold-test.csv
+          python services/algo/scripts/evaluate_external.py qa-private/cold-test.csv --base-url http://127.0.0.1:8080 --output qa-private/us24-external-http.json
       - name: Upload test environment evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -61,6 +65,7 @@ jobs:
             qa-private/w3-load.json
             qa-private/us25-security.json
             qa-private/mysql-initialization.json
+            qa-private/us24-external-http.json
           if-no-files-found: warn
       - name: Show service state on failure
         if: failure()
