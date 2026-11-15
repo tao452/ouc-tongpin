@@ -147,7 +147,7 @@
   "artifact_sha256": {
     "Dockerfile.api": "056478cdd499ca1b0c071a2ec0ee530e43a7e8cfcc3ebf268a705bcdee94d807",
     "existing-api-local.json": "ff164643b1589ca02a262cd3ee6af403c321482c58d43812d271c7580e3fcdd5",
-    "java-evidence.json": "c21738f2469878f6311db7b6d39dd9d7f5e601c7f86e0bcd740f2579b3c54300",
+    "java-evidence.json": "ca330fd4f50235eae6c84f1ca0dfd0e0920b518e880e4357965b65f5b80b09af",
     "migration-verification.sql": "caf1c8ddf4fbf416139336ac54f0fee219478a3a18bebce932c845c95b85a889",
     "mysql-migration.json": "1f313dfef55ae90b1a0054e738cb4a88dd59f8f10995d4d771601e2a66a127ca",
     "pii-baseline.json": "d8a00e1d600af12ce0e475e3ddb6695b811a2f364b70db346e4bf7478988b130",
@@ -161,5 +161,9 @@
     "Deployment database access permissions",
     "M1 real-business PII scan and authorization review",
     "Historical 2026-11-11 on-site demonstration record"
+  ],
+  "archive_notes": [
+    "Git normalized java-evidence.json from CRLF to LF; its test results are unchanged.",
+    "source_sha256 identifies the original 8c15fdf working-tree run; develop integration checks are recorded separately."
   ]
 }
