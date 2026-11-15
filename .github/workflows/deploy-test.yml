@@ -17,6 +17,7 @@ jobs:
       - name: Generate isolated credentials
         run: python scripts/ci/create-test-env.py
       - name: Build and deploy five services
+        id: deployed
         run: |
           docker compose --env-file .env -f infra/docker-compose.yml config -q
           docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait --wait-timeout 240
@@ -40,6 +41,7 @@ jobs:
       - name: Run bounded W3 read-only load demonstration
         run: python scripts/qa/run_w3_load.py --login --output qa-private/w3-load.json
       - name: Verify trusted JWT identities, ownership, database roles and runtime PII
+        if: ${{ !cancelled() && steps.deployed.outcome == 'success' }}
         run: python scripts/qa/run_us25_security.py --output qa-private/us25-security.json
       - name: Upload test environment evidence
         if: always()

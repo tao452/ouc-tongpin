@@ -16,7 +16,8 @@ class PrivacyStack(Stack):
     def root_sql(self, statement):
         command = [*self.command, "exec", "-T", "mysql", "sh", "-c",
                    'MYSQL_PWD="$MYSQL_ROOT_PASSWORD" exec mysql -u root '
-                   '-D "$MYSQL_DATABASE" --batch --skip-column-names']
+                   '-D "$MYSQL_DATABASE" --default-character-set=utf8mb4 '
+                   '--batch --skip-column-names']
         return subprocess.run(command, input=statement, check=True, capture_output=True,
                               text=True, timeout=30).stdout.strip()
 
@@ -32,7 +33,7 @@ class PrivacyStack(Stack):
             shell = 'set -eu; umask 077; f=$(mktemp /tmp/ouc-us25-reader.XXXXXX); '
             shell += 'trap \'rm -f "$f"\' EXIT; cat > "$f"; '
             shell += 'mysql --defaults-extra-file="$f" -D "$MYSQL_DATABASE" '
-            shell += '--batch --skip-column-names --execute "$1"'
+            shell += '--default-character-set=utf8mb4 --batch --skip-column-names --execute "$1"'
             return subprocess.run([*self.command, "exec", "-T", "mysql", "sh", "-c",
                                    shell, "reader", statement],
                                   input=f"[client]\nuser={user}\npassword={password}\n",
