@@ -14,13 +14,13 @@ from app.services.normalization import canonicalize, normalize
 
 _END = ""
 _RANK = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
+DEFAULT_DICTIONARY = Path(__file__).resolve().parents[1] / "data" / "moderation-v1.json"
 
 
 class ModerationService:
     def __init__(self, dictionary: Path | None = None):
         configured = os.environ.get("MODERATION_DICTIONARY_PATH")
-        source = dictionary or (Path(configured) if configured else
-                                Path(__file__).resolve().parents[1] / "data" / "words.json")
+        source = dictionary or (Path(configured) if configured else DEFAULT_DICTIONARY)
         self.trie: dict = {}
         self.pinyin: dict[str, tuple[str, str]] = {}
         self.allow_phrases: dict[str, list[str]] = {}
