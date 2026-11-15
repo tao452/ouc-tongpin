@@ -5,6 +5,7 @@ import hashlib
 import hmac
 import importlib
 import json
+import subprocess
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -82,3 +83,22 @@ def test_reader_password_uses_stdin_and_private_file_not_argv(modules, monkeypat
     assert "password=" + "f" * 48 in arguments["input"]
     assert "umask 077" in " ".join(command)
     assert statements[-1].startswith("DROP USER IF EXISTS")
+
+
+def test_failed_setup_report_contains_only_safe_diagnostics(modules, monkeypatch, tmp_path, capsys):
+    main = importlib.import_module("run_us25_security")
+    monkeypatch.setattr(main, "ROOT", tmp_path)
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    (tmp_path / ".env").write_text("WX_MOCK_ENABLED=true\nJWT_SECRET=PRIVATE-SECRET\n")
+
+    def failure(base, values, diagnostics):
+        diagnostics["stage"] = "database_reader_setup"
+        raise subprocess.CalledProcessError(1, ["PRIVATE-SQL"], stderr="ERROR 1396 PRIVATE-SECRET")
+    monkeypatch.setattr(main, "execute", failure)
+    output = tmp_path / "qa-private/report.json"
+    assert main.main(["--output", str(output)]) == 2
+    report = json.loads(output.read_text())
+    assert report["verification_complete"] is False
+    assert report["failure_stage"] == "database_reader_setup"
+    assert report["mysql_error_code"] == "1396"
+    assert "PRIVATE" not in output.read_text() + capsys.readouterr().err
