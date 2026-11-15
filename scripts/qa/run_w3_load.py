@@ -183,3 +183,35 @@ def save_report(output, report):
     finally:
         if temporary is not None:
             temporary.unlink(missing_ok=True)
+
+
+def main(argv=None):
+    parser = ParameterParser(description=__doc__)
+    parser.add_argument("--base-url", default="http://127.0.0.1:8080")
+    parser.add_argument("--requests", type=int, default=200)
+    parser.add_argument("--concurrency", type=int, default=10)
+    parser.add_argument("--timeout", type=float, default=5.0)
+    parser.add_argument("--output", type=Path, required=True)
+    try:
+        args = parser.parse_args(argv)
+        url = validate(args)
+        report = execute(url, args.requests, args.concurrency, args.timeout)
+        save_report(args.output, report)
+    except (OSError, ValueError, TypeError):
+        print("Load check failed: parameters or output are invalid", file=sys.stderr)
+        return 2
+    print(
+        json.dumps(
+            {
+                key: report[key]
+                for key in (
+                    "requests", "concurrency", "requests_per_second", "error_rate", "latency_ms"
+                )
+            }
+        )
+    )
+    return int(report["error_rate"] > 0)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

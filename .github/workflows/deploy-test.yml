@@ -35,6 +35,10 @@ jobs:
           docker compose --env-file .env -f infra/docker-compose.yml images --format json > qa-private/w2-images.json
       - name: Execute existing API and high-priority catalogue regression
         run: python scripts/qa/run_existing_api_regression.py --output qa-private/existing-api-regression.json
+      - name: Execute 30 W3 login, check-in and treehole API cases
+        run: python scripts/qa/run_w3_api_regression.py --output qa-private/w3-api-regression.json
+      - name: Run bounded W3 read-only load demonstration
+        run: python scripts/qa/run_w3_load.py --output qa-private/w3-load.json
       - name: Upload test environment evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -46,6 +50,8 @@ jobs:
             qa-private/w2-treehole-http.json
             qa-private/w2-images.json
             qa-private/existing-api-regression.json
+            qa-private/w3-api-regression.json
+            qa-private/w3-load.json
           if-no-files-found: warn
       - name: Show service state on failure
         if: failure()
