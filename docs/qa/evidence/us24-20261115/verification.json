@@ -70,8 +70,11 @@
   "artifact_sha256": {
     "cold-function.json": "229bb70772ee36a81f289242fec8dadaa7cead36b4c2096d939ee4ea8d289200",
     "cold-http.json": "f4f4da97c56d0901359de1bdb805e76437a5b2c7b9b65b0c6eca40b17e2420f1",
-    "policy-function.json": "081ddda1957db0e5a3b5956510f4328d33aaa6c47a8410744984cbc8fe85dcd5",
-    "policy-http.json": "a86861ce47b1ca159986f4337c9d89855154e529c669d32cbe88539a0ff6f136"
+    "policy-function.json": "7233541afb0f8498e5bd9fbfd5fb233a6d0a009fb411ce88f0e7b7cf5d8add88",
+    "policy-http.json": "ecf609b3a8886e78951c63dd3f4794ded08bd3cbdcb056978a875ac802b77a65"
   },
-  "scope": "Local function and isolated Uvicorn HTTP tests on 127.0.0.1:18025; no shared deployment or synthetic human approval. All external labels unchanged. Raw COLD texts remain private."
+  "scope": "Local function and isolated Uvicorn HTTP tests on 127.0.0.1:18025; no shared deployment or synthetic human approval. All external labels unchanged. Raw COLD texts remain private.",
+  "archive_notes": [
+    "Policy reports normalized to LF to preserve identical byte hashes in Git and across platforms; all measured values are unchanged."
+  ]
 }
