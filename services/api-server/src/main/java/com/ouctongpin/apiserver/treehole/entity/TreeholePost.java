@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 public class TreeholePost {
     @TableId(type = IdType.AUTO)
     private Long id;
-    private Long userId;             // 真实用户，绝不返回给前端
     private String anonymousId;      // 匿名马甲（不可反推）
     private String content;
     private String emotionTag;       // HAPPY/CALM/...

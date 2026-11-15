@@ -2,6 +2,8 @@ package com.ouctongpin.apiserver.moderation;
 
 import com.ouctongpin.apiserver.treehole.dto.PostCreateReq;
 import com.ouctongpin.apiserver.treehole.entity.TreeholePost;
+import com.ouctongpin.apiserver.treehole.entity.TreeholeIdentity;
+import com.ouctongpin.apiserver.treehole.mapper.TreeholeIdentityMapper;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholePostMapper;
 import com.ouctongpin.apiserver.treehole.service.TreeholeService;
 import com.ouctongpin.apiserver.privacy.AnonymousIdGenerator;
@@ -27,6 +29,7 @@ import static org.mockito.Mockito.*;
 class TreeholeModerationTest {
     @Mock private ModerationClient moderation;
     @Mock private TreeholePostMapper posts;
+    @Mock private TreeholeIdentityMapper identities;
     @Mock private StringRedisTemplate redis;
     @Mock private ZSetOperations<String, String> burnQueue;
     @Mock private AnonymousIdGenerator anonymousIds;
@@ -48,7 +51,7 @@ class TreeholeModerationTest {
         ResponseStatusException error = assertThrows(ResponseStatusException.class,
                 () -> service.createPost(1L, request("synthetic content")));
         assertEquals(status, error.getStatusCode().value());
-        verifyNoInteractions(posts, redis, burnQueue);
+        verifyNoInteractions(posts, identities, redis, burnQueue);
     }
 
     @ParameterizedTest
@@ -64,11 +67,14 @@ class TreeholeModerationTest {
         });
         when(redis.opsForZSet()).thenReturn(burnQueue);
         when(anonymousIds.generate("1", "treehole")).thenReturn("anon_v1_synthetic");
+        when(identities.insert(any(TreeholeIdentity.class))).thenReturn(1);
         TreeholePost post = service.createPost(1L, request("synthetic content"));
         assertEquals("synthetic content", post.getContent());
-        var order = inOrder(moderation, posts, redis, burnQueue);
+        var order = inOrder(moderation, posts, identities, redis, burnQueue);
         order.verify(moderation).requireAllowed("synthetic content");
         order.verify(posts).insert(post);
+        order.verify(identities).insert(argThat((TreeholeIdentity identity) -> identity.getPostId().equals(123L)
+                && identity.getUserId().equals(1L)));
         order.verify(redis).opsForZSet();
         order.verify(burnQueue).add(eq("treehole:burn_queue"), eq("123"), anyDouble());
     }
@@ -77,6 +83,6 @@ class TreeholeModerationTest {
         when(moderation.requireAllowed(" ")).thenThrow(
                 new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid content"));
         assertThrows(ResponseStatusException.class, () -> service.createPost(1L, request(" ")));
-        verifyNoInteractions(posts, redis, burnQueue);
+        verifyNoInteractions(posts, identities, redis, burnQueue);
     }
 }

@@ -7,6 +7,8 @@ import com.ouctongpin.apiserver.moderation.ModerationClient;
 import com.ouctongpin.apiserver.privacy.AnonymousIdGenerator;
 import com.ouctongpin.apiserver.treehole.dto.PostCreateReq;
 import com.ouctongpin.apiserver.treehole.entity.TreeholePost;
+import com.ouctongpin.apiserver.treehole.entity.TreeholeIdentity;
+import com.ouctongpin.apiserver.treehole.mapper.TreeholeIdentityMapper;
 import com.ouctongpin.apiserver.treehole.mapper.TreeholePostMapper;
 import com.ouctongpin.apiserver.treehole.service.TreeholeService;
 import org.junit.jupiter.api.Test;
@@ -24,15 +26,16 @@ import static org.mockito.Mockito.*;
 class TreeholeResponseTest {
     private final TreeholeService service = new TreeholeService();
     private final UserMapper users = mock(UserMapper.class);
+    private final TreeholeIdentityMapper identities = mock(TreeholeIdentityMapper.class);
 
     TreeholeResponseTest() {
         ReflectionTestUtils.setField(service, "userMapper", users);
+        ReflectionTestUtils.setField(service, "identityMapper", identities);
     }
 
     @Test void anonymousResponseDoesNotSerializeInternalIdentityOrDatabaseFlags() throws Exception {
         TreeholePost post = new TreeholePost();
         post.setId(11L);
-        post.setUserId(987654L);
         post.setAnonymous(1);
         post.setAnonymousId(new AnonymousIdGenerator("synthetic-test-secret-at-least-32-bytes")
                 .generate("987654", "treehole"));
@@ -45,15 +48,19 @@ class TreeholeResponseTest {
         assertFalse(json.has("anonymousId"));
         assertFalse(json.has("deleted"));
         assertFalse(json.toString().contains("987654"));
-        verifyNoInteractions(users);
+        verifyNoInteractions(users, identities);
     }
 
     @Test void namedResponseUsesNicknameOnly() {
         User user = new User();
         user.setNickname("Synthetic Nickname");
         when(users.selectById(1L)).thenReturn(user);
+        TreeholeIdentity identity = new TreeholeIdentity();
+        identity.setPostId(11L);
+        identity.setUserId(1L);
+        when(identities.selectById(11L)).thenReturn(identity);
         TreeholePost post = new TreeholePost();
-        post.setUserId(1L);
+        post.setId(11L);
         post.setAnonymous(0);
         assertEquals("Synthetic Nickname", service.toResponse(post).getAuthorMask());
     }
@@ -69,6 +76,7 @@ class TreeholeResponseTest {
         ReflectionTestUtils.setField(service, "moderationClient", mock(ModerationClient.class));
         ReflectionTestUtils.setField(service, "anonymousIds",
                 new AnonymousIdGenerator("synthetic-test-secret-at-least-32-bytes"));
+        when(identities.insert(any(TreeholeIdentity.class))).thenReturn(1);
         PostCreateReq request = new PostCreateReq();
         request.setContent("synthetic content");
         request.setEmotionTag("CALM");

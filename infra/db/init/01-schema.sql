@@ -6,8 +6,8 @@
 -- 字符集 utf8mb4(支持 emoji)，引擎 InnoDB。
 --
 -- 注意：MySQL 官方镜像仅在「数据目录为空(首次初始化)」时才执行本目录脚本。
---   若此前已 docker compose up 过(mysql-data 卷非空)，需先
---   `docker compose down -v` 清掉卷再 `docker compose up` 才会重新建表。
+--   既有数据卷应使用 migrations/ 中对应升级脚本，先备份并检查数据。
+--   不要通过删除数据卷来升级共享或有保留价值的数据库。
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS ouc_tongpin
@@ -56,8 +56,7 @@ CREATE TABLE IF NOT EXISTS `checkin` (
 -- 树洞帖子表
 CREATE TABLE IF NOT EXISTS `treehole_post` (
   `id`                  BIGINT       NOT NULL AUTO_INCREMENT,
-  `user_id`             BIGINT       NOT NULL,
-  `anonymous_id`        VARCHAR(64)  DEFAULT NULL,
+  `anonymous_id`        VARCHAR(64)  NOT NULL,
   `content`             TEXT,
   `emotion_tag`         VARCHAR(16)  DEFAULT NULL,
   `anonymous`           INT          NOT NULL DEFAULT 0,
@@ -67,9 +66,19 @@ CREATE TABLE IF NOT EXISTS `treehole_post` (
   `expires_at`          DATETIME     DEFAULT NULL,
   `deleted`             INT          NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  KEY `idx_post_user` (`user_id`),
   KEY `idx_post_status_expire` (`status`, `expires_at`),
   KEY `idx_post_emotion` (`emotion_tag`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 私有身份映射：公开内容表不再保存内部 user_id。仅后端身份处理路径读取。
+-- 表的独立访问权限由部署管理员配置，不向管理端列表或公开 API 暴露。
+CREATE TABLE IF NOT EXISTS `treehole_identity` (
+  `post_id`    BIGINT   NOT NULL,
+  `user_id`    BIGINT   NOT NULL,
+  `created_at` DATETIME DEFAULT NULL,
+  PRIMARY KEY (`post_id`),
+  KEY `idx_treehole_identity_user` (`user_id`),
+  CONSTRAINT `fk_treehole_identity_post` FOREIGN KEY (`post_id`) REFERENCES `treehole_post` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 树洞焚毁留档表（仅存内容哈希，不存明文）
