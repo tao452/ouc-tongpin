@@ -132,5 +132,8 @@ git switch develop && git merge --no-ff release/0.1 && git push
 
 ## 12 M6 隐私与自动化工具
 
+- 第三周（11/09–11/13）补齐与当前验证报告：`docs/qa/W3-隐私与自动化交付与验证.md`
+- 登录、打卡、树洞独立 30 条接口回归：`scripts/qa/run_w3_api_regression.py`、`docs/qa/data/w3-api-cases.v1.json`
+- 小规模只读并发演示：`scripts/qa/run_w3_load.py`
 - 合成数据 PII 扫描基线包：`docs/qa/pii-baseline/README.md`
 - 人工复核与误报登记：`docs/qa/pii-baseline/人工复核模板.md`
