@@ -1,0 +1,55 @@
+{
+  "source_revision": "6f05938072674e59d215b3549786237892c3076d",
+  "automated_checks_passed": true,
+  "business_acceptance": false,
+  "checks": {
+    "java_tests": 115,
+    "privacy_junit_passed": 7,
+    "api_passed": 30,
+    "api_modules": {
+      "auth": 6,
+      "checkin": 14,
+      "treehole": 10
+    },
+    "pii_expectations_matched": 62,
+    "pii_documented_gaps": 6,
+    "demo_requests": 200,
+    "demo_concurrency": 10,
+    "demo_error_rate": 0,
+    "demo_latency_ms": {
+      "p50": 107.664341,
+      "p95": 147.623431,
+      "p99": 204.7434
+    }
+  },
+  "evidence_executed_at_utc": {
+    "api": "2026-11-15T13:03:32.897680+00:00",
+    "pii": "2026-11-15T13:01:13.586337+00:00",
+    "load": "2026-11-15T13:03:35.197638+00:00",
+    "java": "2026-11-15T13:01:24.212518+00:00"
+  },
+  "evidence_working_tree_dirty": {
+    "api": false,
+    "pii": true,
+    "load": false,
+    "java": null
+  },
+  "pending": [
+    "Non-author review and merge of PR #82",
+    "M5 trusted identity and authorization integration in the business environment",
+    "M1 real-business PII scan and independent review",
+    "Actual meeting/demo record; no historical attendance claim"
+  ],
+  "limitations": "Synthetic-account isolated-stack regression and synthetic PII baseline; bounded read-only load demonstration, not production capacity or business acceptance. Issue #25 recognition targets are separate and remain unmet.",
+  "generated_at_utc": "2026-11-15T15:21:20.778966+00:00",
+  "evidence_sha256": {
+    "api": "71c20ea8ba6ea9abfad0c879c2dc19630fd702e28515d2a38d849fe6851a0387",
+    "pii": "98fb11689b93cad00509ac0a2aab0ebcca0f7fea4d0ea3b2ebc50202a43f7191",
+    "load": "4de13c56ac8d815edbfe5a047f28b8509c04da14ab7a5f0f8e2a270fee60dd56",
+    "java": "6163d396efecb8a217af9d24e76b807960c22a19202bed0501ca5e76058308c5"
+  },
+  "generator_sha256": {
+    "report_w3_delivery.py": "97fa5beb449a5dca86b73e2290d3924952003a677746fdd1f48169bee251c015",
+    "w3_delivery_checks.py": "112d58a0a8311759541b05fc526073a355f655f7c9f39ed3f5c8e6721b39ac95"
+  }
+}

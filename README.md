@@ -132,6 +132,8 @@ git switch develop && git merge --no-ff release/0.1 && git push
 
 ## 12 M6 隐私与自动化工具
 
+- 第三周原始任务逐项交付与联合验收状态：`docs/qa/W3-任务清单与验收状态.md`
+- 同一提交的统一质量报告：`scripts/qa/report_w3_delivery.py`；CI artifact 为 `w3-delivery-evidence`
 - 第三周（11/09–11/13）补齐与当前验证报告：`docs/qa/W3-隐私与自动化交付与验证.md`
 - 登录、打卡、树洞独立 30 条接口回归：`scripts/qa/run_w3_api_regression.py`、`docs/qa/data/w3-api-cases.v1.json`
 - 小规模只读并发演示：`scripts/qa/run_w3_load.py`
