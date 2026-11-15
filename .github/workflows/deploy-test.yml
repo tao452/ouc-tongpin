@@ -43,6 +43,9 @@ jobs:
       - name: Verify trusted JWT identities, ownership, database roles and runtime PII
         if: ${{ !cancelled() && steps.deployed.outcome == 'success' }}
         run: python scripts/qa/run_us25_security.py --output qa-private/us25-security.json
+      - name: Collect sanitized database initialization diagnostics
+        if: failure()
+        run: python scripts/qa/collect_mysql_initialization.py
       - name: Upload test environment evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,6 +60,7 @@ jobs:
             qa-private/w3-api-regression.json
             qa-private/w3-load.json
             qa-private/us25-security.json
+            qa-private/mysql-initialization.json
           if-no-files-found: warn
       - name: Show service state on failure
         if: failure()

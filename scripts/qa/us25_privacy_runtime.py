@@ -13,6 +13,20 @@ from regression_http import expect
 from regression_stack import Stack
 
 
+def initialization_log_diagnostics(logs):
+    return {
+        "permissions_script_seen": "02-runtime-permissions.sh" in logs,
+        "initialization_completed": "MySQL init process done" in logs,
+        "mysql_error_codes": sorted(set(re.findall(r"ERROR (\d{4})", logs))),
+        "connection_error": "Can't connect" in logs,
+        "permission_error": "Permission denied" in logs,
+        "interpreter_error": "bad interpreter" in logs or "not found" in logs,
+        "missing_environment": [name for name in ("MYSQL_USER", "MYSQL_DATABASE",
+                                                   "MYSQL_ROOT_PASSWORD")
+                                if name + ": parameter not set" in logs],
+    }
+
+
 class PrivacyStack(Stack):
     def permission_diagnostics(self):
         """Counts and fixed flags only; never retain SQL, accounts or container logs."""
@@ -21,15 +35,8 @@ class PrivacyStack(Stack):
             "(SELECT COUNT(*) FROM information_schema.views "
             "WHERE table_schema=DATABASE() AND table_name='treehole_public')")
         logs = self.execute("logs", "--no-color", "mysql")
-        return {
-            "role_and_view_counts": [int(value) for value in counts.split()],
-            "permissions_script_seen": "02-runtime-permissions.sh" in logs,
-            "initialization_completed": "MySQL init process done" in logs,
-            "mysql_error_codes": sorted(set(re.findall(r"ERROR (\d{4})", logs))),
-            "connection_error": "Can't connect" in logs,
-            "permission_error": "Permission denied" in logs,
-            "interpreter_error": "bad interpreter" in logs or "not found" in logs,
-        }
+        return {"role_and_view_counts": [int(value) for value in counts.split()],
+                **initialization_log_diagnostics(logs)}
 
     def root_sql(self, statement):
         command = [*self.command, "exec", "-T", "mysql", "sh", "-c",
