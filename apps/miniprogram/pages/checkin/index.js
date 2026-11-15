@@ -59,7 +59,7 @@ Page({
       const weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
 
       this.setData({
-        currentDate: `${month}月${day}日`,
+        currentDate: `${month} 月 ${day} 日`,
         weekDay: weekDays[date.getDay()]
       })
     },
