@@ -24,7 +24,7 @@ def register_blocked(runner):
         status, _ = runner.client.request(path, {})
         observations = list(runner.client.observations)
         if status not in {403, 404}:
-            raise AssertionError("Protected/unimplemented route changed; update the acceptance plan")
+            raise AssertionError("Protected route changed; update the acceptance plan")
         return observations
 
     auth = missing_route("/api/auth/student-verify")
