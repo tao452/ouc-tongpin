@@ -35,13 +35,13 @@
     "java": null
   },
   "pending": [
-    "Non-author review and merge of PR #82",
+    "Non-author review and merge of the report/CI follow-up PR",
     "M5 trusted identity and authorization integration in the business environment",
     "M1 real-business PII scan and independent review",
     "Actual meeting/demo record; no historical attendance claim"
   ],
   "limitations": "Synthetic-account isolated-stack regression and synthetic PII baseline; bounded read-only load demonstration, not production capacity or business acceptance. Issue #25 recognition targets are separate and remain unmet.",
-  "generated_at_utc": "2026-11-15T15:21:20.778966+00:00",
+  "generated_at_utc": "2026-11-15T15:24:16.956998+00:00",
   "evidence_sha256": {
     "api": "71c20ea8ba6ea9abfad0c879c2dc19630fd702e28515d2a38d849fe6851a0387",
     "pii": "98fb11689b93cad00509ac0a2aab0ebcca0f7fea4d0ea3b2ebc50202a43f7191",
@@ -50,6 +50,6 @@
   },
   "generator_sha256": {
     "report_w3_delivery.py": "97fa5beb449a5dca86b73e2290d3924952003a677746fdd1f48169bee251c015",
-    "w3_delivery_checks.py": "112d58a0a8311759541b05fc526073a355f655f7c9f39ed3f5c8e6721b39ac95"
+    "w3_delivery_checks.py": "a93c91708a855f914f2c4cb30c41944597da0387c160e5b0759e0fbcdcab3669"
   }
 }

@@ -116,7 +116,7 @@ def validate(reports, revision):
         "evidence_working_tree_dirty": {name: row.get("working_tree_dirty")
                                         for name, row in reports.items()},
         "pending": [
-            "Non-author review and merge of PR #82",
+            "Non-author review and merge of the report/CI follow-up PR",
             "M5 trusted identity and authorization integration in the business environment",
             "M1 real-business PII scan and independent review",
             "Actual meeting/demo record; no historical attendance claim",
