@@ -63,7 +63,7 @@ def register(runner, stack):
         client.observations.append({"purpose_scoped_mask_stable": True})
 
     def named():
-        nickname = stack.sql("SELECT nickname FROM users WHERE id=1")
+        nickname = stack.sql(f"SELECT nickname FROM users WHERE id={client.user_id}")
         body = create(anonymous=False)
         expect(body["anonymous"] is False, "Named post must remain named")
         expect(body["authorMask"] == (nickname or "用户"), "Named post must use public nickname")

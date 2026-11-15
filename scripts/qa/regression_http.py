@@ -6,6 +6,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import uuid
 from http.client import HTTPException
 
 
@@ -15,11 +16,20 @@ def expect(condition, message):
 
 
 class Client:
-    def __init__(self, base):
+    def __init__(self, base, token=None, user_id=None):
         self.base = base.rstrip("/")
+        self.token, self.user_id = token, user_id
         self.observations = []
 
-    def request(self, path, payload=None, raw=None):
+    def authenticate(self, code=None):
+        status, body = self.request("/api/auth/login", {"code": code or "qa-" + uuid.uuid4().hex})
+        expect(status == 200 and isinstance(body, dict), "Isolated identity login failed")
+        expect(isinstance(body.get("token"), str) and str(body.get("userId", "")).isdigit(),
+               "Login must return a token and server identity")
+        self.token, self.user_id = body["token"], int(body["userId"])
+        return self
+
+    def request(self, path, payload=None, raw=None, headers=None, method=None):
         data = (
             raw
             if raw is not None
@@ -29,9 +39,12 @@ class Client:
                 else None
             )
         )
-        request = urllib.request.Request(
-            self.base + path, data=data, headers={"Content-Type": "application/json"}
-        )
+        request_headers = {"Content-Type": "application/json"}
+        if self.token is not None:
+            request_headers["Authorization"] = "Bearer " + self.token
+        request_headers.update(headers or {})
+        request = urllib.request.Request(self.base + path, data=data, headers=request_headers,
+                                         method=method)
         started = time.monotonic()
         try:
             with urllib.request.urlopen(request, timeout=15) as response:
@@ -83,7 +96,8 @@ class Runner:
         self.client = client
         self.results = []
 
-    def run(self, identifier, check, scope="HTTP + isolated MySQL/Redis, demo user 1"):
+    def run(self, identifier, check,
+            scope="HTTP + isolated MySQL/Redis, authenticated test account"):
         self.client.observations.clear()
         try:
             check()

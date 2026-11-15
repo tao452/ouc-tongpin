@@ -1,8 +1,8 @@
 {
   "version": "w3-api-v1",
-  "scope": "登录6条、打卡14条、树洞10条；真实HTTP/MySQL/Redis；登录使用现有code2session模拟，业务接口使用demo用户1。",
+  "scope": "登录6条、打卡14条、树洞10条；真实HTTP/MySQL/Redis和签名JWT；CI显式启用模拟平台身份，业务归属使用已认证账号。",
   "limitations": [
-    "不代表真实微信code2session、校内身份认证或JWT鉴权/越权验收通过。",
+    "不代表真实微信code2session或校内身份认证；JWT与越权专项另见us25-security-v1报告。",
     "仅在可回收的隔离测试环境执行，会创建合成账户、打卡和树洞记录。",
     "与S1的80条用例目录分别统计，报告不输出token、账户ID、匿名ID或请求/响应正文。"
   ],

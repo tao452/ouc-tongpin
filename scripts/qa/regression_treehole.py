@@ -44,7 +44,7 @@ def register(runner, stack):
     runner.run("S1-032", lambda: anonymous(True))
 
     def named():
-        stack.sql("UPDATE users SET nickname='Regression Nickname' WHERE id=1")
+        stack.sql(f"UPDATE users SET nickname='Regression Nickname' WHERE id={client.user_id}")
         body = create(anonymous=False)
         expect(body["authorMask"] == "Regression Nickname", "Named post must display nickname")
 
