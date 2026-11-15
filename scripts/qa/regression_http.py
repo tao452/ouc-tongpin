@@ -6,6 +6,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from http.client import HTTPException
 
 
 def expect(condition, message):
@@ -51,9 +52,28 @@ class Client:
             observed["response_keys"] = sorted(body)
             for field in ("passed", "isNewUser", "needStudentVerify", "total", "streakDays"):
                 if field in body:
-                    observed[field] = body[field]
+                    value = body[field]
+                    valid = (
+                        type(value) is bool
+                        if field in {"passed", "isNewUser", "needStudentVerify"}
+                        else type(value) is int and value >= 0
+                    )
+                    if valid:
+                        observed[field] = value
+                    else:
+                        invalid = observed.setdefault("invalid_response_fields", {})
+                        invalid[field] = type(value).__name__
             if isinstance(body.get("hits"), list):
-                observed["hit_levels"] = [hit.get("level") for hit in body["hits"]]
+                observed["hit_levels"] = []
+                invalid = 0
+                for hit in body["hits"]:
+                    level = hit.get("level") if isinstance(hit, dict) else None
+                    if isinstance(level, str) and level in {"HIGH", "MEDIUM", "LOW"}:
+                        observed["hit_levels"].append(level)
+                    else:
+                        invalid += 1
+                if invalid:
+                    observed["invalid_hit_levels"] = invalid
         self.observations.append(observed)
         return status, body
 
@@ -70,7 +90,9 @@ class Runner:
             status, reason = "PASS", None
         except AssertionError as error:
             status, reason = "FAIL", str(error) or "Contract assertion failed"
-        except (OSError, ValueError, TypeError, LookupError, subprocess.SubprocessError) as error:
+        except (
+            OSError, HTTPException, ValueError, TypeError, LookupError, subprocess.SubprocessError
+        ) as error:
             status, reason = "FAIL", type(error).__name__
         self.results.append(
             {
