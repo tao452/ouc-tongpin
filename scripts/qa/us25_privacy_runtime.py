@@ -2,6 +2,7 @@
 
 import contextlib
 import os
+import re
 import secrets
 import subprocess
 import tempfile
@@ -13,20 +14,34 @@ from regression_stack import Stack
 
 
 class PrivacyStack(Stack):
+    def permission_diagnostics(self):
+        """Counts and fixed flags only; never retain SQL, accounts or container logs."""
+        counts = self.root_sql(
+            "SELECT (SELECT COUNT(*) FROM mysql.user WHERE User='ouc_public_reader'),"
+            "(SELECT COUNT(*) FROM information_schema.views "
+            "WHERE table_schema=DATABASE() AND table_name='treehole_public')")
+        logs = self.execute("logs", "--no-color", "mysql")
+        return {
+            "role_and_view_counts": [int(value) for value in counts.split()],
+            "permissions_script_seen": "02-runtime-permissions.sh" in logs,
+            "initialization_completed": "MySQL init process done" in logs,
+            "mysql_error_codes": sorted(set(re.findall(r"ERROR (\d{4})", logs))),
+            "connection_error": "Can't connect" in logs,
+            "permission_error": "Permission denied" in logs,
+            "interpreter_error": "bad interpreter" in logs or "not found" in logs,
+        }
+
     def root_sql(self, statement):
         command = [*self.command, "exec", "-T", "mysql", "sh", "-c",
-                   'MYSQL_PWD="$MYSQL_ROOT_PASSWORD" exec mysql -u root '
+                   ('MYSQL_PWD="$MYSQL_ROOT_PASSWORD" exec mysql -u root '
                    '-D "$MYSQL_DATABASE" --default-character-set=utf8mb4 '
-                   '--batch --skip-column-names']
+                   '--batch --skip-column-names')]
         return subprocess.run(command, input=statement, check=True, capture_output=True,
                               text=True, timeout=30).stdout.strip()
 
     @contextlib.contextmanager
     def public_reader(self):
         user, password = "qa_reader_" + secrets.token_hex(4), secrets.token_hex(24)
-        self.root_sql(f"CREATE USER '{user}'@'localhost' IDENTIFIED BY '{password}';"
-                      f"GRANT 'ouc_public_reader' TO '{user}'@'localhost';"
-                      f"SET DEFAULT ROLE ALL TO '{user}'@'localhost';")
 
         def query(statement):
             # Credentials enter a mode-600 temporary client file via stdin, not argv.
@@ -37,8 +52,11 @@ class PrivacyStack(Stack):
             return subprocess.run([*self.command, "exec", "-T", "mysql", "sh", "-c",
                                    shell, "reader", statement],
                                   input=f"[client]\nuser={user}\npassword={password}\n",
-                                  capture_output=True, text=True, timeout=30)
+                                  check=False, capture_output=True, text=True, timeout=30)
         try:
+            self.root_sql(f"CREATE USER '{user}'@'localhost' IDENTIFIED BY '{password}';")
+            self.root_sql(f"GRANT 'ouc_public_reader' TO '{user}'@'localhost';")
+            self.root_sql(f"SET DEFAULT ROLE ALL TO '{user}'@'localhost';")
             yield query
         finally:
             self.root_sql(f"DROP USER IF EXISTS '{user}'@'localhost';")

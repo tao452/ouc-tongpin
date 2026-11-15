@@ -28,6 +28,7 @@ def execute(base, values, diagnostics):
     diagnostics["stage"] = "identity_and_ownership_cases"
     actors, material, private_codes = register(runner, stack, values["JWT_SECRET"])
     diagnostics["stage"] = "database_reader_setup"
+    diagnostics["database_initialization"] = stack.permission_diagnostics()
     with stack.public_reader() as read:
         diagnostics["stage"] = "database_reader_cases"
         def public_view():
@@ -111,6 +112,7 @@ def main(argv=None):
                   "technical_security_checks_passed": passed,
                   "live_wechat_verified": False, "independent_business_review": "pending",
                   "production_acceptance": False, "runtime_pii_scan": pii,
+                  "database_initialization": diagnostics.get("database_initialization"),
                   "status_counts": dict(Counter(row["status"] for row in results)),
                   "results": results}
         save_report(args.output, report)
@@ -121,6 +123,7 @@ def main(argv=None):
                    "technical_security_checks_passed": False, "production_acceptance": False,
                    "failure_stage": diagnostics["stage"], "error_type": type(error).__name__,
                    "mysql_error_code": match.group(1) if match else None,
+                   "database_initialization": diagnostics.get("database_initialization"),
                    "results": diagnostics["results"]}
         if safe_output:
             try:

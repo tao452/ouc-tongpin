@@ -102,3 +102,16 @@ def test_failed_setup_report_contains_only_safe_diagnostics(modules, monkeypatch
     assert report["failure_stage"] == "database_reader_setup"
     assert report["mysql_error_code"] == "1396"
     assert "PRIVATE" not in output.read_text() + capsys.readouterr().err
+
+
+def test_initialization_diagnostics_exclude_container_log_material(modules, monkeypatch):
+    runtime, _ = modules
+    stack = runtime.PrivacyStack()
+    monkeypatch.setattr(stack, "root_sql", lambda sql: "0\t0")
+    monkeypatch.setattr(stack, "execute", lambda *args:
+                        "running 02-runtime-permissions.sh ERROR 2002 PRIVATE-SECRET Can't connect")
+    report = stack.permission_diagnostics()
+    assert report["role_and_view_counts"] == [0, 0]
+    assert report["mysql_error_codes"] == ["2002"]
+    assert report["connection_error"] is True
+    assert "PRIVATE" not in json.dumps(report)
