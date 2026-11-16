@@ -31,6 +31,8 @@ class ApiBoundaryTest {
         ReflectionTestUtils.setField(checkinController, "checkinService", checkins);
         ReflectionTestUtils.setField(treeholeController, "treeholeService", posts);
         mvc = MockMvcBuilders.standaloneSetup(checkinController, treeholeController)
+                .defaultRequest(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                        .get("/").principal(() -> "1"))
                 .setControllerAdvice(new GlobalExceptionHandler()).build();
     }
 

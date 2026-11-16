@@ -26,6 +26,8 @@ class TreeholeModerationHttpTest {
         TreeholeController controller = new TreeholeController();
         ReflectionTestUtils.setField(controller, "treeholeService", service);
         var mvc = MockMvcBuilders.standaloneSetup(controller)
+                .defaultRequest(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                        .get("/").principal(() -> "1"))
                 .setControllerAdvice(new GlobalExceptionHandler()).build();
         String text = length == 0 ? " " : "x".repeat(length);
         mvc.perform(post("/api/treehole/posts").contentType(MediaType.APPLICATION_JSON)
@@ -43,6 +45,8 @@ class TreeholeModerationHttpTest {
         TreeholeController controller = new TreeholeController();
         ReflectionTestUtils.setField(controller, "treeholeService", service);
         var mvc = MockMvcBuilders.standaloneSetup(controller)
+                .defaultRequest(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                        .get("/").principal(() -> "1"))
                 .setControllerAdvice(new GlobalExceptionHandler()).build();
         mvc.perform(post("/api/treehole/posts").contentType(MediaType.APPLICATION_JSON)
                 .content("{\"content\":\"PRIVATE-CONTENT\",\"emotionTag\":\"CALM\"}"))

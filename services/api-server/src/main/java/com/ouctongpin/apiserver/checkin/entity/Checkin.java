@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 public class Checkin {
     @TableId(type = IdType.AUTO)
     private Long id;
+    @JsonIgnore
     private Long userId;
     private String emotion;          // HAPPY/CALM/ANXIOUS/LONELY/IRRITABLE/DOWN（对应契约枚举）
     private Integer intensity;       // 1-5

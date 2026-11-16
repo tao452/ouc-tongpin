@@ -10,6 +10,8 @@ values = {
     "MYSQL_PORT": "3307",
     "REDIS_PASSWORD": secrets.token_hex(24),
     "ANON_ID_SECRET": secrets.token_hex(32),
+    "JWT_SECRET": secrets.token_hex(32),
+    "WX_MOCK_ENABLED": "true",
     "WEB_PORT": "8080",
 }
 with Path(".env").open("x", encoding="utf-8") as output:

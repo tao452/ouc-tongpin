@@ -38,9 +38,10 @@ def register(runner, stack, start_date):
                 f"FROM checkin WHERE id={identifier}"
             ).split("\t")
             expected_row = [data["emotion"], str(data["intensity"]), data["checkinDate"],
-                            hashlib.sha256(data.get("note", "").encode()).hexdigest(), "1"]
+                            hashlib.sha256(data.get("note", "").encode()).hexdigest(),
+                            str(client.user_id)]
             expect(persisted == expected_row,
-                   "MySQL check-in fields must match submitted values and the demo user")
+                   "MySQL check-in fields must match submitted values and authenticated caller")
         else:
             expect(after == before, "Rejected check-in must not change persisted data")
         client.observations.append({"database_rows_added": after - before})
@@ -110,7 +111,7 @@ def register(runner, stack, start_date):
         before = stack.count("checkin")
 
         def request(_):
-            other = Client(client.base)
+            other = Client(client.base, token=client.token, user_id=client.user_id)
             status, body = other.request(route, data)
             return status, body, other.observations
 

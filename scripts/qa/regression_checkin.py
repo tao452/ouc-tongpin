@@ -121,7 +121,8 @@ def register(runner, stack):
         before = stack.count("checkin")
 
         def submit(_):
-            return Client(client.base).request(route, payload)
+            other = Client(client.base, token=client.token, user_id=client.user_id)
+            return other.request(route, payload)
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
             replies = list(pool.map(submit, range(8)))

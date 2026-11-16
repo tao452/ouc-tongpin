@@ -20,5 +20,11 @@ moderation:
   base-url: ${MODERATION_BASE_URL:http://localhost:8000}
 
 jwt:
-  secret: ouctongpin-secret-key-1234567890abcdefghijklmn
-  expiration: 86400000
+  secret: ${JWT_SECRET:}
+  expire-minutes: ${JWT_EXPIRE_MINUTES:120}
+
+auth:
+  wechat:
+    app-id: ${WX_APPID:}
+    secret: ${WX_SECRET:}
+    mock-enabled: ${WX_MOCK_ENABLED:false}

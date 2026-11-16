@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.security.Principal;
+import com.ouctongpin.apiserver.auth.config.CallerIdentity;
 
 @RestController
 @RequestMapping("/api/emotions")
@@ -16,20 +18,21 @@ public class CheckinController {
     @Autowired private CheckinService checkinService;
 
     // 契约：POST /api/emotions/checkins
-    // TODO(W3): userId 临时写死 1L，待接入 JWT 拦截器后从 Authorization 解析
     @PostMapping("/checkins")
-    public Checkin create(@Valid @RequestBody CheckinReq req) {
-        return checkinService.doCheckin(1L, req.getEmotion(), req.getIntensity(), req.getNote(), req.getCheckinDate());
+    public Checkin create(@Valid @RequestBody CheckinReq req, Principal principal) {
+        return checkinService.doCheckin(CallerIdentity.require(principal), req.getEmotion(),
+                req.getIntensity(), req.getNote(), req.getCheckinDate());
     }
 
     // 契约：GET /api/emotions/checkins?from&to
     @GetMapping("/checkins")
     public Map<String, Object> list(@RequestParam(required = false) String from,
-                                    @RequestParam(required = false) String to) {
-        List<Checkin> items = checkinService.list(1L, from, to);
+                                    @RequestParam(required = false) String to, Principal principal) {
+        long userId = CallerIdentity.require(principal);
+        List<Checkin> items = checkinService.list(userId, from, to);
         Map<String, Object> m = new HashMap<>();
         m.put("items", items);
-        m.put("streakDays", checkinService.streakDays(1L));
+        m.put("streakDays", checkinService.streakDays(userId));
         m.put("total", items.size());
         return m;
     }

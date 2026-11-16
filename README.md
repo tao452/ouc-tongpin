@@ -132,6 +132,7 @@ git switch develop && git merge --no-ff release/0.1 && git push
 
 ## 12 M6 隐私与自动化工具
 
+- US-25 可信身份、JWT 权限、数据库角色与运行数据 PII 扫描：`docs/qa/US25-身份权限与PII验证.md`
 - 第三周原始任务逐项交付与联合验收状态：`docs/qa/W3-任务清单与验收状态.md`
 - 同一提交的统一质量报告：`scripts/qa/report_w3_delivery.py`；CI artifact 为 `w3-delivery-evidence`
 - 第三周（11/09–11/13）补齐与当前验证报告：`docs/qa/W3-隐私与自动化交付与验证.md`

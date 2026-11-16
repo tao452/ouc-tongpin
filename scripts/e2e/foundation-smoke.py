@@ -3,14 +3,18 @@ import json
 import os
 import urllib.error
 import urllib.request
+import uuid
 
 base = os.environ.get("TEST_BASE_URL", "http://127.0.0.1:8080")
+token = None
 
 
 def request(path, data=None):
     payload = None if data is None else json.dumps(data).encode()
-    req = urllib.request.Request(base + path, data=payload,
-                                 headers={"Content-Type": "application/json"})
+    headers = {"Content-Type": "application/json"}
+    if token:
+        headers["Authorization"] = "Bearer " + token
+    req = urllib.request.Request(base + path, data=payload, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
             return response.status, response.read().decode()
@@ -24,6 +28,9 @@ assert status == 200 and json.loads(body)["passed"] is False, "High-risk text no
 status, body = request("/api/moderation/check", {"text": "一起去图书馆"})
 assert status == 200 and json.loads(body)["passed"] is True, "Normal text blocked"
 assert request("/api/moderation/check", {"text": " "})[0] == 422
+status, identity = request("/api/auth/login", {"code": "smoke-" + uuid.uuid4().hex})
+assert status == 200, "Isolated fixture login failed"
+token = json.loads(identity)["token"]
 status, body = request("/api/emotions/checkins")
 assert status == 200 and "items" in json.loads(body), "Java API not reachable through gateway"
 assert request("/internal/health")[0] == 404, "Internal health endpoint was exposed"

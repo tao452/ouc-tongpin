@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `auth` (
   `created_at` DATETIME     DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_auth_user_id` (`user_id`),
-  KEY `idx_auth_openid` (`openid`)
+  UNIQUE KEY `uk_auth_openid` (`openid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 每日情绪打卡表

@@ -18,6 +18,8 @@ from urllib.error import HTTPError
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, ProxyHandler, Request, build_opener
 
+from regression_http import Client
+
 ROOT = Path(__file__).resolve().parents[2]
 ENDPOINT = "/api/emotions/checkins?from=2031-01-01&to=2031-01-31"
 MAX_RESPONSE_BYTES = 1024 * 1024
@@ -62,11 +64,14 @@ def validate(args):
     return f"{parts.scheme}://{parts.netloc}{ENDPOINT}"
 
 
-def request_once(url, timeout, request_id):
+def request_once(url, timeout, request_id, token=None):
     started = time.perf_counter()
     status, error = None, None
     try:
-        request = Request(url, headers={"Accept": "application/json"}, method="GET")
+        headers = {"Accept": "application/json"}
+        if token is not None:
+            headers["Authorization"] = "Bearer " + token
+        request = Request(url, headers=headers, method="GET")
         with urlopen(request, timeout=timeout) as response:
             status = response.status
             if status != 200:
@@ -133,12 +138,13 @@ def source_metadata():
     return result
 
 
-def execute(url, requests, concurrency, timeout):
+def execute(url, requests, concurrency, timeout, token=None):
     started_at = datetime.now(UTC).isoformat()
     started = time.perf_counter()
     with ThreadPoolExecutor(max_workers=concurrency) as executor:
         results = list(
-            executor.map(lambda index: request_once(url, timeout, index), range(1, requests + 1))
+            executor.map(lambda index: request_once(url, timeout, index, token),
+                         range(1, requests + 1))
         )
     duration = max(time.perf_counter() - started, 1e-9)
     passed = sum(row["status"] == "PASS" for row in results)
@@ -192,10 +198,13 @@ def main(argv=None):
     parser.add_argument("--concurrency", type=int, default=10)
     parser.add_argument("--timeout", type=float, default=5.0)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--login", action="store_true",
+                        help="Use a fixture login on the isolated stack")
     try:
         args = parser.parse_args(argv)
         url = validate(args)
-        report = execute(url, args.requests, args.concurrency, args.timeout)
+        token = Client(args.base_url).authenticate().token if args.login else None
+        report = execute(url, args.requests, args.concurrency, args.timeout, token)
         save_report(args.output, report)
     except (OSError, ValueError, TypeError):
         print("Load check failed: parameters or output are invalid", file=sys.stderr)

@@ -20,7 +20,7 @@ from regression_stack import Stack
 
 
 def execute(base):
-    client, stack = Client(base), Stack()
+    client, stack = Client(base).authenticate(), Stack()
     runner = Runner(client)
     for module in (
         regression_auth,
@@ -55,8 +55,8 @@ def main():
     report = {
         "executed_at_utc": datetime.now(UTC).isoformat(),
         "source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
-        "scope": "Real HTTP + MySQL/Redis, disposable CI stack, synthetic inputs, demo user 1. "
-        "Mock code2session is not real WeChat/JWT authorization acceptance.",
+        "scope": "Real HTTP + MySQL/Redis, disposable CI stack, signed JWT test identity. "
+        "Explicit mock identity provider is not live WeChat platform acceptance.",
         "contract_sha256": hashlib.sha256(
             Path("packages/contract/openapi.yaml").read_bytes()
         ).hexdigest(),

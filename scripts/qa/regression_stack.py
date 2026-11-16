@@ -17,7 +17,8 @@ class Stack:
         # SQL is passed as a process argument, never interpolated into shell source.
         shell = (
             'MYSQL_PWD="$MYSQL_PASSWORD" exec mysql -u "$MYSQL_USER" '
-            '-D "$MYSQL_DATABASE" --batch --skip-column-names "$@"'
+            '-D "$MYSQL_DATABASE" --default-character-set=utf8mb4 '
+            '--batch --skip-column-names "$@"'
         )
         return self.execute(
             "exec", "-T", "mysql", "sh", "-c", shell, "mysql", "--execute", statement

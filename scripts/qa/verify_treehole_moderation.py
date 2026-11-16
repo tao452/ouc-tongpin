@@ -7,13 +7,14 @@ import argparse
 import json
 import os
 import subprocess
-import urllib.error
-import urllib.request
 from datetime import UTC, datetime
 from pathlib import Path
 
+from regression_http import Client
+
 
 def verify(base_url):
+    client = Client(base_url).authenticate()
     command = ["docker", "compose", "--env-file", ".env", "-f", "infra/docker-compose.yml"]
     results = []
 
@@ -32,14 +33,8 @@ def verify(base_url):
         return {"mysql_rows": int(rows), "redis_queue_entries": int(queued)}
 
     def publish(text):
-        body = json.dumps({"content": text, "emotionTag": "CALM", "anonymous": True}).encode()
-        request = urllib.request.Request(base_url.rstrip("/") + "/api/treehole/posts",
-                                         data=body, headers={"Content-Type": "application/json"})
-        try:
-            with urllib.request.urlopen(request, timeout=15) as response:
-                return response.status, json.load(response)
-        except urllib.error.HTTPError as error:
-            return error.code, json.load(error)
+        return client.request("/api/treehole/posts",
+                              {"content": text, "emotionTag": "CALM", "anonymous": True})
 
     def run(name, check):
         try:
@@ -93,8 +88,8 @@ def main():
     report = {
         "executed_at_utc": datetime.now(UTC).isoformat(),
         "source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
-        "scope": "Disposable CI MySQL/Redis/Java/FastAPI stack; synthetic data, demo user 1; "
-                 "not JWT, privacy, or product-policy acceptance.",
+        "scope": "Disposable CI MySQL/Redis/Java/FastAPI stack; signed JWT test identity; "
+                 "not live WeChat, independent privacy review, or product-policy acceptance.",
         "results": results,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

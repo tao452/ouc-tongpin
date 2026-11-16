@@ -39,6 +39,11 @@ services:
       REDIS_HOST: redis
       REDIS_PASSWORD: ${REDIS_PASSWORD:?Set REDIS_PASSWORD}
       ANON_ID_SECRET: ${ANON_ID_SECRET:?Set ANON_ID_SECRET (at least 32 bytes)}
+      JWT_SECRET: ${JWT_SECRET:?Set a private JWT_SECRET (at least 32 bytes)}
+      JWT_EXPIRE_MINUTES: ${JWT_EXPIRE_MINUTES:-120}
+      WX_MOCK_ENABLED: ${WX_MOCK_ENABLED:-false}
+      WX_APPID: ${WX_APPID:-}
+      WX_SECRET: ${WX_SECRET:-}
       MODERATION_BASE_URL: http://algo:8000
     depends_on:
       mysql: {condition: service_healthy}

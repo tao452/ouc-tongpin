@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
+import java.security.Principal;
+import com.ouctongpin.apiserver.auth.config.CallerIdentity;
 
 @RestController
 @RequestMapping("/api/treehole")
@@ -16,11 +18,10 @@ public class TreeholeController {
     @Autowired private TreeholeService treeholeService;
 
     // 契约：POST /api/treehole/posts -> TreeholePost
-    // TODO(W3): userId 临时写死 1L，待接入 JWT 拦截器后从 Authorization 解析
     @PostMapping("/posts")
     @ResponseStatus(HttpStatus.CREATED)
-    public PostResponse create(@Valid @RequestBody PostCreateReq req) {
-        return treeholeService.toResponse(treeholeService.createPost(1L, req));
+    public PostResponse create(@Valid @RequestBody PostCreateReq req, Principal principal) {
+        return treeholeService.toResponse(treeholeService.createPost(CallerIdentity.require(principal), req));
     }
 
     // 契约：GET /api/treehole/posts?emotionTag&cursor -> { items, nextCursor }

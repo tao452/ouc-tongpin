@@ -17,7 +17,7 @@ public class GlobalExceptionHandler {
         int status = e.getStatusCode().value();
         String message = switch (status) {
             case 422 -> "内容未通过安全检查";
-            case 503 -> "内容安全服务暂不可用，请稍后重试";
+            case 503 -> "服务暂不可用，请稍后重试";
             default -> "请求未通过检查";
         };
         return ResponseEntity.status(e.getStatusCode()).body(Result.fail(status, message));

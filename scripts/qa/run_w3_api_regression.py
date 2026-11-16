@@ -73,7 +73,7 @@ def validate_results(results, manifest):
 
 
 def execute(base_url, stack, manifest):
-    runner = Runner(Client(base_url))
+    runner = Runner(Client(base_url).authenticate())
     start_date = date(2040, 1, 1) + timedelta(days=secrets.randbelow(900_000))
     w3_api_auth.register(runner, stack)
     w3_api_checkin.register(runner, stack, start_date)
