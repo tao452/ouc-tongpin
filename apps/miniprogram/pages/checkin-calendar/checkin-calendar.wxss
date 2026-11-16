@@ -143,20 +143,21 @@
   min-width: 180rpx;
 }
 
-.remind-title {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #30352F;
-}
-
 .remind-desc {
   margin-top: 8rpx;
   font-size: 22rpx;
   color: #A7A79F;
 }
 
+.remind-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #30352F;
+}
+
+
 .remind-time {
-  margin-top: 18rpx;
+  margin-top: 0;
   padding: 12rpx 18rpx;
   background: #F3F5EF;
   border-radius: 10rpx;

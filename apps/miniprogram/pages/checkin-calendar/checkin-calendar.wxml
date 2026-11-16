@@ -7,7 +7,7 @@
     <view class="nav" bindtap="nextMonth">›</view>
   </view>
 
-  <!-- 连续打卡数据 -->
+  <!-- 连续打卡 -->
   <view class="streak">
     <text class="big">{{streakDays}}</text>
     <text class="label">连续打卡天 · 本月 {{monthTotal}} 次</text>
@@ -50,7 +50,7 @@
     />
 
     <picker mode="time" value="{{remindTime}}" bindchange="onTime">
-      <view class="remind-time">每日 {{remindTime}} ›</view>
+      <view class="remind-time">每日 {{remindTime}}</view>
     </picker>
   </view>
 
