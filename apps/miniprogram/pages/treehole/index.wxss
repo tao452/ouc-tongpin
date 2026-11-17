@@ -1,13 +1,24 @@
+
+/* ==============================
+   页面基础
+============================== */
+
 page {
   min-height: 100%;
-  background: #f7f8fa;
+  background: #F8F7F3;
+  font-family: "HarmonyOS Sans SC", sans-serif;
 }
 
 .page {
   min-height: 100vh;
-  padding: 40rpx 32rpx 80rpx;
+  padding: 32rpx 40rpx 48rpx;
   box-sizing: border-box;
+  background: #F8F7F3;
 }
+
+/* ==============================
+   第二张：编辑页面头部
+============================== */
 
 .header {
   display: flex;
@@ -16,198 +27,373 @@ page {
 
 .title {
   font-size: 38rpx;
+  line-height: 1.5;
   font-weight: 700;
-  color: #252a34;
+  color: #30352F;
 }
 
 .description {
-  margin-top: 16rpx;
+  margin-top: 12rpx;
   font-size: 25rpx;
-  color: #9298a5;
+  line-height: 1.6;
+  color: #85877F;
 }
 
+/* ==============================
+   第一张：树洞首页头部
+============================== */
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12rpx;
+}
+
+.home-eyebrow {
+  font-size: 21rpx;
+  line-height: 1.5;
+  letter-spacing: 4rpx;
+  color: #8D9A88;
+  font-weight: 500;
+}
+
+.home-title {
+  margin-top: 22rpx;
+  font-size: 46rpx;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #30352F;
+}
+
+.home-description {
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  line-height: 1.7;
+  color: #85877F;
+}
+
+
+/* ==============================
+   编辑页面：系统提示条
+============================== */
+
 .notice {
-  margin-top: 24rpx;
-  padding: 18rpx 24rpx;
-  border-radius: 16rpx;
-  background: #eaf2f4;
+  display: flex;
+  align-items: center;
+  min-height: 72rpx;
+  margin-top: 28rpx;
+  padding: 16rpx 24rpx;
+  border-radius: 14rpx;
+  background: #EEF4F2;
+  box-sizing: border-box;
 }
 
 .notice-text {
+  display: block;
+  width: 100%;
   font-size: 23rpx;
-  color: #426b7a;
+  line-height: 1.5;
+  color: #56776A;
 }
 
-/* 发布入口 */
+/* ==============================
+   发布入口
+============================== */
+
 .composer-entry {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 28rpx;
-  padding: 30rpx 28rpx;
+  margin-top: 36rpx;
+  padding: 30rpx 26rpx;
   border-radius: 20rpx;
-  background: #ffffff;
+  background: #FFFFFF;
+  box-sizing: border-box;
 }
 
 .composer-entry-text {
   font-size: 27rpx;
-  color: #9298a5;
+  color: #A7A79F;
 }
 
 .composer-entry-action {
   padding: 12rpx 26rpx;
   border-radius: 999rpx;
-  background: #426b7a;
-  color: #ffffff;
+  background: #789477;
+  color: #FFFFFF;
   font-size: 24rpx;
 }
 
-/* 发布表单 */
+/* ==============================
+   Figma 07：发布树洞编辑区域
+============================== */
+
 .composer {
   margin-top: 28rpx;
-  padding: 28rpx;
-  border-radius: 20rpx;
-  background: #ffffff;
-}
-
-.composer-title {
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #252a34;
-}
-
-.composer-input {
-  width: 100%;
-  min-height: 160rpx;
-  margin-top: 24rpx;
-  padding: 20rpx;
-  border-radius: 14rpx;
-  background: #f7f8fa;
-  font-size: 27rpx;
-  line-height: 1.6;
-  color: #252a34;
+  padding: 36rpx 30rpx 28rpx;
+  border-radius: 24rpx;
+  background: #FFFFFF;
   box-sizing: border-box;
 }
 
-.composer-count {
+/* 编辑区标题 */
+
+.composer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.composer-heading {
+  flex: 1;
+}
+
+.composer-eyebrow {
+  font-size: 19rpx;
+  line-height: 1.5;
+  letter-spacing: 3rpx;
+  color: #A7A79F;
+}
+
+.composer-title {
+  margin-top: 10rpx;
+  font-size: 34rpx;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #30352F;
+}
+
+.composer-subtitle {
   margin-top: 8rpx;
-  text-align: right;
-  font-size: 22rpx;
-  color: #9298a5;
+  font-size: 23rpx;
+  line-height: 1.6;
+  color: #85877F;
+}
+
+/* 关闭按钮 */
+
+.composer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56rpx;
+  height: 56rpx;
+  margin-left: 16rpx;
+  border-radius: 50%;
+  background: #F5F5F0;
+  color: #85877F;
+  font-size: 38rpx;
+  line-height: 1;
+}
+
+/* 正文输入区域 */
+
+.input-section {
+  margin-top: 36rpx;
 }
 
 .section-label {
-  margin-top: 24rpx;
-  font-size: 25rpx;
-  color: #414957;
+  font-size: 26rpx;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #30352F;
+}
+
+.composer-input {
+  display: block;
+  width: 100%;
+  min-height: 220rpx;
+  margin-top: 18rpx;
+  padding: 24rpx;
+  border: 2rpx solid #EAE9E2;
+  border-radius: 16rpx;
+  background: #FAFAF7;
+  box-sizing: border-box;
+  font-size: 27rpx;
+  line-height: 1.8;
+  color: #30352F;
+}
+
+.composer-placeholder {
+  color: #A7A79F;
+}
+
+.composer-count {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: #A7A79F;
+}
+
+/* 情绪选择 */
+
+.emotion-section {
+  margin-top: 36rpx;
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-description {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  line-height: 1.6;
+  color: #A7A79F;
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 16rpx;
+  margin-top: 20rpx;
 }
 
 .tag-item {
-  margin: 0 14rpx 14rpx 0;
-  padding: 12rpx 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150rpx;
+  min-height: 68rpx;
+  margin: 0 16rpx 16rpx 0;
+  padding: 12rpx 24rpx;
   border: 2rpx solid transparent;
-  border-radius: 999rpx;
+  border-radius: 14rpx;
+  box-sizing: border-box;
   font-size: 24rpx;
-  color: #414957;
+  line-height: 1.5;
+  color: #53584F;
 }
 
 .tag-item.selected {
-  border-color: #426b7a;
+  border-color: #789477;
   font-weight: 600;
 }
+
+.tag-check {
+  margin-left: 10rpx;
+  color: #789477;
+  font-size: 23rpx;
+  font-weight: 700;
+}
+
+/* ==============================
+   匿名发布
+============================== */
 
 .anonymous-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20rpx;
-  padding-top: 24rpx;
-  border-top: 1rpx solid #eef0f3;
+  margin-top: 22rpx;
+  padding: 26rpx 0;
+  border-top: 1rpx solid #EAE9E2;
+  border-bottom: 1rpx solid #EAE9E2;
+}
+
+.anonymous-info {
+  flex: 1;
+  min-width: 0;
+  padding-right: 18rpx;
 }
 
 .anonymous-title {
   font-size: 26rpx;
-  color: #414957;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #30352F;
 }
 
 .anonymous-hint {
-  margin-top: 6rpx;
-  font-size: 21rpx;
-  color: #9298a5;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  line-height: 1.6;
+  color: #85877F;
 }
+
+/* ==============================
+   底部操作按钮
+============================== */
 
 .composer-buttons {
   display: flex;
-  gap: 20rpx;
-  margin-top: 28rpx;
+  gap: 18rpx;
+  margin-top: 30rpx;
 }
 
 .btn-secondary,
 .btn-primary {
+  display: flex;
   flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
   margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 16rpx;
   font-size: 26rpx;
-  border-radius: 14rpx;
+  line-height: normal;
+  font-weight: 500;
+}
+
+.btn-secondary::after,
+.btn-primary::after {
+  border: none;
 }
 
 .btn-secondary {
-  background: #f0f2f5;
-  color: #414957;
+  background: #F3F3EE;
+  color: #53584F;
 }
 
 .btn-primary {
-  background: #426b7a;
-  color: #ffffff;
+  background: #789477;
+  color: #FFFFFF;
 }
+
+.btn-primary[disabled] {
+  opacity: 0.65;
+}
+
+/* 编辑页面底部提示 */
 
 .composer-hint {
-  margin-top: 18rpx;
-  font-size: 21rpx;
-  color: #9298a5;
-  line-height: 1.5;
-}
-
-/* 筛选 */
-.filter-bar {
   display: flex;
-  flex-wrap: wrap;
-  margin: 32rpx 0 20rpx;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24rpx;
+  font-size: 21rpx;
+  line-height: 1.6;
+  color: #A7A79F;
 }
 
-.filter-item {
-  margin: 0 14rpx 12rpx 0;
-  padding: 10rpx 24rpx;
-  border-radius: 999rpx;
-  background: #ffffff;
-  font-size: 23rpx;
-  color: #6b7280;
+.hint-icon {
+  margin-right: 8rpx;
+  color: #789477;
+  font-size: 26rpx;
 }
 
-.filter-item.active {
-  background: #426b7a;
-  color: #ffffff;
-}
+/* ==============================
+   加载、错误、空状态
+============================== */
 
-/* 状态与列表 */
 .state-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70rpx 30rpx;
-  border-radius: 24rpx;
-  background: #ffffff;
+  padding: 32rpx 30rpx;
+  margin-top: 16rpx;
+  border-radius: 20rpx;
+  background: #FFFFFF;
+  box-sizing: border-box;
 }
 
 .state-text,
 .state-title {
   font-size: 28rpx;
-  color: #414957;
+  color: #30352F;
 }
 
 .state-title {
@@ -217,7 +403,8 @@ page {
 .state-hint {
   margin-top: 12rpx;
   font-size: 23rpx;
-  color: #9298a5;
+  line-height: 1.6;
+  color: #85877F;
   text-align: center;
 }
 
@@ -225,16 +412,25 @@ page {
   margin-top: 28rpx;
   padding: 10rpx 36rpx;
   border-radius: 999rpx;
-  background: #426b7a;
-  color: #ffffff;
+  background: #789477;
+  color: #FFFFFF;
   font-size: 24rpx;
+}
+
+/* ==============================
+   树洞帖子列表
+============================== */
+
+.post-list {
+  width: 100%;
 }
 
 .post-card {
   margin-bottom: 20rpx;
   padding: 26rpx;
   border-radius: 20rpx;
-  background: #ffffff;
+  background: #FFFFFF;
+  box-sizing: border-box;
 }
 
 .post-head {
@@ -246,26 +442,26 @@ page {
   padding: 6rpx 18rpx;
   border-radius: 999rpx;
   font-size: 22rpx;
-  color: #414957;
+  color: #53584F;
 }
 
 .post-author {
   flex: 1;
   margin-left: 16rpx;
   font-size: 23rpx;
-  color: #6b7280;
+  color: #85877F;
 }
 
 .post-anon {
   font-size: 21rpx;
-  color: #9298a5;
+  color: #A7A79F;
 }
 
 .post-content {
   margin-top: 20rpx;
   font-size: 28rpx;
   line-height: 1.7;
-  color: #252a34;
+  color: #30352F;
   word-break: break-all;
 }
 
@@ -274,14 +470,14 @@ page {
   justify-content: space-between;
   margin-top: 22rpx;
   padding-top: 18rpx;
-  border-top: 1rpx solid #f0f2f5;
+  border-top: 1rpx solid #EAE9E2;
   font-size: 21rpx;
-  color: #9298a5;
+  color: #A7A79F;
 }
 
 .more-hint {
   padding: 24rpx 0;
   text-align: center;
   font-size: 22rpx;
-  color: #9298a5;
+  color: #A7A79F;
 }

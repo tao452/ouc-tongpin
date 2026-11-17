@@ -1,68 +1,132 @@
+
 <view class="checkin-page">
 
-    <!-- 页面标题 -->
-    <view class="page-title">每日打卡</view>
+  <!-- 日期氛围区 -->
+  <view class="date-hero">
+    <view class="date-topline">
+      <text class="date-eyebrow">GOOD DAY · 美好的一天</text>
+      <view class="hero-small-dot"></view>
+    </view>
 
-    <!-- 日期区域 -->
-    <view class="date-section">
-      <view class="date-today">今天</view>
-      <view class="date-number">{{currentDate}}</view>
-      <view class="date-description">
-        {{weekDay}}・坚持记录每一天
+    <view class="date-today">今天</view>
+    <view class="date-number">{{currentDate}}</view>
+    <view class="date-description">
+      {{weekDay}} · 坚持记录每一天
+    </view>
+
+    <view class="date-bottom">
+      <view class="date-bottom-text">
+        <text class="date-bottom-title">慢慢来，也是在向前走</text>
+        <text class="date-bottom-subtitle">给今天的自己一点时间和关心</text>
+      </view>
+      <view class="sun-decoration">
+        <view class="sun-core"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日打卡卡片 -->
+  <view class="status-card">
+
+    <view class="status-card-top">
+      <text class="card-eyebrow">TODAY'S CHECK-IN</text>
+      <view class="status-badge {{hasCheckedIn ? 'badge-done' : ''}}">
+        {{hasCheckedIn ? '已完成' : '待打卡'}}
       </view>
     </view>
 
-    <!-- 今日打卡状态卡片 -->
-    <view class="status-card">
-      <view class="status-text">
-        {{hasCheckedIn ? '今日已打卡' : '今日尚未打卡'}}
+    <view class="status-main">
+      <view class="status-icon {{hasCheckedIn ? 'icon-done' : ''}}">
+        <text>{{hasCheckedIn ? '✓' : '♡'}}</text>
       </view>
 
-      <button
-        class="status-button {{hasCheckedIn ? 'completed' : ''}}"
-        bindtap="goToForm"
-        disabled="{{hasCheckedIn}}"
-      >
-        {{hasCheckedIn ? '今日已完成' : '立即打卡'}}
-      </button>
-    </view>
-
-    <!-- 我的打卡数据 -->
-    <view class="section">
-      <view class="section-title">我的打卡数据</view>
-
-      <view class="data-card">
-        <view class="data-item">
-          <view class="data-number">{{continuousDays}}</view>
-          <view class="data-label">连续打卡</view>
-          <view class="data-unit">天</view>
+      <view class="status-info">
+        <view class="status-text">
+          {{hasCheckedIn ? '今日已打卡' : '今日尚未打卡'}}
         </view>
-
-        <view class="data-item">
-          <view class="data-number">{{totalDays}}</view>
-          <view class="data-label">累计打卡</view>
-          <view class="data-unit">次</view>
+        <view class="status-subtitle">
+          {{hasCheckedIn ? '你已经认真照顾了今天的自己' : '记录此刻的心情，留下一份今日记忆'}}
         </view>
       </view>
     </view>
 
-    <!-- 更多功能 -->
-    <view class="section">
-      <view class="section-title">更多功能</view>
-
-      <view class="more-card">
-        <view class="more-item" bindtap="goToRule">
-          <text>打卡规则说明</text>
-          <text class="more-arrow">›</text>
-        </view>
-
-        <view class="more-divider"></view>
-
-        <view class="more-item" bindtap="goToRecords">
-          <text>打卡记录</text>
-          <text class="more-arrow">›</text>
-        </view>
-      </view>
-    </view>
+    <button
+      class="status-button {{hasCheckedIn ? 'completed' : ''}}"
+      bindtap="goToForm"
+      disabled="{{hasCheckedIn}}"
+    >
+      {{hasCheckedIn ? '今日已完成 ✓' : '立即打卡'}}
+    </button>
 
   </view>
+
+  <!-- 打卡数据 -->
+  <view class="section">
+    <view class="section-heading">
+      <view>
+        <view class="section-title">我的打卡数据</view>
+        <view class="section-subtitle">每一次记录，都是成长的痕迹</view>
+      </view>
+      <view class="section-decoration">✳</view>
+    </view>
+
+    <view class="data-card">
+
+      <view class="data-item">
+        <view class="data-number">{{continuousDays}}</view>
+        <view class="data-label">连续打卡</view>
+        <view class="data-unit">天</view>
+      </view>
+
+      <view class="data-divider"></view>
+
+      <view class="data-item">
+        <view class="data-number">{{totalDays}}</view>
+        <view class="data-label">累计打卡</view>
+        <view class="data-unit">次</view>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 更多功能 -->
+  <view class="section more-section">
+    <view class="section-heading">
+      <view>
+        <view class="section-title">更多功能</view>
+        <view class="section-subtitle">探索你的每一份成长记录</view>
+      </view>
+    </view>
+
+    <view class="more-card">
+
+      <view class="more-item" bindtap="goToRule">
+        <view class="more-icon rule-icon">i</view>
+        <view class="more-content">
+          <view class="more-title">打卡规则说明</view>
+          <view class="more-description">了解打卡方式与相关规则</view>
+        </view>
+        <text class="more-arrow">›</text>
+      </view>
+
+      <view class="more-divider"></view>
+
+      <view class="more-item" bindtap="goToRecords">
+        <view class="more-icon records-icon">▤</view>
+        <view class="more-content">
+          <view class="more-title">打卡记录</view>
+          <view class="more-description">回顾每一天的心情与变化</view>
+        </view>
+        <text class="more-arrow">›</text>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 页面底部寄语 -->
+  <view class="footer-note">
+    <text>✿</text>
+    <text>愿你在记录中，慢慢遇见更好的自己</text>
+  </view>
+
+</view>
