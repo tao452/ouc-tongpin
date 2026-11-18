@@ -13,7 +13,7 @@ def canonicalize(text: str) -> str:
         decomposed = unicodedata.normalize("NFD", character)
         if (len(decomposed) > 1 and "a" <= decomposed[0] <= "z"
                 and all(unicodedata.category(ch) == "Mn" for ch in decomposed[1:])):
-            character = decomposed[0]
+            character = "v" if decomposed[0] == "u" and "\u0308" in decomposed else decomposed[0]
         characters.append(character)
     return "".join(characters)
 

@@ -1,0 +1,5 @@
+# Opt-in review only; the regular stack keeps the frozen v1 dictionary.
+services:
+  algo:
+    environment:
+      MODERATION_DICTIONARY_PATH: /app/app/data/moderation-v2-candidate.json
