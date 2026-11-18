@@ -28,13 +28,10 @@ public class BuddyController {
         return buddyService.createNeed(CallerIdentity.require(principal), req);
     }
 
-    // 2. 你新增的广场查询接口 (属于 US-11)
+    // 2. 广场查询接口 (US-11). 异常交给 GlobalExceptionHandler 统一兜底，
+    //    不把内部异常明细回显给客户端。
     @PostMapping("/needs/square")
-    public Result<List<BuddyResponse>> getSquareList(@RequestBody BuddyQueryReq req) {
-        try {
-            return Result.ok(buddyService.getSquareList(req));
-        } catch (Exception e) {
-            return Result.fail(500, "获取广场列表失败: " + e.getMessage());
-        }
+    public Result<List<BuddyResponse>> getSquareList(@Valid @RequestBody BuddyQueryReq req) {
+        return Result.ok(buddyService.getSquareList(req));
     }
 }

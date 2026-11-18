@@ -87,13 +87,20 @@ public class BuddyService {
         }
     }
 
-    public List<BuddyResponse> getSquareList(BuddyQueryReq req) throws JsonProcessingException {
-        String cacheKey = "square:" + req.getCursorId() + ":" + req.getMyLongitude() + ":" + req.getMyLatitude();
+    public List<BuddyResponse> getSquareList(BuddyQueryReq req) {
+        // 缓存 key 必须包含所有影响结果的查询参数，否则不同 radius/size 会串用同一份结果。
+        String cacheKey = "square:" + req.getCursorId() + ":" + req.getMyLongitude() + ":"
+            + req.getMyLatitude() + ":" + req.getRadius() + ":" + req.getSize();
 
         String cachedJson = redisTemplate.opsForValue().get(cacheKey);
         if (cachedJson != null) {
-            return objectMapper.readValue(cachedJson,
-                objectMapper.getTypeFactory().constructCollectionType(List.class, BuddyResponse.class));
+            try {
+                return objectMapper.readValue(cachedJson,
+                    objectMapper.getTypeFactory().constructCollectionType(List.class, BuddyResponse.class));
+            } catch (JsonProcessingException e) {
+                // 缓存内容损坏时忽略缓存、回源查询，不让脏缓存影响结果。
+                redisTemplate.delete(cacheKey);
+            }
         }
 
         LambdaQueryWrapper<BuddyDemand> wrapper = new LambdaQueryWrapper<>();
@@ -119,7 +126,13 @@ public class BuddyService {
             return r;
         }).collect(Collectors.toList());
 
-        redisTemplate.opsForValue().set(cacheKey, objectMapper.writeValueAsString(responses), 60, TimeUnit.SECONDS);
+        try {
+            redisTemplate.opsForValue().set(cacheKey, objectMapper.writeValueAsString(responses),
+                60, TimeUnit.SECONDS);
+        } catch (JsonProcessingException e) {
+            // 序列化失败不应影响本次查询结果，交由全局异常处理器兜底即可。
+            throw new IllegalStateException("缓存序列化失败", e);
+        }
         return responses;
     }
 }
