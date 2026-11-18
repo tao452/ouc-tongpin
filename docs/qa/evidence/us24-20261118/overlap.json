@@ -1,0 +1,7 @@
+{
+  "exact_with_cold": 0,
+  "normalized_with_cold": 0,
+  "exact_with_development": 0,
+  "normalized_with_development": 0,
+  "policy": "All PCR rows kept even if overlap; no selection by prediction"
+}

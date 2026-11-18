@@ -1,0 +1,30 @@
+{
+  "planned_at_utc": "2026-11-18T08:43:12.722774+00:00",
+  "dataset": "PCR-ToxiCN",
+  "repository": "https://huggingface.co/datasets/UTSNLPGroup/PCR-ToxiCN",
+  "paper": "https://arxiv.org/abs/2507.07640",
+  "revision": "eb6839b592fe94091ce305c9a21c3bf2686a4c31",
+  "file": "PCR-ToxiCN.json",
+  "rows": 500,
+  "url": "https://huggingface.co/datasets/UTSNLPGroup/PCR-ToxiCN/resolve/eb6839b592fe94091ce305c9a21c3bf2686a4c31/PCR-ToxiCN.json",
+  "label_policy": "Keep original offensive_label 1/0; HR/AR/NR/MR cohorts; not S1 HIGH labels",
+  "inclusion": "All rows; exclude only blank or >2000 characters; keep duplicates; never remove errors",
+  "purpose": "New external diagnostic after freeze; formal business acceptance still needs M1 and M3",
+  "independence": "Source metadata only inspected before freeze. Raw rows first read after freeze commit. No result-driven rule tuning. Once used, this set becomes historical.",
+  "future_acceptance": "M3 selects and seals another campus sample set before any feedback-driven revision; records labels, disagreement adjudication and hashes before executing",
+  "license": "No license declaration found in upstream dataset card; raw data kept local and not redistributed",
+  "frozen_artifacts": {
+    "services/algo/app/data/moderation-v2-candidate.json": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd",
+    "services/algo/app/data/moderation-v2-candidate.manifest.json": "3db347b4e114f166c86bacad2c63c3c1670442b1d755091a398b1679f1994353",
+    "services/algo/app/data/moderation-v1.json": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+    "services/algo/app/models/dictionary.py": "1589a3f192f13ec03aa2a81614766f407ec4d2b8d29c2dfc23a79e0f107de827",
+    "services/algo/app/routers/moderation.py": "a4ebd58bfc60391b812da6fa2fce37ee681ac7f2acdd39c53b1e5de59fbf360a",
+    "services/algo/scripts/evaluate_candidate.py": "f32afb40a0de422c1b56068a835ce476993c02f01949da5d7477c3dc3d8ca539",
+    "docs/qa/data/us24-development.v2.jsonl": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06",
+    "services/algo/app/services/moderation.py": "c473759c6cf9db37e7ec292085feb944812c835ade0d89bf51e6596ca1de6283",
+    "services/algo/app/services/moderation_context.py": "9cba33aec668660dfcda6ed2694dfd8f445d880d1866a453690eaa969316f25a",
+    "services/algo/app/services/normalization.py": "2c120c3b6197904c67942bb066e6b39754fdbd3da46ece8b929973f206a3d83c",
+    "services/algo/app/services/pronunciation.py": "625673ee72ba4794cd2db78027c4f7b7a48d608dd6136a5c09e24eee3e0ebdfd",
+    "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

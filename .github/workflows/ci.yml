@@ -194,6 +194,20 @@ jobs:
           --output ../../qa-private/w2-moderation-function.json
       - name: Verify synthetic PII baseline
         run: python ../../scripts/qa/run_pii_baseline.py --output ../../qa-private/pii-baseline.json
+      - name: Verify opt-in US24 candidate development cases
+        run: >-
+          python scripts/evaluate_candidate.py ../../docs/qa/data/us24-development.v2.jsonl
+          --output ../../qa-private/us24-candidate-development.json
+      - name: Evaluate frozen vocabulary on independently labeled external data (diagnostic)
+        run: |
+          python ../../scripts/qa/fetch_cold_test.py --output ../../qa-private/cold-test.csv
+          python scripts/evaluate_external.py ../../qa-private/cold-test.csv --output ../../qa-private/us24-external-function.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: us24-external-function-evidence
+          path: qa-private/us24-external-function.json
+          if-no-files-found: warn
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -208,6 +222,7 @@ jobs:
             services/algo/coverage.xml
             services/algo/pytest-junit.xml
             qa-private/w2-moderation-function.json
+            qa-private/us24-candidate-development.json
           if-no-files-found: warn
 
   stack:

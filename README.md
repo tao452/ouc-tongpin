@@ -140,3 +140,9 @@ git switch develop && git merge --no-ff release/0.1 && git push
 - 小规模只读并发演示：`scripts/qa/run_w3_load.py`
 - 合成数据 PII 扫描基线包：`docs/qa/pii-baseline/README.md`
 - 人工复核与误报登记：`docs/qa/pii-baseline/人工复核模板.md`
+
+## 13 US-24 词库与独立评估
+
+- 版本化词库与分级说明：`services/algo/app/data/moderation-v1.json`、同目录 manifest。
+- 固定 COLD 测试集的来源、许可证和哈希：`docs/qa/data/external/cold-test.v1.json`。
+- 实际结果与限制：`docs/qa/US24-正式词库与独立样本评估.md`。广义冒犯识别召回未达标，Issue #25 保持打开。

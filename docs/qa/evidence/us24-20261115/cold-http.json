@@ -1,0 +1,305 @@
+{
+  "executed_at_utc": "2026-11-15T13:31:14.809821+00:00",
+  "source_revision": "c78d12e3f876781b06522b409fd26075bdbd9870",
+  "working_tree_dirty": true,
+  "code_sha256": {
+    "services/algo/scripts/evaluate_external.py": "3eefd77c9373904c82e46dc4fcaca215585a5871fae9b3abf3ca46bc9667a6ab",
+    "services/algo/scripts/external_corpus.py": "db98fb44923ee2b9cbeab82f9ed9335fbd710c82fabca2c261acc0db67e8cb9f",
+    "services/algo/scripts/evaluate_dataset.py": "b659efdb36c9a4579de79fa093309685ed73b074e3b429ec87e6650bead13ee5",
+    "services/algo/app/services/moderation.py": "c84143f1b83a219e993426fbd10ea80d9c3fb5701ba042391fd0b7dd4b1800a2",
+    "services/algo/app/services/normalization.py": "2f734a81c6f5511c8f3ef9f5152bab0f2d12b38984bfdfa63d430a2ca6758122",
+    "services/algo/app/routers/moderation.py": "6caac2cf0dd9f88e357c2fc0b5191192b9e63b06e325f1e921e0ce519b199388",
+    "services/algo/app/data/moderation-v1.manifest.json": "f5fa670b65fb8048865717b1d471f4b95511402775658d7052aec10fb46b02d5"
+  },
+  "dataset": {
+    "name": "COLD official test split",
+    "repository": "https://github.com/thu-coai/COLDataset",
+    "revision": "a0c55a945497ab58e94aef491180e1cf88ffb864",
+    "sha256": "b06d31481f0d558b6dc8140408938abe8dba8083cd9976b4ba8f5c837fbe78ed",
+    "license": "Apache-2.0",
+    "dictionary_frozen_commit": "c78d12e3f876781b06522b409fd26075bdbd9870",
+    "independence": "Collected and labeled by external dataset authors. No COLD train/dev data or test outcomes used to author or tune moderation-v1. No claim of independent human review by M1/M3.",
+    "sampling": "Full test split, preserving order, duplicate rows and original labels. Exclude only blank text or text longer than the existing 2000-character request limit; count every exclusion.",
+    "purpose": "External diagnostic. Its broad offensiveness labels do not equal the project's literal HIGH blocking policy; report both HIGH blocking and any-level candidate metrics."
+  },
+  "accounting": {
+    "upstream_rows": 5323,
+    "eligible_rows": 5323,
+    "excluded_rows": 0,
+    "exclusion_reasons": {},
+    "duplicate_rows_kept": 3
+  },
+  "evaluation_completed": true,
+  "evaluation_mode": "http",
+  "starter": {
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 13,
+        "fp": 1,
+        "tn": 3215,
+        "fn": 2094
+      },
+      "offensive_samples": 2107,
+      "nonoffensive_samples": 3216,
+      "recall": 0.006169909824394874,
+      "precision": 0.9285714285714286,
+      "false_positive_rate": 0.0003109452736318408,
+      "recall_wilson95": [
+        0.0036093054924664966,
+        0.010527928119273462
+      ],
+      "false_positive_rate_wilson95": [
+        5.489158496497083e-05,
+        0.001759315386217278
+      ],
+      "broad_benchmark_thresholds_met": false
+    },
+    "any_level_candidate": {
+      "confusion_matrix": {
+        "tp": 55,
+        "fp": 12,
+        "tn": 3204,
+        "fn": 2052
+      },
+      "offensive_samples": 2107,
+      "nonoffensive_samples": 3216,
+      "recall": 0.026103464641670623,
+      "precision": 0.8208955223880597,
+      "false_positive_rate": 0.0037313432835820895,
+      "recall_wilson95": [
+        0.020109607712546638,
+        0.03382218254340948
+      ],
+      "false_positive_rate_wilson95": [
+        0.002135806709925993,
+        0.006511034812169135
+      ],
+      "broad_benchmark_thresholds_met": false
+    },
+    "upstream_fine_label_cohorts": {
+      "0": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 2548,
+          "fn": 0
+        },
+        "offensive_samples": 0,
+        "nonoffensive_samples": 2548,
+        "recall": null,
+        "precision": null,
+        "false_positive_rate": 0.0,
+        "recall_wilson95": null,
+        "false_positive_rate_wilson95": [
+          0,
+          0.0015053673524331773
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "1": {
+        "confusion_matrix": {
+          "tp": 3,
+          "fp": 0,
+          "tn": 0,
+          "fn": 285
+        },
+        "offensive_samples": 288,
+        "nonoffensive_samples": 0,
+        "recall": 0.010416666666666666,
+        "precision": 1.0,
+        "false_positive_rate": null,
+        "recall_wilson95": [
+          0.003548809890877738,
+          0.030173125506726836
+        ],
+        "false_positive_rate_wilson95": null,
+        "broad_benchmark_thresholds_met": false
+      },
+      "2": {
+        "confusion_matrix": {
+          "tp": 10,
+          "fp": 0,
+          "tn": 0,
+          "fn": 1809
+        },
+        "offensive_samples": 1819,
+        "nonoffensive_samples": 0,
+        "recall": 0.005497526113249038,
+        "precision": 1.0,
+        "false_positive_rate": null,
+        "recall_wilson95": [
+          0.002988893923766972,
+          0.010090388811067575
+        ],
+        "false_positive_rate_wilson95": null,
+        "broad_benchmark_thresholds_met": false
+      },
+      "3": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 1,
+          "tn": 667,
+          "fn": 0
+        },
+        "offensive_samples": 0,
+        "nonoffensive_samples": 668,
+        "recall": null,
+        "precision": 0.0,
+        "false_positive_rate": 0.0014970059880239522,
+        "recall_wilson95": null,
+        "false_positive_rate_wilson95": [
+          0.0002643072114261484,
+          0.008430391134442286
+        ],
+        "broad_benchmark_thresholds_met": false
+      }
+    },
+    "cases_with_each_hit_level": {
+      "HIGH": 14,
+      "LOW": 51,
+      "MEDIUM": 2
+    },
+    "sequential_p95_ms": 0.5898000090382993,
+    "dictionary_sha256": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d"
+  },
+  "formal_v1": {
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 14,
+        "fp": 1,
+        "tn": 3215,
+        "fn": 2093
+      },
+      "offensive_samples": 2107,
+      "nonoffensive_samples": 3216,
+      "recall": 0.006644518272425249,
+      "precision": 0.9333333333333333,
+      "false_positive_rate": 0.0003109452736318408,
+      "recall_wilson95": [
+        0.003962146317046722,
+        0.011122576738603146
+      ],
+      "false_positive_rate_wilson95": [
+        5.489158496497083e-05,
+        0.001759315386217278
+      ],
+      "broad_benchmark_thresholds_met": false
+    },
+    "any_level_candidate": {
+      "confusion_matrix": {
+        "tp": 101,
+        "fp": 24,
+        "tn": 3192,
+        "fn": 2006
+      },
+      "offensive_samples": 2107,
+      "nonoffensive_samples": 3216,
+      "recall": 0.04793545325106787,
+      "precision": 0.808,
+      "false_positive_rate": 0.007462686567164179,
+      "recall_wilson95": [
+        0.0396076630497287,
+        0.05790864162608323
+      ],
+      "false_positive_rate_wilson95": [
+        0.005020084402619104,
+        0.011080540265926435
+      ],
+      "broad_benchmark_thresholds_met": false
+    },
+    "upstream_fine_label_cohorts": {
+      "0": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 2548,
+          "fn": 0
+        },
+        "offensive_samples": 0,
+        "nonoffensive_samples": 2548,
+        "recall": null,
+        "precision": null,
+        "false_positive_rate": 0.0,
+        "recall_wilson95": null,
+        "false_positive_rate_wilson95": [
+          0,
+          0.0015053673524331773
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "1": {
+        "confusion_matrix": {
+          "tp": 4,
+          "fp": 0,
+          "tn": 0,
+          "fn": 284
+        },
+        "offensive_samples": 288,
+        "nonoffensive_samples": 0,
+        "recall": 0.013888888888888888,
+        "precision": 1.0,
+        "false_positive_rate": null,
+        "recall_wilson95": [
+          0.005414020511572044,
+          0.03516095080519846
+        ],
+        "false_positive_rate_wilson95": null,
+        "broad_benchmark_thresholds_met": false
+      },
+      "2": {
+        "confusion_matrix": {
+          "tp": 10,
+          "fp": 0,
+          "tn": 0,
+          "fn": 1809
+        },
+        "offensive_samples": 1819,
+        "nonoffensive_samples": 0,
+        "recall": 0.005497526113249038,
+        "precision": 1.0,
+        "false_positive_rate": null,
+        "recall_wilson95": [
+          0.002988893923766972,
+          0.010090388811067575
+        ],
+        "false_positive_rate_wilson95": null,
+        "broad_benchmark_thresholds_met": false
+      },
+      "3": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 1,
+          "tn": 667,
+          "fn": 0
+        },
+        "offensive_samples": 0,
+        "nonoffensive_samples": 668,
+        "recall": null,
+        "precision": 0.0,
+        "false_positive_rate": 0.0014970059880239522,
+        "recall_wilson95": null,
+        "false_positive_rate_wilson95": [
+          0.0002643072114261484,
+          0.008430391134442286
+        ],
+        "broad_benchmark_thresholds_met": false
+      }
+    },
+    "cases_with_each_hit_level": {
+      "MEDIUM": 56,
+      "HIGH": 15,
+      "LOW": 57
+    },
+    "sequential_p95_ms": 26.878100004978478,
+    "dictionary_sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a"
+  },
+  "production_acceptance": false,
+  "m1_release_review": "pending",
+  "limitations": [
+    "External offensive labels remain unchanged; they do not equal S1 HIGH labels.",
+    "Any-level candidates include MEDIUM/LOW that the confirmed policy allows.",
+    "No training or dictionary tuning on these test outcomes; v1 is frozen.",
+    "A successful command means evaluation completed, not broad recall passed.",
+    "Sequential HTTP P95 is not concurrency or production performance."
+  ]
+}
