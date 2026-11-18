@@ -63,6 +63,11 @@ CI/nightly 保存这项诊断的真实结果，300 条项目规则回归仍单�
 
 ## 后端交接
 
+2026-11-18新增70条的`app/data/moderation-v2-candidate.json`（2.0.0-rc.1），作为M1逐条审核候选。
+普通服务默认仍加载原46条；候选库通过`MODERATION_DICTIONARY_PATH`或
+`infra/docker-compose.us24-review.yml`显式加载。审核清单、拼音映射、开发及新外部评估见
+`docs/qa/US24-M1-词库逐条审核表.md`、`docs/qa/US24-扩充后测试与评估报告.md`。
+
 M5 可使用 Java `ModerationClient.requireAllowed(text)`，在树洞、搭子入库前调用。
 Compose 已将客户端地址设为 `http://algo:8000`；本机默认 `http://localhost:8000`。
 遇到不可达、超时或非 200 时应阻止本次发布并返回可重试错误，不能静默放行。
