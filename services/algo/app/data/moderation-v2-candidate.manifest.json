@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0-rc.1",
+  "status": "PENDING_M1",
+  "dictionary": "moderation-v2-candidate.json",
+  "sha256": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd",
+  "entry_count": 70,
+  "level_counts": {
+    "HIGH": 32,
+    "MEDIUM": 33,
+    "LOW": 5
+  },
+  "new_entry_count": 24,
+  "origins": {
+    "baseline5": 5,
+    "pr83_additions": 41,
+    "current_additions": 24
+  },
+  "decision_policy": {
+    "HIGH": "block",
+    "MEDIUM": "allow",
+    "LOW": "allow"
+  },
+  "default_dictionary": "moderation-v1.json",
+  "review_status": "PENDING",
+  "original46_sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+  "frozen_at_utc": "2026-11-18T08:43:12.721776+00:00",
+  "pinyin_policy": {
+    "phrase_context_first": true,
+    "max_readings_per_word": 8,
+    "max_keys_per_word": 16,
+    "max_syllables": 16,
+    "max_key_length": 64,
+    "match_budget_ms": 50,
+    "timeout_action": "HTTP 503; no partial allow",
+    "alternative_readings": "explicit whole-phrase list, validated per character; no product",
+    "numeric_and_typo_variants": "explicit keys only; no global substitution"
+  },
+  "limits": [
+    "Finite literal and exact-context rules; no W9 crisis understanding",
+    "MEDIUM and LOW remain allowed; suggested levels await individual M1 review"
+  ]
+}

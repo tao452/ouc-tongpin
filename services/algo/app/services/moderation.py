@@ -2,19 +2,25 @@ import hashlib
 import json
 import os
 import re
+import time
 import unicodedata
 from pathlib import Path
 
 from pydantic import TypeAdapter
-from pypinyin import lazy_pinyin
 
 from app.models.dictionary import DictionaryEntry
 from app.models.moderation import Hit, ModerationResponse
+from app.services.moderation_context import context_spans
 from app.services.normalization import canonicalize, normalize
+from app.services.pronunciation import MAX_PINYIN_LENGTH, pronunciation_keys
 
 _END = ""
 _RANK = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
 DEFAULT_DICTIONARY = Path(__file__).resolve().parents[1] / "data" / "moderation-v1.json"
+CANDIDATE_DICTIONARY = DEFAULT_DICTIONARY.with_name("moderation-v2-candidate.json")
+MATCH_BUDGET_SECONDS = 0.05
+MAX_INPUT_LENGTH = 2000
+MAX_TOKEN_PARTS = 64
 
 
 class ModerationService:
@@ -24,25 +30,44 @@ class ModerationService:
         self.trie: dict = {}
         self.pinyin: dict[str, tuple[str, str]] = {}
         self.allow_phrases: dict[str, list[str]] = {}
+        self.variants: set[str] = set()
+        self.pinyin_allow: dict[str, list[re.Pattern]] = {}
         dictionary_bytes = source.read_bytes()
         self.dictionary_sha256 = hashlib.sha256(dictionary_bytes).hexdigest()
         records = json.loads(dictionary_bytes.decode("utf-8-sig"))
-        if not isinstance(records, list) or not records:
+        if not isinstance(records, list) or not 1 <= len(records) <= 512:
             raise ValueError("Dictionary must be a nonempty list")
         entries = TypeAdapter(list[DictionaryEntry]).validate_python(records)
+        seen_words = set()
         for record in entries:
             word, level = record.word, record.level
+            if normalize(word) in seen_words:
+                raise ValueError("Duplicate dictionary word")
+            seen_words.add(normalize(word))
             self.allow_phrases.setdefault(word, []).extend(
                 normalize(phrase) for phrase in record.allow_phrases)
             for variant in [word, *record.aliases]:
                 token = normalize(variant)
+                self.variants.add(token)
                 node = self.trie
                 for ch in token:
                     node = node.setdefault(ch, {})
                 self._put(node, _END, (word, level))
             if record.pinyin:
-                token = "".join(lazy_pinyin(word))
-                self._put(self.pinyin, token, (word, level))
+                keys = pronunciation_keys(word, record.pinyin_readings, record.pinyin_aliases)
+                for phrase in record.pinyin_allow_phrases:
+                    if (not re.fullmatch(r"[a-z]+(?: [a-z]+){1,15}", phrase)
+                            or len(phrase) > 128
+                            or not any(key in phrase.replace(" ", "")
+                                       and len(phrase.replace(" ", "")) > len(key)
+                                       for key in keys)):
+                        raise ValueError("Pinyin exception must be a longer mapped phrase")
+                    pattern = r"(?<![a-z0-9_])" + r"[^\w]*".join(phrase.split())
+                    pattern += r"(?![a-z0-9_])"
+                    self.pinyin_allow.setdefault(word, []).append(re.compile(pattern))
+                for token in keys:
+                    self._put(self.pinyin, token, (word, level))
+                    self.variants.add(token)
         self.pinyin_prefixes = {token[:end] for token in self.pinyin
                                 for end in range(1, len(token) + 1)}
 
@@ -53,7 +78,25 @@ class ModerationService:
         mapping[key] = value
 
     def check(self, text: str) -> ModerationResponse:
-        normalized = normalize(text)
+        if len(text) > MAX_INPUT_LENGTH:
+            raise ValueError("Moderation input exceeds 2000 characters")
+        deadline = time.perf_counter() + MATCH_BUDGET_SECONDS
+        canonical = canonicalize(text)
+        positions = [index for index, ch in enumerate(canonical)
+                     if unicodedata.category(ch)[0] in {"L", "N"}]
+        normalized = "".join(canonical[index] for index in positions)
+        exemptions = context_spans(canonical, self.variants)
+        pinyin_allowed = {word: [match.span() for pattern in patterns
+                                  for match in pattern.finditer(canonical)]
+                          for word, patterns in self.pinyin_allow.items()}
+
+        def is_context(left, right):
+            return any(start <= left and right <= end for start, end in exemptions)
+
+        def check_budget():
+            if time.perf_counter() > deadline:
+                raise TimeoutError("Moderation matching budget exceeded")
+
         found: dict[str, str] = {}
         allowed_spans: dict[str, list[tuple[int, int]]] = {}
         for word, phrases in self.allow_phrases.items():
@@ -64,6 +107,8 @@ class ModerationService:
                     spans.append((offset, offset + len(phrase)))
                     offset = normalized.find(phrase, offset + 1)
         for start in range(len(normalized)):
+            if start % 32 == 0:
+                check_budget()
             node = self.trie
             for index in range(start, len(normalized)):
                 ch = normalized[index]
@@ -72,28 +117,35 @@ class ModerationService:
                 node = node[ch]
                 if _END in node:
                     word, level = node[_END]
-                    if not any(left <= start and index < right
-                               for left, right in allowed_spans.get(word, [])):
+                    if (not any(left <= start and index < right
+                                for left, right in allowed_spans.get(word, []))
+                            and not is_context(positions[start], positions[index] + 1)):
                         found[word] = level
         # Preserve whole Latin-token boundaries before removing separators. This detects
         # "say shabi now" and "sha bi", without treating "shabilist" as a match.
-        canonical = canonicalize(text)
-        tokens = list(re.finditer(r"[a-z]+", canonical))
+        tokens = list(re.finditer(r"(?<![a-z0-9_])[a-z0-9]+(?![a-z0-9_])", canonical))
         for start, first in enumerate(tokens):
+            if start % 32 == 0:
+                check_budget()
             token = ""
             previous_end = first.start()
-            for end in range(start, len(tokens)):
+            for end in range(start, min(len(tokens), start + MAX_TOKEN_PARTS)):
                 segment = tokens[end]
                 gap = canonical[previous_end:segment.start()]
-                if any(unicodedata.category(ch)[0] in {"L", "N"} for ch in gap):
+                if (len(gap) > 8 or "_" in gap
+                        or any(unicodedata.category(ch)[0] in {"L", "N"} for ch in gap)):
                     break
                 token += segment.group()
-                if token not in self.pinyin_prefixes:
+                if len(token) > MAX_PINYIN_LENGTH or token not in self.pinyin_prefixes:
                     break
                 if token in self.pinyin:
                     word, level = self.pinyin[token]
-                    found[word] = level
+                    if (not is_context(first.start(), segment.end())
+                            and not any(left <= first.start() and segment.end() <= right
+                                        for left, right in pinyin_allowed.get(word, []))):
+                        found[word] = level
                 previous_end = segment.end()
+        check_budget()
         hits = [Hit(word=word, level=level) for word, level in sorted(
             found.items(), key=lambda item: (-_RANK[item[1]], item[0])
         )]

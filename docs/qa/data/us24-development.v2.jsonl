@@ -1,0 +1,701 @@
+{"id": "DEV-001-L00", "text": "傻逼", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L01", "text": "傻必", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L02", "text": "煞笔", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L03", "text": "沙比", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L04", "text": "傻比", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L05", "text": "傻b", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L06", "text": "傻屄", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L07", "text": "傻批", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-L08", "text": "啥比", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-001-symbol", "text": "傻·逼", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-001-unicode", "text": "傻​逼", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-001-pinyin", "text": "shabi", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-001-spaced", "text": "sha bi", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-001-tone", "text": "shǎ bī", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-001-numeric_tone", "text": "sha3bi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-001-fullwidth", "text": "ＳＨＡＢＩ", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-001-letter_split", "text": "s.h.a.b.i", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-001-typo0", "text": "shab1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "explicit_typo", "blocked": true}
+{"id": "DEV-001-typo1", "text": "shabi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "explicit_typo", "blocked": true}
+{"id": "DEV-001-typo2", "text": "shabii", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "explicit_typo", "blocked": true}
+{"id": "DEV-001-report", "text": "举报：“傻逼”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-001-report-attack", "text": "举报：“傻逼”请处理。傻逼", "expected_word": "傻逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-002-L00", "text": "操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-002-L01", "text": "艹你妈", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-002-L02", "text": "肏你妈", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-002-L03", "text": "草你妈", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-002-L04", "text": "操尼玛", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-002-symbol", "text": "操·你·妈", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-002-unicode", "text": "操​你​妈", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-002-pinyin", "text": "caonima", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-002-spaced", "text": "cao ni ma", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-002-tone", "text": "cāo nǐ mā", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-002-numeric_tone", "text": "cao1ni3ma1", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-002-fullwidth", "text": "ＣＡＯＮＩＭＡ", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-002-letter_split", "text": "c.a.o.n.i.m.a", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-002-typo0", "text": "ca0nima", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "explicit_typo", "blocked": true}
+{"id": "DEV-002-report", "text": "举报：“操你妈”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-002-report-attack", "text": "举报：“操你妈”请处理。操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-003-L00", "text": "去死", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-003-L01", "text": "去亖", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-003-L02", "text": "去4", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-003-symbol", "text": "去·死", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-003-unicode", "text": "去​死", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-003-pinyin", "text": "qusi", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-003-spaced", "text": "qu si", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-003-tone", "text": "qù sǐ", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-003-numeric_tone", "text": "qu4si3", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-003-fullwidth", "text": "ＱＵＳＩ", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-003-letter_split", "text": "q.u.s.i", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-003-report", "text": "举报：“去死”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-003-report-attack", "text": "举报：“去死”请处理。去死", "expected_word": "去死", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-004-L00", "text": "滚你妈", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-004-L01", "text": "滚尼玛", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-004-symbol", "text": "滚·你·妈", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-004-unicode", "text": "滚​你​妈", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-004-pinyin", "text": "gunnima", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-004-spaced", "text": "gun ni ma", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-004-tone", "text": "gǔn nǐ mā", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-004-numeric_tone", "text": "gun3ni3ma1", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-004-fullwidth", "text": "ＧＵＮＮＩＭＡ", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-004-letter_split", "text": "g.u.n.n.i.m.a", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-004-report", "text": "举报：“滚你妈”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-004-report-attack", "text": "举报：“滚你妈”请处理。滚你妈", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-005-L00", "text": "日你妈", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-005-symbol", "text": "日·你·妈", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-005-unicode", "text": "日​你​妈", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-005-pinyin", "text": "rinima", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-005-spaced", "text": "ri ni ma", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-005-tone", "text": "rì nǐ mā", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-005-numeric_tone", "text": "ri4ni3ma1", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-005-fullwidth", "text": "ＲＩＮＩＭＡ", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-005-letter_split", "text": "r.i.n.i.m.a", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-005-report", "text": "举报：“日你妈”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-005-report-attack", "text": "举报：“日你妈”请处理。日你妈", "expected_word": "日你妈", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-006-L00", "text": "你妈死了", "expected_word": "你妈死了", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-006-L01", "text": "你马死了", "expected_word": "你妈死了", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-006-symbol", "text": "你·妈·死·了", "expected_word": "你妈死了", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-006-unicode", "text": "你​妈​死​了", "expected_word": "你妈死了", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-006-report", "text": "举报：“你妈死了”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-006-report-attack", "text": "举报：“你妈死了”请处理。你妈死了", "expected_word": "你妈死了", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-007-L00", "text": "死全家", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-007-symbol", "text": "死·全·家", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-007-unicode", "text": "死​全​家", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-007-pinyin", "text": "siquanjia", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-007-spaced", "text": "si quan jia", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-007-tone", "text": "sǐ quán jiā", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-007-numeric_tone", "text": "si3quan2jia1", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-007-fullwidth", "text": "ＳＩＱＵＡＮＪＩＡ", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-007-letter_split", "text": "s.i.q.u.a.n.j.i.a", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-007-report", "text": "举报：“死全家”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-007-report-attack", "text": "举报：“死全家”请处理。死全家", "expected_word": "死全家", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-008-L00", "text": "祝你全家死光", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-008-L01", "text": "咒你全家死光", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-008-symbol", "text": "祝·你·全·家·死·光", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-008-unicode", "text": "祝​你​全​家​死​光", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-008-report", "text": "举报：“祝你全家死光”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-008-report-attack", "text": "举报：“祝你全家死光”请处理。祝你全家死光", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-009-L00", "text": "狗娘养的", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-009-symbol", "text": "狗·娘·养·的", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-009-unicode", "text": "狗​娘​养​的", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-009-pinyin", "text": "gouniangyangde", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-009-spaced", "text": "gou niang yang de", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-009-tone", "text": "gǒu niáng yǎng de", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-009-numeric_tone", "text": "gou3niang2yang3de5", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-009-fullwidth", "text": "ＧＯＵＮＩＡＮＧＹＡＮＧＤＥ", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-009-letter_split", "text": "g.o.u.n.i.a.n.g.y.a.n.g.d.e", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-009-report", "text": "举报：“狗娘养的”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-009-report-attack", "text": "举报：“狗娘养的”请处理。狗娘养的", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-010-L00", "text": "狗杂种", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-010-symbol", "text": "狗·杂·种", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-010-unicode", "text": "狗​杂​种", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-010-pinyin", "text": "gouzazhong", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-010-spaced", "text": "gou za zhong", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-010-tone", "text": "gǒu zá zhǒng", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-010-numeric_tone", "text": "gou3za2zhong3", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-010-fullwidth", "text": "ＧＯＵＺＡＺＨＯＮＧ", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-010-letter_split", "text": "g.o.u.z.a.z.h.o.n.g", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-010-report", "text": "举报：“狗杂种”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-010-report-attack", "text": "举报：“狗杂种”请处理。狗杂种", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-011-L00", "text": "你这个杂种", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-011-L01", "text": "你这杂种", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-011-symbol", "text": "你·这·个·杂·种", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-011-unicode", "text": "你​这​个​杂​种", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-011-report", "text": "举报：“你这个杂种”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-011-report-attack", "text": "举报：“你这个杂种”请处理。你这个杂种", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-012-L00", "text": "你个畜生", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-012-L01", "text": "你这畜生", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-012-symbol", "text": "你·个·畜·生", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-012-unicode", "text": "你​个​畜​生", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-012-report", "text": "举报：“你个畜生”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-012-report-attack", "text": "举报：“你个畜生”请处理。你个畜生", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-013-L00", "text": "你是畜生", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-013-L01", "text": "你就是畜生", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-013-symbol", "text": "你·是·畜·生", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-013-unicode", "text": "你​是​畜​生", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-013-report", "text": "举报：“你是畜生”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-013-report-attack", "text": "举报：“你是畜生”请处理。你是畜生", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-014-L00", "text": "杀了你", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-014-symbol", "text": "杀·了·你", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-014-unicode", "text": "杀​了​你", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-014-pinyin", "text": "shaleni", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-014-spaced", "text": "sha le ni", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-014-tone", "text": "shā le nǐ", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-014-numeric_tone", "text": "sha1le5ni3", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-014-fullwidth", "text": "ＳＨＡＬＥＮＩ", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-014-letter_split", "text": "s.h.a.l.e.n.i", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-014-report", "text": "举报：“杀了你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-014-report-attack", "text": "举报：“杀了你”请处理。杀了你", "expected_word": "杀了你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-015-L00", "text": "弄死你", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-015-L01", "text": "弄亖你", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-015-L02", "text": "弄4你", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-015-symbol", "text": "弄·死·你", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-015-unicode", "text": "弄​死​你", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-015-pinyin", "text": "nongsini", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-015-spaced", "text": "nong si ni", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-015-tone", "text": "nòng sǐ nǐ", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-015-numeric_tone", "text": "nong4si3ni3", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-015-fullwidth", "text": "ＮＯＮＧＳＩＮＩ", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-015-letter_split", "text": "n.o.n.g.s.i.n.i", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-015-report", "text": "举报：“弄死你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-015-report-attack", "text": "举报：“弄死你”请处理。弄死你", "expected_word": "弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-016-L00", "text": "捅死你", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-016-symbol", "text": "捅·死·你", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-016-unicode", "text": "捅​死​你", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-016-pinyin", "text": "tongsini", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-016-spaced", "text": "tong si ni", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-016-tone", "text": "tǒng sǐ nǐ", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-016-numeric_tone", "text": "tong3si3ni3", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-016-fullwidth", "text": "ＴＯＮＧＳＩＮＩ", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-016-letter_split", "text": "t.o.n.g.s.i.n.i", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-016-report", "text": "举报：“捅死你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-016-report-attack", "text": "举报：“捅死你”请处理。捅死你", "expected_word": "捅死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-017-L00", "text": "打死你", "expected_word": "打死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-017-symbol", "text": "打·死·你", "expected_word": "打死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-017-unicode", "text": "打​死​你", "expected_word": "打死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-017-report", "text": "举报：“打死你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-017-report-attack", "text": "举报：“打死你”请处理。打死你", "expected_word": "打死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-018-L00", "text": "你不配活着", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-018-L01", "text": "你不配活著", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-018-symbol", "text": "你·不·配·活·着", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-018-unicode", "text": "你​不​配​活​着", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-018-pinyin", "text": "nibupeihuozhe", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-018-spaced", "text": "ni bu pei huo zhe", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-018-tone", "text": "nǐ bù pèi huó zhe", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-018-numeric_tone", "text": "ni3bu4pei4huo2zhe5", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-018-fullwidth", "text": "ＮＩＢＵＰＥＩＨＵＯＺＨＥ", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-018-letter_split", "text": "n.i.b.u.p.e.i.h.u.o.z.h.e", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-018-report", "text": "举报：“你不配活着”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-018-report-attack", "text": "举报：“你不配活着”请处理。你不配活着", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-019-L00", "text": "见你一次打你一次", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-019-symbol", "text": "见·你·一·次·打·你·一·次", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-019-unicode", "text": "见​你​一​次​打​你​一​次", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-019-pinyin", "text": "jianniyicidaniyici", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-019-spaced", "text": "jian ni yi ci da ni yi ci", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-019-tone", "text": "jiàn nǐ yī cì dǎ nǐ yī cì", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-019-numeric_tone", "text": "jian4ni3yi1ci4da3ni3yi1ci4", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-019-fullwidth", "text": "ＪＩＡＮＮＩＹＩＣＩＤＡＮＩＹＩＣＩ", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-019-letter_split", "text": "j.i.a.n.n.i.y.i.c.i.d.a.n.i.y.i.c.i", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-019-report", "text": "举报：“见你一次打你一次”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-019-report-attack", "text": "举报：“见你一次打你一次”请处理。见你一次打你一次", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-020-L00", "text": "贱逼", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-020-L01", "text": "贱b", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-020-symbol", "text": "贱·逼", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-020-unicode", "text": "贱​逼", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-020-pinyin", "text": "jianbi", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-020-spaced", "text": "jian bi", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-020-tone", "text": "jiàn bī", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-020-numeric_tone", "text": "jian4bi1", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-020-fullwidth", "text": "ＪＩＡＮＢＩ", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-020-letter_split", "text": "j.i.a.n.b.i", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-020-report", "text": "举报：“贱逼”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-020-report-attack", "text": "举报：“贱逼”请处理。贱逼", "expected_word": "贱逼", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-021-L00", "text": "吃屎去", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-021-symbol", "text": "吃·屎·去", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-021-unicode", "text": "吃​屎​去", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-021-pinyin", "text": "chishiqu", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "pinyin", "blocked": true}
+{"id": "DEV-021-spaced", "text": "chi shi qu", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "spaced", "blocked": true}
+{"id": "DEV-021-tone", "text": "chī shǐ qù", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "tone", "blocked": true}
+{"id": "DEV-021-numeric_tone", "text": "chi1shi3qu4", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-021-fullwidth", "text": "ＣＨＩＳＨＩＱＵ", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-021-letter_split", "text": "c.h.i.s.h.i.q.u", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "letter_split", "blocked": true}
+{"id": "DEV-021-report", "text": "举报：“吃屎去”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-021-report-attack", "text": "举报：“吃屎去”请处理。吃屎去", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-022-L00", "text": "你个婊子", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-022-L01", "text": "你这婊子", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-022-symbol", "text": "你·个·婊·子", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "人身侮辱", "kind": "symbol", "blocked": true}
+{"id": "DEV-022-unicode", "text": "你​个​婊​子", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "人身侮辱", "kind": "unicode", "blocked": true}
+{"id": "DEV-022-report", "text": "举报：“你个婊子”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-022-report-attack", "text": "举报：“你个婊子”请处理。你个婊子", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "人身侮辱", "kind": "context", "blocked": true}
+{"id": "DEV-023-L00", "text": "废物", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-023-symbol", "text": "废·物", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-023-unicode", "text": "废​物", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-023-pinyin", "text": "feiwu", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-023-spaced", "text": "fei wu", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-023-tone", "text": "fèi wù", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-023-numeric_tone", "text": "fei4wu4", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-023-fullwidth", "text": "ＦＥＩＷＵ", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-023-letter_split", "text": "f.e.i.w.u", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-023-report", "text": "举报：“废物”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-023-report-attack", "text": "举报：“废物”请处理。废物", "expected_word": "废物", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-024-L00", "text": "白痴", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-024-symbol", "text": "白·痴", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-024-unicode", "text": "白​痴", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-024-report", "text": "举报：“白痴”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-024-report-attack", "text": "举报：“白痴”请处理。白痴", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-025-L00", "text": "脑残", "expected_word": "脑残", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-025-symbol", "text": "脑·残", "expected_word": "脑残", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-025-unicode", "text": "脑​残", "expected_word": "脑残", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-025-report", "text": "举报：“脑残”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-025-report-attack", "text": "举报：“脑残”请处理。脑残", "expected_word": "脑残", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-026-L00", "text": "弱智", "expected_word": "弱智", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-026-symbol", "text": "弱·智", "expected_word": "弱智", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-026-unicode", "text": "弱​智", "expected_word": "弱智", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-026-report", "text": "举报：“弱智”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-026-report-attack", "text": "举报：“弱智”请处理。弱智", "expected_word": "弱智", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-027-L00", "text": "蠢货", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-027-symbol", "text": "蠢·货", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-027-unicode", "text": "蠢​货", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-027-pinyin", "text": "chunhuo", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-027-spaced", "text": "chun huo", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-027-tone", "text": "chǔn huò", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-027-numeric_tone", "text": "chun3huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-027-fullwidth", "text": "ＣＨＵＮＨＵＯ", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-027-letter_split", "text": "c.h.u.n.h.u.o", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-027-report", "text": "举报：“蠢货”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-027-report-attack", "text": "举报：“蠢货”请处理。蠢货", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-028-L00", "text": "蠢蛋", "expected_word": "蠢蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-028-symbol", "text": "蠢·蛋", "expected_word": "蠢蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-028-unicode", "text": "蠢​蛋", "expected_word": "蠢蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-028-report", "text": "举报：“蠢蛋”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-028-report-attack", "text": "举报：“蠢蛋”请处理。蠢蛋", "expected_word": "蠢蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-029-L00", "text": "笨蛋", "expected_word": "笨蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-029-symbol", "text": "笨·蛋", "expected_word": "笨蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-029-unicode", "text": "笨​蛋", "expected_word": "笨蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-029-report", "text": "举报：“笨蛋”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-029-report-attack", "text": "举报：“笨蛋”请处理。笨蛋", "expected_word": "笨蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-030-L00", "text": "混蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-030-symbol", "text": "混·蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-030-unicode", "text": "混​蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-030-pinyin", "text": "hundan", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-030-spaced", "text": "hun dan", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-030-tone", "text": "hùn dàn", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-030-numeric_tone", "text": "hun4dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-030-fullwidth", "text": "ＨＵＮＤＡＮ", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-030-letter_split", "text": "h.u.n.d.a.n", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-030-report", "text": "举报：“混蛋”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-030-report-attack", "text": "举报：“混蛋”请处理。混蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-031-L00", "text": "王八蛋", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-031-symbol", "text": "王·八·蛋", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-031-unicode", "text": "王​八​蛋", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-031-pinyin", "text": "wangbadan", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-031-spaced", "text": "wang ba dan", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-031-tone", "text": "wáng bā dàn", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-031-numeric_tone", "text": "wang2ba1dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-031-fullwidth", "text": "ＷＡＮＧＢＡＤＡＮ", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-031-letter_split", "text": "w.a.n.g.b.a.d.a.n", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-031-report", "text": "举报：“王八蛋”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-031-report-attack", "text": "举报：“王八蛋”请处理。王八蛋", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-032-L00", "text": "人渣", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-032-symbol", "text": "人·渣", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-032-unicode", "text": "人​渣", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-032-pinyin", "text": "renzha", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-032-spaced", "text": "ren zha", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-032-tone", "text": "rén zhā", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-032-numeric_tone", "text": "ren2zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-032-fullwidth", "text": "ＲＥＮＺＨＡ", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-032-letter_split", "text": "r.e.n.z.h.a", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-032-report", "text": "举报：“人渣”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-032-report-attack", "text": "举报：“人渣”请处理。人渣", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-033-L00", "text": "败类", "expected_word": "败类", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-033-symbol", "text": "败·类", "expected_word": "败类", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-033-unicode", "text": "败​类", "expected_word": "败类", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-033-report", "text": "举报：“败类”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-033-report-attack", "text": "举报：“败类”请处理。败类", "expected_word": "败类", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-034-L00", "text": "无耻", "expected_word": "无耻", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-034-symbol", "text": "无·耻", "expected_word": "无耻", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-034-unicode", "text": "无​耻", "expected_word": "无耻", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-034-report", "text": "举报：“无耻”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-034-report-attack", "text": "举报：“无耻”请处理。无耻", "expected_word": "无耻", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-035-L00", "text": "滚蛋", "expected_word": "滚蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-035-symbol", "text": "滚·蛋", "expected_word": "滚蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-035-unicode", "text": "滚​蛋", "expected_word": "滚蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-035-report", "text": "举报：“滚蛋”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-035-report-attack", "text": "举报：“滚蛋”请处理。滚蛋", "expected_word": "滚蛋", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-036-L00", "text": "闭嘴", "expected_word": "闭嘴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-036-symbol", "text": "闭·嘴", "expected_word": "闭嘴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-036-unicode", "text": "闭​嘴", "expected_word": "闭嘴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-036-report", "text": "举报：“闭嘴”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-036-report-attack", "text": "举报：“闭嘴”请处理。闭嘴", "expected_word": "闭嘴", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-037-L00", "text": "他妈的", "expected_word": "他妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-037-symbol", "text": "他·妈·的", "expected_word": "他妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-037-unicode", "text": "他​妈​的", "expected_word": "他妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-037-report", "text": "举报：“他妈的”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-037-report-attack", "text": "举报：“他妈的”请处理。他妈的", "expected_word": "他妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-038-L00", "text": "妈的", "expected_word": "妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-038-symbol", "text": "妈·的", "expected_word": "妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-038-unicode", "text": "妈​的", "expected_word": "妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-038-report", "text": "举报：“妈的”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-038-report-attack", "text": "举报：“妈的”请处理。妈的", "expected_word": "妈的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-039-L00", "text": "不要脸", "expected_word": "不要脸", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-039-symbol", "text": "不·要·脸", "expected_word": "不要脸", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-039-unicode", "text": "不​要​脸", "expected_word": "不要脸", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-039-report", "text": "举报：“不要脸”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-039-report-attack", "text": "举报：“不要脸”请处理。不要脸", "expected_word": "不要脸", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-040-L00", "text": "没教养", "expected_word": "没教养", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-040-symbol", "text": "没·教·养", "expected_word": "没教养", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-040-unicode", "text": "没​教​养", "expected_word": "没教养", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-040-report", "text": "举报：“没教养”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-040-report-attack", "text": "举报：“没教养”请处理。没教养", "expected_word": "没教养", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-041-L00", "text": "蠢材", "expected_word": "蠢材", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-041-symbol", "text": "蠢·材", "expected_word": "蠢材", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-041-unicode", "text": "蠢​材", "expected_word": "蠢材", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-041-report", "text": "举报：“蠢材”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-041-report-attack", "text": "举报：“蠢材”请处理。蠢材", "expected_word": "蠢材", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-042-L00", "text": "垃圾", "expected_word": "垃圾", "expected_level": "LOW", "category": "一般负面表达", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-042-symbol", "text": "垃·圾", "expected_word": "垃圾", "expected_level": "LOW", "category": "一般负面表达", "kind": "symbol", "blocked": false}
+{"id": "DEV-042-unicode", "text": "垃​圾", "expected_word": "垃圾", "expected_level": "LOW", "category": "一般负面表达", "kind": "unicode", "blocked": false}
+{"id": "DEV-042-report", "text": "举报：“垃圾”请处理", "expected_word": "", "expected_level": "", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-042-report-attack", "text": "举报：“垃圾”请处理。垃圾", "expected_word": "垃圾", "expected_level": "LOW", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-043-L00", "text": "差劲", "expected_word": "差劲", "expected_level": "LOW", "category": "一般负面表达", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-043-symbol", "text": "差·劲", "expected_word": "差劲", "expected_level": "LOW", "category": "一般负面表达", "kind": "symbol", "blocked": false}
+{"id": "DEV-043-unicode", "text": "差​劲", "expected_word": "差劲", "expected_level": "LOW", "category": "一般负面表达", "kind": "unicode", "blocked": false}
+{"id": "DEV-043-report", "text": "举报：“差劲”请处理", "expected_word": "", "expected_level": "", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-043-report-attack", "text": "举报：“差劲”请处理。差劲", "expected_word": "差劲", "expected_level": "LOW", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-044-L00", "text": "烂透", "expected_word": "烂透", "expected_level": "LOW", "category": "一般负面表达", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-044-symbol", "text": "烂·透", "expected_word": "烂透", "expected_level": "LOW", "category": "一般负面表达", "kind": "symbol", "blocked": false}
+{"id": "DEV-044-unicode", "text": "烂​透", "expected_word": "烂透", "expected_level": "LOW", "category": "一般负面表达", "kind": "unicode", "blocked": false}
+{"id": "DEV-044-report", "text": "举报：“烂透”请处理", "expected_word": "", "expected_level": "", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-044-report-attack", "text": "举报：“烂透”请处理。烂透", "expected_word": "烂透", "expected_level": "LOW", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-045-L00", "text": "破玩意", "expected_word": "破玩意", "expected_level": "LOW", "category": "一般负面表达", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-045-symbol", "text": "破·玩·意", "expected_word": "破玩意", "expected_level": "LOW", "category": "一般负面表达", "kind": "symbol", "blocked": false}
+{"id": "DEV-045-unicode", "text": "破​玩​意", "expected_word": "破玩意", "expected_level": "LOW", "category": "一般负面表达", "kind": "unicode", "blocked": false}
+{"id": "DEV-045-report", "text": "举报：“破玩意”请处理", "expected_word": "", "expected_level": "", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-045-report-attack", "text": "举报：“破玩意”请处理。破玩意", "expected_word": "破玩意", "expected_level": "LOW", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-046-L00", "text": "扯淡", "expected_word": "扯淡", "expected_level": "LOW", "category": "一般负面表达", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-046-symbol", "text": "扯·淡", "expected_word": "扯淡", "expected_level": "LOW", "category": "一般负面表达", "kind": "symbol", "blocked": false}
+{"id": "DEV-046-unicode", "text": "扯​淡", "expected_word": "扯淡", "expected_level": "LOW", "category": "一般负面表达", "kind": "unicode", "blocked": false}
+{"id": "DEV-046-report", "text": "举报：“扯淡”请处理", "expected_word": "", "expected_level": "", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-046-report-attack", "text": "举报：“扯淡”请处理。扯淡", "expected_word": "扯淡", "expected_level": "LOW", "category": "一般负面表达", "kind": "context", "blocked": false}
+{"id": "DEV-047-L00", "text": "你真恶心", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-047-L01", "text": "你真噁心", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-047-symbol", "text": "你·真·恶·心", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-047-unicode", "text": "你​真​恶​心", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-047-pinyin", "text": "nizhenexin", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-047-spaced", "text": "ni zhen e xin", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-047-tone", "text": "nǐ zhēn ě xīn", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-047-numeric_tone", "text": "ni3zhen1e3xin1", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-047-fullwidth", "text": "ＮＩＺＨＥＮＥＸＩＮ", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-047-letter_split", "text": "n.i.z.h.e.n.e.x.i.n", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-047-report", "text": "举报：“你真恶心”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-047-report-attack", "text": "举报：“你真恶心”请处理。你真恶心", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-048-L00", "text": "你个蠢猪", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-048-L01", "text": "你这蠢猪", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-048-symbol", "text": "你·个·蠢·猪", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-048-unicode", "text": "你​个​蠢​猪", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-048-pinyin", "text": "nigechunzhu", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-048-spaced", "text": "ni ge chun zhu", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-048-tone", "text": "nǐ gè chǔn zhū", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-048-numeric_tone", "text": "ni3ge4chun3zhu1", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-048-fullwidth", "text": "ＮＩＧＥＣＨＵＮＺＨＵ", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-048-letter_split", "text": "n.i.g.e.c.h.u.n.z.h.u", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-048-report", "text": "举报：“你个蠢猪”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-048-report-attack", "text": "举报：“你个蠢猪”请处理。你个蠢猪", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-049-L00", "text": "你是个饭桶", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-049-L01", "text": "你就是个饭桶", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-049-symbol", "text": "你·是·个·饭·桶", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-049-unicode", "text": "你​是​个​饭​桶", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-049-report", "text": "举报：“你是个饭桶”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-049-report-attack", "text": "举报：“你是个饭桶”请处理。你是个饭桶", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-050-L00", "text": "你个窝囊废", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-050-L01", "text": "你这窝囊废", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-050-symbol", "text": "你·个·窝·囊·废", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-050-unicode", "text": "你​个​窝​囊​废", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-050-pinyin", "text": "nigewonangfei", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-050-spaced", "text": "ni ge wo nang fei", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-050-tone", "text": "nǐ gè wō nāng fèi", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-050-numeric_tone", "text": "ni3ge4wo1nang1fei4", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-050-fullwidth", "text": "ＮＩＧＥＷＯＮＡＮＧＦＥＩ", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-050-letter_split", "text": "n.i.g.e.w.o.n.a.n.g.f.e.i", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-050-report", "text": "举报：“你个窝囊废”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-050-report-attack", "text": "举报：“你个窝囊废”请处理。你个窝囊废", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-051-L00", "text": "你个小瘪三", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-051-symbol", "text": "你·个·小·瘪·三", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-051-unicode", "text": "你​个​小​瘪​三", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-051-pinyin", "text": "nigexiaobiesan", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-051-spaced", "text": "ni ge xiao bie san", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-051-tone", "text": "nǐ gè xiǎo biē sān", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-051-numeric_tone", "text": "ni3ge4xiao3bie1san1", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-051-fullwidth", "text": "ＮＩＧＥＸＩＡＯＢＩＥＳＡＮ", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-051-letter_split", "text": "n.i.g.e.x.i.a.o.b.i.e.s.a.n", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-051-report", "text": "举报：“你个小瘪三”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-051-report-attack", "text": "举报：“你个小瘪三”请处理。你个小瘪三", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-052-L00", "text": "你这个贱人", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-052-L01", "text": "你这贱人", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-052-symbol", "text": "你·这·个·贱·人", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-052-unicode", "text": "你​这​个​贱​人", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-052-pinyin", "text": "nizhegejianren", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-052-spaced", "text": "ni zhe ge jian ren", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-052-tone", "text": "nǐ zhè ge jiàn rén", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-052-numeric_tone", "text": "ni3zhe4ge5jian4ren2", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-052-fullwidth", "text": "ＮＩＺＨＥＧＥＪＩＡＮＲＥＮ", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-052-letter_split", "text": "n.i.z.h.e.g.e.j.i.a.n.r.e.n", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-052-report", "text": "举报：“你这个贱人”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-052-report-attack", "text": "举报：“你这个贱人”请处理。你这个贱人", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-053-L00", "text": "你个臭不要脸的", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-053-symbol", "text": "你·个·臭·不·要·脸·的", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-053-unicode", "text": "你​个​臭​不​要​脸​的", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-053-report", "text": "举报：“你个臭不要脸的”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-053-report-attack", "text": "举报：“你个臭不要脸的”请处理。你个臭不要脸的", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-054-L00", "text": "你个狗东西", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-054-L01", "text": "你这狗东西", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-054-symbol", "text": "你·个·狗·东·西", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-054-unicode", "text": "你​个​狗​东​西", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-054-pinyin", "text": "nigegoudongxi", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-054-spaced", "text": "ni ge gou dong xi", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-054-tone", "text": "nǐ gè gǒu dōng xī", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "tone", "blocked": false}
+{"id": "DEV-054-numeric_tone", "text": "ni3ge4gou3dong1xi1", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-054-fullwidth", "text": "ＮＩＧＥＧＯＵＤＯＮＧＸＩ", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-054-letter_split", "text": "n.i.g.e.g.o.u.d.o.n.g.x.i", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-054-report", "text": "举报：“你个狗东西”请处理", "expected_word": "", "expected_level": "", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-054-report-attack", "text": "举报：“你个狗东西”请处理。你个狗东西", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "人身侮辱", "kind": "context", "blocked": false}
+{"id": "DEV-055-L00", "text": "我要揍你", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-055-symbol", "text": "我·要·揍·你", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-055-unicode", "text": "我​要​揍​你", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-055-pinyin", "text": "woyaozouni", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-055-spaced", "text": "wo yao zou ni", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-055-tone", "text": "wǒ yào zòu nǐ", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-055-numeric_tone", "text": "wo3yao4zou4ni3", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-055-fullwidth", "text": "ＷＯＹＡＯＺＯＵＮＩ", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-055-letter_split", "text": "w.o.y.a.o.z.o.u.n.i", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-055-report", "text": "举报：“我要揍你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-055-report-attack", "text": "举报：“我要揍你”请处理。我要揍你", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-056-L00", "text": "打断你的腿", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-056-L01", "text": "打断你腿", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-056-symbol", "text": "打·断·你·的·腿", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-056-unicode", "text": "打​断​你​的​腿", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-056-pinyin", "text": "daduannidetui", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-056-spaced", "text": "da duan ni de tui", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-056-tone", "text": "dǎ duàn nǐ de tuǐ", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-056-numeric_tone", "text": "da3duan4ni3de5tui3", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-056-fullwidth", "text": "ＤＡＤＵＡＮＮＩＤＥＴＵＩ", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-056-letter_split", "text": "d.a.d.u.a.n.n.i.d.e.t.u.i", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-056-report", "text": "举报：“打断你的腿”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-056-report-attack", "text": "举报：“打断你的腿”请处理。打断你的腿", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-057-L00", "text": "砍死你", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-057-L01", "text": "砍亖你", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-057-symbol", "text": "砍·死·你", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-057-unicode", "text": "砍​死​你", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-057-pinyin", "text": "kansini", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-057-spaced", "text": "kan si ni", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-057-tone", "text": "kǎn sǐ nǐ", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-057-numeric_tone", "text": "kan3si3ni3", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-057-fullwidth", "text": "ＫＡＮＳＩＮＩ", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-057-letter_split", "text": "k.a.n.s.i.n.i", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-057-report", "text": "举报：“砍死你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-057-report-attack", "text": "举报：“砍死你”请处理。砍死你", "expected_word": "砍死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-058-L00", "text": "掐死你", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-058-symbol", "text": "掐·死·你", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-058-unicode", "text": "掐​死​你", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-058-pinyin", "text": "qiasini", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-058-spaced", "text": "qia si ni", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-058-tone", "text": "qiā sǐ nǐ", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-058-numeric_tone", "text": "qia1si3ni3", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-058-fullwidth", "text": "ＱＩＡＳＩＮＩ", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-058-letter_split", "text": "q.i.a.s.i.n.i", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-058-report", "text": "举报：“掐死你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-058-report-attack", "text": "举报：“掐死你”请处理。掐死你", "expected_word": "掐死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-059-L00", "text": "堵你宿舍门口打你", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-059-symbol", "text": "堵·你·宿·舍·门·口·打·你", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-059-unicode", "text": "堵​你​宿​舍​门​口​打​你", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-059-pinyin", "text": "dunisushemenkoudani", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-059-spaced", "text": "du ni su she men kou da ni", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-059-tone", "text": "dǔ nǐ sù shè mén kǒu dǎ nǐ", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-059-numeric_tone", "text": "du3ni3su4she4men2kou3da3ni3", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-059-fullwidth", "text": "ＤＵＮＩＳＵＳＨＥＭＥＮＫＯＵＤＡＮＩ", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-059-letter_split", "text": "d.u.n.i.s.u.s.h.e.m.e.n.k.o.u.d.a.n.i", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-059-report", "text": "举报：“堵你宿舍门口打你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-059-report-attack", "text": "举报：“堵你宿舍门口打你”请处理。堵你宿舍门口打你", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-060-L00", "text": "让你横着出去", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-060-symbol", "text": "让·你·横·着·出·去", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-060-unicode", "text": "让​你​横​着​出​去", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-060-pinyin", "text": "rangnihengzhechuqu", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-060-spaced", "text": "rang ni heng zhe chu qu", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-060-tone", "text": "ràng nǐ héng zhe chū qù", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-060-numeric_tone", "text": "rang4ni3heng2zhe5chu1qu4", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-060-fullwidth", "text": "ＲＡＮＧＮＩＨＥＮＧＺＨＥＣＨＵＱＵ", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-060-letter_split", "text": "r.a.n.g.n.i.h.e.n.g.z.h.e.c.h.u.q.u", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-060-report", "text": "举报：“让你横着出去”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-060-report-attack", "text": "举报：“让你横着出去”请处理。让你横着出去", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-061-L00", "text": "我要重伤你", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-061-symbol", "text": "我·要·重·伤·你", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-061-unicode", "text": "我​要​重​伤​你", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-061-pinyin", "text": "woyaozhongshangni", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-061-spaced", "text": "wo yao zhong shang ni", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-061-tone", "text": "wǒ yào zhòng shāng nǐ", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-061-numeric_tone", "text": "wo3yao4zhong4shang1ni3", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-061-fullwidth", "text": "ＷＯＹＡＯＺＨＯＮＧＳＨＡＮＧＮＩ", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-061-letter_split", "text": "w.o.y.a.o.z.h.o.n.g.s.h.a.n.g.n.i", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-061-report", "text": "举报：“我要重伤你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-061-report-attack", "text": "举报：“我要重伤你”请处理。我要重伤你", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-062-L00", "text": "放学弄死你", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-062-L01", "text": "放学弄亖你", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-062-symbol", "text": "放·学·弄·死·你", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "symbol", "blocked": true}
+{"id": "DEV-062-unicode", "text": "放​学​弄​死​你", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "unicode", "blocked": true}
+{"id": "DEV-062-pinyin", "text": "fangxuenongsini", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "pinyin", "blocked": true}
+{"id": "DEV-062-spaced", "text": "fang xue nong si ni", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "spaced", "blocked": true}
+{"id": "DEV-062-tone", "text": "fàng xué nòng sǐ nǐ", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "tone", "blocked": true}
+{"id": "DEV-062-numeric_tone", "text": "fang4xue2nong4si3ni3", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-062-fullwidth", "text": "ＦＡＮＧＸＵＥＮＯＮＧＳＩＮＩ", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-062-letter_split", "text": "f.a.n.g.x.u.e.n.o.n.g.s.i.n.i", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "letter_split", "blocked": true}
+{"id": "DEV-062-report", "text": "举报：“放学弄死你”请处理", "expected_word": "", "expected_level": "", "category": "定向威胁", "kind": "context", "blocked": false}
+{"id": "DEV-062-report-attack", "text": "举报：“放学弄死你”请处理。放学弄死你", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "定向威胁", "kind": "context", "blocked": true}
+{"id": "DEV-063-L00", "text": "天天跟踪你", "expected_word": "天天跟踪你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-063-symbol", "text": "天·天·跟·踪·你", "expected_word": "天天跟踪你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "symbol", "blocked": false}
+{"id": "DEV-063-unicode", "text": "天​天​跟​踪​你", "expected_word": "天天跟踪你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "unicode", "blocked": false}
+{"id": "DEV-063-report", "text": "举报：“天天跟踪你”请处理", "expected_word": "", "expected_level": "", "category": "持续骚扰", "kind": "context", "blocked": false}
+{"id": "DEV-063-report-attack", "text": "举报：“天天跟踪你”请处理。天天跟踪你", "expected_word": "天天跟踪你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "context", "blocked": false}
+{"id": "DEV-064-L00", "text": "一直骚扰你", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-064-L01", "text": "不停骚扰你", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-064-symbol", "text": "一·直·骚·扰·你", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "symbol", "blocked": false}
+{"id": "DEV-064-unicode", "text": "一​直​骚​扰​你", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "unicode", "blocked": false}
+{"id": "DEV-064-pinyin", "text": "yizhisaoraoni", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "pinyin", "blocked": false}
+{"id": "DEV-064-spaced", "text": "yi zhi sao rao ni", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "spaced", "blocked": false}
+{"id": "DEV-064-tone", "text": "yì zhí sāo rǎo nǐ", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "tone", "blocked": false}
+{"id": "DEV-064-numeric_tone", "text": "yi4zhi2sao1rao3ni3", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-064-fullwidth", "text": "ＹＩＺＨＩＳＡＯＲＡＯＮＩ", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-064-letter_split", "text": "y.i.z.h.i.s.a.o.r.a.o.n.i", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "letter_split", "blocked": false}
+{"id": "DEV-064-report", "text": "举报：“一直骚扰你”请处理", "expected_word": "", "expected_level": "", "category": "持续骚扰", "kind": "context", "blocked": false}
+{"id": "DEV-064-report-attack", "text": "举报：“一直骚扰你”请处理。一直骚扰你", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "持续骚扰", "kind": "context", "blocked": false}
+{"id": "DEV-065-L00", "text": "不加我就曝光你", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-065-symbol", "text": "不·加·我·就·曝·光·你", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "symbol", "blocked": true}
+{"id": "DEV-065-unicode", "text": "不​加​我​就​曝​光​你", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "unicode", "blocked": true}
+{"id": "DEV-065-pinyin", "text": "bujiawojiubaoguangni", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "pinyin", "blocked": true}
+{"id": "DEV-065-spaced", "text": "bu jia wo jiu bao guang ni", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "spaced", "blocked": true}
+{"id": "DEV-065-tone", "text": "bù jiā wǒ jiù bào guāng nǐ", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "tone", "blocked": true}
+{"id": "DEV-065-numeric_tone", "text": "bu4jia1wo3jiu4bao4guang1ni3", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "numeric_tone", "blocked": true}
+{"id": "DEV-065-fullwidth", "text": "ＢＵＪＩＡＷＯＪＩＵＢＡＯＧＵＡＮＧＮＩ", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "fullwidth", "blocked": true}
+{"id": "DEV-065-letter_split", "text": "b.u.j.i.a.w.o.j.i.u.b.a.o.g.u.a.n.g.n.i", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "letter_split", "blocked": true}
+{"id": "DEV-065-report", "text": "举报：“不加我就曝光你”请处理", "expected_word": "", "expected_level": "", "category": "持续骚扰", "kind": "context", "blocked": false}
+{"id": "DEV-065-report-attack", "text": "举报：“不加我就曝光你”请处理。不加我就曝光你", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "持续骚扰", "kind": "context", "blocked": true}
+{"id": "DEV-066-L00", "text": "把你住址挂网上", "expected_word": "把你住址挂网上", "expected_level": "HIGH", "category": "持续骚扰", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-066-L01", "text": "把你住址挂到网上", "expected_word": "把你住址挂网上", "expected_level": "HIGH", "category": "持续骚扰", "kind": "literal_or_alias", "blocked": true}
+{"id": "DEV-066-symbol", "text": "把·你·住·址·挂·网·上", "expected_word": "把你住址挂网上", "expected_level": "HIGH", "category": "持续骚扰", "kind": "symbol", "blocked": true}
+{"id": "DEV-066-unicode", "text": "把​你​住​址​挂​网​上", "expected_word": "把你住址挂网上", "expected_level": "HIGH", "category": "持续骚扰", "kind": "unicode", "blocked": true}
+{"id": "DEV-066-report", "text": "举报：“把你住址挂网上”请处理", "expected_word": "", "expected_level": "", "category": "持续骚扰", "kind": "context", "blocked": false}
+{"id": "DEV-066-report-attack", "text": "举报：“把你住址挂网上”请处理。把你住址挂网上", "expected_word": "把你住址挂网上", "expected_level": "HIGH", "category": "持续骚扰", "kind": "context", "blocked": true}
+{"id": "DEV-067-L00", "text": "你一无是处", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-067-symbol", "text": "你·一·无·是·处", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-067-unicode", "text": "你​一​无​是​处", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-067-pinyin", "text": "niyiwushichu", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-067-spaced", "text": "ni yi wu shi chu", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-067-tone", "text": "nǐ yī wú shì chù", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "tone", "blocked": false}
+{"id": "DEV-067-numeric_tone", "text": "ni3yi1wu2shi4chu4", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-067-fullwidth", "text": "ＮＩＹＩＷＵＳＨＩＣＨＵ", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-067-letter_split", "text": "n.i.y.i.w.u.s.h.i.c.h.u", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-067-report", "text": "举报：“你一无是处”请处理", "expected_word": "", "expected_level": "", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "DEV-067-report-attack", "text": "举报：“你一无是处”请处理。你一无是处", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "DEV-068-L00", "text": "全班都讨厌你", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-068-symbol", "text": "全·班·都·讨·厌·你", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-068-unicode", "text": "全​班​都​讨​厌​你", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-068-report", "text": "举报：“全班都讨厌你”请处理", "expected_word": "", "expected_level": "", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "DEV-068-report-attack", "text": "举报：“全班都讨厌你”请处理。全班都讨厌你", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "DEV-069-L00", "text": "你就是个笑话", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-069-symbol", "text": "你·就·是·个·笑·话", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-069-unicode", "text": "你​就​是​个​笑​话", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-069-pinyin", "text": "nijiushigexiaohua", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "pinyin", "blocked": false}
+{"id": "DEV-069-spaced", "text": "ni jiu shi ge xiao hua", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "spaced", "blocked": false}
+{"id": "DEV-069-tone", "text": "nǐ jiù shì gè xiào huà", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "tone", "blocked": false}
+{"id": "DEV-069-numeric_tone", "text": "ni3jiu4shi4ge4xiao4hua4", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "numeric_tone", "blocked": false}
+{"id": "DEV-069-fullwidth", "text": "ＮＩＪＩＵＳＨＩＧＥＸＩＡＯＨＵＡ", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "fullwidth", "blocked": false}
+{"id": "DEV-069-letter_split", "text": "n.i.j.i.u.s.h.i.g.e.x.i.a.o.h.u.a", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "letter_split", "blocked": false}
+{"id": "DEV-069-report", "text": "举报：“你就是个笑话”请处理", "expected_word": "", "expected_level": "", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "DEV-069-report-attack", "text": "举报：“你就是个笑话”请处理。你就是个笑话", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "DEV-070-L00", "text": "你不配待在这个学校", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "literal_or_alias", "blocked": false}
+{"id": "DEV-070-symbol", "text": "你·不·配·待·在·这·个·学·校", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "symbol", "blocked": false}
+{"id": "DEV-070-unicode", "text": "你​不​配​待​在​这​个​学​校", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "unicode", "blocked": false}
+{"id": "DEV-070-report", "text": "举报：“你不配待在这个学校”请处理", "expected_word": "", "expected_level": "", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "DEV-070-report-attack", "text": "举报：“你不配待在这个学校”请处理。你不配待在这个学校", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "恶意羞辱", "kind": "context", "blocked": false}
+{"id": "NEG-english-001", "text": "shabilist", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-002", "text": "myshabi", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-003", "text": "shabiword", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-004", "text": "shallow bike", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-005", "text": "trash bin", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-006", "text": "since", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-007", "text": "qu since", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-008", "text": "class assignment", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-009", "text": "assembly code", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-010", "text": "function callback", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-011", "text": "caonimalist", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-012", "text": "foobar", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-013", "text": "machine learning", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-english-014", "text": "hello world", "expected_word": "", "expected_level": "", "category": "english", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-001", "text": "sha1bi", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-002", "text": "sha256", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-003", "text": "bash shell", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-004", "text": "push origin", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-005", "text": "git squash", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-006", "text": "nima_variable", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-007", "text": "shabi_func", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-008", "text": "foo_shabi", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-009", "text": "shabi42", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-010", "text": "42shabi", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-011", "text": "TypeScript", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-012", "text": "null pointer", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-013", "text": "char[] buffer", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-programming-014", "text": "SQL schema", "expected_word": "", "expected_level": "", "category": "programming", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-001", "text": "ni hao", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-002", "text": "wo ai ouc", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-003", "text": "jin tian tian qi hen hao", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-004", "text": "qu shi tang", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-005", "text": "qu si kao", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-006", "text": "bai chi yi dun fan", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-007", "text": "hun he dan bai", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-008", "text": "zhong shang", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-009", "text": "chong shang", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-010", "text": "heng zhe ban zhuo zi", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-011", "text": "sha中文bi", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-012", "text": "sha1 bi", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-013", "text": "ca0 nima", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-014", "text": "shā bìng", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-015", "text": "shai bi", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-normal_pinyin-016", "text": "qushi", "expected_word": "", "expected_level": "", "category": "normal_pinyin", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-001", "text": "sha", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-002", "text": "shab", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-003", "text": "cao ni", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-004", "text": "qu s", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-005", "text": "nong si", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-006", "text": "wo yao zhong shang", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-007", "text": "gou za", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-008", "text": "sh bi", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-009", "text": "c n m", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-incomplete-010", "text": "sb", "expected_word": "", "expected_level": "", "category": "incomplete", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-001", "text": "今天去图书馆", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-002", "text": "下午一起上课", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-003", "text": "实验室同学辛苦了", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-004", "text": "垃圾分类从我做起", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-005", "text": "废物回收和废物利用", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-006", "text": "暑假去死海旅游", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-007", "text": "不要再去死记硬背", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-008", "text": "先去死胡同看路牌", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-009", "text": "操作系统课在三楼", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-010", "text": "动物杂交有杂种优势", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-011", "text": "放学在宿舍门口等你", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-012", "text": "重伤患者需要治疗", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-013", "text": "把桌子横着搬出去", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-014", "text": "我有点恶心想休息", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-015", "text": "我想自杀，请陪我聊一会", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-016", "text": "我想去死，请帮帮我", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-017", "text": "我想去死，但我想求助", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-018", "text": "我担心被人讨厌，想找心理老师", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-019", "text": "我并非一无是处", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-campus-020", "text": "我不会骚扰别人", "expected_word": "", "expected_level": "", "category": "campus", "kind": "benign", "blocked": false}
+{"id": "NEG-context-001", "text": "有人骂我：“傻逼”我该怎么办", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-002", "text": "有人威胁我：“杀了你”让我很害怕", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-003", "text": "不要对同学说“傻逼”", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-004", "text": "网络暴力讨论：“去死”属于攻击性言论", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-005", "text": "语言科普：“傻逼”是侮辱性表达", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-006", "text": "举报：“shabi”请处理", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-007", "text": "不要对别人说“sha bi”", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-008", "text": "举报：「去4」请处理", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}
+{"id": "NEG-context-009", "text": "举报：\"弄死你\"请处理", "expected_word": "", "expected_level": "", "category": "context", "kind": "benign", "blocked": false}

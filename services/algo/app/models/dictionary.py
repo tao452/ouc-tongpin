@@ -11,6 +11,9 @@ class DictionaryEntry(BaseModel):
     level: Literal["LOW", "MEDIUM", "HIGH"]
     aliases: list[str] = Field(default_factory=list, max_length=50)
     pinyin: bool = False
+    pinyin_readings: list[str] = Field(default_factory=list, max_length=7)
+    pinyin_aliases: list[str] = Field(default_factory=list, max_length=6)
+    pinyin_allow_phrases: list[str] = Field(default_factory=list, max_length=20)
     allow_phrases: list[str] = Field(default_factory=list, max_length=50)
 
     @field_validator("word")
@@ -29,6 +32,11 @@ class DictionaryEntry(BaseModel):
 
     @model_validator(mode="after")
     def valid_allow_phrases(self):
+        if ((self.pinyin_readings or self.pinyin_aliases or self.pinyin_allow_phrases)
+                and not self.pinyin):
+            raise ValueError("Pinyin mappings require pinyin=true")
+        if any(len(value) > 128 for value in self.pinyin_readings):
+            raise ValueError("Reading is too long")
         variants = [normalize(value) for value in [self.word, *self.aliases]]
         for phrase in self.allow_phrases:
             token = normalize(phrase)
