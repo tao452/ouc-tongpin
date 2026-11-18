@@ -1,0 +1,64 @@
+{
+  "source_commit": "1fc7c1badf415ba73066b4a4a4911d862631f936",
+  "candidate_sha256": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd",
+  "origins": {
+    "原5条基线": 5,
+    "PR83新增41条": 41,
+    "本次新增24条": 24
+  },
+  "level_counts": {
+    "HIGH": 32,
+    "MEDIUM": 33,
+    "LOW": 5
+  },
+  "all_m1_statuses": "PENDING",
+  "historical_files_unchanged": true,
+  "frozen_inference_and_development_hashes_unchanged": true,
+  "review_rows_test_ids_and_json_consistent": true,
+  "json_schema_and_conflicts": "PASS",
+  "local_python": {
+    "tests": 373,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 4
+  },
+  "ci_linux_python": {
+    "passed": 373,
+    "coverage_percent": 98.3
+  },
+  "ruff_exit": 0,
+  "java": {
+    "tests": 141,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "ci": {
+    "run_id": 44269503045,
+    "conclusion": "success",
+    "docker_stack": "success",
+    "candidate_gateway_701_cases": "success",
+    "w3_30_cases": "success"
+  },
+  "build_check": {
+    "run_id": 44269502977,
+    "conclusion": "success",
+    "formal_release_published": false
+  },
+  "known_review_items": [
+    "US24-047 redundant normalized alias",
+    "NEG-normal_pinyin-013 label/mapping ambiguity",
+    "LOW hit on garbage sorting",
+    "External broad recall 1.20%; target not met"
+  ],
+  "evidence_sha256": {
+    "development-first.json": "3957781a7829deee00085fbeb4ebc0ac0a466bd28687bdfd7ba26a7fd9302648",
+    "development-function.json": "27772344b68088c546163fc909a9c6ab52c90a722014a4c261755bdff6012e2c",
+    "development-http.json": "3653bad4067df74a8d19114bf6b34359e1d3009fcb43fbb6d9c5c08d6ae44c7e",
+    "java.json": "3a51171a3f35ad5cc0e3514c93e51a4fe73b15097a7dfefa46239ccd8b35d04f",
+    "overlap.json": "8a16ad88e7dee251472033389d01153e685f80b59e59da472175eda9f23fc986",
+    "pcr-function.json": "0b54000a9d3adebb7b8502f3bced0741ae4322a9e0eb2c419ed31c6497e7e337",
+    "pcr-http.json": "5db19a94c5aee888b31e199fabf81df096689dd55a263bb62a36ca7a0e3f443b",
+    "performance.json": "1afcb3f2f5de5bf8cb4bbadee10c858217382da0902cdb622b334f1372efccc5"
+  }
+}
