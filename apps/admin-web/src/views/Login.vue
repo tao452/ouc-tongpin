@@ -1,7 +1,7 @@
 <template>
   <div class="login-page">
     <el-card class="login-card" shadow="always">
-      <div class="login-title">ºóÌ¨¹ÜÀíÏµÍ³</div>
+      <div class="login-title">OUCåŒé¢‘ Â· ç®¡ç†ç«¯ç™»å½•</div>
 
       <el-form
         ref="formRef"
@@ -11,20 +11,20 @@
         size="large"
         @submit.prevent="handleLogin"
       >
-        <el-form-item label="ÕËºÅ" prop="username">
+        <el-form-item label="è´¦å·" prop="username">
           <el-input
             v-model="form.username"
-            placeholder="ÇëÊäÈëÕËºÅ"
+            placeholder="è¯·è¾“å…¥ç®¡ç†å‘˜è´¦å·"
             :prefix-icon="User"
             clearable
           />
         </el-form-item>
 
-        <el-form-item label="ÃÜÂë" prop="password">
+        <el-form-item label="å¯†ç " prop="password">
           <el-input
             v-model="form.password"
             type="password"
-            placeholder="ÇëÊäÈëÃÜÂë"
+            placeholder="è¯·è¾“å…¥å¯†ç "
             :prefix-icon="Lock"
             show-password
             @keyup.enter="handleLogin"
@@ -38,12 +38,12 @@
             :loading="loading"
             @click="handleLogin"
           >
-            µÇ Â¼
+            ç™» å½•
           </el-button>
         </el-form-item>
       </el-form>
 
-      <div class="login-tip">ÌáÊ¾£ºÈÎÒâÕËºÅ + ÈÎÒâÃÜÂë¼´¿ÉµÇÂ¼£¨mock£©</div>
+      <div class="login-tip">æµ‹è¯•è´¦å·ï¼šadmin / å¯†ç ä»»æ„è¾“å…¥ + è¯·ä½¿ç”¨Mockæµ‹è¯•</div>
     </el-card>
   </div>
 </template>
@@ -52,7 +52,9 @@
 import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { User, Lock } from '@element-plus/icons-vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const formRef = ref(null)
 const loading = ref(false)
 
@@ -62,15 +64,14 @@ const form = ref({
 })
 
 const rules = {
-  username: [{ required: true, message: 'ÇëÊäÈëÕËºÅ', trigger: 'blur' }],
+  username: [{ required: true, message: 'è¯·è¾“å…¥è´¦å·', trigger: 'blur' }],
   password: [
-    { required: true, message: 'ÇëÊäÈëÃÜÂë', trigger: 'blur' },
-    { min: 6, max: 20, message: 'ÃÜÂë³¤¶ÈĞèÎª 6-20 Î»', trigger: 'blur' }
+    { required: true, message: 'è¯·è¾“å…¥å¯†ç ', trigger: 'blur' },
+    { min: 6, max: 20, message: 'å¯†ç é•¿åº¦éœ€åœ¨ 6-20 ä¸ªå­—ç¬¦', trigger: 'blur' }
   ]
 }
 
 const handleLogin = async () => {
-  // ±íµ¥Ğ£Ñé
   try {
     await formRef.value.validate()
   } catch {
@@ -79,12 +80,13 @@ const handleLogin = async () => {
 
   loading.value = true
 
-  // mock µÇÂ¼£ºÄ£Äâ 500ms ÍøÂçÇëÇó
+  // æ¨¡æ‹Ÿåç«¯æ¥å£è¯·æ±‚ï¼ˆ500ms åç™»å½•æˆåŠŸï¼‰
   setTimeout(() => {
     loading.value = false
-    ElMessage.success('µÇÂ¼³É¹¦')
-    console.log('mock µÇÂ¼ĞÅÏ¢£º', form.value)
-    // ºóĞø¿ÉÔÚÕâÀïĞ´£ºrouter.push('/dashboard')
+    ElMessage.success('ç™»å½•æˆåŠŸï¼')
+    console.log('Mock ç™»å½•æˆåŠŸï¼Œè¡¨å•æ•°æ®ï¼š', form.value)
+    // ç™»å½•æˆåŠŸåè·³è½¬åˆ°çœ‹æ¿é¡µé¢
+    router.push('/dashboard')
   }, 500)
 }
 </script>
