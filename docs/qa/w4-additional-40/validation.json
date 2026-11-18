@@ -1,0 +1,32 @@
+{
+  "artifact_type": "DESIGN_STATIC_VALIDATION",
+  "status": "PASS",
+  "validated_at": "2026-11-18T20:11:11.283496+08:00",
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "design_cases": 40,
+  "execution_status_counts": {
+    "NOT_RUN": 40,
+    "PASS": 0,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "business_cases_executed": 0,
+  "readiness_counts": {
+    "READY_TO_IMPLEMENT": 38,
+    "PENDING_RULE": 2
+  },
+  "json_markdown_consistent": true,
+  "original_80_unchanged": true,
+  "historical_files_unchanged": true,
+  "business_code_unchanged": true,
+  "protected_git_blobs_checked": 34,
+  "source_git_blobs_checked": 18,
+  "note": "PASS 仅指设计文档静态检查；40 条业务用例全部 NOT_RUN，自动化尚未实现。",
+  "design_files_sha256": {
+    "docs/qa/w4-additional-40-test-cases.json": "90fb41e92138cdb35b02a928d23373d78882baad6024fc999c70d62f3baba942",
+    "docs/qa/W4-新增40条测试用例设计.md": "2fc3dc62f7f6be7e1a3d860e6bd7a141408c3e15fc0516cf04e0aa1292c7e02d",
+    "docs/qa/w4-additional-40/automation-plan.md": "f95f2ccd0a1256b030c1f83ebb3069e81cd733dcc8b016beffadc9a7eae0735f",
+    "docs/qa/w4-additional-40/baseline-manifest.json": "edc187c8d80172eada5e904fcb9349648a32290867a5db0edc8d7a43bdc7ad62",
+    "docs/qa/w4-additional-40/validate_design.py": "3b39d19427fcef5b36b9eb8e1146234f62263a118d6506e54cdceae3794c4ddd"
+  }
+}
