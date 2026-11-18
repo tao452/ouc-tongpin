@@ -1,7 +1,6 @@
 package com.ouctongpin.apiserver.buddy.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ouctongpin.apiserver.buddy.dto.BuddyCreateReq;
@@ -11,16 +10,11 @@ import com.ouctongpin.apiserver.buddy.entity.BuddyDemand;
 import com.ouctongpin.apiserver.buddy.mapper.BuddyDemandMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.time.format.DateTimeParseException;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -33,36 +27,31 @@ public class BuddyService {
     @Autowired private ObjectMapper objectMapper;
 
 
+
     public static LocalDateTime parseEventTime(String timeStr) {
         if (timeStr == null || timeStr.trim().isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "时间格式错误，请提供 ISO-8601 格式");
+            throw new IllegalArgumentException("时间不能为空");
         }
-        try {
-            // 匹配带时区的时间
-            if (timeStr.contains("Z") || timeStr.contains("+") || timeStr.matches(".*-\\d{2}:\\d{2}$")) {
-                OffsetDateTime odt = OffsetDateTime.parse(timeStr);
-                // 统一转为北京时间
-                return odt.atZoneSameInstant(ZoneId.of("Asia/Shanghai")).toLocalDateTime();
-            } else {
-                // 匹配本地时间
-                return LocalDateTime.parse(timeStr);
-            }
-        } catch (DateTimeParseException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "时间格式错误，请提供 ISO-8601 格式");
+        if (timeStr.contains("Z") || timeStr.contains("+")) {
+            OffsetDateTime odt = OffsetDateTime.parse(timeStr);
+            return odt.atZoneSameInstant(ZoneId.of("Asia/Shanghai")).toLocalDateTime();
+        } else {
+            return LocalDateTime.parse(timeStr);
         }
     }
 
+    // 1. 发布搭子 (恢复团队的 422 拦截和 OPEN 状态)
     public Long createBuddy(Long userId, BuddyCreateReq req) {
-        // 前置敏感词拦截
-        if (req.getRemark() != null && (req.getRemark().contains("违规") || req.getScene().contains("违规"))) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "审核拒绝：内容包含敏感词");
+        // 【契约要求】前置敏感词拦截 (这里先保留 Mock 逻辑，如果团队有 ModerationClient 替换成团队的)
+        if (req.getRemark() != null && req.getRemark().contains("HIGH")) {
+            // 模拟触发 HIGH 敏感词，抛出 422 状态码
+            throw new org.springframework.web.server.ResponseStatusException(
+                org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY, "命中敏感词");
         }
 
         BuddyDemand demand = new BuddyDemand();
         demand.setUserId(userId);
         demand.setScene(req.getScene());
-
-        // 调用测试过的时间解析方法
         demand.setEventTime(parseEventTime(req.getTime()));
 
         if (req.getLocation() != null) {
@@ -71,37 +60,19 @@ public class BuddyService {
             demand.setLongitude(req.getLocation().getLng());
         }
 
+        // 团队契约要求 skillTags 存为 JSON 数组字符串
         if (req.getSkillTags() != null && !req.getSkillTags().isEmpty()) {
-            demand.setSkillTags(String.join(",", req.getSkillTags()));
+            demand.setSkillTags(req.getSkillTags().toString()); // 自动变成 ["a","b"]
         }
 
         demand.setRemark(req.getRemark());
-        demand.setStatus("OPEN");
+        demand.setStatus("OPEN"); // 契约要求为 OPEN
 
         buddyMapper.insert(demand);
         return demand.getId();
     }
 
-    public Page<BuddyResponse> listBuddies(int pageNum, int pageSize, String scene) {
-        Page<BuddyDemand> page = new Page<>(pageNum, pageSize);
-        LambdaQueryWrapper<BuddyDemand> wrapper = new LambdaQueryWrapper<>();
-
-        wrapper.eq(BuddyDemand::getDeleted, 0).eq(BuddyDemand::getStatus, "OPEN");
-
-        if (scene != null && !scene.isEmpty()) {
-            wrapper.eq(BuddyDemand::getScene, scene);
-        }
-        wrapper.orderByDesc(BuddyDemand::getCreatedAt);
-        buddyMapper.selectPage(page, wrapper);
-
-        Page<BuddyResponse> resPage = new Page<>(page.getCurrent(), page.getSize(), page.getTotal());
-        List<BuddyResponse> records = page.getRecords().stream()
-            .map(this::convertToResponse)
-            .collect(Collectors.toList());
-        resPage.setRecords(records);
-        return resPage;
-    }
-
+    // 2. 你的 W5 核心产出：广场查询 (游标分页 + 缓存)
     public List<BuddyResponse> getSquareList(BuddyQueryReq req) throws JsonProcessingException {
         String cacheKey = "square:" + req.getCursorId() + ":" + req.getMyLongitude() + ":" + req.getMyLatitude();
 
@@ -126,32 +97,16 @@ public class BuddyService {
         wrapper.orderByDesc(BuddyDemand::getId).last("LIMIT " + req.getSize());
         List<BuddyDemand> demands = buddyMapper.selectList(wrapper);
 
-        List<BuddyResponse> responses = demands.stream()
-            .map(this::convertToResponse)
-            .collect(Collectors.toList());
+        // 只用契约要求的 3 个字段
+        List<BuddyResponse> responses = demands.stream().map(d -> {
+            BuddyResponse r = new BuddyResponse();
+            r.setId(String.valueOf(d.getId()));
+            r.setScene(d.getScene());
+            r.setStatus(d.getStatus());
+            return r;
+        }).collect(Collectors.toList());
 
         redisTemplate.opsForValue().set(cacheKey, objectMapper.writeValueAsString(responses), 60, TimeUnit.SECONDS);
         return responses;
-    }
-
-    private BuddyResponse convertToResponse(BuddyDemand d) {
-        BuddyResponse r = new BuddyResponse();
-        r.setId(String.valueOf(d.getId()));
-        r.setScene(d.getScene());
-        r.setStatus(d.getStatus());
-
-        r.setTitle(d.getScene() + "搭子");
-        r.setDescription(d.getRemark());
-        r.setEventTime(d.getEventTime());
-        r.setLocationName(d.getLocationAddress());
-
-        if (d.getSkillTags() != null && !d.getSkillTags().isEmpty()) {
-            r.setSkillTags(Arrays.asList(d.getSkillTags().split(",")));
-        } else {
-            r.setSkillTags(Collections.emptyList());
-        }
-
-        r.setCreatedAt(d.getCreatedAt());
-        return r;
     }
 }

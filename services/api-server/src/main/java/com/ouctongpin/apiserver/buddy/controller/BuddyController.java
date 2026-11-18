@@ -1,13 +1,13 @@
 package com.ouctongpin.apiserver.buddy.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ouctongpin.apiserver.buddy.dto.BuddyCreateReq;
 import com.ouctongpin.apiserver.buddy.dto.BuddyQueryReq;
 import com.ouctongpin.apiserver.buddy.dto.BuddyResponse;
 import com.ouctongpin.apiserver.buddy.service.BuddyService;
-import com.ouctongpin.apiserver.common.Result;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,32 +18,34 @@ public class BuddyController {
 
     @Autowired private BuddyService buddyService;
 
+    // 1. 发布搭子 (恢复 201 状态码)
     @PostMapping
-    public Result<BuddyResponse> create(@Valid @RequestBody BuddyCreateReq req) {
-        Long newId = buddyService.createBuddy(1L, req);
+    public ResponseEntity<BuddyResponse> create(
+        @Valid @RequestBody BuddyCreateReq req,
+
+        @RequestAttribute(value = "userId", required = false) Long userId) {
+
+        // 如果团队有 CallerIdentity.require(principal)，请加在这里
+        Long currentUserId = (userId != null) ? userId : 1L; // 临时兜底
+
+        Long newId = buddyService.createBuddy(currentUserId, req);
 
         BuddyResponse res = new BuddyResponse();
         res.setId(String.valueOf(newId));
         res.setScene(req.getScene());
-        res.setStatus("0");
+        res.setStatus("OPEN");
 
-        return Result.ok(res);
+        // 【契约要求】必须返回 201 CREATED
+        return ResponseEntity.status(HttpStatus.CREATED).body(res);
     }
 
-    @GetMapping("/list")
-    public Result<Page<BuddyResponse>> list(
-        @RequestParam(defaultValue = "1") int pageNum,
-        @RequestParam(defaultValue = "10") int pageSize,
-        @RequestParam(required = false) String scene) {
-        return Result.ok(buddyService.listBuddies(pageNum, pageSize, scene));
-    }
-
+    // 2. 广场查询接口 (你写的 W5)
     @PostMapping("/square")
-    public Result<List<BuddyResponse>> getSquareList(@RequestBody BuddyQueryReq req) {
+    public ResponseEntity<List<BuddyResponse>> getSquareList(@RequestBody BuddyQueryReq req) {
         try {
-            return Result.ok(buddyService.getSquareList(req));
+            return ResponseEntity.ok(buddyService.getSquareList(req));
         } catch (Exception e) {
-            return Result.fail(500, "获取广场列表失败: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 }
