@@ -1,0 +1,993 @@
+{
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "collected_at": "2026-11-18T08:51:18.336723+00:00",
+  "cases": [
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "unauthenticatedRequestsCannotReadOrWrite",
+      "seconds": 2.973,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "disabledIdentityAndForgedAdminClaimsAreRejected",
+      "seconds": 1.769,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "concurrentIdentityCreationHasOneMappingAndNoOrphanUsers",
+      "seconds": 0.427,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[1]",
+      "seconds": 0.158,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[2]",
+      "seconds": 0.064,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[3]",
+      "seconds": 0.069,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[4]",
+      "seconds": 0.05,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[5]",
+      "seconds": 0.062,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[6]",
+      "seconds": 0.048,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[7]",
+      "seconds": 0.07,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "rejectsInvalidTokensWithoutEcho(String)[8]",
+      "seconds": 0.06,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "anonymousIdentityUsesCallerAndNeverReturnsPrivateMapping",
+      "seconds": 0.312,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "method": "ownershipComesOnlyFromVerifiedToken",
+      "seconds": 0.289,
+      "status": "PASS",
+      "report_sha256": "57f7afb862ce8cad88c87593e464fb2e3494eb57ae0d83c4cece5a445f3ab7da"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "weakOrPublicSigningKeysCannotStart(String)[1]",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "weakOrPublicSigningKeysCannotStart(String)[2]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "weakOrPublicSigningKeysCannotStart(String)[3]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "weakOrPublicSigningKeysCannotStart(String)[4]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "malformedOrUnavailableProviderFailsClosedWithoutEcho(String)[1]",
+      "seconds": 0.307,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "malformedOrUnavailableProviderFailsClosedWithoutEcho(String)[2]",
+      "seconds": 0.018,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "malformedOrUnavailableProviderFailsClosedWithoutEcho(String)[3]",
+      "seconds": 0.014,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "malformedOrUnavailableProviderFailsClosedWithoutEcho(String)[4]",
+      "seconds": 0.018,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "malformedOrUnavailableProviderFailsClosedWithoutEcho(String)[5]",
+      "seconds": 0.013,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "malformedOrUnavailableProviderFailsClosedWithoutEcho(String)[6]",
+      "seconds": 0.013,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "liveModeNeverSilentlyFallsBackToMock",
+      "seconds": 0.003,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "validatesProviderResponseAndDoesNotReturnSessionCredentials",
+      "seconds": 0.016,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "method": "invalidCodeIsUnauthorizedAndRedirectIsNeverFollowed",
+      "seconds": 0.04,
+      "status": "PASS",
+      "report_sha256": "4f25e2e7b71a4fb373366fa4429394c82d19cf8774e876d72dcb807652a89d3a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest",
+      "method": "rejectsSixSkillTags",
+      "seconds": 0.058,
+      "status": "PASS",
+      "report_sha256": "7156873fa33119949dad7ed83bf488308082294f4204fb059469990008674a4e"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest",
+      "method": "validatesNestedLocationAddress",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "7156873fa33119949dad7ed83bf488308082294f4204fb059469990008674a4e"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest",
+      "method": "requiresSceneTimeAndLocation",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "7156873fa33119949dad7ed83bf488308082294f4204fb059469990008674a4e"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest",
+      "method": "validContractPayloadHasNoViolations",
+      "seconds": 0.003,
+      "status": "PASS",
+      "report_sha256": "7156873fa33119949dad7ed83bf488308082294f4204fb059469990008674a4e"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest",
+      "method": "rejectsRemarkOverTwoHundredCharacters",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "7156873fa33119949dad7ed83bf488308082294f4204fb059469990008674a4e"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest",
+      "method": "acceptsRemarkAtBoundary",
+      "seconds": 0.003,
+      "status": "PASS",
+      "report_sha256": "7156873fa33119949dad7ed83bf488308082294f4204fb059469990008674a4e"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.service.BuddyServiceTest",
+      "method": "parsesUtcIsoFromMiniprogramIntoBeijingTime",
+      "seconds": 0.004,
+      "status": "PASS",
+      "report_sha256": "80767383c777f6de4a3e46661310a42973857d1ddccd8a688e45e8a91a860354"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.service.BuddyServiceTest",
+      "method": "acceptsLocalIsoDateTimeWithoutOffset",
+      "seconds": 0.004,
+      "status": "PASS",
+      "report_sha256": "80767383c777f6de4a3e46661310a42973857d1ddccd8a688e45e8a91a860354"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.service.BuddyServiceTest",
+      "method": "keepsExplicitOffset",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "80767383c777f6de4a3e46661310a42973857d1ddccd8a688e45e8a91a860354"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.buddy.service.BuddyServiceTest",
+      "method": "rejectsMalformedTimeWithBadRequest",
+      "seconds": 0.003,
+      "status": "PASS",
+      "report_sha256": "80767383c777f6de4a3e46661310a42973857d1ddccd8a688e45e8a91a860354"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "dependencyErrorsFailClosed(int)[1]",
+      "seconds": 0.15,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "dependencyErrorsFailClosed(int)[2]",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "dependencyErrorsFailClosed(int)[3]",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "dependencyErrorsFailClosed(int)[4]",
+      "seconds": 0.008,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "dependencyErrorsFailClosed(int)[5]",
+      "seconds": 0.004,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "invalidInputNeverCallsService",
+      "seconds": 0.006,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[1]",
+      "seconds": 0.035,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[2]",
+      "seconds": 0.01,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[3]",
+      "seconds": 0.009,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[4]",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[5]",
+      "seconds": 0.006,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[6]",
+      "seconds": 0.012,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[7]",
+      "seconds": 0.009,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[8]",
+      "seconds": 0.008,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[9]",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[10]",
+      "seconds": 0.005,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "rejectsIncompleteOrInconsistentResponses(String)[11]",
+      "seconds": 0.006,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "timeoutFailsClosed",
+      "seconds": 0.016,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "allowsNonBlockingDecisions(String)[1]",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "allowsNonBlockingDecisions(String)[2]",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "allowsNonBlockingDecisions(String)[3]",
+      "seconds": 0.006,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "method": "blocksHighRisk",
+      "seconds": 0.007,
+      "status": "PASS",
+      "report_sha256": "6bd1981f746444fdb904c2ebe5471fee68ffa147216fb5b1687915a29255f5f7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.ModerationHttpTest",
+      "method": "productionRequestFactoryMakesRealHttpRequest",
+      "seconds": 0.063,
+      "status": "PASS",
+      "report_sha256": "62d4393cfdcf62f36e71d511da4737c3568db5333ad0f0f03240a21df237b1fb"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationHttpTest",
+      "method": "advicePreservesStatusWithoutEchoingContentOrDependencyDetails(int)[1]",
+      "seconds": 0.311,
+      "status": "PASS",
+      "report_sha256": "9f4a86dcd50cc78b47199779a4fa3d6dd9cf6425ca86c51cbaed22be9c9dcbcf"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationHttpTest",
+      "method": "advicePreservesStatusWithoutEchoingContentOrDependencyDetails(int)[2]",
+      "seconds": 0.046,
+      "status": "PASS",
+      "report_sha256": "9f4a86dcd50cc78b47199779a4fa3d6dd9cf6425ca86c51cbaed22be9c9dcbcf"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationHttpTest",
+      "method": "blankAndOversizedPostsReturn400WithoutCallingBusinessService(int)[1]",
+      "seconds": 0.069,
+      "status": "PASS",
+      "report_sha256": "9f4a86dcd50cc78b47199779a4fa3d6dd9cf6425ca86c51cbaed22be9c9dcbcf"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationHttpTest",
+      "method": "blankAndOversizedPostsReturn400WithoutCallingBusinessService(int)[2]",
+      "seconds": 0.043,
+      "status": "PASS",
+      "report_sha256": "9f4a86dcd50cc78b47199779a4fa3d6dd9cf6425ca86c51cbaed22be9c9dcbcf"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationTest",
+      "method": "blockedOrUnavailableNeverTouchesDatabaseOrRedis(int)[1]",
+      "seconds": 0.796,
+      "status": "PASS",
+      "report_sha256": "ce5e07d53113cb2b1786f5df545be0ce983338ad6adaf339487111ecd6e72db7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationTest",
+      "method": "blockedOrUnavailableNeverTouchesDatabaseOrRedis(int)[2]",
+      "seconds": 0.019,
+      "status": "PASS",
+      "report_sha256": "ce5e07d53113cb2b1786f5df545be0ce983338ad6adaf339487111ecd6e72db7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationTest",
+      "method": "invalidContentDoesNotReachPersistence",
+      "seconds": 0.018,
+      "status": "PASS",
+      "report_sha256": "ce5e07d53113cb2b1786f5df545be0ce983338ad6adaf339487111ecd6e72db7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationTest",
+      "method": "allowedContentIsCheckedBeforePersistence(String)[1]",
+      "seconds": 0.088,
+      "status": "PASS",
+      "report_sha256": "ce5e07d53113cb2b1786f5df545be0ce983338ad6adaf339487111ecd6e72db7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationTest",
+      "method": "allowedContentIsCheckedBeforePersistence(String)[2]",
+      "seconds": 0.021,
+      "status": "PASS",
+      "report_sha256": "ce5e07d53113cb2b1786f5df545be0ce983338ad6adaf339487111ecd6e72db7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.moderation.TreeholeModerationTest",
+      "method": "allowedContentIsCheckedBeforePersistence(String)[3]",
+      "seconds": 0.02,
+      "status": "PASS",
+      "report_sha256": "ce5e07d53113cb2b1786f5df545be0ce983338ad6adaf339487111ecd6e72db7"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.AnonymousIdGeneratorTest",
+      "method": "rejectMissingWeakKeysAndInvalidIdentity",
+      "seconds": 0.014,
+      "status": "PASS",
+      "report_sha256": "6f553e4f9e7824e3c5c93774481cc77e034e6bf7e86c234ab3c3ebc23eb3e20f"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.AnonymousIdGeneratorTest",
+      "method": "stableScopedAndKeyed",
+      "seconds": 0.004,
+      "status": "PASS",
+      "report_sha256": "6f553e4f9e7824e3c5c93774481cc77e034e6bf7e86c234ab3c3ebc23eb3e20f"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.BurnTaskPrivacyTest",
+      "method": "burningAtomicallyRemovesIdentityAndLinkableAlias",
+      "seconds": 0.13,
+      "status": "PASS",
+      "report_sha256": "70bff36a59bb89441698f1659e37551a907103ac4c945352e1de5da79288f50a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.BurnTaskPrivacyTest",
+      "method": "alreadyBurnedLegacyRecordLosesItsOldIdentityWithoutNewArchive",
+      "seconds": 0.029,
+      "status": "PASS",
+      "report_sha256": "70bff36a59bb89441698f1659e37551a907103ac4c945352e1de5da79288f50a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.BurnTaskPrivacyTest",
+      "method": "identityCleanupFailureRollsBackArchiveAndContentAndKeepsRetryEntry",
+      "seconds": 0.037,
+      "status": "PASS",
+      "report_sha256": "70bff36a59bb89441698f1659e37551a907103ac4c945352e1de5da79288f50a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.BurnTaskPrivacyTest",
+      "method": "redisAcknowledgementFailureCanRetryWithoutDuplicatingArchive",
+      "seconds": 0.048,
+      "status": "PASS",
+      "report_sha256": "70bff36a59bb89441698f1659e37551a907103ac4c945352e1de5da79288f50a"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "method": "S1_071_purposeIsolation",
+      "seconds": 0.003,
+      "status": "PASS",
+      "report_sha256": "9f796897352d0d61b6074850a14a49fa80fd01f3411666ea57e9405eee40b498"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "method": "S1_074_consoleRedaction",
+      "seconds": 0.026,
+      "status": "PASS",
+      "report_sha256": "9f796897352d0d61b6074850a14a49fa80fd01f3411666ea57e9405eee40b498"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "method": "S1_072_keyChange",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "9f796897352d0d61b6074850a14a49fa80fd01f3411666ea57e9405eee40b498"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "method": "S1_069_stableAlias",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "9f796897352d0d61b6074850a14a49fa80fd01f3411666ea57e9405eee40b498"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "method": "S1_073_weakKeyRejected",
+      "seconds": 0.003,
+      "status": "PASS",
+      "report_sha256": "9f796897352d0d61b6074850a14a49fa80fd01f3411666ea57e9405eee40b498"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "method": "S1_075_exceptionRedaction",
+      "seconds": 0.063,
+      "status": "PASS",
+      "report_sha256": "9f796897352d0d61b6074850a14a49fa80fd01f3411666ea57e9405eee40b498"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "method": "S1_070_userIsolation",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "9f796897352d0d61b6074850a14a49fa80fd01f3411666ea57e9405eee40b498"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[1]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[2]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[3]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[4]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[5]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[6]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[7]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[8]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[9]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[10]",
+      "seconds": 0.005,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[11]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[12]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[13]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[14]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[15]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[16]",
+      "seconds": 0.004,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[17]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[18]",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[19]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[20]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[21]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "removesSensitiveValues(String)[22]",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "longQuotedAndUnterminatedValuesDoNotOverflowTheStack(int)[1]",
+      "seconds": 0.006,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "longQuotedAndUnterminatedValuesDoNotOverflowTheStack(int)[2]",
+      "seconds": 0.012,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "formattedJsonAndExceptionCredentialsAreRedactedTogether",
+      "seconds": 0.02,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "actualLogbackPatternRedactsExceptionsAndArguments",
+      "seconds": 0.018,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "preservesUsefulDiagnostics",
+      "seconds": 0.001,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "method": "actualLogbackHandlesLongQuotedArgumentsAndExceptionValues",
+      "seconds": 0.021,
+      "status": "PASS",
+      "report_sha256": "0dc047bcd9281256dd97a063fb47c41389fe374c8e4b61090d30763bca41f3e6"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.TreeholeIdentityPersistenceTest",
+      "method": "redisFailureRollsBackContentAndPrivateIdentity",
+      "seconds": 0.041,
+      "status": "PASS",
+      "report_sha256": "2609d619b121b0c0613d8e376f8e49df7b7f525c5eeb8a71a201ed1fe14a6858"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.TreeholeIdentityPersistenceTest",
+      "method": "contentHasOnlyAliasAndIdentityLivesInSeparateTable",
+      "seconds": 0.105,
+      "status": "PASS",
+      "report_sha256": "2609d619b121b0c0613d8e376f8e49df7b7f525c5eeb8a71a201ed1fe14a6858"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.TreeholeIdentityPersistenceTest",
+      "method": "mappingFailureRollsBackContentBeforeRedisWrite",
+      "seconds": 0.037,
+      "status": "PASS",
+      "report_sha256": "2609d619b121b0c0613d8e376f8e49df7b7f525c5eeb8a71a201ed1fe14a6858"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.TreeholeIdentityPersistenceTest",
+      "method": "privateMappingCannotBeSerializedOrLoggedByItsGeneratedAccessors",
+      "seconds": 0.015,
+      "status": "PASS",
+      "report_sha256": "2609d619b121b0c0613d8e376f8e49df7b7f525c5eeb8a71a201ed1fe14a6858"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.privacy.TreeholeIdentityPersistenceTest",
+      "method": "namedResponseResolvesNicknameThroughPrivateMapping",
+      "seconds": 0.032,
+      "status": "PASS",
+      "report_sha256": "2609d619b121b0c0613d8e376f8e49df7b7f525c5eeb8a71a201ed1fe14a6858"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidTreeholeTagNeverReachesModerationOrPersistence(String)[1]",
+      "seconds": 0.167,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidTreeholeTagNeverReachesModerationOrPersistence(String)[2]",
+      "seconds": 0.045,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidTreeholeTagNeverReachesModerationOrPersistence(String)[3]",
+      "seconds": 0.041,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "noteBoundaryIsEnforced(int)[1]",
+      "seconds": 0.045,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "noteBoundaryIsEnforced(int)[2]",
+      "seconds": 0.101,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[1]",
+      "seconds": 0.046,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[2]",
+      "seconds": 0.047,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[3]",
+      "seconds": 0.04,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[4]",
+      "seconds": 0.039,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[5]",
+      "seconds": 0.05,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[6]",
+      "seconds": 0.027,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[7]",
+      "seconds": 0.049,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "method": "invalidCheckinNeverReachesPersistence(String)[8]",
+      "seconds": 0.04,
+      "status": "PASS",
+      "report_sha256": "070d58cf9f703d3acaff2c1634747fb38415d758b8fa0070b9627b24c698eb47"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.CheckinQueryTest",
+      "method": "reversedRangeNeverReachesDatabase",
+      "seconds": 0.005,
+      "status": "PASS",
+      "report_sha256": "6f8695f9b39eab716b51a205c2cba7e0dac32d1ad9e9ce623c4c14fc7b238160"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.CheckinQueryTest",
+      "method": "failedInsertCannotReturnAnUnsavedSuccess",
+      "seconds": 0.024,
+      "status": "PASS",
+      "report_sha256": "6f8695f9b39eab716b51a205c2cba7e0dac32d1ad9e9ce623c4c14fc7b238160"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.CheckinQueryTest",
+      "method": "concurrentDuplicateReturnsAlreadyPersistedRecord",
+      "seconds": 0.015,
+      "status": "PASS",
+      "report_sha256": "6f8695f9b39eab716b51a205c2cba7e0dac32d1ad9e9ce623c4c14fc7b238160"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.CheckinQueryTest",
+      "method": "invalidDateNeverReachesDatabase(String)[1]",
+      "seconds": 0.005,
+      "status": "PASS",
+      "report_sha256": "6f8695f9b39eab716b51a205c2cba7e0dac32d1ad9e9ce623c4c14fc7b238160"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.CheckinQueryTest",
+      "method": "invalidDateNeverReachesDatabase(String)[2]",
+      "seconds": 0.003,
+      "status": "PASS",
+      "report_sha256": "6f8695f9b39eab716b51a205c2cba7e0dac32d1ad9e9ce623c4c14fc7b238160"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.CheckinQueryTest",
+      "method": "invalidDateNeverReachesDatabase(String)[3]",
+      "seconds": 0.004,
+      "status": "PASS",
+      "report_sha256": "6f8695f9b39eab716b51a205c2cba7e0dac32d1ad9e9ce623c4c14fc7b238160"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.MockLoginFlagsTest",
+      "method": "unboundMockUserNeedsVerification(String)[1]",
+      "seconds": 0.641,
+      "status": "PASS",
+      "report_sha256": "0c33c429980f1a09919a4b9ad7e04d3a7b743727fabf49e8b8c7014e62b28d4c"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.MockLoginFlagsTest",
+      "method": "unboundMockUserNeedsVerification(String)[2]",
+      "seconds": 0.008,
+      "status": "PASS",
+      "report_sha256": "0c33c429980f1a09919a4b9ad7e04d3a7b743727fabf49e8b8c7014e62b28d4c"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.MockLoginFlagsTest",
+      "method": "unboundMockUserNeedsVerification(String)[3]",
+      "seconds": 0.006,
+      "status": "PASS",
+      "report_sha256": "0c33c429980f1a09919a4b9ad7e04d3a7b743727fabf49e8b8c7014e62b28d4c"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.MockLoginFlagsTest",
+      "method": "boundMockUserDoesNotNeedVerification",
+      "seconds": 0.006,
+      "status": "PASS",
+      "report_sha256": "0c33c429980f1a09919a4b9ad7e04d3a7b743727fabf49e8b8c7014e62b28d4c"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.TreeholeResponseTest",
+      "method": "burnQueueUsesTheActualTwentyFourHourDeadline",
+      "seconds": 0.022,
+      "status": "PASS",
+      "report_sha256": "174f602c70a331c57c42d129cf59628cf0e888e4a1071d83072555326abba374"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.TreeholeResponseTest",
+      "method": "anonymousResponseDoesNotSerializeInternalIdentityOrDatabaseFlags",
+      "seconds": 0.04,
+      "status": "PASS",
+      "report_sha256": "174f602c70a331c57c42d129cf59628cf0e888e4a1071d83072555326abba374"
+    },
+    {
+      "class": "com.ouctongpin.apiserver.regression.TreeholeResponseTest",
+      "method": "namedResponseUsesNicknameOnly",
+      "seconds": 0.002,
+      "status": "PASS",
+      "report_sha256": "174f602c70a331c57c42d129cf59628cf0e888e4a1071d83072555326abba374"
+    }
+  ]
+}

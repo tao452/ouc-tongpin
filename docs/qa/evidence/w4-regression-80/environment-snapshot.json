@@ -1,0 +1,93 @@
+{
+  "recorded_at": "2026-11-18T09:03:39.825794+00:00",
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "source_tree": "0fdee4ce183f85cadf3b1c0f2b162bc520f88aef",
+  "branch": "test/w4-regression-80-20261118",
+  "python": "3.13.5",
+  "windows": "Windows-11-10.0.26200-SP0",
+  "java": {
+    "exit_code": 0,
+    "stdout": ""
+  },
+  "docker_version": {
+    "exit_code": 0,
+    "stdout": "29.1.3"
+  },
+  "compose_version": {
+    "exit_code": 0,
+    "stdout": "2.40.3+ds1-0ubuntu1~22.04.1"
+  },
+  "ubuntu": "PRETTY_NAME=\"Ubuntu 22.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.1 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy",
+  "project": "ouc-w4-20261118-7c67518",
+  "socket": "unix:///var/run/docker.sock",
+  "gateway": 18084,
+  "mysql_host_port": 13384,
+  "redis_host_port": 6379,
+  "wx_mock_enabled": true,
+  "real_wechat_credentials_provided": false,
+  "images": [
+    {
+      "image": "mysql:8.0",
+      "exit_code": 0,
+      "stdout": "\"sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b\" [\"mysql@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b\"]"
+    },
+    {
+      "image": "redis:7-alpine",
+      "exit_code": 0,
+      "stdout": "\"sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe\" [\"redis@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe\"]"
+    },
+    {
+      "image": "ouc-w4-20261118-7c67518-api:latest",
+      "exit_code": 0,
+      "stdout": "\"sha256:f330069b7076c3dfc8ac6625f61d1dd2bfcbbbc10881a3c267b1a3b33319ff94\" [\"ouc-w4-20261118-7c67518-api@sha256:f330069b7076c3dfc8ac6625f61d1dd2bfcbbbc10881a3c267b1a3b33319ff94\"]"
+    },
+    {
+      "image": "ouc-w4-20261118-7c67518-algo:latest",
+      "exit_code": 0,
+      "stdout": "\"sha256:eb203ee1dc505d28395fc6fae5dbe904016be977f6e2c7c1cc562afc862404e5\" [\"ouc-w4-20261118-7c67518-algo@sha256:eb203ee1dc505d28395fc6fae5dbe904016be977f6e2c7c1cc562afc862404e5\"]"
+    },
+    {
+      "image": "ouc-w4-20261118-7c67518-web:latest",
+      "exit_code": 0,
+      "stdout": "\"sha256:1a4a5a6298233298ef47cda751d0abd3479b79b7b149ec7fd96490bf72e04eea\" [\"ouc-w4-20261118-7c67518-web@sha256:1a4a5a6298233298ef47cda751d0abd3479b79b7b149ec7fd96490bf72e04eea\"]"
+    }
+  ],
+  "test_volumes": [
+    "ouc-w4-20261118-7c67518_mysql-data"
+  ],
+  "test_networks": [
+    "ouc-w4-20261118-7c67518_default"
+  ],
+  "business_tracked_files_diff": {
+    "exit_code": 0,
+    "stdout": ""
+  },
+  "original_checkout_branch": "feature/demo-v1.0-validation",
+  "original_checkout_commit": "84f99537f353f8340958705a3b1c01bc01a0fe73",
+  "original_checkout_status": [
+    "M .dockerignore",
+    " M .gitignore",
+    " M apps/admin-web/src/App.vue",
+    " M apps/admin-web/src/views/Audit.vue",
+    " M apps/admin-web/src/views/DataBoard.vue",
+    " M apps/admin-web/src/views/Heatmap.vue",
+    " M apps/admin-web/src/views/Login.vue",
+    " M apps/miniprogram/app.js",
+    " M apps/miniprogram/config.js",
+    " M apps/miniprogram/pages/checkin/form.js",
+    " M apps/miniprogram/pages/index/index.js",
+    " M apps/miniprogram/pages/index/index.wxml",
+    " M apps/miniprogram/pages/plaza/index.js",
+    " M apps/miniprogram/pages/plaza/index.wxml",
+    " M apps/miniprogram/pages/plaza/publish/publish.js",
+    " M apps/miniprogram/project.config.json",
+    " M infra/db/init/01-schema.sql",
+    "?? .env.demo.example",
+    "?? apps/admin-web/tests/demo-navigation.test.js",
+    "?? apps/miniprogram/tests/demo.test.cjs",
+    "?? artifacts/",
+    "?? docs/demo-v1.0/",
+    "?? infra/docker-compose.demo.yml",
+    "?? scripts/demo/"
+  ]
+}

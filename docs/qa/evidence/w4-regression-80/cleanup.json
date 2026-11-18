@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-11-18T09:08:55.464448+00:00",
+  "project": "ouc-w4-20261118-7c67518",
+  "containers_before": [
+    "ouc-w4-20261118-7c67518-web-1",
+    "ouc-w4-20261118-7c67518-api-1",
+    "ouc-w4-20261118-7c67518-redis-1",
+    "ouc-w4-20261118-7c67518-mysql-1",
+    "ouc-w4-20261118-7c67518-algo-1"
+  ],
+  "command": "docker compose --project-name ouc-w4-20261118-7c67518 --env-file .env -f infra/docker-compose.yml down -v",
+  "exit_code": 0,
+  "remaining_containers": [],
+  "remaining_volumes": [],
+  "remaining_networks": [],
+  "existing_demo_read_only_check": [
+    "ouc-tongpin-demo-web-1 Up About an hour (healthy)",
+    "ouc-tongpin-demo-api-1 Up About an hour (healthy)",
+    "ouc-tongpin-demo-redis-1 Up About an hour (healthy)",
+    "ouc-tongpin-demo-mysql-1 Up About an hour (healthy)",
+    "ouc-tongpin-demo-algo-1 Up About an hour (healthy)"
+  ],
+  "temporary_env_values_archived": false,
+  "temporary_daemon_stopped": true,
+  "temporary_proxy_relays_stopped": 2
+}

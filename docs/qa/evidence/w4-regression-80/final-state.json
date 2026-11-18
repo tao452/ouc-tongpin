@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-11-18T17:07:06.236885+08:00",
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "database_rows": {
+    "users": 7,
+    "auth": 7,
+    "checkin": 16,
+    "treehole_post": 21,
+    "treehole_archive": 1,
+    "buddy_demand": 4
+  },
+  "queue_entries": 20
+}

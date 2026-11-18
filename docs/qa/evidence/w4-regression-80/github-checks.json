@@ -1,0 +1,229 @@
+{
+  "recorded_at": "2026-11-18T08:53:55.106981+00:00",
+  "endpoints": {
+    "actions/runs?head_sha=7c67518fc91583a3983ea265b85f6d2a54d12eab&per_page=20": {
+      "http_status": 200,
+      "data": [
+        {
+          "id": 44254115747,
+          "name": "CI",
+          "event": "push",
+          "head_sha": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747",
+          "created_at": "2026-11-18T06:48:49Z",
+          "updated_at": "2026-11-18T06:52:26Z"
+        }
+      ]
+    },
+    "branches/develop/protection": {
+      "http_status": 404,
+      "data": {
+        "message": "Not Found",
+        "documentation_url": "https://docs.github.com/rest/branches/branch-protection#get-branch-protection",
+        "status": "404"
+      }
+    },
+    "rulesets?includes_parents=true": {
+      "http_status": 200,
+      "data": []
+    },
+    "pulls/53": {
+      "http_status": 200,
+      "data": {
+        "number": 53,
+        "head": {
+          "sha": "1bd1f8bf1ecac208fb4cb509a7a95412f4d608c3",
+          "ref": "test/M6-w1-gate-probe"
+        },
+        "html_url": "https://github.com/tao452/ouc-tongpin/pull/53",
+        "state": "closed",
+        "title": "test: W1 门禁故意失败实验，请勿合并"
+      }
+    },
+    "pulls/49/reviews": {
+      "http_status": 200,
+      "data": [
+        {
+          "id": 5733159309,
+          "state": "APPROVED",
+          "body": "## 审核结论：通过（M1 口径已确认）\n\n已按 PR 描述逐项复核，并在本地独立 worktree 实际运行验证：\n\n| 检查 | 结果 |\n|---|---|\n| Python 3.12.14 `pytest` | 101 passed，覆盖率 98.07%（门槛 80%） |\n| Maven 3.9.16 / JDK 17 `mvn verify` | 40 项通过，0 失败 0 跳过，jar 构建成功 |\n| `docker compose config -q` | 通过，mysql/redis/api/algo/web 五个服务解析正常 |\n| 真实 Uvicorn 探测 | 正常文本 200；`傻 逼`、`sha bi` 拦截；空文本/多余字段 422 且不回显；2 万字节请求体 413 |\n| 契约一致性 | `test_api.py` 比对 `openapi.yaml` 与 FastAPI schema，通过 |\n| 本地全栈 | 5 个容器全部 healthy，`foundation-smoke.py` 7 项全过 |\n| 网关实测 | HIGH 文本 200+`passed:false`；MEDIUM「废物」/LOW「垃圾分类」200+`passed:true`；空文本与多余字段 422；20KB 请求体 413；`/internal/health` 404 |\n| 与 develop 关系 | 落后 0 提交，无冲突 |\n| 提交粒度 | 21 个提交，单个最大约 90 行，符合 ≤200 行约定 |\n\nPR 自述的「80 条用例全部 NOT_RUN」「5 词为示例库」「nightly 待合入后启用」均与仓库内容一致，没有夸大完成度，这点很好。\n\n### M1 口径确认\n\nS1 阶段内容审核按 **HIGH 阻断、MEDIUM/LOW 放行** 执行，与当前 `passed = 所有命中都不是 HIGH` 的实现一致。正式词库、等级划分与独立标注集评估仍按 #25 在后续迭代验收。\n\n### 合入前请注意（非阻塞）\n\n1. `infra/docker-compose.yml` 与 `application.yml` 同时变更了数据库名（`tongpin` → `ouc_tongpin`）、端口（3306 → 3307）并移除了 `container_name`。M5 及其他成员的本地环境需要按新 `.env` 重新拉起；旧数据卷仍保留但不会被新配置使用。\n2. `infra/nginx.conf` 把 `/api/moderation/check` 暴露在网关入口，且 200 响应回显归一化后的全文。Java 端是直连 `http://algo:8000` 的，如无外部调用需求，建议后续改为仅内网可达。\n3. 次要建议：`ModerationClient` 可只向业务层返回 `passed`/`hits`（避免 `normalized` 进日志）；`AnonymousIdGenerator` 的密钥长度可改为启动时校验；同音词冲突目前会让服务启动失败，正式词库接入时建议改为多词并存。\n4. `foundation-smoke.py` 使用裸 `assert`，在 `python -O` 下会被跳过，且依赖 M5 的 `/api/emotions/checkins` 路由，后续可改为显式断言并解耦。\n\n以上 1–2 项建议在群内同步后合入，3–4 项可留到下一迭代。\n",
+          "html_url": "https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309",
+          "submitted_at": "2026-11-02T07:17:12Z"
+        }
+      ]
+    }
+  },
+  "current_jobs": {
+    "http_status": 200,
+    "jobs": [
+      {
+        "id": 134631566193,
+        "name": "guard",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631566193",
+        "started_at": "2026-11-18T06:48:52Z",
+        "completed_at": "2026-11-18T06:49:02Z"
+      },
+      {
+        "id": 134631566497,
+        "name": "w1-poc",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631566497",
+        "started_at": "2026-11-18T06:48:52Z",
+        "completed_at": "2026-11-18T06:49:09Z"
+      },
+      {
+        "id": 134631566518,
+        "name": "changes",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631566518",
+        "started_at": "2026-11-18T06:48:52Z",
+        "completed_at": "2026-11-18T06:49:00Z"
+      },
+      {
+        "id": 134631566682,
+        "name": "stack / Deploy and verify temporary test environment",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631566682",
+        "started_at": "2026-11-18T06:48:51Z",
+        "completed_at": "2026-11-18T06:52:20Z"
+      },
+      {
+        "id": 134631634113,
+        "name": "algo",
+        "status": "completed",
+        "conclusion": "skipped",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631634113",
+        "started_at": "2026-11-18T06:49:00Z",
+        "completed_at": "2026-11-18T06:49:00Z"
+      },
+      {
+        "id": 134631635103,
+        "name": "miniprogram",
+        "status": "completed",
+        "conclusion": "skipped",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631635103",
+        "started_at": "2026-11-18T06:49:01Z",
+        "completed_at": "2026-11-18T06:49:00Z"
+      },
+      {
+        "id": 134631635377,
+        "name": "admin-web",
+        "status": "completed",
+        "conclusion": "skipped",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631635377",
+        "started_at": "2026-11-18T06:49:01Z",
+        "completed_at": "2026-11-18T06:49:00Z"
+      },
+      {
+        "id": 134631635419,
+        "name": "api-server",
+        "status": "completed",
+        "conclusion": "skipped",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134631635419",
+        "started_at": "2026-11-18T06:49:01Z",
+        "completed_at": "2026-11-18T06:49:00Z"
+      },
+      {
+        "id": 134632958075,
+        "name": "quality",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134632958075",
+        "started_at": "2026-11-18T06:52:22Z",
+        "completed_at": "2026-11-18T06:52:25Z"
+      },
+      {
+        "id": 134632960516,
+        "name": "W3 delivery evidence",
+        "status": "completed",
+        "conclusion": "skipped",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/44254115747/job/134632960516",
+        "started_at": "2026-11-18T06:52:21Z",
+        "completed_at": "2026-11-18T06:52:20Z"
+      }
+    ]
+  },
+  "historical_failure_experiment": {
+    "queried_at": "2026-11-18T08:57:19.835675+00:00",
+    "head_sha": "1bd1f8bf1ecac208fb4cb509a7a95412f4d608c3",
+    "http_status": 200,
+    "runs": [
+      {
+        "id": 41446860022,
+        "name": "CI",
+        "head_sha": "1bd1f8bf1ecac208fb4cb509a7a95412f4d608c3",
+        "status": "completed",
+        "conclusion": "failure",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022",
+        "created_at": "2026-11-02T12:42:16Z",
+        "jobs_http_status": 200,
+        "jobs": [
+          {
+            "name": "guard",
+            "status": "completed",
+            "conclusion": "success",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282022926"
+          },
+          {
+            "name": "changes",
+            "status": "completed",
+            "conclusion": "success",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282023201"
+          },
+          {
+            "name": "w1-poc",
+            "status": "completed",
+            "conclusion": "success",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282023275"
+          },
+          {
+            "name": "stack / Deploy and verify temporary test environment",
+            "status": "completed",
+            "conclusion": "success",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282023312"
+          },
+          {
+            "name": "algo",
+            "status": "completed",
+            "conclusion": "failure",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282089491"
+          },
+          {
+            "name": "admin-web",
+            "status": "completed",
+            "conclusion": "skipped",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282092476"
+          },
+          {
+            "name": "api-server",
+            "status": "completed",
+            "conclusion": "skipped",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282092943"
+          },
+          {
+            "name": "quality",
+            "status": "completed",
+            "conclusion": "failure",
+            "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446860022/job/125282751274"
+          }
+        ]
+      },
+      {
+        "id": 41446859931,
+        "name": "Release candidate",
+        "head_sha": "1bd1f8bf1ecac208fb4cb509a7a95412f4d608c3",
+        "status": "completed",
+        "conclusion": "failure",
+        "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/41446859931",
+        "created_at": "2026-11-02T12:42:16Z"
+      }
+    ]
+  }
+}
