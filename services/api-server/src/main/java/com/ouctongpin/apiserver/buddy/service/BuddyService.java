@@ -8,71 +8,85 @@ import com.ouctongpin.apiserver.buddy.dto.BuddyQueryReq;
 import com.ouctongpin.apiserver.buddy.dto.BuddyResponse;
 import com.ouctongpin.apiserver.buddy.entity.BuddyDemand;
 import com.ouctongpin.apiserver.buddy.mapper.BuddyDemandMapper;
+import com.ouctongpin.apiserver.moderation.ModerationClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+/** US-10 publishing. Listing/filtering/sorting is V1.0 #12 and intentionally absent. */
 @Service
 public class BuddyService {
 
+    static final ZoneId BEIJING = ZoneId.of("Asia/Shanghai");
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+
     @Autowired private BuddyDemandMapper buddyMapper;
+    @Autowired private ModerationClient moderationClient;
+
+    // 👇 新增 Redis 和 ObjectMapper 注入，供广场查询使用
     @Autowired private StringRedisTemplate redisTemplate;
     @Autowired private ObjectMapper objectMapper;
 
-
-
-    public static LocalDateTime parseEventTime(String timeStr) {
-        if (timeStr == null || timeStr.trim().isEmpty()) {
-            throw new IllegalArgumentException("时间不能为空");
-        }
-        if (timeStr.contains("Z") || timeStr.contains("+")) {
-            OffsetDateTime odt = OffsetDateTime.parse(timeStr);
-            return odt.atZoneSameInstant(ZoneId.of("Asia/Shanghai")).toLocalDateTime();
-        } else {
-            return LocalDateTime.parse(timeStr);
-        }
-    }
-
-    // 1. 发布搭子 (恢复团队的 422 拦截和 OPEN 状态)
-    public Long createBuddy(Long userId, BuddyCreateReq req) {
-        // 【契约要求】前置敏感词拦截 (这里先保留 Mock 逻辑，如果团队有 ModerationClient 替换成团队的)
-        if (req.getRemark() != null && req.getRemark().contains("HIGH")) {
-            // 模拟触发 HIGH 敏感词，抛出 422 状态码
-            throw new org.springframework.web.server.ResponseStatusException(
-                org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY, "命中敏感词");
-        }
+    public BuddyResponse createNeed(Long userId, BuddyCreateReq req) {
+        // Audit before any database write. HIGH hits -> 422, unavailable dependency -> 503.
+        String text = req.getScene() + " " + (req.getRemark() == null ? "" : req.getRemark());
+        moderationClient.requireAllowed(text);
 
         BuddyDemand demand = new BuddyDemand();
         demand.setUserId(userId);
         demand.setScene(req.getScene());
         demand.setEventTime(parseEventTime(req.getTime()));
-
-        if (req.getLocation() != null) {
-            demand.setLocationAddress(req.getLocation().getAddress());
-            demand.setLatitude(req.getLocation().getLat());
-            demand.setLongitude(req.getLocation().getLng());
-        }
-
-        // 团队契约要求 skillTags 存为 JSON 数组字符串
-        if (req.getSkillTags() != null && !req.getSkillTags().isEmpty()) {
-            demand.setSkillTags(req.getSkillTags().toString()); // 自动变成 ["a","b"]
-        }
-
+        demand.setLocationAddress(req.getLocation().getAddress());
+        demand.setLatitude(req.getLocation().getLat());
+        demand.setLongitude(req.getLocation().getLng());
+        demand.setSkillTags(toJson(req.getSkillTags()));
         demand.setRemark(req.getRemark());
-        demand.setStatus("OPEN"); // 契约要求为 OPEN
-
+        demand.setStatus("OPEN");
+        demand.setCreatedAt(LocalDateTime.now(ZoneOffset.ofHours(8)));
+        demand.setDeleted(0);
         buddyMapper.insert(demand);
-        return demand.getId();
+
+        BuddyResponse response = new BuddyResponse();
+        response.setId(String.valueOf(demand.getId()));
+        response.setScene(demand.getScene());
+        response.setStatus(demand.getStatus());
+        return response;
     }
 
-    // 2. 你的 W5 核心产出：广场查询 (游标分页 + 缓存)
+    /** Accepts UTC ("...Z"), offset ("...+08:00") and local ISO date-time, stores Beijing time. */
+    static LocalDateTime parseEventTime(String raw) {
+        try {
+            if (raw.endsWith("Z") || raw.matches(".*[+-]\\d{2}:\\d{2}$")) {
+                return OffsetDateTime.parse(raw).atZoneSameInstant(BEIJING).toLocalDateTime();
+            }
+            return LocalDateTime.parse(raw);
+        } catch (DateTimeParseException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "time 必须是 ISO-8601 时间");
+        }
+    }
+
+    private static String toJson(List<String> tags) {
+        if (tags == null || tags.isEmpty()) {
+            return null;
+        }
+        try {
+            return MAPPER.writeValueAsString(tags);
+        } catch (JsonProcessingException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "skillTags 格式不合法");
+        }
+    }
+
     public List<BuddyResponse> getSquareList(BuddyQueryReq req) throws JsonProcessingException {
         String cacheKey = "square:" + req.getCursorId() + ":" + req.getMyLongitude() + ":" + req.getMyLatitude();
 
@@ -97,7 +111,6 @@ public class BuddyService {
         wrapper.orderByDesc(BuddyDemand::getId).last("LIMIT " + req.getSize());
         List<BuddyDemand> demands = buddyMapper.selectList(wrapper);
 
-        // 只用契约要求的 3 个字段
         List<BuddyResponse> responses = demands.stream().map(d -> {
             BuddyResponse r = new BuddyResponse();
             r.setId(String.valueOf(d.getId()));
