@@ -1,0 +1,66 @@
+{
+  "recorded_at_utc": "2026-11-09T14:29:00.605056+00:00",
+  "source_commit": "b2b2a0ae156da659f350b72796aed66511f7a4fa",
+  "scope": "M6 W2 development delivery; five-term example dictionary and synthetic regression texts",
+  "week2_development_complete": true,
+  "formal_dictionary_acceptance_complete": false,
+  "issue25_business_acceptance_complete": false,
+  "policy_confirmation": {
+    "actor": "tao452",
+    "state": "APPROVED",
+    "submitted_at_utc": "2026-11-02T07:17:12Z",
+    "approved_commit": "1e161021f383c1753c705050f031216c0d6841f4",
+    "source_url": "https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309",
+    "scope": "S1",
+    "actions": {
+      "HIGH": "block",
+      "MEDIUM": "allow",
+      "LOW": "allow"
+    },
+    "dictionary_scope": "Five-term example baseline; formal dictionary, term grading and independent evaluation remain for later acceptance"
+  },
+  "implementation_review": {
+    "actor": "tao452",
+    "state": "APPROVED",
+    "submitted_at_utc": "2026-11-08T12:56:01Z",
+    "approved_commit": "2cb0d618f2ca62150c3ccfb4644d8eef3687e8b3",
+    "source_url": "https://github.com/tao452/ouc-tongpin/pull/65#pullrequestreview-5817967294"
+  },
+  "catalogue_review": {
+    "actor": "tao452",
+    "state": "APPROVED",
+    "submitted_at_utc": "2026-11-09T11:26:09Z",
+    "approved_commit": "83b7842089d7c762cac9d83755699b50c4960a35",
+    "source_url": "https://github.com/tao452/ouc-tongpin/pull/68#pullrequestreview-5825184828"
+  },
+  "catalogue": {
+    "total": 80,
+    "status_counts": {
+      "BLOCKED": 25,
+      "PASS": 55
+    }
+  },
+  "moderation_function": {
+    "samples": 300,
+    "confusion_matrix": {
+      "tp": 100,
+      "fp": 0,
+      "tn": 200,
+      "fn": 0
+    },
+    "recall": 1.0,
+    "benign_samples": 200,
+    "blocked_samples": 100,
+    "minimum_benign_samples": 200,
+    "minimum_blocked_samples": 100,
+    "sample_requirements_met": true,
+    "false_positive_rate": 0.0,
+    "function_p95_ms": 0.08119991980493069,
+    "both_classes_present": true,
+    "thresholds_met_on_supplied_rows": true,
+    "dataset_sha256": "7e9e7038775fc6371c0ce4344f7f71636955b167e4f7db4a3cb1b648e5bca0b9",
+    "dictionary_sha256": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d",
+    "evaluation_mode": "function",
+    "limitations": "Labels supplied by caller; review/independence not verified. Sequential samples; no concurrency or production acceptance claim."
+  }
+}

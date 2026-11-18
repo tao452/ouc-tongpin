@@ -1,0 +1,96 @@
+name: Release candidate
+
+on:
+  pull_request:
+    branches: [develop, main]
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish an existing version tag after checks (false builds a candidate only)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Build and verify release candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            apps/admin-web/package-lock.json
+            apps/miniprogram/package-lock.json
+      - name: Check miniprogram source and request behavior
+        working-directory: apps/miniprogram
+        env:
+          HUSKY: '0'
+        run: |
+          npm ci
+          npm run lint
+          npm test
+          npm run check:project
+      - name: Test and build Java
+        run: mvn -B -q -f services/api-server/pom.xml verify
+      - name: Test algorithm and W1 data
+        run: |
+          python -m pip install -r services/algo/requirements-dev.txt
+          cd services/algo
+          python -m pytest -q
+      - name: Build management frontend
+        working-directory: apps/admin-web
+        run: |
+          npm ci
+          npm run lint
+          npm test -- --run
+          npm run build
+      - name: Assemble and verify candidate
+        run: python scripts/release/package_candidate.py --output qa-private/release-candidate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-candidate
+          path: qa-private/release-candidate/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-candidate-manifest
+          path: |
+            qa-private/release-candidate/manifest.json
+            qa-private/release-candidate/SHA256SUMS
+  publish:
+    name: Publish existing version tag
+    if: github.event_name == 'workflow_dispatch' && inputs.publish
+    needs: package
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: write
+      checks: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-candidate
+          path: qa-private/release-candidate
+      - name: Verify tag, checks and candidate before publishing
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/release/publish_candidate.py

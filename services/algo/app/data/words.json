@@ -1,0 +1,9 @@
+[
+  {"word": "傻逼", "level": "HIGH", "aliases": ["傻必", "煞笔", "沙比"], "pinyin": true},
+  {"word": "操你妈", "level": "HIGH", "aliases": ["艹你妈"], "pinyin": true},
+  {"word": "去死", "level": "HIGH", "aliases": [], "pinyin": true,
+   "allow_phrases": ["去死海", "去死记硬背", "去死胡同"]},
+  {"word": "废物", "level": "MEDIUM", "aliases": [], "pinyin": true,
+   "allow_phrases": ["废物利用", "废物处理", "废物回收", "废物管理"]},
+  {"word": "垃圾", "level": "LOW", "aliases": [], "pinyin": false}
+]

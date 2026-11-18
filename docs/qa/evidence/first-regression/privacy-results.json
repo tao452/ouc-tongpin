@@ -1,0 +1,14 @@
+{
+  "executed_at_utc": "2026-11-02T10:05:57.284001+00:00",
+  "scope": "Fresh explicit catalogue tests; synthetic user IDs and captured actual console configuration; no business database access",
+  "surefire_sha256": "9da7c2be4220816c3eeef627ac46b7bffac1bf211efce670f9ec3e3f0ec4d845",
+  "results": [
+    {"case_id": "S1-069", "status": "PASS", "test": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.S1_069_stableAlias", "duration_seconds": "0.001"},
+    {"case_id": "S1-070", "status": "PASS", "test": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.S1_070_userIsolation", "duration_seconds": "0.002"},
+    {"case_id": "S1-071", "status": "PASS", "test": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.S1_071_purposeIsolation", "duration_seconds": "0.001"},
+    {"case_id": "S1-072", "status": "PASS", "test": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.S1_072_keyChange", "duration_seconds": "0.002"},
+    {"case_id": "S1-073", "status": "PASS", "test": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.S1_073_weakKeyRejected", "duration_seconds": "0.001"},
+    {"case_id": "S1-074", "status": "PASS", "test": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.S1_074_consoleRedaction", "duration_seconds": "0.119"},
+    {"case_id": "S1-075", "status": "PASS", "test": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.S1_075_exceptionRedaction", "duration_seconds": "0.018"}
+  ]
+}

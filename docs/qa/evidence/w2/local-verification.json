@@ -1,0 +1,49 @@
+{
+  "recorded_at_utc": "2026-11-08T12:49:50.292419+00:00",
+  "tested_implementation_commit": "3af49ee103113f90ad38e6223e3a6828d408267b",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "scope": "Local Windows verification, developer-authored synthetic data; container results recorded separately. Tests executed before committing the identical implementation.",
+  "python": {
+    "version": "3.12.14",
+    "tests": 152,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "combined_line_branch_coverage_percent": 98.53,
+    "required_percent": 90
+  },
+  "java": {
+    "version": "17",
+    "tests": 57,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "ruff": {
+    "exit_code": 0,
+    "command": "python -m ruff check app tests scripts ../../scripts/qa ../../scripts/w1 ../../scripts/release"
+  },
+  "actionlint": {
+    "exit_code": 0,
+    "workflows": [
+      "ci.yml",
+      "deploy-test.yml",
+      "nightly.yml"
+    ]
+  },
+  "w1_poc": {
+    "total_cases": 128,
+    "decision_matches": 128,
+    "variant_cases": 64,
+    "variant_detection_rate": 1.0,
+    "benign_cases": 64,
+    "benign_block_rate": 0.0
+  },
+  "w1_poc_executed_before_commit": true,
+  "versioned_catalogue_cases": 80,
+  "file_sha256": {
+    "services\\algo\\app\\data\\words.json": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d",
+    "docs\\qa\\data\\w2-moderation-regression.jsonl": "7e9e7038775fc6371c0ce4344f7f71636955b167e4f7db4a3cb1b648e5bca0b9"
+  },
+  "limitations": "No independent M1-approved corpus, product-policy approval, real user data, JWT acceptance, or local Docker run."
+}
