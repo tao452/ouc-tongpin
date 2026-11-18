@@ -1,0 +1,29 @@
+{
+  "recorded_at_utc": "2026-11-09T07:26:58.380963+00:00",
+  "pull_request": "https://github.com/tao452/ouc-tongpin/pull/67",
+  "workflow_runs": [
+    {
+      "id": 42578696529,
+      "name": "CI",
+      "head_sha": "77316625b6c256676df117b435b730e478f72832",
+      "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/42578696529",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 42578696430,
+      "name": "Release candidate",
+      "head_sha": "77316625b6c256676df117b435b730e478f72832",
+      "html_url": "https://github.com/tao452/ouc-tongpin/actions/runs/42578696430",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "raw_report_sha256": {
+    "existing-api-regression.json": "ca25a6110072c3b468395079fa5ae4e4919ab459a80573fa63d6350afa9ff408",
+    "regression-java.json": "4c33fb1d5875ebfd8c8f4df14db89f4dfb1502d66fe1d5c32fcd9ed180ea5fdb",
+    "stack-results.json": "b58079e5d8683bf52e6c3ffb69c200742e22c20ed415f28b8fb13b16238fc91a"
+  },
+  "raw_report_location": "GitHub CI artifacts for run 42578696529; downloaded and inspected locally",
+  "scope": "Verified implementation at head 77316625; following commits archive evidence and catalogue status."
+}

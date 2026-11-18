@@ -1,0 +1,1468 @@
+{
+  "suite": "w3-api-v1",
+  "executed_at_utc": "2026-11-15T12:38:00.611524+00:00",
+  "source_commit": "8c15fdf2b1b09b9b69e73e300ee2203864fb2be1",
+  "working_tree_dirty": true,
+  "input_sha256": {
+    "docs/qa/data/w3-api-cases.v1.json": "76231e9c20053c9288732848f48d0a361f8f14fdc12288c17e649fca0fe3aed2",
+    "packages/contract/openapi.yaml": "f945462a67b258ef8462f3a6d6e571c7bc00c84d26699e068db52974b441b249",
+    "scripts/qa/run_w3_api_regression.py": "bf58db8194e5078c0b3de19a6adff097b876872ae9063da3403a20133475f0f2",
+    "scripts/qa/w3_api_auth.py": "3820281cd988bef4bb24dc5867c6961281b05ee9365f8a8354548b3fe7f8fe73",
+    "scripts/qa/w3_api_checkin.py": "007edd5cd534767def8b6fb40bdcd719b8ccbc9624b946e788c73d22007e2b68",
+    "scripts/qa/w3_api_treehole.py": "4ea604cb479f20738a57267e6b63efe00f66a26f26791cc4daa23c4df6a96733",
+    "scripts/qa/regression_http.py": "408bb9c3d240a8046b3190e5f45b20c93b88ebdfb6ed66380fc77a4f91ba1c37",
+    "scripts/qa/regression_stack.py": "7e1d8aca6ad7e3cdc109cddd94e2ca9aea936b6755276a1de1f5a50652caa5dd"
+  },
+  "scope": "登录6条、打卡14条、树洞10条；真实HTTP/MySQL/Redis；登录使用现有code2session模拟，业务接口使用demo用户1。",
+  "limitations": [
+    "不代表真实微信code2session、校内身份认证或JWT鉴权/越权验收通过。",
+    "仅在可回收的隔离测试环境执行，会创建合成账户、打卡和树洞记录。",
+    "与S1的80条用例目录分别统计，报告不输出token、账户ID、匿名ID或请求/响应正文。"
+  ],
+  "results": [
+    {
+      "case_id": "W3-AUTH-01",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "Real HTTP and MySQL, synthetic code2session mock; no real WeChat authorization",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 200,
+          "elapsed_ms": 56.25,
+          "response_keys": [
+            "isNewUser",
+            "needStudentVerify",
+            "token",
+            "userId"
+          ],
+          "isNewUser": true,
+          "needStudentVerify": true
+        },
+        {
+          "user_rows_added": 1,
+          "private_auth_rows_added": 1
+        }
+      ],
+      "module": "auth",
+      "title": "模拟首次登录",
+      "expectation": "响应字段及token形态正确，新建一条users和一条auth记录，需学号认证"
+    },
+    {
+      "case_id": "W3-AUTH-02",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "Real HTTP and MySQL, synthetic code2session mock; no real WeChat authorization",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 200,
+          "elapsed_ms": 38.85,
+          "response_keys": [
+            "isNewUser",
+            "needStudentVerify",
+            "token",
+            "userId"
+          ],
+          "isNewUser": true,
+          "needStudentVerify": true
+        },
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 200,
+          "elapsed_ms": 6.84,
+          "response_keys": [
+            "isNewUser",
+            "needStudentVerify",
+            "token",
+            "userId"
+          ],
+          "isNewUser": false,
+          "needStudentVerify": true
+        },
+        {
+          "identity_stable": true,
+          "database_rows_added_on_repeat": 0
+        }
+      ],
+      "module": "auth",
+      "title": "模拟重复登录",
+      "expectation": "同code返回同一身份、isNewUser=false，不重复建档"
+    },
+    {
+      "case_id": "W3-AUTH-03",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "Real HTTP and MySQL, synthetic code2session mock; no real WeChat authorization",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 400,
+          "elapsed_ms": 4.36,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "auth",
+      "title": "缺少code",
+      "expectation": "HTTP400，users/auth记录数不变"
+    },
+    {
+      "case_id": "W3-AUTH-04",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "Real HTTP and MySQL, synthetic code2session mock; no real WeChat authorization",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 400,
+          "elapsed_ms": 4.04,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "auth",
+      "title": "空白code",
+      "expectation": "HTTP400，users/auth记录数不变"
+    },
+    {
+      "case_id": "W3-AUTH-05",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "Real HTTP and MySQL, synthetic code2session mock; no real WeChat authorization",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 400,
+          "elapsed_ms": 3.93,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "auth",
+      "title": "null code",
+      "expectation": "HTTP400，users/auth记录数不变"
+    },
+    {
+      "case_id": "W3-AUTH-06",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "Real HTTP and MySQL, synthetic code2session mock; no real WeChat authorization",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 400,
+          "elapsed_ms": 3.67,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "auth",
+      "title": "畸形登录JSON",
+      "expectation": "HTTP400，不回显输入且不建档"
+    },
+    {
+      "case_id": "W3-CHECKIN-01",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 27.17,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 30.35,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 2
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 32.39,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 3
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 39.17,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 4
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 32.94,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 5
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 33.18,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 6
+        },
+        {
+          "database_rows_added": 1
+        }
+      ],
+      "module": "checkin",
+      "title": "六种情绪打卡",
+      "expectation": "六个契约情绪均可提交，每次持久化一条，响应与提交一致"
+    },
+    {
+      "case_id": "W3-CHECKIN-02",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 32.61,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "database_rows_added": 1
+        }
+      ],
+      "module": "checkin",
+      "title": "强度下限1",
+      "expectation": "HTTP200，强度1持久化成功"
+    },
+    {
+      "case_id": "W3-CHECKIN-03",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 31.33,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 2
+        },
+        {
+          "database_rows_added": 1
+        }
+      ],
+      "module": "checkin",
+      "title": "强度上限5",
+      "expectation": "HTTP200，强度5持久化成功"
+    },
+    {
+      "case_id": "W3-CHECKIN-04",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 3.66,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "强度低于下限",
+      "expectation": "强度0返回400，数据库不变"
+    },
+    {
+      "case_id": "W3-CHECKIN-05",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 5.36,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "强度高于上限",
+      "expectation": "强度6返回400，数据库不变"
+    },
+    {
+      "case_id": "W3-CHECKIN-06",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 7.21,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "非法情绪",
+      "expectation": "未知情绪返回400，数据库不变"
+    },
+    {
+      "case_id": "W3-CHECKIN-07",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 5.31,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "缺少情绪",
+      "expectation": "HTTP400，数据库不变"
+    },
+    {
+      "case_id": "W3-CHECKIN-08",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 6.18,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "缺少强度",
+      "expectation": "HTTP400，数据库不变"
+    },
+    {
+      "case_id": "W3-CHECKIN-09",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 32.38,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "database_rows_added": 1
+        }
+      ],
+      "module": "checkin",
+      "title": "备注100字边界",
+      "expectation": "HTTP200，100字备注完整保存"
+    },
+    {
+      "case_id": "W3-CHECKIN-10",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 5.95,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "备注101字越界",
+      "expectation": "HTTP400，数据库不变"
+    },
+    {
+      "case_id": "W3-CHECKIN-11",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 24.26,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 13.62,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "repeat_database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "同日重复幂等",
+      "expectation": "重复提交返回原记录，无新增行"
+    },
+    {
+      "case_id": "W3-CHECKIN-12",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 25.89,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 30.05,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 2
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 30.03,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 3
+        },
+        {
+          "database_rows_added": 1
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 27.73,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 3,
+          "streakDays": 1
+        }
+      ],
+      "module": "checkin",
+      "title": "日期区间查询",
+      "expectation": "包含两端日期，只返回该区间三条合成记录"
+    },
+    {
+      "case_id": "W3-CHECKIN-13",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 4.74,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 400,
+          "elapsed_ms": 3.32,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "database_rows_added": 0
+        }
+      ],
+      "module": "checkin",
+      "title": "非法及反向日期区间",
+      "expectation": "均返回400、不回显输入、数据库不变"
+    },
+    {
+      "case_id": "W3-CHECKIN-14",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 48.7,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 31.59,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 47.8,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 47.55,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 45.37,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 46.37,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 44.43,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 43.12,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays",
+            "userId"
+          ],
+          "streakDays": 1
+        },
+        {
+          "concurrent_requests": 8,
+          "distinct_record_ids": 1,
+          "database_rows_added": 1
+        }
+      ],
+      "module": "checkin",
+      "title": "八请求并发幂等",
+      "expectation": "八个HTTP200返回同一记录ID，数据库只新增一行"
+    },
+    {
+      "case_id": "W3-TREEHOLE-01",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 31.14,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        }
+      ],
+      "module": "treehole",
+      "title": "默认匿名发布",
+      "expectation": "HTTP201，HMAC匿名马甲，不含内部身份字段，MySQL与Redis各新增一条"
+    },
+    {
+      "case_id": "W3-TREEHOLE-02",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 33.38,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 32.81,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "purpose_scoped_mask_stable": true
+        }
+      ],
+      "module": "treehole",
+      "title": "显式匿名与马甲稳定性",
+      "expectation": "两次匿名发布马甲一致，公开响应无内部身份，每次均落库与入队"
+    },
+    {
+      "case_id": "W3-TREEHOLE-03",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 38.01,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        }
+      ],
+      "module": "treehole",
+      "title": "实名昵称发布",
+      "expectation": "anonymous=false且仅展示公开昵称，不暴露内部身份，落库入队"
+    },
+    {
+      "case_id": "W3-TREEHOLE-04",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 422,
+          "elapsed_ms": 9.8,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "mysql_rows_added": 0,
+          "redis_queue_entries_added": 0
+        }
+      ],
+      "module": "treehole",
+      "title": "HIGH内容阻断",
+      "expectation": "HTTP422、不回显输入、MySQL与Redis均不写入"
+    },
+    {
+      "case_id": "W3-TREEHOLE-05",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 36.93,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        }
+      ],
+      "module": "treehole",
+      "title": "正文500字边界",
+      "expectation": "HTTP201，正文完整保存并加入焚毁队列"
+    },
+    {
+      "case_id": "W3-TREEHOLE-06",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 400,
+          "elapsed_ms": 4.58,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "mysql_rows_added": 0,
+          "redis_queue_entries_added": 0
+        }
+      ],
+      "module": "treehole",
+      "title": "正文501字越界",
+      "expectation": "HTTP400、MySQL与Redis均不写入"
+    },
+    {
+      "case_id": "W3-TREEHOLE-07",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 400,
+          "elapsed_ms": 4.07,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "mysql_rows_added": 0,
+          "redis_queue_entries_added": 0
+        }
+      ],
+      "module": "treehole",
+      "title": "缺少正文",
+      "expectation": "HTTP400、MySQL与Redis均不写入"
+    },
+    {
+      "case_id": "W3-TREEHOLE-08",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 400,
+          "elapsed_ms": 4.85,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "mysql_rows_added": 0,
+          "redis_queue_entries_added": 0
+        }
+      ],
+      "module": "treehole",
+      "title": "非法情绪标签",
+      "expectation": "HTTP400、MySQL与Redis均不写入"
+    },
+    {
+      "case_id": "W3-TREEHOLE-09",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 27.3,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "GET",
+          "route": "/api/treehole/posts",
+          "http_status": 200,
+          "elapsed_ms": 10.22,
+          "response_keys": [
+            "items",
+            "nextCursor"
+          ]
+        }
+      ],
+      "module": "treehole",
+      "title": "按情绪筛选及列表隐私",
+      "expectation": "最新页包含合成记录，所有项标签匹配且不泄露内部身份"
+    },
+    {
+      "case_id": "W3-TREEHOLE-10",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, demo user 1",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 32.29,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 29.75,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 26.69,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 31.72,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 27.78,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 25.05,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 31.14,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 24.17,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 27.0,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 23.01,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 25.44,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 31.88,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "mysql_rows_added": 1,
+          "redis_queue_entries_added": 1
+        },
+        {
+          "method": "GET",
+          "route": "/api/treehole/posts",
+          "http_status": 200,
+          "elapsed_ms": 9.53,
+          "response_keys": [
+            "items",
+            "nextCursor"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/treehole/posts",
+          "http_status": 200,
+          "elapsed_ms": 8.77,
+          "response_keys": [
+            "items",
+            "nextCursor"
+          ]
+        },
+        {
+          "pages_checked": 2,
+          "unique_seeded_posts_returned": 12
+        }
+      ],
+      "module": "treehole",
+      "title": "分页连续性",
+      "expectation": "首页10条、cursor=2，两页无重复且包含新建的12条记录"
+    }
+  ],
+  "status_counts": {
+    "PASS": 30
+  },
+  "module_counts": {
+    "auth": 6,
+    "checkin": 14,
+    "treehole": 10
+  }
+}

@@ -1,0 +1,45 @@
+<view class="page">
+    <view class="title">校内身份认证</view>
+    <view class="description">
+      绑定学号，完成校内身份认证后即可使用完整功能
+    </view>
+
+    <view class="form-card">
+      <view class="form-item">
+        <view class="label">学号</view>
+        <input
+          class="input"
+          type="text"
+          placeholder="请输入你的学号"
+          value="{{studentId}}"
+          bindinput="onStudentIdInput"
+        />
+      </view>
+
+      <view class="form-item">
+        <view class="label">认证材料</view>
+        <view class="upload-area" bindtap="chooseScreenshot">
+          <view wx:if="{{!screenshotUrl}}" class="upload-placeholder">
+            <view class="upload-icon">+</view>
+            <view>上传教务系统截图</view>
+          </view>
+          <image
+            wx:else
+            class="preview-image"
+            src="{{screenshotUrl}}"
+            mode="aspectFit"
+          />
+        </view>
+        <view class="tip">请上传能够证明本人学号的教务系统截图</view>
+      </view>
+    </view>
+
+    <button
+      class="submit-button"
+      loading="{{submitting}}"
+      disabled="{{submitting}}"
+      bindtap="submitVerify"
+    >
+      提交认证
+    </button>
+  </view>

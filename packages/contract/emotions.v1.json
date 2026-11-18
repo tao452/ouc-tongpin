@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "purpose": "每日情绪打卡的主观感受记录",
+  "words": [
+    {"code": "HAPPY", "label": "开心", "description": "愉快、满足或兴奋", "displayOrder": 1},
+    {"code": "CALM", "label": "平静", "description": "放松、安稳或心情平和", "displayOrder": 2},
+    {"code": "ANXIOUS", "label": "焦虑", "description": "担心、紧张或对事情感到不安", "displayOrder": 3},
+    {"code": "LONELY", "label": "孤独", "description": "感到缺少陪伴或希望有人交流", "displayOrder": 4},
+    {"code": "IRRITABLE", "label": "烦躁", "description": "不耐烦、心烦或容易受到打扰", "displayOrder": 5},
+    {"code": "DOWN", "label": "低落", "description": "难过、失落或提不起精神", "displayOrder": 6}
+  ],
+  "intensityScale": {
+    "min": 1,
+    "max": 5,
+    "question": "此刻这种感受有多强？",
+    "levels": [
+      {"value": 1, "label": "很轻", "description": "只有一点，偶尔能察觉到"},
+      {"value": 2, "label": "较轻", "description": "能感觉到，程度比较轻"},
+      {"value": 3, "label": "中等", "description": "感受比较明显"},
+      {"value": 4, "label": "较强", "description": "感受很明显，较难忽略"},
+      {"value": 5, "label": "很强", "description": "感受非常强烈"}
+    ]
+  },
+  "usage": [
+    "每次选择一个最贴近当下感受的词，再选择 1–5 级强度。",
+    "所有情绪使用同一强度量表；1–5 表示感受强弱，数值不区分好坏。",
+    "前后端保存 code 和 intensity，中文名称从本文件读取。",
+    "用于个人记录和产品展示；没有临床分数、诊断类别或危机等级。"
+  ]
+}

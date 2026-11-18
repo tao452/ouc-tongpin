@@ -1,0 +1,12 @@
+<view class="rule-page">
+    <view class="rule-card">
+      <view
+        class="rule-item"
+        wx:for="{{rules}}"
+        wx:key="title"
+      >
+        <view class="rule-title">{{item.title}}</view>
+        <view class="rule-description">{{item.description}}</view>
+      </view>
+    </view>
+  </view>

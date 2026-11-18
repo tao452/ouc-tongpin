@@ -1,0 +1,63 @@
+<!-- US-35 个人资料页：入口可见、空态可引导、超长与无权限有明确提示 -->
+<scroll-view class="page" scroll-y>
+  <view wx:if="{{isEmpty}}" class="empty-tip">还没有个人资料，填好昵称就能保存啦</view>
+
+  <view class="card">
+    <view class="row avatar-row">
+      <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image wx:if="{{profile.avatarUrl}}" class="avatar" src="{{profile.avatarUrl}}" mode="aspectFill"></image>
+        <view wx:else class="avatar-placeholder">+</view>
+      </button>
+      <text class="avatar-hint">点击设置头像</text>
+    </view>
+
+    <view class="field">
+      <text class="label">昵称</text>
+      <input class="input" type="nickname" maxlength="{{limits.nickname}}" placeholder="请输入昵称"
+             value="{{profile.nickname}}" bindinput="onNicknameInput" />
+    </view>
+
+    <view class="field">
+      <view class="row">
+        <text class="label">个人简介</text>
+        <text class="counter">{{bioLength}}/{{limits.bio}}</text>
+      </view>
+      <textarea class="textarea" maxlength="{{limits.bio}}" placeholder="一句话介绍自己"
+                value="{{profile.bio}}" bindinput="onBioInput" auto-height />
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="label">兴趣标签（最多 {{limits.tags}} 个，单个不超过 {{limits.tag}} 字）</text>
+    <view class="tag-editor">
+      <input class="input tag-input" maxlength="60" placeholder="如：跑步，摄影" value="{{interestInput}}"
+             data-field="interest" bindinput="onTagInput" />
+      <button class="add-btn" size="mini" data-field="interest" bindtap="addTag">添加</button>
+    </view>
+    <view class="tags">
+      <view class="tag" wx:for="{{profile.interestTags}}" wx:key="*this">
+        {{item}}<text class="tag-del" data-field="interest" data-index="{{index}}" bindtap="removeTag">×</text>
+      </view>
+      <text wx:if="{{profile.interestTags.length === 0}}" class="hint">还没有兴趣标签</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="label">技能标签（最多 {{limits.tags}} 个，单个不超过 {{limits.tag}} 字）</text>
+    <view class="tag-editor">
+      <input class="input tag-input" maxlength="60" placeholder="如：Python，剪辑" value="{{skillInput}}"
+             data-field="skill" bindinput="onTagInput" />
+      <button class="add-btn" size="mini" data-field="skill" bindtap="addTag">添加</button>
+    </view>
+    <view class="tags">
+      <view class="tag" wx:for="{{profile.skillTags}}" wx:key="*this">
+        {{item}}<text class="tag-del" data-field="skill" data-index="{{index}}" bindtap="removeTag">×</text>
+      </view>
+      <text wx:if="{{profile.skillTags.length === 0}}" class="hint">还没有技能标签</text>
+    </view>
+  </view>
+
+  <button class="save-btn" type="primary" bindtap="onSave">保存资料</button>
+  <view class="hint footer">未登录时仅保存在本机；登录后自动同步到 /api/user/profile</view>
+  <button class="link-btn" bindtap="goLogin">去首页登录</button>
+</scroll-view>

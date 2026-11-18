@@ -1,0 +1,38 @@
+{
+  "executed_at_utc": "2026-11-15T12:34:17.275918+00:00",
+  "scope": "Disposable local MySQL 8.0.44, separate synthetic verification database; no shared database upgrade.",
+  "migration_sha256": "336b0dcadd16837f8b06be5e9505c39a985f760d28737df4cc5be16b4d265fc4",
+  "verification_sql_sha256": "caf1c8ddf4fbf416139336ac54f0fee219478a3a18bebce932c845c95b85a889",
+  "exit_code": 0,
+  "tests": [
+    {
+      "test_name": "legacy_copy_separation_and_burned_cleanup",
+      "status": "PASS"
+    },
+    {
+      "test_name": "idempotent_repeat",
+      "status": "PASS"
+    },
+    {
+      "test_name": "repeat_after_live_burn_without_mapping",
+      "status": "PASS"
+    },
+    {
+      "test_name": "missing_active_mapping_rejected",
+      "status": "PASS"
+    },
+    {
+      "test_name": "obsolete_active_alias_rejected_without_data_loss",
+      "status": "PASS"
+    },
+    {
+      "test_name": "conflicting_active_mapping_rejected_without_data_loss",
+      "status": "PASS"
+    },
+    {
+      "test_name": "final_ddl_failure_preserves_data_and_can_retry",
+      "status": "PASS"
+    }
+  ],
+  "all_passed": true
+}

@@ -21,10 +21,11 @@ Scrum 三迭代、每迭代 4 周、每迭代末一个可发布版本（v0.1.0 /
 ## 2 环境拉起（10 分钟）
 
 ```bash
-git clone git@github.com:ouc-tongpin/ouc-tongpin.git
+git clone https://github.com/tao452/ouc-tongpin.git
 cd ouc-tongpin
-cp .env.example .env          # 不要提交 .env
-docker compose -f infra/docker-compose.yml up -d   # MySQL 8 + Redis
+cp .env.example .env          # 修改密码并填写 ANON_ID_SECRET；不要提交 .env
+docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait
+# MySQL + Redis + 后端 + 算法 + 管理端；详见 infra/README.md
 ```
 
 按角色装依赖：
@@ -112,3 +113,30 @@ git switch develop && git merge --no-ff release/0.1 && git push
 
 - **每个故事怎么落地**（工具、目录、六步流程、S1 故事到接口映射）：[`docs/故事落地与开发指南.md`](docs/故事落地与开发指南.md)
 - **接口契约 v0.1**：`packages/contract/openapi.yaml`（Apifox 导入此文件做协作界面）
+
+## 10 W1 交付入口
+
+- 技术选型基线：`docs/adr/0001-技术选型与运行基线.md`
+- 情绪词库与强度量表：`packages/contract/emotions.v1.json`、`docs/requirements/情绪词库与强度量表-v1.md`
+- PoC 报告：`docs/qa/W1-PoC命中率报告.md`
+- 部署、发布候选包与回滚：`infra/发布候选包与回滚.md`
+- W1 执行记录：`docs/qa/W1交付与验证记录.md`
+
+## 11 W2 内容安全交付入口（11/02–11/06）
+
+- 第二周完成情况与测试结果：`docs/qa/W2-内容安全交付与验证.md`
+- 300 条合成测试样本与计算方式：`docs/qa/data/README.md`
+- 按七个模块分类的 80 条用例目录：`docs/qa/s1-test-cases.json`
+- 树洞发布前审核接入：`services/api-server/MODERATION.md`
+- 现有接口和高优先级回归（55 PASS / 25 BLOCKED）：`docs/qa/现有接口与高优先级回归-2026-11-09.md`
+
+## 12 M6 隐私与自动化工具
+
+- US-25 可信身份、JWT 权限、数据库角色与运行数据 PII 扫描：`docs/qa/US25-身份权限与PII验证.md`
+- 第三周原始任务逐项交付与联合验收状态：`docs/qa/W3-任务清单与验收状态.md`
+- 同一提交的统一质量报告：`scripts/qa/report_w3_delivery.py`；CI artifact 为 `w3-delivery-evidence`
+- 第三周（11/09–11/13）补齐与当前验证报告：`docs/qa/W3-隐私与自动化交付与验证.md`
+- 登录、打卡、树洞独立 30 条接口回归：`scripts/qa/run_w3_api_regression.py`、`docs/qa/data/w3-api-cases.v1.json`
+- 小规模只读并发演示：`scripts/qa/run_w3_load.py`
+- 合成数据 PII 扫描基线包：`docs/qa/pii-baseline/README.md`
+- 人工复核与误报登记：`docs/qa/pii-baseline/人工复核模板.md`

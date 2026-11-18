@@ -1,0 +1,27 @@
+{
+  "format_version": 1,
+  "source_commit": "4a3d08ca60d01d25175f10785b3e312aa1e63261",
+  "created_at_utc": "2026-11-02T12:41:36.302073+00:00",
+  "runtime": {
+    "java": "17",
+    "python": "3.11",
+    "node": "22"
+  },
+  "files": [
+    {
+      "name": "deployment-source.tar.gz",
+      "bytes": 1264762,
+      "sha256": "2eaef0a5850a300cf72b96a54b21e3c862997b3b6561921332c010850b2b2a3f"
+    },
+    {
+      "name": "api-server.jar",
+      "bytes": 38676369,
+      "sha256": "d2a02ecada741748bc2806370db12564bf89dae43c81ff052487e02e75ecbc8b"
+    },
+    {
+      "name": "admin-web.tar.gz",
+      "bytes": 728621,
+      "sha256": "f91ca9730785e3307cbaac27944808597b3bd4886a378500950e42265460a155"
+    }
+  ]
+}
