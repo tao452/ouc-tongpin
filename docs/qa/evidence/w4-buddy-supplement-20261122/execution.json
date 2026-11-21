@@ -1,0 +1,575 @@
+{
+  "project": "ouc-w4-supplement-20261122",
+  "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+  "results": [
+    {
+      "case_id": "S1-047",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:33.157820+00:00",
+      "finished_at": "2026-11-21T16:32:36.557809+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-01a57e2770ae48c2b0e25562a41fbbf9"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "1",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=1",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "scene": "自习",
+            "time": "2034-01-15T02:00:00Z",
+            "location": {
+              "address": "图书馆",
+              "lat": 36.16,
+              "lng": 120.4
+            },
+            "skillTags": [
+              "高数"
+            ],
+            "remark": "一起复习"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 201,
+          "response": {
+            "id": "1",
+            "scene": "自习",
+            "status": "OPEN"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=1",
+          "output": "1"
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT id,user_id,scene,event_time,location_address,latitude,longitude,skill_tags,remark,status FROM buddy_demand WHERE id=1",
+          "output": "1\t1\t自习\t2034-01-15 10:00:00\t图书馆\t36.160000\t120.400000\t[\"高数\"]\t一起复习\tOPEN"
+        }
+      ]
+    },
+    {
+      "case_id": "S1-048",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:36.561140+00:00",
+      "finished_at": "2026-11-21T16:32:38.296885+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-9d6273d3ee42456c9cd2758845d3a102"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "2",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=2",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "time": "2034-01-15T02:00:00Z",
+            "location": {
+              "address": "图书馆",
+              "lat": 36.16,
+              "lng": 120.4
+            },
+            "skillTags": [
+              "高数"
+            ],
+            "remark": "一起复习"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 400,
+          "response": {
+            "code": 1001,
+            "message": "场景不能为空",
+            "data": null
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=2",
+          "output": "0"
+        }
+      ]
+    },
+    {
+      "case_id": "S1-049",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:38.300889+00:00",
+      "finished_at": "2026-11-21T16:32:40.138329+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-6b8b3eef0b804e928b2c4e26bfb41d94"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "3",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=3",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "scene": "自习",
+            "location": {
+              "address": "图书馆",
+              "lat": 36.16,
+              "lng": 120.4
+            },
+            "skillTags": [
+              "高数"
+            ],
+            "remark": "一起复习"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 400,
+          "response": {
+            "code": 1001,
+            "message": "时间不能为空",
+            "data": null
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=3",
+          "output": "0"
+        }
+      ]
+    },
+    {
+      "case_id": "S1-050",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:40.141564+00:00",
+      "finished_at": "2026-11-21T16:32:42.243532+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-7310ab64b66b419c80d563511dce3fb3"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "4",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=4",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "scene": "自习",
+            "time": "2034-01-15T02:00:00Z",
+            "skillTags": [
+              "高数"
+            ],
+            "remark": "一起复习"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 400,
+          "response": {
+            "code": 1001,
+            "message": "地点不能为空",
+            "data": null
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=4",
+          "output": "0"
+        }
+      ]
+    },
+    {
+      "case_id": "S1-051",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:42.245162+00:00",
+      "finished_at": "2026-11-21T16:32:44.681966+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-4c8d4d1675b94d9687fb045b987f978d"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "5",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=5",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "scene": "自习",
+            "time": "2034-01-15T02:00:00Z",
+            "location": {
+              "address": "图书馆",
+              "lat": 36.16,
+              "lng": 120.4
+            },
+            "skillTags": [
+              "高数",
+              "线代",
+              "英语",
+              "跑步",
+              "摄影"
+            ],
+            "remark": "一起复习"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 201,
+          "response": {
+            "id": "2",
+            "scene": "自习",
+            "status": "OPEN"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=5",
+          "output": "1"
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT id,user_id,scene,event_time,location_address,latitude,longitude,skill_tags,remark,status FROM buddy_demand WHERE id=2",
+          "output": "2\t5\t自习\t2034-01-15 10:00:00\t图书馆\t36.160000\t120.400000\t[\"高数\",\"线代\",\"英语\",\"跑步\",\"摄影\"]\t一起复习\tOPEN"
+        }
+      ]
+    },
+    {
+      "case_id": "S1-052",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:44.684963+00:00",
+      "finished_at": "2026-11-21T16:32:46.162228+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-65933e6ab7c944828db4ef8c70ae929b"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "6",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=6",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "scene": "自习",
+            "time": "2034-01-15T02:00:00Z",
+            "location": {
+              "address": "图书馆",
+              "lat": 36.16,
+              "lng": 120.4
+            },
+            "skillTags": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "remark": "一起复习"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 400,
+          "response": {
+            "code": 1001,
+            "message": "技能标签最多 5 个",
+            "data": null
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=6",
+          "output": "0"
+        }
+      ]
+    },
+    {
+      "case_id": "S1-053",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:46.164794+00:00",
+      "finished_at": "2026-11-21T16:32:48.782775+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-b7c6f1e84039479985d3c9a26c8d6d4a"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "7",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=7",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "scene": "自习",
+            "time": "2034-01-15T02:00:00Z",
+            "location": {
+              "address": "图书馆",
+              "lat": 36.16,
+              "lng": 120.4
+            },
+            "skillTags": [
+              "高数"
+            ],
+            "remark": "一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 201,
+          "response": {
+            "id": "3",
+            "scene": "自习",
+            "status": "OPEN"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=7",
+          "output": "1"
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT id,user_id,scene,event_time,location_address,latitude,longitude,skill_tags,remark,status FROM buddy_demand WHERE id=3",
+          "output": "3\t7\t自习\t2034-01-15 10:00:00\t图书馆\t36.160000\t120.400000\t[\"高数\"]\t一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一\tOPEN"
+        }
+      ]
+    },
+    {
+      "case_id": "S1-054",
+      "status": "PASS",
+      "reason": null,
+      "started_at": "2026-11-21T16:32:48.783284+00:00",
+      "finished_at": "2026-11-21T16:32:50.479066+00:00",
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "executed": true,
+      "scope": "real HTTP, owned MySQL8/Redis",
+      "evidence": [
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/auth/login",
+          "method": "POST",
+          "input": {
+            "code": "w4-6e4229faa087-88f5f160e4294766994a459c54449273"
+          },
+          "header_names": [],
+          "authenticated": false,
+          "status": 200,
+          "response": {
+            "needStudentVerify": true,
+            "isNewUser": true,
+            "userId": "8",
+            "token": "[REDACTED]"
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=8",
+          "output": "0"
+        },
+        {
+          "kind": "http",
+          "port": 18085,
+          "path": "/api/match/needs",
+          "method": "POST",
+          "input": {
+            "scene": "自习",
+            "time": "2034-01-15T02:00:00Z",
+            "location": {
+              "address": "图书馆",
+              "lat": 36.16,
+              "lng": 120.4
+            },
+            "skillTags": [
+              "高数"
+            ],
+            "remark": "一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一"
+          },
+          "header_names": [],
+          "authenticated": true,
+          "status": 400,
+          "response": {
+            "code": 1001,
+            "message": "补充说明不能超过 200 字符",
+            "data": null
+          },
+          "dictionary_sha256": null
+        },
+        {
+          "kind": "mysql",
+          "query": "SELECT COUNT(*) FROM buddy_demand WHERE user_id=8",
+          "output": "0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "input_worktree_sha256": {
+    "docs/qa/s1-test-cases.json": "c1d335dff462b90444a98f94982defb5656009e92a9560de13b5498ad781ac2d",
+    "docs/qa/evidence/regression-20261109/catalogue-results.json": "012d9aaefb870d9b99b282c4dda42f6ff79c55c070ea4fa9bea74f8eda60f2b9",
+    "packages/contract/openapi.yaml": "e415d3730423139a26a593ab5af3d8323b63f5985df41182e51831c7b8c1630f",
+    "infra/docker-compose.yml": "842b6221602c9742b13b0c6df9afe97518fbaadd537f06eb8d6781e1367736f4",
+    "services/api-server/Dockerfile": "ef87371360d71f8f09b2b671f05750495cd079633a42a78cc0eefc1e061bcfff",
+    "services/algo/Dockerfile": "155c9b513457063360dce6f1b50a2cce9cbb80e738cea87db033e3d4604381ce",
+    "infra/Dockerfile.web": "2a0eae538ebba8ae1e4c9c6276e4328936f4793c9066c099a86f17a542908581",
+    "scripts/qa/regression_plan.py": "ce9be8edd5ffcc5fb45c900a1d299e1966c4a84697d27b835af24907ff270d93"
+  },
+  "input_git_blob_sha256": {
+    "docs/qa/s1-test-cases.json": "c1d335dff462b90444a98f94982defb5656009e92a9560de13b5498ad781ac2d",
+    "docs/qa/evidence/regression-20261109/catalogue-results.json": "012d9aaefb870d9b99b282c4dda42f6ff79c55c070ea4fa9bea74f8eda60f2b9",
+    "packages/contract/openapi.yaml": "e415d3730423139a26a593ab5af3d8323b63f5985df41182e51831c7b8c1630f",
+    "infra/docker-compose.yml": "842b6221602c9742b13b0c6df9afe97518fbaadd537f06eb8d6781e1367736f4",
+    "services/api-server/Dockerfile": "ef87371360d71f8f09b2b671f05750495cd079633a42a78cc0eefc1e061bcfff",
+    "services/algo/Dockerfile": "155c9b513457063360dce6f1b50a2cce9cbb80e738cea87db033e3d4604381ce",
+    "infra/Dockerfile.web": "2a0eae538ebba8ae1e4c9c6276e4328936f4793c9066c099a86f17a542908581",
+    "scripts/qa/regression_plan.py": "ce9be8edd5ffcc5fb45c900a1d299e1966c4a84697d27b835af24907ff270d93"
+  },
+  "evidence_sha256": {
+    "api-results.json": "af1e7e93703fe481126af7dc504ae6e458b5c7fde77ef9b407f56df2a24b8d2d",
+    "assemble.py": "4f5fa72cbcb612e5cd40a95bf46101b49b7415121f28170dbd3894ccf3e07d03",
+    "blocked-items.md": "0ac0c92a2c7bbd3229a3002ea6eb3423f8ed5d96e838d34dee00be7a75d5b54e",
+    "cleanup.json": "8209f82766073b47a85caac4fa554e31d7ead56068b7a466412923d8c43e2195",
+    "comparison.md": "736330977dfab658c96cc98ec0c97bfa3661e34914d5fdb172fb5f212b325dd9",
+    "environment-snapshot.json": "d030619de7686cfdb6a174f201d66bad98d4e03922d524499df037ab512e54f4",
+    "environment.md": "e8ed2945970d8703b8a1abdfea87ff27840b51d5f1ef492ba99e4e63e0cf2d93",
+    "final-state.json": "431ec18eb12c59dff5593c2a42a023053277a2116b46a6f317a0f6442777fe8e",
+    "github-checks.json": "a6e0e61d6dfa37b10327a09495308c68894f01b315f19057d7a13813a3831efc",
+    "initial-state.json": "9da6c4735a5b9b76c912909c04b55d80964b004d93e89f7c820e960361456c00",
+    "java-results.json": "6ca81083adfe2ff5e5de79b4d5f5f07a53beb77e6b55c006f74a23087764ba47",
+    "java-suites.json": "e4d770fc4e9772ececee3a8b1d02b6614954a9a0b0e4c97c7ef3f3f2666355ff",
+    "junit-cases.json": "563e99557aa81e0070783ddf066ae5593689398fe1ae9f96d412d983f557df7a",
+    "phrase-results.json": "69a603060099f0e619e0688d17acdbf4485146734e44e4962412f5b340392b5d",
+    "pr-description.md": "2a6151e5b0c4454ec6f1e82b5b0cc28016fb724a509c1f2d4c3bd435179e24db",
+    "results.json": "6a04c31fcbd57e38554cc8c233417c7634defc084c29e2c748f9a2b1a922a8d2",
+    "run-local.py": "0d7dc862d897201e440113637099af192da58849085a39a61c22cc45fe409c0f",
+    "run-phrase-checks.py": "660038e0ed1a5bab8afca1b07f63c841dffc36f2d296cc3896f63bed41cbb413",
+    "sanitize-evidence.py": "a542d67c3a10610df9588777f0a27c1bcca084177f453ce8c4f6a3243ce2fb54",
+    "security-results.json": "02a458eca8d62200cfe8f66ef100137f4bc5a1ecb921ee1d57ead69d1bd94969",
+    "stack-results.json": "e7407b59aa43bc64191fc34dd93ec27c85f165f0d6794fb1f620c6b438f4bc43",
+    "test-report.md": "12619452134138cc5abb4177a29329f7ac1a31ae164962b986ebd64d6706c233",
+    "validate.py": "1237c15701132eac1dfee67ea1bf069c75890360771919761aefb70224648c70"
+  },
+  "note": "证据经脱敏并统一 LF 后归档；输入同时记录工作区字节与 Git blob 哈希，兼容 CRLF。manifest/validation 自身不参与相互哈希。测试目标提交与随后报告提交分开。"
+}

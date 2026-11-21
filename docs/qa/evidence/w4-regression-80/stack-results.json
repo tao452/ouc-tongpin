@@ -1,0 +1,67 @@
+{
+  "executed_at_utc": "2026-11-18T09:05:54.605486+00:00",
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "scope": "Local owned WSL Docker stack; original Compose and HTTP assertions",
+  "results": [
+    {
+      "case_id": "S1-077",
+      "status": "PASS",
+      "observations": {
+        "valid_config_exit": 0,
+        "missing_secret_exit": 1,
+        "missing_variable": "ANON_ID_SECRET",
+        "no_secret_value_in_output": true
+      },
+      "reason": null
+    },
+    {
+      "case_id": "S1-078",
+      "status": "PASS",
+      "observations": {
+        "algo": {
+          "state": "running",
+          "health": "healthy"
+        },
+        "api": {
+          "state": "running",
+          "health": "healthy"
+        },
+        "mysql": {
+          "state": "running",
+          "health": "healthy"
+        },
+        "redis": {
+          "state": "running",
+          "health": "healthy"
+        },
+        "web": {
+          "state": "running",
+          "health": "healthy"
+        }
+      },
+      "reason": null
+    },
+    {
+      "case_id": "S1-079",
+      "status": "PASS",
+      "observations": {
+        "exit_code": 0,
+        "http_checks_passed": 7
+      },
+      "reason": null
+    },
+    {
+      "case_id": "S1-068",
+      "status": "PASS",
+      "observations": {
+        "gateway_http_status": 413,
+        "scope": "gateway only; direct check recorded separately"
+      },
+      "reason": null
+    }
+  ],
+  "started_at": "2026-11-18T17:05:51.178459+08:00",
+  "finished_at": "2026-11-18T17:05:54.611948+08:00",
+  "original_runner_scope_label": "Linux CI isolated Compose stack",
+  "transport": "Windows Python -> WSL root docker, explicit project ouc-w4-20261118-7c67518"
+}

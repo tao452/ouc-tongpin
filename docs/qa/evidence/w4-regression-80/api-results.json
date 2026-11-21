@@ -1,0 +1,6807 @@
+[
+  {
+    "case_id": "S1-004",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/login",
+        "http_status": 400,
+        "elapsed_ms": 28.09,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/auth/login",
+        "http_status": 400,
+        "elapsed_ms": 8.44,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/auth/login",
+        "http_status": 400,
+        "elapsed_ms": 9.05,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/auth/login",
+        "http_status": 400,
+        "elapsed_ms": 9.19,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "invalid_requests": 4,
+        "database_rows_added": 0
+      }
+    ],
+    "started_at": "2026-11-18T17:03:01.370737+08:00",
+    "finished_at": "2026-11-18T17:03:04.426250+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:02.370824+08:00",
+        "sql": "SELECT COUNT(*) FROM users",
+        "output": "1"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:02.975442+08:00",
+        "sql": "SELECT COUNT(*) FROM auth",
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:02.975466+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": true,
+        "input": {},
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "code不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:03.003792+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "code": ""
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "code不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:03.012519+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "code": " "
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "code不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:03.021869+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "code": null
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "code不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:03.684778+08:00",
+        "sql": "SELECT COUNT(*) FROM users",
+        "output": "1"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:04.426171+08:00",
+        "sql": "SELECT COUNT(*) FROM auth",
+        "output": "1"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-AUTH-MOCK-CONTRACT",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "Synthetic code2session mock and actual MySQL, not real WeChat code/JWT authorization",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/login",
+        "http_status": 200,
+        "elapsed_ms": 46.97,
+        "response_keys": [
+          "isNewUser",
+          "needStudentVerify",
+          "token",
+          "userId"
+        ],
+        "isNewUser": true,
+        "needStudentVerify": true
+      },
+      {
+        "method": "POST",
+        "route": "/api/auth/login",
+        "http_status": 200,
+        "elapsed_ms": 15.82,
+        "response_keys": [
+          "isNewUser",
+          "needStudentVerify",
+          "token",
+          "userId"
+        ],
+        "isNewUser": false,
+        "needStudentVerify": true
+      },
+      {
+        "mock_identity_stable": true,
+        "account_rows_added": 1,
+        "auth_rows_added": 1,
+        "token_shape_valid": true
+      }
+    ],
+    "started_at": "2026-11-18T17:03:04.428776+08:00",
+    "finished_at": "2026-11-18T17:03:09.235140+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:05.356180+08:00",
+        "sql": "SELECT COUNT(*) FROM users",
+        "output": "1"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:06.196180+08:00",
+        "sql": "SELECT COUNT(*) FROM auth",
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:06.196236+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "code": "regression-synthetic-2c4b7f8d49814623aaf7eca298394c07"
+        },
+        "http_status": 200,
+        "response": {
+          "needStudentVerify": true,
+          "isNewUser": true,
+          "userId": "2",
+          "token": "[REDACTED]"
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:07.076768+08:00",
+        "sql": "SELECT COUNT(*) FROM users",
+        "output": "2"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:07.860658+08:00",
+        "sql": "SELECT COUNT(*) FROM auth",
+        "output": "2"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:07.860690+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "code": "regression-synthetic-2c4b7f8d49814623aaf7eca298394c07"
+        },
+        "http_status": 200,
+        "response": {
+          "needStudentVerify": true,
+          "isNewUser": false,
+          "userId": "2",
+          "token": "[REDACTED]"
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:08.510020+08:00",
+        "sql": "SELECT COUNT(*) FROM users",
+        "output": "2"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:09.235096+08:00",
+        "sql": "SELECT COUNT(*) FROM auth",
+        "output": "2"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-AUTH-MALFORMED",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/login",
+        "http_status": 400,
+        "elapsed_ms": 12.73,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:03:09.236621+08:00",
+    "finished_at": "2026-11-18T17:03:12.110501+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:09.954491+08:00",
+        "sql": "SELECT COUNT(*) FROM users",
+        "output": "2"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:10.664427+08:00",
+        "sql": "SELECT COUNT(*) FROM auth",
+        "output": "2"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:10.664452+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 400,
+        "response": {
+          "code": 400,
+          "message": "请求格式不合法",
+          "data": null
+        },
+        "raw_input": {
+          "bytes": 26,
+          "sha256": "4804c60f05247a4f56f296b8a3e1381fa7ab57dec21aa5757314aca395729427",
+          "text": "{\"code\":\"PRIVATE-MALFORMED",
+          "construction": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:11.427193+08:00",
+        "sql": "SELECT COUNT(*) FROM users",
+        "output": "2"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:12.110474+08:00",
+        "sql": "SELECT COUNT(*) FROM auth",
+        "output": "2"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-EMOTION-WORDS",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "GET",
+        "route": "/api/emotions/words",
+        "http_status": 200,
+        "elapsed_ms": 35.0,
+        "response_keys": [
+          "intensityScale",
+          "words"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:03:12.120809+08:00",
+    "finished_at": "2026-11-18T17:03:12.157426+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:12.121976+08:00",
+        "method": "GET",
+        "path": "/api/emotions/words",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "intensityScale": {
+            "max": 5,
+            "min": 1
+          },
+          "words": [
+            {
+              "label": "开心",
+              "code": "HAPPY",
+              "colorToken": "[REDACTED]"
+            },
+            {
+              "label": "平静",
+              "code": "CALM",
+              "colorToken": "[REDACTED]"
+            },
+            {
+              "label": "焦虑",
+              "code": "ANXIOUS",
+              "colorToken": "[REDACTED]"
+            },
+            {
+              "label": "孤独",
+              "code": "LONELY",
+              "colorToken": "[REDACTED]"
+            },
+            {
+              "label": "烦躁",
+              "code": "IRRITABLE",
+              "colorToken": "[REDACTED]"
+            },
+            {
+              "label": "低落",
+              "code": "DOWN",
+              "colorToken": "[REDACTED]"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-013",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 86.81,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 1
+      },
+      {
+        "database_rows_before": 0,
+        "database_rows_after": 1
+      }
+    ],
+    "started_at": "2026-11-18T17:03:12.159823+08:00",
+    "finished_at": "2026-11-18T17:03:13.598698+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:12.852165+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "0"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:12.852206+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "checkinDate": "2031-01-14"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 1,
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-14",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:13.598635+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "1"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-014",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 54.7,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 2
+      },
+      {
+        "database_rows_before": 1,
+        "database_rows_after": 2
+      }
+    ],
+    "started_at": "2026-11-18T17:03:13.600167+08:00",
+    "finished_at": "2026-11-18T17:03:15.025993+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:14.276987+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:14.277027+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2031-01-15"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 2,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-15",
+          "streakDays": 2,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:15.025932+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "2"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-015",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 51.3,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 3
+      },
+      {
+        "database_rows_before": 2,
+        "database_rows_after": 3
+      }
+    ],
+    "started_at": "2026-11-18T17:03:15.029053+08:00",
+    "finished_at": "2026-11-18T17:03:16.369795+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:15.717474+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "2"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:15.717501+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "ANXIOUS",
+          "intensity": 3,
+          "checkinDate": "2031-01-16"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 3,
+          "emotion": "ANXIOUS",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-16",
+          "streakDays": 3,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:16.369744+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "3"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-016",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 48.22,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 4
+      },
+      {
+        "database_rows_before": 3,
+        "database_rows_after": 4
+      }
+    ],
+    "started_at": "2026-11-18T17:03:16.372088+08:00",
+    "finished_at": "2026-11-18T17:03:17.672251+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:16.970133+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "3"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:16.970160+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "LONELY",
+          "intensity": 3,
+          "checkinDate": "2031-01-17"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 4,
+          "emotion": "LONELY",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-17",
+          "streakDays": 4,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:17.672198+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-017",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 44.27,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 5
+      },
+      {
+        "database_rows_before": 4,
+        "database_rows_after": 5
+      }
+    ],
+    "started_at": "2026-11-18T17:03:17.674792+08:00",
+    "finished_at": "2026-11-18T17:03:19.509302+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:18.667670+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:18.667722+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "IRRITABLE",
+          "intensity": 3,
+          "checkinDate": "2031-01-18"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 5,
+          "emotion": "IRRITABLE",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-18",
+          "streakDays": 5,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:19.509222+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "5"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-018",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 67.2,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 6
+      },
+      {
+        "database_rows_before": 5,
+        "database_rows_after": 6
+      }
+    ],
+    "started_at": "2026-11-18T17:03:19.511000+08:00",
+    "finished_at": "2026-11-18T17:03:21.752379+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:20.812519+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "5"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:20.812562+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "DOWN",
+          "intensity": 3,
+          "checkinDate": "2031-01-19"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 6,
+          "emotion": "DOWN",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-19",
+          "streakDays": 6,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:21.752354+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "6"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-019",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 89.13,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 7
+      },
+      {
+        "database_rows_before": 6,
+        "database_rows_after": 7
+      }
+    ],
+    "started_at": "2026-11-18T17:03:21.754935+08:00",
+    "finished_at": "2026-11-18T17:03:23.353913+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:22.524586+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "6"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:22.524638+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 1,
+          "checkinDate": "2031-01-20"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 7,
+          "emotion": "HAPPY",
+          "intensity": 1,
+          "note": null,
+          "checkinDate": "2031-01-20",
+          "streakDays": 7,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:23.353862+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "7"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-020",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 289.37,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 8
+      },
+      {
+        "database_rows_before": 7,
+        "database_rows_after": 8
+      }
+    ],
+    "started_at": "2026-11-18T17:03:23.356773+08:00",
+    "finished_at": "2026-11-18T17:03:25.050441+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:24.020651+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "7"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:24.020715+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 5,
+          "checkinDate": "2031-01-21"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 8,
+          "emotion": "HAPPY",
+          "intensity": 5,
+          "note": null,
+          "checkinDate": "2031-01-21",
+          "streakDays": 8,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:25.050415+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-021",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 32.35,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "database_rows_before": 8,
+        "database_rows_after": 8
+      }
+    ],
+    "started_at": "2026-11-18T17:03:25.052187+08:00",
+    "finished_at": "2026-11-18T17:03:26.786678+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:25.943359+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:25.943384+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 0,
+          "checkinDate": "2031-01-22"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "intensity 必须在 1–5 之间",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:26.786642+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-022",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 14.08,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "database_rows_before": 8,
+        "database_rows_after": 8
+      }
+    ],
+    "started_at": "2026-11-18T17:03:26.788320+08:00",
+    "finished_at": "2026-11-18T17:03:28.167876+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:27.451894+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:27.451933+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 6,
+          "checkinDate": "2031-01-23"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "intensity 必须在 1–5 之间",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:28.167827+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-023",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 33.7,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "database_rows_before": 8,
+        "database_rows_after": 8
+      }
+    ],
+    "started_at": "2026-11-18T17:03:28.171514+08:00",
+    "finished_at": "2026-11-18T17:03:29.738740+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:28.914577+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:28.914610+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "UNKNOWN",
+          "intensity": 3,
+          "checkinDate": "2031-01-24"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "emotion 不合法",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:29.738691+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-024",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 30.54,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "database_rows_before": 8,
+        "database_rows_after": 8
+      },
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 15.37,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "database_rows_before": 8,
+        "database_rows_after": 8
+      }
+    ],
+    "started_at": "2026-11-18T17:03:29.741535+08:00",
+    "finished_at": "2026-11-18T17:03:33.121827+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:30.506860+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:30.506921+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "intensity": 3,
+          "checkinDate": "2031-01-25"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "emotion 不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:31.235949+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:32.372586+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:32.372612+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "checkinDate": "2031-01-25"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "intensity 不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:33.121768+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-025",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 57.68,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 1
+      },
+      {
+        "database_rows_before": 8,
+        "database_rows_after": 9
+      }
+    ],
+    "started_at": "2026-11-18T17:03:33.125576+08:00",
+    "finished_at": "2026-11-18T17:03:34.783147+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:33.920624+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "8"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:33.920653+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "checkinDate": "2031-01-26",
+          "note": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 9,
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "note": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好",
+          "checkinDate": "2031-01-26",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:34.783086+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "9"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-026",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 14.98,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "database_rows_before": 9,
+        "database_rows_after": 9
+      }
+    ],
+    "started_at": "2026-11-18T17:03:34.786590+08:00",
+    "finished_at": "2026-11-18T17:03:36.306538+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:35.551906+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "9"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:35.551929+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "checkinDate": "2031-01-27",
+          "note": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "note 不能超过 100 字符",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:36.306484+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "9"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-027",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 46.42,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 1
+      },
+      {
+        "database_rows_before": 9,
+        "database_rows_after": 10
+      },
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 22.79,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 1
+      }
+    ],
+    "started_at": "2026-11-18T17:03:36.446015+08:00",
+    "finished_at": "2026-11-18T17:03:39.515842+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:37.191056+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "9"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:37.191080+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "checkinDate": "2031-01-28"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 10,
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-28",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:37.989400+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "10"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:38.683418+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "10"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:38.683455+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "checkinDate": "2031-01-28"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 10,
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2031-01-28",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:39.515809+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "10"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-028",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 44.97,
+        "response_keys": [
+          "checkinDate",
+          "createdAt",
+          "emotion",
+          "id",
+          "intensity",
+          "note",
+          "streakDays"
+        ],
+        "streakDays": 1
+      },
+      {
+        "database_rows_before": 10,
+        "database_rows_after": 11
+      }
+    ],
+    "started_at": "2026-11-18T17:03:39.518910+08:00",
+    "finished_at": "2026-11-18T17:03:43.071526+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:40.968906+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "10"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:40.968937+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "HAPPY",
+          "intensity": 3
+        },
+        "http_status": 200,
+        "response": {
+          "id": 11,
+          "emotion": "HAPPY",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2026-11-18",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:41.646341+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "11"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:43.071494+08:00",
+        "sql": "SELECT checkin_date FROM checkin WHERE id=11",
+        "output": "2026-11-18"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-029",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "GET",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 102.16,
+        "response_keys": [
+          "items",
+          "streakDays",
+          "total"
+        ],
+        "total": 7,
+        "streakDays": 1
+      }
+    ],
+    "started_at": "2026-11-18T17:03:43.074249+08:00",
+    "finished_at": "2026-11-18T17:03:43.177255+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:43.074400+08:00",
+        "method": "GET",
+        "path": "/api/emotions/checkins",
+        "query": {
+          "from": [
+            "2031-01-14"
+          ],
+          "to": [
+            "2031-01-20"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "streakDays": 1,
+          "total": 7,
+          "items": [
+            {
+              "id": 1,
+              "emotion": "HAPPY",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-14",
+              "streakDays": 1,
+              "createdAt": null
+            },
+            {
+              "id": 2,
+              "emotion": "CALM",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-15",
+              "streakDays": 2,
+              "createdAt": null
+            },
+            {
+              "id": 3,
+              "emotion": "ANXIOUS",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-16",
+              "streakDays": 3,
+              "createdAt": null
+            },
+            {
+              "id": 4,
+              "emotion": "LONELY",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-17",
+              "streakDays": 4,
+              "createdAt": null
+            },
+            {
+              "id": 5,
+              "emotion": "IRRITABLE",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-18",
+              "streakDays": 5,
+              "createdAt": null
+            },
+            {
+              "id": 6,
+              "emotion": "DOWN",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-19",
+              "streakDays": 6,
+              "createdAt": null
+            },
+            {
+              "id": 7,
+              "emotion": "HAPPY",
+              "intensity": 1,
+              "note": null,
+              "checkinDate": "2031-01-20",
+              "streakDays": 7,
+              "createdAt": null
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-CHECKIN-DATES",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "GET",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 12.82,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/emotions/checkins",
+        "http_status": 400,
+        "elapsed_ms": 11.19,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:03:43.179830+08:00",
+    "finished_at": "2026-11-18T17:03:44.925678+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:43.841937+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "11"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:43.842025+08:00",
+        "method": "GET",
+        "path": "/api/emotions/checkins",
+        "query": {
+          "from": [
+            "private-invalid-date"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 400,
+        "response": {
+          "code": 400,
+          "message": "请求未通过检查",
+          "data": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:43.855151+08:00",
+        "method": "GET",
+        "path": "/api/emotions/checkins",
+        "query": {
+          "from": [
+            "2031-02-02"
+          ],
+          "to": [
+            "2031-01-01"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 400,
+        "response": {
+          "code": 400,
+          "message": "请求未通过检查",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:44.925615+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "11"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-CHECKIN-CONCURRENT",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "concurrent_requests": 8,
+        "distinct_record_ids": 1,
+        "database_rows_added": 1
+      }
+    ],
+    "started_at": "2026-11-18T17:03:44.930011+08:00",
+    "finished_at": "2026-11-18T17:03:46.458238+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:45.640862+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "11"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.643610+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.645602+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.646097+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.646618+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.645156+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.641680+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.644635+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:45.642771+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2032-01-01"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 12,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2032-01-01",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:46.457967+08:00",
+        "sql": "SELECT COUNT(*) FROM checkin",
+        "output": "12"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-031",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 86.66,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:03:46.461114+08:00",
+    "finished_at": "2026-11-18T17:03:49.617368+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:47.198946+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "0"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:03:48.027866+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "0"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:48.027909+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression synthetic content",
+          "emotionTag": "CALM"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 1,
+          "content": "regression synthetic content",
+          "emotionTag": "CALM",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:03:48.079339718",
+          "expiresAt": "2026-11-19T17:03:48.079339718",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:48.796766+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "1"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:03:49.615211+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "1"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-032",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 63.02,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:03:49.619704+08:00",
+    "finished_at": "2026-11-18T17:03:53.153788+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:50.478386+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "1"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:03:51.419187+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:51.419218+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression synthetic content",
+          "emotionTag": "CALM",
+          "anonymous": true
+        },
+        "http_status": 201,
+        "response": {
+          "id": 2,
+          "content": "regression synthetic content",
+          "emotionTag": "CALM",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:03:51.456862129",
+          "expiresAt": "2026-11-19T17:03:51.456862129",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:52.300519+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "2"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:03:53.153686+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "2"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-033",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 45.94,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:03:53.157160+08:00",
+    "finished_at": "2026-11-18T17:03:57.464614+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:53.949165+08:00",
+        "sql": "UPDATE users SET nickname='Regression Nickname' WHERE id=1",
+        "output": ""
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:54.753862+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "2"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:03:55.704000+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "2"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:55.704029+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression synthetic content",
+          "emotionTag": "CALM",
+          "anonymous": false
+        },
+        "http_status": 201,
+        "response": {
+          "id": 3,
+          "content": "regression synthetic content",
+          "emotionTag": "CALM",
+          "anonymous": false,
+          "authorMask": "Regression Nickname",
+          "createdAt": "2026-11-18T17:03:55.721732006",
+          "expiresAt": "2026-11-19T17:03:55.721732006",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:56.655074+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:03:57.464559+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-034",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 422,
+        "elapsed_ms": 21.13,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "before": {
+          "database_rows": 3,
+          "queue_entries": 3
+        },
+        "after": {
+          "database_rows": 3,
+          "queue_entries": 3
+        }
+      }
+    ],
+    "started_at": "2026-11-18T17:03:57.468365+08:00",
+    "finished_at": "2026-11-18T17:04:02.099171+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:58.225853+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:03:58.902737+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:03:58.902793+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "你是傻逼",
+          "emotionTag": "CALM"
+        },
+        "http_status": 422,
+        "response": {
+          "code": 422,
+          "message": "内容未通过安全检查",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:03:59.745824+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:00.546394+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:01.279816+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:02.099120+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-035",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 503,
+        "elapsed_ms": 3034.52,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "before": {
+          "database_rows": 3,
+          "queue_entries": 3
+        },
+        "after": {
+          "database_rows": 3,
+          "queue_entries": 3
+        }
+      },
+      {
+        "fault": "algorithm container paused; read timeout"
+      }
+    ],
+    "started_at": "2026-11-18T17:04:02.101729+08:00",
+    "finished_at": "2026-11-18T17:04:11.292707+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:03.522098+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:04.288769+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:04.288817+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression timeout synthetic content",
+          "emotionTag": "CALM"
+        },
+        "http_status": 503,
+        "response": {
+          "code": 503,
+          "message": "服务暂不可用，请稍后重试",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:08.230252+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:09.020480+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:09.920559+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:10.672047+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-036",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 45.8,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:04:11.295853+08:00",
+    "finished_at": "2026-11-18T17:04:14.291083+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:12.049115+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "3"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:12.866719+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "3"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:12.866781+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好",
+          "emotionTag": "CALM"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 4,
+          "content": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好",
+          "emotionTag": "CALM",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:12.885851793",
+          "expiresAt": "2026-11-19T17:04:12.885851793",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:13.622903+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:14.291007+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-037",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 400,
+        "elapsed_ms": 14.92,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "before": {
+          "database_rows": 4,
+          "queue_entries": 4
+        },
+        "after": {
+          "database_rows": 4,
+          "queue_entries": 4
+        }
+      }
+    ],
+    "started_at": "2026-11-18T17:04:14.294101+08:00",
+    "finished_at": "2026-11-18T17:04:18.631652+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:15.072350+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:15.773380+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:15.773441+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好",
+          "emotionTag": "CALM"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "内容不能超过 500 字符",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:16.462626+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:17.218147+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:17.930837+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:18.631630+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-038",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 400,
+        "elapsed_ms": 13.35,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "before": {
+          "database_rows": 4,
+          "queue_entries": 4
+        },
+        "after": {
+          "database_rows": 4,
+          "queue_entries": 4
+        }
+      }
+    ],
+    "started_at": "2026-11-18T17:04:18.634236+08:00",
+    "finished_at": "2026-11-18T17:04:24.396146+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:19.270560+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:20.062557+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:20.062600+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotionTag": "CALM"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "内容不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:21.004959+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:22.165882+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:23.424294+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:24.396095+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-039",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 400,
+        "elapsed_ms": 15.98,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "before": {
+          "database_rows": 4,
+          "queue_entries": 4
+        },
+        "after": {
+          "database_rows": 4,
+          "queue_entries": 4
+        }
+      }
+    ],
+    "started_at": "2026-11-18T17:04:24.399062+08:00",
+    "finished_at": "2026-11-18T17:04:29.155669+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:25.191128+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:25.924279+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:25.924323+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression missing tag"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "emotionTag 不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:26.660749+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:27.378682+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:28.125929+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:29.155641+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-040",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 400,
+        "elapsed_ms": 13.91,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "before": {
+          "database_rows": 4,
+          "queue_entries": 4
+        },
+        "after": {
+          "database_rows": 4,
+          "queue_entries": 4
+        }
+      }
+    ],
+    "started_at": "2026-11-18T17:04:29.162317+08:00",
+    "finished_at": "2026-11-18T17:04:35.083398+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:30.118342+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:31.017557+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:31.017644+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression invalid tag",
+          "emotionTag": "UNKNOWN"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "emotionTag 不合法",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:31.799963+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:32.587344+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:34.337420+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:35.083255+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-041",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 46.69,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts",
+        "http_status": 200,
+        "elapsed_ms": 65.69,
+        "response_keys": [
+          "items",
+          "nextCursor"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:04:35.086211+08:00",
+    "finished_at": "2026-11-18T17:04:38.254935+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:35.845317+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "4"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:36.726505+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:36.726537+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression synthetic content",
+          "emotionTag": "ANXIOUS"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 5,
+          "content": "regression synthetic content",
+          "emotionTag": "ANXIOUS",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:36.745929489",
+          "expiresAt": "2026-11-19T17:04:36.745929489",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:37.512195+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "5"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:38.188874+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "5"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:38.188961+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts",
+        "query": {
+          "emotionTag": [
+            "ANXIOUS"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "nextCursor": null,
+          "items": [
+            {
+              "id": 5,
+              "content": "regression synthetic content",
+              "emotionTag": "ANXIOUS",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:37",
+              "expiresAt": "2026-11-19T17:04:37",
+              "hugCount": 0
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-042",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 49.11,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 35.32,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 43.32,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 44.23,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 60.7,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 65.59,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 45.86,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 47.7,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 37.58,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 39.45,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 74.13,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 45.63,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts",
+        "http_status": 200,
+        "elapsed_ms": 21.23,
+        "response_keys": [
+          "items",
+          "nextCursor"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts",
+        "http_status": 200,
+        "elapsed_ms": 20.21,
+        "response_keys": [
+          "items",
+          "nextCursor"
+        ]
+      },
+      {
+        "pages": 2,
+        "distinct_posts": 12
+      }
+    ],
+    "started_at": "2026-11-18T17:04:38.259493+08:00",
+    "finished_at": "2026-11-18T17:05:15.053662+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:38.892331+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "5"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:39.515928+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "5"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:39.515975+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 0",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 6,
+          "content": "regression page 0",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:39.532766455",
+          "expiresAt": "2026-11-19T17:04:39.532766455",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:40.294353+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "6"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:41.311139+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "6"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:41.990642+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "6"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:42.638533+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "6"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:42.638573+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 1",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 7,
+          "content": "regression page 1",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:42.653127002",
+          "expiresAt": "2026-11-19T17:04:42.653127002",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:43.315077+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "7"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:44.005139+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "7"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:44.645860+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "7"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:45.318307+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "7"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:45.318350+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 2",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 8,
+          "content": "regression page 2",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:45.334088129",
+          "expiresAt": "2026-11-19T17:04:45.334088129",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:46.017402+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "8"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:46.710822+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "8"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:47.362440+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "8"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:47.998419+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "8"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:47.998462+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 3",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 9,
+          "content": "regression page 3",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:48.02075863",
+          "expiresAt": "2026-11-19T17:04:48.02075863",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:48.679099+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "9"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:49.339990+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "9"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:50.157947+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "9"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:51.077884+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "9"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:51.077906+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 4",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 10,
+          "content": "regression page 4",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:51.108328373",
+          "expiresAt": "2026-11-19T17:04:51.108328373",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:51.913064+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "10"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:53.074779+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "10"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:53.978202+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "10"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:55.049787+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "10"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:55.049816+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 5",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 11,
+          "content": "regression page 5",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:55.083826743",
+          "expiresAt": "2026-11-19T17:04:55.083826743",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:56.039594+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "11"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:56.830263+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "11"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:57.668546+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "11"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:04:58.518668+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "11"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:04:58.518712+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 6",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 12,
+          "content": "regression page 6",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:04:58.538400937",
+          "expiresAt": "2026-11-19T17:04:58.538400937",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:04:59.319404+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "12"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:00.245944+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "12"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:01.039235+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "12"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:01.803420+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "12"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:01.803449+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 7",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 13,
+          "content": "regression page 7",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:05:01.831639349",
+          "expiresAt": "2026-11-19T17:05:01.831639349",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:02.560583+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "13"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:03.249496+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "13"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:04.078582+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "13"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:04.814467+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "13"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:04.814514+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 8",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 14,
+          "content": "regression page 8",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:05:04.829563652",
+          "expiresAt": "2026-11-19T17:05:04.829563652",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:05.564080+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "14"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:06.243936+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "14"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:06.934653+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "14"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:07.594294+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "14"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:07.594410+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 9",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 15,
+          "content": "regression page 9",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:05:07.61000121",
+          "expiresAt": "2026-11-19T17:05:07.61000121",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:08.572963+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "15"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:09.542391+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "15"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:10.197333+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "15"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:10.926140+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "15"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:10.926186+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 10",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 16,
+          "content": "regression page 10",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:05:10.967325725",
+          "expiresAt": "2026-11-19T17:05:10.967325725",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:11.703654+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "16"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:12.346500+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "16"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:13.012288+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "16"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:13.617363+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "16"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:13.617405+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression page 11",
+          "emotionTag": "IRRITABLE"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 17,
+          "content": "regression page 11",
+          "emotionTag": "IRRITABLE",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:05:13.631217202",
+          "expiresAt": "2026-11-19T17:05:13.631217202",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:14.340890+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "17"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:15.011204+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "17"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:15.011391+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts",
+        "query": {
+          "emotionTag": [
+            "IRRITABLE"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "nextCursor": "2",
+          "items": [
+            {
+              "id": 17,
+              "content": "regression page 11",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:05:14",
+              "expiresAt": "2026-11-19T17:05:14",
+              "hugCount": 0
+            },
+            {
+              "id": 16,
+              "content": "regression page 10",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:05:11",
+              "expiresAt": "2026-11-19T17:05:11",
+              "hugCount": 0
+            },
+            {
+              "id": 15,
+              "content": "regression page 9",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:05:08",
+              "expiresAt": "2026-11-19T17:05:08",
+              "hugCount": 0
+            },
+            {
+              "id": 14,
+              "content": "regression page 8",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:05:05",
+              "expiresAt": "2026-11-19T17:05:05",
+              "hugCount": 0
+            },
+            {
+              "id": 13,
+              "content": "regression page 7",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:05:02",
+              "expiresAt": "2026-11-19T17:05:02",
+              "hugCount": 0
+            },
+            {
+              "id": 12,
+              "content": "regression page 6",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:59",
+              "expiresAt": "2026-11-19T17:04:59",
+              "hugCount": 0
+            },
+            {
+              "id": 11,
+              "content": "regression page 5",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:55",
+              "expiresAt": "2026-11-19T17:04:55",
+              "hugCount": 0
+            },
+            {
+              "id": 10,
+              "content": "regression page 4",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:51",
+              "expiresAt": "2026-11-19T17:04:51",
+              "hugCount": 0
+            },
+            {
+              "id": 9,
+              "content": "regression page 3",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:48",
+              "expiresAt": "2026-11-19T17:04:48",
+              "hugCount": 0
+            },
+            {
+              "id": 8,
+              "content": "regression page 2",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:45",
+              "expiresAt": "2026-11-19T17:04:45",
+              "hugCount": 0
+            }
+          ]
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:15.033036+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts",
+        "query": {
+          "emotionTag": [
+            "IRRITABLE"
+          ],
+          "cursor": [
+            "2"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "nextCursor": null,
+          "items": [
+            {
+              "id": 7,
+              "content": "regression page 1",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:43",
+              "expiresAt": "2026-11-19T17:04:43",
+              "hugCount": 0
+            },
+            {
+              "id": 6,
+              "content": "regression page 0",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:40",
+              "expiresAt": "2026-11-19T17:04:40",
+              "hugCount": 0
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-043",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts",
+        "http_status": 200,
+        "elapsed_ms": 19.1,
+        "response_keys": [
+          "items",
+          "nextCursor"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts",
+        "http_status": 200,
+        "elapsed_ms": 16.03,
+        "response_keys": [
+          "items",
+          "nextCursor"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:15.060520+08:00",
+    "finished_at": "2026-11-18T17:05:15.096425+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:15.060572+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts",
+        "query": {
+          "emotionTag": [
+            "IRRITABLE"
+          ],
+          "cursor": [
+            "2"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "nextCursor": null,
+          "items": [
+            {
+              "id": 7,
+              "content": "regression page 1",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:43",
+              "expiresAt": "2026-11-19T17:04:43",
+              "hugCount": 0
+            },
+            {
+              "id": 6,
+              "content": "regression page 0",
+              "emotionTag": "IRRITABLE",
+              "anonymous": true,
+              "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+              "createdAt": "2026-11-18T17:04:40",
+              "expiresAt": "2026-11-19T17:04:40",
+              "hugCount": 0
+            }
+          ]
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:15.080050+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts",
+        "query": {
+          "emotionTag": [
+            "IRRITABLE"
+          ],
+          "cursor": [
+            "3"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "nextCursor": null,
+          "items": []
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-044",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 37.6,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts",
+        "http_status": 200,
+        "elapsed_ms": 44.85,
+        "response_keys": [
+          "items",
+          "nextCursor"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:15.104188+08:00",
+    "finished_at": "2026-11-18T17:05:18.670177+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:15.767071+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "17"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:16.546732+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "17"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:16.546761+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "regression expired content",
+          "emotionTag": "LONELY"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 18,
+          "content": "regression expired content",
+          "emotionTag": "LONELY",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:05:16.563301599",
+          "expiresAt": "2026-11-19T17:05:16.563301599",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:17.209369+08:00",
+        "sql": "SELECT COUNT(*) FROM treehole_post",
+        "output": "18"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:17.934856+08:00",
+        "arguments": [
+          "ZCARD",
+          "treehole:burn_queue"
+        ],
+        "output": "18"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:18.625083+08:00",
+        "sql": "UPDATE treehole_post SET expires_at='2000-01-01' WHERE id=18",
+        "output": ""
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:18.625111+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts",
+        "query": {
+          "emotionTag": [
+            "LONELY"
+          ]
+        },
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "nextCursor": null,
+          "items": []
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-046",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "burned_status": 1,
+        "original_content_removed": true,
+        "archive_hash_matches": true,
+        "queue_entry_removed": true
+      }
+    ],
+    "started_at": "2026-11-18T17:05:18.679555+08:00",
+    "finished_at": "2026-11-18T17:05:32.328590+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:19.689699+08:00",
+        "arguments": [
+          "ZADD",
+          "treehole:burn_queue",
+          "1794992717679",
+          "18"
+        ],
+        "output": "0"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:20.607936+08:00",
+        "sql": "SELECT status FROM treehole_post WHERE id=18",
+        "output": "0"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:22.049473+08:00",
+        "sql": "SELECT status FROM treehole_post WHERE id=18",
+        "output": "0"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:23.451450+08:00",
+        "sql": "SELECT status FROM treehole_post WHERE id=18",
+        "output": "0"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:25.037264+08:00",
+        "sql": "SELECT status FROM treehole_post WHERE id=18",
+        "output": "0"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:26.576628+08:00",
+        "sql": "SELECT status FROM treehole_post WHERE id=18",
+        "output": "0"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:28.075531+08:00",
+        "sql": "SELECT status FROM treehole_post WHERE id=18",
+        "output": "1"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:29.010241+08:00",
+        "arguments": [
+          "ZSCORE",
+          "treehole:burn_queue",
+          "18"
+        ],
+        "output": ""
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:30.013941+08:00",
+        "sql": "SELECT status FROM treehole_post WHERE id=18",
+        "output": "1"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:30.837986+08:00",
+        "sql": "SELECT content FROM treehole_post WHERE id=18",
+        "output": "该内容已焚毁"
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:31.639697+08:00",
+        "sql": "SELECT content_hash FROM treehole_archive WHERE post_id=18",
+        "output": "da9e3d5a67b16815bad3d246551b3d1e"
+      },
+      {
+        "kind": "redis",
+        "time": "2026-11-18T17:05:32.328478+08:00",
+        "arguments": [
+          "ZSCORE",
+          "treehole:burn_queue",
+          "18"
+        ],
+        "output": ""
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-055",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 6.96,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": true,
+        "hit_levels": []
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.333076+08:00",
+    "finished_at": "2026-11-18T17:05:32.340320+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.333096+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "一起去图书馆"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": true,
+          "normalized": "一起去图书馆",
+          "hits": []
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-056",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 7.11,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.346745+08:00",
+    "finished_at": "2026-11-18T17:05:32.354227+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.346784+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "傻逼"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "傻逼",
+          "hits": [
+            {
+              "word": "傻逼",
+              "level": "HIGH"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-057",
+    "status": "BLOCKED",
+    "reason": "Baseline observed; formal dictionary/product acceptance pending M1",
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 6.31,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": true,
+        "hit_levels": [
+          "MEDIUM"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.360256+08:00",
+    "finished_at": "2026-11-18T17:05:32.367082+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.360301+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "废物"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": true,
+          "normalized": "废物",
+          "hits": [
+            {
+              "word": "废物",
+              "level": "MEDIUM"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true,
+    "technical_assertions": "PASS"
+  },
+  {
+    "case_id": "S1-058",
+    "status": "BLOCKED",
+    "reason": "Baseline observed; formal dictionary/product acceptance pending M1",
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 6.67,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": true,
+        "hit_levels": [
+          "LOW"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.374990+08:00",
+    "finished_at": "2026-11-18T17:05:32.382105+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.375028+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "垃圾"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": true,
+          "normalized": "垃圾",
+          "hits": [
+            {
+              "word": "垃圾",
+              "level": "LOW"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true,
+    "technical_assertions": "PASS"
+  },
+  {
+    "case_id": "S1-059",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 6.72,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 7.21,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.391745+08:00",
+    "finished_at": "2026-11-18T17:05:32.406465+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.391788+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "操你媽"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "操你妈",
+          "hits": [
+            {
+              "word": "操你妈",
+              "level": "HIGH"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.398883+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "操你妈"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "操你妈",
+          "hits": [
+            {
+              "word": "操你妈",
+              "level": "HIGH"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-060",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 26.47,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.415340+08:00",
+    "finished_at": "2026-11-18T17:05:32.442101+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.415375+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "ＳＨＡＢＩ"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "shabi",
+          "hits": [
+            {
+              "word": "傻逼",
+              "level": "HIGH"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-061",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 20.79,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.451346+08:00",
+    "finished_at": "2026-11-18T17:05:32.472464+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.451387+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "煞笔"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "煞笔",
+          "hits": [
+            {
+              "word": "傻逼",
+              "level": "HIGH"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-062",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 6.76,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 6.11,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": true,
+        "hit_levels": []
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.479473+08:00",
+    "finished_at": "2026-11-18T17:05:32.492812+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.479486+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "shabi"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "shabi",
+          "hits": [
+            {
+              "word": "傻逼",
+              "level": "HIGH"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.486435+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "shabilist"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": true,
+          "normalized": "shabilist",
+          "hits": []
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-063",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 7.77,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.499623+08:00",
+    "finished_at": "2026-11-18T17:05:32.507700+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.499659+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "傻*​逼"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "傻逼",
+          "hits": [
+            {
+              "word": "傻逼",
+              "level": "HIGH"
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-064",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 422,
+        "elapsed_ms": 6.21,
+        "response_keys": [
+          "detail"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.514417+08:00",
+    "finished_at": "2026-11-18T17:05:32.520902+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.514456+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": " "
+        },
+        "http_status": 422,
+        "response": {
+          "detail": "Invalid request"
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-065",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 12.02,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": true,
+        "hit_levels": []
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.527405+08:00",
+    "finished_at": "2026-11-18T17:05:32.539708+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.527427+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": true,
+          "normalized": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好",
+          "hits": []
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-066",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 422,
+        "elapsed_ms": 5.84,
+        "response_keys": [
+          "detail"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.546391+08:00",
+    "finished_at": "2026-11-18T17:05:32.552472+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.546435+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好"
+        },
+        "http_status": 422,
+        "response": {
+          "detail": "Invalid request"
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-067",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 422,
+        "elapsed_ms": 19.6,
+        "response_keys": [
+          "detail"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.559501+08:00",
+    "finished_at": "2026-11-18T17:05:32.579373+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.559537+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 422,
+        "response": {
+          "detail": "Invalid request"
+        },
+        "raw_input": {
+          "bytes": 1,
+          "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+          "text": "{",
+          "construction": null
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-068",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 413,
+        "elapsed_ms": 4.9
+      },
+      {
+        "direct_http_status": 413,
+        "gateway_http_status": 413
+      }
+    ],
+    "started_at": "2026-11-18T17:05:32.586821+08:00",
+    "finished_at": "2026-11-18T17:05:33.390592+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:32.586867+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 413,
+        "response": null,
+        "raw_input": {
+          "bytes": 16385,
+          "sha256": "39061532d423f2d385027b9d40fc07e2bedf7bf3151e8f8bdd5ff005cd5136d1",
+          "text": null,
+          "construction": "b'x' * 16385"
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-047",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 201,
+        "elapsed_ms": 60.13,
+        "response_keys": [
+          "id",
+          "scene",
+          "status"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:33.396204+08:00",
+    "finished_at": "2026-11-18T17:05:34.866971+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:34.078458+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "0"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:34.078514+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T10:00:00+08:00",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 201,
+        "response": {
+          "id": "1",
+          "scene": "自习",
+          "status": "OPEN"
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:34.866916+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-048",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 400,
+        "elapsed_ms": 15.23,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:34.872619+08:00",
+    "finished_at": "2026-11-18T17:05:36.276024+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:35.575534+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:35.575662+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "time": "2026-11-15T10:00:00+08:00",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "场景不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:36.275998+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-049",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 400,
+        "elapsed_ms": 13.71,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:36.281767+08:00",
+    "finished_at": "2026-11-18T17:05:37.705770+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:37.024385+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:37.024442+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "时间不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:37.705720+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-050",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 400,
+        "elapsed_ms": 17.65,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:37.713816+08:00",
+    "finished_at": "2026-11-18T17:05:39.491095+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:38.643399+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:38.643567+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T10:00:00+08:00",
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "地点不能为空",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:39.491045+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-051",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 201,
+        "elapsed_ms": 36.3,
+        "response_keys": [
+          "id",
+          "scene",
+          "status"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:39.497601+08:00",
+    "finished_at": "2026-11-18T17:05:41.108750+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:40.298103+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "1"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:40.298161+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T10:00:00+08:00",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数",
+            "线代",
+            "英语",
+            "跑步",
+            "摄影"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 201,
+        "response": {
+          "id": "2",
+          "scene": "自习",
+          "status": "OPEN"
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:41.108715+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "2"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-052",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 400,
+        "elapsed_ms": 12.8,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:41.116648+08:00",
+    "finished_at": "2026-11-18T17:05:42.494643+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:41.805360+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "2"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:41.805406+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T10:00:00+08:00",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "技能标签最多 5 个",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:42.494600+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "2"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-053",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 201,
+        "elapsed_ms": 32.13,
+        "response_keys": [
+          "id",
+          "scene",
+          "status"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:42.501494+08:00",
+    "finished_at": "2026-11-18T17:05:43.810508+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:43.140991+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "2"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:43.141029+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T10:00:00+08:00",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一"
+        },
+        "http_status": 201,
+        "response": {
+          "id": "3",
+          "scene": "自习",
+          "status": "OPEN"
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:43.810462+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "3"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-054",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 400,
+        "elapsed_ms": 12.36,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:43.816801+08:00",
+    "finished_at": "2026-11-18T17:05:45.150832+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:44.442338+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "3"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:44.442388+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T10:00:00+08:00",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 1001,
+          "message": "补充说明不能超过 200 字符",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:45.150811+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "3"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-NEEDS-UTC-TIME",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 201,
+        "elapsed_ms": 45.95,
+        "response_keys": [
+          "id",
+          "scene",
+          "status"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:45.157201+08:00",
+    "finished_at": "2026-11-18T17:05:46.718300+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:45.933338+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "3"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:45.933394+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T02:00:00.000Z",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 201,
+        "response": {
+          "id": "4",
+          "scene": "自习",
+          "status": "OPEN"
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:46.718269+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-NEEDS-BAD-TIME",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 400,
+        "elapsed_ms": 27.66,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:46.723618+08:00",
+    "finished_at": "2026-11-18T17:05:47.986474+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:47.347838+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:47.347873+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "not-a-time",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一起复习"
+        },
+        "http_status": 400,
+        "response": {
+          "code": 400,
+          "message": "请求未通过检查",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:47.986453+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-NEEDS-MODERATION-422",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/match/needs",
+        "http_status": 422,
+        "elapsed_ms": 16.0,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:48.000791+08:00",
+    "finished_at": "2026-11-18T17:05:49.364051+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:48.654167+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "4"
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:48.654234+08:00",
+        "method": "POST",
+        "path": "/api/match/needs",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "scene": "自习",
+          "time": "2026-11-15T10:00:00+08:00",
+          "location": {
+            "address": "图书馆",
+            "lat": 36.16,
+            "lng": 120.4
+          },
+          "skillTags": [
+            "高数"
+          ],
+          "remark": "一起去图书馆 傻逼"
+        },
+        "http_status": 422,
+        "response": {
+          "code": 422,
+          "message": "内容未通过安全检查",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:49.364027+08:00",
+        "sql": "SELECT COUNT(*) FROM buddy_demand",
+        "output": "4"
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "API-NEEDS-NO-V1-LIST",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "GET",
+        "route": "/api/buddy/list",
+        "http_status": 404,
+        "elapsed_ms": 20.31,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.371766+08:00",
+    "finished_at": "2026-11-18T17:05:49.392383+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.371803+08:00",
+        "method": "GET",
+        "path": "/api/buddy/list",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 404,
+        "response": {
+          "code": 404,
+          "message": "接口不存在",
+          "data": null
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "S1-001",
+    "status": "BLOCKED",
+    "reason": "Live WeChat code/account required; CI uses the explicitly enabled identity fixture",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "implementation": "CI fixture + signed JWT",
+        "formal_wechat_acceptance": false
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.435655+08:00",
+    "finished_at": "2026-11-18T17:05:49.435670+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-002",
+    "status": "BLOCKED",
+    "reason": "Live WeChat code/account required; CI uses the explicitly enabled identity fixture",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "implementation": "CI fixture + signed JWT",
+        "formal_wechat_acceptance": false
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.435685+08:00",
+    "finished_at": "2026-11-18T17:05:49.435699+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-003",
+    "status": "BLOCKED",
+    "reason": "Live WeChat code/account required; CI uses the explicitly enabled identity fixture",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "implementation": "CI fixture + signed JWT",
+        "formal_wechat_acceptance": false
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.435713+08:00",
+    "finished_at": "2026-11-18T17:05:49.435727+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-005",
+    "status": "BLOCKED",
+    "reason": "Live WeChat code/account required; CI uses the explicitly enabled identity fixture",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "implementation": "CI fixture + signed JWT",
+        "formal_wechat_acceptance": false
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.435739+08:00",
+    "finished_at": "2026-11-18T17:05:49.435751+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-006",
+    "status": "BLOCKED",
+    "reason": "Live WeChat code/account required; CI uses the explicitly enabled identity fixture",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "implementation": "CI fixture + signed JWT",
+        "formal_wechat_acceptance": false
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.435764+08:00",
+    "finished_at": "2026-11-18T17:05:49.435777+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-007",
+    "status": "BLOCKED",
+    "reason": "校内认证与截图授权接口尚未实现；HTTP 前置探测不能代替原业务步骤。",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/student-verify",
+        "http_status": 403,
+        "elapsed_ms": 13.4,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.443038+08:00",
+    "finished_at": "2026-11-18T17:05:49.467597+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.443083+08:00",
+        "method": "POST",
+        "path": "/api/auth/student-verify",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "studentId": "SYNTHETIC-W4-001"
+        },
+        "http_status": 403,
+        "response": {
+          "code": 403,
+          "message": "无权访问",
+          "data": null
+        }
+      }
+    ],
+    "prerequisite_attempted": true
+  },
+  {
+    "case_id": "S1-008",
+    "status": "BLOCKED",
+    "reason": "校内认证与截图授权接口尚未实现；HTTP 前置探测不能代替原业务步骤。",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/student-verify",
+        "http_status": 403,
+        "elapsed_ms": 13.4,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.467733+08:00",
+    "finished_at": "2026-11-18T17:05:49.477566+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.467750+08:00",
+        "method": "POST",
+        "path": "/api/auth/student-verify",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "studentId": "SYNTHETIC-W4-001"
+        },
+        "http_status": 403,
+        "response": {
+          "code": 403,
+          "message": "无权访问",
+          "data": null
+        }
+      }
+    ],
+    "prerequisite_attempted": true
+  },
+  {
+    "case_id": "S1-009",
+    "status": "BLOCKED",
+    "reason": "校内认证与截图授权接口尚未实现；HTTP 前置探测不能代替原业务步骤。",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/student-verify",
+        "http_status": 403,
+        "elapsed_ms": 13.4,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.477757+08:00",
+    "finished_at": "2026-11-18T17:05:49.487758+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.477775+08:00",
+        "method": "POST",
+        "path": "/api/auth/student-verify",
+        "query": {},
+        "authenticated": true,
+        "input": {},
+        "http_status": 403,
+        "response": {
+          "code": 403,
+          "message": "无权访问",
+          "data": null
+        }
+      }
+    ],
+    "prerequisite_attempted": true
+  },
+  {
+    "case_id": "S1-010",
+    "status": "BLOCKED",
+    "reason": "校内认证与截图授权接口尚未实现；HTTP 前置探测不能代替原业务步骤。",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/student-verify",
+        "http_status": 403,
+        "elapsed_ms": 13.4,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.487887+08:00",
+    "finished_at": "2026-11-18T17:05:49.498476+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.487901+08:00",
+        "method": "POST",
+        "path": "/api/auth/student-verify",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "status": "REJECTED"
+        },
+        "http_status": 403,
+        "response": {
+          "code": 403,
+          "message": "无权访问",
+          "data": null
+        }
+      }
+    ],
+    "prerequisite_attempted": true
+  },
+  {
+    "case_id": "S1-011",
+    "status": "BLOCKED",
+    "reason": "校内认证与截图授权接口尚未实现；HTTP 前置探测不能代替原业务步骤。",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/student-verify",
+        "http_status": 403,
+        "elapsed_ms": 13.4,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.498609+08:00",
+    "finished_at": "2026-11-18T17:05:49.505753+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.498631+08:00",
+        "method": "POST",
+        "path": "/api/auth/student-verify",
+        "query": {},
+        "authenticated": false,
+        "input": {
+          "studentId": "SYNTHETIC-W4-001"
+        },
+        "http_status": 401,
+        "response": {
+          "code": 401,
+          "message": "请先登录",
+          "data": null
+        }
+      }
+    ],
+    "prerequisite_attempted": true
+  },
+  {
+    "case_id": "S1-012",
+    "status": "BLOCKED",
+    "reason": "校内认证与截图授权接口尚未实现；HTTP 前置探测不能代替原业务步骤。",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/auth/student-verify",
+        "http_status": 403,
+        "elapsed_ms": 13.4,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.505885+08:00",
+    "finished_at": "2026-11-18T17:05:49.518750+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.505908+08:00",
+        "method": "GET",
+        "path": "/api/auth/student-verify/screenshot/synthetic-w4",
+        "query": {},
+        "authenticated": false,
+        "input": null,
+        "http_status": 401,
+        "response": {
+          "code": 401,
+          "message": "请先登录",
+          "data": null
+        }
+      }
+    ],
+    "prerequisite_attempted": true
+  },
+  {
+    "case_id": "S1-030",
+    "status": "BLOCKED",
+    "reason": "Final consecutive/missed-day product rule awaits M1; technical API covered",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [],
+    "started_at": "2026-11-18T17:05:49.435935+08:00",
+    "finished_at": "2026-11-18T17:05:49.435947+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-045",
+    "status": "BLOCKED",
+    "reason": "Treehole detail endpoint is not implemented; 404 is not expiry acceptance",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts/999999999",
+        "http_status": 404,
+        "elapsed_ms": 12.19,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      }
+    ],
+    "started_at": "2026-11-18T17:05:49.435959+08:00",
+    "finished_at": "2026-11-18T17:05:49.435987+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-076",
+    "status": "BLOCKED",
+    "reason": "Independent privacy review pending; JWT/isolation checks have a separate report",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [],
+    "started_at": "2026-11-18T17:05:49.436000+08:00",
+    "finished_at": "2026-11-18T17:05:49.436011+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "S1-080",
+    "status": "BLOCKED",
+    "reason": "Branch protection API returned 404 to current account; admin proof pending. Historical failed-quality experiment exists in PR #53",
+    "execution_scope": "Dependency not implemented/approved",
+    "observations": [],
+    "started_at": "2026-11-18T17:05:49.436025+08:00",
+    "finished_at": "2026-11-18T17:05:49.436037+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "executed": false,
+    "execution_trace": []
+  },
+  {
+    "case_id": "W4-STREAK-TECHNICAL",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [],
+    "started_at": "2026-11-18T17:05:49.518777+08:00",
+    "finished_at": "2026-11-18T17:05:50.316484+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:49.518825+08:00",
+        "method": "POST",
+        "path": "/api/auth/login",
+        "query": {},
+        "authenticated": false,
+        "input": {
+          "code": "qa-0fbe021c5cf44cd7b7e1ed53692401f1"
+        },
+        "http_status": 200,
+        "response": {
+          "needStudentVerify": true,
+          "isNewUser": true,
+          "userId": "3",
+          "token": "[REDACTED]"
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:50.222472+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2026-11-15"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 17,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2026-11-15",
+          "streakDays": 1,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:50.257855+08:00",
+        "method": "POST",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "emotion": "CALM",
+          "intensity": 3,
+          "checkinDate": "2026-11-16"
+        },
+        "http_status": 200,
+        "response": {
+          "id": 18,
+          "emotion": "CALM",
+          "intensity": 3,
+          "note": null,
+          "checkinDate": "2026-11-16",
+          "streakDays": 2,
+          "createdAt": null
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:50.287865+08:00",
+        "method": "GET",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "streakDays": 0,
+          "total": 2,
+          "items": [
+            {
+              "id": 17,
+              "emotion": "CALM",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2026-11-15",
+              "streakDays": 1,
+              "createdAt": null
+            },
+            {
+              "id": 18,
+              "emotion": "CALM",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2026-11-16",
+              "streakDays": 2,
+              "createdAt": null
+            }
+          ]
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "W4-EXPIRY-DETAIL-PREREQUISITE",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "POST",
+        "route": "/api/treehole/posts",
+        "http_status": 201,
+        "elapsed_ms": 37.88,
+        "response_keys": [
+          "anonymous",
+          "authorMask",
+          "content",
+          "createdAt",
+          "emotionTag",
+          "expiresAt",
+          "hugCount",
+          "id"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts/19",
+        "http_status": 404,
+        "elapsed_ms": 11.05,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/treehole/posts/19",
+        "http_status": 404,
+        "elapsed_ms": 16.73,
+        "response_keys": [
+          "code",
+          "data",
+          "message"
+        ]
+      },
+      {
+        "fresh_detail_http": 404,
+        "expired_detail_http": 404,
+        "expiry_acceptance": false
+      }
+    ],
+    "started_at": "2026-11-18T17:05:50.327479+08:00",
+    "finished_at": "2026-11-18T17:05:51.172366+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:50.327501+08:00",
+        "method": "POST",
+        "path": "/api/treehole/posts",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "content": "W4 expiry detail fixture",
+          "emotionTag": "CALM"
+        },
+        "http_status": 201,
+        "response": {
+          "id": 19,
+          "content": "W4 expiry detail fixture",
+          "emotionTag": "CALM",
+          "anonymous": true,
+          "authorMask": "anon_v1_CB9FMoWcLpP5mwSbyfKbVObqT6t1noBJ86eHGpJAkl4",
+          "createdAt": "2026-11-18T17:05:50.341355103",
+          "expiresAt": "2026-11-19T17:05:50.341355103",
+          "hugCount": 0
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:50.365671+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts/19",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 404,
+        "response": {
+          "code": 404,
+          "message": "接口不存在",
+          "data": null
+        }
+      },
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:05:51.155380+08:00",
+        "sql": "UPDATE treehole_post SET expires_at='2000-01-01' WHERE id=19",
+        "output": ""
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:51.155407+08:00",
+        "method": "GET",
+        "path": "/api/treehole/posts/19",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 404,
+        "response": {
+          "code": 404,
+          "message": "接口不存在",
+          "data": null
+        }
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "W4-GATEWAY-TRACE",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "method": "GET",
+        "route": "/",
+        "http_status": 200,
+        "elapsed_ms": 4.68
+      },
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 5.46,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      },
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 200,
+        "elapsed_ms": 5.29,
+        "response_keys": [
+          "hits",
+          "normalized",
+          "passed"
+        ],
+        "passed": true,
+        "hit_levels": []
+      },
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 422,
+        "elapsed_ms": 5.26,
+        "response_keys": [
+          "detail"
+        ]
+      },
+      {
+        "method": "GET",
+        "route": "/api/emotions/checkins",
+        "http_status": 200,
+        "elapsed_ms": 74.54,
+        "response_keys": [
+          "items",
+          "streakDays",
+          "total"
+        ],
+        "total": 12,
+        "streakDays": 1
+      },
+      {
+        "method": "GET",
+        "route": "/internal/health",
+        "http_status": 404,
+        "elapsed_ms": 4.1
+      },
+      {
+        "method": "POST",
+        "route": "/api/moderation/check",
+        "http_status": 413,
+        "elapsed_ms": 4.71
+      }
+    ],
+    "started_at": "2026-11-18T17:05:54.613712+08:00",
+    "finished_at": "2026-11-18T17:05:54.719976+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:54.613762+08:00",
+        "method": "GET",
+        "path": "/",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": null
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:54.618820+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "傻 逼"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": false,
+          "normalized": "傻逼",
+          "hits": [
+            {
+              "word": "傻逼",
+              "level": "HIGH"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:54.624587+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "一起去图书馆"
+        },
+        "http_status": 200,
+        "response": {
+          "passed": true,
+          "normalized": "一起去图书馆",
+          "hits": []
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:54.630181+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": " "
+        },
+        "http_status": 422,
+        "response": {
+          "detail": "Invalid request"
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:54.635651+08:00",
+        "method": "GET",
+        "path": "/api/emotions/checkins",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 200,
+        "response": {
+          "streakDays": 1,
+          "total": 12,
+          "items": [
+            {
+              "id": 11,
+              "emotion": "HAPPY",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2026-11-18",
+              "streakDays": 1,
+              "createdAt": null
+            },
+            {
+              "id": 1,
+              "emotion": "HAPPY",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-14",
+              "streakDays": 1,
+              "createdAt": null
+            },
+            {
+              "id": 2,
+              "emotion": "CALM",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-15",
+              "streakDays": 2,
+              "createdAt": null
+            },
+            {
+              "id": 3,
+              "emotion": "ANXIOUS",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-16",
+              "streakDays": 3,
+              "createdAt": null
+            },
+            {
+              "id": 4,
+              "emotion": "LONELY",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-17",
+              "streakDays": 4,
+              "createdAt": null
+            },
+            {
+              "id": 5,
+              "emotion": "IRRITABLE",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-18",
+              "streakDays": 5,
+              "createdAt": null
+            },
+            {
+              "id": 6,
+              "emotion": "DOWN",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-19",
+              "streakDays": 6,
+              "createdAt": null
+            },
+            {
+              "id": 7,
+              "emotion": "HAPPY",
+              "intensity": 1,
+              "note": null,
+              "checkinDate": "2031-01-20",
+              "streakDays": 7,
+              "createdAt": null
+            },
+            {
+              "id": 8,
+              "emotion": "HAPPY",
+              "intensity": 5,
+              "note": null,
+              "checkinDate": "2031-01-21",
+              "streakDays": 8,
+              "createdAt": null
+            },
+            {
+              "id": 9,
+              "emotion": "HAPPY",
+              "intensity": 3,
+              "note": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好",
+              "checkinDate": "2031-01-26",
+              "streakDays": 1,
+              "createdAt": null
+            },
+            {
+              "id": 10,
+              "emotion": "HAPPY",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2031-01-28",
+              "streakDays": 1,
+              "createdAt": null
+            },
+            {
+              "id": 12,
+              "emotion": "CALM",
+              "intensity": 3,
+              "note": null,
+              "checkinDate": "2032-01-01",
+              "streakDays": 1,
+              "createdAt": null
+            }
+          ]
+        }
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:54.710583+08:00",
+        "method": "GET",
+        "path": "/internal/health",
+        "query": {},
+        "authenticated": true,
+        "input": null,
+        "http_status": 404,
+        "response": null
+      },
+      {
+        "kind": "http",
+        "time": "2026-11-18T17:05:54.714906+08:00",
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "query": {},
+        "authenticated": true,
+        "input": {
+          "text": "好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好"
+        },
+        "http_status": 413,
+        "response": null
+      }
+    ],
+    "executed": true
+  },
+  {
+    "case_id": "W4-IDENTITY-SPLIT",
+    "status": "PASS",
+    "reason": null,
+    "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+    "observations": [
+      {
+        "security_checks": 20,
+        "all_passed": true,
+        "anonymous_mapping_private": true
+      }
+    ],
+    "started_at": "2026-11-18T17:07:05.365988+08:00",
+    "finished_at": "2026-11-18T17:07:06.218429+08:00",
+    "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+    "execution_trace": [
+      {
+        "kind": "mysql",
+        "time": "2026-11-18T17:07:06.218347+08:00",
+        "sql": "SELECT TABLE_NAME,COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME IN ('users','auth','treehole_post','treehole_identity','treehole_public') ORDER BY TABLE_NAME,ORDINAL_POSITION",
+        "output": "auth\tid\nauth\tuser_id\nauth\topenid\nauth\tstudent_no\nauth\tphone\nauth\tcreated_at\ntreehole_identity\tpost_id\ntreehole_identity\tuser_id\ntreehole_identity\tcreated_at\ntreehole_post\tid\ntreehole_post\tanonymous_id\ntreehole_post\tcontent\ntreehole_post\temotion_tag\ntreehole_post\tanonymous\ntreehole_post\tis_burn_after_read\ntreehole_post\tstatus\ntreehole_post\tcreated_at\ntreehole_post\texpires_at\ntreehole_post\tdeleted\ntreehole_public\tid\ntreehole_public\tanonymous_id\ntreehole_public\tcontent\ntreehole_public\temotion_tag\ntreehole_public\tcreated_at\ntreehole_public\texpires_at\nusers\tid\nusers\tnickname\nusers\tavatar\nusers\tcreated_at\nusers\tupdated_at\nusers\tdeleted"
+      }
+    ],
+    "executed": true
+  }
+]
