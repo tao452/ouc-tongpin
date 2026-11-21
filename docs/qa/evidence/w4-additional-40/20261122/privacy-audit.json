@@ -1,0 +1,118 @@
+{
+  "checked_at_utc": "2026-11-21T17:05:19.654985+00:00",
+  "scope": "all PR files staged against develop99712e4; text, SQL, HTTP, JSON, scripts and document content",
+  "actual_runtime_credential_matches": 0,
+  "jwt_literal_matches": 0,
+  "phone_literal_matches": 0,
+  "private_key_literal_matches": 0,
+  "data_provenance": "synthetic users and test fixtures only; real student data not used",
+  "review_note": "Pattern checks and structured/source review; PNGs separately visually reviewed in file-review.json where present",
+  "files": [
+    {
+      "path": "docs/qa/W4-新增40条测试用例设计.md",
+      "sha256": "d4ce097feb64e2799573b5352aee257ee9f5585c5fb15a32b13ae57e3f03af6c",
+      "bytes": 63740
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/cleanup.json",
+      "sha256": "3f086e90207e2712038b1c7e3e0e7971aef8cf85848c8ca70a0d97811fb6eaf6",
+      "bytes": 283
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/design-validation.json",
+      "sha256": "624474f95b18653599c1f32128b95199010415573f8b259283fd8289eaf7a8c1",
+      "bytes": 498
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/environment.json",
+      "sha256": "4920c68e13827000c4209b8cde7f09d74a0764c7949133e6a2002892c876fc8e",
+      "bytes": 3201
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/results.json",
+      "sha256": "7998f70b9dc79e0e55155c9492aa1f9b66e3228ff9c9385f1c5cb9943acc63cd",
+      "bytes": 551888
+    },
+    {
+      "path": "docs/qa/w4-additional-40-test-cases.json",
+      "sha256": "582ee735a757027fe01c7ab90159e293155f43aa7ada268823d4fc3dbe8ce998",
+      "bytes": 116495
+    },
+    {
+      "path": "docs/qa/w4-additional-40/automation-plan.md",
+      "sha256": "6906d39282490fa1bcd09f110677245c49b199db707badd069705d74bc122ff2",
+      "bytes": 8617
+    },
+    {
+      "path": "docs/qa/w4-additional-40/baseline-manifest.json",
+      "sha256": "edc187c8d80172eada5e904fcb9349648a32290867a5db0edc8d7a43bdc7ad62",
+      "bytes": 7379
+    },
+    {
+      "path": "docs/qa/w4-additional-40/design-20261118.snapshot.json",
+      "sha256": "90fb41e92138cdb35b02a928d23373d78882baad6024fc999c70d62f3baba942",
+      "bytes": 104763
+    },
+    {
+      "path": "docs/qa/w4-additional-40/pr-description.md",
+      "sha256": "921af16c9348917dbcc6756d2ba4eaa9d67392a1d87b4a55a964af20b1f18b0b",
+      "bytes": 847
+    },
+    {
+      "path": "docs/qa/w4-additional-40/validate_design.py",
+      "sha256": "75534db5b47f2f3a171505ac26acc6f94ba3c279c78afabf3ea4f26bcd78d386",
+      "bytes": 6997
+    },
+    {
+      "path": "docs/qa/w4-additional-40/validate_execution.py",
+      "sha256": "da96b28d8d72685480f52743102b7f520996a43c843c5c154f9c807f346d0705",
+      "bytes": 4278
+    },
+    {
+      "path": "docs/qa/w4-additional-40/validation.json",
+      "sha256": "9806c13b4b209a7cf7a054747572244003e6f934c1cb8dc856a4e68ca9769a05",
+      "bytes": 1375
+    },
+    {
+      "path": "docs/qa/w4-additional-40/执行报告-20261122.md",
+      "sha256": "f7f7ee038b8fbcaec4b1771825e54d53c5e5727be9d2881e0a9fe4633037bbf5",
+      "bytes": 4640
+    },
+    {
+      "path": "scripts/qa/w4_new40/assemble.py",
+      "sha256": "8d979e0910ca97be4e08082d668cc1af04d0b3a78d392b708b200516fc11a0fa",
+      "bytes": 4957
+    },
+    {
+      "path": "scripts/qa/w4_new40/common.py",
+      "sha256": "684081232561226af65dfd49c60ce7146469dd5efc7ebfd7d2cd159332bc51ca",
+      "bytes": 9785
+    },
+    {
+      "path": "scripts/qa/w4_new40/http_cases.py",
+      "sha256": "89ec87fb13e38a6b3ede3a2e48de221d30036624ee82fdc0bce4cc9885ab55f8",
+      "bytes": 17959
+    },
+    {
+      "path": "scripts/qa/w4_new40/moderation_cases.py",
+      "sha256": "acf5bd29b9d2e01e88f8be250b153b52dd80bb4698f2e990576bf5bc20156323",
+      "bytes": 7018
+    },
+    {
+      "path": "scripts/qa/w4_new40/run_http.py",
+      "sha256": "f2aa70fc98b3f17af9ef6434de7cf95579c73785019a6c6cf23bb86002f6b4ed",
+      "bytes": 1274
+    },
+    {
+      "path": "scripts/qa/w4_new40/run_owned.py",
+      "sha256": "d335cc85713a8eb9fdcfd8d633b688da9fe155776501678db6554309b9e57e76",
+      "bytes": 5677
+    },
+    {
+      "path": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java",
+      "sha256": "566633482d1650b5497c144bc844bc568036c257622f70bb4dbfb506e6eb38a4",
+      "bytes": 16674
+    }
+  ],
+  "hash_note": "Git index bytes; this audit report excluded from its own hashes"
+}

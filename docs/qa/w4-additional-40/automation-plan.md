@@ -1,6 +1,6 @@
 # 新增 40 条自动化落地方案
 
-本次交付为测试设计。JSON 是结构化目录，Markdown 是逐条阅读版；所有 `proposed_test_file` 都是拟新增位置，当前没有实现或执行这些脚本。40 条状态均为 NOT_RUN，38 条 READY_TO_IMPLEMENT，2 条 PENDING_RULE。
+2026-11-22 已落地并执行38条，结果38 PASS；S1-113/114等待业务和接口口径确认，保持NOT_RUN。JSON是设计与执行索引，Markdown为逐条阅读版，`implementation_file`指向实际脚本。原始设计保存在`design-20261118.snapshot.json`，原静态检查结果保持不变。实际结果见[执行报告](执行报告-20261122.md)。
 
 ## 分组与执行层次
 
@@ -51,18 +51,24 @@
 
 baseline-manifest.json 保存原 80 条、既有证据和设计依据的 Git blob SHA-256，以及旧 W4 报告提交/目录 tree。设计分支从 develop 独立建立，通过不可变链接关联 PR #91，不把另一份报告重复混入本 PR。
 
-## 实施顺序与未来运行记录
+## 实现与运行记录
 
-先实现公共隔离检查、签名器、限定 SQL/Redis 快照和脱敏报告器，再依次落地 JWT → 并发 → 焚毁 → 已定搭子边界 → 豁免；113/114 规则确认后再加入执行集。优先级以每条 P0/P1 为准。
+公共隔离检查、签名器、限定SQL/Redis快照及脱敏报告器位于`scripts/qa/w4_new40/`；深度事务和故障测试位于`W4DatabaseCasesTest.java`。113/114规则确认后再加入执行集。
 
 未来输出使用新的 `docs/qa/evidence/w4-additional-40/<RUN_ID>/` 或私有 artifact 目录，至少包括 case_id、source_commit、开始/结束时间、实际输入/步骤、HTTP/方法返回、限定 DB/Redis 前后证据、PASS/FAIL/BLOCKED 和原因。旧 80 条与本 40 条统计分开，再按编号构成 120 条总览；不得覆盖 11 月 9 日或 W4 复测记录。
 
-本次唯一可运行的校验命令为：
+完整执行入口会创建独立Compose项目和随机凭据，从源码构建服务，在空库执行HTTP及Java测试后仅回收本项目资源。需安装Python、JDK17/Maven及Docker Compose，使用干净checkout和空闲端口：
+
+```sh
+python scripts/qa/w4_new40/run_owned.py --project ouc-w4-new40-local --output qa-private/w4-new40/results.json
+```
+
+设计/执行索引的一致性检查命令为：
 
 ```powershell
 python -X utf8 docs/qa/w4-additional-40/validate_design.py
 ```
 
-该命令只检查设计数量、字段、编号、交叉引用、JSON/Markdown一致性和原文件未变，不启动服务、不发业务请求、不生成业务执行 PASS。
+该校验只检查设计字段、JSON/Markdown/实际结果一致性、证据齐全及历史文件未变，不发业务请求、不生成业务执行PASS。38条业务结果来自本次专用环境实际运行，与静态检查分开记录。
 
 校验需要本地已有基线 `7c67518fc91583a3983ea265b85f6d2a54d12eab` 和旧报告 `0843ae851af8221272fdd101052b6c49d66ab007` 的 Git 对象。本次完整仓库已有；若在浅克隆或单分支克隆运行，先用 `git fetch origin <基线SHA> <旧报告SHA>` 补齐。校验脚本不会自动连接远端或修改分支。

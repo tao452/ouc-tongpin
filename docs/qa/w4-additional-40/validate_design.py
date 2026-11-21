@@ -29,6 +29,9 @@ def read_blobs(ref,paths):
     return result
 
 def main():
+    if read(CATALOGUE)['artifact_type'] != 'TEST_DESIGN_ONLY':
+        from validate_execution import main as validate_execution
+        return validate_execution()
     document=read(CATALOGUE); cases=document['cases']; manifest=read(HERE/'baseline-manifest.json')
     base=document['source_commit']
     assert document['artifact_type']=='TEST_DESIGN_ONLY'
