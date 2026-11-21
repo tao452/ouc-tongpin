@@ -17,6 +17,7 @@ def main():
  p.add_argument('--project',required=True);p.add_argument('--base-url',required=True)
  p.add_argument('--env-file',required=True);p.add_argument('--output',type=Path,required=True)
  a=p.parse_args();assert a.project.startswith('ouc-w4-')
+ assert not subprocess.check_output(['git','diff','99712e400ed725060ef8e0b3c44d699c5d1c14f2','--','apps','services','infra','packages'],cwd=ROOT),'Application source differs from the tested base'
  stack=Stack();stack.command=('docker','compose','--project-name',a.project,'--env-file',a.env_file,'-f','infra/docker-compose.yml')
  ps=stack.execute('ps','--format','json');assert a.project in ps
  assert all(stack.count(t)==0 for t in ['users','auth','checkin','treehole_post','treehole_archive','buddy_demand'])

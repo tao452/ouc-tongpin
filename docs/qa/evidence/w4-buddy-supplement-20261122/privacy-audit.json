@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-21T16:54:23.419115+00:00",
+  "checked_at_utc": "2026-11-21T16:55:11.226729+00:00",
   "source_application_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
   "sanitize_script_sha256": "a542d67c3a10610df9588777f0a27c1bcca084177f453ce8c4f6a3243ce2fb54",
   "existing_sanitizer_executed": true,
@@ -36,6 +36,8 @@
       "real_person": false
     }
   ],
+  "audit_report_self_reviewed": true,
+  "hash_note": "Audit report itself excluded to avoid recursive hash dependency; evidence text normalized to LF",
   "review_limit": "Pattern scan plus JSON field and synthetic-origin inspection; no real student accounts used",
   "files": [
     {
@@ -208,21 +210,15 @@
     },
     {
       "path": "docs/qa/evidence/w4-buddy-supplement-20261122/image-provenance.json",
-      "sha256": "2a3699b783a95dbed1bb8607de648465538a66749c33d701a920cf9148613bae",
+      "sha256": "a1c5817be8c9d282b9d64907b8f63bfdcf984e544a7f30a09350b89a641849a9",
       "reviewed": true,
-      "bytes": 416
-    },
-    {
-      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/privacy-audit.json",
-      "sha256": "4751fe89727e98ff73105a0dbe5857933a816909d3fd5a332fd0887a43518893",
-      "reviewed": true,
-      "bytes": 7204
+      "bytes": 408
     },
     {
       "path": "docs/qa/evidence/w4-buddy-supplement-20261122/reproduce.py",
-      "sha256": "622dfaa155713073901c07e949bc3df15204016c96f20e49e8f5ba55b9cacec0",
+      "sha256": "807425259c1438c87b4dc3a580b0246a4e3d040c41094d8930b32d8a7d05fefd",
       "reviewed": true,
-      "bytes": 1833
+      "bytes": 2029
     },
     {
       "path": "docs/qa/evidence/w4-buddy-supplement-20261122/test-report.md",
