@@ -82,7 +82,7 @@ def assemble(http, retest, junit, events, output, first_attempt=None):
     sources = [
         *Path(__file__).parent.glob("*.py"),
         ROOT / "services/api-server/src/test/java/"
-        "com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java",
+        "com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java",
     ]
     report = {
         "source_commit": BASE_COMMIT,

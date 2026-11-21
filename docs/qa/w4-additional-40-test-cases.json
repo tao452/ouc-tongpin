@@ -493,7 +493,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-072",
@@ -515,7 +515,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:50:52.585509Z",
+      "executed_at": "2026-11-21T17:14:28.746175Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-085",
         "status": "PASS",
@@ -639,7 +639,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-076"
@@ -661,7 +661,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:50:56.959528200Z",
+      "executed_at": "2026-11-21T17:14:31.538595300Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-087",
         "status": "PASS",
@@ -1506,7 +1506,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-027"
@@ -1528,7 +1528,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:50:57.773464100Z",
+      "executed_at": "2026-11-21T17:14:32.128448700Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-098",
         "status": "PASS",
@@ -1654,7 +1654,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-044",
@@ -1676,7 +1676,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:50:58.867295600Z",
+      "executed_at": "2026-11-21T17:14:33.322628800Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-100",
         "status": "PASS",
@@ -1729,7 +1729,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-033",
@@ -1754,7 +1754,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:50:59.511850900Z",
+      "executed_at": "2026-11-21T17:14:33.876604300Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-101",
         "status": "PASS",
@@ -1804,7 +1804,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-046"
@@ -1826,7 +1826,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:51:00.256724600Z",
+      "executed_at": "2026-11-21T17:14:34.615056400Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-102",
         "status": "PASS",
@@ -1876,7 +1876,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-046",
@@ -1900,7 +1900,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:51:01.069058800Z",
+      "executed_at": "2026-11-21T17:14:35.337598500Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-103",
         "status": "PASS",
@@ -1948,7 +1948,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-046"
@@ -1970,7 +1970,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:51:01.374100600Z",
+      "executed_at": "2026-11-21T17:14:35.601988600Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-104",
         "status": "PASS",
@@ -2024,7 +2024,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-046",
@@ -2047,7 +2047,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:51:01.612822700Z",
+      "executed_at": "2026-11-21T17:14:35.823208400Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-105",
         "status": "PASS",
@@ -2099,7 +2099,7 @@
           "redis"
         ],
         "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
-        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java"
       },
       "related_original_ids": [
         "S1-046"
@@ -2120,7 +2120,7 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:51:02.035555400Z",
+      "executed_at": "2026-11-21T17:14:36.179405900Z",
       "actual_result": {
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-106",
         "status": "PASS",

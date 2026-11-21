@@ -53,7 +53,7 @@ baseline-manifest.json 保存原 80 条、既有证据和设计依据的 Git blo
 
 ## 实现与运行记录
 
-公共隔离检查、签名器、限定SQL/Redis快照及脱敏报告器位于`scripts/qa/w4_new40/`；深度事务和故障测试位于`W4DatabaseCasesTest.java`。113/114规则确认后再加入执行集。
+公共隔离检查、签名器、限定SQL/Redis快照及脱敏报告器位于`scripts/qa/w4_new40/`；深度事务和故障测试位于`W4DatabaseCasesIT.java`。113/114规则确认后再加入执行集。
 
 未来输出使用新的 `docs/qa/evidence/w4-additional-40/<RUN_ID>/` 或私有 artifact 目录，至少包括 case_id、source_commit、开始/结束时间、实际输入/步骤、HTTP/方法返回、限定 DB/Redis 前后证据、PASS/FAIL/BLOCKED 和原因。旧 80 条与本 40 条统计分开，再按编号构成 120 条总览；不得覆盖 11 月 9 日或 W4 复测记录。
 
