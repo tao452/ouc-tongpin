@@ -1,0 +1,120 @@
+{
+  "checked_at_utc": "2026-11-21T17:06:15.208479+00:00",
+  "scope": "all submitted PR files against merge-base; text, SQL, HTTP, JSON, scripts and document content",
+  "develop_reference": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+  "merge_base": "31114dc2575ca36e76bb7d756984827b3aae873d",
+  "actual_runtime_credential_matches": 0,
+  "jwt_literal_matches": 0,
+  "phone_literal_matches": 0,
+  "private_key_literal_matches": 0,
+  "data_provenance": "synthetic users and test fixtures only; real student data not used",
+  "review_note": "Pattern checks and structured/source review; PNGs separately visually reviewed in file-review.json where present",
+  "files": [
+    {
+      "path": "apps/miniprogram/pages/checkin-calendar/checkin-calendar.wxml",
+      "sha256": "75a4643777ed98b5a6bd4535a7f6a1127de6ecda2e80ff7c79283e3e84476c4f",
+      "bytes": 1892
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin-calendar/checkin-calendar.wxss",
+      "sha256": "a64d284726ada7d502a24fbc5858422e59f7e28c21c07bb767855a1d707bf19a",
+      "bytes": 3214
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/form.wxml",
+      "sha256": "02258057a25a53b4445eed51526c8535504813490ca6c14adc2f3a1b410324af",
+      "bytes": 2833
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/form.wxss",
+      "sha256": "c36551a9c35a849987f89e0e149c11f6398b7fd858d89635581a01944b392185",
+      "bytes": 4502
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/index.js",
+      "sha256": "e3d44df98abb97ae61df0c35acd79a69838a70091a19e3295a13cda1d09e1ab6",
+      "bytes": 2164
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/index.wxml",
+      "sha256": "a8b115e75583817e55166b832ddf3d14a81646243334bc08b3f57c3b1508c690",
+      "bytes": 3915
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/index.wxss",
+      "sha256": "65d6ca63e152b3263f2540ff127f13f54ff3392012a747f9c0e20077afb29207",
+      "bytes": 5740
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/result.wxml",
+      "sha256": "8f130341dca6e4ef3d93a302460578bb2605dc59e8c62ff35a45a5b49099a37d",
+      "bytes": 1931
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/result.wxss",
+      "sha256": "1f8b738b1e6a089fdcc9657ae8a2ac52074cfe83714101178ea1e3c991e398d9",
+      "bytes": 2580
+    },
+    {
+      "path": "apps/miniprogram/pages/treehole/index.wxml",
+      "sha256": "5cc150bc1ea9759870d81c993198505a5f731369cdf71d772adf8c100af75206",
+      "bytes": 5714
+    },
+    {
+      "path": "apps/miniprogram/pages/treehole/index.wxss",
+      "sha256": "d216112a2ad407cb2de4ab6a6a1c0be38f9b949e6266b737c8665eea5657e806",
+      "bytes": 7584
+    },
+    {
+      "path": "design/review_w4/README.md",
+      "sha256": "b5912fd31bd1213b62ec0a992ce175544ef6f59274ca8962a3aa13cc5c7f9d0b",
+      "bytes": 1138
+    },
+    {
+      "path": "design/review_w4/我的 情绪打卡记录.png",
+      "sha256": "eb0890dbea5af43af6bde3e65aa932e5ac3c45758bd5222fd06c3ea94db79f93",
+      "bytes": 78277
+    },
+    {
+      "path": "design/review_w4/搭子广场.png",
+      "sha256": "565c3abdb4e169291b2ae703ed078dd5eef6a8958475a07ab6ec9b31817f365d",
+      "bytes": 111379
+    },
+    {
+      "path": "design/review_w4/搭子需求发布页面.png",
+      "sha256": "948d4ba2dfa4a1fbcd9910005336b513ebf6cb6931104a27e2d8718c85cc64f0",
+      "bytes": 73735
+    },
+    {
+      "path": "design/review_w4/首页.png",
+      "sha256": "133c08021e0a01e0ebd52488d0d7982d4c3e1b37793ef992e71c6c329adc4716",
+      "bytes": 113191
+    },
+    {
+      "path": "docs/2026-11-20 - W4阶段性走查报告.md",
+      "sha256": "208c1b63cbfd27f7a8959964d4f0bc9162f87a6a6da02877c2136fbd65d10591",
+      "bytes": 19407
+    },
+    {
+      "path": "docs/qa/W4-页面质量复核-20261122.md",
+      "sha256": "69449399b27ef68c03f94a17d75927981319fe526fe1b3bd7ce92a6ef8c5bac2",
+      "bytes": 3887
+    },
+    {
+      "path": "docs/qa/evidence/w4-page-review-20261122/file-review.json",
+      "sha256": "0a491b1c2f49e5fd7d468016787133024aeba99eaeb4d477f6ac554f8b9bf64d",
+      "bytes": 6524
+    },
+    {
+      "path": "docs/qa/evidence/w4-page-review-20261122/probes.json",
+      "sha256": "a77521ea7fd7358987e382fd72297612934068e80fc8827b81bd354bb1061570",
+      "bytes": 2754
+    },
+    {
+      "path": "scripts/qa/w4_page_probes.cjs",
+      "sha256": "2d2b2958b46926ac23bbc2a80fe75246bcff7a8aa1f4bcd57f801ff6cbba1eea",
+      "bytes": 6717
+    }
+  ],
+  "hash_note": "Git index bytes; this audit report excluded from its own hashes"
+}
