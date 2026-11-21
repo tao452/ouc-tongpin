@@ -38,7 +38,7 @@ def java(suite, folder):
                     "mvn.cmd" if os.name == "nt" else "mvn",
                     "-B",
                     "-q",
-                    "-Dtest=W4DatabaseCasesTest",
+                    "-Dtest=W4DatabaseCasesIT",
                     "test",
                 ],
                 cwd=ROOT / "services/api-server",
@@ -155,7 +155,7 @@ def main():
             folder / "http-results.json",
             None,
             ROOT / "services/api-server/target/surefire-reports/"
-            "TEST-com.ouctongpin.apiserver.w4.W4DatabaseCasesTest.xml",
+            "TEST-com.ouctongpin.apiserver.w4.W4DatabaseCasesIT.xml",
             folder / "java-events",
             a.output,
         )

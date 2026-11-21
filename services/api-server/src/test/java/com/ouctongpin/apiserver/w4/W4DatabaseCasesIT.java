@@ -50,11 +50,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 /** Explicit opt-in integration against the newly created W4 MySQL8/Redis stack. */
 @EnabledIfEnvironmentVariable(named="W4_REAL_STACK", matches="true")
-@SpringBootTest(classes=W4DatabaseCasesTest.Config.class, properties={
+@SpringBootTest(classes=W4DatabaseCasesIT.Config.class, properties={
         "spring.main.banner-mode=off", "spring.sql.init.mode=never"})
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.MethodName.class)
-class W4DatabaseCasesTest {
+class W4DatabaseCasesIT {
     @Configuration @EnableAutoConfiguration
     @MapperScan("com.ouctongpin.apiserver.**.mapper")
     @Import({SecurityConfig.class, JwtUtil.class, CheckinService.class, CheckinController.class,

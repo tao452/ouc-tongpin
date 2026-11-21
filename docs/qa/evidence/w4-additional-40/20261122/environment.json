@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-21T17:04:25.047353+00:00",
+  "checked_at_utc": "2026-11-21T17:14:58.233676+00:00",
   "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
   "project": "ouc-w4-new40-20261122",
   "services": [
@@ -36,24 +36,6 @@
   ],
   "images": [
     {
-      "ID": "sha256:1ffddc708330ddacaf9562ee296f28744b4d469f9080a50792ca5484d5682d54",
-      "ContainerName": "ouc-w4-new40-20261122-api-1",
-      "Repository": "ouc-w4-closeout-api",
-      "Tag": "99712e4",
-      "Platform": "linux/amd64",
-      "Size": 169361475,
-      "LastTagTime": "2026-11-21T16:29:51.982671496Z"
-    },
-    {
-      "ID": "sha256:eb203ee1dc505d28395fc6fae5dbe904016be977f6e2c7c1cc562afc862404e5",
-      "ContainerName": "ouc-w4-new40-20261122-algo-1",
-      "Repository": "ouc-w4-20261118-7c67518-algo",
-      "Tag": "latest",
-      "Platform": "linux/amd64",
-      "Size": 56721822,
-      "LastTagTime": "2026-11-18T08:56:58.525477675Z"
-    },
-    {
       "ID": "sha256:1a4a5a6298233298ef47cda751d0abd3479b79b7b149ec7fd96490bf72e04eea",
       "ContainerName": "ouc-w4-new40-20261122-web-1",
       "Repository": "ouc-w4-20261118-7c67518-web",
@@ -79,6 +61,24 @@
       "Platform": "linux/amd64",
       "Size": 16432706,
       "LastTagTime": "2026-11-18T09:01:49.361006683Z"
+    },
+    {
+      "ID": "sha256:1ffddc708330ddacaf9562ee296f28744b4d469f9080a50792ca5484d5682d54",
+      "ContainerName": "ouc-w4-new40-20261122-api-1",
+      "Repository": "ouc-w4-closeout-api",
+      "Tag": "99712e4",
+      "Platform": "linux/amd64",
+      "Size": 169361475,
+      "LastTagTime": "2026-11-21T16:29:51.982671496Z"
+    },
+    {
+      "ID": "sha256:eb203ee1dc505d28395fc6fae5dbe904016be977f6e2c7c1cc562afc862404e5",
+      "ContainerName": "ouc-w4-new40-20261122-algo-1",
+      "Repository": "ouc-w4-20261118-7c67518-algo",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 56721822,
+      "LastTagTime": "2026-11-18T08:56:58.525477675Z"
     }
   ],
   "volume": {
