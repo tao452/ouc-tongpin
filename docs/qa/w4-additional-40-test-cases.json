@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "artifact_type": "TEST_DESIGN_ONLY",
+  "artifact_type": "TEST_DESIGN_AND_EXECUTION_INDEX",
   "designed_on": "2026-11-18",
   "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
   "original_catalogue": "docs/qa/s1-test-cases.json",
@@ -8,16 +8,16 @@
   "prior_regression_url": "https://github.com/tao452/ouc-tongpin/tree/0843ae851af8221272fdd101052b6c49d66ab007/docs/qa/evidence/w4-regression-80",
   "case_count": 40,
   "status_counts": {
-    "NOT_RUN": 40,
-    "PASS": 0,
+    "PASS": 38,
     "FAIL": 0,
-    "BLOCKED": 0
+    "BLOCKED": 0,
+    "NOT_RUN": 2
   },
   "readiness_counts": {
-    "READY_TO_IMPLEMENT": 38,
+    "IMPLEMENTED_AND_EXECUTED": 38,
     "PENDING_RULE": 2
   },
-  "not_executed_reason": "本次仅设计用例与静态文档校验，未启动服务、发送业务请求或写数据库；自动化方案尚待实现。",
+  "not_executed_reason": "S1-113/114等待M1/M5确认；其余38条已实际执行。",
   "groups": {
     "jwt_identity": {
       "name": "JWT与身份隔离",
@@ -172,7 +172,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_081",
@@ -183,7 +183,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-076"
@@ -197,16 +198,20 @@
         "security"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:27.337314+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-081",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-082",
@@ -246,7 +251,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_082",
@@ -257,7 +262,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-076"
@@ -271,16 +277,20 @@
         "filter"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:29.452934+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-082",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-083",
@@ -317,7 +327,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_083",
@@ -328,7 +338,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-076"
@@ -342,16 +353,20 @@
         "filter"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:31.184339+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-083",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-084",
@@ -392,7 +407,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_084",
@@ -403,7 +418,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-076"
@@ -417,16 +433,20 @@
         "filter"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:32.983576+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-084",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-085",
@@ -461,7 +481,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_UNIT",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4JwtEdgeTest.java",
         "proposed_test_name": "test_S1_085",
@@ -472,7 +492,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-072",
@@ -486,16 +507,20 @@
         "jwt"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:50:52.585509Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-085",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-086",
@@ -528,7 +553,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_086",
@@ -539,7 +564,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-076"
@@ -552,16 +578,20 @@
         "filter"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:35.552644+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-086",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-087",
@@ -597,7 +627,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_FILTER_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4AuthFaultTest.java",
         "proposed_test_name": "test_S1_087",
@@ -608,7 +638,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-076"
@@ -622,16 +653,20 @@
         "security"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:50:56.959528200Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-087",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-088",
@@ -669,7 +704,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_088",
@@ -680,7 +715,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-076"
@@ -694,16 +730,20 @@
         "filter"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:38.955491+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-088",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-089",
@@ -739,7 +779,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_089",
@@ -750,7 +790,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-076"
@@ -764,16 +805,20 @@
         "filter"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:40.854038+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-089",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-090",
@@ -813,7 +858,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_jwt_identity.py",
         "proposed_test_name": "test_S1_090",
@@ -824,7 +869,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-047",
@@ -840,16 +886,20 @@
         "contract"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:47.420493+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-090",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-091",
@@ -887,7 +937,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_checkin_concurrency.py",
         "proposed_test_name": "test_S1_091",
@@ -898,7 +948,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-027"
@@ -912,16 +963,20 @@
         "contract"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:49.020082+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-091",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-092",
@@ -964,7 +1019,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_checkin_concurrency.py",
         "proposed_test_name": "test_S1_092",
@@ -975,7 +1030,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-027"
@@ -989,16 +1045,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:51.957577+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-092",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-093",
@@ -1037,7 +1097,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_checkin_concurrency.py",
         "proposed_test_name": "test_S1_093",
@@ -1048,7 +1108,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-027",
@@ -1063,16 +1124,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:53.044453+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-093",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-094",
@@ -1111,7 +1176,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_checkin_concurrency.py",
         "proposed_test_name": "test_S1_094",
@@ -1122,7 +1187,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-027",
@@ -1138,16 +1204,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:54.982075+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-094",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-095",
@@ -1194,7 +1264,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_checkin_concurrency.py",
         "proposed_test_name": "test_S1_095",
@@ -1205,7 +1275,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-021",
@@ -1221,16 +1292,20 @@
         "contract"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:55.944184+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-095",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-096",
@@ -1267,7 +1342,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_checkin_concurrency.py",
         "proposed_test_name": "test_S1_096",
@@ -1278,7 +1353,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-027"
@@ -1292,16 +1368,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:38:59.578761+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-096",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-097",
@@ -1335,7 +1415,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_checkin_concurrency.py",
         "proposed_test_name": "test_S1_097",
@@ -1346,7 +1426,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-005",
@@ -1363,16 +1444,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:05.175046+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-097",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-098",
@@ -1409,7 +1494,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4CheckinRaceTest.java",
         "proposed_test_name": "test_S1_098",
@@ -1420,7 +1505,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-027"
@@ -1434,16 +1520,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:50:57.773464100Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-098",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-099",
@@ -1476,7 +1566,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_099",
@@ -1487,7 +1577,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-031",
@@ -1503,16 +1594,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:06.729126+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-099",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-100",
@@ -1547,7 +1642,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_REDIS_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_100",
@@ -1558,7 +1653,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-044",
@@ -1572,16 +1668,20 @@
         "treehole"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:50:58.867295600Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-100",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-101",
@@ -1617,7 +1717,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_REDIS_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_101",
@@ -1628,7 +1728,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-033",
@@ -1645,16 +1746,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:50:59.511850900Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-101",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-102",
@@ -1687,7 +1792,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_REDIS_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_102",
@@ -1698,7 +1803,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-046"
@@ -1712,16 +1818,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:51:00.256724600Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-102",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-103",
@@ -1754,7 +1864,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_REDIS_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_103",
@@ -1765,7 +1875,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-046",
@@ -1781,16 +1892,20 @@
         "burn_tests"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:51:01.069058800Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-103",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-104",
@@ -1821,7 +1936,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_REDIS_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_104",
@@ -1832,7 +1947,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-046"
@@ -1846,16 +1962,20 @@
         "burn_tests"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:51:01.374100600Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-104",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-105",
@@ -1892,7 +2012,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_REDIS_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_105",
@@ -1903,7 +2023,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-046",
@@ -1918,16 +2039,20 @@
         "burn_tests"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:51:01.612822700Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-105",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-106",
@@ -1962,7 +2087,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "JAVA_MYSQL_REDIS_INTEGRATION",
         "proposed_test_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4BurnIntegrationTest.java",
         "proposed_test_name": "test_S1_106",
@@ -1973,7 +2098,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesTest.java"
       },
       "related_original_ids": [
         "S1-046"
@@ -1986,16 +2112,20 @@
         "burn"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:51:02.035555400Z",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-106",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-107",
@@ -2035,7 +2165,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_107",
@@ -2046,7 +2176,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-047",
@@ -2061,16 +2192,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:10.475224+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-107",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-108",
@@ -2104,7 +2239,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_108",
@@ -2115,7 +2250,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-050"
@@ -2129,16 +2265,20 @@
         "schema"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:14.592061+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-108",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-109",
@@ -2185,7 +2325,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_109",
@@ -2196,7 +2336,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-050"
@@ -2210,16 +2351,20 @@
         "contract"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:20.705592+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-109",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-110",
@@ -2254,7 +2399,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_110",
@@ -2265,7 +2410,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-047",
@@ -2280,16 +2426,20 @@
         "contract"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:25.121872+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-110",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-111",
@@ -2323,7 +2473,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_111",
@@ -2334,7 +2484,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-049"
@@ -2348,16 +2499,20 @@
         "contract"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:28.204383+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-111",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-112",
@@ -2402,7 +2557,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_112",
@@ -2413,7 +2568,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/http_cases.py"
       },
       "related_original_ids": [
         "S1-047",
@@ -2429,16 +2585,20 @@
         "buddy_service"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:34.743868+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-112",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-113",
@@ -2664,7 +2824,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_ALGO_HTTP",
         "proposed_test_file": "scripts/qa/w4_new40/test_allow_phrases.py",
         "proposed_test_name": "test_S1_115",
@@ -2675,7 +2835,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/moderation_cases.py"
       },
       "related_original_ids": [
         "S1-060",
@@ -2690,16 +2851,20 @@
         "words"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:35.504347+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-115",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-116",
@@ -2743,7 +2908,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_ALGO_HTTP",
         "proposed_test_file": "scripts/qa/w4_new40/test_allow_phrases.py",
         "proposed_test_name": "test_S1_116",
@@ -2754,7 +2919,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/moderation_cases.py"
       },
       "related_original_ids": [
         "S1-056",
@@ -2769,16 +2935,20 @@
         "moderation_tests"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:35.562949+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-116",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-117",
@@ -2821,7 +2991,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_ALGO_HTTP",
         "proposed_test_file": "scripts/qa/w4_new40/test_allow_phrases.py",
         "proposed_test_name": "test_S1_117",
@@ -2832,7 +3002,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/moderation_cases.py"
       },
       "related_original_ids": [
         "S1-057"
@@ -2847,16 +3018,20 @@
         "moderation_tests"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:41:44.526324+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-117",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-118",
@@ -2892,7 +3067,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_allow_phrases.py",
         "proposed_test_name": "test_S1_118",
@@ -2903,7 +3078,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/moderation_cases.py"
       },
       "related_original_ids": [
         "S1-034",
@@ -2921,16 +3097,20 @@
         "contract"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:48.260655+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-118",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-119",
@@ -2969,7 +3149,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "REAL_ALGO_HTTP",
         "proposed_test_file": "scripts/qa/w4_new40/test_allow_phrases.py",
         "proposed_test_name": "test_S1_119",
@@ -2980,7 +3160,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/moderation_cases.py"
       },
       "related_original_ids": [
         "S1-062"
@@ -2995,16 +3176,20 @@
         "words"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:39:48.324796+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-119",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     },
     {
       "id": "S1-120",
@@ -3044,7 +3229,7 @@
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AND_EXECUTED",
         "level": "ALGO_STARTUP_AND_HTTP",
         "proposed_test_file": "scripts/qa/w4_new40/test_allow_phrases.py",
         "proposed_test_name": "test_S1_120",
@@ -3055,7 +3240,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/moderation_cases.py"
       },
       "related_original_ids": [
         "S1-056",
@@ -3071,16 +3257,23 @@
         "moderation_tests"
       ],
       "readiness": {
-        "state": "READY_TO_IMPLEMENT",
+        "state": "IMPLEMENTED_AND_EXECUTED",
         "decision": null,
         "owners": [
           "M6"
         ]
       },
-      "status": "NOT_RUN",
-      "executed": false,
-      "executed_at": null,
-      "actual_result": null
+      "status": "PASS",
+      "executed": true,
+      "executed_at": "2026-11-21T16:42:00.452615+00:00",
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-120",
+        "status": "PASS",
+        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+      }
     }
-  ]
+  ],
+  "execution_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+  "execution_results": "docs/qa/evidence/w4-additional-40/20261122/results.json",
+  "design_commit": "c71b125a790e4787939bae644a666fbf6ce8426d"
 }
