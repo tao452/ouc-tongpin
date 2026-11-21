@@ -1,0 +1,234 @@
+{
+  "checked_at_utc": "2026-11-21T16:54:23.419115+00:00",
+  "source_application_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+  "sanitize_script_sha256": "a542d67c3a10610df9588777f0a27c1bcca084177f453ce8c4f6a3243ce2fb54",
+  "existing_sanitizer_executed": true,
+  "execution_location": "private byte-preserving snapshot",
+  "sanitizer_json_semantics_unchanged": true,
+  "historical_catalogue_and_20261109_and_20261118_unchanged": true,
+  "real_name_student_phone_findings": 0,
+  "jwt_literal_findings": 0,
+  "scope": [
+    "all 25 PR91 historical submitted files",
+    "new HTTP requests/responses",
+    "SQL output",
+    "execution metadata",
+    "scripts"
+  ],
+  "screenshots_in_pr91": 0,
+  "synthetic_scanner_examples": [
+    {
+      "file": "assemble.py",
+      "kind": "synthetic_phone_literal_in_scanner_self_check",
+      "count": 1,
+      "real_person": false
+    },
+    {
+      "file": "results.json",
+      "kind": "synthetic_phone_literal_in_scanner_self_check",
+      "count": 1,
+      "real_person": false
+    },
+    {
+      "file": "validate.py",
+      "kind": "synthetic_phone_literal_in_scanner_self_check",
+      "count": 1,
+      "real_person": false
+    }
+  ],
+  "review_limit": "Pattern scan plus JSON field and synthetic-origin inspection; no real student accounts used",
+  "files": [
+    {
+      "path": "docs/qa/evidence/w4-regression-80/api-results.json",
+      "sha256": "af1e7e93703fe481126af7dc504ae6e458b5c7fde77ef9b407f56df2a24b8d2d",
+      "reviewed": true,
+      "bytes": 222258
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/assemble.py",
+      "sha256": "4f5fa72cbcb612e5cd40a95bf46101b49b7415121f28170dbd3894ccf3e07d03",
+      "reviewed": true,
+      "bytes": 19384
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/blocked-items.md",
+      "sha256": "0ac0c92a2c7bbd3229a3002ea6eb3423f8ed5d96e838d34dee00be7a75d5b54e",
+      "reviewed": true,
+      "bytes": 4010
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/cleanup.json",
+      "sha256": "8209f82766073b47a85caac4fa554e31d7ead56068b7a466412923d8c43e2195",
+      "reviewed": true,
+      "bytes": 988
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/comparison.md",
+      "sha256": "736330977dfab658c96cc98ec0c97bfa3661e34914d5fdb172fb5f212b325dd9",
+      "reviewed": true,
+      "bytes": 7057
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/environment-snapshot.json",
+      "sha256": "d030619de7686cfdb6a174f201d66bad98d4e03922d524499df037ab512e54f4",
+      "reviewed": true,
+      "bytes": 3881
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/environment.md",
+      "sha256": "e8ed2945970d8703b8a1abdfea87ff27840b51d5f1ef492ba99e4e63e0cf2d93",
+      "reviewed": true,
+      "bytes": 6399
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/final-state.json",
+      "sha256": "431ec18eb12c59dff5593c2a42a023053277a2116b46a6f317a0f6442777fe8e",
+      "reviewed": true,
+      "bytes": 292
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/github-checks.json",
+      "sha256": "a6e0e61d6dfa37b10327a09495308c68894f01b315f19057d7a13813a3831efc",
+      "reviewed": true,
+      "bytes": 10588
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/initial-state.json",
+      "sha256": "9da6c4735a5b9b76c912909c04b55d80964b004d93e89f7c820e960361456c00",
+      "reviewed": true,
+      "bytes": 2164
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/java-results.json",
+      "sha256": "6ca81083adfe2ff5e5de79b4d5f5f07a53beb77e6b55c006f74a23087764ba47",
+      "reviewed": true,
+      "bytes": 3682
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/java-suites.json",
+      "sha256": "e4d770fc4e9772ececee3a8b1d02b6614954a9a0b0e4c97c7ef3f3f2666355ff",
+      "reviewed": true,
+      "bytes": 6226
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/junit-cases.json",
+      "sha256": "563e99557aa81e0070783ddf066ae5593689398fe1ae9f96d412d983f557df7a",
+      "reviewed": true,
+      "bytes": 40569
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/manifest.json",
+      "sha256": "968d1dde313f06be0970360fadbd138b313c9a168014a44123286cc6d02616e6",
+      "reviewed": true,
+      "bytes": 4200
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/phrase-results.json",
+      "sha256": "69a603060099f0e619e0688d17acdbf4485146734e44e4962412f5b340392b5d",
+      "reviewed": true,
+      "bytes": 5516
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/pr-description.md",
+      "sha256": "2a6151e5b0c4454ec6f1e82b5b0cc28016fb724a509c1f2d4c3bd435179e24db",
+      "reviewed": true,
+      "bytes": 676
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/results.json",
+      "sha256": "6a04c31fcbd57e38554cc8c233417c7634defc084c29e2c748f9a2b1a922a8d2",
+      "reviewed": true,
+      "bytes": 463951
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/run-local.py",
+      "sha256": "0d7dc862d897201e440113637099af192da58849085a39a61c22cc45fe409c0f",
+      "reviewed": true,
+      "bytes": 11865
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/run-phrase-checks.py",
+      "sha256": "660038e0ed1a5bab8afca1b07f63c841dffc36f2d296cc3896f63bed41cbb413",
+      "reviewed": true,
+      "bytes": 2101
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/sanitize-evidence.py",
+      "sha256": "a542d67c3a10610df9588777f0a27c1bcca084177f453ce8c4f6a3243ce2fb54",
+      "reviewed": true,
+      "bytes": 1863
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/security-results.json",
+      "sha256": "02a458eca8d62200cfe8f66ef100137f4bc5a1ecb921ee1d57ead69d1bd94969",
+      "reviewed": true,
+      "bytes": 75349
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/stack-results.json",
+      "sha256": "e7407b59aa43bc64191fc34dd93ec27c85f165f0d6794fb1f620c6b438f4bc43",
+      "reviewed": true,
+      "bytes": 1718
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/test-report.md",
+      "sha256": "12619452134138cc5abb4177a29329f7ac1a31ae164962b986ebd64d6706c233",
+      "reviewed": true,
+      "bytes": 3855
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/validate.py",
+      "sha256": "1237c15701132eac1dfee67ea1bf069c75890360771919761aefb70224648c70",
+      "reviewed": true,
+      "bytes": 5330
+    },
+    {
+      "path": "docs/qa/evidence/w4-regression-80/validation.json",
+      "sha256": "6d6bb3331addaf65c5003b741f17c5f4041a8d3fc6f9c3f17d10ee8f5a350a18",
+      "reviewed": true,
+      "bytes": 536
+    },
+    {
+      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/cleanup.json",
+      "sha256": "f0380ef22c0c86a3c0b73693ee46ba3be13747162a554e074249e070efc851bc",
+      "reviewed": true,
+      "bytes": 175
+    },
+    {
+      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/comparison.json",
+      "sha256": "9df56684d120cba4d693292c4fd97466a3c394bd03d118c012606b2dd32056fa",
+      "reviewed": true,
+      "bytes": 16014
+    },
+    {
+      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "sha256": "689cf8112430dbe2f32a609237786af4ac9292529901f65e0ce0ecdef4870c12",
+      "reviewed": true,
+      "bytes": 18281
+    },
+    {
+      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/image-provenance.json",
+      "sha256": "2a3699b783a95dbed1bb8607de648465538a66749c33d701a920cf9148613bae",
+      "reviewed": true,
+      "bytes": 416
+    },
+    {
+      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/privacy-audit.json",
+      "sha256": "4751fe89727e98ff73105a0dbe5857933a816909d3fd5a332fd0887a43518893",
+      "reviewed": true,
+      "bytes": 7204
+    },
+    {
+      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/reproduce.py",
+      "sha256": "622dfaa155713073901c07e949bc3df15204016c96f20e49e8f5ba55b9cacec0",
+      "reviewed": true,
+      "bytes": 1833
+    },
+    {
+      "path": "docs/qa/evidence/w4-buddy-supplement-20261122/test-report.md",
+      "sha256": "f5fb2b4cbee1d2bfb27666cfe5fe3d8bed04bbb7a6f07e4b340864508895e3ee",
+      "reviewed": true,
+      "bytes": 2975
+    }
+  ]
+}
