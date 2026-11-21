@@ -1,0 +1,100 @@
+{
+  "testedAt": "2026-11-21T16:43:28.953Z",
+  "sourceCommit": "e693a8da31b364248e946ddfa934e290cb33e3ca",
+  "method": "Node VM executing actual page/request code with controlled deferred promises; not WeChat GUI",
+  "guiRecheck": "BLOCKED: developer tool did not expose a targetable window",
+  "issues": [
+    {
+      "id": "RECORD-01",
+      "status": "REPRODUCED",
+      "actual": {
+        "requestsAfterFirstEntry": 2
+      },
+      "owner": "M2"
+    },
+    {
+      "id": "RECORD-02",
+      "status": "REPRODUCED",
+      "actual": {
+        "requestedRange": 30,
+        "displayedRangeAfterOldResponse": 7,
+        "followupUrl": "/api/emotions/checkins?from=2026-11-16&to=2026-11-22"
+      },
+      "owner": "M2"
+    },
+    {
+      "id": "RECORD-03",
+      "status": "REPRODUCED",
+      "actual": {
+        "oldRecordsWhileLoading": 1,
+        "oldTotalWhileLoading": 9
+      },
+      "owner": "M2"
+    },
+    {
+      "id": "RECORD-04",
+      "status": "REPRODUCED",
+      "actual": {
+        "error": true,
+        "remainingOldRecords": 1
+      },
+      "owner": "M2"
+    },
+    {
+      "id": "MINE-06",
+      "status": "REPRODUCED",
+      "actual": {
+        "toastCount": 2,
+        "toastSources": [
+          "request.js",
+          "records.js"
+        ]
+      },
+      "owner": "M2"
+    },
+    {
+      "id": "R-06",
+      "status": "PARTIAL_FEEDBACK",
+      "actual": {
+        "toastCount": 1,
+        "inlineError": false,
+        "postsPreserved": 1,
+        "cursor": "2"
+      },
+      "owner": "M2"
+    },
+    {
+      "id": "PLAZA-01",
+      "status": "PAYLOAD_CHECKED_INTEGRATION_PENDING",
+      "actual": {
+        "route": "/api/match/needs",
+        "time": "2034-01-15T02:00:00.000Z",
+        "requiredFields": [
+          "scene",
+          "time",
+          "location",
+          "skillTags",
+          "remark"
+        ],
+        "backendPositiveControl": "PR91 S1-047 and PR92 HTTP tests; fresh WeChat end-to-end not executed"
+      },
+      "owner": "M3/M4, M5"
+    },
+    {
+      "id": "MINE-05",
+      "status": "LOCAL_CONNECTION_RECHECK_PENDING",
+      "actual": {
+        "configuredBaseURL": "http://127.0.0.1:8080",
+        "ownedStackPort": 18085,
+        "note": "Isolated API positive controls do not verify the configured 8080 frontend environment"
+      },
+      "owner": "M3/M4"
+    }
+  ],
+  "sourceSha256": {
+    "pages/checkin/records.js": "41366108832767d7700dd1d7c6020d0caf5d3a8b2fa3f9b3cfbfc99f5bc5c366",
+    "utils/request.js": "ec08015c40846acc9d8d34b2f2fed02645e225feb8334db8929e1e3d7612b92a",
+    "pages/treehole/index.js": "3bd1d40f59eff70443bd0a6a71f7de08ccd19b135d95c0348eda2a454209fbb1",
+    "pages/plaza/publish/publish.js": "0083ee5cd6cebf1ff8011021fd5f9090463946643164357b2dc290064b981424"
+  }
+}
