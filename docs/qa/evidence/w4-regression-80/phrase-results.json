@@ -1,0 +1,236 @@
+{
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "excluded_from_original_80": true,
+  "results": [
+    {
+      "id": "W4-PHRASE-01",
+      "time": "2026-11-18T17:05:58.832374+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "周末一起去死海旅行"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": true,
+        "hit_levels": []
+      },
+      "http_status": 200,
+      "response": {
+        "passed": true,
+        "normalized": "周末一起去死海旅行",
+        "hits": []
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    },
+    {
+      "id": "W4-PHRASE-02",
+      "time": "2026-11-18T17:05:58.840061+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "学习不要去死记硬背"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": true,
+        "hit_levels": []
+      },
+      "http_status": 200,
+      "response": {
+        "passed": true,
+        "normalized": "学习不要去死记硬背",
+        "hits": []
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    },
+    {
+      "id": "W4-PHRASE-03",
+      "time": "2026-11-18T17:05:58.848051+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "请不要去死胡同"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": true,
+        "hit_levels": []
+      },
+      "http_status": 200,
+      "response": {
+        "passed": true,
+        "normalized": "请不要去死胡同",
+        "hits": []
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    },
+    {
+      "id": "W4-PHRASE-04",
+      "time": "2026-11-18T17:05:58.855448+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "废物利用有利于环保"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": true,
+        "hit_levels": []
+      },
+      "http_status": 200,
+      "response": {
+        "passed": true,
+        "normalized": "废物利用有利于环保",
+        "hits": []
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    },
+    {
+      "id": "W4-PHRASE-05",
+      "time": "2026-11-18T17:05:58.863621+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "废物处理和废物回收"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": true,
+        "hit_levels": []
+      },
+      "http_status": 200,
+      "response": {
+        "passed": true,
+        "normalized": "废物处理和废物回收",
+        "hits": []
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    },
+    {
+      "id": "W4-PHRASE-06",
+      "time": "2026-11-18T17:05:58.872394+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "去死海旅行然后去死"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": false,
+        "hit_levels": [
+          "HIGH"
+        ]
+      },
+      "http_status": 200,
+      "response": {
+        "passed": false,
+        "normalized": "去死海旅行然后去死",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    },
+    {
+      "id": "W4-PHRASE-07",
+      "time": "2026-11-18T17:05:58.879211+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "废物利用你这废物"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": true,
+        "hit_levels": [
+          "MEDIUM"
+        ]
+      },
+      "http_status": 200,
+      "response": {
+        "passed": true,
+        "normalized": "废物利用你这废物",
+        "hits": [
+          {
+            "word": "废物",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    },
+    {
+      "id": "W4-PHRASE-08",
+      "time": "2026-11-18T17:05:58.886469+08:00",
+      "request": {
+        "method": "POST",
+        "path": "/api/moderation/check",
+        "body": {
+          "text": "shabilist"
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "passed": true,
+        "hit_levels": []
+      },
+      "http_status": 200,
+      "response": {
+        "passed": true,
+        "normalized": "shabilist",
+        "hits": []
+      },
+      "status": "PASS",
+      "database_evidence": {
+        "applicable": false,
+        "reason": "无状态审核接口"
+      }
+    }
+  ]
+}

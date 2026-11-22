@@ -1,0 +1,96 @@
+{
+  "recorded_at": "2026-11-18T17:02:55.311554+08:00",
+  "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "project": "ouc-w4-20261118-7c67518",
+  "database_rows": {
+    "users": 0,
+    "auth": 0,
+    "checkin": 0,
+    "treehole_post": 0,
+    "treehole_archive": 0,
+    "buddy_demand": 0
+  },
+  "services": [
+    {
+      "Service": "algo",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ouc-w4-20261118-7c67518-algo",
+      "Project": "ouc-w4-20261118-7c67518",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 8000,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "api",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ouc-w4-20261118-7c67518-api",
+      "Project": "ouc-w4-20261118-7c67518",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 8080,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "mysql",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "mysql:8.0",
+      "Project": "ouc-w4-20261118-7c67518",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 3306,
+          "PublishedPort": 13384,
+          "Protocol": "tcp"
+        },
+        {
+          "URL": "",
+          "TargetPort": 33060,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "redis",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "redis:7-alpine",
+      "Project": "ouc-w4-20261118-7c67518",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 6379,
+          "PublishedPort": 6379,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "web",
+      "State": "running",
+      "Health": "healthy",
+      "Image": "ouc-w4-20261118-7c67518-web",
+      "Project": "ouc-w4-20261118-7c67518",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 80,
+          "PublishedPort": 18084,
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  ]
+}

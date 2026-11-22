@@ -1,0 +1,8 @@
+{
+  "application_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+  "java_source_matches": true,
+  "jar_sha256": "94d0a6c06118bcb7df05ab0cb85d5ff9099e2dc54d72998adb262a4268667a5e",
+  "runtime_base": "previously built JRE17 image; current application jar copied from source-equivalent 99712e4 build",
+  "web_algo_unchanged_between_7c67518_and_99712e4": true,
+  "no_database_volumes_copied": true
+}

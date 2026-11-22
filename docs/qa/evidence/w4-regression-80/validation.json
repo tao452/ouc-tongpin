@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "validated_at": "2026-11-18T19:43:09.560960+08:00",
+  "original_cases": 80,
+  "status_counts": {
+    "PASS": 63,
+    "FAIL": 0,
+    "BLOCKED": 17
+  },
+  "original_fields_preserved": true,
+  "historical_evidence_unchanged": true,
+  "business_tracked_files_unchanged": true,
+  "all_passes_have_execution_evidence": true,
+  "source_commit_consistent": true,
+  "configured_secret_literal_hits": 0,
+  "jwt_literal_hits": 0,
+  "temporary_stack_removed": true,
+  "existing_demo_healthy": true,
+  "manifest_files": 23
+}
