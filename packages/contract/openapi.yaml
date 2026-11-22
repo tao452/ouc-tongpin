@@ -276,13 +276,16 @@ paths:
                   type: object
                   properties:
                     address: { type: string }
-                    lat: { type: number }
-                    lng: { type: number }
+                    lat: { type: number, minimum: -90, maximum: 90, description: 纬度闭区间 }
+                    lng: { type: number, minimum: -180, maximum: 180, description: 经度闭区间 }
                 skillTags:
                   type: array
                   maxItems: 5
                   items: { type: string }
-                remark: { type: string, maxLength: 200 }
+                remark:
+                  type: string
+                  maxLength: 200
+                  description: 按Unicode码点计数，Emoji按1个字符计，上限200。
       responses:
         '201':
           description: 发布成功
@@ -298,7 +301,7 @@ paths:
         '400':
           description: >
             请求参数不合法（缺 scene / time / location，非法 time 格式，
-            skillTags 超过 5 个，remark 超过 200 字符等），不落库。
+            skillTags 超过 5 个，location.lat/lng 越界，remark 超过 200 个Unicode码点等），不落库。
         '422':
           description: >
             发布前内容安全检查命中 HIGH 词，未发布。scene 与 remark 一并送审，
