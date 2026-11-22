@@ -1,0 +1,107 @@
+{
+  "checked_at_utc": "2026-11-22T12:30:07.081679+00:00",
+  "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018",
+  "project": "ouc-w4-new40-m1rules-20261122",
+  "services": [
+    {
+      "Service": "algo",
+      "Image": "ouc-w4-20261118-7c67518-algo:latest",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "api",
+      "Image": "ouc-w4-final-api:09a0cd6",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "mysql",
+      "Image": "mysql:8.0",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "redis",
+      "Image": "redis:7-alpine",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "web",
+      "Image": "ouc-w4-20261118-7c67518-web:latest",
+      "State": "running",
+      "Health": "healthy"
+    }
+  ],
+  "images": [
+    {
+      "ID": "sha256:eb203ee1dc505d28395fc6fae5dbe904016be977f6e2c7c1cc562afc862404e5",
+      "ContainerName": "ouc-w4-new40-m1rules-20261122-algo-1",
+      "Repository": "ouc-w4-20261118-7c67518-algo",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 56721822,
+      "LastTagTime": "2026-11-18T08:56:58.525477675Z"
+    },
+    {
+      "ID": "sha256:3896dbc7a11630bb66eb9aa354c62c0ea923218fd8019ee8eceb5b6b35b03744",
+      "ContainerName": "ouc-w4-new40-m1rules-20261122-api-1",
+      "Repository": "ouc-w4-final-api",
+      "Tag": "09a0cd6",
+      "Platform": "linux/amd64",
+      "Size": 169362016,
+      "LastTagTime": "2026-11-22T12:23:35.989393141Z"
+    },
+    {
+      "ID": "sha256:1a4a5a6298233298ef47cda751d0abd3479b79b7b149ec7fd96490bf72e04eea",
+      "ContainerName": "ouc-w4-new40-m1rules-20261122-web-1",
+      "Repository": "ouc-w4-20261118-7c67518-web",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 26814869,
+      "LastTagTime": "2026-11-18T08:57:24.100761745Z"
+    },
+    {
+      "ID": "sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b",
+      "ContainerName": "ouc-w4-new40-m1rules-20261122-mysql-1",
+      "Repository": "mysql",
+      "Tag": "8.0",
+      "Platform": "linux/amd64",
+      "Size": 233594134,
+      "LastTagTime": "2026-11-18T09:01:49.354432514Z"
+    },
+    {
+      "ID": "sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe",
+      "ContainerName": "ouc-w4-new40-m1rules-20261122-redis-1",
+      "Repository": "redis",
+      "Tag": "7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 16432706,
+      "LastTagTime": "2026-11-18T09:01:49.361006683Z"
+    }
+  ],
+  "volume_labels": {
+    "com.docker.compose.config-hash": "3d8b8c82894b052be2708bc9975004fb970ccbe6f0b7cfcea4bbc65d709834f4",
+    "com.docker.compose.project": "ouc-w4-new40-m1rules-20261122",
+    "com.docker.compose.version": "2.40.3",
+    "com.docker.compose.volume": "mysql-data"
+  },
+  "app_jar_sha256": "e82702730d59c5098b3e6ecd34cffcc171543126d3eb056a4cfef25769d8a919",
+  "fresh_volume": true,
+  "random_credentials": true,
+  "data": "synthetic only",
+  "junit": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "business40_status_counts": {
+    "PASS": 38,
+    "FAIL": 2,
+    "BLOCKED": 0,
+    "NOT_RUN": 0
+  },
+  "junit_sha256": "81cf0a662f459ba006253dea479b4fc9e16e56eb4bc7c30f648b536019503896"
+}

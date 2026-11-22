@@ -1,4 +1,4 @@
-"""Run confirmed business boundaries only after M5 implementation confirmation."""
+"""Measure the current implementation against M1's confirmed business rules."""
 
 import json
 import re
@@ -33,7 +33,8 @@ def load_rules():
 
 
 def ready(rule):
-    return rule["business"]["confirmed"] and rule["implementation"]["confirmed"]
+    # An unimplemented confirmed requirement must produce FAIL, not stay NOT_RUN.
+    return rule["business"]["confirmed"]
 
 
 def owned_rows(s, actor):
@@ -187,8 +188,7 @@ def register(s):
                     "executed": False,
                     "source_commit": BASE_COMMIT,
                     "reason": (
-                        "M1 business rule confirmed; "
-                        "M5 implementation/contract confirmation pending"
+                        "M1 business rule confirmation pending"
                     ),
                     "business_confirmation": rule["business"],
                     "evidence": [],

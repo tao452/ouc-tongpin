@@ -53,7 +53,7 @@ def main():
     for index, (case, old) in enumerate(zip(cases, snapshot["cases"], strict=True)):
         approved_rule = rules.get(case["id"])
         allowed = (
-            {"title", "expected"}
+            {"title", "purpose", "preconditions", "expected"}
             if approved_rule and approved_rule["business"]["confirmed"]
             else set()
         )

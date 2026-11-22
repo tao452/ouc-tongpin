@@ -110,7 +110,7 @@ def assemble(http, retest, junit, events, output, first_attempt=None):
         if first_attempt
         else [],
         "rule_decisions": {
-            cid: "M1_M5_CONFIRMED" if ready(rule) else "M1_CONFIRMED_M5_PENDING"
+            cid: "M1_BUSINESS_CONFIRMED" if ready(rule) else "PENDING_M1_RULE"
             for cid, rule in rules.items()
         },
         "rule_confirmations": rules,
