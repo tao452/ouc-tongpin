@@ -1,0 +1,202 @@
+{
+  "review_date": "2026-11-22",
+  "baseline": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+  "original_pr_head": "e693a8da31b364248e946ddfa934e290cb33e3ca",
+  "original_file_count": 17,
+  "files": [
+    {
+      "path": "apps/miniprogram/pages/checkin-calendar/checkin-calendar.wxml",
+      "sha256": "75a4643777ed98b5a6bd4535a7f6a1127de6ecda2e80ff7c79283e3e84476c4f",
+      "kind": "page template",
+      "event_handlers": [
+        "goCheckin",
+        "nextMonth",
+        "onTime",
+        "prevMonth",
+        "retryLoad",
+        "toggleRemind"
+      ],
+      "missing_handlers": []
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin-calendar/checkin-calendar.wxss",
+      "sha256": "a64d284726ada7d502a24fbc5858422e59f7e28c21c07bb767855a1d707bf19a",
+      "kind": "page styles",
+      "brace_balance": true,
+      "review": "layout, spacing, palette, state and button styles"
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/form.wxml",
+      "sha256": "02258057a25a53b4445eed51526c8535504813490ca6c14adc2f3a1b410324af",
+      "kind": "page template",
+      "event_handlers": [
+        "onIntensityChange",
+        "onNoteInput",
+        "selectEmotion",
+        "submitCheckin"
+      ],
+      "missing_handlers": []
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/form.wxss",
+      "sha256": "c36551a9c35a849987f89e0e149c11f6398b7fd858d89635581a01944b392185",
+      "kind": "page styles",
+      "brace_balance": true,
+      "review": "layout, spacing, palette, state and button styles"
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/index.js",
+      "sha256": "e3d44df98abb97ae61df0c35acd79a69838a70091a19e3295a13cda1d09e1ab6",
+      "kind": "page JavaScript",
+      "review": "checkin homepage date display spacing only; diff reviewed"
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/index.wxml",
+      "sha256": "a8b115e75583817e55166b832ddf3d14a81646243334bc08b3f57c3b1508c690",
+      "kind": "page template",
+      "event_handlers": [
+        "goToForm",
+        "goToRecords",
+        "goToRule"
+      ],
+      "missing_handlers": []
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/index.wxss",
+      "sha256": "65d6ca63e152b3263f2540ff127f13f54ff3392012a747f9c0e20077afb29207",
+      "kind": "page styles",
+      "brace_balance": true,
+      "review": "layout, spacing, palette, state and button styles"
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/result.wxml",
+      "sha256": "8f130341dca6e4ef3d93a302460578bb2605dc59e8c62ff35a45a5b49099a37d",
+      "kind": "page template",
+      "event_handlers": [
+        "goHome",
+        "retry"
+      ],
+      "missing_handlers": []
+    },
+    {
+      "path": "apps/miniprogram/pages/checkin/result.wxss",
+      "sha256": "1f8b738b1e6a089fdcc9657ae8a2ac52074cfe83714101178ea1e3c991e398d9",
+      "kind": "page styles",
+      "brace_balance": true,
+      "review": "layout, spacing, palette, state and button styles"
+    },
+    {
+      "path": "apps/miniprogram/pages/treehole/index.wxml",
+      "sha256": "5cc150bc1ea9759870d81c993198505a5f731369cdf71d772adf8c100af75206",
+      "kind": "page template",
+      "event_handlers": [
+        "closeComposer",
+        "onAnonymousChange",
+        "onContentInput",
+        "openComposer",
+        "retryLoad",
+        "selectTag",
+        "submitPost"
+      ],
+      "missing_handlers": []
+    },
+    {
+      "path": "apps/miniprogram/pages/treehole/index.wxss",
+      "sha256": "d216112a2ad407cb2de4ab6a6a1c0be38f9b949e6266b737c8665eea5657e806",
+      "kind": "page styles",
+      "brace_balance": true,
+      "review": "layout, spacing, palette, state and button styles"
+    },
+    {
+      "path": "design/review_w4/README.md",
+      "sha256": "b5912fd31bd1213b62ec0a992ce175544ef6f59274ca8962a3aa13cc5c7f9d0b",
+      "kind": "walkthrough document",
+      "review": "original findings compared with current code; status supplement added separately"
+    },
+    {
+      "path": "design/review_w4/我的 情绪打卡记录.png",
+      "sha256": "eb0890dbea5af43af6bde3e65aa932e5ac3c45758bd5222fd06c3ea94db79f93",
+      "kind": "original M2 screenshot",
+      "width": 774,
+      "height": 1332,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "gAMA",
+        "pHYs",
+        "sRGB"
+      ],
+      "visual_privacy_review": "No real name/student ID/phone/JWT/secret visible; synthetic/demo content and original errors retained"
+    },
+    {
+      "path": "design/review_w4/搭子广场.png",
+      "sha256": "565c3abdb4e169291b2ae703ed078dd5eef6a8958475a07ab6ec9b31817f365d",
+      "kind": "original M2 screenshot",
+      "width": 750,
+      "height": 1268,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "gAMA",
+        "pHYs",
+        "sRGB"
+      ],
+      "visual_privacy_review": "No real name/student ID/phone/JWT/secret visible; synthetic/demo content and original errors retained"
+    },
+    {
+      "path": "design/review_w4/搭子需求发布页面.png",
+      "sha256": "948d4ba2dfa4a1fbcd9910005336b513ebf6cb6931104a27e2d8718c85cc64f0",
+      "kind": "original M2 screenshot",
+      "width": 754,
+      "height": 1422,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "gAMA",
+        "pHYs",
+        "sRGB"
+      ],
+      "visual_privacy_review": "No real name/student ID/phone/JWT/secret visible; synthetic/demo content and original errors retained"
+    },
+    {
+      "path": "design/review_w4/首页.png",
+      "sha256": "133c08021e0a01e0ebd52488d0d7982d4c3e1b37793ef992e71c6c329adc4716",
+      "kind": "original M2 screenshot",
+      "width": 774,
+      "height": 1444,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "gAMA",
+        "pHYs",
+        "sRGB"
+      ],
+      "visual_privacy_review": "No real name/student ID/phone/JWT/secret visible; synthetic/demo content and original errors retained"
+    },
+    {
+      "path": "docs/2026-11-20 - W4阶段性走查报告.md",
+      "sha256": "31c0ec4175197c851306028055c577d98304dc7879dd68bf6c4eca35ef7f299c",
+      "kind": "walkthrough document",
+      "review": "original findings compared with current code; status supplement added separately"
+    }
+  ],
+  "m6_production_page_changes": false,
+  "local_checks": {
+    "node_tests": {
+      "pass": 50,
+      "fail": 0,
+      "skipped": 0
+    },
+    "eslint": "PASS",
+    "project_check": {
+      "pages": 14,
+      "routes": 15,
+      "status": "PASS"
+    },
+    "wechat_gui": "BLOCKED: no usable developer tool window"
+  }
+}
