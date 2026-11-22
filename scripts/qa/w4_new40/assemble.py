@@ -16,7 +16,7 @@ def assemble(http, retest, junit, events, output, first_attempt=None):
     attempts = [{"name": "initial_http", "results": raw["results"]}]
     if retest:
         repeated = json.loads(Path(retest).read_bytes())["results"]
-        attempts.append({"name": "dictionary_utf8_retest", "results": repeated})
+        attempts.append({"name": "selected_http_retest", "results": repeated})
         for row in repeated:
             rows[row["case_id"]] = row
     suite = ET.parse(junit).getroot()
@@ -97,7 +97,9 @@ def assemble(http, retest, junit, events, output, first_attempt=None):
             "Windows subprocess and UTF-8 file decoding",
             "MyBatis spy delegates to a real SqlSession mapper",
             "owned guard DDL uses a dedicated root JDBC connection",
-        ],
+        ]
+        if first_attempt
+        else [],
         "rule_decisions": {"S1-113": "PENDING_M1_M5", "S1-114": "PENDING_M1_M5"},
         "source_sha256": {
             p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()

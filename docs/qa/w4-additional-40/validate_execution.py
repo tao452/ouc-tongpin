@@ -68,6 +68,12 @@ def main():
         )
         actual = results[case["id"]]
         assert case["status"] == actual["status"]
+        assert case["actual_result"]["status"] == actual["status"]
+        assert case["actual_result"]["source_commit"] == doc["execution_source_commit"]
+        assert (
+            case["actual_result"]["evidence_ref"]
+            == doc["execution_results"] + "#" + case["id"]
+        )
         if case["id"] in ["S1-113", "S1-114"]:
             assert (
                 case["status"] == "NOT_RUN"
@@ -75,6 +81,7 @@ def main():
                 and case["expected"]["approval"] == "PENDING"
             )
         else:
+            assert actual["source_commit"] == doc["execution_source_commit"]
             assert case["executed"] and actual["evidence"]
             assert (
                 case["automation"]["implementation_status"]
@@ -114,11 +121,12 @@ def main():
         "status_counts": doc["status_counts"],
         "design_business_fields_unchanged": True,
         "historical_80_evidence_unchanged": True,
-        "business_source_matches_99712e4": True,
+        "business_source_matches_execution_commit": True,
+        "source_commit": doc["execution_source_commit"],
         "network_requests_executed_by_this_validator": 0,
         "actual_execution_report": doc["execution_results"],
     }
-    output = ROOT / "docs/qa/evidence/w4-additional-40/20261122/design-validation.json"
+    output = (ROOT / doc["execution_results"]).with_name("design-validation.json")
     output.write_bytes(
         (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode()
     )

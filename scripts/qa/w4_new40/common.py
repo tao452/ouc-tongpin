@@ -11,7 +11,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-BASE_COMMIT = "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+BASE_COMMIT = "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
+RUN_DIRECTORY = Path(os.environ.get("W4_RUN_DIR", "qa-private/w4-closeout"))
+if RUN_DIRECTORY.is_absolute() or not (ROOT / RUN_DIRECTORY).resolve().is_relative_to(
+    (ROOT / "qa-private").resolve()
+):
+    raise ValueError("W4_RUN_DIR must be a relative directory below qa-private")
 
 
 def digest(value):
@@ -41,7 +46,7 @@ class Suite:
         self.project, self.output = project, Path(output)
         self.run_id = uuid.uuid4().hex[:12]
         self.trace, self.results, self.lock = [], [], threading.Lock()
-        self.env_path = ROOT / "qa-private/w4-closeout/.env"
+        self.env_path = ROOT / RUN_DIRECTORY / ".env"
         self.env = dict(
             line.split("=", 1)
             for line in self.env_path.read_text().splitlines()
@@ -67,11 +72,11 @@ class Suite:
             "--project-name",
             project,
             "--env-file",
-            "qa-private/w4-closeout/.env",
+            (RUN_DIRECTORY / ".env").as_posix(),
             "-f",
             "infra/docker-compose.yml",
             "-f",
-            "qa-private/w4-closeout/runtime.yml",
+            (RUN_DIRECTORY / "runtime.yml").as_posix(),
         ]
 
     def command(self, *args):

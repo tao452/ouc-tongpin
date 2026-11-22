@@ -4,7 +4,7 @@ import subprocess
 import time
 import urllib.request
 
-from common import ROOT, digest
+from common import ROOT, RUN_DIRECTORY, digest
 
 
 def algorithm(s, text, port=None):
@@ -14,7 +14,7 @@ def algorithm(s, text, port=None):
 
 
 def instance(s, records, action):
-    here = ROOT / "qa-private/w4-closeout"
+    here = ROOT / RUN_DIRECTORY
     target = here / "custom-dictionary.json"
     target.write_bytes((json.dumps(records, ensure_ascii=False) + "\n").encode())
     mount = target.as_posix()

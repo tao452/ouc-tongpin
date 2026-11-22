@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 from assemble import assemble
-from common import BASE_COMMIT, ROOT, Suite
+from common import BASE_COMMIT, ROOT, RUN_DIRECTORY, Suite
 
 
 def java(suite, folder):
@@ -63,7 +63,7 @@ def java(suite, folder):
 
 
 def prepare(project):
-    here = ROOT / "qa-private/w4-closeout"
+    here = ROOT / RUN_DIRECTORY
     here.mkdir(parents=True, exist_ok=True)
     # Refuse to replace a developer's or another run's secrets.
     values = {
@@ -126,7 +126,7 @@ def main():
     assert not subprocess.check_output(
         ["git", "diff", BASE_COMMIT, "--", *protected], cwd=ROOT
     )
-    folder = ROOT / "qa-private/w4-closeout"
+    folder = ROOT / RUN_DIRECTORY
     suite = (
         Suite(a.project, folder / "http-results.json")
         if (a.reuse_owned_empty_stack or a.java_only)
@@ -150,7 +150,7 @@ def main():
             ],
             check=True,
         )
-        java(suite, folder)
+        java_exit = java(suite, folder)
         report = assemble(
             folder / "http-results.json",
             None,
@@ -160,7 +160,8 @@ def main():
             a.output,
         )
         return int(
-            report["status_counts"]["FAIL"] > 0
+            java_exit != 0
+            or report["status_counts"]["FAIL"] > 0
             or report["status_counts"]["BLOCKED"] > 0
         )
     finally:

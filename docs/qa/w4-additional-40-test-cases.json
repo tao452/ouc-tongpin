@@ -206,11 +206,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:27.337314+00:00",
+      "executed_at": "2026-11-22T08:27:09.011725+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-081",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-081",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -285,11 +285,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:29.452934+00:00",
+      "executed_at": "2026-11-22T08:27:11.418753+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-082",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-082",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -361,11 +361,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:31.184339+00:00",
+      "executed_at": "2026-11-22T08:27:13.289234+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-083",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-083",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -441,11 +441,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:32.983576+00:00",
+      "executed_at": "2026-11-22T08:27:14.960692+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-084",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-084",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -515,11 +515,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:28.746175Z",
+      "executed_at": "2026-11-22T08:29:25.396074400Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-085",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-085",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -586,11 +586,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:35.552644+00:00",
+      "executed_at": "2026-11-22T08:27:17.666771+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-086",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-086",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -661,11 +661,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:31.538595300Z",
+      "executed_at": "2026-11-22T08:29:28.879982900Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-087",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-087",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -738,11 +738,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:38.955491+00:00",
+      "executed_at": "2026-11-22T08:27:21.620100+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-088",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-088",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -813,11 +813,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:40.854038+00:00",
+      "executed_at": "2026-11-22T08:27:23.585695+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-089",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-089",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -894,11 +894,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:47.420493+00:00",
+      "executed_at": "2026-11-22T08:27:28.703833+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-090",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-090",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -971,11 +971,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:49.020082+00:00",
+      "executed_at": "2026-11-22T08:27:30.760481+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-091",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-091",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1053,11 +1053,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:51.957577+00:00",
+      "executed_at": "2026-11-22T08:27:33.156259+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-092",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-092",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1132,11 +1132,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:53.044453+00:00",
+      "executed_at": "2026-11-22T08:27:34.304945+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-093",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-093",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1212,11 +1212,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:54.982075+00:00",
+      "executed_at": "2026-11-22T08:27:36.045514+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-094",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-094",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1300,11 +1300,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:55.944184+00:00",
+      "executed_at": "2026-11-22T08:27:37.081093+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-095",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-095",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1376,11 +1376,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:38:59.578761+00:00",
+      "executed_at": "2026-11-22T08:27:39.198670+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-096",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-096",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1452,11 +1452,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:05.175046+00:00",
+      "executed_at": "2026-11-22T08:27:44.373446+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-097",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-097",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1528,11 +1528,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:32.128448700Z",
+      "executed_at": "2026-11-22T08:29:29.408958700Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-098",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-098",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1602,11 +1602,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:06.729126+00:00",
+      "executed_at": "2026-11-22T08:27:46.039894+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-099",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-099",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1676,11 +1676,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:33.322628800Z",
+      "executed_at": "2026-11-22T08:29:30.275903400Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-100",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-100",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1754,11 +1754,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:33.876604300Z",
+      "executed_at": "2026-11-22T08:29:30.924891200Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-101",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-101",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1826,11 +1826,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:34.615056400Z",
+      "executed_at": "2026-11-22T08:29:31.542399400Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-102",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-102",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1900,11 +1900,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:35.337598500Z",
+      "executed_at": "2026-11-22T08:29:32.295589200Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-103",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-103",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -1970,11 +1970,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:35.601988600Z",
+      "executed_at": "2026-11-22T08:29:32.620941500Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-104",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-104",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2047,11 +2047,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:35.823208400Z",
+      "executed_at": "2026-11-22T08:29:32.849533700Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-105",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-105",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2120,11 +2120,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T17:14:36.179405900Z",
+      "executed_at": "2026-11-22T08:29:33.227982800Z",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-106",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-106",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2200,11 +2200,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:10.475224+00:00",
+      "executed_at": "2026-11-22T08:27:50.411130+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-107",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-107",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2273,11 +2273,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:14.592061+00:00",
+      "executed_at": "2026-11-22T08:27:55.182549+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-108",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-108",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2359,11 +2359,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:20.705592+00:00",
+      "executed_at": "2026-11-22T08:28:02.275773+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-109",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-109",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2434,11 +2434,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:25.121872+00:00",
+      "executed_at": "2026-11-22T08:28:07.053788+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-110",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-110",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2507,11 +2507,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:28.204383+00:00",
+      "executed_at": "2026-11-22T08:28:10.274168+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-111",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-111",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2593,11 +2593,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:34.743868+00:00",
+      "executed_at": "2026-11-22T08:28:17.465100+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-112",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-112",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2693,7 +2693,11 @@
       "status": "NOT_RUN",
       "executed": false,
       "executed_at": null,
-      "actual_result": null
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-113",
+        "status": "NOT_RUN",
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
+      }
     },
     {
       "id": "S1-114",
@@ -2778,7 +2782,11 @@
       "status": "NOT_RUN",
       "executed": false,
       "executed_at": null,
-      "actual_result": null
+      "actual_result": {
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-114",
+        "status": "NOT_RUN",
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
+      }
     },
     {
       "id": "S1-115",
@@ -2859,11 +2867,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:35.504347+00:00",
+      "executed_at": "2026-11-22T08:28:18.273453+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-115",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-115",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -2943,11 +2951,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:35.562949+00:00",
+      "executed_at": "2026-11-22T08:28:18.352547+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-116",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-116",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -3026,11 +3034,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:41:44.526324+00:00",
+      "executed_at": "2026-11-22T08:29:42.986128+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-117",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-117",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -3105,11 +3113,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:48.260655+00:00",
+      "executed_at": "2026-11-22T08:28:33.970987+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-118",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-118",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -3184,11 +3192,11 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:39:48.324796+00:00",
+      "executed_at": "2026-11-22T08:28:34.050644+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-119",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-119",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     },
     {
@@ -3265,15 +3273,22 @@
       },
       "status": "PASS",
       "executed": true,
-      "executed_at": "2026-11-21T16:42:00.452615+00:00",
+      "executed_at": "2026-11-22T08:30:05.379219+00:00",
       "actual_result": {
-        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122/results.json#S1-120",
+        "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-120",
         "status": "PASS",
-        "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+        "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
       }
     }
   ],
-  "execution_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
-  "execution_results": "docs/qa/evidence/w4-additional-40/20261122/results.json",
-  "design_commit": "c71b125a790e4787939bae644a666fbf6ce8426d"
+  "execution_source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018",
+  "execution_results": "docs/qa/evidence/w4-additional-40/20261122-final/results.json",
+  "design_commit": "c71b125a790e4787939bae644a666fbf6ce8426d",
+  "execution_history": [
+    {
+      "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+      "results": "docs/qa/evidence/w4-additional-40/20261122/results.json",
+      "retained_unchanged": true
+    }
+  ]
 }
