@@ -1,0 +1,325 @@
+{
+  "checked_at_utc": "2026-11-22T13:19:56.037831+00:00",
+  "scope": "all submitted PR files against merge-base; text, SQL, HTTP, JSON, scripts and document content",
+  "develop_reference": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018",
+  "merge_base": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018",
+  "actual_runtime_credential_matches": 0,
+  "jwt_literal_matches": 0,
+  "phone_literal_matches": 0,
+  "private_key_literal_matches": 0,
+  "data_provenance": "synthetic users and test fixtures only; real student data not used",
+  "review_note": "Pattern checks and structured/source review; PNGs separately visually reviewed in file-review.json where present",
+  "files": [
+    {
+      "path": "docs/qa/W4-120条测试最终状态-20261122.md",
+      "sha256": "46a3a572f4ebbc4afe813f2b05bbe8cc41609cc1e0fffa756fb72f61c4077ab4",
+      "bytes": 14593
+    },
+    {
+      "path": "docs/qa/W4-新增40条测试用例设计.md",
+      "sha256": "d8e655d5addc6edd2364a2603650f3c9639bab17214303d0f3b922ede70c01a4",
+      "bytes": 63670
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/cleanup.json",
+      "sha256": "d575916a216f6989f8b3cee71112e6dc3ce7c381f9f9f7655e8f2bef0847ebb0",
+      "bytes": 327
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/design-validation.json",
+      "sha256": "622e0014fc4571e548af76bf139260fd2300182ab05652c3278b67d1030635ea",
+      "bytes": 576
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/environment.json",
+      "sha256": "2a4dd4a8e03f99702871bbd5695296abc3847e284ec623f19bdbf9a5b16453ac",
+      "bytes": 3174
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/history-preservation.json",
+      "sha256": "78e4288d5df7032fa8c222da15ab54c9a94248788a1fdae08e3ff4e53674b934",
+      "bytes": 6247
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/image-provenance.json",
+      "sha256": "654ec34d4ac1a45042fcfd78f661e7a4275c20340cde335e70596c5d0f0098d9",
+      "bytes": 446
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/privacy-audit.json",
+      "sha256": "df096872309e409c58dfb2cf3819b1f9d0497e23bc39195dee5e19df5ed63e9e",
+      "bytes": 7168
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/results.json",
+      "sha256": "da19ece6941d99731a96f4e1984f41e13338fab2faf180f8d488de1ad33a809c",
+      "bytes": 554073
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/rule-decisions.json",
+      "sha256": "fce10d603cb8c974c098b426d0c46cb0301a3a45f5c2e180cad8a717c22ca264",
+      "bytes": 733
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-final/status-overview-120.json",
+      "sha256": "b56ceaff42e97a0263d3432818236f64d7de42a14d844324634f1b25a9ae286c",
+      "bytes": 38532
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1-confirmation/design-validation.json",
+      "sha256": "37ce801a47389c043fc8e2c4e3f4727b514b1a122da4751ba92c179d824d4e75",
+      "bytes": 1016
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1-confirmation/privacy-audit-format-fix.json",
+      "sha256": "8a184ea8b562d8cb715e223915d3988545e83a3e235e9adde6bec0dc35c9eb4c",
+      "bytes": 8380
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1-confirmation/privacy-audit.json",
+      "sha256": "469ce95478e00b4723e850611d05d990cdb5b386673fc3b99b7cf53f74da7125",
+      "bytes": 8168
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1-confirmation/rule-confirmation.json",
+      "sha256": "dd4593399c7b6baa6bd9b09e0b15e218e92b9eb62432ebbef04632c4e26ee8d4",
+      "bytes": 1470
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/cleanup.json",
+      "sha256": "571882d4fe363eb33be84e1d183bcd7d82cc342b53ff8a29cdf3d0283c1d3ec9",
+      "bytes": 329
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/design-validation.json",
+      "sha256": "5558eb1f1671dd3e9eb5f4483468057b23f98f81f459c9f2a855e4eb886f62b5",
+      "bytes": 1018
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/environment.json",
+      "sha256": "3f7181a6921c614f9e78b15021b6c54e381ddd07f6c9c0be2c6ff2b66d9e0f98",
+      "bytes": 3291
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/history-preservation.json",
+      "sha256": "cc785bc3a7d583de06df400f5050c81a6b9d7af5a6c604cd05583afccad452b7",
+      "bytes": 7756
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/image-provenance.json",
+      "sha256": "224371d7778f4d529a6f60e45c8bf46cf985b79b7ea4e9b4bec989c81000834e",
+      "bytes": 446
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/privacy-audit.json",
+      "sha256": "81ada9436224bee355e0a8590c2ffbef4c2e488c3cc805a4843662f328684f61",
+      "bytes": 10243
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/results.json",
+      "sha256": "f4671c3d315211bef80d75e091191006e0f02008310819a336a39865523af6ea",
+      "bytes": 646899
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/rule-decisions.json",
+      "sha256": "d76cbb39fc20c48424df3bc25328a5f7af8778065417c2e723847e5b6823a143",
+      "bytes": 1396
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-m1rules/status-overview-120.json",
+      "sha256": "6517043445099c6c6603ae8f7b7e3f08f2bd1ab9c58aebc15582a2dd3d72e761",
+      "bytes": 40093
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/cleanup.json",
+      "sha256": "6247287664c0bc5e0e6ac1d3bf5851450ba17c0e37ac1f957351cab68eccf104",
+      "bytes": 332
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/default-java.json",
+      "sha256": "445a359bcf7af4899b72c6f93afe1129e5090ae7d01ceb3eeae3448d4d66c6ef",
+      "bytes": 2801
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/design-validation.json",
+      "sha256": "1f5ab5f6610813351f1f295e479555a338c3a3653c943ef35699981adbf1ef18",
+      "bytes": 1021
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/environment.json",
+      "sha256": "8d0e385c1539bd5791ca8d9605fd9a1744c3f615498406af2f4c747a49d29711",
+      "bytes": 3316
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/history-preservation.json",
+      "sha256": "e22ca9f8246d64f930f99b0de45d522f11a9cd3edccd9f9a3b7cfd920bccb637",
+      "bytes": 9177
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/image-provenance.json",
+      "sha256": "15c45ba0047effd478dc9a29814ad30c8e591c8096f321cbde9666029b476c19",
+      "bytes": 519
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "sha256": "1d15219ef1215690a5142bc25892d782fad1b6684d48a5232e219aa4389503fc",
+      "bytes": 681659
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/rule-decisions.json",
+      "sha256": "2cc354f081ab2972628eb18ae21ee873623aeec93d7dbd2625b4f276f249d3b0",
+      "bytes": 2107
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/status-overview-120.json",
+      "sha256": "8172cc1321cee0abbe8ab5f610d189f1dd620c63d3661381dcf335f897d5d012",
+      "bytes": 40063
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/cleanup.json",
+      "sha256": "3a42e73ea1399ea555f4a2f1c1dc512c1ee1a8e1347acff1b371a0291787be51",
+      "bytes": 283
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/design-validation.json",
+      "sha256": "65b08774218d6b279aab9eb07440523150c706abee3456e544126750c6bbd360",
+      "bytes": 498
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/environment.json",
+      "sha256": "64135a7b2452e60d55e32efe6f6715d9e82250803618c8a8199f28d9852b8a5a",
+      "bytes": 3201
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/first-run-cleanup.json",
+      "sha256": "3f086e90207e2712038b1c7e3e0e7971aef8cf85848c8ca70a0d97811fb6eaf6",
+      "bytes": 283
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/first-run-environment.json",
+      "sha256": "4920c68e13827000c4209b8cde7f09d74a0764c7949133e6a2002892c876fc8e",
+      "bytes": 3201
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/java-discovery-and-repeat.json",
+      "sha256": "82b47064a7ac4401b083411d71843ebf237086ec20ab209eaafde4449c344ec2",
+      "bytes": 2506
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/privacy-audit.json",
+      "sha256": "6528036c25f79a3b1812336e5e979590806eff88526fd58142c57ff964d579ff",
+      "bytes": 5166
+    },
+    {
+      "path": "docs/qa/evidence/w4-additional-40/20261122/results.json",
+      "sha256": "a219dacad9d7c7db75ed33670caccb04f9ee4abe9ed0d1c0adbc0da87c85ca31",
+      "bytes": 551854
+    },
+    {
+      "path": "docs/qa/w4-additional-40-test-cases.json",
+      "sha256": "5cc6cacd935f3c050cfc5962cfe45d53d27971ca9cdc5f2132af3d16e56fdc78",
+      "bytes": 120857
+    },
+    {
+      "path": "docs/qa/w4-additional-40/automation-plan.md",
+      "sha256": "b911141cce999832a2b2cb8d0f2e7c697dd2c4b1e4b955ffa3abbc2a7fda85ca",
+      "bytes": 8895
+    },
+    {
+      "path": "docs/qa/w4-additional-40/baseline-manifest.json",
+      "sha256": "edc187c8d80172eada5e904fcb9349648a32290867a5db0edc8d7a43bdc7ad62",
+      "bytes": 7379
+    },
+    {
+      "path": "docs/qa/w4-additional-40/design-20261118.snapshot.json",
+      "sha256": "90fb41e92138cdb35b02a928d23373d78882baad6024fc999c70d62f3baba942",
+      "bytes": 104763
+    },
+    {
+      "path": "docs/qa/w4-additional-40/pr-description.md",
+      "sha256": "921af16c9348917dbcc6756d2ba4eaa9d67392a1d87b4a55a964af20b1f18b0b",
+      "bytes": 847
+    },
+    {
+      "path": "docs/qa/w4-additional-40/rule-confirmations-20261122.json",
+      "sha256": "41fae7fcce4b06bf3c11b530e39a07ded52dedc67f3fa8b5b09efb19a4f4f260",
+      "bytes": 1678
+    },
+    {
+      "path": "docs/qa/w4-additional-40/validate_design.py",
+      "sha256": "75534db5b47f2f3a171505ac26acc6f94ba3c279c78afabf3ea4f26bcd78d386",
+      "bytes": 6997
+    },
+    {
+      "path": "docs/qa/w4-additional-40/validate_execution.py",
+      "sha256": "802dc9538929dcfb4617a919d09f73afa98adfe090ccbd277960b673d7f175e7",
+      "bytes": 5494
+    },
+    {
+      "path": "docs/qa/w4-additional-40/validation.json",
+      "sha256": "9806c13b4b209a7cf7a054747572244003e6f934c1cb8dc856a4e68ca9769a05",
+      "bytes": 1375
+    },
+    {
+      "path": "docs/qa/w4-additional-40/执行报告-20261122.md",
+      "sha256": "e7ab1a87806e4de660943181ddb88f036c8e4ba0f0875f5b7d5708344e9602b0",
+      "bytes": 5190
+    },
+    {
+      "path": "packages/contract/openapi.yaml",
+      "sha256": "4488f983e5fbb883f5a670a5e23ddd510a6e4ec34a0709df599887293dd29353",
+      "bytes": 15417
+    },
+    {
+      "path": "scripts/qa/w4_new40/assemble.py",
+      "sha256": "2df3ca676010f93015732e636262541d67fb2726a3ce8beb599439f1649971f8",
+      "bytes": 5450
+    },
+    {
+      "path": "scripts/qa/w4_new40/buddy_rule_cases.py",
+      "sha256": "1ac6c22f0c1d9eaa5905de9c5e9a0d1e52c1483e0c7fb2a3bf86ec85bd7488a5",
+      "bytes": 7203
+    },
+    {
+      "path": "scripts/qa/w4_new40/common.py",
+      "sha256": "58404d680cd8cbc8953b24076ad1a50eca3b242b726e77c3935b1fc2e2b3cfc6",
+      "bytes": 10163
+    },
+    {
+      "path": "scripts/qa/w4_new40/http_cases.py",
+      "sha256": "89ec87fb13e38a6b3ede3a2e48de221d30036624ee82fdc0bce4cc9885ab55f8",
+      "bytes": 17959
+    },
+    {
+      "path": "scripts/qa/w4_new40/moderation_cases.py",
+      "sha256": "6a450d141c6e3db44f1e4e81e01e044934d46734b260b7eafdc77d2b8f42ab38",
+      "bytes": 7022
+    },
+    {
+      "path": "scripts/qa/w4_new40/run_http.py",
+      "sha256": "7dc9d8550b7f37aef0f10f432aad6c7017c1bb90f02553503d6e5d44ded47c66",
+      "bytes": 1084
+    },
+    {
+      "path": "scripts/qa/w4_new40/run_owned.py",
+      "sha256": "fcb3bf5aa87e352c4b2e57104e3ef35a84e89985c88cc607da607baeb74aa10b",
+      "bytes": 5708
+    },
+    {
+      "path": "services/api-server/src/main/java/com/ouctongpin/apiserver/buddy/dto/BuddyCreateReq.java",
+      "sha256": "73b54fd95662b5310d832ac6b89a24751319ecb82e5cf244c0d7859732d2921c",
+      "bytes": 1934
+    },
+    {
+      "path": "services/api-server/src/test/java/com/ouctongpin/apiserver/buddy/dto/BuddyCreateReqTest.java",
+      "sha256": "638ee29e7ceb8c1783cba0628abb1c0d2f0109e3b401712edc0fbf60db1cd8c8",
+      "bytes": 4433
+    },
+    {
+      "path": "services/api-server/src/test/java/com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java",
+      "sha256": "4e4bd56a938296d44a55c4237fdbfb752177218dfa2a8a2d0b60c524c1ff802e",
+      "bytes": 16670
+    }
+  ],
+  "hash_note": "Git index bytes; this audit report excluded from its own hashes"
+}
