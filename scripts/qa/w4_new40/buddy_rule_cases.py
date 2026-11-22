@@ -36,6 +36,15 @@ def ready(rule):
     return rule["business"]["confirmed"] and rule["implementation"]["confirmed"]
 
 
+def owned_rows(s, actor):
+    return s.sql(
+        "SELECT id,user_id,scene,event_time,location_address,latitude,longitude,"
+        "skill_tags,HEX(remark),status FROM buddy_demand WHERE user_id="
+        + str(int(actor["id"]))
+        + " ORDER BY id"
+    )
+
+
 def coordinates(s, rule):
     lat_min, lat_max = map(Decimal, map(str, rule["latitude_range"]))
     lng_min, lng_max = map(Decimal, map(str, rule["longitude_range"]))
@@ -54,13 +63,10 @@ def coordinates(s, rule):
         body = s.need()
         body["location"].update(lat=float(lat), lng=float(lng))
         before = s.buddy_count(actor)
+        before_rows = owned_rows(s, actor)
         status, response, _ = s.buddy(actor, body)
         after = s.buddy_count(actor)
-        snapshot = s.sql(
-            "SELECT id,latitude,longitude FROM buddy_demand WHERE user_id="
-            + str(int(actor["id"]))
-            + " ORDER BY id"
-        )
+        snapshot = owned_rows(s, actor)
         s.record(
             {
                 "kind": "coordinate_boundary",
@@ -70,10 +76,13 @@ def coordinates(s, rule):
                 "actual_status": status,
                 "owned_rows_before": before,
                 "owned_rows_after": after,
+                "owned_snapshot_before": before_rows,
                 "owned_snapshot": snapshot,
             }
         )
         good = status == expected and after - before == (1 if expected == 201 else 0)
+        if expected != 201:
+            good = good and snapshot == before_rows
         if status == 201:
             current = s.sql(
                 "SELECT latitude,longitude FROM buddy_demand WHERE user_id="
@@ -115,8 +124,10 @@ def emoji(s, rule):
         body = s.need()
         body["remark"] = remark
         before = s.buddy_count(actor)
+        before_rows = owned_rows(s, actor)
         status, response, _ = s.buddy(actor, body)
         after = s.buddy_count(actor)
+        after_rows = owned_rows(s, actor)
         s.record(
             {
                 "kind": "emoji_boundary",
@@ -127,12 +138,17 @@ def emoji(s, rule):
                 "actual_status": status,
                 "owned_rows_before": before,
                 "owned_rows_after": after,
+                "owned_snapshot_before": before_rows,
+                "owned_snapshot_after": after_rows,
             }
         )
         good = status == expected and after - before == (1 if expected == 201 else 0)
+        if expected != 201:
+            good = good and before_rows == after_rows
         if status == 201:
             row = s.sql(
-                "SELECT HEX(remark),CHAR_LENGTH(remark),LENGTH(remark) FROM buddy_demand WHERE user_id="
+                "SELECT HEX(remark),CHAR_LENGTH(remark),LENGTH(remark) "
+                "FROM buddy_demand WHERE user_id="
                 + str(int(actor["id"]))
                 + " AND id="
                 + str(int(response["id"]))
@@ -170,7 +186,10 @@ def register(s):
                     "status": "NOT_RUN",
                     "executed": False,
                     "source_commit": BASE_COMMIT,
-                    "reason": "M1 business rule confirmed; M5 implementation/contract confirmation pending",
+                    "reason": (
+                        "M1 business rule confirmed; "
+                        "M5 implementation/contract confirmation pending"
+                    ),
                     "business_confirmation": rule["business"],
                     "evidence": [],
                 }
