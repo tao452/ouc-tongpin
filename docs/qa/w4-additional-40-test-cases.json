@@ -15,9 +15,9 @@
   },
   "readiness_counts": {
     "IMPLEMENTED_AND_EXECUTED": 38,
-    "PENDING_RULE": 2
+    "PENDING_IMPLEMENTATION_M5": 2
   },
-  "not_executed_reason": "S1-113/114等待M1/M5确认；其余38条已实际执行。",
+  "not_executed_reason": "M1已明确确认两项业务规则；S1-113/114已实现，等待M5实现/契约确认后执行。",
   "groups": {
     "jwt_identity": {
       "name": "JWT与身份隔离",
@@ -2604,7 +2604,7 @@
       "id": "S1-113",
       "group": "buddy_boundary",
       "module": "搭子参数边界",
-      "title": "经纬度合法边界与越界（待定口径）",
+      "title": "经纬度合法边界与越界（M1口径已确认）",
       "purpose": "暴露契约未给地理范围且 DTO 当前无范围校验的缺口。",
       "priority": "P1",
       "preconditions": [
@@ -2648,15 +2648,15 @@
         "确认后比较 HTTP/数据库落点与前后数量"
       ],
       "expected": {
-        "basis_type": "PROPOSED_RULE",
-        "approval": "PENDING",
+        "basis_type": "M1_CONFIRMED_RULE",
+        "approval": "BUSINESS_CONFIRMED_M1",
         "assertions": [
-          "拟议验收：闭区间 lat∈[-90,90]、lng∈[-180,180] 的两个边界样本 201 且原数值落库；四个越界样本 400 且无新增",
-          "这是待批准预期，不能因当前实现可能接受越界就把本设计写成已验证 FAIL/PASS；若确认采用其他规则，先修订本条再执行"
+          "M1已确认：lat∈[-90,90]、lng∈[-180,180]采用闭区间，两个边界样本返回201且原数值落库；四个越界样本返回400且不新增需求。",
+          "完整保留六个子样本的请求、响应和归属SQL；M5确认实现与契约后执行，不因早期失败跳过后续样本。"
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AWAITING_M5",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_113",
@@ -2667,7 +2667,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/buddy_rule_cases.py"
       },
       "related_original_ids": [
         "S1-047",
@@ -2683,10 +2684,9 @@
         "schema"
       ],
       "readiness": {
-        "state": "PENDING_RULE",
-        "decision": "确认经纬度范围是否采用闭区间 [-90,90]/[-180,180]，越界是否 400；契约与 DTO 同步后固定断言。",
+        "state": "PENDING_IMPLEMENTATION_M5",
+        "decision": "M1已确认业务口径；等待M5确认后端实现与OpenAPI、小程序校验的对齐情况后执行。",
         "owners": [
-          "M1",
           "M5"
         ]
       },
@@ -2697,13 +2697,37 @@
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-113",
         "status": "NOT_RUN",
         "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
+      },
+      "rule_confirmation": {
+        "business": {
+          "confirmed": true,
+          "confirmed_by": "tao452",
+          "date": "2026-11-22",
+          "comment_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7078743551"
+        },
+        "implementation": {
+          "confirmed": false,
+          "owner": "Raylee06",
+          "comment_url": null,
+          "source_commit": null
+        },
+        "latitude_range": [
+          -90,
+          90
+        ],
+        "longitude_range": [
+          -180,
+          180
+        ],
+        "valid_status": 201,
+        "invalid_status": 400
       }
     },
     {
       "id": "S1-114",
       "group": "buddy_boundary",
       "module": "搭子参数边界",
-      "title": "Emoji 备注长度计数口径（待定）",
+      "title": "Emoji 备注长度计数口径（M1口径已确认）",
       "purpose": "防止“200 字符”在 Unicode 码点与 Java UTF-16 单元间理解不同。",
       "priority": "P1",
       "preconditions": [
@@ -2737,15 +2761,15 @@
         "按已批准分支核对 HTTP 与落库完整性"
       ],
       "expected": {
-        "basis_type": "PROPOSED_RULE",
-        "approval": "PENDING",
+        "basis_type": "M1_CONFIRMED_RULE",
+        "approval": "BUSINESS_CONFIRMED_M1",
         "assertions": [
-          "若采用 Unicode 码点上限 200：100/101/200 个 Emoji 返回 201，201 个返回 400；若采用 UTF-16 单元上限 200：仅 100 个返回 201，其余 400",
-          "无论采用哪一口径，成功内容不得截断或损坏，拒绝不落库；未确认不能选一个分支冒充既定预期"
+          "M1已确认：备注按Unicode码点计数，上限200；100/101/200个😀返回201，201个返回400。",
+          "成功备注的UTF-8十六进制、CHAR_LENGTH和字节数与输入完整一致；拒绝时不新增需求，另记UTF-16单元数供对照。"
         ]
       },
       "automation": {
-        "implementation_status": "PLANNED_NOT_IMPLEMENTED",
+        "implementation_status": "IMPLEMENTED_AWAITING_M5",
         "level": "REAL_HTTP_MYSQL_REDIS",
         "proposed_test_file": "scripts/qa/w4_new40/test_buddy_boundaries.py",
         "proposed_test_name": "test_S1_114",
@@ -2756,7 +2780,8 @@
           "mysql",
           "redis"
         ],
-        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。"
+        "cleanup": "遵循公共 cleanup；仅清理本条持有的 A/B/P 和本次项目。",
+        "implementation_file": "scripts/qa/w4_new40/buddy_rule_cases.py"
       },
       "related_original_ids": [
         "S1-053",
@@ -2772,10 +2797,9 @@
         "schema"
       ],
       "readiness": {
-        "state": "PENDING_RULE",
-        "decision": "确认 remark 的 maxLength=200 采用码点还是 UTF-16 单元，并在契约、前端计数和后端校验中统一。",
+        "state": "PENDING_IMPLEMENTATION_M5",
+        "decision": "M1已确认业务口径；等待M5确认后端实现与OpenAPI、小程序校验的对齐情况后执行。",
         "owners": [
-          "M1",
           "M5"
         ]
       },
@@ -2786,6 +2810,24 @@
         "evidence_ref": "docs/qa/evidence/w4-additional-40/20261122-final/results.json#S1-114",
         "status": "NOT_RUN",
         "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018"
+      },
+      "rule_confirmation": {
+        "business": {
+          "confirmed": true,
+          "confirmed_by": "tao452",
+          "date": "2026-11-22",
+          "comment_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7078743551"
+        },
+        "implementation": {
+          "confirmed": false,
+          "owner": "Raylee06",
+          "comment_url": null,
+          "source_commit": null
+        },
+        "unit": "unicode_code_points",
+        "maximum": 200,
+        "valid_status": 201,
+        "invalid_status": 400
       }
     },
     {
@@ -3290,5 +3332,6 @@
       "results": "docs/qa/evidence/w4-additional-40/20261122/results.json",
       "retained_unchanged": true
     }
-  ]
+  ],
+  "rule_confirmations_reference": "docs/qa/w4-additional-40/rule-confirmations-20261122.json"
 }

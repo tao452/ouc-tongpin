@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from pathlib import Path
 
+from buddy_rule_cases import RULE_FILE, load_rules, ready
 from common import BASE_COMMIT, ROOT, safe
 
 
@@ -63,7 +64,14 @@ def assemble(http, retest, junit, events, output, first_attempt=None):
         )
     expected = {f"S1-{n:03}" for n in range(81, 121)}
     assert set(rows) == expected, set(rows) ^ expected
-    assert rows["S1-113"]["status"] == rows["S1-114"]["status"] == "NOT_RUN"
+    rules = raw.get("rule_confirmations") or load_rules()
+    for cid, rule in rules.items():
+        if ready(rule):
+            assert rows[cid]["status"] != "NOT_RUN", (
+                "Confirmed case needs an actual attempt"
+            )
+        else:
+            assert rows[cid]["status"] == "NOT_RUN" and not rows[cid]["executed"]
     first = []
     if first_attempt:
         for c in ET.parse(first_attempt).getroot().iter("testcase"):
@@ -83,6 +91,7 @@ def assemble(http, retest, junit, events, output, first_attempt=None):
         *Path(__file__).parent.glob("*.py"),
         ROOT / "services/api-server/src/test/java/"
         "com/ouctongpin/apiserver/w4/W4DatabaseCasesIT.java",
+        RULE_FILE,
     ]
     report = {
         "source_commit": BASE_COMMIT,
@@ -100,7 +109,11 @@ def assemble(http, retest, junit, events, output, first_attempt=None):
         ]
         if first_attempt
         else [],
-        "rule_decisions": {"S1-113": "PENDING_M1_M5", "S1-114": "PENDING_M1_M5"},
+        "rule_decisions": {
+            cid: "M1_M5_CONFIRMED" if ready(rule) else "M1_CONFIRMED_M5_PENDING"
+            for cid, rule in rules.items()
+        },
+        "rule_confirmations": rules,
         "source_sha256": {
             p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sources

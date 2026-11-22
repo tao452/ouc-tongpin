@@ -256,6 +256,7 @@ class Suite:
                         "project": self.project,
                         "source_commit": BASE_COMMIT,
                         "initial_empty_counts": getattr(self, "initial_counts", None),
+                        "rule_confirmations": getattr(self, "rule_confirmations", None),
                         "results": self.results,
                     },
                     ensure_ascii=False,

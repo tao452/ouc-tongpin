@@ -1,6 +1,7 @@
 import argparse
 import json
 
+from buddy_rule_cases import register as buddy_rule_cases
 from common import Suite
 from http_cases import register as http_cases
 from moderation_cases import register as moderation_cases
@@ -17,21 +18,12 @@ def main():
     suite.record({"kind": "initial_empty_database", "counts": initial})
     http_cases(suite)
     moderation_cases(suite)
-    for number in [113, 114]:
-        suite.results.append(
-            {
-                "case_id": f"S1-{number}",
-                "status": "NOT_RUN",
-                "executed": False,
-                "reason": "M1/M5 rule confirmation pending",
-                "evidence": [],
-            }
-        )
+    buddy_rule_cases(suite)
     suite.save()
     print(
         json.dumps(
             {
-                "attempted": len(suite.results) - 2,
+                "attempted": sum(r.get("executed", False) for r in suite.results),
                 "statuses": {
                     status: sum(r["status"] == status for r in suite.results)
                     for status in ["PASS", "FAIL", "BLOCKED", "NOT_RUN"]

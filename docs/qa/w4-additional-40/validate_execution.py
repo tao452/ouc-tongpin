@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
@@ -17,6 +18,10 @@ def read(path):
 
 
 def main():
+    sys.path.insert(0, str(ROOT / "scripts/qa/w4_new40"))
+    from buddy_rule_cases import load_rules, ready
+
+    rules = load_rules()
     doc = read(ROOT / "docs/qa/w4-additional-40-test-cases.json")
     snapshot = read(HERE / "design-20261118.snapshot.json")
     report = read(ROOT / doc["execution_results"])
@@ -46,7 +51,16 @@ def main():
     results = {r["case_id"]: r for r in report["results"]}
     assert len(results) == 40
     for index, (case, old) in enumerate(zip(cases, snapshot["cases"], strict=True)):
-        assert all(case[k] == old[k] for k in fixed), case["id"]
+        approved_rule = rules.get(case["id"])
+        allowed = (
+            {"title", "expected"}
+            if approved_rule and approved_rule["business"]["confirmed"]
+            else set()
+        )
+        assert all(case[k] == old[k] for k in fixed if k not in allowed), case["id"]
+        if approved_rule:
+            assert case["rule_confirmation"] == approved_rule
+            assert case["expected"]["approval"] == "BUSINESS_CONFIRMED_M1"
         assert (
             blocks[index].group(1) == case["id"]
             and blocks[index].group(2) == case["title"]
@@ -74,12 +88,12 @@ def main():
             case["actual_result"]["evidence_ref"]
             == doc["execution_results"] + "#" + case["id"]
         )
-        if case["id"] in ["S1-113", "S1-114"]:
+        if approved_rule and not ready(approved_rule):
+            assert case["status"] == "NOT_RUN" and not case["executed"]
             assert (
-                case["status"] == "NOT_RUN"
-                and not case["executed"]
-                and case["expected"]["approval"] == "PENDING"
+                case["automation"]["implementation_status"] == "IMPLEMENTED_AWAITING_M5"
             )
+            assert (ROOT / case["automation"]["implementation_file"]).is_file()
         else:
             assert actual["source_commit"] == doc["execution_source_commit"]
             assert case["executed"] and actual["evidence"]
@@ -119,14 +133,16 @@ def main():
         "status": "PASS",
         "checked_at_utc": datetime.now(UTC).isoformat(),
         "status_counts": doc["status_counts"],
-        "design_business_fields_unchanged": True,
+        "original38_business_fields_unchanged": True,
+        "confirmed_rule_changes": {cid: rule["business"] for cid, rule in rules.items()},
         "historical_80_evidence_unchanged": True,
         "business_source_matches_execution_commit": True,
         "source_commit": doc["execution_source_commit"],
         "network_requests_executed_by_this_validator": 0,
         "actual_execution_report": doc["execution_results"],
     }
-    output = (ROOT / doc["execution_results"]).with_name("design-validation.json")
+    output = ROOT / "qa-private/w4-design-validation.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_bytes(
         (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode()
     )
