@@ -370,6 +370,44 @@ paths:
         '200':
           description: 更新成功
 
+  # ---------------- 内部评分 US-12（W6草案，M1/M5待审核） ----------------
+  /score:
+    post:
+      tags: [match]
+      summary: 内部同频指数单条或批量评分
+      x-internal: true
+      security: []
+      servers:
+        - url: http://algo:8000
+          description: 容器内部；公开网关对此路径返回404
+      description: >
+        四维等权初稿，最多100个唯一候选ID；请求体128KiB，特征计算预算50ms。
+        时间使用带时区RFC3339子集，偏移[-18:00,+18:00]，最多6位小数秒，UTC年份1～9999。缺失特征计0且不重新归一化。
+        返回分数、特征、版本和配置SHA256；不保存原始请求。
+        Java连接200ms/读取500ms，服务失败显式降级纯标签Jaccard；输入错误不降级。
+        权重、距离尺度及业务验收门槛待M1确认。不是公开业务匹配路由。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/MatchScoreRequest' }
+      responses:
+        '200':
+          description: 全部候选评分（分数降序，ID升序；无部分成功）
+          headers:
+            X-Score-Config-SHA256:
+              schema: { type: string, pattern: '^[a-f0-9]{64}$' }
+              description: 与响应config_sha256相同
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MatchScoreResponse' }
+        '400':
+          description: 参数/ID重复/单批互斥/时间格式无效，不回显输入
+        '413':
+          description: 超过128KiB
+        '503':
+          description: 计算预算耗尽；不返回部分排序
+
 components:
   securitySchemes:
     bearerAuth:
@@ -406,3 +444,275 @@ components:
           format: date-time
           description: 24h 后焚毁；到期列表与详情均不可见，库里仅留内容哈希
         hugCount: { type: integer, description: 抱抱数，每人每帖每日限 1 次（Redis SETNX + 24h） }
+
+    MatchCandidate:
+      additionalProperties: false
+      properties:
+        emotion_vector:
+          anyOf:
+          - items:
+              maximum: 1
+              minimum: 0
+              type: number
+            maxItems: 6
+            minItems: 6
+            type: array
+          - type: 'null'
+          default: null
+          title: Emotion Vector
+        interests:
+          items:
+            maxLength: 32
+            minLength: 1
+            type: string
+          maxItems: 32
+          title: Interests
+          type: array
+        availability:
+          items:
+            $ref: '#/components/schemas/MatchTimeSlot'
+          maxItems: 16
+          title: Availability
+          type: array
+        location:
+          anyOf:
+          - $ref: '#/components/schemas/MatchLocation'
+          - type: 'null'
+          default: null
+        id:
+          pattern: ^[A-Za-z0-9_-]{1,64}$
+          title: Id
+          type: string
+      required:
+      - id
+      title: Candidate
+      type: object
+    MatchLocation:
+      additionalProperties: false
+      properties:
+        lat:
+          maximum: 90
+          minimum: -90
+          title: Lat
+          type: number
+        lng:
+          maximum: 180
+          minimum: -180
+          title: Lng
+          type: number
+      required:
+      - lat
+      - lng
+      title: Location
+      type: object
+    MatchProfile:
+      additionalProperties: false
+      properties:
+        emotion_vector:
+          anyOf:
+          - items:
+              maximum: 1
+              minimum: 0
+              type: number
+            maxItems: 6
+            minItems: 6
+            type: array
+          - type: 'null'
+          default: null
+          title: Emotion Vector
+        interests:
+          items:
+            maxLength: 32
+            minLength: 1
+            type: string
+          maxItems: 32
+          title: Interests
+          type: array
+        availability:
+          items:
+            $ref: '#/components/schemas/MatchTimeSlot'
+          maxItems: 16
+          title: Availability
+          type: array
+        location:
+          anyOf:
+          - $ref: '#/components/schemas/MatchLocation'
+          - type: 'null'
+          default: null
+      title: Profile
+      type: object
+    MatchTimeSlot:
+      additionalProperties: false
+      properties:
+        start:
+          format: date-time
+          maxLength: 64
+          pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-5][0-9]:[0-5][0-9](?:\.[0-9]{1,6})?(?:Z|[+-](?:(?:0[0-9]|1[0-7]):[0-5][0-9]|18:00))$
+          title: Start
+          type: string
+        end:
+          format: date-time
+          maxLength: 64
+          pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-5][0-9]:[0-5][0-9](?:\.[0-9]{1,6})?(?:Z|[+-](?:(?:0[0-9]|1[0-7]):[0-5][0-9]|18:00))$
+          title: End
+          type: string
+      required:
+      - start
+      - end
+      title: TimeSlot
+      type: object
+    MatchScoreRequest:
+      additionalProperties: false
+      oneOf:
+      - not:
+          required:
+          - candidates
+        properties:
+          candidate:
+            type: object
+        required:
+        - candidate
+      - not:
+          required:
+          - candidate
+        properties:
+          candidates:
+            minItems: 1
+            type: array
+        required:
+        - candidates
+      properties:
+        query:
+          $ref: '#/components/schemas/MatchProfile'
+        candidate:
+          anyOf:
+          - $ref: '#/components/schemas/MatchCandidate'
+          - type: 'null'
+          default: null
+        candidates:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/MatchCandidate'
+            maxItems: 100
+            minItems: 1
+            type: array
+          - type: 'null'
+          default: null
+          title: Candidates
+      required:
+      - query
+      title: ScoreRequest
+      type: object
+    MatchFeatureValues:
+      additionalProperties: false
+      properties:
+        emotion_similarity:
+          maximum: 1
+          minimum: 0
+          title: Emotion Similarity
+          type: number
+        emotion_complement:
+          maximum: 1
+          minimum: 0
+          title: Emotion Complement
+          type: number
+        interest_jaccard:
+          maximum: 1
+          minimum: 0
+          title: Interest Jaccard
+          type: number
+        time_jaccard:
+          maximum: 1
+          minimum: 0
+          title: Time Jaccard
+          type: number
+        distance_decay:
+          maximum: 1
+          minimum: 0
+          title: Distance Decay
+          type: number
+        distance_m:
+          anyOf:
+          - minimum: 0
+            type: number
+          - type: 'null'
+          title: Distance M
+        available:
+          additionalProperties:
+            type: boolean
+          maxProperties: 4
+          minProperties: 4
+          propertyNames:
+            enum:
+            - emotion
+            - interests
+            - time
+            - distance
+          title: Available
+          type: object
+      required:
+      - emotion_similarity
+      - emotion_complement
+      - interest_jaccard
+      - time_jaccard
+      - distance_decay
+      - distance_m
+      - available
+      title: FeatureValues
+      type: object
+    MatchScoreItem:
+      additionalProperties: false
+      properties:
+        id:
+          pattern: ^[A-Za-z0-9_-]{1,64}$
+          title: Id
+          type: string
+        score:
+          maximum: 100
+          minimum: 0
+          title: Score
+          type: number
+        features:
+          $ref: '#/components/schemas/MatchFeatureValues'
+      required:
+      - id
+      - score
+      - features
+      title: ScoreItem
+      type: object
+    MatchScoreResponse:
+      additionalProperties: false
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/MatchScoreItem'
+          maxItems: 100
+          minItems: 1
+          title: Items
+          type: array
+        feature_version:
+          maxLength: 64
+          minLength: 1
+          title: Feature Version
+          type: string
+        weights_version:
+          maxLength: 64
+          minLength: 1
+          title: Weights Version
+          type: string
+        config_sha256:
+          pattern: ^[a-f0-9]{64}$
+          title: Config Sha256
+          type: string
+        fallback:
+          const: false
+          title: Fallback
+          type: boolean
+      required:
+      - items
+      - feature_version
+      - weights_version
+      - config_sha256
+      - fallback
+      title: ScoreResponse
+      type: object

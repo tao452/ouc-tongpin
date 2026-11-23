@@ -1,0 +1,6 @@
+{
+  "status": "SETUP_BLOCKED_BEFORE_120_EXECUTION",
+  "cause": "local prepare --project-directory root resolved ./db/init outside infra, core tables absent; SQL1146. Not an application regression. No120 status awarded.",
+  "source_commit": "24881f250338b619063c457e036f328a91dfac79",
+  "recovery": "retain original logs and remove only owned project; new project/volume and corrected path origin for retry"
+}

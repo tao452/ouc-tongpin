@@ -1,0 +1,29 @@
+{
+  "actual_rows": 5000,
+  "query_groups": 100,
+  "http_scored_rows": 5000,
+  "sql_summary_columns": [
+    "rows",
+    "query_groups",
+    "min_score",
+    "max_score",
+    "raw_profile_fields",
+    "config_versions"
+  ],
+  "sql_summary": [
+    "5000",
+    "100",
+    "0.000000",
+    "69.716192",
+    "0",
+    "1"
+  ],
+  "unique_constraint": "PASS duplicate rejected1062",
+  "score_range_constraint": "PASS score101 rejected3819",
+  "count_after_rejected_inserts": 5000,
+  "source_data_sha256": "93c8760ac25c74fd5a0c3442dbae6b186ee5e0e9edd3c5f7d24ff01d59f0e1df",
+  "ddl_sha256": "01712f8feecfe2632c9d59eff2c108fb13faa49d1affc4e7e8df33419d3240bf",
+  "target": "owned fresh Compose MySQL only",
+  "schema_status": "PROPOSED, not installed into shared/prod schema",
+  "business_acceptance": false
+}

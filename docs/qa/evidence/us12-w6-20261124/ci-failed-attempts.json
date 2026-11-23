@@ -1,0 +1,20 @@
+{
+  "attempts": [
+    {
+      "source": "296af59",
+      "check": "Release candidate",
+      "status": "FAIL",
+      "cause": "offline metric test dependency numpy not installed in candidate workflow",
+      "fix": "e0843d1 includes offline evaluation requirements in dev environment"
+    },
+    {
+      "source": "e0843d1",
+      "check": "W3 delivery evidence",
+      "status": "FAIL",
+      "cause": "JUnit XML in same upload moved JSON artifacts underqa-private/; consumer expected root JSON",
+      "fix": "bdeaaa4 uploads Java XML as separate artifact"
+    }
+  ],
+  "records_retained": true,
+  "application_test_failures_hidden": false
+}

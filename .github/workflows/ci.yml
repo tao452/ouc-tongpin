@@ -184,9 +184,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements-dev.txt
-      - run: ruff check app tests scripts ../../scripts/qa ../../scripts/w1 ../../scripts/release
+      - run: pip install -r requirements-dev.txt -r requirements-match-eval.txt
+      - run: ruff check app match tests scripts ../../scripts/qa ../../scripts/w1 ../../scripts/release
       - run: pytest -q --junitxml=pytest-junit.xml
+      - name: Reproduce frozen US12 synthetic NDCG baseline
+        run: python scripts/evaluate_match.py --output ../../qa-private/us12-match-function.json
       - name: W2 content safety regression gate
         run: >-
           python scripts/evaluate_dataset.py ../../docs/qa/data/w2-moderation-regression.jsonl
@@ -208,6 +210,7 @@ jobs:
             services/algo/coverage.xml
             services/algo/pytest-junit.xml
             qa-private/w2-moderation-function.json
+            qa-private/us12-match-function.json
           if-no-files-found: warn
 
   stack:
