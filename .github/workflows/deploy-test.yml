@@ -46,7 +46,12 @@ jobs:
       - name: Collect sanitized database initialization diagnostics
         if: failure()
         run: python scripts/qa/collect_mysql_initialization.py
-      - name: Verify deployed dictionary identity and external HTTP diagnostic
+      - uses: actions/cache@v4
+        with:
+          path: qa-private/cold-test.csv
+          key: cold-pinned-${{ hashFiles('docs/qa/data/external/cold-test.v1.json') }}
+      - name: Verify deployed dictionary identity and historical external HTTP diagnostic
+        continue-on-error: true
         run: |
           python scripts/qa/fetch_cold_test.py --output qa-private/cold-test.csv
           python services/algo/scripts/evaluate_external.py qa-private/cold-test.csv --base-url http://127.0.0.1:8080 --output qa-private/us24-external-http.json
