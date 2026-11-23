@@ -6,8 +6,8 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 UnitFloat = Annotated[float, Field(ge=0, le=1, allow_inf_nan=False)]
 TIMESTAMP_PATTERN = (
-    r"^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}"
-    r"(?:\.[0-9]{1,6})?(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    r"^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-5][0-9]:[0-5][0-9]"
+    r"(?:\.[0-9]{1,6})?(?:Z|[+-](?:(?:0[0-9]|1[0-7]):[0-5][0-9]|18:00))$"
 )
 Timestamp = Annotated[datetime, Field(json_schema_extra={
     "pattern": TIMESTAMP_PATTERN, "maxLength": 64})]
@@ -39,9 +39,15 @@ class TimeSlot(StrictModel):
     @model_validator(mode="after")
     def valid_interval(self):
         if (self.start.tzinfo is None or self.end.tzinfo is None
-                or self.start.utcoffset() is None or self.end.utcoffset() is None
-                or self.end.astimezone(UTC) <= self.start.astimezone(UTC)):
+                or self.start.utcoffset() is None or self.end.utcoffset() is None):
             raise ValueError("Intervals need timezone-aware increasing endpoints")
+        try:
+            if (abs(self.start.utcoffset().total_seconds()) > 64800
+                    or abs(self.end.utcoffset().total_seconds()) > 64800
+                    or self.end.astimezone(UTC) <= self.start.astimezone(UTC)):
+                raise ValueError("Intervals need timezone-aware increasing endpoints")
+        except OverflowError as exc:
+            raise ValueError("Interval must fit UTC years1..9999") from exc
         return self
 
 

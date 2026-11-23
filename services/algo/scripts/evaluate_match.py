@@ -123,6 +123,8 @@ def evaluate(dataset, manifest_path, output, base_url=None):
         evaluation_completed=True, mode="http" if base_url else "function", rows=len(rows),
         queries=len(queries), excluded_rows=0, duplicate_candidate_ids_kept=0,
         dataset_sha256=manifest["raw_sha256"], compressed_sha256=manifest["gzip_sha256"],
+        manifest_sha256=sha(manifest_path),
+        input_validation_revision=manifest.get("input_validation_revision", "v1"),
         weights_sha256=scorer.sha256, feature_version=scorer.config.feature_version,
         metric="linear gain, tie-averaged NDCG@10; zero-gain queries included as0",
         split_metrics=groups("split"), cohort_metrics=groups("cohort"), query_results=queries,
@@ -142,7 +144,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     data = ROOT / "docs/algorithms/data"
     parser.add_argument("--dataset", type=Path, default=data / "us12-synthetic.v1.jsonl.gz")
-    parser.add_argument("--manifest", type=Path, default=data / "us12-synthetic.v1.manifest.json")
+    parser.add_argument("--manifest", type=Path,
+                        default=data / "us12-synthetic.v1.validation-v1_1.manifest.json")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--base-url")
     args = parser.parse_args()

@@ -90,6 +90,15 @@ def execute(base, gateway):
                                 "candidate": candidate}),
         ("naive-time", {"query": {"availability": [{"start": "2026-12-01T09:00:00",
             "end": "2026-12-01T10:00:00"}]}, "candidate": candidate}),
+        ("offset-minute-overflow", {"query": {"availability": [{
+            "start": "2026-12-01T09:00:00+01:60", "end": "2026-12-02T10:00:00Z"}]},
+            "candidate": candidate}),
+        ("offset-out-of-range", {"query": {"availability": [{
+            "start": "2026-12-01T09:00:00+19:00", "end": "2026-12-02T10:00:00Z"}]},
+            "candidate": candidate}),
+        ("utc-year-overflow", {"query": {"availability": [{
+            "start": "0001-01-01T00:00:00+18:00", "end": "2026-12-02T10:00:00Z"}]},
+            "candidate": candidate}),
     ]:
         call(name, base, "/score", payload, 400)
     call("score-body-limit", base, "/score", b"x" * 131073, 413)

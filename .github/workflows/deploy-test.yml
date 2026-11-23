@@ -73,7 +73,13 @@ jobs:
             qa-private/mysql-initialization.json
             qa-private/us12-score-http.json
             qa-private/us12-match-http.json
-            services/api-server/target/surefire-reports/TEST-*MatchingScoreDockerIT.xml
+          if-no-files-found: warn
+      - name: Upload Java scoring interop separately
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us12-java-interop-evidence
+          path: services/api-server/target/surefire-reports/TEST-*MatchingScoreDockerIT.xml
           if-no-files-found: warn
       - name: Show service state on failure
         if: failure()

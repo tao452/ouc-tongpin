@@ -10,7 +10,7 @@ from match.metrics import ndcg
 
 ROOT = Path(__file__).resolve().parents[3]
 DATA = ROOT / "docs/algorithms/data/us12-synthetic.v1.jsonl.gz"
-MANIFEST = DATA.with_name("us12-synthetic.v1.manifest.json")
+MANIFEST = DATA.with_name("us12-synthetic.v1.validation-v1_1.manifest.json")
 spec = importlib.util.spec_from_file_location(
     "match_evaluation", ROOT / "services/algo/scripts/evaluate_match.py")
 evaluation = importlib.util.module_from_spec(spec)

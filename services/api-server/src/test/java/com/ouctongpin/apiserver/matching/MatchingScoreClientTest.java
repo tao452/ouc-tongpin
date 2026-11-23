@@ -130,6 +130,17 @@ class MatchingScoreClientTest {
         } finally { server.stop(0); }
     }
 
+    @Test void timestampOffsetAndUtcRangeMatchPythonWithoutOverflow() {
+        for (String start : List.of("2026-12-01T10:00:00+01:60", "2026-12-01T10:00:00+19:00",
+                "2026-12-01T10:00:00+18:01", "0001-01-01T00:00:00+18:00",
+                "0000-01-01T00:00:00Z")) {
+            assertThrows(ResponseStatusException.class, () -> new MatchingScoreClient.TimeSlot(
+                    start, "2026-12-02T10:00:00Z"));
+        }
+        assertDoesNotThrow(() -> new MatchingScoreClient.TimeSlot(
+                "2026-12-01T09:00:00+18:00", "2026-12-02T09:00:00Z"));
+    }
+
     @Test void missingTagsAndTiesHaveStableZeroScoresAndTimeoutConfigIsBounded() throws Exception {
         var server = serve(503, "{}", false);
         try {

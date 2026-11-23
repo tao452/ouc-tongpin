@@ -21,7 +21,7 @@ import java.util.*;
 @Service
 public class MatchingScoreClient {
     private static final String TIMESTAMP = "[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}"
-            + "(?:\\.[0-9]{1,6})?(?:Z|[+-][0-9]{2}:[0-9]{2})";
+            + "(?:\\.[0-9]{1,6})?(?:Z|[+-](?:(?:0[0-9]|1[0-7]):[0-5][0-9]|18:00))";
     public record Location(double lat, double lng) {}
     public record TimeSlot(String start, String end) {
         public TimeSlot {
@@ -29,6 +29,10 @@ public class MatchingScoreClient {
                 if (start == null || end == null || start.length() > 64 || end.length() > 64
                         || !start.matches(TIMESTAMP) || !end.matches(TIMESTAMP)
                         || !OffsetDateTime.parse(end).isAfter(OffsetDateTime.parse(start))) throw invalid();
+                var first = OffsetDateTime.parse(start).withOffsetSameInstant(java.time.ZoneOffset.UTC);
+                var last = OffsetDateTime.parse(end).withOffsetSameInstant(java.time.ZoneOffset.UTC);
+                if (first.getYear() < 1 || first.getYear() > 9999
+                        || last.getYear() < 1 || last.getYear() > 9999) throw invalid();
             } catch (java.time.format.DateTimeParseException error) { throw invalid(); }
         }
     }

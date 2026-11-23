@@ -84,6 +84,17 @@ def test_service_enforces_compute_budget(monkeypatch):
         Scorer().score(ScoreRequest.model_validate(payload()))
 
 
+@pytest.mark.parametrize("start", [
+    "2026-12-01T10:00:00+01:60", "2026-12-01T10:00:00+19:00",
+    "2026-12-01T10:00:00+18:01", "0001-01-01T00:00:00+18:00",
+    "9999-12-31T23:59:59-18:00", "0000-01-01T00:00:00Z",
+])
+def test_time_format_offset_and_utc_range_fail_as400_instead_of_normalizing_or500(start):
+    body = payload()
+    body["query"]["availability"] = [{"start": start, "end": "2026-12-02T10:00:00Z"}]
+    assert client.post("/score", json=body).status_code == 400
+
+
 def test_config_is_explicit_validated_and_attested(tmp_path, monkeypatch):
     config = json.loads(DEFAULT_CONFIG.read_bytes())
     config["weights"] = {"emotion": 0.0, "interests": 1.0, "time": 0.0, "distance": 0.0}
