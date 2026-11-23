@@ -1,6 +1,7 @@
 """Optional localhost transport for an owned stack; same real MySQL/Redis assertions."""
 
 import socket
+import subprocess
 
 
 def sql(suite, statement):
@@ -11,7 +12,12 @@ def sql(suite, statement):
                          database=suite.env["MYSQL_DATABASE"], charset="utf8mb4",
                          autocommit=True, connect_timeout=10, read_timeout=30) as connection:
         with connection.cursor() as cursor:
-            cursor.execute(statement)
+            try:
+                cursor.execute(statement)
+            except pymysql.MySQLError as error:
+                # Keep the CLI transport's error contract, without logging SQL or credentials.
+                raise subprocess.CalledProcessError(
+                    1, ["owned-mysql"], stderr=f"ERROR {error.args[0]}") from None
             rows = cursor.fetchall()
     return "\n".join("\t".join("NULL" if item is None else str(item) for item in row)
                      for row in rows)

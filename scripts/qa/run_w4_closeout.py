@@ -5,6 +5,7 @@ import json
 import os
 import subprocess
 import sys
+import xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
@@ -90,27 +91,50 @@ def query_cases(s):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", required=True)
+    parser.add_argument("--resume-verified40", action="store_true")
     args = parser.parse_args()
     assert args.project.startswith("ouc-w4-new40-")
     folder = ROOT / RUN_DIRECTORY
     s = Suite(args.project, folder / "http-results.json")
-    s.require_empty()
+    provenance = json.loads((folder / "image-provenance.json").read_bytes())
+    source = provenance["source_commit"]
+    assert not subprocess.check_output(["git", "diff", source, "--", "services/api-server/src/main",
+        "services/api-server/pom.xml", "services/algo/app", "infra", "packages/contract"], cwd=ROOT)
+    if not args.resume_verified40:
+        s.require_empty()
     # Capture regular JUnit results before the opt-in database IT adds its XML.
     regular = collect(ROOT / "services/api-server/target/surefire-reports")
-    save(folder / "regular-java.json", regular)
-    subprocess.run([sys.executable, str(ROOT / "scripts/qa/w4_new40/run_http.py"),
-                    "--project", s.project, "--output", str(s.output)], cwd=ROOT, check=True)
-    java_exit = java(s, folder)
-    current40 = assemble(s.output, None, ROOT / "services/api-server/target/surefire-reports/"
-                         "TEST-com.ouctongpin.apiserver.w4.W4DatabaseCasesIT.xml",
-                         folder / "java-events", folder / "new40.json")
+    normal = [ET.parse(path).getroot() for path in
+              (ROOT / "services/api-server/target/surefire-reports").glob("TEST-*.xml")
+              if not path.stem.endswith("IT")]
+    regular["java_test_totals"] = {key: sum(int(row.get(key, 0)) for row in normal)
+                                  for key in ("tests", "errors", "failures", "skipped")}
+    save(folder / "regular-java-final.json", regular)
+    if args.resume_verified40:
+        current40 = json.loads((folder / "new40.json").read_bytes())
+        assert current40["source_commit"] == source and current40["case_count"] == 40
+        assert all(row["status"] == "PASS" and row["evidence"] for row in current40["results"])
+        java_exit = 0
+    else:
+        subprocess.run([sys.executable, str(ROOT / "scripts/qa/w4_new40/run_http.py"),
+                        "--project", s.project, "--output", str(s.output)], cwd=ROOT, check=True)
+        java_exit = java(s, folder)
+        current40 = assemble(s.output, None, ROOT / "services/api-server/target/surefire-reports/"
+                             "TEST-com.ouctongpin.apiserver.w4.W4DatabaseCasesIT.xml",
+                             folder / "java-events", folder / "new40.json")
     Stack.command = tuple(s.compose)
     PrivacyStack.command = tuple(s.compose)
     if os.environ.get("W4_NATIVE_STORAGE") == "true":
         Stack.sql = lambda self, statement: s.sql(statement)
         Stack.redis = lambda self, *arguments: s.redis(*arguments)
-    original = old80.execute("http://127.0.0.1:" + str(s.base))
-    save(folder / "original80-http.json", dict(source_commit=BASE_COMMIT, results=original))
+    previous = folder / "original80-http.json"
+    if args.resume_verified40 and previous.exists():
+        prior = json.loads(previous.read_bytes())
+        assert prior["source_commit"] == source
+        original = prior["results"]
+    else:
+        original = old80.execute("http://127.0.0.1:" + str(s.base))
+        save(previous, dict(source_commit=source, results=original))
     results = [row for row in original if row["case_id"].startswith("S1-")]
     client = Client("http://127.0.0.1:" + str(s.base)).authenticate()
     stack_rows = []
@@ -135,13 +159,13 @@ def main():
     results += regular["catalogue_results"] + stack_rows
     diagnostics = {}
     security, pii = privacy.execute(client.base, s.env, diagnostics)
-    save(folder / "privacy.json", dict(source_commit=BASE_COMMIT, results=security,
+    save(folder / "privacy-final.json", dict(source_commit=source, results=security,
          runtime_pii_scan=pii, independent_reproduction="PENDING", live_wechat=False))
-    save(folder / "query.json", dict(source_commit=BASE_COMMIT, results=query_cases(s)))
+    save(folder / "query-final.json", dict(source_commit=source, results=query_cases(s)))
     all_rows = sorted(results + current40["results"], key=lambda row: row["case_id"])
     assert len(all_rows) == 120 and len({row["case_id"] for row in all_rows}) == 120
     counts = dict(Counter(row["status"] for row in all_rows))
-    save(folder / "all120.json", dict(source_commit=BASE_COMMIT,
+    save(folder / "all120.json", dict(source_commit=source, harness_revision=BASE_COMMIT,
          executed_at_utc=datetime.now(UTC).isoformat(), results=all_rows, status_counts=counts,
          pass_rate=counts.get("PASS", 0) / 120, denominator=120, java_integration_exit=java_exit,
          scope="Owned MySQL8/Redis/HTTP; synthetic WeChat identity; author execution"))
