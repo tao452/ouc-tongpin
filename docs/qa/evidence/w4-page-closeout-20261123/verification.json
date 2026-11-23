@@ -1,0 +1,41 @@
+{
+  "source_commit": "519424a7c7dbf9b7f8a0254c23d0f5a585e4be76",
+  "node_tests": {
+    "PASS": 63,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "eslint": "PASS",
+  "project_pages": 14,
+  "navigation_links": 15,
+  "gui": {
+    "tool": "微信开发者工具 Stable 2.02.2608040",
+    "actual_project_path": "apps/miniprogram in fix/w4-miniprogram-closeout-20261123",
+    "observed_pages": [
+      "pages/index/index",
+      "pages/plaza/index",
+      "pages/plaza/publish/publish"
+    ],
+    "observed_counter": "0/200",
+    "blocking_observation": "request合法域名校验阻止http://127.0.0.1:8080；登录异常；没有已配置的测试HTTPS域名",
+    "emoji_input_gui": "BLOCKED:未完成可核验的焦点与输入测试",
+    "publish_gui": "BLOCKED",
+    "records_gui": "BLOCKED",
+    "live_wechat": "BLOCKED",
+    "screenshots_submitted": 0,
+    "privacy": "原始开发工具窗口含个人账号头像，不提交整窗截图；公开材料仅保留去身份的观测记录"
+  },
+  "files_sha256": {
+    ".gitignore": "e9d71d47ca705ae280260d188ed3c7d46663cae5c3230f501ffefc98210b3d8c",
+    "apps/miniprogram/config.js": "7cd7c06a73cccb71199b1df9779200a30647be7f456fa50b2c7f2c4e08fba96e",
+    "apps/miniprogram/config.local.example.js": "f162f04831bee5915a62a0edd3268530be7fdb422efdee91018c5b2588d65ea2",
+    "apps/miniprogram/pages/checkin/records.js": "2bcdb24affd3ecb78a70bdef00b451d318b4094c9376e262ced3cb426083fd77",
+    "apps/miniprogram/pages/plaza/publish/publish.js": "8180ac5aa4cc37e5c334a5a60f17a97d6d6890ce6d95e13c7cf8294b0ff4b547",
+    "apps/miniprogram/pages/plaza/publish/publish.wxml": "be039560a50360b20d09c0758827c97b658606c0bf941e86ea18950503bcf0ce",
+    "apps/miniprogram/pages/treehole/index.js": "713c4793797bcaf02ac002303b85084a4b0ae8989e7230bec438d4aa0686000c",
+    "apps/miniprogram/pages/treehole/index.wxml": "5eb247c75766d6c7e65c86180020f3a1ab06e4b21505dd1d988cec9eb2b6e473",
+    "apps/miniprogram/tests/w4-closeout.test.cjs": "1cd9fcd46012e792e911ec1b3578a8a1c22abb11a61f9bfd43d35fd113848040",
+    "apps/miniprogram/utils/codepoints.js": "a83dd289841b9c34d8b7f5532c8d5498306ec954d87d5b16b0666d93dd974a11",
+    "apps/miniprogram/utils/request.js": "d371c970849138ef1f9a59593f36f31437fcfb1e2786a2afca92942adbe9d6c7"
+  }
+}
