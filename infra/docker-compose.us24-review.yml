@@ -1,4 +1,4 @@
-# Opt-in review only; the regular stack keeps the frozen v1 dictionary.
+# Opt-in review only; the regular stack keeps words.json (5 rules).
 services:
   algo:
     environment:
