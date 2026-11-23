@@ -10,15 +10,16 @@ class BodyLimitMiddleware:
 
     async def __call__(self, scope, receive, send):
         if (scope["type"] != "http" or scope["method"] != "POST"
-                or scope["path"] != "/api/moderation/check"):
+                or scope["path"] not in {"/api/moderation/check", "/score"}):
             return await self.app(scope, receive, send)
+        limit = 131072 if scope["path"] == "/score" else self.limit
         lengths = [v for k, v in scope.get("headers", []) if k.lower() == b"content-length"]
         if lengths:
             if len(lengths) != 1 or not lengths[0].isdigit():
                 return await self.reject(scope, receive, send, 400)
             # Compare strings first to avoid integer conversion of unbounded headers.
             length = lengths[0].lstrip(b"0") or b"0"
-            if len(length) > 5 or int(length) > self.limit:
+            if len(length) > len(str(limit)) or int(length) > limit:
                 return await self.reject(scope, receive, send, 413)
         messages, size = [], 0
         while True:
@@ -26,7 +27,7 @@ class BodyLimitMiddleware:
             if message["type"] == "http.disconnect":
                 return
             size += len(message.get("body", b""))
-            if size > self.limit:
+            if size > limit:
                 return await self.reject(scope, receive, send, 413)
             messages.append(message)
             if not message.get("more_body", False):
