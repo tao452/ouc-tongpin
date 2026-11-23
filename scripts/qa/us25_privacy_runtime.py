@@ -44,7 +44,8 @@ class PrivacyStack(Stack):
                    '-D "$MYSQL_DATABASE" --default-character-set=utf8mb4 '
                    '--batch --skip-column-names')]
         return subprocess.run(command, input=statement, check=True, capture_output=True,
-                              text=True, timeout=30).stdout.strip()
+                              text=True, encoding="utf-8", errors="replace",
+                              timeout=30).stdout.strip()
 
     @contextlib.contextmanager
     def public_reader(self):
@@ -59,7 +60,8 @@ class PrivacyStack(Stack):
             return subprocess.run([*self.command, "exec", "-T", "mysql", "sh", "-c",
                                    shell, "reader", statement],
                                   input=f"[client]\nuser={user}\npassword={password}\n",
-                                  check=False, capture_output=True, text=True, timeout=30)
+                                  check=False, capture_output=True, text=True,
+                                  encoding="utf-8", errors="replace", timeout=30)
         try:
             self.root_sql(f"CREATE USER '{user}'@'localhost' IDENTIFIED BY '{password}';")
             self.root_sql(f"GRANT 'ouc_public_reader' TO '{user}'@'localhost';")

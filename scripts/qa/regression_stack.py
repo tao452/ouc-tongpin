@@ -10,7 +10,8 @@ class Stack:
 
     def execute(self, *arguments):
         return subprocess.run(
-            [*self.command, *arguments], check=True, capture_output=True, text=True, timeout=60
+            [*self.command, *arguments], check=True, capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=60
         ).stdout.strip()
 
     def sql(self, statement):

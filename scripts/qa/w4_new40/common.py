@@ -95,6 +95,12 @@ class Suite:
         return result.stdout.rstrip("\r\n")
 
     def sql(self, statement):
+        if os.environ.get("W4_NATIVE_STORAGE") == "true":
+            from native_storage import sql
+            result = sql(self, statement)
+            self.record({"kind": "mysql", "query": statement, "output": result,
+                         "transport": "localhost MySQL protocol"})
+            return result
         result = self.command(
             "exec",
             "-T",
@@ -112,6 +118,12 @@ class Suite:
         return result
 
     def redis(self, *args):
+        if os.environ.get("W4_NATIVE_STORAGE") == "true":
+            from native_storage import redis
+            result = redis(self, *args)
+            self.record({"kind": "redis", "arguments": list(args), "output": result,
+                         "transport": "localhost RESP protocol"})
+            return result
         result = self.command(
             "exec",
             "-T",

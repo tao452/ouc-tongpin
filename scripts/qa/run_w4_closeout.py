@@ -106,6 +106,9 @@ def main():
                          folder / "java-events", folder / "new40.json")
     Stack.command = tuple(s.compose)
     PrivacyStack.command = tuple(s.compose)
+    if os.environ.get("W4_NATIVE_STORAGE") == "true":
+        Stack.sql = lambda self, statement: s.sql(statement)
+        Stack.redis = lambda self, *arguments: s.redis(*arguments)
     results = old80.execute("http://127.0.0.1:" + str(s.base))
     client = Client("http://127.0.0.1:" + str(s.base)).authenticate()
     stack_rows = []
