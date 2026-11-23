@@ -1,0 +1,11 @@
+{
+  "status": "HARNESS_ERROR",
+  "reason": "original80 supplemental IDs were included in 120 uniqueness assertion; fixed by filtering catalogue IDs, supplemental records stay separate",
+  "40": {
+    "PASS": 40,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "NOT_RUN": 0
+  },
+  "all120_validated": false
+}

@@ -1,0 +1,19 @@
+{
+  "logs": {
+    "full120-run.log": {
+      "sha256": "d2127af91c1ae7c8540cf6064ce3ea461a4cb34fbffbc3fd454cc43bbb955de9",
+      "bytes": 3986,
+      "kept_private": true
+    },
+    "resume-run.log": {
+      "sha256": "fed20bcf0a6464fcd3b2656e8fd69737d09444dfc8b5a010d1ba5e25eb895945",
+      "bytes": 98,
+      "kept_private": true
+    }
+  },
+  "first_attempt": "40 PASS; privacy18/19 TypeError in transport; query03 stale fixture cache; 120 merge asserted due supplemental IDs",
+  "second_attempt": "40 PASS and original80 executed; direct MySQL correctly denied CREATE but wrapper error type aborted privacy aggregation",
+  "final_resume": "Preserved verified40 and saved original80 at same SUT commit; completed privacy/query/stack checks after wrapper fixes; no business assertions changed",
+  "sut_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+  "harness_commit": "4e6fb8e08d23c00a303e3e97e6dd18de5f672515"
+}

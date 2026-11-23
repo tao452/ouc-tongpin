@@ -1,0 +1,587 @@
+{
+  "source_commit": "f2503c526a305d6f0fd9b9f625dfce4db09ad7d1",
+  "results": [
+    {
+      "case_id": "US25-01",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-02",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 401,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "POST",
+          "route": "/api/match/needs",
+          "http_status": 401,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-03",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 15.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-04",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 0,
+          "streakDays": 0
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 15.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 0.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-05",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 0.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-06",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "hashed_identity_rows": 2
+        }
+      ]
+    },
+    {
+      "case_id": "US25-07",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 46.0,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays"
+          ],
+          "streakDays": 1
+        },
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 47.0,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays"
+          ],
+          "streakDays": 1
+        }
+      ]
+    },
+    {
+      "case_id": "US25-08",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 1,
+          "streakDays": 0
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 1,
+          "streakDays": 0
+        }
+      ]
+    },
+    {
+      "case_id": "US25-09",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 47.0,
+          "response_keys": [
+            "checkinDate",
+            "createdAt",
+            "emotion",
+            "id",
+            "intensity",
+            "note",
+            "streakDays"
+          ],
+          "streakDays": 1
+        }
+      ]
+    },
+    {
+      "case_id": "US25-10",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 47.0,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 1,
+          "streakDays": 0
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 1,
+          "streakDays": 0
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-11",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 47.0,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 78.0,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-12",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/admin/identities",
+          "http_status": 403,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/privacy/identities",
+          "http_status": 403,
+          "elapsed_ms": 0.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/auth/identities",
+          "http_status": 403,
+          "elapsed_ms": 32.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-13",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "DELETE",
+          "route": "/api/emotions/checkins/87",
+          "http_status": 404,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "PUT",
+          "route": "/api/emotions/checkins/87",
+          "http_status": 404,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 15.0,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 1,
+          "streakDays": 0
+        },
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 200,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "items",
+            "streakDays",
+            "total"
+          ],
+          "total": 1,
+          "streakDays": 0
+        }
+      ]
+    },
+    {
+      "case_id": "US25-14",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "isolated_concurrent_queries": 24
+        }
+      ]
+    },
+    {
+      "case_id": "US25-15",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "concurrent_logins": 4,
+          "distinct_identities": 1
+        }
+      ]
+    },
+    {
+      "case_id": "US25-16",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/emotions/checkins",
+          "http_status": 401,
+          "elapsed_ms": 0.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "method": "POST",
+          "route": "/api/auth/login",
+          "http_status": 401,
+          "elapsed_ms": 16.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "US25-17",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "public_projection_read_allowed": true
+        }
+      ]
+    },
+    {
+      "case_id": "US25-18",
+      "status": "FAIL",
+      "reason": "TypeError",
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": []
+    },
+    {
+      "case_id": "US25-19",
+      "status": "FAIL",
+      "reason": "TypeError",
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": []
+    },
+    {
+      "case_id": "US25-20",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "channels": {
+            "private_auth": {
+              "lines_scanned": 2,
+              "candidate_lines": 2
+            },
+            "public_responses": {
+              "lines_scanned": 30,
+              "candidate_lines": 0
+            },
+            "application_log": {
+              "lines_scanned": 105,
+              "candidate_lines": 0
+            }
+          },
+          "private_positive_control_matched": true,
+          "private_canary_leaks": 0,
+          "raw_material_retained": false,
+          "scope": "Real isolated API/MySQL/log output with synthetic identities; not a live-user compliance or independent-review conclusion."
+        }
+      ]
+    }
+  ],
+  "runtime_pii_scan": {
+    "channels": {
+      "private_auth": {
+        "lines_scanned": 2,
+        "candidate_lines": 2
+      },
+      "public_responses": {
+        "lines_scanned": 30,
+        "candidate_lines": 0
+      },
+      "application_log": {
+        "lines_scanned": 105,
+        "candidate_lines": 0
+      }
+    },
+    "private_positive_control_matched": true,
+    "private_canary_leaks": 0,
+    "raw_material_retained": false,
+    "scope": "Real isolated API/MySQL/log output with synthetic identities; not a live-user compliance or independent-review conclusion."
+  },
+  "independent_reproduction": "PENDING",
+  "live_wechat": false
+}

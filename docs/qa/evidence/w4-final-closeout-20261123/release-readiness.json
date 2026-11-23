@@ -1,0 +1,61 @@
+{
+  "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+  "services": {
+    "algo": {
+      "state": "running",
+      "health": "healthy"
+    },
+    "api": {
+      "state": "running",
+      "health": "healthy"
+    },
+    "mysql": {
+      "state": "running",
+      "health": "healthy"
+    },
+    "redis": {
+      "state": "running",
+      "health": "healthy"
+    },
+    "web": {
+      "state": "running",
+      "health": "healthy"
+    }
+  },
+  "backup_sha256": "a887a409c770a55bf5f11bd4ec1adb0d229f15deb97303113a8a8d96c3b38c7c",
+  "backup_bytes": 28153,
+  "restore_counts": {
+    "users": {
+      "original": 54,
+      "restored": 54
+    },
+    "auth": {
+      "original": 43,
+      "restored": 43
+    },
+    "checkin": {
+      "original": 31,
+      "restored": 31
+    },
+    "treehole_post": {
+      "original": 33,
+      "restored": 33
+    },
+    "treehole_identity": {
+      "original": 25,
+      "restored": 25
+    },
+    "treehole_archive": {
+      "original": 7,
+      "restored": 7
+    },
+    "buddy_demand": {
+      "original": 22,
+      "restored": 22
+    }
+  },
+  "restore_matches": true,
+  "scope": "Owned synthetic MySQL only; 7 application tables. Database users/roles and public view provisioning are separate init scripts. No live environment backup verified.",
+  "raw_dump_location": "qa-private only; not submitted",
+  "domain_https": "BLOCKED: no deployed, WeChat-approved test HTTPS domain supplied"
+}

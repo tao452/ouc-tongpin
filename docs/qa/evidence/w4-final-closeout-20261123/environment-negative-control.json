@@ -1,0 +1,9 @@
+{
+  "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+  "valid_config_exit": 0,
+  "missing_secret_exit": 1,
+  "missing_variable": "ANON_ID_SECRET",
+  "transport": "private env-file; Windows parent env alone does not propagate through WSL",
+  "no_secret_value_in_output": true,
+  "status": "PASS"
+}
