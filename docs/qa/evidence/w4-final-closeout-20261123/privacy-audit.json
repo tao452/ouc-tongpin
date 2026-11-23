@@ -1,12 +1,13 @@
 {
   "scanner": "scripts/qa/pii_scan.py",
-  "lines_scanned": 37655,
+  "lines_scanned": 37671,
   "final_candidate_findings": [],
   "initial_candidate_disposition": "Removed an unnecessary upstream NGINX maintainer email/image label and host paths from the public Compose snapshot; raw retained privately",
   "manual_review": "New SQL/HTTP/Java evidence uses synthetic users. JWT/password/secret fields redacted; no real student names/IDs/phones, key files or raw screenshots submitted. Whole-window GUI screenshot withheld because it contains account avatar.",
   "files_sha256": {
     "docs/qa/evidence/w4-final-closeout-20261123/all120.json": "af23b1fe6f70b3693f82729942aac161451912e02b22ace667dedb35bdaa4e9e",
     "docs/qa/evidence/w4-final-closeout-20261123/ci-status.json": "d4c7ded56b5c1cab624fdd88c46745a73e59f7f71fabfe554bf6da4309b38423",
+    "docs/qa/evidence/w4-final-closeout-20261123/cleanup.json": "5c226f472c4104648ec2504cf3872a04752f682ddc1bc80189ad0cca069125aa",
     "docs/qa/evidence/w4-final-closeout-20261123/environment-negative-control.json": "30f39f842183fda85299995fe7c5a8a429aa3f49124f92d5f6f9bb5c7a93133d",
     "docs/qa/evidence/w4-final-closeout-20261123/execution-attempts.json": "9f10ebf87490c037d942602755fd956465371e4a774c80218018042c126b61de",
     "docs/qa/evidence/w4-final-closeout-20261123/first-attempt-privacy.json": "dd12a0bb08b8114cd9416ebd399f804926a2a5b92cbc376159979aaa5acd04b4",
@@ -24,7 +25,7 @@
     "docs/qa/evidence/w4-final-closeout-20261123/sanitizer-execution.json": "14aa24c74e72c9fae537bcc19333297daa0d89772e0b71c03312dcd7dfb038f1",
     "docs/qa/US25-匿名身份与数据隔离验收-20261123.md": "26c867ed066850ae82f8c5a98283b8148434e9bd64315b89eb5c5b08dd6e68fc",
     "docs/qa/W4-M3独立复现说明-20261123.md": "832d7ac2d32587863999b7732b13face80990b88dc41138cb5b799f130a52080",
-    "docs/qa/W4-V0.1发布准备-20261123.md": "1cd6a47d35c5d8a1e7fd3f4f045a109bfddd42b987e8cf3702b5f1414c876eb6",
-    "docs/qa/W4-最终问题关闭报告.md": "359b8cf3ca2a8a72fff2f80906659af9e1bfb5cbc6fa7536fba6b9e837d74c5a"
+    "docs/qa/W4-V0.1发布准备-20261123.md": "195c284816793c6527eadb26de6e0fe6d9d38cd4738799bd5b71c4d80b63fece",
+    "docs/qa/W4-最终问题关闭报告.md": "f18c842224bf44152e30e9fef6efc7ed4e50abc61907a60b2add3fdf80b2ee78"
   }
 }

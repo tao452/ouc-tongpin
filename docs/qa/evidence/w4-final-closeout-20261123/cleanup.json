@@ -1,0 +1,12 @@
+{
+  "project": "ouc-w4-new40-final-20261123-v2",
+  "remaining_owned_resources": {
+    "container": [],
+    "volume": [],
+    "network": []
+  },
+  "candidate_container_removed": true,
+  "shared_resources_changed": false,
+  "synthetic_restore_database_removed_with_owned_volume": true,
+  "raw_private_backup_retained": true
+}
