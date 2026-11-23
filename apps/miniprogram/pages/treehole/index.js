@@ -27,6 +27,7 @@ Page({
     loading: false,
     loadingMore: false,
     error: false,
+    moreError: false,
     hasMore: false,
     cursor: '',
     composerOpen: false,
@@ -64,21 +65,24 @@ Page({
   },
 
   loadPosts(reset) {
-    if (this.data.loading || this.data.loadingMore) return
+    if (!reset && (this.data.loading || this.data.loadingMore)) return
+    const requestId = this._requestId = (this._requestId || 0) + 1
 
     const cursor = reset ? '' : this.data.cursor
     if (!reset && !cursor) return
 
     this.setData(reset
-      ? { loading: true, error: false }
-      : { loadingMore: true, error: false })
+      ? { loading: true, loadingMore: false, error: false, moreError: false }
+      : { loadingMore: true, moreError: false })
 
-    request({
+    return request({
       url: buildListQuery({ emotionTag: this.data.activeTag, cursor }),
       method: 'GET',
-      showLoading: false
+      showLoading: false,
+      showError: false
     })
       .then((data) => {
+        if (requestId !== this._requestId) return
         const incoming = normalizePosts(data && data.items)
         const posts = reset ? incoming : this.data.posts.concat(incoming)
         const cursorNext = nextCursor(data)
@@ -87,14 +91,17 @@ Page({
           posts,
           cursor: cursorNext,
           hasMore: Boolean(cursorNext),
-          error: false
+          error: false,
+          moreError: false
         })
       })
-      .catch((err) => {
-        console.error('树洞列表加载失败：', err)
+      .catch(() => {
+        if (requestId !== this._requestId) return
         if (reset) this.setData({ error: true })
+        else this.setData({ moreError: true })
       })
       .finally(() => {
+        if (requestId !== this._requestId) return
         this.setData({ loading: false, loadingMore: false })
         wx.stopPullDownRefresh()
       })
@@ -102,6 +109,14 @@ Page({
 
   retryLoad() {
     this.loadPosts(true)
+  },
+
+  onUnload() {
+    this._requestId = (this._requestId || 0) + 1
+  },
+
+  retryMore() {
+    return this.loadPosts(false)
   },
 
   selectFilter(e) {
@@ -112,7 +127,8 @@ Page({
       activeTag: code,
       posts: [],
       cursor: '',
-      hasMore: false
+      hasMore: false,
+      moreError: false
     }, () => {
       this.loadPosts(true)
     })
@@ -161,7 +177,8 @@ Page({
       url: '/api/treehole/posts',
       method: 'POST',
       data: buildPostPayload(form),
-      showLoading: false
+      showLoading: false,
+      showError: false
     })
       .then(() => {
         // 切回「全部」，保证刚发布的帖子一定出现在列表里。

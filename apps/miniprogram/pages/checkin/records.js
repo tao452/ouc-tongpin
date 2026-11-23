@@ -27,38 +27,49 @@ Page({
   },
 
   onLoad() {
+    this._skipFirstShow = true
     this.loadRecords()
   },
 
   onShow() {
+    if (this._skipFirstShow) { this._skipFirstShow = false; return }
     this.loadRecords()
+  },
+
+  onUnload() {
+    this._requestId = (this._requestId || 0) + 1
   },
 
   // 加载打卡记录：按当前窗口请求，不再用 from=2000-01-01 拉全量后本地截窗
   loadRecords() {
-    if (this.data.loading) {
-      // 切换窗口时若上一次请求还在飞，标记后由 finally 补跑，避免 7↔30 串数据
-      this._pendingReload = true
-      return
-    }
+    const requestId = this._requestId = (this._requestId || 0) + 1
 
     const rangeDays = normalizeRange(this.data.rangeDays)
     const { from, to } = getWindowRange(rangeDays, new Date())
 
     this.setData({
       loading: true,
+      records: [],
+      totalDays: 0,
+      continuousDays: 0,
+      trendData: [],
+      distributionData: [],
+      analysisTotal: 0,
+      missingDays: 0,
       error: false,
       analysisError: false,
       windowFrom: from,
       windowTo: to
     })
 
-    request({
+    return request({
       url: `/api/emotions/checkins?from=${from}&to=${to}`,
       method: 'GET',
-      showLoading: false
+      showLoading: false,
+      showError: false
     })
       .then((data) => {
+        if (requestId !== this._requestId) return
         const payload = data || {}
         const items = Array.isArray(payload.items) ? payload.items : []
 
@@ -104,8 +115,8 @@ Page({
           if (analysis.hasData) this.drawTrendChart()
         })
       })
-      .catch((err) => {
-        console.error('获取打卡记录失败：', err)
+      .catch(() => {
+        if (requestId !== this._requestId) return
 
         // 请求失败显示错误态 + 重试，不把失败静默当成「0 条记录」
         this.setData({ error: true, analysisError: true })
@@ -116,12 +127,7 @@ Page({
         })
       })
       .finally(() => {
-        this.setData({ loading: false }, () => {
-          if (this._pendingReload) {
-            this._pendingReload = false
-            this.loadRecords()
-          }
-        })
+        if (requestId === this._requestId) this.setData({ loading: false })
       })
   },
 

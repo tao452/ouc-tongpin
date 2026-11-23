@@ -204,6 +204,10 @@
       <view wx:if="{{loadingMore}}" class="more-hint">
         正在加载更多…
       </view>
+      <view wx:elif="{{moreError}}" class="more-hint">
+        <text>加载更多失败，已加载的内容仍可查看</text>
+        <button class="retry-button" bindtap="retryMore">重试加载更多</button>
+      </view>
       <view wx:elif="{{hasMore}}" class="more-hint">
         上拉加载更多
       </view>
