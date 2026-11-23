@@ -1,0 +1,5 @@
+# Isolated test override only; /score remains unavailable through the public web gateway.
+services:
+  algo:
+    ports:
+      - "127.0.0.1:${MATCH_TEST_PORT:-18000}:8000"
