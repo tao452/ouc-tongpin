@@ -167,8 +167,9 @@ def register(runner, stack):
             f"SELECT content_hash FROM treehole_archive WHERE post_id={identifier}"
         )
         expect(archived == digest, "Archive differs from original content hash")
-        expect(stack.sql(f"SELECT COUNT(*) FROM treehole_identity WHERE post_id={identifier}") == "0",
-               "Burned private identity mapping was not removed")
+        identity_count = stack.sql(
+            f"SELECT COUNT(*) FROM treehole_identity WHERE post_id={identifier}")
+        expect(identity_count == "0", "Burned private identity mapping was not removed")
         status, detail = client.request(route + f"/{identifier}")
         expect(status == 404 and expired["content"] not in json.dumps(detail),
                "Burned detail remained readable")
