@@ -1,0 +1,23 @@
+{
+  "python": {
+    "tests": 375,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 4
+  },
+  "java": {
+    "tests": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage_percent": 98.32,
+  "ruff": "PASS",
+  "source_commit": "b2a09880e611a079244ee194de67ed132d58ff25",
+  "m1_word_review": "PENDING",
+  "m3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "historical_retest": true,
+  "default_dictionary_sha256": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d",
+  "candidate_sha256": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd"
+}
