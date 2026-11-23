@@ -1,0 +1,40 @@
+{
+  "dataset": "us12-synthetic-v1",
+  "seed": 20261124,
+  "rows": 5000,
+  "queries": 100,
+  "split_rows": {
+    "test": 1000,
+    "train": 3000,
+    "development": 1000
+  },
+  "cohort_rows": {
+    "missing_emotion": 500,
+    "missing_interests": 500,
+    "missing_time": 500,
+    "missing_location": 500,
+    "complete": 3000
+  },
+  "relevance_counts": {
+    "0": 4457,
+    "2": 243,
+    "1": 296,
+    "3": 4
+  },
+  "raw_sha256": "93c8760ac25c74fd5a0c3442dbae6b186ee5e0e9edd3c5f7d24ff01d59f0e1df",
+  "raw_bytes": 2706239,
+  "gzip_sha256": "72271a8e8c026dd15359c0d0dc9c66191dc203e3f6275975efb3a51707dfd0ea",
+  "gzip_bytes": 125384,
+  "python": "3.12.14",
+  "labels": "M6 synthetic threshold rule; PENDING M1",
+  "source_commit_before_generation": "0c04758b37d6b2b351477a3c76b2a46fb7c47ac9",
+  "weights_sha256": "b8e68b934515ba1d18cf5bad83519c7d563d876dd41ea07d8ef1823268941e38",
+  "protocol_sha256": "278748464bbe1110b08ef1a8ed58b4f1a9396b631554f8d3c7e436f881a2b88a",
+  "generator_sha256": "269b1971247a3abb8152b7e4ccf1c882d36995fe963780b33b5b06013590bb2e",
+  "feature_code_sha256": {
+    "services/algo/match/features.py": "1423d9aa87ff42164141f223655eeca7c7397b696a78a10fd72bad51f395d37b",
+    "services/algo/match/models.py": "e973b376e8776af6f6c5a2965892c481d0c848f3701bda1f6ec18b73c4135885"
+  },
+  "excluded_rows": 0,
+  "business_acceptance": false
+}

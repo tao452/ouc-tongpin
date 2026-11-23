@@ -1,0 +1,188 @@
+{
+  "source_commit": "4bf2d5fd13a9a4ca533adb968a3905a63a41af37",
+  "python": {
+    "tests": 325,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 4,
+    "coverage_percent": 98.77,
+    "skipped_cases": [
+      {
+        "name": "test_cli_output_cannot_replace_corpus[symlink]",
+        "reason": "symlink is unavailable on this filesystem"
+      },
+      {
+        "name": "test_output_cannot_replace_any_input[symlink]",
+        "reason": "symlink is unavailable on this filesystem"
+      },
+      {
+        "name": "test_w3_output_cannot_replace_inputs_before_execution[hardlink-manifest]",
+        "reason": "Hardlinks are unavailable across these filesystem volumes"
+      },
+      {
+        "name": "test_w3_output_cannot_replace_inputs_before_execution[hardlink-code]",
+        "reason": "Hardlinks are unavailable across these filesystem volumes"
+      }
+    ]
+  },
+  "java_regular": {
+    "tests": 151,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "java_actual_docker": [
+    {
+      "suite": "com.ouctongpin.apiserver.matching.MatchingScoreDockerIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "java_suites": [
+    {
+      "suite": "com.ouctongpin.apiserver.auth.IdentityAuthorizationTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.auth.WeChatSessionContractTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.buddy.service.BuddyServiceTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.buddy.service.BuddySquareCacheTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.matching.MatchingScoreClientTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.matching.MatchingScoreDockerIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.moderation.ModerationClientTest",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.moderation.ModerationHttpTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.moderation.TreeholeModerationHttpTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.moderation.TreeholeModerationTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.privacy.AnonymousIdGeneratorTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.privacy.BurnTaskPrivacyTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.privacy.LogRedactorTest",
+      "tests": 28,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.privacy.TreeholeIdentityPersistenceTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.regression.ApiBoundaryTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.regression.CheckinQueryTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.regression.MockLoginFlagsTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.ouctongpin.apiserver.regression.TreeholeResponseTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "ruff": "PASS: app match tests scripts scripts/qa scripts/w1 scripts/release",
+  "evidence_scope": "author local self-test; M3 independent reproduction pending",
+  "raw_junit_sha256": "853fc7a7a5970f92cdb7092d341af001fa9b98ec8b963f57c38810f27d95b9c0"
+}

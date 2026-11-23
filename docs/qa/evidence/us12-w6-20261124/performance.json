@@ -1,0 +1,30 @@
+{
+  "scope": "production scorer; bounded CPU feature loop, excludes JSON validation/network",
+  "compute_budget_ms": 50,
+  "results": {
+    "1": {
+      "repetitions": 100,
+      "encoded_request_bytes": 1130,
+      "p95_compute_ms": 0.019799976143985987,
+      "max_compute_ms": 0.0724999699741602,
+      "timeout_batches": 0,
+      "partial_results": 0
+    },
+    "50": {
+      "repetitions": 100,
+      "encoded_request_bytes": 28757,
+      "p95_compute_ms": 1.172300020698458,
+      "max_compute_ms": 1.4266999787651002,
+      "timeout_batches": 0,
+      "partial_results": 0
+    },
+    "100": {
+      "repetitions": 100,
+      "encoded_request_bytes": 56957,
+      "p95_compute_ms": 2.127900021150708,
+      "max_compute_ms": 2.794099971652031,
+      "timeout_batches": 0,
+      "partial_results": 0
+    }
+  }
+}

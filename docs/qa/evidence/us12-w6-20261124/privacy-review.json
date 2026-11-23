@@ -1,0 +1,90 @@
+{
+  "files_scanned": 43,
+  "lines_scanned": 8158,
+  "findings": [
+    {
+      "file_index": 26,
+      "line": 77,
+      "rules": [
+        "student_field"
+      ]
+    },
+    {
+      "file_index": 33,
+      "line": 947,
+      "rules": [
+        "identity_number"
+      ]
+    },
+    {
+      "file_index": 34,
+      "line": 947,
+      "rules": [
+        "identity_number"
+      ]
+    },
+    {
+      "file_index": 36,
+      "line": 8,
+      "rules": [
+        "identity_number"
+      ]
+    }
+  ],
+  "status": "candidates_found",
+  "limitations": "Candidate regex matches need manual review. A match is not proof of a leak. No matches does not establish privacy compliance. No coverage of names, addresses, images, or encrypted fields. No database connection was made; scope is only the supplied UTF-8 files.",
+  "files": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/deploy-test.yml",
+    "docs/algorithms/data/us12-synthetic.v1.manifest.json",
+    "infra/docker-compose.us12-test.yml",
+    "infra/docker-compose.yml",
+    "infra/nginx.conf",
+    "packages/contract/openapi.yaml",
+    "scripts/qa/verify_match_service.py",
+    "services/algo/Dockerfile",
+    "services/algo/app/body_limit.py",
+    "services/algo/app/main.py",
+    "services/algo/app/routers/scoring.py",
+    "services/algo/match/__init__.py",
+    "services/algo/match/features.py",
+    "services/algo/match/metrics.py",
+    "services/algo/match/models.py",
+    "services/algo/match/schema-proposal.sql",
+    "services/algo/match/scorer.py",
+    "services/algo/match/weights.v1.json",
+    "services/algo/pyproject.toml",
+    "services/algo/requirements-match-eval.txt",
+    "services/algo/scripts/evaluate_match.py",
+    "services/algo/scripts/generate_match_dataset.py",
+    "services/algo/tests/test_match_dataset.py",
+    "services/algo/tests/test_match_evaluation.py",
+    "services/algo/tests/test_match_features.py",
+    "services/algo/tests/test_score_api.py",
+    "services/algo/tests/test_score_contract.py",
+    "services/api-server/src/main/java/com/ouctongpin/apiserver/matching/MatchingScoreClient.java",
+    "services/api-server/src/main/resources/application.yml",
+    "services/api-server/src/test/java/com/ouctongpin/apiserver/matching/MatchingScoreClientTest.java",
+    "services/api-server/src/test/java/com/ouctongpin/apiserver/matching/MatchingScoreDockerIT.java",
+    "docs/qa/evidence/us12-w6-20261124/evaluation-function.json",
+    "docs/qa/evidence/us12-w6-20261124/evaluation-http.json",
+    "docs/qa/evidence/us12-w6-20261124/image-provenance.json",
+    "docs/qa/evidence/us12-w6-20261124/performance.json",
+    "docs/qa/evidence/us12-w6-20261124/score-http.json",
+    "docs/qa/evidence/us12-w6-20261124/snapshot-sql.json",
+    "docs/qa/evidence/us12-w6-20261124/test-summary.json",
+    "docs/qa/US12-W6-M1-M5审核清单.md",
+    "docs/qa/US12-W6-测试与评估报告-20261124.md",
+    "docs/qa/US12-W6-独立复现说明.md",
+    "docs/algorithms/US12-特征字典与落库建议.md"
+  ],
+  "manual_review": "All candidates are numeric decimal metrics, hashes or existing env/secret references in code, not issued credentials or student identities; no real personal data observed in changed code, evidence or5000 synthetic rows.",
+  "synthetic_dataset_scan": {
+    "files_scanned": 1,
+    "lines_scanned": 5000,
+    "findings": [],
+    "status": "no_rule_matches",
+    "limitations": "Candidate regex matches need manual review. A match is not proof of a leak. No matches does not establish privacy compliance. No coverage of names, addresses, images, or encrypted fields. No database connection was made; scope is only the supplied UTF-8 files."
+  },
+  "manual_confirmed_leaks": 0
+}

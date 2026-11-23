@@ -1,0 +1,996 @@
+{
+  "source_commit": "4bf2d5fd13a9a4ca533adb968a3905a63a41af37",
+  "executed_at_utc": "2026-11-23T16:49:56.429186+00:00",
+  "evaluation_completed": true,
+  "mode": "http",
+  "rows": 5000,
+  "queries": 100,
+  "excluded_rows": 0,
+  "duplicate_candidate_ids_kept": 0,
+  "dataset_sha256": "93c8760ac25c74fd5a0c3442dbae6b186ee5e0e9edd3c5f7d24ff01d59f0e1df",
+  "compressed_sha256": "72271a8e8c026dd15359c0d0dc9c66191dc203e3f6275975efb3a51707dfd0ea",
+  "weights_sha256": "b8e68b934515ba1d18cf5bad83519c7d563d876dd41ea07d8ef1823268941e38",
+  "feature_version": "features-v0.1-proposed",
+  "metric": "linear gain, tie-averaged NDCG@10; zero-gain queries included as0",
+  "split_metrics": {
+    "development": {
+      "queries": 20,
+      "candidates": 1000,
+      "zero_gain_queries": 6,
+      "weighted_ndcg_at_10": 0.26569797455563837,
+      "tag_ndcg_at_10": 0.1722716391290841
+    },
+    "test": {
+      "queries": 20,
+      "candidates": 1000,
+      "zero_gain_queries": 3,
+      "weighted_ndcg_at_10": 0.35867805596342783,
+      "tag_ndcg_at_10": 0.1918829221367147
+    },
+    "train": {
+      "queries": 60,
+      "candidates": 3000,
+      "zero_gain_queries": 11,
+      "weighted_ndcg_at_10": 0.4325948493671055,
+      "tag_ndcg_at_10": 0.15714942654116595
+    }
+  },
+  "cohort_metrics": {
+    "complete": {
+      "queries": 60,
+      "candidates": 3000,
+      "zero_gain_queries": 0,
+      "weighted_ndcg_at_10": 0.4829554751438644,
+      "tag_ndcg_at_10": 0.21055960330399076
+    },
+    "missing_emotion": {
+      "queries": 10,
+      "candidates": 500,
+      "zero_gain_queries": 0,
+      "weighted_ndcg_at_10": 0.5385629101595947,
+      "tag_ndcg_at_10": 0.24003778010808685
+    },
+    "missing_interests": {
+      "queries": 10,
+      "candidates": 500,
+      "zero_gain_queries": 0,
+      "weighted_ndcg_at_10": 0.4080253962179845,
+      "tag_ndcg_at_10": 0.16781028184656185
+    },
+    "missing_location": {
+      "queries": 10,
+      "candidates": 500,
+      "zero_gain_queries": 10,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    "missing_time": {
+      "queries": 10,
+      "candidates": 500,
+      "zero_gain_queries": 10,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    }
+  },
+  "query_results": [
+    {
+      "query_id": "SYN-Q000",
+      "split": "test",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.44476646093637145,
+      "tag_ndcg_at_10": 0.23387234672568846
+    },
+    {
+      "query_id": "SYN-Q001",
+      "split": "train",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.20009753484229875,
+      "tag_ndcg_at_10": 0.1477694813295078
+    },
+    {
+      "query_id": "SYN-Q002",
+      "split": "train",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q003",
+      "split": "development",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q004",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6491957311434774,
+      "tag_ndcg_at_10": 0.2121646766139167
+    },
+    {
+      "query_id": "SYN-Q005",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q006",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7546827379854857,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q007",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.15048880767085435,
+      "tag_ndcg_at_10": 0.1746248074169142
+    },
+    {
+      "query_id": "SYN-Q008",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.38009376671593426,
+      "tag_ndcg_at_10": 0.25110933042498457
+    },
+    {
+      "query_id": "SYN-Q009",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.3482538302146054,
+      "tag_ndcg_at_10": 0.30061917679615824
+    },
+    {
+      "query_id": "SYN-Q010",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.8441230127872502,
+      "tag_ndcg_at_10": 0.22653468575782712
+    },
+    {
+      "query_id": "SYN-Q011",
+      "split": "train",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5345431752662105,
+      "tag_ndcg_at_10": 0.1477694813295078
+    },
+    {
+      "query_id": "SYN-Q012",
+      "split": "train",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q013",
+      "split": "train",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q014",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.2636013928133866,
+      "tag_ndcg_at_10": 0.15267354414372267
+    },
+    {
+      "query_id": "SYN-Q015",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.2259617509448683,
+      "tag_ndcg_at_10": 0.1774793071224008
+    },
+    {
+      "query_id": "SYN-Q016",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.8674300049161069,
+      "tag_ndcg_at_10": 0.27166074415061675
+    },
+    {
+      "query_id": "SYN-Q017",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5105186416744268,
+      "tag_ndcg_at_10": 0.30250778452482435
+    },
+    {
+      "query_id": "SYN-Q018",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.4417993995294887,
+      "tag_ndcg_at_10": 0.15134068029646802
+    },
+    {
+      "query_id": "SYN-Q019",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5636174722136161,
+      "tag_ndcg_at_10": 0.20877416151615918
+    },
+    {
+      "query_id": "SYN-Q020",
+      "split": "test",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.689274736398755,
+      "tag_ndcg_at_10": 0.11329356841135224
+    },
+    {
+      "query_id": "SYN-Q021",
+      "split": "train",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.39234077324071154,
+      "tag_ndcg_at_10": 0.2060407907081993
+    },
+    {
+      "query_id": "SYN-Q022",
+      "split": "test",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q023",
+      "split": "development",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q024",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6667188947128295,
+      "tag_ndcg_at_10": 0.3253228396339135
+    },
+    {
+      "query_id": "SYN-Q025",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7857925026261692,
+      "tag_ndcg_at_10": 0.06275295917407692
+    },
+    {
+      "query_id": "SYN-Q026",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5780273899910905,
+      "tag_ndcg_at_10": 0.46108965386441436
+    },
+    {
+      "query_id": "SYN-Q027",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.25333292288842735,
+      "tag_ndcg_at_10": 0.12951072681880055
+    },
+    {
+      "query_id": "SYN-Q028",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6565513054195097,
+      "tag_ndcg_at_10": 0.4359484066705254
+    },
+    {
+      "query_id": "SYN-Q029",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5270818119624638,
+      "tag_ndcg_at_10": 0.4558910749445092
+    },
+    {
+      "query_id": "SYN-Q030",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.10075757095025123,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q031",
+      "split": "test",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.9004157856035168,
+      "tag_ndcg_at_10": 0.1673741191724807
+    },
+    {
+      "query_id": "SYN-Q032",
+      "split": "development",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q033",
+      "split": "development",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q034",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7063482865714493,
+      "tag_ndcg_at_10": 0.2148299264179961
+    },
+    {
+      "query_id": "SYN-Q035",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q036",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6387878864795979,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q037",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.44249687881290306,
+      "tag_ndcg_at_10": 0.137949801790578
+    },
+    {
+      "query_id": "SYN-Q038",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6003625582068224,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q039",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.4346614304442594,
+      "tag_ndcg_at_10": 0.1914396750105019
+    },
+    {
+      "query_id": "SYN-Q040",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.4185058701905208,
+      "tag_ndcg_at_10": 0.22273939145077154
+    },
+    {
+      "query_id": "SYN-Q041",
+      "split": "development",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.42647836614036105,
+      "tag_ndcg_at_10": 0.2294909348085817
+    },
+    {
+      "query_id": "SYN-Q042",
+      "split": "train",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q043",
+      "split": "train",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q044",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.642705741741774,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q045",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5879474201406397,
+      "tag_ndcg_at_10": 0.25744347210209295
+    },
+    {
+      "query_id": "SYN-Q046",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7037254617050812,
+      "tag_ndcg_at_10": 0.14130150847975798
+    },
+    {
+      "query_id": "SYN-Q047",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7748675238684207,
+      "tag_ndcg_at_10": 0.155803422197706
+    },
+    {
+      "query_id": "SYN-Q048",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5633807230018277,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q049",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.43673949858938643,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q050",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.541163681207064,
+      "tag_ndcg_at_10": 0.4978974191557337
+    },
+    {
+      "query_id": "SYN-Q051",
+      "split": "development",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.36077903708155934,
+      "tag_ndcg_at_10": 0.18031430592102846
+    },
+    {
+      "query_id": "SYN-Q052",
+      "split": "train",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q053",
+      "split": "train",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q054",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.20151514190050246,
+      "tag_ndcg_at_10": 0.2695196222908778
+    },
+    {
+      "query_id": "SYN-Q055",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7770738342229535,
+      "tag_ndcg_at_10": 0.25244108448488617
+    },
+    {
+      "query_id": "SYN-Q056",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.16957810039284818,
+      "tag_ndcg_at_10": 0.1968740777898919
+    },
+    {
+      "query_id": "SYN-Q057",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.4223628756174801
+    },
+    {
+      "query_id": "SYN-Q058",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7208698437406611,
+      "tag_ndcg_at_10": 0.4248108911833428
+    },
+    {
+      "query_id": "SYN-Q059",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.579847331787097,
+      "tag_ndcg_at_10": 0.19148197538954442
+    },
+    {
+      "query_id": "SYN-Q060",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.4439647118890479,
+      "tag_ndcg_at_10": 0.1323077676060665
+    },
+    {
+      "query_id": "SYN-Q061",
+      "split": "train",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.46579111391272576,
+      "tag_ndcg_at_10": 0.1707724022442561
+    },
+    {
+      "query_id": "SYN-Q062",
+      "split": "test",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q063",
+      "split": "train",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q064",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7251252685747583,
+      "tag_ndcg_at_10": 0.21655770910365713
+    },
+    {
+      "query_id": "SYN-Q065",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.4394564254190415,
+      "tag_ndcg_at_10": 0.05728929169742398
+    },
+    {
+      "query_id": "SYN-Q066",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5780273899910905,
+      "tag_ndcg_at_10": 0.1508469854172633
+    },
+    {
+      "query_id": "SYN-Q067",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.36251208386792294,
+      "tag_ndcg_at_10": 0.3126614816702201
+    },
+    {
+      "query_id": "SYN-Q068",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7601875334318685,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q069",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q070",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5837462601511904,
+      "tag_ndcg_at_10": 0.5035777601636426
+    },
+    {
+      "query_id": "SYN-Q071",
+      "split": "test",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.1418971937236007
+    },
+    {
+      "query_id": "SYN-Q072",
+      "split": "test",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q073",
+      "split": "development",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q074",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.16992444743091037,
+      "tag_ndcg_at_10": 0.22198415078520645
+    },
+    {
+      "query_id": "SYN-Q075",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5024753432727126,
+      "tag_ndcg_at_10": 0.4528197080258101
+    },
+    {
+      "query_id": "SYN-Q076",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.40233373267216277,
+      "tag_ndcg_at_10": 0.3791116632549154
+    },
+    {
+      "query_id": "SYN-Q077",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.4615379007598259,
+      "tag_ndcg_at_10": 0.5261398116173618
+    },
+    {
+      "query_id": "SYN-Q078",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6023945054259489,
+      "tag_ndcg_at_10": 0.39412284420978294
+    },
+    {
+      "query_id": "SYN-Q079",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6079860690479549,
+      "tag_ndcg_at_10": 0.3681277948780954
+    },
+    {
+      "query_id": "SYN-Q080",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7427188133559458,
+      "tag_ndcg_at_10": 0.24184399980720744
+    },
+    {
+      "query_id": "SYN-Q081",
+      "split": "train",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.3630686775030747,
+      "tag_ndcg_at_10": 0.1477694813295078
+    },
+    {
+      "query_id": "SYN-Q082",
+      "split": "train",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q083",
+      "split": "train",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q084",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q085",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.8772153153380493,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q086",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7291187006605682,
+      "tag_ndcg_at_10": 0.22807231868608244
+    },
+    {
+      "query_id": "SYN-Q087",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.36045306788601283,
+      "tag_ndcg_at_10": 0.4307026092930672
+    },
+    {
+      "query_id": "SYN-Q088",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.7780158492147935,
+      "tag_ndcg_at_10": 0.5046172287173878
+    },
+    {
+      "query_id": "SYN-Q089",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.6672347998153193,
+      "tag_ndcg_at_10": 0.36771483092702667
+    },
+    {
+      "query_id": "SYN-Q090",
+      "split": "train",
+      "cohort": "missing_emotion",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5766079837295492,
+      "tag_ndcg_at_10": 0.22831086200257902
+    },
+    {
+      "query_id": "SYN-Q091",
+      "split": "train",
+      "cohort": "missing_interests",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.43673949858938643,
+      "tag_ndcg_at_10": 0.13890462789894803
+    },
+    {
+      "query_id": "SYN-Q092",
+      "split": "train",
+      "cohort": "missing_time",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q093",
+      "split": "development",
+      "cohort": "missing_location",
+      "candidates": 50,
+      "zero_gain_query": true,
+      "weighted_ndcg_at_10": 0.0,
+      "tag_ndcg_at_10": 0.0
+    },
+    {
+      "query_id": "SYN-Q094",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.5409415945057121,
+      "tag_ndcg_at_10": 0.35812374778280504
+    },
+    {
+      "query_id": "SYN-Q095",
+      "split": "development",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.17010991976140238,
+      "tag_ndcg_at_10": 0.31958277119025663
+    },
+    {
+      "query_id": "SYN-Q096",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.07623986638854101,
+      "tag_ndcg_at_10": 0.033210976412452776
+    },
+    {
+      "query_id": "SYN-Q097",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.695689608022885,
+      "tag_ndcg_at_10": 0.06257485940882238
+    },
+    {
+      "query_id": "SYN-Q098",
+      "split": "test",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.34461577660059567,
+      "tag_ndcg_at_10": 0.20220540127810044
+    },
+    {
+      "query_id": "SYN-Q099",
+      "split": "train",
+      "cohort": "complete",
+      "candidates": 50,
+      "zero_gain_query": false,
+      "weighted_ndcg_at_10": 0.521677285514824,
+      "tag_ndcg_at_10": 0.11738180701664609
+    }
+  ],
+  "label_counts": {
+    "0": 4457,
+    "2": 243,
+    "1": 296,
+    "3": 4
+  },
+  "p95_ms": 77.73707501764872,
+  "max_ms": 175.896400003694,
+  "reference_metric_crosschecks": 200,
+  "dependency_versions": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "sklearn": "1.7.2"
+  },
+  "semantic_scope": "Synthetic threshold labels; no independent human match-quality acceptance",
+  "business_acceptance": false,
+  "m1_metric_review": "PENDING",
+  "m3_reproduction": "PENDING"
+}

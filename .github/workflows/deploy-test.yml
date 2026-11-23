@@ -19,8 +19,17 @@ jobs:
       - name: Build and deploy five services
         id: deployed
         run: |
-          docker compose --env-file .env -f infra/docker-compose.yml config -q
-          docker compose --env-file .env -f infra/docker-compose.yml up -d --build --wait --wait-timeout 240
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us12-test.yml config -q
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us12-test.yml up -d --build --wait --wait-timeout 240
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Verify actual internal score HTTP and Java interoperability
+        run: |
+          python scripts/qa/verify_match_service.py --output qa-private/us12-score-http.json
+          MATCH_DOCKER_URL=http://127.0.0.1:18000 mvn -f services/api-server/pom.xml -B -q -Dtest=MatchingScoreDockerIT test
       - name: Verify HTTP routes and record catalogue evidence
         run: |
           python scripts/e2e/foundation-smoke.py
@@ -30,7 +39,8 @@ jobs:
           python-version: '3.11'
       - name: Verify the built moderation image with W2 HTTP samples
         run: |
-          python -m pip install -r services/algo/requirements.txt
+          python -m pip install -r services/algo/requirements.txt -r services/algo/requirements-match-eval.txt
+          python services/algo/scripts/evaluate_match.py --base-url http://127.0.0.1:18000 --output qa-private/us12-match-http.json
           python services/algo/scripts/evaluate_dataset.py docs/qa/data/w2-moderation-regression.jsonl --base-url http://127.0.0.1:8080 --min-benign 200 --min-blocked 100 --output qa-private/w2-moderation-http.json
           python scripts/qa/verify_treehole_moderation.py --output qa-private/w2-treehole-http.json
           docker compose --env-file .env -f infra/docker-compose.yml images --format json > qa-private/w2-images.json
@@ -75,6 +85,9 @@ jobs:
             qa-private/us25-security.json
             qa-private/mysql-initialization.json
             qa-private/us24-external-http.json
+            qa-private/us12-score-http.json
+            qa-private/us12-match-http.json
+            services/api-server/target/surefire-reports/TEST-*MatchingScoreDockerIT.xml
           if-no-files-found: warn
       - name: Verify opt-in candidate dictionary through the built gateway
         run: |
