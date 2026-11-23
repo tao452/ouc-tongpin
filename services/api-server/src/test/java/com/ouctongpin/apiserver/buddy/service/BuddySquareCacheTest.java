@@ -73,6 +73,15 @@ class BuddySquareCacheTest {
     }
 
     @Test
+    void differentCoordinatesUseDifferentCacheKeys() {
+        BuddyQueryReq first = query(5000, 10);
+        BuddyQueryReq second = query(5000, 10);
+        second.setMyLatitude(new BigDecimal("37.16"));
+        List<String> keys = cacheKeysFor(first, second);
+        assertNotEquals(keys.get(0), keys.get(1));
+    }
+
+    @Test
     void sameQueryReusesCacheKey() {
         List<String> keys = cacheKeysFor(query(5000, 10), query(5000, 10));
         assertEquals(keys.get(0), keys.get(1));

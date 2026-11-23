@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-11-22T08:30:12.055652+00:00",
+  "question_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7065651397",
+  "followup_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7076485835",
+  "S1-113": {
+    "state": "PENDING_M1_M5",
+    "status": "NOT_RUN",
+    "question": "lat/lng legal closed intervals and out-of-range response; multi-client contract alignment",
+    "approved_expectation": null
+  },
+  "S1-114": {
+    "state": "PENDING_M1_M5",
+    "status": "NOT_RUN",
+    "question": "Unicode code points or UTF-16 code units for remark limit200",
+    "approved_expectation": null
+  },
+  "contract_changed": false,
+  "http_acceptance_requests_executed_for_pending_cases": 0
+}

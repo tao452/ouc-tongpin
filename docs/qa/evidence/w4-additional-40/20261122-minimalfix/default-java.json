@@ -1,0 +1,30 @@
+{
+  "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+  "scope": "regular mvn verify; explicit W4DatabaseCasesIT excluded from these totals",
+  "totals": {
+    "tests": 146,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "junit_sha256": {
+    "TEST-com.ouctongpin.apiserver.auth.IdentityAuthorizationTest.xml": "60a580274db705fa752a96f187b12bc03d14d368d11de0b49f89d37daa1fc31c",
+    "TEST-com.ouctongpin.apiserver.auth.WeChatSessionContractTest.xml": "296d5ba471325cbbf12398c73e729452c1ee745f710b0708539763af9c59d3b1",
+    "TEST-com.ouctongpin.apiserver.buddy.dto.BuddyCreateReqTest.xml": "3e392d61bafa3d5ac2142af57d335fc4013d035a788a4abc14837431174111d7",
+    "TEST-com.ouctongpin.apiserver.buddy.service.BuddyServiceTest.xml": "17c01e8414961652b0a9bb80aad481b787ca26302ec4dee71d9fbd661c8d8035",
+    "TEST-com.ouctongpin.apiserver.buddy.service.BuddySquareCacheTest.xml": "b43baa4a32b3c13875032e6304003459b5a94b1775203968b6444a9d7c3ca048",
+    "TEST-com.ouctongpin.apiserver.moderation.ModerationClientTest.xml": "44a98719d07c2037d08069f6155f9d28a83dc02db8d686ed3308b8e547ffbfce",
+    "TEST-com.ouctongpin.apiserver.moderation.ModerationHttpTest.xml": "70290e5ba439828e71736860ce6fdde8db3cd1cb6c97dcaac08cf73e40327258",
+    "TEST-com.ouctongpin.apiserver.moderation.TreeholeModerationHttpTest.xml": "69e4a6e49958ebea7c7e7d17439f92e2a1ae07b42b77133e2bb6792acd13caad",
+    "TEST-com.ouctongpin.apiserver.moderation.TreeholeModerationTest.xml": "5cb7f218af5e2309d657da08fbe4ea68c07b5ae5212d098b26f85ed77c396f2c",
+    "TEST-com.ouctongpin.apiserver.privacy.AnonymousIdGeneratorTest.xml": "a87711a77f61dcb1bee8adff80f6256528645076d38d977704504b4a06d0b150",
+    "TEST-com.ouctongpin.apiserver.privacy.BurnTaskPrivacyTest.xml": "b8cbe8f85d2bc9566ade8851b60dd6d98f02fc9f3feb762e06df9ef20461d2a8",
+    "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml": "0354ede4a30581a6548bf5b905c16942645713787c30cc9fdd84f85f16faf9d5",
+    "TEST-com.ouctongpin.apiserver.privacy.LogRedactorTest.xml": "93b6994dda40cca517f167ad172f036c91cdd7b68443b053e2be6e48bd6ebacc",
+    "TEST-com.ouctongpin.apiserver.privacy.TreeholeIdentityPersistenceTest.xml": "55674ae1aafe1452cd86beef2940c60fc0b96b83e4c51105939f999c42bb95a0",
+    "TEST-com.ouctongpin.apiserver.regression.ApiBoundaryTest.xml": "6f4155ffc2e602b4dd9dddeae476c8fe8918aec5c19ab198e7c7677d1d9504b4",
+    "TEST-com.ouctongpin.apiserver.regression.CheckinQueryTest.xml": "f4175a0784fa6fd1b411b9bf2a511fe44631659ab44114b2a9005d189586adb4",
+    "TEST-com.ouctongpin.apiserver.regression.MockLoginFlagsTest.xml": "7d35e07f0400a1fbf57b8c6c9e618584e60f78949237e05d93fbb521615c4299",
+    "TEST-com.ouctongpin.apiserver.regression.TreeholeResponseTest.xml": "47aedd67278d0f7f62245bd3698ef6d0ba5779b477220af823d9dbd7b28219b2"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_type": "DESIGN_EXECUTION_INDEX_VALIDATION",
+  "status": "PASS",
+  "checked_at_utc": "2026-11-22T08:32:20.712971+00:00",
+  "status_counts": {
+    "PASS": 38,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "NOT_RUN": 2
+  },
+  "design_business_fields_unchanged": true,
+  "historical_80_evidence_unchanged": true,
+  "business_source_matches_execution_commit": true,
+  "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018",
+  "network_requests_executed_by_this_validator": 0,
+  "actual_execution_report": "docs/qa/evidence/w4-additional-40/20261122-final/results.json"
+}
