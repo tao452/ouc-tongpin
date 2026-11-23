@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class TreeholeService {
@@ -69,6 +71,16 @@ public class TreeholeService {
         redisTemplate.opsForZSet().add("treehole:burn_queue", String.valueOf(post.getId()), burnTime);
 
         return post;
+    }
+
+    public PostResponse getPost(Long id) {
+        TreeholePost post = postMapper.selectOne(new LambdaQueryWrapper<TreeholePost>()
+                .eq(TreeholePost::getId, id)
+                .eq(TreeholePost::getStatus, 0)
+                .eq(TreeholePost::getDeleted, 0)
+                .gt(TreeholePost::getExpiresAt, LocalDateTime.now(ZoneOffset.ofHours(8))));
+        if (post == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "树洞不存在或已焚毁");
+        return toResponse(post);
     }
 
     public PostResponse toResponse(TreeholePost post) {

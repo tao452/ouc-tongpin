@@ -255,6 +255,27 @@ paths:
                   nextCursor: { type: string, nullable: true }
 
   # ---------------- 搭子需求 US-10 ----------------
+  /api/treehole/posts/{id}:
+    get:
+      tags: [treehole]
+      summary: 查看未过期树洞详情
+      description: 登录后可读取与列表相同的公开内容；不返回私有身份关联。过期、焚毁或不存在均返回 404。
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer, format: int64 }
+      responses:
+        '200':
+          description: 树洞详情
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TreeholePost' }
+        '401':
+          description: 未登录或令牌无效
+        '404':
+          description: 不存在或已过期，不返回正文
+
   /api/match/needs:
     post:
       tags: [match]

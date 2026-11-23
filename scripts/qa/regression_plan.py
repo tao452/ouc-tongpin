@@ -37,15 +37,6 @@ def register_blocked(runner):
     runner.blocked(
         "S1-030", "Final consecutive/missed-day product rule awaits M1; technical API covered"
     )
-    runner.client.observations.clear()
-    status, _ = runner.client.request("/api/treehole/posts/999999999")
-    if status != 404:
-        raise AssertionError("Treehole detail endpoint changed; update its acceptance plan")
-    runner.blocked(
-        "S1-045",
-        "Treehole detail endpoint is not implemented; 404 is not expiry acceptance",
-        list(runner.client.observations),
-    )
     # S1-047..054 are now executed against the real endpoint by regression_match.register;
     # do not keep a "missing route" observation here, it would falsely fail the plan.
     runner.blocked(
