@@ -255,6 +255,34 @@ paths:
                   nextCursor: { type: string, nullable: true }
 
   # ---------------- 搭子需求 US-10 ----------------
+  /api/match/needs/square:
+    post:
+      tags: [match]
+      summary: 搭子广场游标查询
+      description: >
+        按 ID 倒序返回 OPEN 需求。可选坐标同时提供时按球面距离筛选。
+        坐标为闭区间，越界返回 400，不执行查询或写入缓存。
+        缓存区分 cursorId、经度、纬度、radius 和 size，缓存时长 60 秒。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cursorId: { type: integer, minimum: 0, default: 0 }
+                myLongitude: { type: number, minimum: -180, maximum: 180 }
+                myLatitude: { type: number, minimum: -90, maximum: 90 }
+                radius: { type: integer, minimum: 1, maximum: 50000, default: 5000 }
+                size: { type: integer, minimum: 1, maximum: 50, default: 10 }
+      responses:
+        '200':
+          description: 查询成功，data 为需求数组（id、scene、status）
+        '400':
+          description: 坐标或分页参数不合法
+        '401':
+          description: 未登录或令牌无效
+
   /api/match/needs:
     post:
       tags: [match]

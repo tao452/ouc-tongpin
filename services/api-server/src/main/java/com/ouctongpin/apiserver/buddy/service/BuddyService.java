@@ -21,6 +21,7 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeParseException;
 import java.util.List;
+import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -111,8 +112,12 @@ public class BuddyService {
         }
 
         if (req.getMyLongitude() != null && req.getMyLatitude() != null) {
-            wrapper.apply("ST_Distance_Sphere(point(longitude, latitude), point({0}, {1})) <= {2}",
-                req.getMyLongitude(), req.getMyLatitude(), req.getRadius());
+            wrapper.apply("ST_Distance_Sphere(point(CASE WHEN longitude = -180 THEN 180 ELSE longitude END, "
+                    + "latitude), point({0}, {1})) <= {2}",
+                // MySQL 球面距离的经度范围是 (-180,180]；-180 与 180 是同一条经线。
+                req.getMyLongitude().compareTo(new BigDecimal("-180")) == 0
+                    ? new BigDecimal("180") : req.getMyLongitude(),
+                req.getMyLatitude(), req.getRadius());
         }
 
         wrapper.orderByDesc(BuddyDemand::getId).last("LIMIT " + req.getSize());
