@@ -1,0 +1,30 @@
+{
+  "source_commit": "bdeaaa432194e1ca5d5df81dc185444ac7e04ca8",
+  "python": {
+    "tests": 331,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 4,
+    "passed": 327,
+    "coverage_percent": 98.39
+  },
+  "java_regular": {
+    "tests": 152,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "java_docker": [
+    {
+      "suite": "com.ouctongpin.apiserver.matching.MatchingScoreDockerIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "ruff": "PASS",
+  "prior_summary": "test-summary.json retained",
+  "m3_reproduction": "PENDING",
+  "changes": "timestamp format/UTC bounds only; same dataset, labels and scoring features"
+}

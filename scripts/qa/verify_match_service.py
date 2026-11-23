@@ -74,6 +74,10 @@ def execute(base, gateway):
                  200, perfect)
     if batch != one:
         records[-1].update(status="FAIL", reason="Single and batch response differ")
+    offset_edge = {**profile, "availability": [{"start": "2026-12-01T10:00:00+18:00",
+                                              "end": "2026-12-01T12:00:00+18:00"}]}
+    call("legal-time-offset-edge", base, "/score", {"query": offset_edge,
+         "candidate": {"id": "offset-edge", **offset_edge}}, 200, perfect)
 
     def zeros(body, _):
         assert [(x["id"], x["score"]) for x in body["items"]] == [("a", 0), ("z", 0)]

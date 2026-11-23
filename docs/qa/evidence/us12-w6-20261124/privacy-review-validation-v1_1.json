@@ -1,0 +1,73 @@
+{
+  "files_scanned": 26,
+  "lines_scanned": 23302,
+  "findings": [
+    {
+      "file_index": 6,
+      "line": 949,
+      "rules": [
+        "identity_number"
+      ]
+    },
+    {
+      "file_index": 7,
+      "line": 947,
+      "rules": [
+        "identity_number"
+      ]
+    },
+    {
+      "file_index": 8,
+      "line": 949,
+      "rules": [
+        "identity_number"
+      ]
+    },
+    {
+      "file_index": 9,
+      "line": 947,
+      "rules": [
+        "identity_number"
+      ]
+    },
+    {
+      "file_index": 11,
+      "line": 8,
+      "rules": [
+        "identity_number"
+      ]
+    }
+  ],
+  "status": "candidates_found",
+  "limitations": "Candidate regex matches need manual review. A match is not proof of a leak. No matches does not establish privacy compliance. No coverage of names, addresses, images, or encrypted fields. No database connection was made; scope is only the supplied UTF-8 files.",
+  "files": [
+    "docs/qa/evidence/us12-w6-20261124/ci-failed-attempts.json",
+    "docs/qa/evidence/us12-w6-20261124/cleanup.json",
+    "docs/qa/evidence/us12-w6-20261124/compatibility-image-provenance.json",
+    "docs/qa/evidence/us12-w6-20261124/compatibility-initial-setup-failure.json",
+    "docs/qa/evidence/us12-w6-20261124/compatibility-regular-java-final.json",
+    "docs/qa/evidence/us12-w6-20261124/evaluation-function-validation-v1_1.json",
+    "docs/qa/evidence/us12-w6-20261124/evaluation-function.json",
+    "docs/qa/evidence/us12-w6-20261124/evaluation-http-validation-v1_1.json",
+    "docs/qa/evidence/us12-w6-20261124/evaluation-http.json",
+    "docs/qa/evidence/us12-w6-20261124/image-provenance.json",
+    "docs/qa/evidence/us12-w6-20261124/performance.json",
+    "docs/qa/evidence/us12-w6-20261124/privacy-review.json",
+    "docs/qa/evidence/us12-w6-20261124/score-http-validation-v1_1-final.json",
+    "docs/qa/evidence/us12-w6-20261124/score-http.json",
+    "docs/qa/evidence/us12-w6-20261124/snapshot-sql.json",
+    "docs/qa/evidence/us12-w6-20261124/test-summary-validation-v1_1.json",
+    "docs/qa/evidence/us12-w6-20261124/test-summary.json",
+    "docs/qa/evidence/us12-w6-20261124/w4-compatibility-120.json",
+    "docs/qa/evidence/us12-w6-20261124/report-initial-296af59.md",
+    "docs/qa/US12-W6-M1-M5审核清单.md",
+    "docs/qa/US12-W6-测试与评估报告-20261124.md",
+    "docs/qa/US12-W6-独立复现说明.md",
+    "docs/algorithms/US12-W5W6-特征与评估方案.md",
+    "docs/algorithms/US12-特征字典与落库建议.md",
+    "docs/algorithms/data/us12-synthetic.v1.manifest.json",
+    "docs/algorithms/data/us12-synthetic.v1.validation-v1_1.manifest.json"
+  ],
+  "manual_confirmed_leaks": 0,
+  "manual_review": "Candidate identity-number matches are decimal metric digits or existing scanner location descriptions; all inputs are explicitly synthetic. Code diff, outputs, original data and new validation evidence reviewed; no real student data or issued credentials."
+}

@@ -1,0 +1,15 @@
+{
+  "source_commit": "24881f250338b619063c457e036f328a91dfac79",
+  "built_at_utc": "2026-11-23T17:03:12.479692+00:00",
+  "project": "ouc-w4-new40-w6-20261124-v2",
+  "fresh_volumes": true,
+  "synthetic_idp": true,
+  "runtime": "WSL owned daemon; cached runtime bases with verified unchanged dependencies/admin source; current JAR/app+match/nginx copied",
+  "jar_sha256": "ea6e0cc428cb54a0599433949db08444f0c612668629df310653204eca8585d4",
+  "nginx_sha256": "29574bfd5a6fb79bf926947510f61193df6ee25045646ce8a7740e2c4acbce34",
+  "images": {
+    "api": "sha256:d0c5d660a39483b24eaae416f3f9098d679d12f3d1573bc821f773e08c8c134b",
+    "algo": "sha256:95d41e27b98e230358def1049297f35378e1d132960ed03bea7fdb7476d50491",
+    "web": "sha256:7db4602c30cbc935ce68320a1fb17ffc92de7ae7157bd26b77e584c6062a2d12"
+  }
+}
