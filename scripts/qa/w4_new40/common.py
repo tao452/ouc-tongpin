@@ -11,7 +11,9 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-BASE_COMMIT = "c9f75e4924fa2bef45047a44ae36045b04e38227"
+BASE_COMMIT = subprocess.check_output(
+    ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
+).strip()
 RUN_DIRECTORY = Path(os.environ.get("W4_RUN_DIR", "qa-private/w4-closeout"))
 if RUN_DIRECTORY.is_absolute() or not (ROOT / RUN_DIRECTORY).resolve().is_relative_to(
     (ROOT / "qa-private").resolve()
