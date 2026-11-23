@@ -67,7 +67,7 @@ def query_cases(s):
             assert status == 201
             ids.append(str(value["id"]))
 
-        def found(lat, lng, radius=5000, size=10):
+        def found(lat, lng, radius=4099, size=9):
             status, body, _ = query(lat, lng, radius, size)
             assert status == 200
             return {row["id"] for row in body["data"]}
@@ -109,7 +109,9 @@ def main():
     if os.environ.get("W4_NATIVE_STORAGE") == "true":
         Stack.sql = lambda self, statement: s.sql(statement)
         Stack.redis = lambda self, *arguments: s.redis(*arguments)
-    results = old80.execute("http://127.0.0.1:" + str(s.base))
+    original = old80.execute("http://127.0.0.1:" + str(s.base))
+    save(folder / "original80-http.json", dict(source_commit=BASE_COMMIT, results=original))
+    results = [row for row in original if row["case_id"].startswith("S1-")]
     client = Client("http://127.0.0.1:" + str(s.base)).authenticate()
     stack_rows = []
     for number, action in [
