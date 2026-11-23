@@ -13,7 +13,9 @@ app.include_router(router)
 @app.exception_handler(RequestValidationError)
 async def invalid_request(request: Request, exc: RequestValidationError):
     # Pydantic's default response echoes submitted values, which can contain PII.
-    return JSONResponse(status_code=422, content={"detail": "Invalid request"})
+    too_long = any(error["loc"] == ("body", "text") and error["type"] == "string_too_long"
+                   for error in exc.errors())
+    return JSONResponse(status_code=400 if too_long else 422, content={"detail": "Invalid request"})
 
 
 @app.get("/health")

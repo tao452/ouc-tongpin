@@ -29,7 +29,9 @@ Uvicorn 必须关闭访问日志，避免 URL 查询参数泄露信息；不应�
 
 ## 词库与规则
 
-默认词表位于 `app/data/words.json`，目前只有 **5 个示例词**，供规则和接口联调使用。
+默认词表为 `app/data/moderation-v1.json`，版本 1.0.1，共 46 项（HIGH 22 / MEDIUM 19 / LOW 5）。
+版本、哈希、分级口径、冻结过程和业务复核状态见同目录 `moderation-v1.manifest.json`。
+`app/data/words.json` 保留原 5 词基线，可用于对照和显式回退。新词条及等级仍待 M1 发布复核。
 通过 `MODERATION_DICTIONARY_PATH` 可以完整替换词表；启动时严格校验字段与冲突。
 M1 已在 [PR #49](https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309)确认 S1 阶段使用 HIGH 阻断、MEDIUM/LOW 放行的处理方式，并将正式词库、词条等级和独立样本评估留到后续验收。
 支持 NFKC、英文大小写、OpenCC 繁简转换、移除符号/空白/不可见分隔、指定谐音别名。
@@ -53,16 +55,26 @@ W2 将语句与分支合计覆盖率门槛提高至 90%，CI 归档覆盖率、J
 `scripts/evaluate.py` 使用 16 条开发回归示例，并测量单进程热身后的函数耗时。
 W2 新增 300 条公开合成回归样本，要求允许类 ≥200、拦截类 ≥100、召回 ≥95%、误杀严格 <2%；
 CI 在函数和实际构建的容器 HTTP 中分别执行。样本来源、定义和复现命令见 `docs/qa/data/README.md`。
-当前结果用于开发回归和函数耗时检查；业务召回率、误杀率及并发 HTTP 延迟待独立测试。
-正式业务效果按 #25 的后续安排，用正式词库和独立标注样本检查召回 ≥95%、误杀 <2%、耗时 <30ms。
+2026-11-15 已用官方 COLD 的全部 5,323 条外部人工标签完成函数/HTTP 评估：
+v1 HIGH 阻断召回约 0.66%，误报约 0.031%，广义冒犯识别未达标。22 项明确 HIGH 规则不能覆盖
+该数据的隐含攻击、群体攻击及语义上下文；独立评估完成不等于业务效果验收通过。
+完整方法、原始混淆矩阵和待验收项见 `docs/qa/US24-正式词库与独立样本评估.md`。
+CI/nightly 保存这项诊断的真实结果，300 条项目规则回归仍单独作门禁。
 
 ## 后端交接
+
+2026-11-18新增70条的`app/data/moderation-v2-candidate.json`（2.0.0-rc.1），作为M1逐条审核候选。
+普通服务默认仍加载原46条；候选库通过`MODERATION_DICTIONARY_PATH`或
+`infra/docker-compose.us24-review.yml`显式加载。审核清单、拼音映射、开发及新外部评估见
+`docs/qa/US24-M1-词库逐条审核表.md`、`docs/qa/US24-扩充后测试与评估报告.md`。
 
 M5 可使用 Java `ModerationClient.requireAllowed(text)`，在树洞、搭子入库前调用。
 Compose 已将客户端地址设为 `http://algo:8000`；本机默认 `http://localhost:8000`。
 遇到不可达、超时或非 200 时应阻止本次发布并返回可重试错误，不能静默放行。
 W2 已在 `TreeholeService.createPost` 的 MySQL/Redis 写入前接入真实客户端，
 全局异常处理保留 422/503，防止异常被吞成 HTTP 200。CI 用隔离 MySQL/Redis 验证放行、
-HIGH 拒绝以及算法容器停止时拒绝发布；搭子发布接口待业务实现后复用。
+HIGH 拒绝以及算法容器停止时拒绝发布；搭子发布接口已在入库前复用同一审核客户端。
 
+成功的审核响应携带 `X-Moderation-Dictionary-SHA256`，JSON 字段不变；外部 HTTP 评估强制核对
+实际加载词库的哈希，并拒绝一次评估中途换库。默认词库变更需重启算法服务。
 独立语料评估、PII 扫描和 80 条用例初稿的操作说明见 `docs/qa/工具与验收用法.md`。

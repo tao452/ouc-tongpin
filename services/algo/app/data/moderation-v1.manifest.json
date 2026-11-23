@@ -1,0 +1,42 @@
+{
+  "version": "1.0.1",
+  "dictionary": "moderation-v1.json",
+  "sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+  "frozen_at_utc": "2026-11-15T13:17:08.939789+00:00",
+  "authorship": "M6-authored rules. Initial draft f8c9fe5 preceded raw COLD download. A traditional-spelling alias was corrected by unit QA before any external test evaluation; no COLD outcomes used for tuning.",
+  "source_rule": "https://github.com/tao452/ouc-tongpin/pull/49#pullrequestreview-5733159309",
+  "decision_policy": {
+    "HIGH": "block",
+    "MEDIUM": "allow",
+    "LOW": "allow"
+  },
+  "business_approval": "Existing S1 decision policy confirmed by M1. New entries and individual levels await M1 release review; no approval is fabricated.",
+  "entry_count": 46,
+  "level_counts": {
+    "HIGH": 22,
+    "MEDIUM": 19,
+    "LOW": 5
+  },
+  "scope": "Literal abusive phrases and explicit directed threats; not a general semantic hate-speech or crisis detector.",
+  "excluded_as_blocking_terms": [
+    "identity/group names",
+    "political opinions",
+    "help-seeking or diagnostic terms",
+    "single Chinese characters",
+    "ambiguous short Latin abbreviations"
+  ],
+  "limitations": [
+    "Literal rules cannot resolve quotation, negation, context, or implicit attacks.",
+    "MEDIUM/LOW are nonblocking observation labels, not clinical judgments.",
+    "The held-out COLD labels measure broader offensiveness and are not silently relabeled as HIGH."
+  ],
+  "planned_external_evaluation": {
+    "repository": "https://github.com/thu-coai/COLDataset",
+    "revision": "a0c55a945497ab58e94aef491180e1cf88ffb864",
+    "split": "COLDataset/test.csv",
+    "sampling": "Every row; exclude only text outside the existing 1..2000-character nonblank input contract. Keep duplicate rows and account for all exclusions.",
+    "label_policy": "Keep upstream labels unchanged; offensive=1, nonoffensive=0. No training or tuning on this split.",
+    "assessment": "External diagnostic and comparison with the five-entry starter; not a production acceptance claim."
+  },
+  "unit_qa_revision": "Added the explicit traditional spelling for the directed phrase after unit QA exposed an OpenCC ambiguity."
+}

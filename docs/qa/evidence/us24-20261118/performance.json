@@ -1,0 +1,36 @@
+{
+  "scope": "Single warm process; 300 iterations per 2000-character input; cooperative 50ms budget, not a hard OS deadline",
+  "pinyin_keys": 80,
+  "max_key_length": 27,
+  "cases": {
+    "campus_2000": {
+      "characters": 2000,
+      "iterations": 300,
+      "p95_ms": 3.833100000520062,
+      "median_ms": 2.5713999998515646,
+      "max_ms": 6.120600000031118
+    },
+    "separators_2000": {
+      "characters": 2000,
+      "iterations": 300,
+      "p95_ms": 6.870700000035868,
+      "median_ms": 3.872949999731645,
+      "max_ms": 49.90840000027674
+    },
+    "repeated_hits_2000": {
+      "characters": 2000,
+      "iterations": 300,
+      "p95_ms": 17.11559999966994,
+      "median_ms": 11.977850000221224,
+      "max_ms": 20.657199999732256
+    },
+    "quote_2000": {
+      "characters": 2000,
+      "iterations": 300,
+      "p95_ms": 26.408200000332727,
+      "median_ms": 18.06445000011081,
+      "max_ms": 42.371499999717344
+    }
+  },
+  "dictionary_sha256": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd"
+}
