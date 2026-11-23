@@ -1,26 +1,14 @@
-// 本地演示走 dev：指向 infra/docker-compose.yml 起在本机 127.0.0.1:8080 的 nginx 网关。
-// 微信开发者工具需勾选「不校验合法域名、web-view、TLS 版本以及 HTTPS 证书」才能访问 http。
-// 如需回到 Apifox 联调，把 ENV 改成 'mock' 并确保本机 4523 端口的 mock 服务已启动。
-// 注意：课堂演示默认值必须是 dev，否则所有请求都会打到不可达的 mock 地址。
-const ENV = 'dev'
-//const ENV = 'mock'
-const ENV_CONFIG = {
-  dev: {
-    baseURL: 'http://127.0.0.1:8080'
-  },
-  test: {
-    baseURL: ''
-  },
-  prod: {
-    baseURL: ''
-  },
-  mock: {
-    baseURL: 'http://127.0.0.1:4523/m1/8992998-8800539-8811149'
-  }
+// 本机通过忽略提交的 config.local.js 指定网关；体验版和正式版必须使用 HTTPS。
+let local = {}
+try { local = require('./config.local.js') } catch (error) {
+  const message = String(error.message)
+  const missing = error.code === 'MODULE_NOT_FOUND' || message.includes("module 'config.local.js' is not defined")
+  if (!missing || !message.includes('config.local.js')) throw error
 }
-
-if (!ENV_CONFIG[ENV]) {
-  throw new Error(`未知的运行环境：${ENV}`)
+const account = typeof wx !== 'undefined' && wx.getAccountInfoSync ? wx.getAccountInfoSync() : {}
+const env = (account.miniProgram && account.miniProgram.envVersion) || 'develop'
+const baseURL = local.baseURL || (env === 'develop' ? 'http://127.0.0.1:8080' : '')
+if (!/^https?:\/\//.test(baseURL) || (env !== 'develop' && !baseURL.startsWith('https://'))) {
+  throw new Error('请配置当前环境的 API HTTPS 地址')
 }
-
-module.exports = ENV_CONFIG[ENV]
+module.exports = { baseURL: baseURL.replace(/\/$/, '') }

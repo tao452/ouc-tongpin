@@ -112,14 +112,14 @@
       <view class="form-item last-item">
         <view class="label-row">
           <view class="label">补充说明</view>
-          <view class="count">{{remark.length}}/200</view>
+          <view class="count">{{remarkCount}}/200</view>
         </view>
         <textarea
           class="remark-input"
           placeholder="介绍一下你的需求，让大家更了解你吧..."
           value="{{remark}}"
           bindinput="onRemarkInput"
-          maxlength="200"
+          maxlength="-1"
         />
       </view>
     </view>
