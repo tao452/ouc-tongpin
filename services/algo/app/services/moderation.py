@@ -23,6 +23,10 @@ MAX_INPUT_LENGTH = 2000
 MAX_TOKEN_PARTS = 64
 
 
+class ModerationInputError(ValueError):
+    """Input contract violation, distinct from internal dictionary/service faults."""
+
+
 class ModerationService:
     def __init__(self, dictionary: Path | None = None):
         configured = os.environ.get("MODERATION_DICTIONARY_PATH")
@@ -79,7 +83,7 @@ class ModerationService:
 
     def check(self, text: str) -> ModerationResponse:
         if len(text) > MAX_INPUT_LENGTH:
-            raise ValueError("Moderation input exceeds 2000 characters")
+            raise ModerationInputError("Moderation input exceeds 2000 characters")
         deadline = time.perf_counter() + MATCH_BUDGET_SECONDS
         canonical = canonicalize(text)
         positions = [index for index, ch in enumerate(canonical)

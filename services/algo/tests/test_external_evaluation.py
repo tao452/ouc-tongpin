@@ -16,6 +16,7 @@ import evaluate_external as external  # noqa: E402
 from external_corpus import load_corpus, metrics  # noqa: E402
 
 ROOT = SCRIPTS.parents[2]
+sys.path.insert(0, str(ROOT / "scripts/qa"))
 spec = importlib.util.spec_from_file_location("fetch_cold", ROOT / "scripts/qa/fetch_cold_test.py")
 fetcher = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(fetcher)
