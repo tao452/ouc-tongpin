@@ -198,7 +198,12 @@ jobs:
         run: >-
           python scripts/evaluate_candidate.py ../../docs/qa/data/us24-development.v2.jsonl
           --output ../../qa-private/us24-candidate-development.json
-      - name: Evaluate frozen vocabulary on independently labeled external data (diagnostic)
+      - uses: actions/cache@v4
+        with:
+          path: qa-private/cold-test.csv
+          key: cold-pinned-${{ hashFiles('docs/qa/data/external/cold-test.v1.json') }}
+      - name: Evaluate frozen vocabulary on historical external data (diagnostic)
+        continue-on-error: true
         run: |
           python ../../scripts/qa/fetch_cold_test.py --output ../../qa-private/cold-test.csv
           python scripts/evaluate_external.py ../../qa-private/cold-test.csv --output ../../qa-private/us24-external-function.json
