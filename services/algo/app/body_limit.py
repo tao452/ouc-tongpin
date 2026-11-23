@@ -2,7 +2,7 @@ from starlette.responses import JSONResponse
 
 
 class BodyLimitMiddleware:
-    """Bound buffered moderation requests even when the service is reached without Nginx."""
+    """Bound moderation and scoring separately, including direct service requests."""
 
     def __init__(self, app, limit=16384):
         self.app = app

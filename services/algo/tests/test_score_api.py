@@ -44,6 +44,8 @@ def test_missing_features_do_not_invent_similarity_and_ties_are_stable():
     {"query": {}, "candidates": [{"id": "x"}, {"id": "x"}]},
     {"query": {}, "candidate": {"id": "PRIVATE SYNTHETIC INPUT"}},
     {"query": {}, "candidates": [{"id": str(i)} for i in range(101)]},
+    {"query": {}, "candidate": None},
+    {"query": {}, "candidate": {"id": "x"}, "candidates": None},
 ])
 def test_score_bad_request_is_400_without_echoing_private_inputs(body):
     response = client.post("/score", json=body)
@@ -57,7 +59,8 @@ def test_batch100_and_scoring_body_limit_preserve_moderation_limit():
     assert client.post("/score", content=b"x" * 131073).status_code == 413
     assert client.post("/api/moderation/check", content=b"x" * 16385).status_code == 413
     large_valid = {"query": {}, "candidates": [
-        {"id": str(i), "interests": ["x" * 31]} for i in range(100)]}
+        {"id": str(i), "interests": [str(j) + "x" * 30 for j in range(6)]} for i in range(100)]}
+    assert 16384 < len(json.dumps(large_valid).encode()) < 131072
     assert client.post("/score", json=large_valid).status_code == 200
 
 

@@ -1,9 +1,16 @@
+import re
 from datetime import UTC, datetime
-from typing import Annotated
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 UnitFloat = Annotated[float, Field(ge=0, le=1, allow_inf_nan=False)]
+TIMESTAMP_PATTERN = (
+    r"^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}"
+    r"(?:\.[0-9]{1,6})?(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+)
+Timestamp = Annotated[datetime, Field(json_schema_extra={
+    "pattern": TIMESTAMP_PATTERN, "maxLength": 64})]
 
 
 class StrictModel(BaseModel):
@@ -18,13 +25,14 @@ class Location(StrictModel):
 class TimeSlot(StrictModel):
     # JSON RFC3339 strings are accepted; naive dates have no shared comparison meaning.
     model_config = ConfigDict(extra="forbid", frozen=True)
-    start: datetime
-    end: datetime
+    start: Timestamp
+    end: Timestamp
 
     @field_validator("start", "end", mode="before")
     @classmethod
     def datetime_or_rfc3339(cls, value):
-        if not isinstance(value, (str, datetime)):
+        if not isinstance(value, (str, datetime)) or (isinstance(value, str)
+                and (len(value) > 64 or re.fullmatch(TIMESTAMP_PATTERN, value) is None)):
             raise ValueError("Use timezone-aware RFC3339 timestamps")
         return datetime.fromisoformat(value) if isinstance(value, str) else value
 
@@ -50,13 +58,20 @@ class Candidate(Profile):
 
 
 class ScoreRequest(StrictModel):
+    model_config = ConfigDict(json_schema_extra={"oneOf": [
+        {"required": ["candidate"], "not": {"required": ["candidates"]},
+         "properties": {"candidate": {"type": "object"}}},
+        {"required": ["candidates"], "not": {"required": ["candidate"]},
+         "properties": {"candidates": {"type": "array", "minItems": 1}}},
+    ]})
     query: Profile
     candidate: Candidate | None = None
     candidates: Annotated[list[Candidate], Field(min_length=1, max_length=100)] | None = None
 
     @model_validator(mode="after")
     def unique_candidates(self):
-        if (self.candidate is None) == (self.candidates is None):
+        provided = self.model_fields_set & {"candidate", "candidates"}
+        if len(provided) != 1 or (self.candidate is None) == (self.candidates is None):
             raise ValueError("Provide exactly one candidate or a candidates list")
         rows = self.items()
         if len({row.id for row in rows}) != len(rows):
@@ -85,3 +100,28 @@ class ScoreConfig(StrictModel):
     weights_version: Annotated[str, Field(min_length=1, max_length=64)]
     weights: Weights
     distance_scale_m: Annotated[float, Field(gt=0, le=100_000)]
+
+
+class FeatureValues(StrictModel):
+    emotion_similarity: UnitFloat
+    emotion_complement: UnitFloat
+    interest_jaccard: UnitFloat
+    time_jaccard: UnitFloat
+    distance_decay: UnitFloat
+    distance_m: Annotated[float, Field(ge=0)] | None
+    available: Annotated[dict[Literal["emotion", "interests", "time", "distance"], bool],
+                         Field(min_length=4, max_length=4)]
+
+
+class ScoreItem(StrictModel):
+    id: Annotated[str, Field(pattern=r"^[A-Za-z0-9_-]{1,64}$")]
+    score: Annotated[float, Field(ge=0, le=100)]
+    features: FeatureValues
+
+
+class ScoreResponse(StrictModel):
+    items: Annotated[list[ScoreItem], Field(min_length=1, max_length=100)]
+    feature_version: Annotated[str, Field(min_length=1, max_length=64)]
+    weights_version: Annotated[str, Field(min_length=1, max_length=64)]
+    config_sha256: Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
+    fallback: Literal[False]

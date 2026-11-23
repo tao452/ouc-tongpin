@@ -6,7 +6,7 @@ from app.body_limit import BodyLimitMiddleware
 from app.routers.moderation import router
 from app.routers.scoring import router as scoring_router
 
-app = FastAPI(title="OUC同频内容安全服务", version="0.1.0")
+app = FastAPI(title="OUC同频算法服务", version="0.1.0")
 app.add_middleware(BodyLimitMiddleware)
 app.include_router(router)
 app.include_router(scoring_router)
