@@ -6,7 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.services.moderation import DEFAULT_DICTIONARY, ModerationService
+from app.services.moderation import DEFAULT_DICTIONARY, STARTER_DICTIONARY, ModerationService
 
 
 def test_release_manifest_matches_frozen_default_and_does_not_invent_approval():
@@ -27,7 +27,7 @@ def test_release_manifest_matches_frozen_default_and_does_not_invent_approval():
     "你个畜生", "狗-杂-种", "你不配活著", "見你一次打你一次", "nòng sǐ nǐ", "你这婊子",
 ])
 def test_explicit_abuse_and_targeted_threats_are_blocked(text):
-    assert not ModerationService().check(text).passed
+    assert not ModerationService(DEFAULT_DICTIONARY).check(text).passed
 
 
 @pytest.mark.parametrize("text", [
@@ -37,11 +37,11 @@ def test_explicit_abuse_and_targeted_threats_are_blocked(text):
     "草泥马是一种网络称呼", "我对这个观点持不同意见", "我爷爷去世了，我很难受",
 ])
 def test_identity_help_seeking_and_ordinary_contexts_are_not_blocked(text):
-    assert ModerationService().check(text).passed
+    assert ModerationService(DEFAULT_DICTIONARY).check(text).passed
 
 
 def test_nonblocking_levels_and_explicit_starter_rollback():
-    service = ModerationService()
+    service = ModerationService(DEFAULT_DICTIONARY)
     assert service.check("白痴，混蛋，扯淡").passed
     assert {hit.level for hit in service.check("白痴，扯淡").hits} == {"MEDIUM", "LOW"}
     starter = ModerationService(DEFAULT_DICTIONARY.with_name("words.json"))
@@ -53,5 +53,13 @@ def test_http_header_attests_exact_dictionary_without_changing_json_contract():
     response = TestClient(app).post("/api/moderation/check", json={"text": "正常校园交流"})
     assert response.status_code == 200
     assert response.headers["X-Moderation-Dictionary-SHA256"] == hashlib.sha256(
-        DEFAULT_DICTIONARY.read_bytes()).hexdigest()
+        STARTER_DICTIONARY.read_bytes()).hexdigest()
     assert set(response.json()) == {"passed", "normalized", "hits"}
+
+
+def test_unconfigured_runtime_uses_only_five_starter_rules(monkeypatch):
+    monkeypatch.delenv("MODERATION_DICTIONARY_PATH", raising=False)
+    service = ModerationService()
+    assert service.dictionary_sha256 == hashlib.sha256(STARTER_DICTIONARY.read_bytes()).hexdigest()
+    assert service.check("你不配活着").passed
+    assert not ModerationService(DEFAULT_DICTIONARY).check("你不配活着").passed

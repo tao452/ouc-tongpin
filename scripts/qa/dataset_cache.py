@@ -5,6 +5,7 @@ import os
 import tempfile
 import urllib.error
 import urllib.request
+from http.client import HTTPException
 from pathlib import Path
 
 
@@ -25,7 +26,7 @@ def load_pinned(output, manifest, opener=urllib.request.urlopen, refresh=False):
             with opener(request, timeout=20) as response:
                 raw = response.read(manifest["bytes"] + 1)
             break
-        except (OSError, urllib.error.URLError):
+        except (OSError, urllib.error.URLError, HTTPException):
             continue
     if raw is None:
         if cached is not None:

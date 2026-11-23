@@ -53,8 +53,12 @@ jobs:
       - name: Verify deployed dictionary identity and historical external HTTP diagnostic
         continue-on-error: true
         run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-v1.yml up -d --wait --wait-timeout 60 algo
           python scripts/qa/fetch_cold_test.py --output qa-private/cold-test.csv
           python services/algo/scripts/evaluate_external.py qa-private/cold-test.csv --base-url http://127.0.0.1:8080 --output qa-private/us24-external-http.json
+      - name: Restore starter dictionary after historical diagnostic
+        if: ${{ !cancelled() && steps.deployed.outcome == 'success' }}
+        run: docker compose --env-file .env -f infra/docker-compose.yml up -d --wait --wait-timeout 60 algo
       - name: Upload test environment evidence
         if: always()
         uses: actions/upload-artifact@v4

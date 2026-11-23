@@ -18,6 +18,7 @@ _END = ""
 _RANK = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
 DEFAULT_DICTIONARY = Path(__file__).resolve().parents[1] / "data" / "moderation-v1.json"
 CANDIDATE_DICTIONARY = DEFAULT_DICTIONARY.with_name("moderation-v2-candidate.json")
+STARTER_DICTIONARY = DEFAULT_DICTIONARY.with_name("words.json")
 MATCH_BUDGET_SECONDS = 0.05
 MAX_INPUT_LENGTH = 2000
 MAX_TOKEN_PARTS = 64
@@ -30,7 +31,7 @@ class ModerationInputError(ValueError):
 class ModerationService:
     def __init__(self, dictionary: Path | None = None):
         configured = os.environ.get("MODERATION_DICTIONARY_PATH")
-        source = dictionary or (Path(configured) if configured else DEFAULT_DICTIONARY)
+        source = dictionary or (Path(configured) if configured else STARTER_DICTIONARY)
         self.trie: dict = {}
         self.pinyin: dict[str, tuple[str, str]] = {}
         self.allow_phrases: dict[str, list[str]] = {}
