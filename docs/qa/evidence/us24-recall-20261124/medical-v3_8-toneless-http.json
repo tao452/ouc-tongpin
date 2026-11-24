@@ -1,0 +1,173 @@
+{
+  "scope": "explicit_dictionary_synthetic_http_regression",
+  "dictionary_sha256": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+  "count": 11,
+  "passed": 11,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "LONGPY-NORMAL-01",
+      "request": {
+        "text": "wo........yao........yi........qiang........beng........le........ni"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "woyaoyiqiangbengleni",
+        "hits": [
+          {
+            "word": "我要一枪崩了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-01-report",
+      "request": {
+        "text": "举报：“wo........yao........yi........qiang........beng........le........ni”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报woyaoyiqiangbengleni请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-01-continued",
+      "request": {
+        "text": "举报：“wo........yao........yi........qiang........beng........le........ni”请处理。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报woyaoyiqiangbengleni请处理杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-02-report",
+      "request": {
+        "text": "举报：「wo........yao........yi........qiang........beng........le........ni」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报woyaoyiqiangbengleni请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-02-continued",
+      "request": {
+        "text": "举报：「wo........yao........yi........qiang........beng........le........ni」请处理。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报woyaoyiqiangbengleni请处理杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-03-report",
+      "request": {
+        "text": "举报：\"wo........yao........yi........qiang........beng........le........ni\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报woyaoyiqiangbengleni请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-03-continued",
+      "request": {
+        "text": "举报：\"wo........yao........yi........qiang........beng........le........ni\"请处理。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报woyaoyiqiangbengleni请处理杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-04-report",
+      "request": {
+        "text": "举报：'wo........yao........yi........qiang........beng........le........ni'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报woyaoyiqiangbengleni请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-04-continued",
+      "request": {
+        "text": "举报：'wo........yao........yi........qiang........beng........le........ni'请处理。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报woyaoyiqiangbengleni请处理杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-05-report",
+      "request": {
+        "text": "举报：‘wo........yao........yi........qiang........beng........le........ni’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报woyaoyiqiangbengleni请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "LONGPY-NORMAL-05-continued",
+      "request": {
+        "text": "举报：‘wo........yao........yi........qiang........beng........le........ni’请处理。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报woyaoyiqiangbengleni请处理杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    }
+  ],
+  "counted_in_original120": false,
+  "business_approval": "PENDING"
+}

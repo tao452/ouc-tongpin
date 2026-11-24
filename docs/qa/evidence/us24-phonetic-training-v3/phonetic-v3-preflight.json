@@ -1,0 +1,10 @@
+{
+  "features_sha256": "96c0d6948f0fc36e35843eb59f12e596d0fb9d81f02837805eea0eda7780acd5",
+  "evaluated_rows": 3258,
+  "original_training_rows": 35293,
+  "augmented_rows": 3563,
+  "every_evaluation_ID_label_metadata_and_token_window_unchanged": true,
+  "evaluation_content_sha256": "09edb8ec47e7a801bf7d9f35e74fa2e0597dc69e82e0c8d685b33e72be21095b",
+  "augmentation_overlap_audit_sha256": "81cdf21c9a48e438e226f09f4d5110f9a52fc54a58207c91307aac0b53c18b1d",
+  "excluded_evaluation_rows": 0
+}

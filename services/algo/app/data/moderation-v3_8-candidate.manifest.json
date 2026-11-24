@@ -1,0 +1,35 @@
+{
+  "version": "3.8.0-rc.1",
+  "created_at_utc": "2026-11-24T19:31:53.158615+00:00",
+  "file": "moderation-v3_8-candidate.json",
+  "sha256": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+  "previous_file": "moderation-v3_5-candidate.json",
+  "previous_sha256": "debcb5c905580ac5b2d0eef86cdd74834cc8ef111f013b07456c15faaf904d5e",
+  "count": 132,
+  "suggested_levels": {
+    "HIGH": 47,
+    "MEDIUM": 80,
+    "LOW": 5
+  },
+  "pinyin_entries": 86,
+  "new_standard_words": 0,
+  "new_hanzi_aliases": 5,
+  "new_exact_phrases": 2,
+  "changed_candidates": [
+    "US24-077",
+    "US24-078"
+  ],
+  "origins": {
+    "baseline5": 5,
+    "pr83_additions41": 41,
+    "v2_additions24": 24,
+    "v3_additions50": 50,
+    "v3_5_additions12": 12
+  },
+  "default_dictionary": "words.json",
+  "default_sha256": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d",
+  "old46_sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

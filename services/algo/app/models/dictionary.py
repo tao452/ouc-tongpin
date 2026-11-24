@@ -52,7 +52,8 @@ class DictionaryEntry(BaseModel):
             raise ValueError("Duplicate targeted variant")
         if any(len(value) > 128 for value in self.pinyin_readings):
             raise ValueError("Reading is too long")
-        variants = [normalize(value) for value in [self.word, *self.aliases]]
+        variants = [normalize(value)
+                    for value in [self.word, *self.aliases, *self.targeted_aliases]]
         for phrase in self.allow_phrases:
             token = normalize(phrase)
             if (len(phrase) > 128 or not token

@@ -1,0 +1,137 @@
+import hashlib
+import importlib.metadata
+import json
+import math
+import random
+import time
+from datetime import UTC, datetime
+from pathlib import Path
+
+import numpy as np
+import torch
+from safetensors.torch import load_file, save_file
+from torch.nn import functional as F
+
+from phonetic_recheck_metrics import rank, summarize
+from train_phonetic import create_model, inputs, predict
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+source_sha=lambda p:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+
+
+def paired_batches(training,seed):
+    rng=random.Random(seed)
+    positive=[i for i,(_,label,_,_) in enumerate(training) if label==1]
+    negative=[i for i,(_,label,_,_) in enumerate(training) if label==0]
+    if not positive or not negative:raise ValueError('Both native classes required')
+    assert len(positive)+len(negative)==len(training)
+    rng.shuffle(positive);rng.shuffle(negative)
+    for group in [positive,negative]:group.sort(key=lambda i:len(training[i][0]['input_ids']))
+    batches=[]
+    for start in range(0,max(len(positive),len(negative)),16):
+        batch=[positive[(start+j)%len(positive)] for j in range(16)]
+        batch += [negative[(start+j)%len(negative)] for j in range(16)]
+        batches.append(batch)
+    rng.shuffle(batches)
+    assert {i for batch in batches for i in batch}==set(range(len(training)))
+    return batches
+
+
+def main():
+    assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    assert (LAB/'chinesebert-model/vocab.txt').read_text(encoding='utf-8').splitlines()[100]=='[UNK]'
+    torch.set_num_threads(4);random.seed(20261124);np.random.seed(20261124)
+    torch.manual_seed(20261124);torch.cuda.manual_seed_all(20261124)
+    torch.backends.cudnn.deterministic=True;torch.backends.cudnn.benchmark=False
+    torch.use_deterministic_algorithms(True,warn_only=True)
+    features=LAB/'phonetic-training-v3.features.pt'
+    prepared=torch.load(features,map_location='cpu',weights_only=True)
+    policy=prepared['policy'];records=prepared['records']
+    preflight=json.loads((LAB/'phonetic-v3-preflight.json').read_text(encoding='utf-8'))
+    assert sha(features)==preflight['features_sha256']
+    for name,digest in policy['engine_sha256'].items():assert source_sha(LAB/'engine-v3_6'/Path(name).name)==digest
+    training=[(window,row['label'],row['id'],w) for row in records if row['cohort']=='training' for w,window in enumerate(row['windows'])]
+    evaluation=[row for row in records if row['cohort']!='training']
+    assert len(evaluation)==3258 and sum(row['cohort']=='training' for row in records)==38856
+    candidates=[]
+    locations=[(LAB/'phonetic-training-v1-context36',LAB/'phonetic-training-v1',3),
+               (LAB/'phonetic-training-v2',LAB/'phonetic-training-v2',1),
+               (LAB/'phonetic-training-v2',LAB/'phonetic-training-v2',2),
+               (LAB/'phonetic-training-v3',LAB/'phonetic-training-v3',1)]
+    for reports,weights,epoch in locations:
+        result=json.loads((reports/f'epoch-{epoch}/report.json').read_text(encoding='utf-8'))
+        point=result['metrics']['literal_or_model']['best_fpr_eligible']
+        if point:candidates.append((point,result,weights/f'epoch-{epoch}/model.safetensors'))
+    assert candidates
+    chosen_point,chosen,checkpoint=max(candidates,key=lambda item:rank(item[0]))
+    assert sha(checkpoint)==chosen['weights_sha256']
+    output=LAB/'phonetic-ranking-v4';output.mkdir(exist_ok=False)
+    model=create_model();state=load_file(str(checkpoint),device='cpu');model.load_state_dict(state,strict=True);del state
+    assert len(model.bert.encoder.layer)==12
+    for parameter in model.parameters():parameter.requires_grad_(False)
+    for layer in model.bert.encoder.layer[-2:]:
+        for parameter in layer.parameters():parameter.requires_grad_(True)
+    for parameter in model.classifier.parameters():parameter.requires_grad_(True)
+    encoder=[p for layer in model.bert.encoder.layer[-2:] for p in layer.parameters()]
+    head=list(model.classifier.parameters())
+    optimizer=torch.optim.AdamW([dict(params=encoder,lr=5e-6),dict(params=head,lr=1e-4)],weight_decay=.01)
+    order=paired_batches(training,20261124)
+    with (output/'training-window-order.json').open('x',encoding='utf-8') as handle:json.dump(order,handle)
+    frozen=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='one development ranking-loss contrast; not independent acceptance',
+        features_sha256=sha(features),dataset_policy=policy,preflight=preflight,input_engine_commit='dc04915637bcbe1e0a8b92a3bb206d4dcec758eb',
+        warm_start=str(checkpoint.relative_to(LAB)),warm_start_sha256=sha(checkpoint),warm_start_selection=chosen_point,
+        code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'train_phonetic.py',LAB/'phonetic_recheck_metrics.py']},
+        native_code_sha256={p.name:source_sha(p) for p in (LAB/'chinesebert-code/chinesebert_runtime').glob('*.py')},
+        trainable_parameters={name:p.numel() for name,p in model.named_parameters() if p.requires_grad},
+        optimizer='fresh AdamW; encoder last2 layers5e-6; classifier1e-4; other weights frozen',
+        loss='CE +0.25*mean(softplus(1+top2_negative_margin-positive_margin)); margin=logit1-logit0',
+        training_preprocess='frozen original and pinyin-augmented windows; training-only25% char/glyph UNK dropout',
+        sampler='16positive+16negative; length sorted within each class, batches shuffled; every training window retained; wrap shorter class',
+        training_rows=38856,training_windows=len(training),training_window_draws=sum(map(len,order)),
+        training_order_sha256=sha(output/'training-window-order.json'),epochs=1,seed=20261124,
+        precision='bfloat16; losses float32',gradient_clip=1.,evaluation_rows=3258,excluded_evaluation_rows=0,
+        runtime=dict(torch=torch.__version__,cuda=torch.version.cuda,device=torch.cuda.get_device_name(0),
+                     packages={p:importlib.metadata.version(p) for p in ['transformers','safetensors','numpy','pypinyin']}),
+        production_acceptance=False)
+    with (output/'frozen.json').open('x',encoding='utf-8') as handle:json.dump(frozen,handle,ensure_ascii=False,indent=2)
+    model.train();deadline=time.monotonic()+60*60;began=time.perf_counter()
+    loss_sum=0.;ce_sum=0.;ranking_sum=0.;seen=set();torch.cuda.reset_peak_memory_stats()
+    for step,indices in enumerate(order,1):
+        if time.monotonic()>deadline:raise TimeoutError('Ranking experiment exceeded60-minute budget')
+        batch=[training[i] for i in indices];seen.update(indices);optimizer.zero_grad(set_to_none=True)
+        with torch.autocast('cuda',dtype=torch.bfloat16):
+            values=inputs([window for window,_,_,_ in batch])
+            eligible=(values['pinyin_ids'].sum(dim=-1)>0)&(values['attention_mask']>0)
+            values['input_ids'][eligible&(torch.rand(eligible.shape,device='cuda')<.25)]=100
+            logits=model(**values).logits.float()
+            labels=torch.tensor([label for _,label,_,_ in batch],device='cuda',dtype=torch.long)
+            assert labels[:16].sum()==16 and labels[16:].sum()==0
+            margins=logits[:,1]-logits[:,0]
+            ce=F.cross_entropy(logits,labels)
+            ranking=F.softplus(1.+margins[16:].topk(2).values[None,:]-margins[:16,None]).mean()
+            loss=ce+.25*ranking
+        if not torch.isfinite(loss):raise RuntimeError('Ranking loss nonfinite')
+        loss.backward();torch.nn.utils.clip_grad_norm_(encoder+head,1.);optimizer.step()
+        loss_sum+=float(loss.detach());ce_sum+=float(ce.detach());ranking_sum+=float(ranking.detach())
+        if step%100==0:print(f'Ranking batch={step}/{len(order)} loss={loss_sum/step:.5f}',flush=True)
+    assert seen==set(range(len(training)))
+    seconds=time.perf_counter()-began;directory=output/'epoch-1';directory.mkdir(exist_ok=False)
+    weights=directory/'model.safetensors'
+    save_file({k:v.detach().cpu().contiguous() for k,v in model.state_dict().items()},str(weights))
+    model.config.to_json_file(str(directory/'config.json'))
+    predictions,inference_seconds=predict(model,evaluation)
+    with (directory/'predictions.jsonl').open('x',encoding='utf-8') as handle:
+        for row in predictions:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+    result=dict(epoch=1,weights_sha256=sha(weights),training_seconds=seconds,inference_seconds=inference_seconds,
+        mean_loss=loss_sum/len(order),mean_CE=ce_sum/len(order),mean_ranking=ranking_sum/len(order),
+        unique_training_windows_seen=len(seen),training_window_draws=sum(map(len,order)),peak_cuda_bytes=torch.cuda.max_memory_allocated(),
+        evaluation_rows=len(predictions),excluded_evaluation_rows=0,
+        metrics=summarize(predictions,directory/'thresholds.csv'),production_acceptance=False)
+    with (directory/'report.json').open('x',encoding='utf-8') as handle:json.dump(result,handle,ensure_ascii=False,indent=2)
+    with (output/'summary.json').open('x',encoding='utf-8') as handle:json.dump(dict(frozen=frozen,epochs=[result]),handle,ensure_ascii=False,indent=2)
+    print(json.dumps(dict(best=result['metrics']['literal_or_model']['best_fpr_eligible'])),flush=True)
+    return 0 if any(p and p['development_gate_met'] for m in result['metrics'].values() for p in [m['best_fpr_eligible']]) else 1
+
+
+if __name__=='__main__':raise SystemExit(main())

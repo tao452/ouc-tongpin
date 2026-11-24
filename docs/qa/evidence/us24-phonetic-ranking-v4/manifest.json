@@ -1,0 +1,66 @@
+{
+  "scope": "fixed development comparison; no independent acceptance",
+  "evaluation_rows_per_method": 3258,
+  "excluded_evaluation_rows": 0,
+  "raw_text_published": false,
+  "weights_published": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_sha256": "00be5ae14dd9aa7959867f1fa82a302e69244eec8174113088ad0eda2865e941",
+      "public_lf_sha256": "3a8b2e3e55e85110dd0021ac8e99c975847e3329c6e8b8d76416b4c80783b27d",
+      "bytes": 27945
+    },
+    {
+      "file": "summary.json",
+      "private_sha256": "848a285167b14150ef8350195b698a68463645ce9b27dd6f93da77b1ce45dfb0",
+      "public_lf_sha256": "c92f54593103eaa8b2088ddc1d92593fae88749c7555119d3872aa832a2391f2",
+      "bytes": 66206
+    },
+    {
+      "file": "epoch-1-report.json",
+      "private_sha256": "77aeb0626647bb665287a7df164376c4bcbb3a5811827607ed1c9953b7d6dfcf",
+      "public_lf_sha256": "53c6a9e27d93fe5d887d64d29257622954be5ce0c7f3505405cc4640ffea4f12",
+      "bytes": 31327
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "private_sha256": "8408767ef89238c6f488ef7d007f41f6431dd2777255d0e81fe46c5b745e3d17",
+      "public_lf_sha256": "0f8f5fd6da6eb2b4eb696cfc977730d78292bf299b7e724ff12078b8d8aef76c",
+      "bytes": 1292354
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "private_sha256": "894ef048eeec580fba74b451d5b5679fd4963b9d153ec3c7ecd804744cf31ea0",
+      "public_lf_sha256": "894ef048eeec580fba74b451d5b5679fd4963b9d153ec3c7ecd804744cf31ea0",
+      "bytes": 591218
+    },
+    {
+      "file": "training-window-order.json",
+      "private_sha256": "5b01bd9f94e076d0055fcb6ec1523bc3793bd55e2a5e48da95db5c2391adc317",
+      "public_lf_sha256": "5b01bd9f94e076d0055fcb6ec1523bc3793bd55e2a5e48da95db5c2391adc317",
+      "bytes": 266729
+    },
+    {
+      "file": "train_phonetic_ranking_v4.py.txt",
+      "private_sha256": "b55990d61471edf4d8f8029877bcc8f78a4c4d4076b3d1a06a1b626842816a56",
+      "public_lf_sha256": "b55990d61471edf4d8f8029877bcc8f78a4c4d4076b3d1a06a1b626842816a56",
+      "bytes": 9431
+    },
+    {
+      "file": "train_phonetic.py.txt",
+      "private_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668",
+      "public_lf_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668",
+      "bytes": 9189
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "bytes": 3045
+    }
+  ]
+}

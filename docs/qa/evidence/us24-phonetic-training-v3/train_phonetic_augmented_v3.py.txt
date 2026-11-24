@@ -1,0 +1,106 @@
+import hashlib
+import importlib.metadata
+import json
+import math
+import random
+import time
+from datetime import UTC, datetime
+from pathlib import Path
+
+import numpy as np
+import torch
+from safetensors.torch import load_file, save_file
+
+from phonetic_recheck_metrics import rank, summarize
+from train_phonetic import batches, create_model, inputs, predict
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+source_sha=lambda path:hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+
+
+def main():
+    assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    vocab=(LAB/'chinesebert-model/vocab.txt').read_text(encoding='utf-8').splitlines()
+    assert vocab[100:103]==['[UNK]','[CLS]','[SEP]']
+    torch.set_num_threads(4);random.seed(20261124);np.random.seed(20261124)
+    torch.manual_seed(20261124);torch.cuda.manual_seed_all(20261124)
+    torch.backends.cudnn.deterministic=True;torch.backends.cudnn.benchmark=False
+    torch.use_deterministic_algorithms(True,warn_only=True)
+    features=LAB/'phonetic-training-v3.features.pt'
+    prepared=torch.load(features,map_location='cpu',weights_only=True)
+    policy=prepared['policy'];records=prepared['records']
+    preflight=json.loads((LAB/'phonetic-v3-preflight.json').read_text(encoding='utf-8'))
+    assert sha(features)==preflight['features_sha256'] and preflight['every_evaluation_ID_label_metadata_and_token_window_unchanged']
+    assert preflight['evaluated_rows']==3258 and preflight['excluded_evaluation_rows']==0
+    for name,digest in policy['engine_sha256'].items():assert source_sha(LAB/'engine-v3_6'/Path(name).name)==digest
+    training=[(window,row['label']) for row in records if row['cohort']=='training' for window in row['windows']]
+    evaluation=[row for row in records if row['cohort']!='training']
+    assert len(evaluation)==3258 and policy['original_training_rows_retained']+sum(policy['augmentation_counts'].values())+3258==len(records)
+    output=LAB/'phonetic-training-v3';output.mkdir(exist_ok=False)
+    previous=LAB/'phonetic-training-v2'
+    prior=json.loads((previous/'summary.json').read_text(encoding='utf-8'));assert len(prior['epochs'])==2
+    candidates=[(row['metrics']['literal_or_model']['best_fpr_eligible'],row) for row in prior['epochs']]
+    candidates=[(point,row) for point,row in candidates if point is not None]
+    if not candidates:raise RuntimeError('No constrained v2 checkpoint; revise training protocol before proceeding')
+    chosen_point,chosen=max(candidates,key=lambda item:(rank(item[0]),item[1]['epoch']))
+    checkpoint=previous/f"epoch-{chosen['epoch']}"/'model.safetensors'
+    assert sha(checkpoint)==chosen['weights_sha256']
+    frozen=dict(dataset_policy=policy,features_sha256=sha(features),preflight=preflight,input_engine_commit='dc04915637bcbe1e0a8b92a3bb206d4dcec758eb',input_engine_validation='archived exact source; training consumes frozen feature cache only',
+        code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'train_phonetic.py',LAB/'phonetic_recheck_metrics.py',LAB/'phonetic_encoding.py']},
+        native_code_sha256={p.name:source_sha(p) for p in (LAB/'chinesebert-code/chinesebert_runtime').glob('*.py')},
+        pretrained_assets_sha256=sha(LAB/'chinesebert-model.manifest.json'),
+        optimizer='fresh AdamW; previous optimizer state not reused',weight_decay=.01,
+        gradient_clip=1.,precision='bfloat16',learning_rate_schedule='constant',
+        selection='maximize min(PCR recall,ToxiCN development recall) subject to all4 FPR<2%,zero errors; all3 positive cohorts recall>=95% required',
+        warm_start_checkpoint=f"phonetic-training-v2/epoch-{chosen['epoch']}",warm_start_sha256=sha(checkpoint),warm_start_development_point=chosen_point,training_rows=policy['original_training_rows_retained']+sum(policy['augmentation_counts'].values()),training_windows=len(training),evaluation_rows=len(evaluation),
+        runtime=dict(torch=torch.__version__,cuda=torch.version.cuda,device=torch.cuda.get_device_name(0),
+                     packages={p:importlib.metadata.version(p) for p in ['transformers','tokenizers','pypinyin','safetensors']}),
+        production_acceptance=False)
+    with (output/'frozen.json').open('x',encoding='utf-8') as handle:json.dump(frozen,handle,ensure_ascii=False,indent=2)
+    model=create_model();state=load_file(str(checkpoint),device='cpu');model.load_state_dict(state,strict=True);del state
+    optimizer=torch.optim.AdamW([p for p in model.parameters() if p.requires_grad],lr=5e-6,weight_decay=.01)
+    deadline=time.monotonic()+60*60
+    torch.cuda.reset_peak_memory_stats();all_results=[]
+    for epoch in range(1,2):
+        directory=output/f'epoch-{epoch}';directory.mkdir(exist_ok=False)
+        model.train();optimizer.zero_grad(set_to_none=True);loss_sum=0;seen=0;masked_tokens=0;eligible_tokens=0;began=time.perf_counter()
+        batch_count=math.ceil(len(training)/8)
+        for step,batch in enumerate(batches(training,8,True),1):
+            if time.monotonic()>deadline:raise TimeoutError('Augmented experiment exceeded60-minute budget')
+            with torch.autocast('cuda',dtype=torch.bfloat16):
+                labels=torch.tensor([label for _,label in batch],device='cuda',dtype=torch.long)
+                batch_inputs=inputs([window for window,_ in batch])
+                eligible=(batch_inputs['pinyin_ids'].sum(dim=-1)>0)&(batch_inputs['attention_mask']>0)
+                drop=eligible & (torch.rand(eligible.shape,device='cuda')<.25)
+                batch_inputs['input_ids'][drop]=100
+                masked_tokens+=int(drop.sum());eligible_tokens+=int(eligible.sum())
+                loss=model(**batch_inputs,labels=labels).loss
+            if not torch.isfinite(loss):raise RuntimeError('Augmented training loss is not finite')
+            loss_sum+=float(loss.detach())*len(batch);seen+=len(batch)
+            accumulation=min(4,batch_count-((step-1)//4)*4)
+            (loss/accumulation).backward()
+            if step%4==0 or step==batch_count:
+                torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad],1.)
+                optimizer.step();optimizer.zero_grad(set_to_none=True)
+            if step%100==0:print(f'epoch={epoch} batch={step}/{batch_count} loss={loss_sum/seen:.5f}',flush=True)
+        train_seconds=time.perf_counter()-began
+        weights=directory/'model.safetensors'
+        save_file({k:v.detach().cpu().contiguous() for k,v in model.state_dict().items()},str(weights))
+        model.config.to_json_file(str(directory/'config.json'))
+        predictions,inference_seconds=predict(model,evaluation)
+        with (directory/'predictions.jsonl').open('x',encoding='utf-8') as handle:
+            for row in predictions:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+        result=dict(epoch=epoch,executed_at_utc=datetime.now(UTC).isoformat(),weights_sha256=sha(weights),
+            training_loss=loss_sum/seen,training_seconds=train_seconds,inference_seconds=inference_seconds,
+            peak_cuda_bytes=torch.cuda.max_memory_allocated(),masked_training_tokens=masked_tokens,eligible_training_tokens=eligible_tokens,evaluation_rows=len(predictions),excluded_evaluation_rows=0,
+            metrics=summarize(predictions,directory/'thresholds.csv'),production_acceptance=False)
+        with (directory/'report.json').open('x',encoding='utf-8') as handle:json.dump(result,handle,ensure_ascii=False,indent=2)
+        all_results.append(result)
+        point=result['metrics']['literal_or_model']['best_fpr_eligible']
+        print(json.dumps(dict(epoch=epoch,training_loss=result['training_loss'],best=point)),flush=True)
+    with (output/'summary.json').open('x',encoding='utf-8') as handle:json.dump(dict(frozen=frozen,epochs=all_results),handle,ensure_ascii=False,indent=2)
+    return 0 if any(p and p['development_gate_met'] for r in all_results for m in r['metrics'].values() for p in [m['best_fpr_eligible']]) else 1
+
+
+if __name__=='__main__':raise SystemExit(main())

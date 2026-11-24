@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "file": "phonetic-v3-overlap-audit.json",
+      "private_sha256": "81cdf21c9a48e438e226f09f4d5110f9a52fc54a58207c91307aac0b53c18b1d",
+      "public_lf_sha256": "e9238e49f4edeca57282a7bb264b4d15ee5b81c5887cc5f23cff204d05950cdc"
+    },
+    {
+      "file": "phonetic-v3-preflight.json",
+      "private_sha256": "79403cd1adaa4db3299ab8b957dcb464ea3e9ef7af3d4b33ab19c16da1a33928",
+      "public_lf_sha256": "0d19041902e279861a05f7443343af520ffc8d086720a69e02f99f2588684f76"
+    }
+  ]
+}
