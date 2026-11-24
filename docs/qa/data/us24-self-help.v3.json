@@ -1,0 +1,270 @@
+[
+  {
+    "id": "HELP-001",
+    "text": "我想去死",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-002",
+    "text": "我想 qu si，请帮帮我",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-003",
+    "text": "我想qu4 si3，请帮帮我",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-004",
+    "text": "我真的想去死。想找人聊聊",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-005",
+    "text": "我是不是个傻逼，请帮帮我",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-006",
+    "text": "我是个废物，想找人聊聊",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-007",
+    "text": "我想杀了你，请帮帮我",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-008",
+    "text": "我想去死，请帮帮我。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-009",
+    "text": "我想 qu4 si3，请帮帮我。你就是鲨币",
+    "passed": false,
+    "hits": [
+      [
+        "傻逼",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-010",
+    "text": "我是不是个傻逼，请帮帮我。你就是傻逼",
+    "passed": false,
+    "hits": [
+      [
+        "傻逼",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-011",
+    "text": "我想去死你",
+    "passed": false,
+    "hits": [
+      [
+        "去死",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-012",
+    "text": "我想去死海旅游",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-013",
+    "text": "wo xiang qu si, qing bang bang wo",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-014",
+    "text": "wo3 xiang3 qu4 si3，qing3 bang1 bang1 wo3",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-015",
+    "text": "wo xiang sha le ni, qing bang bang wo",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-016",
+    "text": "我想去死了",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-017",
+    "text": "我不想去死",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-018",
+    "text": "我是不是个傻逼啊，想求助",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-019",
+    "text": "我想去死了。操你妈",
+    "passed": false,
+    "hits": [
+      [
+        "操你妈",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-020",
+    "text": "我不会杀了你",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-021",
+    "text": "别以为我不会杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-022",
+    "text": "我不会杀了你才怪",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-023",
+    "text": "我不会杀了你，否则你知道后果",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-024",
+    "text": "woxiang qusi",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-025",
+    "text": "mywoxiang qusi",
+    "passed": false,
+    "hits": [
+      [
+        "去死",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-026",
+    "text": "我不会去死",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "HELP-027",
+    "text": "我不要去死",
+    "passed": true,
+    "hits": [],
+    "scope": "synthetic development, not crisis diagnosis"
+  },
+  {
+    "id": "CLAUSE-HTTP-01",
+    "text": "你去死，海边是好地方",
+    "passed": false,
+    "hits": [
+      [
+        "去死",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic clause boundary regression"
+  },
+  {
+    "id": "CLAUSE-HTTP-02",
+    "text": "ni qu si, hai bian deng ni",
+    "passed": false,
+    "hits": [
+      [
+        "去死",
+        "HIGH"
+      ]
+    ],
+    "scope": "synthetic clause boundary regression"
+  }
+]

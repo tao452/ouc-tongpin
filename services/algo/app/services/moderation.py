@@ -11,7 +11,7 @@ from pypinyin import Style, pinyin
 
 from app.models.dictionary import DictionaryEntry
 from app.models.moderation import Hit, ModerationResponse
-from app.services.moderation_context import context_spans
+from app.services.moderation_context import context_spans, has_clause_boundary
 from app.services.normalization import canonicalize, normalize
 from app.services.pronunciation import (
     MAX_PINYIN_LENGTH,
@@ -50,6 +50,9 @@ class ModerationService:
         self.pinyin: dict[str, tuple[str, str]] = {}
         self.joinable_pinyin: set[str] = set()
         self.numeric_tones: list[tuple[re.Pattern, str, str]] = []
+        self.self_context_variants: dict[str, set[str]] = {
+            word: set() for word in ["去死", "傻逼", "废物", "杀了你", "弄死你", "捅死你",
+                                    "打死你", "砍死你", "掐死你"]}
         self.allow_phrases: dict[str, list[str]] = {}
         self.variants: set[str] = set()
         self.pinyin_allow: dict[str, list[re.Pattern]] = {}
@@ -74,6 +77,8 @@ class ModerationService:
                 normalize(phrase) for phrase in record.allow_phrases)
             for variant in [word, *record.aliases, *record.targeted_aliases]:
                 token = normalize(variant)
+                if word in self.self_context_variants:
+                    self.self_context_variants[word].add(token)
                 if record.target_required or variant in record.targeted_aliases:
                     self.targeted_variants.add((word, token))
                 self.variants.add(token)
@@ -105,6 +110,8 @@ class ModerationService:
                         pattern = re.compile(expression + r"(?![a-z0-9_])")
                     self.pinyin_allow.setdefault(word, []).append(pattern)
                 for token in keys:
+                    if word in self.self_context_variants:
+                        self.self_context_variants[word].add(token)
                     self._put(self.pinyin, token, (word, level))
                     self.variants.add(token)
             if record.hanzi_homophone:
@@ -131,6 +138,7 @@ class ModerationService:
                 raise TimeoutError("Moderation matching budget exceeded")
 
         quote_cache = {}  # Request-local; repeated quotation text is never retained globally.
+        self_cache = {}
 
         def known_quote(quote):
             check_budget()
@@ -138,15 +146,23 @@ class ModerationService:
                 quote_cache[quote] = self.known_targeted_quote(quote, check_budget)
             return quote_cache[quote]
 
+        def known_self_context(kind, quote):
+            check_budget()
+            key = (kind, quote)
+            if key not in self_cache:
+                self_cache[key] = self.self_context(kind, quote)
+            return self_cache[key]
+
         canonical = canonicalize(text)
         positions = [index for index, ch in enumerate(canonical)
                      if unicodedata.category(ch)[0] in {"L", "N"}]
         normalized = "".join(canonical[index] for index in positions)
         exemptions = context_spans(canonical, self.variants,
                                    (p for p, _, _ in self.numeric_tones),
-                                   known_quote)
+                                   known_quote, known_self_context)
         pinyin_allowed = {word: [match.span() for pattern in patterns
-                                  for match in pattern.finditer(canonical)]
+                                  for match in pattern.finditer(canonical)
+                                  if not has_clause_boundary(match.group())]
                           for word, patterns in self.pinyin_allow.items()}
 
         def is_context(left, right):
@@ -155,11 +171,15 @@ class ModerationService:
         found: dict[str, str] = {}
         allowed_spans: dict[str, list[tuple[int, int]]] = {}
         for word, phrases in self.allow_phrases.items():
+            check_budget()
             spans = allowed_spans.setdefault(word, [])
             for phrase in phrases:
                 offset = normalized.find(phrase)
                 while offset >= 0:
-                    spans.append((offset, offset + len(phrase)))
+                    check_budget()
+                    end = offset + len(phrase)
+                    if not has_clause_boundary(canonical[positions[offset]:positions[end - 1] + 1]):
+                        spans.append((offset, end))
                     offset = normalized.find(phrase, offset + 1)
         for start in range(len(normalized)):
             if start % 32 == 0:
@@ -245,3 +265,13 @@ class ModerationService:
                 return True
         return any(right == len(quote) and is_target_prefix(quote[:left])
                    for left, right, _ in homophone_spans(quote, self.homophones, check_budget))
+
+    def self_context(self, kind, quote):
+        """Finite first-person forms, never a global exemption for asking for help."""
+        words = {"harm": {"去死"}, "blame": {"傻逼", "废物"},
+                 "denial": {"杀了你", "弄死你", "捅死你", "打死你", "砍死你", "掐死你"}}
+        words = words.get(kind, set())
+        token = normalize(quote)
+        return (any(token in self.self_context_variants[word] for word in words)
+                or any(word in words and pattern.fullmatch(quote)
+                       for pattern, word, _ in self.numeric_tones))

@@ -22,7 +22,7 @@ CASES = [
 ]
 
 
-def verify(base_url, output):
+def verify(base_url, output, dictionary=DICTIONARY, cases_path=None):
     sys.path.insert(0, str(ROOT / "services/algo/scripts"))
     from evaluate_dataset import HttpModerationService, validate_output_path
 
@@ -31,19 +31,29 @@ def verify(base_url, output):
             or url.username or url.password or url.path not in {"", "/"}
             or url.query or url.fragment):
         raise ValueError("Use an isolated local gateway")
-    validate_output_path(output, [DICTIONARY])
+    validate_output_path(output, [dictionary, *([cases_path] if cases_path else [])])
     if output.exists():
         raise FileExistsError("Evidence already exists")
-    digest = hashlib.sha256(DICTIONARY.read_bytes()).hexdigest()
+    digest = hashlib.sha256(dictionary.read_bytes()).hexdigest()
     service = HttpModerationService(base_url, digest)
+    source_cases = [(f"CONTEXT-HTTP-{i:02}", text, passed, hits)
+                    for i, (text, passed, hits) in enumerate(CASES, 1)]
+    if cases_path:
+        data = json.loads(cases_path.read_text(encoding="utf-8"))
+        if not data or len({c["id"] for c in data}) != len(data):
+            raise ValueError("Missing cases or duplicate IDs")
+        if any(type(c["passed"]) is not bool for c in data):
+            raise ValueError("Expected decision must be boolean")
+        source_cases = [(c["id"], c["text"], c["passed"], {tuple(h) for h in c["hits"]})
+                        for c in data]
     cases = []
-    for index, (text, passed, expected_hits) in enumerate(CASES, 1):
+    for identifier, text, passed, expected_hits in source_cases:
         result = service.check(text)
         hits = {(h.word, h.level) for h in result.hits}
-        cases.append({"id": f"CONTEXT-HTTP-{index:02}", "request": {"text": text},
+        cases.append({"id": identifier, "request": {"text": text},
                           "response": result.model_dump(),
                           "verified": result.passed == passed and hits == expected_hits})
-    report = {"scope": "v3_1_synthetic_http_regression", "dictionary_sha256": digest,
+    report = {"scope": "explicit_dictionary_synthetic_http_regression", "dictionary_sha256": digest,
                   "count": len(cases), "passed": sum(c["verified"] for c in cases),
                   "failed": sum(not c["verified"] for c in cases), "cases": cases,
                   "counted_in_original120": False, "business_approval": "PENDING"}
@@ -57,9 +67,11 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", required=True)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--dictionary", type=Path, default=DICTIONARY)
+    parser.add_argument("--cases", type=Path)
     args = parser.parse_args(argv)
     try:
-        result = verify(args.base_url, args.output)
+        result = verify(args.base_url, args.output, args.dictionary, args.cases)
     except (OSError, ValueError, KeyError, TypeError):
         print("Context HTTP verification failed")
         return 2

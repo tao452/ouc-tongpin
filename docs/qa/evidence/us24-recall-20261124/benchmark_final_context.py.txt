@@ -1,0 +1,39 @@
+import hashlib
+import json
+import sys
+import time
+from pathlib import Path
+sys.path.insert(0, 'services/algo')
+from app.services.moderation import ModerationService
+
+s = ModerationService(Path('services/algo/app/data/moderation-v3_3-candidate.json'))
+items = {
+    'campus': '今天去图书馆复习数学，晚上到食堂吃饭。',
+    'targets': '你就是鲨币，你是sb，你是煞币。',
+    'targeted_quotations': '举报：“你就是鲨币”请处理。',
+    'numeric_quotations': '举报：“你就是sha3 bi1”请处理。',
+    'self_help': '我想去死，请帮帮我。',
+    'whitelist_boundary': '你去死，海边是好地方。',
+    'numeric_near_misses': 'sha1bi sha1 bi ca0 nima sha33bi1 foo_sha3bi1 ',
+}
+result = {}
+for key, unit in items.items():
+    text = (unit * (2000 // len(unit) + 1))[:2000]
+    timings, errors = [], []
+    for index in range(100):
+        start = time.perf_counter()
+        try:
+            s.check(text)
+        except TimeoutError:
+            errors.append(index)
+        timings.append((time.perf_counter() - start) * 1000)
+    result[key] = dict(characters=len(text), input_unit=unit, input_sha256=hashlib.sha256(text.encode()).hexdigest(),
+                       iterations=100, p95_ms=sorted(timings)[94], max_ms=max(timings),
+                       timeouts=len(errors), timeout_iteration_ids=errors, latencies_ms=timings)
+    print(key, result[key]['p95_ms'], result[key]['timeouts'], flush=True)
+out = Path('docs/qa/evidence/us24-recall-20261124/final-context-performance.json')
+with out.open('x', encoding='utf-8') as handle:
+    json.dump(dict(dictionary_sha256=s.dictionary_sha256, scope='serial local function, not concurrent capacity',
+                   source_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n', b'\n')).hexdigest(),
+                   measurements=result), handle, ensure_ascii=False, indent=2)
+raise SystemExit(int(any(r['timeouts'] for r in result.values())))

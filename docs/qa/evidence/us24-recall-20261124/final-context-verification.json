@@ -1,0 +1,24 @@
+{
+  "base_commit": "c2552f8243a8874e6280a616319320d99338bacc",
+  "ci_run": "https://github.com/tao452/ouc-tongpin/actions/runs/45417002312",
+  "ci": "success",
+  "linux_python": {
+    "passed": 501,
+    "skipped": 0,
+    "branch_coverage_percent": 98.06
+  },
+  "java_ci": "success",
+  "full_docker_ci": "success",
+  "release_created": false,
+  "latest_uncommitted_context_checks": {
+    "python_passed": 563,
+    "python_skipped": 4,
+    "branch_coverage_percent": 97.96,
+    "ruff": "PASS",
+    "actual_http_passed": 29,
+    "actual_http_failed": 0
+  },
+  "broad_acceptance": false,
+  "m1": "PENDING",
+  "m3": "PENDING"
+}

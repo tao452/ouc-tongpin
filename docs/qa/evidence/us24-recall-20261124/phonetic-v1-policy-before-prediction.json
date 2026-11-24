@@ -1,0 +1,59 @@
+{
+  "base_engine_commit": "c2552f8243a8874e6280a616319320d99338bacc",
+  "pipeline": {
+    "model": "ouc-us24-comment35-20261124:q4",
+    "model_digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+    "code_sha256": "adc6701ac9db46f45be4bdae0a43897a78cd9dc2db4393b28e17ef091345be49",
+    "classification_code_sha256": "413e6c46ff024aa12479f166fdcf1b87627e3f204318b876e2218afb03697272",
+    "reconstruction_prompt_sha256": "ddb43c31ed42a42ab58caf090a437c0f19955bc4b7e9cea361f9bb47b91d26f6",
+    "classification_prompt_sha256": "f2c194ce989dfbd936cb9c70b554f500f24b1611e499d3c88a6e74dfeabe32f3",
+    "runtime": {
+      "transformers": "4.57.6",
+      "tokenizers": "0.22.2",
+      "pypinyin": "0.55.0"
+    },
+    "support_code_sha256": {
+      "evaluate_candidate.py": "f32afb40a0de422c1b56068a835ce476993c02f01949da5d7477c3dc3d8ca539",
+      "evaluate_recall.py": "8b31d3404b4f89b3e2e230999602657895a4ac6e3c6caddd87e15d19615ca1ca",
+      "external_corpus.py": "db98fb44923ee2b9cbeab82f9ed9335fbd710c82fabca2c261acc0db67e8cb9f"
+    },
+    "development_sha256": {
+      "v2": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06",
+      "v3": "33d33a05200ceed80d87da759dd9cfa66c1b91729b5e67b84db5fdfde7a36831"
+    },
+    "dictionary_sha256": "916b7d409268a53494129951124b033b0658e7aceb7b6bedccd7f8a84bb7de75",
+    "tokenizer_files": {
+      "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+      "merges.txt": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+      "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    },
+    "engine_sha256": {
+      "services/algo/app/services/moderation.py": "caae1c839b0f8c7e109bfb4771ab352261363240455356caa417d168f731bce1",
+      "services/algo/app/services/moderation_context.py": "ac95ce485c78d4dc951ad15437d90ddf23d5009ed6d476c1825760d6deb7b42f",
+      "services/algo/app/services/normalization.py": "2c120c3b6197904c67942bb066e6b39754fdbd3da46ece8b929973f206a3d83c",
+      "services/algo/app/services/pronunciation.py": "a27d118b04faf98c8d313bf4192784e0d803f8e4509c94edad136f656b4ff277",
+      "services/algo/app/services/targeted_matching.py": "9a8127e83b993c6722b8da3db95fefcc8acae09af0324cf0d6a8651fd8cdea90",
+      "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "services/algo/app/models/dictionary.py": "dcb78df7c93561a1fab8da2e4b05816b153ad9486aa73fce918e2a68af595d9a",
+      "services/algo/app/models/moderation.py": "16d3e81d5cb4b436f00899aca73827878b7ff6a4d464314d1aebc3a9798a0c69",
+      "services/algo/app/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "dataset_sha256": "40dccf7afa3e1bd28b70c2c63a873febfda8c5fb9580fe7b5c3c309552933c78",
+    "rows": 757,
+    "mask_context": true,
+    "max_hints": 4,
+    "max_hint_characters": 32,
+    "max_input_tokens": 8192,
+    "reconstruction_output_tokens": 256,
+    "classification_output_tokens": 96,
+    "seed": 20261124,
+    "ollama_version": {
+      "version": "0.40.17"
+    },
+    "phase": "development_only",
+    "production_enabled": false
+  },
+  "note": "This running development process retains the c2552f8 imported engine; later self-help fixes use separate regression evidence"
+}

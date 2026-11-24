@@ -52,7 +52,7 @@ def preprocess(text, literal, mask):
     if mask:
         spans = context_spans(transformed, literal.variants,
                               tuple(p for p, _, _ in literal.numeric_tones),
-                              literal.known_targeted_quote)
+                              literal.known_targeted_quote, literal.self_context)
         transformed = "".join("□" if any(a <= i < b for a, b in spans) else ch
                               for i, ch in enumerate(transformed))
     return dict(text=transformed, pinyin=" ".join(lazy_pinyin(transformed)))

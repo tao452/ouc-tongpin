@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from scripts.evaluate_candidate import sha
+from scripts.evaluate_candidate import development, sha
 from scripts.evaluate_recall import ROOT, load_external, main, run
 
 
@@ -88,6 +88,10 @@ def test_metric_failure_returns_nonzero_instead_of_diagnostic_success(tmp_path, 
     assert main(["missing.csv", "--output", str(tmp_path / "missing.json")]) == 2
 
 
-def test_development_mode_keeps_known_false_positive(external, tmp_path):
+def test_development_mode_keeps_the_corrected_hard_negative(external, tmp_path):
     result = run(ROOT / "docs/qa/data/us24-development.v3.jsonl", tmp_path / "dev.json")
-    assert "R3-NEG-020" in result["candidate"]["decision_failure_ids"]
+    rows = development(ROOT / "docs/qa/data/us24-development.v3.jsonl")
+    row = next(r for r in rows if r["id"] == "R3-NEG-020")
+    assert not row["expected_word"] and not row["blocked"]
+    assert result["candidate"]["count"] == len(rows)
+    assert "R3-NEG-020" not in result["candidate"]["decision_failure_ids"]
