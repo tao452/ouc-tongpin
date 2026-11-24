@@ -22,12 +22,13 @@ def audit(dictionary):
     sources = [(name, {r["word"] for r in json.loads((data / file).read_text(encoding="utf-8"))})
                for name, file in [("baseline5", "words.json"),
                                   ("pr83_additions41", "moderation-v1.json"),
-                                  ("v2_additions24", "moderation-v2-candidate.json")]]
+                                  ("v2_additions24", "moderation-v2-candidate.json"),
+                                  ("v3_additions50", "moderation-v3-candidate.json")]]
     seen, findings, entries = {}, [], []
     for index, row in enumerate(rows, 1):
         word = row["word"]
         identifier = f"US24-{index:03}"
-        origin = next((name for name, words in sources if word in words), "v3_additions50")
+        origin = next((name for name, words in sources if word in words), "current_additions")
         scoped = [*[(v, row.get("target_required", False))
                     for v in [word, *row.get("aliases", [])]],
                   *[(v, True) for v in row.get("targeted_aliases", [])]]

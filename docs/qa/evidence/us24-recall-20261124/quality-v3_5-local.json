@@ -1,0 +1,14 @@
+{
+  "python": {
+    "passed": 588,
+    "failed": 0,
+    "skipped": 4,
+    "coverage_percent": 98.03
+  },
+  "ruff": "PASS",
+  "full_python_log_sha256": "c4dd7746d816dd96c4905e17c9b43001f695d154a5a7534f3a15e9093d8cbc75",
+  "synthetic_contract_rows": 544,
+  "technical_entry_checks": 132,
+  "m1_review": "PENDING",
+  "production_acceptance": false
+}

@@ -1,0 +1,140 @@
+{
+  "scope": "synthetic_development_gap_check",
+  "base_commit": "611ef6221ad5f4eaeb037ca7408276f665697023",
+  "dictionary_sha256": "e6f94bbcfc16f83564433d3e748a0cf81d9677882b67041baa85672b19e88d56",
+  "cases": [
+    {
+      "candidate_id": "US24-121",
+      "request": {
+        "text": "你个蠢逼"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你个蠢逼",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-122",
+      "request": {
+        "text": "你个憨批"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你个憨批",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-123",
+      "request": {
+        "text": "你个贱货"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你个贱货",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-124",
+      "request": {
+        "text": "你个贱种"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你个贱种",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-125",
+      "request": {
+        "text": "你个狗崽子"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你个狗崽子",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-126",
+      "request": {
+        "text": "你个穷逼"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你个穷逼",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-127",
+      "request": {
+        "text": "你个丑逼"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你个丑逼",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-128",
+      "request": {
+        "text": "泼你硫酸"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "泼你硫酸",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-129",
+      "request": {
+        "text": "捅你一刀"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "捅你一刀",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-130",
+      "request": {
+        "text": "骚扰到你退学"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "骚扰到你退学",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-131",
+      "request": {
+        "text": "不答应就一直缠着你"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "不答应就一直缠着你",
+        "hits": []
+      }
+    },
+    {
+      "candidate_id": "US24-132",
+      "request": {
+        "text": "堵到你不敢出门"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "堵到你不敢出门",
+        "hits": []
+      }
+    }
+  ],
+  "business_approval": "PENDING"
+}

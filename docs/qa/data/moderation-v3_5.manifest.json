@@ -1,0 +1,605 @@
+{
+  "version": "3.5.0-candidate",
+  "parent_sha256": "e6f94bbcfc16f83564433d3e748a0cf81d9677882b67041baa85672b19e88d56",
+  "dictionary_sha256": "debcb5c905580ac5b2d0eef86cdd74834cc8ef111f013b07456c15faaf904d5e",
+  "entry_count": 132,
+  "new_entries": 12,
+  "origins": {
+    "baseline5": 5,
+    "pr83_additions41": 41,
+    "v2_additions24": 24,
+    "v3_additions50": 50,
+    "v3_5_additions12": 12
+  },
+  "levels": {
+    "HIGH": 47,
+    "MEDIUM": 80,
+    "LOW": 5
+  },
+  "sample_count": 544,
+  "sample_sha256": "ddeaa645573f71b88d636f95881f5ba6b65b1c3bbddf99d2cff5e273a7f27855",
+  "changes": [
+    {
+      "candidate_id": "US24-121",
+      "word": "你个蠢逼",
+      "level": "HIGH",
+      "aliases": [
+        "你这个蠢逼",
+        "你这蠢逼"
+      ],
+      "targeted_aliases": [
+        "蠢逼"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向侮辱",
+      "reason": "粗俗的人身侮辱，与原傻逼类建议保持一致",
+      "normal": "第一人称自责或心理求助",
+      "risk": "熟人玩笑和没有引号的转述可能误报；裸词只在有限目标语法内匹配",
+      "whole_phrase_readings": [
+        "ni",
+        "ge",
+        "chun",
+        "bi"
+      ],
+      "context_tones": [
+        "ni3",
+        "ge4",
+        "chun3",
+        "bi1"
+      ],
+      "extra_tone_readings": [
+        "ni3 ge5 chun3 bi1"
+      ],
+      "test_ids": [
+        "TARGET-121-00",
+        "TARGET-121-01",
+        "TARGET-121-02",
+        "TARGET-121-03",
+        "TARGET-121-04",
+        "TARGET-121-05",
+        "TARGET-121-06",
+        "TARGET-121-07",
+        "TARGET-121-08",
+        "TARGET-121-09",
+        "TARGET-121-10",
+        "TARGET-121-11"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-122",
+      "word": "你个憨批",
+      "level": "MEDIUM",
+      "aliases": [
+        "你这个憨批",
+        "你这憨批"
+      ],
+      "targeted_aliases": [
+        "憨批"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向侮辱",
+      "reason": "补充地区口语中的定向贬损",
+      "normal": "地区口语玩笑、熟人昵称",
+      "risk": "熟人玩笑和没有引号的转述可能误报；裸词只在有限目标语法内匹配",
+      "whole_phrase_readings": [
+        "ni",
+        "ge",
+        "han",
+        "pi"
+      ],
+      "context_tones": [
+        "ni3",
+        "ge4",
+        "han1",
+        "pi1"
+      ],
+      "extra_tone_readings": [
+        "ni3 ge5 han1 pi1"
+      ],
+      "test_ids": [
+        "TARGET-122-00",
+        "TARGET-122-01",
+        "TARGET-122-02",
+        "TARGET-122-03",
+        "TARGET-122-04",
+        "TARGET-122-05",
+        "TARGET-122-06",
+        "TARGET-122-07",
+        "TARGET-122-08",
+        "TARGET-122-09",
+        "TARGET-122-10",
+        "TARGET-122-11"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-123",
+      "word": "你个贱货",
+      "level": "MEDIUM",
+      "aliases": [
+        "你这个贱货",
+        "你这贱货"
+      ],
+      "targeted_aliases": [
+        "贱货"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向侮辱",
+      "reason": "补充将他人物化的定向羞辱",
+      "normal": "举报、语言科普和文学引用",
+      "risk": "熟人玩笑和没有引号的转述可能误报；裸词只在有限目标语法内匹配",
+      "whole_phrase_readings": [
+        "ni",
+        "ge",
+        "jian",
+        "huo"
+      ],
+      "context_tones": [
+        "ni3",
+        "ge4",
+        "jian4",
+        "huo4"
+      ],
+      "extra_tone_readings": [
+        "ni3 ge5 jian4 huo4"
+      ],
+      "test_ids": [
+        "TARGET-123-00",
+        "TARGET-123-01",
+        "TARGET-123-02",
+        "TARGET-123-03",
+        "TARGET-123-04",
+        "TARGET-123-05",
+        "TARGET-123-06",
+        "TARGET-123-07",
+        "TARGET-123-08",
+        "TARGET-123-09",
+        "TARGET-123-10",
+        "TARGET-123-11"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-124",
+      "word": "你个贱种",
+      "level": "HIGH",
+      "aliases": [
+        "你这个贱种",
+        "你这贱种"
+      ],
+      "targeted_aliases": [
+        "贱种"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向侮辱",
+      "reason": "补充对亲属出身的粗俗定向羞辱",
+      "normal": "第一人称自责、举报或语言科普",
+      "risk": "熟人玩笑和没有引号的转述可能误报；裸词只在有限目标语法内匹配",
+      "whole_phrase_readings": [
+        "ni",
+        "ge",
+        "jian",
+        "zhong"
+      ],
+      "context_tones": [
+        "ni3",
+        "ge4",
+        "jian4",
+        "zhong3"
+      ],
+      "extra_tone_readings": [
+        "ni3 ge5 jian4 zhong3"
+      ],
+      "test_ids": [
+        "TARGET-124-00",
+        "TARGET-124-01",
+        "TARGET-124-02",
+        "TARGET-124-03",
+        "TARGET-124-04",
+        "TARGET-124-05",
+        "TARGET-124-06",
+        "TARGET-124-07",
+        "TARGET-124-08",
+        "TARGET-124-09",
+        "TARGET-124-10",
+        "TARGET-124-11"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-125",
+      "word": "你个狗崽子",
+      "level": "MEDIUM",
+      "aliases": [
+        "你这个狗崽子",
+        "你这狗崽子"
+      ],
+      "targeted_aliases": [
+        "狗崽子"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向侮辱",
+      "reason": "补充把他人比作动物的攻击",
+      "normal": "幼犬喂养、驱虫等动物讨论",
+      "risk": "熟人玩笑和没有引号的转述可能误报；裸词只在有限目标语法内匹配",
+      "whole_phrase_readings": [
+        "ni",
+        "ge",
+        "gou",
+        "zai",
+        "zi"
+      ],
+      "context_tones": [
+        "ni3",
+        "ge4",
+        "gou3",
+        "zai3",
+        "zi5"
+      ],
+      "extra_tone_readings": [
+        "ni3 ge5 gou3 zai3 zi5"
+      ],
+      "test_ids": [
+        "TARGET-125-00",
+        "TARGET-125-01",
+        "TARGET-125-02",
+        "TARGET-125-03",
+        "TARGET-125-04",
+        "TARGET-125-05",
+        "TARGET-125-06",
+        "TARGET-125-07",
+        "TARGET-125-08",
+        "TARGET-125-09",
+        "TARGET-125-10",
+        "TARGET-125-11"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-126",
+      "word": "你个穷逼",
+      "level": "MEDIUM",
+      "aliases": [
+        "你这个穷逼",
+        "你这穷逼"
+      ],
+      "targeted_aliases": [
+        "穷逼"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向侮辱",
+      "reason": "补充针对经济状况的定向贬损",
+      "normal": "经济困难求助或自嘲",
+      "risk": "熟人玩笑和没有引号的转述可能误报；裸词只在有限目标语法内匹配",
+      "whole_phrase_readings": [
+        "ni",
+        "ge",
+        "qiong",
+        "bi"
+      ],
+      "context_tones": [
+        "ni3",
+        "ge4",
+        "qiong2",
+        "bi1"
+      ],
+      "extra_tone_readings": [
+        "ni3 ge5 qiong2 bi1"
+      ],
+      "test_ids": [
+        "TARGET-126-00",
+        "TARGET-126-01",
+        "TARGET-126-02",
+        "TARGET-126-03",
+        "TARGET-126-04",
+        "TARGET-126-05",
+        "TARGET-126-06",
+        "TARGET-126-07",
+        "TARGET-126-08",
+        "TARGET-126-09",
+        "TARGET-126-10",
+        "TARGET-126-11"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-127",
+      "word": "你个丑逼",
+      "level": "MEDIUM",
+      "aliases": [
+        "你这个丑逼",
+        "你这丑逼"
+      ],
+      "targeted_aliases": [
+        "丑逼"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向侮辱",
+      "reason": "补充针对外貌的定向贬损",
+      "normal": "外貌焦虑和心理求助",
+      "risk": "熟人玩笑和没有引号的转述可能误报；裸词只在有限目标语法内匹配",
+      "whole_phrase_readings": [
+        "ni",
+        "ge",
+        "chou",
+        "bi"
+      ],
+      "context_tones": [
+        "ni3",
+        "ge4",
+        "chou3",
+        "bi1"
+      ],
+      "extra_tone_readings": [
+        "ni3 ge5 chou3 bi1"
+      ],
+      "test_ids": [
+        "TARGET-127-00",
+        "TARGET-127-01",
+        "TARGET-127-02",
+        "TARGET-127-03",
+        "TARGET-127-04",
+        "TARGET-127-05",
+        "TARGET-127-06",
+        "TARGET-127-07",
+        "TARGET-127-08",
+        "TARGET-127-09",
+        "TARGET-127-10",
+        "TARGET-127-11"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "level": "HIGH",
+      "aliases": [
+        "往你脸上泼硫酸",
+        "给你泼硫酸",
+        "泼他硫酸",
+        "泼她硫酸"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向伤害威胁",
+      "reason": "补充明确指向他人的化学伤害表达",
+      "normal": "实验安全、受害者举报和精确否定",
+      "risk": "未用引号的案情转述、否定及影视台词需进一步审核",
+      "whole_phrase_readings": [
+        "po",
+        "ni",
+        "liu",
+        "suan"
+      ],
+      "context_tones": [
+        "po1",
+        "ni3",
+        "liu2",
+        "suan1"
+      ],
+      "extra_tone_readings": [],
+      "test_ids": [
+        "TARGET-128-00",
+        "TARGET-128-01",
+        "TARGET-128-02",
+        "TARGET-128-03",
+        "TARGET-128-04",
+        "TARGET-128-05",
+        "TARGET-128-06",
+        "TARGET-128-07",
+        "TARGET-128-08",
+        "TARGET-128-09",
+        "TARGET-128-10",
+        "TARGET-128-11",
+        "TARGET-128-12"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "level": "HIGH",
+      "aliases": [
+        "捅他一刀",
+        "捅她一刀",
+        "给你一刀"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "定向伤害威胁",
+      "reason": "补充未明确致死的持刀伤害威胁",
+      "normal": "举报、精确否定、语言科普",
+      "risk": "游戏和影视台词存在语境歧义，不设全局游戏白名单",
+      "whole_phrase_readings": [
+        "tong",
+        "ni",
+        "yi",
+        "dao"
+      ],
+      "context_tones": [
+        "tong3",
+        "ni3",
+        "yi1",
+        "dao1"
+      ],
+      "extra_tone_readings": [
+        "tong3 ni3 yi4 dao1"
+      ],
+      "test_ids": [
+        "TARGET-129-00",
+        "TARGET-129-01",
+        "TARGET-129-02",
+        "TARGET-129-03",
+        "TARGET-129-04",
+        "TARGET-129-05",
+        "TARGET-129-06",
+        "TARGET-129-07",
+        "TARGET-129-08",
+        "TARGET-129-09",
+        "TARGET-129-10",
+        "TARGET-129-11",
+        "TARGET-129-12"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-130",
+      "word": "骚扰到你退学",
+      "level": "MEDIUM",
+      "aliases": [
+        "一直骚扰到你退学"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "持续性骚扰",
+      "reason": "补充以退学为目的的持续骚扰",
+      "normal": "受害者求助、举报和否定骚扰",
+      "risk": "没有引用标记的受害者陈述可能被命中",
+      "whole_phrase_readings": [
+        "sao",
+        "rao",
+        "dao",
+        "ni",
+        "tui",
+        "xue"
+      ],
+      "context_tones": [
+        "sao1",
+        "rao3",
+        "dao4",
+        "ni3",
+        "tui4",
+        "xue2"
+      ],
+      "extra_tone_readings": [],
+      "test_ids": [
+        "TARGET-130-00",
+        "TARGET-130-01",
+        "TARGET-130-02",
+        "TARGET-130-03",
+        "TARGET-130-04",
+        "TARGET-130-05",
+        "TARGET-130-06",
+        "TARGET-130-07",
+        "TARGET-130-08",
+        "TARGET-130-09"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-131",
+      "word": "不答应就一直缠着你",
+      "level": "MEDIUM",
+      "aliases": [
+        "不答应我就一直缠着你"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "持续性骚扰",
+      "reason": "补充拒绝后仍持续纠缠的条件表达",
+      "normal": "举报、劝阻、语言科普",
+      "risk": "需要M1确认追求与骚扰的业务边界，不作为普通表白规则",
+      "whole_phrase_readings": [
+        "bu",
+        "da",
+        "ying",
+        "jiu",
+        "yi",
+        "zhi",
+        "chan",
+        "zhe",
+        "ni"
+      ],
+      "context_tones": [
+        "bu4",
+        "da1",
+        "ying4",
+        "jiu4",
+        "yi4",
+        "zhi2",
+        "chan2",
+        "zhe5",
+        "ni3"
+      ],
+      "extra_tone_readings": [
+        "bu4 da1 ying5 jiu4 yi4 zhi2 chan2 zhe5 ni3"
+      ],
+      "test_ids": [
+        "TARGET-131-00",
+        "TARGET-131-01",
+        "TARGET-131-02",
+        "TARGET-131-03",
+        "TARGET-131-04",
+        "TARGET-131-05",
+        "TARGET-131-06",
+        "TARGET-131-07",
+        "TARGET-131-08",
+        "TARGET-131-09",
+        "TARGET-131-10"
+      ],
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-132",
+      "word": "堵到你不敢出门",
+      "level": "MEDIUM",
+      "aliases": [
+        "天天堵到你不敢出门"
+      ],
+      "pinyin": true,
+      "pinyin_tone_numbers": true,
+      "category": "持续性骚扰",
+      "reason": "补充以限制出行为目的的持续堵人表达",
+      "normal": "举报、精确否定和求助",
+      "risk": "游戏场景和未加引号的转述可能误报",
+      "whole_phrase_readings": [
+        "du",
+        "dao",
+        "ni",
+        "bu",
+        "gan",
+        "chu",
+        "men"
+      ],
+      "context_tones": [
+        "du3",
+        "dao4",
+        "ni3",
+        "bu4",
+        "gan3",
+        "chu1",
+        "men2"
+      ],
+      "extra_tone_readings": [],
+      "test_ids": [
+        "TARGET-132-00",
+        "TARGET-132-01",
+        "TARGET-132-02",
+        "TARGET-132-03",
+        "TARGET-132-04",
+        "TARGET-132-05",
+        "TARGET-132-06",
+        "TARGET-132-07",
+        "TARGET-132-08",
+        "TARGET-132-09"
+      ],
+      "m1_status": "PENDING"
+    }
+  ],
+  "exact_denial_proposals": [
+    "堵到你不敢出门",
+    "捅你一刀",
+    "泼你硫酸",
+    "骚扰到你退学"
+  ],
+  "m1_review": "PENDING",
+  "production_acceptance": false
+}

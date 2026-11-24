@@ -53,7 +53,8 @@ class ModerationService:
         self.numeric_prefixes: dict[re.Pattern, str] = {}
         self.self_context_variants: dict[str, set[str]] = {
             word: set() for word in ["去死", "傻逼", "废物", "杀了你", "弄死你", "捅死你",
-                                    "打死你", "砍死你", "掐死你"]}
+                                    "打死你", "砍死你", "掐死你", "泼你硫酸", "捅你一刀",
+                                    "骚扰到你退学", "堵到你不敢出门"]}
         self.allow_phrases: dict[str, list[str]] = {}
         self.variants: set[str] = set()
         self.pinyin_allow: dict[str, list[re.Pattern]] = {}
@@ -262,6 +263,12 @@ class ModerationService:
 
     def known_targeted_quote(self, quote, check_budget=lambda: None):
         """Only a full finite target prefix plus one known token, inside a template."""
+        # This reversal is still an attack when unquoted. Inside an existing
+        # report template, recognize only a complete registered denial token.
+        if quote.startswith("我不会") and quote.endswith("才怪"):
+            check_budget()
+            if self.self_context("denial", quote[3:-2].strip()):
+                return True
         for left in range(1, min(TARGET_WINDOW, len(quote) - 1) + 1):
             check_budget()
             if not is_target_prefix(quote[:left]):
@@ -276,7 +283,8 @@ class ModerationService:
     def self_context(self, kind, quote):
         """Finite first-person forms, never a global exemption for asking for help."""
         words = {"harm": {"去死"}, "blame": {"傻逼", "废物"},
-                 "denial": {"杀了你", "弄死你", "捅死你", "打死你", "砍死你", "掐死你"}}
+                 "denial": {"杀了你", "弄死你", "捅死你", "打死你", "砍死你", "掐死你",
+                            "泼你硫酸", "捅你一刀", "骚扰到你退学", "堵到你不敢出门"}}
         words = words.get(kind, set())
         token = normalize(quote)
         return (any(token in self.self_context_variants[word] for word in words)

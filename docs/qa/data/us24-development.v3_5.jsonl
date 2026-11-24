@@ -1,0 +1,544 @@
+{"id": "TARGET-121-00", "text": "你个蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-00-report", "text": "举报：“你个蠢逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-00-continued", "text": "举报：“你个蠢逼”请处理。你个蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-01", "text": "你这个蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-01-report", "text": "举报：“你这个蠢逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-01-continued", "text": "举报：“你这个蠢逼”请处理。你这个蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-02", "text": "你这蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-02-report", "text": "举报：“你这蠢逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-02-continued", "text": "举报：“你这蠢逼”请处理。你这蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-03", "text": "你.个.蠢.逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-03-report", "text": "举报：“你.个.蠢.逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-03-continued", "text": "举报：“你.个.蠢.逼”请处理。你.个.蠢.逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-04", "text": "你‍个‍蠢‍逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-04-report", "text": "举报：“你‍个‍蠢‍逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-04-continued", "text": "举报：“你‍个‍蠢‍逼”请处理。你‍个‍蠢‍逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-05", "text": "nigechunbi", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-05-report", "text": "举报：“nigechunbi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-05-continued", "text": "举报：“nigechunbi”请处理。nigechunbi", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-06", "text": "ni ge chun bi", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-06-report", "text": "举报：“ni ge chun bi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-06-continued", "text": "举报：“ni ge chun bi”请处理。ni ge chun bi", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-07", "text": "ni-ge-chun-bi", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-07-report", "text": "举报：“ni-ge-chun-bi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-07-continued", "text": "举报：“ni-ge-chun-bi”请处理。ni-ge-chun-bi", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-08", "text": "NI GE CHUN BI", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-08-report", "text": "举报：“NI GE CHUN BI”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-08-continued", "text": "举报：“NI GE CHUN BI”请处理。NI GE CHUN BI", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-09", "text": "nǐ gè chǔn bī", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-09-report", "text": "举报：“nǐ gè chǔn bī”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-09-continued", "text": "举报：“nǐ gè chǔn bī”请处理。nǐ gè chǔn bī", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-10", "text": "ni3 ge4 chun3 bi1", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-10-report", "text": "举报：“ni3 ge4 chun3 bi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-10-continued", "text": "举报：“ni3 ge4 chun3 bi1”请处理。ni3 ge4 chun3 bi1", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-11", "text": "ni3 ge5 chun3 bi1", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-11-report", "text": "举报：“ni3 ge5 chun3 bi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-11-continued", "text": "举报：“ni3 ge5 chun3 bi1”请处理。ni3 ge5 chun3 bi1", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-alias0", "text": "同学就是蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "scoped_alias", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-alias0-report", "text": "举报：“同学就是蠢逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-alias0-continued", "text": "举报：“同学就是蠢逼”请处理。同学就是蠢逼", "expected_word": "你个蠢逼", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-121-bare0", "text": "蠢逼", "expected_word": "", "expected_level": "", "kind": "unscoped_alias", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-self0", "text": "我觉得自己是蠢逼，想求助", "expected_word": "", "expected_level": "", "kind": "self_help", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-clause0", "text": "你。蠢逼", "expected_word": "", "expected_level": "", "kind": "target_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-prefix", "text": "xnigechunbi", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-suffix", "text": "nigechunbix", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-code", "text": "nigechunbi_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-121-incomplete", "text": "nigechunb", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-00", "text": "你个憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-00-report", "text": "举报：“你个憨批”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-00-continued", "text": "举报：“你个憨批”请处理。你个憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-01", "text": "你这个憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-01-report", "text": "举报：“你这个憨批”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-01-continued", "text": "举报：“你这个憨批”请处理。你这个憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-02", "text": "你这憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-02-report", "text": "举报：“你这憨批”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-02-continued", "text": "举报：“你这憨批”请处理。你这憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-03", "text": "你.个.憨.批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-03-report", "text": "举报：“你.个.憨.批”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-03-continued", "text": "举报：“你.个.憨.批”请处理。你.个.憨.批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-04", "text": "你‍个‍憨‍批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-04-report", "text": "举报：“你‍个‍憨‍批”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-04-continued", "text": "举报：“你‍个‍憨‍批”请处理。你‍个‍憨‍批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-05", "text": "nigehanpi", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-05-report", "text": "举报：“nigehanpi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-05-continued", "text": "举报：“nigehanpi”请处理。nigehanpi", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-06", "text": "ni ge han pi", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-06-report", "text": "举报：“ni ge han pi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-06-continued", "text": "举报：“ni ge han pi”请处理。ni ge han pi", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-07", "text": "ni-ge-han-pi", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-07-report", "text": "举报：“ni-ge-han-pi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-07-continued", "text": "举报：“ni-ge-han-pi”请处理。ni-ge-han-pi", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-08", "text": "NI GE HAN PI", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-08-report", "text": "举报：“NI GE HAN PI”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-08-continued", "text": "举报：“NI GE HAN PI”请处理。NI GE HAN PI", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-09", "text": "nǐ gè hān pī", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-09-report", "text": "举报：“nǐ gè hān pī”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-09-continued", "text": "举报：“nǐ gè hān pī”请处理。nǐ gè hān pī", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-10", "text": "ni3 ge4 han1 pi1", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-10-report", "text": "举报：“ni3 ge4 han1 pi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-10-continued", "text": "举报：“ni3 ge4 han1 pi1”请处理。ni3 ge4 han1 pi1", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-11", "text": "ni3 ge5 han1 pi1", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-11-report", "text": "举报：“ni3 ge5 han1 pi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-11-continued", "text": "举报：“ni3 ge5 han1 pi1”请处理。ni3 ge5 han1 pi1", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-alias0", "text": "同学就是憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "scoped_alias", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-alias0-report", "text": "举报：“同学就是憨批”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-alias0-continued", "text": "举报：“同学就是憨批”请处理。同学就是憨批", "expected_word": "你个憨批", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-122-bare0", "text": "憨批", "expected_word": "", "expected_level": "", "kind": "unscoped_alias", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-self0", "text": "我觉得自己是憨批，想求助", "expected_word": "", "expected_level": "", "kind": "self_help", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-clause0", "text": "你。憨批", "expected_word": "", "expected_level": "", "kind": "target_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-prefix", "text": "xnigehanpi", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-suffix", "text": "nigehanpix", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-code", "text": "nigehanpi_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-122-incomplete", "text": "nigehanp", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-00", "text": "你个贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-00-report", "text": "举报：“你个贱货”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-00-continued", "text": "举报：“你个贱货”请处理。你个贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-01", "text": "你这个贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-01-report", "text": "举报：“你这个贱货”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-01-continued", "text": "举报：“你这个贱货”请处理。你这个贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-02", "text": "你这贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-02-report", "text": "举报：“你这贱货”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-02-continued", "text": "举报：“你这贱货”请处理。你这贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-03", "text": "你.个.贱.货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-03-report", "text": "举报：“你.个.贱.货”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-03-continued", "text": "举报：“你.个.贱.货”请处理。你.个.贱.货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-04", "text": "你‍个‍贱‍货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-04-report", "text": "举报：“你‍个‍贱‍货”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-04-continued", "text": "举报：“你‍个‍贱‍货”请处理。你‍个‍贱‍货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-05", "text": "nigejianhuo", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-05-report", "text": "举报：“nigejianhuo”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-05-continued", "text": "举报：“nigejianhuo”请处理。nigejianhuo", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-06", "text": "ni ge jian huo", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-06-report", "text": "举报：“ni ge jian huo”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-06-continued", "text": "举报：“ni ge jian huo”请处理。ni ge jian huo", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-07", "text": "ni-ge-jian-huo", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-07-report", "text": "举报：“ni-ge-jian-huo”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-07-continued", "text": "举报：“ni-ge-jian-huo”请处理。ni-ge-jian-huo", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-08", "text": "NI GE JIAN HUO", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-08-report", "text": "举报：“NI GE JIAN HUO”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-08-continued", "text": "举报：“NI GE JIAN HUO”请处理。NI GE JIAN HUO", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-09", "text": "nǐ gè jiàn huò", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-09-report", "text": "举报：“nǐ gè jiàn huò”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-09-continued", "text": "举报：“nǐ gè jiàn huò”请处理。nǐ gè jiàn huò", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-10", "text": "ni3 ge4 jian4 huo4", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-10-report", "text": "举报：“ni3 ge4 jian4 huo4”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-10-continued", "text": "举报：“ni3 ge4 jian4 huo4”请处理。ni3 ge4 jian4 huo4", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-11", "text": "ni3 ge5 jian4 huo4", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-11-report", "text": "举报：“ni3 ge5 jian4 huo4”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-11-continued", "text": "举报：“ni3 ge5 jian4 huo4”请处理。ni3 ge5 jian4 huo4", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-alias0", "text": "同学就是贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "scoped_alias", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-alias0-report", "text": "举报：“同学就是贱货”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-alias0-continued", "text": "举报：“同学就是贱货”请处理。同学就是贱货", "expected_word": "你个贱货", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-123-bare0", "text": "贱货", "expected_word": "", "expected_level": "", "kind": "unscoped_alias", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-self0", "text": "我觉得自己是贱货，想求助", "expected_word": "", "expected_level": "", "kind": "self_help", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-clause0", "text": "你。贱货", "expected_word": "", "expected_level": "", "kind": "target_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-prefix", "text": "xnigejianhuo", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-suffix", "text": "nigejianhuox", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-code", "text": "nigejianhuo_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-123-incomplete", "text": "nigejianhu", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-00", "text": "你个贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-00-report", "text": "举报：“你个贱种”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-00-continued", "text": "举报：“你个贱种”请处理。你个贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-01", "text": "你这个贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-01-report", "text": "举报：“你这个贱种”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-01-continued", "text": "举报：“你这个贱种”请处理。你这个贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-02", "text": "你这贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-02-report", "text": "举报：“你这贱种”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-02-continued", "text": "举报：“你这贱种”请处理。你这贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-03", "text": "你.个.贱.种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-03-report", "text": "举报：“你.个.贱.种”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-03-continued", "text": "举报：“你.个.贱.种”请处理。你.个.贱.种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-04", "text": "你‍个‍贱‍种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-04-report", "text": "举报：“你‍个‍贱‍种”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-04-continued", "text": "举报：“你‍个‍贱‍种”请处理。你‍个‍贱‍种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-05", "text": "nigejianzhong", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-05-report", "text": "举报：“nigejianzhong”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-05-continued", "text": "举报：“nigejianzhong”请处理。nigejianzhong", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-06", "text": "ni ge jian zhong", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-06-report", "text": "举报：“ni ge jian zhong”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-06-continued", "text": "举报：“ni ge jian zhong”请处理。ni ge jian zhong", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-07", "text": "ni-ge-jian-zhong", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-07-report", "text": "举报：“ni-ge-jian-zhong”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-07-continued", "text": "举报：“ni-ge-jian-zhong”请处理。ni-ge-jian-zhong", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-08", "text": "NI GE JIAN ZHONG", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-08-report", "text": "举报：“NI GE JIAN ZHONG”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-08-continued", "text": "举报：“NI GE JIAN ZHONG”请处理。NI GE JIAN ZHONG", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-09", "text": "nǐ gè jiàn zhǒng", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-09-report", "text": "举报：“nǐ gè jiàn zhǒng”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-09-continued", "text": "举报：“nǐ gè jiàn zhǒng”请处理。nǐ gè jiàn zhǒng", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-10", "text": "ni3 ge4 jian4 zhong3", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-10-report", "text": "举报：“ni3 ge4 jian4 zhong3”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-10-continued", "text": "举报：“ni3 ge4 jian4 zhong3”请处理。ni3 ge4 jian4 zhong3", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-11", "text": "ni3 ge5 jian4 zhong3", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-11-report", "text": "举报：“ni3 ge5 jian4 zhong3”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-11-continued", "text": "举报：“ni3 ge5 jian4 zhong3”请处理。ni3 ge5 jian4 zhong3", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-alias0", "text": "同学就是贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "scoped_alias", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-alias0-report", "text": "举报：“同学就是贱种”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-alias0-continued", "text": "举报：“同学就是贱种”请处理。同学就是贱种", "expected_word": "你个贱种", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向侮辱", "blocked": true}
+{"id": "TARGET-124-bare0", "text": "贱种", "expected_word": "", "expected_level": "", "kind": "unscoped_alias", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-self0", "text": "我觉得自己是贱种，想求助", "expected_word": "", "expected_level": "", "kind": "self_help", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-clause0", "text": "你。贱种", "expected_word": "", "expected_level": "", "kind": "target_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-prefix", "text": "xnigejianzhong", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-suffix", "text": "nigejianzhongx", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-code", "text": "nigejianzhong_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-124-incomplete", "text": "nigejianzhon", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-00", "text": "你个狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-00-report", "text": "举报：“你个狗崽子”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-00-continued", "text": "举报：“你个狗崽子”请处理。你个狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-01", "text": "你这个狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-01-report", "text": "举报：“你这个狗崽子”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-01-continued", "text": "举报：“你这个狗崽子”请处理。你这个狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-02", "text": "你这狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-02-report", "text": "举报：“你这狗崽子”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-02-continued", "text": "举报：“你这狗崽子”请处理。你这狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-03", "text": "你.个.狗.崽.子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-03-report", "text": "举报：“你.个.狗.崽.子”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-03-continued", "text": "举报：“你.个.狗.崽.子”请处理。你.个.狗.崽.子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-04", "text": "你‍个‍狗‍崽‍子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-04-report", "text": "举报：“你‍个‍狗‍崽‍子”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-04-continued", "text": "举报：“你‍个‍狗‍崽‍子”请处理。你‍个‍狗‍崽‍子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-05", "text": "nigegouzaizi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-05-report", "text": "举报：“nigegouzaizi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-05-continued", "text": "举报：“nigegouzaizi”请处理。nigegouzaizi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-06", "text": "ni ge gou zai zi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-06-report", "text": "举报：“ni ge gou zai zi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-06-continued", "text": "举报：“ni ge gou zai zi”请处理。ni ge gou zai zi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-07", "text": "ni-ge-gou-zai-zi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-07-report", "text": "举报：“ni-ge-gou-zai-zi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-07-continued", "text": "举报：“ni-ge-gou-zai-zi”请处理。ni-ge-gou-zai-zi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-08", "text": "NI GE GOU ZAI ZI", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-08-report", "text": "举报：“NI GE GOU ZAI ZI”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-08-continued", "text": "举报：“NI GE GOU ZAI ZI”请处理。NI GE GOU ZAI ZI", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-09", "text": "nǐ gè gǒu zǎi zi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-09-report", "text": "举报：“nǐ gè gǒu zǎi zi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-09-continued", "text": "举报：“nǐ gè gǒu zǎi zi”请处理。nǐ gè gǒu zǎi zi", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-10", "text": "ni3 ge4 gou3 zai3 zi5", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-10-report", "text": "举报：“ni3 ge4 gou3 zai3 zi5”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-10-continued", "text": "举报：“ni3 ge4 gou3 zai3 zi5”请处理。ni3 ge4 gou3 zai3 zi5", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-11", "text": "ni3 ge5 gou3 zai3 zi5", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-11-report", "text": "举报：“ni3 ge5 gou3 zai3 zi5”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-11-continued", "text": "举报：“ni3 ge5 gou3 zai3 zi5”请处理。ni3 ge5 gou3 zai3 zi5", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-alias0", "text": "同学就是狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "scoped_alias", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-alias0-report", "text": "举报：“同学就是狗崽子”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-alias0-continued", "text": "举报：“同学就是狗崽子”请处理。同学就是狗崽子", "expected_word": "你个狗崽子", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-125-bare0", "text": "狗崽子", "expected_word": "", "expected_level": "", "kind": "unscoped_alias", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-self0", "text": "我觉得自己是狗崽子，想求助", "expected_word": "", "expected_level": "", "kind": "self_help", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-clause0", "text": "你。狗崽子", "expected_word": "", "expected_level": "", "kind": "target_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-prefix", "text": "xnigegouzaizi", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-suffix", "text": "nigegouzaizix", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-code", "text": "nigegouzaizi_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-125-incomplete", "text": "nigegouzaiz", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-00", "text": "你个穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-00-report", "text": "举报：“你个穷逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-00-continued", "text": "举报：“你个穷逼”请处理。你个穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-01", "text": "你这个穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-01-report", "text": "举报：“你这个穷逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-01-continued", "text": "举报：“你这个穷逼”请处理。你这个穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-02", "text": "你这穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-02-report", "text": "举报：“你这穷逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-02-continued", "text": "举报：“你这穷逼”请处理。你这穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-03", "text": "你.个.穷.逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-03-report", "text": "举报：“你.个.穷.逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-03-continued", "text": "举报：“你.个.穷.逼”请处理。你.个.穷.逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-04", "text": "你‍个‍穷‍逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-04-report", "text": "举报：“你‍个‍穷‍逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-04-continued", "text": "举报：“你‍个‍穷‍逼”请处理。你‍个‍穷‍逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-05", "text": "nigeqiongbi", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-05-report", "text": "举报：“nigeqiongbi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-05-continued", "text": "举报：“nigeqiongbi”请处理。nigeqiongbi", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-06", "text": "ni ge qiong bi", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-06-report", "text": "举报：“ni ge qiong bi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-06-continued", "text": "举报：“ni ge qiong bi”请处理。ni ge qiong bi", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-07", "text": "ni-ge-qiong-bi", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-07-report", "text": "举报：“ni-ge-qiong-bi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-07-continued", "text": "举报：“ni-ge-qiong-bi”请处理。ni-ge-qiong-bi", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-08", "text": "NI GE QIONG BI", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-08-report", "text": "举报：“NI GE QIONG BI”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-08-continued", "text": "举报：“NI GE QIONG BI”请处理。NI GE QIONG BI", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-09", "text": "nǐ gè qióng bī", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-09-report", "text": "举报：“nǐ gè qióng bī”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-09-continued", "text": "举报：“nǐ gè qióng bī”请处理。nǐ gè qióng bī", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-10", "text": "ni3 ge4 qiong2 bi1", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-10-report", "text": "举报：“ni3 ge4 qiong2 bi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-10-continued", "text": "举报：“ni3 ge4 qiong2 bi1”请处理。ni3 ge4 qiong2 bi1", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-11", "text": "ni3 ge5 qiong2 bi1", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-11-report", "text": "举报：“ni3 ge5 qiong2 bi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-11-continued", "text": "举报：“ni3 ge5 qiong2 bi1”请处理。ni3 ge5 qiong2 bi1", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-alias0", "text": "同学就是穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "scoped_alias", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-alias0-report", "text": "举报：“同学就是穷逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-alias0-continued", "text": "举报：“同学就是穷逼”请处理。同学就是穷逼", "expected_word": "你个穷逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-126-bare0", "text": "穷逼", "expected_word": "", "expected_level": "", "kind": "unscoped_alias", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-self0", "text": "我觉得自己是穷逼，想求助", "expected_word": "", "expected_level": "", "kind": "self_help", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-clause0", "text": "你。穷逼", "expected_word": "", "expected_level": "", "kind": "target_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-prefix", "text": "xnigeqiongbi", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-suffix", "text": "nigeqiongbix", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-code", "text": "nigeqiongbi_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-126-incomplete", "text": "nigeqiongb", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-00", "text": "你个丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-00-report", "text": "举报：“你个丑逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-00-continued", "text": "举报：“你个丑逼”请处理。你个丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-01", "text": "你这个丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-01-report", "text": "举报：“你这个丑逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-01-continued", "text": "举报：“你这个丑逼”请处理。你这个丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-02", "text": "你这丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-02-report", "text": "举报：“你这丑逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-02-continued", "text": "举报：“你这丑逼”请处理。你这丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-03", "text": "你.个.丑.逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-03-report", "text": "举报：“你.个.丑.逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-03-continued", "text": "举报：“你.个.丑.逼”请处理。你.个.丑.逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-04", "text": "你‍个‍丑‍逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-04-report", "text": "举报：“你‍个‍丑‍逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-04-continued", "text": "举报：“你‍个‍丑‍逼”请处理。你‍个‍丑‍逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-05", "text": "nigechoubi", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-05-report", "text": "举报：“nigechoubi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-05-continued", "text": "举报：“nigechoubi”请处理。nigechoubi", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-06", "text": "ni ge chou bi", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-06-report", "text": "举报：“ni ge chou bi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-06-continued", "text": "举报：“ni ge chou bi”请处理。ni ge chou bi", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-07", "text": "ni-ge-chou-bi", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-07-report", "text": "举报：“ni-ge-chou-bi”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-07-continued", "text": "举报：“ni-ge-chou-bi”请处理。ni-ge-chou-bi", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-08", "text": "NI GE CHOU BI", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-08-report", "text": "举报：“NI GE CHOU BI”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-08-continued", "text": "举报：“NI GE CHOU BI”请处理。NI GE CHOU BI", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-09", "text": "nǐ gè chǒu bī", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-09-report", "text": "举报：“nǐ gè chǒu bī”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-09-continued", "text": "举报：“nǐ gè chǒu bī”请处理。nǐ gè chǒu bī", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-10", "text": "ni3 ge4 chou3 bi1", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-10-report", "text": "举报：“ni3 ge4 chou3 bi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-10-continued", "text": "举报：“ni3 ge4 chou3 bi1”请处理。ni3 ge4 chou3 bi1", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-11", "text": "ni3 ge5 chou3 bi1", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-11-report", "text": "举报：“ni3 ge5 chou3 bi1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-11-continued", "text": "举报：“ni3 ge5 chou3 bi1”请处理。ni3 ge5 chou3 bi1", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-alias0", "text": "同学就是丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "scoped_alias", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-alias0-report", "text": "举报：“同学就是丑逼”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-alias0-continued", "text": "举报：“同学就是丑逼”请处理。同学就是丑逼", "expected_word": "你个丑逼", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "定向侮辱", "blocked": false}
+{"id": "TARGET-127-bare0", "text": "丑逼", "expected_word": "", "expected_level": "", "kind": "unscoped_alias", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-self0", "text": "我觉得自己是丑逼，想求助", "expected_word": "", "expected_level": "", "kind": "self_help", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-clause0", "text": "你。丑逼", "expected_word": "", "expected_level": "", "kind": "target_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-prefix", "text": "xnigechoubi", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-suffix", "text": "nigechoubix", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-code", "text": "nigechoubi_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-127-incomplete", "text": "nigechoub", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-00", "text": "泼你硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-00-report", "text": "举报：“泼你硫酸”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-00-continued", "text": "举报：“泼你硫酸”请处理。泼你硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-01", "text": "往你脸上泼硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-01-report", "text": "举报：“往你脸上泼硫酸”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-01-continued", "text": "举报：“往你脸上泼硫酸”请处理。往你脸上泼硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-02", "text": "给你泼硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-02-report", "text": "举报：“给你泼硫酸”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-02-continued", "text": "举报：“给你泼硫酸”请处理。给你泼硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-03", "text": "泼他硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-03-report", "text": "举报：“泼他硫酸”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-03-continued", "text": "举报：“泼他硫酸”请处理。泼他硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-04", "text": "泼她硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-04-report", "text": "举报：“泼她硫酸”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-04-continued", "text": "举报：“泼她硫酸”请处理。泼她硫酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-05", "text": "泼.你.硫.酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-05-report", "text": "举报：“泼.你.硫.酸”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-05-continued", "text": "举报：“泼.你.硫.酸”请处理。泼.你.硫.酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-06", "text": "泼‍你‍硫‍酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-06-report", "text": "举报：“泼‍你‍硫‍酸”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-06-continued", "text": "举报：“泼‍你‍硫‍酸”请处理。泼‍你‍硫‍酸", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-07", "text": "poniliusuan", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-07-report", "text": "举报：“poniliusuan”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-07-continued", "text": "举报：“poniliusuan”请处理。poniliusuan", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-08", "text": "po ni liu suan", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-08-report", "text": "举报：“po ni liu suan”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-08-continued", "text": "举报：“po ni liu suan”请处理。po ni liu suan", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-09", "text": "po-ni-liu-suan", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-09-report", "text": "举报：“po-ni-liu-suan”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-09-continued", "text": "举报：“po-ni-liu-suan”请处理。po-ni-liu-suan", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-10", "text": "PO NI LIU SUAN", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-10-report", "text": "举报：“PO NI LIU SUAN”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-10-continued", "text": "举报：“PO NI LIU SUAN”请处理。PO NI LIU SUAN", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-11", "text": "pō nǐ liú suān", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-11-report", "text": "举报：“pō nǐ liú suān”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-11-continued", "text": "举报：“pō nǐ liú suān”请处理。pō nǐ liú suān", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-12", "text": "po1 ni3 liu2 suan1", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-12-report", "text": "举报：“po1 ni3 liu2 suan1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-12-continued", "text": "举报：“po1 ni3 liu2 suan1”请处理。po1 ni3 liu2 suan1", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-prefix", "text": "xponiliusuan", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-suffix", "text": "poniliusuanx", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-code", "text": "poniliusuan_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-incomplete", "text": "poniliusua", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-denial", "text": "我不会泼你硫酸", "expected_word": "", "expected_level": "", "kind": "exact_denial", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-contradiction", "text": "我不会泼你硫酸才怪", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "denial_contradiction", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-128-contradiction-report", "text": "举报：“我不会泼你硫酸才怪”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-128-contradiction-continued", "text": "举报：“我不会泼你硫酸才怪”请处理。我不会泼你硫酸才怪", "expected_word": "泼你硫酸", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-00", "text": "捅你一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-00-report", "text": "举报：“捅你一刀”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-00-continued", "text": "举报：“捅你一刀”请处理。捅你一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-01", "text": "捅他一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-01-report", "text": "举报：“捅他一刀”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-01-continued", "text": "举报：“捅他一刀”请处理。捅他一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-02", "text": "捅她一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-02-report", "text": "举报：“捅她一刀”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-02-continued", "text": "举报：“捅她一刀”请处理。捅她一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-03", "text": "给你一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-03-report", "text": "举报：“给你一刀”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-03-continued", "text": "举报：“给你一刀”请处理。给你一刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-04", "text": "捅.你.一.刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-04-report", "text": "举报：“捅.你.一.刀”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-04-continued", "text": "举报：“捅.你.一.刀”请处理。捅.你.一.刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-05", "text": "捅‍你‍一‍刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-05-report", "text": "举报：“捅‍你‍一‍刀”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-05-continued", "text": "举报：“捅‍你‍一‍刀”请处理。捅‍你‍一‍刀", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-06", "text": "tongniyidao", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-06-report", "text": "举报：“tongniyidao”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-06-continued", "text": "举报：“tongniyidao”请处理。tongniyidao", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-07", "text": "tong ni yi dao", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-07-report", "text": "举报：“tong ni yi dao”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-07-continued", "text": "举报：“tong ni yi dao”请处理。tong ni yi dao", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-08", "text": "tong-ni-yi-dao", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-08-report", "text": "举报：“tong-ni-yi-dao”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-08-continued", "text": "举报：“tong-ni-yi-dao”请处理。tong-ni-yi-dao", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-09", "text": "TONG NI YI DAO", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-09-report", "text": "举报：“TONG NI YI DAO”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-09-continued", "text": "举报：“TONG NI YI DAO”请处理。TONG NI YI DAO", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-10", "text": "tǒng nǐ yī dāo", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-10-report", "text": "举报：“tǒng nǐ yī dāo”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-10-continued", "text": "举报：“tǒng nǐ yī dāo”请处理。tǒng nǐ yī dāo", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-11", "text": "tong3 ni3 yi1 dao1", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-11-report", "text": "举报：“tong3 ni3 yi1 dao1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-11-continued", "text": "举报：“tong3 ni3 yi1 dao1”请处理。tong3 ni3 yi1 dao1", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-12", "text": "tong3 ni3 yi4 dao1", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "literal_or_mapped_variant", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-12-report", "text": "举报：“tong3 ni3 yi4 dao1”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-12-continued", "text": "举报：“tong3 ni3 yi4 dao1”请处理。tong3 ni3 yi4 dao1", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-prefix", "text": "xtongniyidao", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-suffix", "text": "tongniyidaox", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-code", "text": "tongniyidao_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-incomplete", "text": "tongniyida", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-denial", "text": "我不会捅你一刀", "expected_word": "", "expected_level": "", "kind": "exact_denial", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-contradiction", "text": "我不会捅你一刀才怪", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "denial_contradiction", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-129-contradiction-report", "text": "举报：“我不会捅你一刀才怪”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-129-contradiction-continued", "text": "举报：“我不会捅你一刀才怪”请处理。我不会捅你一刀才怪", "expected_word": "捅你一刀", "expected_level": "HIGH", "kind": "continued_attack", "category": "定向伤害威胁", "blocked": true}
+{"id": "TARGET-130-00", "text": "骚扰到你退学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-00-report", "text": "举报：“骚扰到你退学”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-00-continued", "text": "举报：“骚扰到你退学”请处理。骚扰到你退学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-01", "text": "一直骚扰到你退学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-01-report", "text": "举报：“一直骚扰到你退学”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-01-continued", "text": "举报：“一直骚扰到你退学”请处理。一直骚扰到你退学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-02", "text": "骚.扰.到.你.退.学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-02-report", "text": "举报：“骚.扰.到.你.退.学”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-02-continued", "text": "举报：“骚.扰.到.你.退.学”请处理。骚.扰.到.你.退.学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-03", "text": "骚‍扰‍到‍你‍退‍学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-03-report", "text": "举报：“骚‍扰‍到‍你‍退‍学”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-03-continued", "text": "举报：“骚‍扰‍到‍你‍退‍学”请处理。骚‍扰‍到‍你‍退‍学", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-04", "text": "saoraodaonituixue", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-04-report", "text": "举报：“saoraodaonituixue”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-04-continued", "text": "举报：“saoraodaonituixue”请处理。saoraodaonituixue", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-05", "text": "sao rao dao ni tui xue", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-05-report", "text": "举报：“sao rao dao ni tui xue”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-05-continued", "text": "举报：“sao rao dao ni tui xue”请处理。sao rao dao ni tui xue", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-06", "text": "sao-rao-dao-ni-tui-xue", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-06-report", "text": "举报：“sao-rao-dao-ni-tui-xue”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-06-continued", "text": "举报：“sao-rao-dao-ni-tui-xue”请处理。sao-rao-dao-ni-tui-xue", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-07", "text": "SAO RAO DAO NI TUI XUE", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-07-report", "text": "举报：“SAO RAO DAO NI TUI XUE”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-07-continued", "text": "举报：“SAO RAO DAO NI TUI XUE”请处理。SAO RAO DAO NI TUI XUE", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-08", "text": "sāo rǎo dào nǐ tuì xué", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-08-report", "text": "举报：“sāo rǎo dào nǐ tuì xué”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-08-continued", "text": "举报：“sāo rǎo dào nǐ tuì xué”请处理。sāo rǎo dào nǐ tuì xué", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-09", "text": "sao1 rao3 dao4 ni3 tui4 xue2", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-09-report", "text": "举报：“sao1 rao3 dao4 ni3 tui4 xue2”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-09-continued", "text": "举报：“sao1 rao3 dao4 ni3 tui4 xue2”请处理。sao1 rao3 dao4 ni3 tui4 xue2", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-prefix", "text": "xsaoraodaonituixue", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-suffix", "text": "saoraodaonituixuex", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-code", "text": "saoraodaonituixue_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-incomplete", "text": "saoraodaonituixu", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-denial", "text": "我不会骚扰到你退学", "expected_word": "", "expected_level": "", "kind": "exact_denial", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-contradiction", "text": "我不会骚扰到你退学才怪", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "denial_contradiction", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-130-contradiction-report", "text": "举报：“我不会骚扰到你退学才怪”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-130-contradiction-continued", "text": "举报：“我不会骚扰到你退学才怪”请处理。我不会骚扰到你退学才怪", "expected_word": "骚扰到你退学", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-00", "text": "不答应就一直缠着你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-00-report", "text": "举报：“不答应就一直缠着你”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-00-continued", "text": "举报：“不答应就一直缠着你”请处理。不答应就一直缠着你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-01", "text": "不答应我就一直缠着你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-01-report", "text": "举报：“不答应我就一直缠着你”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-01-continued", "text": "举报：“不答应我就一直缠着你”请处理。不答应我就一直缠着你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-02", "text": "不.答.应.就.一.直.缠.着.你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-02-report", "text": "举报：“不.答.应.就.一.直.缠.着.你”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-02-continued", "text": "举报：“不.答.应.就.一.直.缠.着.你”请处理。不.答.应.就.一.直.缠.着.你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-03", "text": "不‍答‍应‍就‍一‍直‍缠‍着‍你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-03-report", "text": "举报：“不‍答‍应‍就‍一‍直‍缠‍着‍你”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-03-continued", "text": "举报：“不‍答‍应‍就‍一‍直‍缠‍着‍你”请处理。不‍答‍应‍就‍一‍直‍缠‍着‍你", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-04", "text": "budayingjiuyizhichanzheni", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-04-report", "text": "举报：“budayingjiuyizhichanzheni”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-04-continued", "text": "举报：“budayingjiuyizhichanzheni”请处理。budayingjiuyizhichanzheni", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-05", "text": "bu da ying jiu yi zhi chan zhe ni", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-05-report", "text": "举报：“bu da ying jiu yi zhi chan zhe ni”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-05-continued", "text": "举报：“bu da ying jiu yi zhi chan zhe ni”请处理。bu da ying jiu yi zhi chan zhe ni", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-06", "text": "bu-da-ying-jiu-yi-zhi-chan-zhe-ni", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-06-report", "text": "举报：“bu-da-ying-jiu-yi-zhi-chan-zhe-ni”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-06-continued", "text": "举报：“bu-da-ying-jiu-yi-zhi-chan-zhe-ni”请处理。bu-da-ying-jiu-yi-zhi-chan-zhe-ni", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-07", "text": "BU DA YING JIU YI ZHI CHAN ZHE NI", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-07-report", "text": "举报：“BU DA YING JIU YI ZHI CHAN ZHE NI”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-07-continued", "text": "举报：“BU DA YING JIU YI ZHI CHAN ZHE NI”请处理。BU DA YING JIU YI ZHI CHAN ZHE NI", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-08", "text": "bù dā yìng jiù yì zhí chán zhe nǐ", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-08-report", "text": "举报：“bù dā yìng jiù yì zhí chán zhe nǐ”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-08-continued", "text": "举报：“bù dā yìng jiù yì zhí chán zhe nǐ”请处理。bù dā yìng jiù yì zhí chán zhe nǐ", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-09", "text": "bu4 da1 ying4 jiu4 yi4 zhi2 chan2 zhe5 ni3", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-09-report", "text": "举报：“bu4 da1 ying4 jiu4 yi4 zhi2 chan2 zhe5 ni3”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-09-continued", "text": "举报：“bu4 da1 ying4 jiu4 yi4 zhi2 chan2 zhe5 ni3”请处理。bu4 da1 ying4 jiu4 yi4 zhi2 chan2 zhe5 ni3", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-10", "text": "bu4 da1 ying5 jiu4 yi4 zhi2 chan2 zhe5 ni3", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-10-report", "text": "举报：“bu4 da1 ying5 jiu4 yi4 zhi2 chan2 zhe5 ni3”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-10-continued", "text": "举报：“bu4 da1 ying5 jiu4 yi4 zhi2 chan2 zhe5 ni3”请处理。bu4 da1 ying5 jiu4 yi4 zhi2 chan2 zhe5 ni3", "expected_word": "不答应就一直缠着你", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-131-prefix", "text": "xbudayingjiuyizhichanzheni", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-suffix", "text": "budayingjiuyizhichanzhenix", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-code", "text": "budayingjiuyizhichanzheni_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-131-incomplete", "text": "budayingjiuyizhichanzhen", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-00", "text": "堵到你不敢出门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-00-report", "text": "举报：“堵到你不敢出门”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-00-continued", "text": "举报：“堵到你不敢出门”请处理。堵到你不敢出门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-01", "text": "天天堵到你不敢出门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-01-report", "text": "举报：“天天堵到你不敢出门”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-01-continued", "text": "举报：“天天堵到你不敢出门”请处理。天天堵到你不敢出门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-02", "text": "堵.到.你.不.敢.出.门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-02-report", "text": "举报：“堵.到.你.不.敢.出.门”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-02-continued", "text": "举报：“堵.到.你.不.敢.出.门”请处理。堵.到.你.不.敢.出.门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-03", "text": "堵‍到‍你‍不‍敢‍出‍门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-03-report", "text": "举报：“堵‍到‍你‍不‍敢‍出‍门”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-03-continued", "text": "举报：“堵‍到‍你‍不‍敢‍出‍门”请处理。堵‍到‍你‍不‍敢‍出‍门", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-04", "text": "dudaonibuganchumen", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-04-report", "text": "举报：“dudaonibuganchumen”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-04-continued", "text": "举报：“dudaonibuganchumen”请处理。dudaonibuganchumen", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-05", "text": "du dao ni bu gan chu men", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-05-report", "text": "举报：“du dao ni bu gan chu men”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-05-continued", "text": "举报：“du dao ni bu gan chu men”请处理。du dao ni bu gan chu men", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-06", "text": "du-dao-ni-bu-gan-chu-men", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-06-report", "text": "举报：“du-dao-ni-bu-gan-chu-men”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-06-continued", "text": "举报：“du-dao-ni-bu-gan-chu-men”请处理。du-dao-ni-bu-gan-chu-men", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-07", "text": "DU DAO NI BU GAN CHU MEN", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-07-report", "text": "举报：“DU DAO NI BU GAN CHU MEN”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-07-continued", "text": "举报：“DU DAO NI BU GAN CHU MEN”请处理。DU DAO NI BU GAN CHU MEN", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-08", "text": "dǔ dào nǐ bù gǎn chū mén", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-08-report", "text": "举报：“dǔ dào nǐ bù gǎn chū mén”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-08-continued", "text": "举报：“dǔ dào nǐ bù gǎn chū mén”请处理。dǔ dào nǐ bù gǎn chū mén", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-09", "text": "du3 dao4 ni3 bu4 gan3 chu1 men2", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "literal_or_mapped_variant", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-09-report", "text": "举报：“du3 dao4 ni3 bu4 gan3 chu1 men2”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-09-continued", "text": "举报：“du3 dao4 ni3 bu4 gan3 chu1 men2”请处理。du3 dao4 ni3 bu4 gan3 chu1 men2", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-prefix", "text": "xdudaonibuganchumen", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-suffix", "text": "dudaonibuganchumenx", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-code", "text": "dudaonibuganchumen_func", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-incomplete", "text": "dudaonibuganchume", "expected_word": "", "expected_level": "", "kind": "latin_boundary", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-denial", "text": "我不会堵到你不敢出门", "expected_word": "", "expected_level": "", "kind": "exact_denial", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-contradiction", "text": "我不会堵到你不敢出门才怪", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "denial_contradiction", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-132-contradiction-report", "text": "举报：“我不会堵到你不敢出门才怪”请处理", "expected_word": "", "expected_level": "", "kind": "local_report", "category": "normal_context", "blocked": false}
+{"id": "TARGET-132-contradiction-continued", "text": "举报：“我不会堵到你不敢出门才怪”请处理。我不会堵到你不敢出门才怪", "expected_word": "堵到你不敢出门", "expected_level": "MEDIUM", "kind": "continued_attack", "category": "持续性骚扰", "blocked": false}
+{"id": "TARGET-NORMAL-001", "text": "狗崽子需要驱虫和按时喂养", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-002", "text": "经济困难同学可以申请助学金", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-003", "text": "外貌焦虑可以找心理老师聊聊", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-004", "text": "硫酸实验必须戴护目镜", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-005", "text": "泼洒硫酸的应急处置流程", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-006", "text": "拒绝表白后应该尊重对方", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-007", "text": "晚自习结束大家一起回宿舍", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-008", "text": "比赛规则和游戏台词需要区分语境", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-009", "text": "我真的想去死，请帮帮我", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-010", "text": "USB sbatch Unicode codepoint namespace", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-011", "text": "qiong kun tong xue ke yi shen qing zhu xue jin", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-012", "text": "you quan qu chong chang shi", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-013", "text": "chong qing yin hang xing zou", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-014", "text": "不要对同学说“捅你一刀”", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}
+{"id": "TARGET-NORMAL-015", "text": "有人威胁我：“泼你硫酸”让我很害怕", "expected_word": "", "expected_level": "", "kind": "normal_language", "category": "normal_context", "blocked": false}

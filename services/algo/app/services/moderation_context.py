@@ -58,11 +58,19 @@ def context_spans(canonical, known_variants, known_patterns=(), known_targeted_q
     known_patterns = tuple(known_patterns)
     canonical = context_view(canonical)
     spans = []
+    known_cache = {}  # One invocation only; never retain user text between requests.
+
+    def known(quote):
+        if quote not in known_cache:
+            known_cache[quote] = (
+                normalize(quote) in known_variants
+                or any(p.fullmatch(quote.strip()) for p in known_patterns)
+                or known_targeted_quote is not None and known_targeted_quote(quote))
+        return known_cache[quote]
+
     for pattern in (*_PATTERNS, _HELP):
         for match in pattern.finditer(canonical):
-            if (normalize(match["quote"]) in known_variants
-                    or any(p.fullmatch(match["quote"].strip()) for p in known_patterns)
-                    or known_targeted_quote is not None and known_targeted_quote(match["quote"])):
+            if known(match["quote"]):
                 spans.append(match.span("quote"))
     if self_directed_quote is not None:
         for kind, pattern in [("harm", _SELF_DIRECTED), ("blame", _SELF_BLAME),

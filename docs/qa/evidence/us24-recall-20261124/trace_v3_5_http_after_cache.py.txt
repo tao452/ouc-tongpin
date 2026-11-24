@@ -1,0 +1,40 @@
+import json
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+sys.path.insert(0, 'services/algo/scripts')
+from evaluate_candidate import assess, development, sha
+from evaluate_dataset import HttpModerationService
+from evaluate_recall import source_sha
+
+root = Path.cwd()
+dataset = root / 'docs/qa/data/us24-development.v3_5.jsonl'
+dictionary = root / 'services/algo/app/data/moderation-v3_5-candidate.json'
+digest = sha(dictionary)
+class TracedService(HttpModerationService):
+    def __init__(self):
+        super().__init__('http://127.0.0.1:19888', digest)
+        self.requests = []
+    def check(self, text):
+        result = super().check(text)
+        self.requests.append(dict(request={'text':text}, response=result.model_dump(),
+                                  dictionary_sha256=self.dictionary_sha256))
+        return result
+service = TracedService()
+rows = development(dataset)
+result = assess(rows, service)
+for request, row in zip(service.requests, rows, strict=True):
+    request['id'] = row['id']
+    request['expected_word'] = row['expected_word']
+    request['expected_level'] = row['expected_level']
+    request['expected_passed'] = not row['blocked']
+report = dict(scope='synthetic_development_actual_http', executed_at_utc=datetime.now(UTC).isoformat(),
+              source_sha256=sha(dataset), dictionary_sha256=digest,
+              trace_source_sha256=source_sha(Path(__file__)), candidate=result,
+              cases=service.requests, counted_in_original120=False, production_acceptance=False)
+output = root / 'docs/qa/evidence/us24-recall-20261124/targeted-v3_5-http-trace-after-cache.json'
+with output.open('x', encoding='utf-8') as handle:
+    json.dump(report, handle, ensure_ascii=False, indent=2)
+print(json.dumps({k:result[k] for k in ['count','mapping_failure_ids','decision_failure_ids']}))
+raise SystemExit(bool(result['mapping_failure_ids'] or result['decision_failure_ids']))
