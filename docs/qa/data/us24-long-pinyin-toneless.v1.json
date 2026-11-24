@@ -1,0 +1,98 @@
+[
+  {
+    "id": "LONGPY-NORMAL-01",
+    "text": "wo........yao........yi........qiang........beng........le........ni",
+    "passed": false,
+    "hits": [
+      [
+        "我要一枪崩了你",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "LONGPY-NORMAL-01-report",
+    "text": "举报：“wo........yao........yi........qiang........beng........le........ni”请处理",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "LONGPY-NORMAL-01-continued",
+    "text": "举报：“wo........yao........yi........qiang........beng........le........ni”请处理。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "LONGPY-NORMAL-02-report",
+    "text": "举报：「wo........yao........yi........qiang........beng........le........ni」请处理",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "LONGPY-NORMAL-02-continued",
+    "text": "举报：「wo........yao........yi........qiang........beng........le........ni」请处理。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "LONGPY-NORMAL-03-report",
+    "text": "举报：\"wo........yao........yi........qiang........beng........le........ni\"请处理",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "LONGPY-NORMAL-03-continued",
+    "text": "举报：\"wo........yao........yi........qiang........beng........le........ni\"请处理。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "LONGPY-NORMAL-04-report",
+    "text": "举报：'wo........yao........yi........qiang........beng........le........ni'请处理",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "LONGPY-NORMAL-04-continued",
+    "text": "举报：'wo........yao........yi........qiang........beng........le........ni'请处理。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "LONGPY-NORMAL-05-report",
+    "text": "举报：‘wo........yao........yi........qiang........beng........le........ni’请处理",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "LONGPY-NORMAL-05-continued",
+    "text": "举报：‘wo........yao........yi........qiang........beng........le........ni’请处理。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "head": "dc04915637bcbe1e0a8b92a3bb206d4dcec758eb",
+  "run": 45458798403,
+  "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45458798403",
+  "jobs": [
+    {
+      "id": 138675389128,
+      "name": "changes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138675389454,
+      "name": "guard",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138675389647,
+      "name": "w1-poc",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138675389852,
+      "name": "stack / Deploy and verify temporary test environment",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138675487898,
+      "name": "api-server",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138675487919,
+      "name": "miniprogram",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138675488023,
+      "name": "algo",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138675488075,
+      "name": "admin-web",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138678024202,
+      "name": "W3 delivery evidence",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138678149318,
+      "name": "quality",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "linux_python": {
+    "passed": 601,
+    "skipped": 0,
+    "failed": 0,
+    "coverage_percent": 98.03
+  },
+  "ruff": "PASS",
+  "java": "PASS",
+  "full_docker_stack": "PASS",
+  "new_context_http": {
+    "cases": 102,
+    "passed": 102,
+    "failed": 0
+  },
+  "quote_boundaries_http": {
+    "cases": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "prior_context_http": {
+    "cases": 29,
+    "passed": 29,
+    "failed": 0
+  },
+  "previous_opt_in_v2_701": {
+    "fp": 1,
+    "id": "NEG-campus-004",
+    "scope": "historical70-rule opt-in check; current132 evaluated separately"
+  },
+  "release_published": false,
+  "production_acceptance": false
+}

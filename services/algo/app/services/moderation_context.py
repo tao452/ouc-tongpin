@@ -4,6 +4,17 @@ import re
 import unicodedata
 
 from app.services.normalization import normalize
+from app.services.pronunciation import MAX_PINYIN_LENGTH, MAX_SYLLABLES
+from app.services.targeted_matching import TARGET_WINDOW, is_target_prefix
+
+MAX_SHORT_QUOTE_LENGTH = 64
+# One registered path: letters + tones + eight separators per syllable gap,
+# with an optional existing target prefix. This is not an arbitrary text limit.
+MAX_PINYIN_QUOTE_LENGTH = (MAX_PINYIN_LENGTH + MAX_SYLLABLES
+                           + 8 * (MAX_SYLLABLES - 1) + TARGET_WINDOW)
+_LONG_PINYIN_FORM = re.compile(
+    rf"(?P<prefix>[\u3400-\u9fff]{{0,{TARGET_WINDOW}}})(?P<body>[a-z0-9][^\n]*)"
+)
 
 _QUOTES = (("“", "”"), ("「", "」"), ('"', '"'), ("'", "'"), ("‘", "’"))
 _TEMPLATES = (
@@ -12,7 +23,8 @@ _TEMPLATES = (
     (r"(?:网络暴力讨论|语言科普)[:：\s]*", r"(?:是侮辱性表达|属于攻击性言论)"),
 )
 _PATTERNS = tuple(
-    re.compile(prefix + re.escape(left) + r"(?P<quote>[^\n]{1,64}?)" + re.escape(right)
+    re.compile(prefix + re.escape(left)
+               + rf"(?P<quote>[^\n]{{1,{MAX_PINYIN_QUOTE_LENGTH}}}?)" + re.escape(right)
                + suffix)
     for prefix, suffix in _TEMPLATES for left, right in _QUOTES
 )
@@ -52,6 +64,18 @@ def has_clause_boundary(text):
     return any(ch in _CLAUSE_BREAKS for ch in context_view(text))
 
 
+def bounded_long_pinyin(quote):
+    """A longer quotation still needs a complete registered token afterward."""
+    match = _LONG_PINYIN_FORM.fullmatch(quote)
+    if (match is None or len(quote) > MAX_PINYIN_QUOTE_LENGTH
+            or match["prefix"] and not is_target_prefix(match["prefix"])):
+        return False
+    body = match["body"]
+    alphanumeric = [ch for ch in body if ch.isalnum()]
+    return (len(alphanumeric) <= MAX_PINYIN_LENGTH + MAX_SYLLABLES
+            and "_" not in body and all(ch.isascii() for ch in alphanumeric))
+
+
 def context_spans(canonical, known_variants, known_patterns=(), known_targeted_quote=None,
                   self_directed_quote=None):
     """Only exempt a complete known token inside a finite context template."""
@@ -63,9 +87,10 @@ def context_spans(canonical, known_variants, known_patterns=(), known_targeted_q
     def known(quote):
         if quote not in known_cache:
             known_cache[quote] = (
-                normalize(quote) in known_variants
-                or any(p.fullmatch(quote.strip()) for p in known_patterns)
-                or known_targeted_quote is not None and known_targeted_quote(quote))
+                (len(quote) <= MAX_SHORT_QUOTE_LENGTH or bounded_long_pinyin(quote))
+                and (normalize(quote) in known_variants
+                     or any(p.fullmatch(quote.strip()) for p in known_patterns)
+                     or known_targeted_quote is not None and known_targeted_quote(quote)))
         return known_cache[quote]
 
     for pattern in (*_PATTERNS, _HELP):

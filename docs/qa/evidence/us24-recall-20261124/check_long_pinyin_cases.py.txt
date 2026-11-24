@@ -1,0 +1,35 @@
+import argparse
+import hashlib
+import json
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+parser=argparse.ArgumentParser();parser.add_argument('--snapshot',action='store_true');parser.add_argument('--base-url');parser.add_argument('--output',required=True,type=Path)
+args=parser.parse_args()
+if args.snapshot:sys.path.insert(0,str(LAB/'app-v3_6-snapshot'))
+else:sys.path.insert(0,str(ROOT/'services/algo'))
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from app.services.moderation import ModerationService
+from evaluate_candidate import assess, development
+from evaluate_dataset import HttpModerationService
+
+sha=lambda p:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+dataset=ROOT/'docs/qa/data/us24-development.v3_7.jsonl'
+dictionary=ROOT/'services/algo/app/data/moderation-v3_5-candidate.json'
+rows=development(dataset);literal=ModerationService(dictionary)
+service=HttpModerationService(args.base_url,literal.dictionary_sha256) if args.base_url else literal
+evaluated=assess(rows,service)
+cases=[]
+for row in rows:
+    result=service.check(row['text'])
+    cases.append(dict(id=row['id'],request=dict(text=row['text']),response=result.model_dump()))
+source=LAB/'app-v3_6-snapshot/app/services' if args.snapshot else ROOT/'services/algo/app/services'
+report=dict(executed_at_utc=datetime.now(UTC).isoformat(),scope='literal development; no independent broad acceptance',
+    engine_snapshot='dc04915637bcbe1e0a8b92a3bb206d4dcec758eb' if args.snapshot else 'local-v3.7',
+    engine_sha256={p.name:sha(p) for p in source.glob('*.py')},dictionary_sha256=literal.dictionary_sha256,
+    dataset_sha256=sha(dataset),client_sha256=sha(Path(__file__)),mode='http' if args.base_url else 'function',
+    candidate=evaluated,cases=cases,production_acceptance=False,M1_review='PENDING')
+with args.output.open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(count=evaluated['count'],any=evaluated['any_level']['confusion_matrix'],mapping_failures=len(evaluated['mapping_failure_ids']))))
