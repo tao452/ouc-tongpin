@@ -1,0 +1,101 @@
+import hashlib
+import json
+import subprocess
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+sys.path.insert(0, str(ROOT / 'services/algo/scripts'))
+from evaluate_candidate import assess
+from app.services.moderation import ModerationService
+from app.services.normalization import normalize
+
+base = ROOT / 'services/algo/app/data/moderation-v3_8-candidate.json'
+rows = json.loads(base.read_text(encoding='utf-8'))
+assert len(rows) == 132
+additions = {
+    1: ['shаbi', 'sһabi', 'ѕhаbі'],
+    2: ['caоnima', 'cаonima', 'саоnіma'],
+    4: ['gυnnima', 'gunnіma', 'gυnnіma'],
+    15: ['nоngsini', 'nongѕini', 'nongsіni'],
+}
+prior = ModerationService(base)
+cases = []
+mapping = []
+
+
+def add(identifier, text, word='', level='', kind='normal_context'):
+    cases.append(dict(id=identifier, text=text, expected_word=word, expected_level=level,
+        blocked=level == 'HIGH', kind=kind, category=kind, offensive=bool(word)))
+
+
+for number, aliases in additions.items():
+    row = rows[number - 1]
+    assert row['level'] == 'HIGH'
+    known = {normalize(v) for r in rows for v in [r['word'], *r.get('aliases', [])]}
+    for index, alias in enumerate(aliases, 1):
+        assert normalize(alias) not in known
+        assert any(not ch.isascii() for ch in alias)
+        row.setdefault('aliases', []).append(alias)
+        prefix = f'UC-{number:03d}-A{index}'
+        mapping.append(dict(variant_id=prefix,candidate_id=f'US24-{number:03d}',word=row['word'],
+            literal_alias=alias,unicode_codepoints=[f'U+{ord(ch):04X}' for ch in alias],
+            category='explicit visual pinyin alias',suggested_level='HIGH',M1_review='PENDING',
+            normal_context='mixed-script identifiers, literal language discussion, reporting and self-help',
+            risk='mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only'))
+        for suffix, text in [('direct',alias),('uppercase',alias.upper()),
+                             ('separated','.'.join(alias)),
+                             ('fullwidth',''.join(chr(ord(ch)+0xFEE0) if ch.isascii() and ch.isalpha() else ch for ch in alias))]:
+            add(prefix+'-'+suffix,text,row['word'],row['level'],'mapped_unicode_alias')
+        for q,(left,right) in enumerate([('“','”'),('「','」'),('"','"'),("'","'"),('‘','’')],1):
+            report=f'举报：{left}{alias}{right}请处理'
+            add(prefix+f'-report-{q}',report)
+            add(prefix+f'-continued-{q}',report+'。'+alias,row['word'],row['level'],'outside_attack')
+        for n,text in enumerate(['x'+alias,alias+'z','π'+alias,alias+'Ж',alias[:-1],alias[1:]],1):
+            add(prefix+f'-identifier-{n}',text,kind='unicode_identifier_or_incomplete')
+        if number == 1:
+            add(prefix+'-self-help','我是不是个'+alias+'，想求助')
+        if number == 15:
+            add(prefix+'-denial','我不会'+alias)
+            add(prefix+'-denial-reversal','我不会'+alias+'才怪',row['word'],row['level'],'denial_reversal_attack')
+            add(prefix+'-other-directed-help','我想'+alias+'，请帮帮我',row['word'],row['level'],'other_directed_attack')
+for number,path,tone in [(1,'shabi','sha3bi1'),(2,'caonima','cao4ni3ma1'),
+                         (4,'gunnima','gun3ni3ma1'),(15,'nongsini','nong4si3ni3')]:
+    word=rows[number-1]['word']
+    for kind,token in [('plain',path),('tone',tone)]:
+        for n,text in enumerate(['π'+token,token+'π','Ж'+token,token+'Ж',token+'_value','value_'+token],1):
+            add(f'UC-BOUND-{number:03d}-{kind}-{n}',text,kind='unicode_identifier_or_incomplete')
+        add(f'UC-HANZI-{number:03d}-{kind}','你说'+token,word,'HIGH','hanzi_neighbor_attack')
+for n,text in enumerate(['学习俄语：шаби','希腊字母：σαβι','wo zai xue xi python',
+                         '今天去图书馆自习','const alphaπ = 3','identifierΔ_count'],1):
+    add(f'UC-NORMAL-{n}',text)
+assert len({c['id'] for c in cases}) == len(cases)
+for name,data in [('services/algo/app/data/moderation-v3_9-candidate.json',rows),
+                  ('qa-private/us24-recall-20261124/unicode-v3_9-mappings.json',mapping)]:
+    with (ROOT/name).open('x',encoding='utf-8',newline='\n') as handle:
+        json.dump(data,handle,ensure_ascii=False,indent=2)
+data=''.join(json.dumps(c,ensure_ascii=False)+'\n' for c in cases).encode()
+dataset=ROOT/'docs/qa/data/us24-development.v3_9.jsonl'
+with dataset.open('xb') as handle:handle.write(data)
+manifest=dict(created_at_utc=datetime.now(UTC).isoformat(),source='M6 synthetic Unicode and identifier development',
+    label_scope='literal registered mapping only; not independent semantic labels',rows=len(cases),
+    positive=sum(c['offensive'] for c in cases),negative=sum(not c['offensive'] for c in cases),
+    sha256=hashlib.sha256(data).hexdigest(),M1_review='PENDING',independent_acceptance=False,gradient_training=False)
+with dataset.with_suffix('.manifest.json').open('x',encoding='utf-8',newline='\n') as handle:
+    json.dump(manifest,handle,ensure_ascii=False,indent=2)
+result=assess(cases,prior)
+with (LAB/'unicode-v3_9-before-function.json').open('x',encoding='utf-8') as handle:
+    json.dump(dict(scope='development literal mapping before new Unicode aliases/boundaries',
+        dictionary_sha256=prior.dictionary_sha256,candidate=result),handle,ensure_ascii=False,indent=2)
+snapshot=LAB/'engine-v3_8';snapshot.mkdir(exist_ok=False)
+policy=json.loads((LAB/'qwen-sequence-v5-inputs/policy.json').read_text(encoding='utf-8'))
+for name,digest in policy['engine_sha256'].items():
+    raw=subprocess.check_output(['git','show','31120a3:'+name])
+    assert hashlib.sha256(raw.replace(b'\r\n',b'\n')).hexdigest()==digest
+    destination=snapshot/Path(name).name
+    assert not destination.exists()
+    destination.write_bytes(raw)
+print(json.dumps(dict(cases=len(cases),before=result['any_level']['confusion_matrix'],new_aliases=len(mapping),
+    candidate_rules=len(rows),snapshot='31120a3 engine preserved for running Qwen inputs')))

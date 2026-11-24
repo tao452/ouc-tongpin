@@ -1,6 +1,7 @@
 """Bounded, explicit target grammar; deliberately not general intent inference."""
 
 import re
+import unicodedata
 
 from pypinyin import Style, pinyin
 
@@ -20,15 +21,22 @@ def is_target_prefix(prefix):
     return len(prefix) <= TARGET_WINDOW and _TARGET.fullmatch(prefix) is not None
 
 
-def latin_boundary(text, left, right, variant):
-    """Latin aliases retain English/identifier boundaries before separator removal."""
-    def latin(ch):
-        return ch.isascii() and (ch.isalnum() or ch == "_")
+def _identifier_letter(ch):
+    if ch.isascii():
+        return ch.isalnum()
+    if "\u3400" <= ch <= "\u9fff" or unicodedata.category(ch)[0] not in {"L", "N"}:
+        return False
+    # Chinese text may adjoin a pinyin token, including extension ideographs.
+    return not unicodedata.name(ch, "").startswith(
+        ("CJK UNIFIED IDEOGRAPH", "CJK COMPATIBILITY IDEOGRAPH"))
 
-    return (not (variant[0].isascii() and variant[0].isalnum()
-                 and left and latin(text[left - 1]))
-            and not (variant[-1].isascii() and variant[-1].isalnum()
-                     and right < len(text) and latin(text[right])))
+
+def latin_boundary(text, left, right, variant):
+    """Latin and registered visual aliases preserve Unicode identifier boundaries."""
+    return (not (_identifier_letter(variant[0]) and left
+                 and (text[left - 1] == "_" or _identifier_letter(text[left - 1])))
+            and not (_identifier_letter(variant[-1]) and right < len(text)
+                     and (text[right] == "_" or _identifier_letter(text[right]))))
 
 
 def homophone_spans(text, trie, check_budget):

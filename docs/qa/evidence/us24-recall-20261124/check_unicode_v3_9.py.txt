@@ -1,0 +1,42 @@
+import argparse
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+parser = argparse.ArgumentParser()
+parser.add_argument('--old', action='store_true')
+parser.add_argument('--base-url')
+parser.add_argument('--output', type=Path, required=True)
+args = parser.parse_args()
+application = LAB / 'app-v3_8-snapshot' if args.old else ROOT / 'services/algo'
+sys.path.insert(0, str(application))
+# Import the pinned app before evaluator helpers prepend the current app root.
+from app.services.moderation import ModerationService
+import app.services.moderation as module
+assert Path(module.__file__).resolve().is_relative_to(application.resolve())
+sys.path.insert(0, str(ROOT / 'services/algo/scripts'))
+from evaluate_candidate import assess, development
+from evaluate_dataset import HttpModerationService
+
+dictionary = ROOT / ('services/algo/app/data/moderation-v3_8-candidate.json' if args.old
+                     else 'services/algo/app/data/moderation-v3_9-candidate.json')
+dataset = ROOT / 'docs/qa/data/us24-development.v3_9.jsonl'
+rows = development(dataset)
+literal = ModerationService(dictionary)
+service = HttpModerationService(args.base_url, literal.dictionary_sha256) if args.base_url else literal
+result = assess(rows, service)
+paths = [*(application / 'app/services').glob('*.py'), application / 'app/models/dictionary.py']
+report = dict(scope='development literal mapping; no independent semantic acceptance',
+    source_sha256=hashlib.sha256(dataset.read_bytes()).hexdigest(),
+    dictionary_sha256=literal.dictionary_sha256, server_engine='31120a3 pinned3.8' if args.old else 'current3.9',
+    code_sha256={p.relative_to(application).as_posix():hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for p in paths},
+    mode='http' if args.base_url else 'function',candidate=result,
+    cases=[dict(id=row['id'],request=dict(text=row['text']),response=service.check(row['text']).model_dump()) for row in rows],
+    M1_review='PENDING',production_acceptance=False)
+with args.output.open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(count=result['count'],any=result['any_level']['confusion_matrix'],
+    mapping_failures=len(result['mapping_failure_ids']),decisions=len(result['decision_failure_ids']))))

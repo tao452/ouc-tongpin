@@ -1,0 +1,99 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124';QA=ROOT/'docs/qa'
+PUBLIC=QA/'evidence/us24-recall-20261124'
+dictionary=ROOT/'services/algo/app/data/moderation-v3_9-candidate.json'
+digest=hashlib.sha256(dictionary.read_bytes()).hexdigest()
+maps=json.loads((LAB/'unicode-v3_9-mappings.json').read_text(encoding='utf-8'))
+source=json.loads((QA/'data/us24-development.v3_9.manifest.json').read_text(encoding='utf-8'))
+after=json.loads((PUBLIC/'unicode-v3_9-r3-after-function.json').read_text(encoding='utf-8'))
+before=json.loads((PUBLIC/'unicode-v3_9-before-function-pinned.json').read_text(encoding='utf-8'))
+assert after['candidate']['any_level']['confusion_matrix']==dict(tp=122,fp=0,fn=0,tn=192)
+assert before['candidate']['any_level']['confusion_matrix']==dict(tp=8,fp=32,fn=114,tn=160)
+equivalence=json.loads((PUBLIC/'unicode-v3_9-normalization-equivalence.json').read_text(encoding='utf-8'))
+assert equivalence['rows']==48061 and equivalence['mismatch_count']==0
+drift=json.loads((LAB/'qwen-sequence-v5-context39/input-audit.json').read_text(encoding='utf-8'))
+assert not drift['policy']['transform_changes'] and not drift['policy']['literal_changes']
+text=f'''# US24 v3.9 Unicode映射与边界复测
+
+候选库仍为132条，新增标准词0条，US24-001/002/004/015增加12个显式视觉混写别名。等级建议HIGH47、MEDIUM80、LOW5，拼音开启86条，全部业务状态PENDING。词库SHA256 `{digest}`。
+
+## 映射及正常语境
+
+这些别名利用形近的希腊或西里尔字母混入拼音，NFKC本身不覆盖。仅登记下面12个整串；大小写、全角和分隔符由既有归一化处理，不另增重复别名。未登记的混写不自动还原，不扩展多音字组合。M1可在完整审核表的别名栏逐项批注。
+
+|变体编号|候选编号/标准词|登记整串|完整码点|状态|
+|---|---|---|---|---|
+'''
+for m in maps:
+    text+=f'|{m["variant_id"]}|{m["candidate_id"]} {m["word"]}|`{m["literal_alias"]}`|'+ ' '.join(m['unicode_codepoints'])+'|PENDING|\n'
+text+='''
+拼音、数字声调和视觉别名现在共用Unicode标识符边界：邻接非汉字字母、数字或下划线时不拆出命中，汉字邻接仍可识别。完整混写串也可能是正常名称，边界只解决一部分误报；引用举报、自责求助和反向否定继续采用有限规则，不代表完整语义理解。
+
+## 实际函数及HTTP结果
+
+'''
+text+=f'新增314条开发样本SHA256 `{source["sha256"]}`，正例122、正常192；修正前采用提交`31120a3`的完整应用快照及3.8词库，修正后使用当前3.9引擎。两版各自函数与HTTP逐项响应一致，优化前后3.9的314条响应也完全一致。\n\n'
+text+='''|版本|口径|TP|FP|FN|TN|Recall|Precision|FPR|
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+|3.8词库及引擎|字面任意等级/HIGH|8|32|114|160|6.56%|20.00%|16.67%|
+|3.9词库及引擎|字面任意等级/HIGH|122|0|0|192|100%|100%|0%|
+
+原七组4085条重新执行函数和HTTP，矩阵、等级、映射及分组与3.8完全相同，原530条的1条争议误报保留。另12条引用边界、29条求助、11条无调长拼音和102条混合语境HTTP通过；132条逐项技术检查通过，无别名冲突。各类别和输入形式的完整矩阵见`unicode-v3_9-r3-*.json`。本组为显式映射开发检查，不作为独立广义语义验收，也不计入W4原120条。
+
+## 分配优化与性能
+
+前两次2300次检查各有1次超时，均在视觉别名组第70次；GC观测记录同处约44.8ms的二代回收。先减少繁简转换分配，再移除边界热路径中的临时函数，并跳过已经命中的同一标准词的重复校验。共享前缀的更长词条仍继续遍历，受保护引用之后的真实攻击仍可命中。运行中未禁用GC，也未放宽50ms预算。
+
+繁简转换仅处理完整汉字片段，重复片段只在本次调用内缓存；4390条已安装t2s规则的输入和输出均验证为汉字。48061条已有训练、历史和开发文本的新旧归一化输出差异0，原始资料及标签保留。
+
+|执行记录|输入次数|超时数|用途|
+|---|---:|---:|---|
+'''
+run_names=[('first','首版/并行其他QA'),('controlled','首版/单QA复测'),('gc-diagnostic','首版/GC观测'),
+           ('r2','仅归一化优化'),('r3','分配及重复匹配优化'),('r3-worst-first','同引擎/原最慢组先执行')]
+performance=[]
+for filename,name in run_names:
+    report=json.loads((PUBLIC/f'unicode-v3_9-performance-{filename}.json').read_text(encoding='utf-8'))
+    calls=sum(v['iterations'] for v in report['measurements'].values())
+    timeouts=sum(v['timeouts'] for v in report['measurements'].values())
+    assert calls==2300
+    if filename.startswith('r3'):assert timeouts==0
+    text+=f'|{name}|{calls}|{timeouts}|同23类2000字符输入，全部保留|\n'
+    performance.append(dict(run=filename,calls=calls,timeouts=timeouts))
+final=json.loads((PUBLIC/'unicode-v3_9-performance-r3.json').read_text(encoding='utf-8'))
+v=final['measurements']
+text+=f'''
+最新两种顺序共4600次、超时0；视觉别名P95 {v['registered_visual_alias']['p95_ms']:.3f}ms，希腊字母拼音标识符{v['greek_pinyin_identifier']['p95_ms']:.3f}ms，混写举报{v['registered_visual_report']['p95_ms']:.3f}ms。二代GC仍可能占用约45ms；计时包含GC和调度，50ms为协作式预算，超时返回503。同期离线GPU训练继续运行，这些串行检查不代表并发服务容量。
+
+本地完整Python649 PASS、4 SKIP、覆盖率98.14%，Ruff通过。当前提交的Java、Linux及完整Docker结果随CI补充；上一代码提交`31120a3`完整CI为623 PASS、98.06%，Java及五服务Docker通过。
+
+## 广义结果与审核
+
+历史PCR任意等级TP53/FP0/FN197/TN250，Recall21.20%；ToxiCN12011为TP183/FP29/FN6278/TN5521，Recall2.8324%、FPR0.5225%，仍未达到95%。COLD旧结果保留，预留COLD dev未获取。监督分类训练仍在进行，冻结3.8输入与当前3.9的同3258条逐行对照：转换变化0、字面标志变化0，结果另见[训练报告](US24-拼音语义分类训练与复测报告.md)。
+
+[完整132条审核表](US24-v3_9-M1逐条审核表.md)及[CSV](US24-v3_9-完整审核清单.csv)保留六项空白决定，供逐条审查。所有词条、等级、变体和豁免均待M1确认，M3独立复现待完成，PR83保持Draft。
+
+默认仍为原5条，HIGH阻断、MEDIUM/LOW放行。原46条、3.8等文件保留，可切换字典路径；回滚本次引擎提交可恢复旧边界与归一化实现。
+'''
+with (QA/'US24-v3_9-Unicode映射与边界复测.md').open('x',encoding='utf-8',newline='\n') as handle:handle.write(text)
+for name in ['build_unicode_v3_9.py','check_unicode_v3_9.py','verify_unicode_v3_9.py','verify_unicode_v3_9_r3.py',
+    'build_unicode_review_v3_9.py','document_unicode_v3_9.py','check_normalization_equivalence_v3_9.py',
+    'benchmark_unicode_v3_9.py','benchmark_unicode_v3_9_controlled.py','benchmark_unicode_v3_9_gc.py',
+    'benchmark_unicode_v3_9_r2.py','benchmark_unicode_v3_9_r3.py','benchmark_unicode_v3_9_r3_worst.py',
+    'audit_review_references_v3_8.py','prepare_qwen_context39_recheck.py']:
+    with (PUBLIC/(name+'.txt')).open('xb') as handle:handle.write((LAB/name).read_bytes().replace(b'\r\n',b'\n'))
+for name in ['unicode-v3_9-mappings.json','app-v3_8-snapshot.manifest.json']:
+    with (PUBLIC/name).open('xb') as handle:handle.write((LAB/name).read_bytes().replace(b'\r\n',b'\n'))
+with (PUBLIC/'qwen-v5-context39-input-audit.json').open('xb') as handle:
+    handle.write((LAB/'qwen-sequence-v5-context39/input-audit.json').read_bytes().replace(b'\r\n',b'\n'))
+local=dict(passed=649,skipped=4,failed=0,coverage_percent=98.14,ruff='PASS',
+    engine_sha256=after['code_sha256'],note='Engine hashes below updated to final source; first314 paired evidence kept separately',
+    dictionary_sha256=digest,log_sha256=hashlib.sha256((LAB/'python-v3_9-r3.log').read_bytes()).hexdigest(),
+    performance_runs=performance,production_acceptance=False)
+for path in [*(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py']:
+    local['engine_sha256'][path.relative_to(ROOT/'services/algo').as_posix()]=hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+with (PUBLIC/'local-quality-v3_9-r3.json').open('x',encoding='utf-8',newline='\n') as handle:json.dump(local,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(report='3.9',rules=132,new_aliases=12,dictionary_sha256=digest,all_failures_retained=True)))

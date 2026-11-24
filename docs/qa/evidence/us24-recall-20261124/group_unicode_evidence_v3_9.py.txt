@@ -1,0 +1,36 @@
+import csv
+import hashlib
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT=Path.cwd();QA=ROOT/'docs/qa';PUBLIC=QA/'evidence/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from external_corpus import metrics
+
+metadata={r['candidate_id']:r for r in csv.DictReader((QA/'US24-v3_9-完整审核清单.csv').open(encoding='utf-8',newline=''))}
+rows=[json.loads(line) for line in (QA/'data/us24-development.v3_9.jsonl').read_text(encoding='utf-8').splitlines()]
+responses={r['id']:r['response'] for r in json.loads((PUBLIC/'unicode-v3_9-r3-after-http.json').read_text(encoding='utf-8'))['cases']}
+groups={}
+for row in rows:
+    match=re.match(r'UC-(?:(?:BOUND|HANZI)-)?(\d{3})',row['id'])
+    category=metadata[f'US24-{match[1]}']['category']+'映射及边界对照' if match else '普通校园和技术交流'
+    counts=groups.setdefault(category,dict(tp=0,fp=0,fn=0,tn=0))
+    actual=bool(responses[row['id']]['hits']);expected=bool(row['expected_word'])
+    counts['tp' if actual and expected else 'fp' if actual else 'fn' if expected else 'tn']+=1
+report=dict(scope='literal candidate-content grouping; boundary labels are matching proposals, not semantic gold',
+    count=len(rows),dictionary_sha256=hashlib.sha256((ROOT/'services/algo/app/data/moderation-v3_9-candidate.json').read_bytes()).hexdigest(),
+    by_content={key:metrics(counts) for key,counts in groups.items()},M1_review='PENDING',production_acceptance=False)
+with (PUBLIC/'unicode-v3_9-content-groups.json').open('x',encoding='utf-8',newline='\n') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+table='\n|内容分组（含对应正常对照）|TP|FP|FN|TN|Recall|Precision|FPR|\n|---|---:|---:|---:|---:|---:|---:|---:|\n'
+for name,m in report['by_content'].items():
+    c=m['confusion_matrix']
+    recall=f'{m["recall"]:.2%}' if c['tp']+c['fn'] else '—'
+    precision=f'{m["precision"]:.2%}' if c['tp']+c['fp'] else '—'
+    table+=f'|{name}|{c["tp"]}|{c["fp"]}|{c["fn"]}|{c["tn"]}|{recall}|{precision}|{m["false_positive_rate"]:.2%}|\n'
+p=QA/'US24-v3_9-Unicode映射与边界复测.md';text=p.read_text(encoding='utf-8')
+assert '内容分组（含对应正常对照）' not in text
+text=text.replace('\n## 分配优化与性能',table+'\n## 分配优化与性能')
+p.write_text(text,encoding='utf-8',newline='\n')
+print(json.dumps({k:v['confusion_matrix'] for k,v in report['by_content'].items()},ensure_ascii=False))

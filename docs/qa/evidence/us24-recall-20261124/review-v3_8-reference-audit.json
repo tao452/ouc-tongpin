@@ -1,0 +1,5879 @@
+{
+  "created_at_utc": "2026-11-24T20:52:44.450237+00:00",
+  "scope": "static fixture traceability only; not business execution",
+  "fixture_ids": 4631,
+  "review_entries": 132,
+  "missing_reference_count": 0,
+  "CSV_sha256": "e1e05b9f8d06c435b42c6836c10e31db936f6369b0844190afa7b59d9107f909",
+  "source_sha256": {
+    "docs/qa/data/w3-api-cases.v1.json": "fea499fd772a05568e6ae8f52e7f32ba0746b43c78393b1a2adf41ebafcb8286",
+    "docs/qa/data/w2-moderation-regression.jsonl": "7e9e7038775fc6371c0ce4344f7f71636955b167e4f7db4a3cb1b648e5bca0b9",
+    "docs/qa/data/us24-self-help.v3.json": "30b06974661d4e70d00eb34202f7d7f12997871b498f4664b2f9c56199cfffe0",
+    "docs/qa/data/us24-self-help.v2.json": "529d4843356f5a004bdbad911cece9342c3d4cbe95d46085b33cc8c328ab3a2c",
+    "docs/qa/data/us24-self-help.v1.json": "1ae8c342649a9864c79d116419b7c46043c45a3f65e51d5aac0a152d56e23138",
+    "docs/qa/data/us24-quote-boundaries.v1.json": "17149bb197d83c5e5aa2ffd8cffc2a063df246bd5dcbf4ca15b90e4e9804c28f",
+    "docs/qa/data/us24-long-pinyin-toneless.v1.json": "df7e9887947dc1e16bc4a4c2ea35048e8ab9f1dea65dd4802df9da85d03a12c1",
+    "docs/qa/data/us24-development.v3_8.manifest.json": "50267f71e0fd1c9602798c0f2a6a164c413963691ddb58c1a0d61225fe1fda73",
+    "docs/qa/data/us24-development.v3_8.jsonl": "61d1eb6b862a322281365bb0df157e8664bfb0be8b396385a63f13e350d902bc",
+    "docs/qa/data/us24-development.v3_7.manifest.json": "fdcbcf518ee4f29f6ccb255f72f75dfd288c7efbd6bd9abada11429a5ab99ae0",
+    "docs/qa/data/us24-development.v3_7.jsonl": "325a5b9bddfd1f2528123712cd7116391fa54be097d20c216089ef64b6a1455b",
+    "docs/qa/data/us24-development.v3_5.jsonl": "ddeaa645573f71b88d636f95881f5ba6b65b1c3bbddf99d2cff5e273a7f27855",
+    "docs/qa/data/us24-development.v3_4.jsonl": "3bc4cc797af07df988dd3a63dc78210db78352cb4b54ee13bd5e96876b3da8eb",
+    "docs/qa/data/us24-development.v3_3.jsonl": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773",
+    "docs/qa/data/us24-development.v3_2.jsonl": "b734b3f25a38644ea919083285de4ad54dd74ac1dd859d16205eead4937ff6d3",
+    "docs/qa/data/us24-development.v3.jsonl": "33d33a05200ceed80d87da759dd9cfa66c1b91729b5e67b84db5fdfde7a36831",
+    "docs/qa/data/us24-development.v2.jsonl": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06",
+    "docs/qa/data/us24-context-stress.v1.manifest.json": "3da72f4d9741dba16e35975a6420930a57c191219e8bc1c74a088bc1bfe4dd16",
+    "docs/qa/data/us24-context-stress.v1.jsonl": "b02219741c0c08017a979042dd78e79b802f2595cb1393e16241f7180cd5e284",
+    "docs/qa/data/setox-native.v1.prompt.json": "49c3997ad2349b1ec1778aebe92cfe7e69f73084a851d93b44aa9047727ffbc3",
+    "docs/qa/data/pii-baseline.v1.json": "e29fd64fc98b81f8fe34e61f60d45615f68d83e4543cd87cbf244c6714b06fad",
+    "docs/qa/data/phonetic-reconstruction.v1.prompt.json": "ddb43c31ed42a42ab58caf090a437c0f19955bc4b7e9cea361f9bb47b91d26f6",
+    "docs/qa/data/moderation-v3_5.manifest.json": "6b71e3243d34a299ff38f2c2aa0d1ef453cbf5ea69c2e5bebe52d4ef36256d6c",
+    "docs/qa/data/moderation-v3_4.manifest.json": "8a889580e5fe92bcfaf5d741b0d15a98687e87a357b68f1766409528be6d0c57",
+    "docs/qa/data/external/toxicn-v3.sealed.json": "ad1af9983fa9604493e498a9ca1f453bb6a455223b9f92f2b033b29abaaf55ea",
+    "docs/qa/data/external/toxicn-v3.plan.json": "a86138a0e6f4b3b7729cc98d1684ba95fabfe82553b63ccabac393e677d199b7",
+    "docs/qa/data/external/pcr-test.v1.plan.json": "c317944d8dda4daec5f25be9b76f2fff9729cd5eae7911ba2111d895cc93b34d",
+    "docs/qa/data/external/pcr-test.v1.json": "4824d9278a074e8a8f2f87e129ac0e0637dd0df811dd0684f9a5f9fcb3c37211",
+    "docs/qa/data/external/pcr-historical.v3_3.json": "51e0be649de3b48b7a27d04bc5a59a23827cb9263d4aaf161126662e64151351",
+    "docs/qa/data/external/cold-test.v1.json": "2d30a7f6c7e315477afe0106d07e4be6408794d381ef4deb79fd35d5cb74cb3e",
+    "docs/qa/data/comment-classifier.v3.prompt.json": "f2c194ce989dfbd936cb9c70b554f500f24b1611e499d3c88a6e74dfeabe32f3",
+    "docs/qa/data/comment-classifier.v2.prompt.json": "80709c9333988640e5eb4e31446d99ed783d5f24b0ee44c04bce3e5acca06ae4",
+    "docs/qa/data/comment-classifier.v1.prompt.json": "6bd151855736dc9d5618bb5e894fcbb32f9e554ca909258b2326a2e2f274c128"
+  },
+  "entries": [
+    {
+      "candidate_id": "US24-001",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-001-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-11",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-12",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-13",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-14",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-15",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-16",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-17",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-T01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-001-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-001-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-002",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-002-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-002-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-002-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-003",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-003-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-003-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-003-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-003-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-003-T01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-003-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-003-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-004",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-004-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-004-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-004-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-005",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-005-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-005-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-005-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-005-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-005-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-005-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-006",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-006-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-006-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-006-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-006-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-006-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-006-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-007",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-007-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-007-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-007-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-007-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-007-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-008",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-008-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-008-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-008-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-008-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-008-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-008-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-008-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-008-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-008-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-008-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-008-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-008-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-008-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-009",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-009-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-009-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-009-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-009-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-010",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-010-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-010-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-010-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-011",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-011-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-011-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-011-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-011-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-011-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-011-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-011-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-011-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-011-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-011-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-011-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-011-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-012",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-012-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-012-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-012-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-012-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-012-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-012-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-012-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-012-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-012-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-012-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-012-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-012-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-012-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-013",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-013-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-013-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-013-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-013-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-013-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-013-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-013-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-013-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-013-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-013-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-013-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-013-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-013-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-014",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-014-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-014-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-014-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-015",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-015-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-L02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-015-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-015-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-016",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-016-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-016-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-016-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-017",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-017-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-017-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-017-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-017-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-017-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-018",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-018-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-018-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-018-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-019",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-019-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-019-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-019-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-020",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-020-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-020-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-020-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-020-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-020-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-020-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-020-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-021",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-021-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-021-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-021-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-021-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-021-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-022",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-022-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-022-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-022-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-022-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-022-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-022-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-022-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-022-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-022-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-022-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-022-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-022-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-023",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-023-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-023-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-023-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-023-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-023-T01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-023-T02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-023-T03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-023-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-023-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-024",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-024-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-024-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-024-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-025",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-025-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-T01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-T02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-025-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-026",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-026-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-026-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-026-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-026-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-026-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-027",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-027-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-027-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-027-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-027-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-027-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-027-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-028",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-028-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-028-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-028-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-028-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-029",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-029-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-029-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-029-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-029-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-029-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-030",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-030-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-030-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-030-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-030-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-031",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-031-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-031-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-031-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-032",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-032-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-032-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-032-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-032-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-033",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-033-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-033-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-033-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-033-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-033-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-034",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-034-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-034-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-034-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-034-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-034-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-035",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-035-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-035-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-035-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-035-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-035-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-036",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-036-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-036-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-036-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-036-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-036-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-037",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-037-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-037-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-037-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-037-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-037-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-038",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-038-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-038-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-038-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-038-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-038-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-039",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-039-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-039-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-039-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-039-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-040",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-040-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-040-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-040-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-040-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-040-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-041",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-041-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-041-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-041-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-041-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-041-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-042",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-042-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-042-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-043",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-043-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-043-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-043-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-043-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-043-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-044",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-044-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-044-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-044-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-044-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-044-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-045",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-045-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-045-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-045-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-045-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-045-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-046",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-046-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-046-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-046-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-046-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-046-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-047",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-047-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-T07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-047-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-047-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-048",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-048-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-048-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-048-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-049",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-049-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-049-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-049-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-049-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-049-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-049-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-049-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-049-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-049-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-049-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-049-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-049-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-049-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-050",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-050-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-050-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-050-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-050-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-050-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-051",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-051-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-051-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-051-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-052",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-052-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-052-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-052-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-052-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-052-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-052-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-052-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-053",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-053-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-053-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-053-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-053-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-053-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-053-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-053-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-053-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-053-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-053-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-053-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-053-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-054",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-054-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-054-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-054-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-054-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-054-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-054-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-055",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-055-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-055-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-055-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-055-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-055-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-055-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-055-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-056",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-056-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-056-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-056-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-057",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-057-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-057-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-057-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-058",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-058-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-058-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-058-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-059",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-059-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-059-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-059-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-060",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-060-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-060-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-060-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-061",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-061-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-061-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-061-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-062",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-062-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-062-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-062-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-063",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-063-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-063-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-063-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-063-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-063-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-064",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-064-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-064-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-064-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-065",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-065-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-065-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-065-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-066",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-066-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-066-L01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-066-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-066-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-066-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-066-report-attack",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-067",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-067-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-067-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-067-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-068",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-068-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-068-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-068-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-068-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-068-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-068-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-068-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-068-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-068-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-068-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-068-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-068-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-069",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-069-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-pinyin",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-spaced",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-numeric_tone",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-fullwidth",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-letter_split",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-069-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TONE-069-0",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-070",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "DEV-070-L00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-070-symbol",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-070-unicode",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-070-report",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "DEV-070-report-attack",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-070-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-070-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-070-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-070-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-070-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-070-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-070-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-071",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-071-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-071-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-071-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-071-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-071-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-071-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-071-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-071-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-071-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-071-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-071-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-072",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-072-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-072-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-072-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-072-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-072-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-072-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-073",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-073-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-073-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-073-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-073-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-074",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-074-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-074-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-074-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-074-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-075",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-075-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-075-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-075-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-075-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-075-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-076",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-076-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-076-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-077",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-077-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-077-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-077-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-077-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-077-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-077-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-077-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-077-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-077-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-077-6",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-direct",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-report-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-continued-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-report-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-continued-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-report-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-continued-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-report-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-continued-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-report-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A1-continued-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-direct",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-report-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-continued-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-report-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-continued-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-report-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-continued-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-report-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-continued-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-report-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A2-continued-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-direct",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-report-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-continued-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-report-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-continued-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-report-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-continued-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-report-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-continued-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-report-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-077-A3-continued-5",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-078",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-078-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-078-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-078-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-078-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-078-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-078-T01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-078-T02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-078-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-078-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-078-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-078-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-078-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-078-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-078-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-078-6",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-direct",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-report-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-continued-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-report-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-continued-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-report-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-continued-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-report-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-continued-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-report-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A1-continued-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-direct",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-report-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-continued-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-report-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-continued-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-report-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-continued-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-report-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-continued-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-report-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-078-A2-continued-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-1-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-1-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-2-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-2-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-3-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-3-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-4-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-VOL-4-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-NARROW-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "MEDCTX-NARROW-2",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-079",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-079-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-079-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-079-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-079-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-079-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-079-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-079-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-079-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-079-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-079-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-079-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-079-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-080",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-080-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-080-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-080-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-080-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-080-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-080-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-080-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-080-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-080-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-080-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-080-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-081",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-081-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-081-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-081-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-081-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-081-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-081-T01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-081-T02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-081-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-081-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-081-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-081-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-081-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-081-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-081-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-081-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-082",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-082-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-082-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-082-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-082-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-082-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-082-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-082-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-082-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-082-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-082-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-082-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-083",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-083-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-083-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-083-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-083-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-083-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-083-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-083-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-083-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-083-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-083-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-083-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-083-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-084",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-084-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-084-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-084-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-084-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-084-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-084-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-084-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-084-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-084-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-084-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-084-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-084-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-085",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-085-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-085-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-085-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-085-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-085-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-085-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-085-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-085-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-085-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-085-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-085-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-086",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-086-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-086-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-086-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-086-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-086-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-086-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-087",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-087-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-087-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-087-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-087-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-087-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-087-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-087-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-087-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-087-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-087-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-088",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-088-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-088-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-088-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-088-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-088-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-088-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-088-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-088-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-088-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-088-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-088-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-089",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-089-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-089-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-089-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-089-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-089-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-089-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-089-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-089-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-089-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-089-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-089-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-090",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-090-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-090-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-090-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-090-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-090-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-090-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-090-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-090-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-090-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-090-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-090-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-090-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-091",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-091-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-091-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-091-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-091-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-091-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-091-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-091-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-091-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-091-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-091-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-091-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-092",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-092-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-092-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-092-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-092-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-092-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-092-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-092-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-092-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-092-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-092-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-092-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-092-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-093",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-093-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-093-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-093-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-093-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-093-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-093-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-093-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-093-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-093-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-093-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-093-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-094",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-094-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-094-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-094-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-094-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-095",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-095-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-095-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-095-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-095-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-096",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-096-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-096-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-096-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-096-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-096-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-096-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-096-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-096-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-096-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-096-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-097",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-097-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-097-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-097-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-097-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-097-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-097-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-097-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-097-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-097-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-097-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-097-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-098",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-098-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-098-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-098-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-098-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-099",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-099-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-099-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-099-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-099-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-099-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-099-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-099-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-099-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-099-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-099-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-099-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-100",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-100-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-100-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-100-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-100-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-100-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-101",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-101-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-101-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-101-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-101-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-101-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-101-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-101-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-101-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-101-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-101-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-101-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-101-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-102",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-102-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-102-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-102-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-102-T00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-102-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-102-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-102-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-102-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-102-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-102-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-102-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-102-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-103",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-103-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-103-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-103-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-103-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-103-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-104",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-104-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-104-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-104-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-104-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-104-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-105",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-105-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-105-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-105-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-105-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-106",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-106-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-106-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-106-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-106-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-106-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-106-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-106-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-106-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-106-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-106-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-107",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-107-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-107-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-107-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-107-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-108",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-108-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-108-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-108-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-108-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-108-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-108-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-108-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-108-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-108-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-108-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-109",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-109-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-109-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-109-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-110",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-110-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-110-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-110-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-110-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-110-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-110-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-110-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-110-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-110-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-110-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-110-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-111",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-111-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-111-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-111-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-111-quote",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-111-0",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-111-1",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-111-2",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-111-3",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-111-4",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-111-5",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "FULL-111-6",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-112",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-112-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-112-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-112-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-112-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-113",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-113-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-113-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-114",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-114-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-114-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-115",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-115-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-115-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-116",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-116-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-116-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-117",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-117-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-117-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-117-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-117-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-118",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-118-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-118-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-119",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-119-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-119-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-120",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "R3-120-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "R3-120-quote",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-121",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-121-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-121-11",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-122",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-122-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-122-11",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-123",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-123-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-123-11",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-124",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-124-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-124-11",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-125",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-125-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-125-11",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-126",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-126-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-126-11",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-127",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-127-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-127-11",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-128",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-128-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-11",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-128-12",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-129",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-129-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-10",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-11",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-129-12",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-130",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-130-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-130-09",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-131",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-131-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-09",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-131-10",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    },
+    {
+      "candidate_id": "US24-132",
+      "decisions_blank": true,
+      "M1_review": "PENDING",
+      "references": [
+        {
+          "reference": "TARGET-132-00",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-01",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-02",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-03",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-04",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-05",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-06",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-07",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-08",
+          "resolved_ids": 1
+        },
+        {
+          "reference": "TARGET-132-09",
+          "resolved_ids": 1
+        }
+      ],
+      "missing": []
+    }
+  ],
+  "M1_approval_inferred": false,
+  "counted_in_original120": false
+}

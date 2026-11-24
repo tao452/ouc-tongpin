@@ -1,0 +1,424 @@
+{
+  "scope": "explicit_dictionary_synthetic_http_regression",
+  "dictionary_sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+  "count": 29,
+  "passed": 29,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "HELP-001",
+      "request": {
+        "text": "我想去死"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想去死",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-002",
+      "request": {
+        "text": "我想 qu si，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想qusi请帮帮我",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-003",
+      "request": {
+        "text": "我想qu4 si3，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想qu4si3请帮帮我",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-004",
+      "request": {
+        "text": "我真的想去死。想找人聊聊"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我真的想去死想找人聊聊",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-005",
+      "request": {
+        "text": "我是不是个傻逼，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是个傻逼请帮帮我",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-006",
+      "request": {
+        "text": "我是个废物，想找人聊聊"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是个废物想找人聊聊",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-007",
+      "request": {
+        "text": "我想杀了你，请帮帮我"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想杀了你请帮帮我",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-008",
+      "request": {
+        "text": "我想去死，请帮帮我。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想去死请帮帮我杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-009",
+      "request": {
+        "text": "我想 qu4 si3，请帮帮我。你就是鲨币"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想qu4si3请帮帮我你就是鲨币",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-010",
+      "request": {
+        "text": "我是不是个傻逼，请帮帮我。你就是傻逼"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我是不是个傻逼请帮帮我你就是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-011",
+      "request": {
+        "text": "我想去死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想去死你",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-012",
+      "request": {
+        "text": "我想去死海旅游"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想去死海旅游",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-013",
+      "request": {
+        "text": "wo xiang qu si, qing bang bang wo"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "woxiangqusiqingbangbangwo",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-014",
+      "request": {
+        "text": "wo3 xiang3 qu4 si3，qing3 bang1 bang1 wo3"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "wo3xiang3qu4si3qing3bang1bang1wo3",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-015",
+      "request": {
+        "text": "wo xiang sha le ni, qing bang bang wo"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "woxiangshaleniqingbangbangwo",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-016",
+      "request": {
+        "text": "我想去死了"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想去死了",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-017",
+      "request": {
+        "text": "我不想去死"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不想去死",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-018",
+      "request": {
+        "text": "我是不是个傻逼啊，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是个傻逼啊想求助",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-019",
+      "request": {
+        "text": "我想去死了。操你妈"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想去死了操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-020",
+      "request": {
+        "text": "我不会杀了你"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会杀了你",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-021",
+      "request": {
+        "text": "别以为我不会杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "别以为我不会杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-022",
+      "request": {
+        "text": "我不会杀了你才怪"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我不会杀了你才怪",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-023",
+      "request": {
+        "text": "我不会杀了你，否则你知道后果"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我不会杀了你否则你知道后果",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-024",
+      "request": {
+        "text": "woxiang qusi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "woxiangqusi",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-025",
+      "request": {
+        "text": "mywoxiang qusi"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "mywoxiangqusi",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-026",
+      "request": {
+        "text": "我不会去死"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会去死",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "HELP-027",
+      "request": {
+        "text": "我不要去死"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不要去死",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CLAUSE-HTTP-01",
+      "request": {
+        "text": "你去死，海边是好地方"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你去死海边是好地方",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CLAUSE-HTTP-02",
+      "request": {
+        "text": "ni qu si, hai bian deng ni"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "niqusihaibiandengni",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    }
+  ],
+  "counted_in_original120": false,
+  "business_approval": "PENDING"
+}

@@ -1,0 +1,82 @@
+import csv
+import hashlib
+import json
+from collections import Counter
+from datetime import UTC, datetime
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+QA = ROOT / 'docs/qa'
+dictionary = ROOT / 'services/algo/app/data/moderation-v3_9-candidate.json'
+entries = json.loads(dictionary.read_text(encoding='utf-8'))
+audit = json.loads((QA/'evidence/us24-recall-20261124/unicode-v3_9-per-entry-audit.json').read_text(encoding='utf-8'))
+assert audit['entry_count'] == audit['technical_pass_count'] == 132 and not audit['findings']
+with (QA/'US24-v3_8-完整审核清单.csv').open(encoding='utf-8-sig',newline='') as handle:
+    reader=csv.DictReader(handle)
+    fields=[*reader.fieldnames,'unicode_variant_ids','unicode_codepoints']
+    rows=list(reader)
+mappings=json.loads((LAB/'unicode-v3_9-mappings.json').read_text(encoding='utf-8'))
+for index,(row,entry) in enumerate(zip(rows,entries,strict=True),1):
+    assert row['word']==entry['word'] and row['suggested_level']==entry['level']
+    assert row['m1_status']=='PENDING'
+    assert all(not row[k] for k in ['include','agree_level','agree_aliases','agree_pinyin','needs_exemption','m1_comments'])
+    own=[m for m in mappings if m['candidate_id']==row['candidate_id']]
+    row['unicode_variant_ids']=';'.join(m['variant_id'] for m in own)
+    row['unicode_codepoints']=';'.join(m['variant_id']+'='+' '.join(m['unicode_codepoints']) for m in own)
+    if own:
+        row['variants']=' / '.join(entry.get('aliases',[]))
+        row['rationale']+='；增加有限Unicode视觉混写的整串映射，不扩展读音组合'
+        row['normal_context']+='；含希腊/西里尔字母的编程标识符及引用说明'
+        row['false_positive_risk']+='；混写字符串可能是正常名称，仅识别登记整串并检查标识符边界'
+        refs=[m['variant_id']+'-*' for m in own]
+        refs += [f'UC-BOUND-{index:03d}-*',f'UC-HANZI-{index:03d}-*']
+        row['test_ids']+=';'+';'.join(refs)
+with (QA/'US24-v3_9-完整审核清单.csv').open('x',encoding='utf-8',newline='') as handle:
+    writer=csv.DictWriter(handle,fieldnames=fields,lineterminator='\n')
+    writer.writeheader();writer.writerows(rows)
+digest=hashlib.sha256(dictionary.read_bytes()).hexdigest()
+text=f'''# US24 v3.9 词库逐条审核表
+
+共132条：原5条、PR83新增41条、v2新增24条、v3新增50条、v3.5新增12条。本次新增标准词0条，在US24-001/002/004/015增加12个Unicode视觉混写整串别名；原等级、拼音读法和3.8公益语境保留。
+
+词库SHA256：`{digest}`。建议HIGH47、MEDIUM80、LOW5；HIGH阻断，MEDIUM/LOW放行。全部业务状态PENDING，每条六个决定栏留空，默认仍为原5条。
+
+新增别名的字符码点、边界与实际前后结果见[3.9变体复测](US24-v3_9-Unicode映射与边界复测.md)，结构化字段见[完整CSV](US24-v3_9-完整审核清单.csv)。混写仅匹配登记整串，不建立通用字符替换表，不枚举读音组合；原每词最多8条整词读法、16音节及匹配预算继续适用。非汉字Unicode字母、数字和下划线邻接时按标识符处理，汉字邻接仍可识别。
+
+132条逐项技术检查通过，业务审核及M3复现仍待完成。广义召回仍未达到95%。[3.8公益语境](US24-v3_8-汉字变体与公益语境复测.md)、[3.7长拼音语境](US24-v3_7-长拼音举报语境与复测.md)和[3.6单引号语境](US24-v3_6-语境逐项审核补充.md)的提案一并保留，供逐项批注。
+'''
+for row in rows:
+    text+=f'''
+## {row['candidate_id']} · {row['word']}
+
+来源：{row['origin']}；类别：{row['category']}；等级建议：{row['suggested_level']}；状态：PENDING。
+别名：{row['variants'] or '无'}。定向别名：{row['targeted_aliases'] or '无'}。标准词需定向：{row['target_required']}。
+拼音：{row['pinyin']}；整词读音：{row['context_pronunciation'] or '无'}。
+数字声调整词路径：{row['context_numeric_tones'] or '无'}；完整拼写别名：{row['pinyin_aliases'] or '无'}；汉字同音：{row['hanzi_homophone']}。
+精确正常短语：{row['allow_phrases'] or '无'}；拼音正常短语：{row['pinyin_allow_phrases'] or '无'}。
+Unicode变体编号：{row['unicode_variant_ids'] or '无'}；码点：{row['unicode_codepoints'] or '无'}。
+收录理由：{row['rationale']}。
+正常语境：{row['normal_context']}。误报风险：{row['false_positive_risk']}。
+对应测试：{row['test_ids']}。
+
+- 是否收录：____
+- 是否同意等级：____
+- 是否同意别名：____
+- 是否同意拼音规则：____
+- 是否需要豁免：____
+- 修改意见：____
+'''
+assert text.count('\n## US24-')==132
+assert text.count('：____')==792
+with (QA/'US24-v3_9-M1逐条审核表.md').open('x',encoding='utf-8',newline='\n') as handle:handle.write(text)
+manifest=dict(version='3.9.0-candidate',created_at_utc=datetime.now(UTC).isoformat(),dictionary_sha256=digest,
+    previous_dictionary='moderation-v3_8-candidate.json',
+    previous_sha256=hashlib.sha256((dictionary.parent/'moderation-v3_8-candidate.json').read_bytes()).hexdigest(),
+    count=len(entries),levels=dict(Counter(e['level'] for e in entries)),pinyin_enabled=sum(e.get('pinyin',False) for e in entries),
+    origin_counts=dict(Counter(r['origin'] for r in rows)),new_canonical_rules=0,new_explicit_unicode_aliases=12,
+    changed_candidates=['US24-001','US24-002','US24-004','US24-015'],M1_review='PENDING',default_enabled=False,
+    default_dictionary_sha256=hashlib.sha256((dictionary.parent/'words.json').read_bytes()).hexdigest(),
+    historical46_sha256=hashlib.sha256((dictionary.parent/'moderation-v1.json').read_bytes()).hexdigest(),production_acceptance=False)
+with dictionary.with_suffix('.manifest.json').open('x',encoding='utf-8',newline='\n') as handle:json.dump(manifest,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(count=132,new_aliases=12,sha256=digest,all792_decisions_blank=True)))

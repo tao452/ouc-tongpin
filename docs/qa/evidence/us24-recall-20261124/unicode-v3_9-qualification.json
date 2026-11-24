@@ -1,0 +1,13 @@
+{
+  "scope": "paired development checks only",
+  "before_function_HTTP_equal": true,
+  "after_function_HTTP_equal": true,
+  "previous_rows": 4085,
+  "all_previous_matrices_unchanged": true,
+  "first_baseline_sha256": "17ec1e3920994799807f6945a73e151e1a49408d870826c1986edc817ced228c",
+  "pinned_engine_commit": "31120a3559a9e829896d3c50a6441ff660055ea7",
+  "snapshot_manifest_sha256": "7cb15bf4c8b8d2f8eb014eab1c9ff40fee30af7f965699d459a03fecc3254f2e",
+  "current_model_input_engine": "v5d is training on frozen3.8 inputs; new3.9 engine needs separate same-weight recheck",
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

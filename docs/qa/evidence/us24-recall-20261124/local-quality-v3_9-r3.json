@@ -1,0 +1,52 @@
+{
+  "passed": 649,
+  "skipped": 4,
+  "failed": 0,
+  "coverage_percent": 98.14,
+  "ruff": "PASS",
+  "engine_sha256": {
+    "app/services/moderation.py": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745",
+    "app/services/moderation_context.py": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2",
+    "app/services/normalization.py": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80",
+    "app/services/pronunciation.py": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+    "app/services/targeted_matching.py": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d",
+    "app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/models/dictionary.py": "d7e8d021e7915353b6a0eef87ffc505daa4aee5312356117086edb3f9386e474"
+  },
+  "note": "Engine hashes below updated to final source; first314 paired evidence kept separately",
+  "dictionary_sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+  "log_sha256": "617882bbdb9fff8f5467155ab7dfc40cda9aec62844e4157dd55d628603cfb66",
+  "performance_runs": [
+    {
+      "run": "first",
+      "calls": 2300,
+      "timeouts": 1
+    },
+    {
+      "run": "controlled",
+      "calls": 2300,
+      "timeouts": 1
+    },
+    {
+      "run": "gc-diagnostic",
+      "calls": 2300,
+      "timeouts": 0
+    },
+    {
+      "run": "r2",
+      "calls": 2300,
+      "timeouts": 1
+    },
+    {
+      "run": "r3",
+      "calls": 2300,
+      "timeouts": 0
+    },
+    {
+      "run": "r3-worst-first",
+      "calls": 2300,
+      "timeouts": 0
+    }
+  ],
+  "production_acceptance": false
+}

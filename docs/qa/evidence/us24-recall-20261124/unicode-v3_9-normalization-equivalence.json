@@ -1,0 +1,107 @@
+{
+  "created_at_utc": "2026-11-24T21:17:31.198239+00:00",
+  "scope": "normalization equivalence only; no semantic accuracy or new independent test",
+  "rows": 48061,
+  "mismatch_count": 0,
+  "sources": [
+    {
+      "source": "ToxiCN",
+      "rows": 12011,
+      "source_sha256": "e94e50136d8c381b5f2a396fccf11fd824d8a922c7fc5369274e9da4c6537566",
+      "mismatches": [],
+      "all_output_pairs_sha256": "ad16c3920871aadff5a1c6d5fce4db1d220f5fbd26db7fa8460d85d9ab4b9ad4"
+    },
+    {
+      "source": "PCR",
+      "rows": 500,
+      "source_sha256": "40dccf7afa3e1bd28b70c2c63a873febfda8c5fb9580fe7b5c3c309552933c78",
+      "mismatches": [],
+      "all_output_pairs_sha256": "dbe500e66a8199db9f501cff4108fba348b971a28ec30b6f263779ffeafaf26b"
+    },
+    {
+      "source": "COLD_train",
+      "rows": 25726,
+      "source_sha256": "16ca7955bdcaf90f5d8ac39e51eb3eda15320caa1e730ed45cb5e8ca8cd0d5e8",
+      "mismatches": [],
+      "all_output_pairs_sha256": "c45cb62d179123ddee5a72df7ad0824e9aa1566014601c592f4a5e33fc765cf5"
+    },
+    {
+      "source": "COLD_historical_test",
+      "rows": 5323,
+      "source_sha256": "b06d31481f0d558b6dc8140408938abe8dba8083cd9976b4ba8f5c837fbe78ed",
+      "mismatches": [],
+      "all_output_pairs_sha256": "57a90f4032c0ffe8c590e66d370d90f298a1e54110dfafffbd24cd4e5d94abdf"
+    },
+    {
+      "source": "v2",
+      "rows": 701,
+      "source_sha256": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06",
+      "mismatches": [],
+      "all_output_pairs_sha256": "54cdef8efeb8e0a319a85fa50f3b8bb945cffdc2068b046a9d8be8312e1c60ad"
+    },
+    {
+      "source": "v3",
+      "rows": 406,
+      "source_sha256": "33d33a05200ceed80d87da759dd9cfa66c1b91729b5e67b84db5fdfde7a36831",
+      "mismatches": [],
+      "all_output_pairs_sha256": "071e5fd86c2e404a3a135db238bc6a15b4fc9f420e71cb61436f79d48533612a"
+    },
+    {
+      "source": "v3_3",
+      "rows": 530,
+      "source_sha256": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773",
+      "mismatches": [],
+      "all_output_pairs_sha256": "168cf377d5e86cbd0f705ca2211913fe1b057a679a5feaab2f8f1db06faea287"
+    },
+    {
+      "source": "v3_4",
+      "rows": 890,
+      "source_sha256": "3bc4cc797af07df988dd3a63dc78210db78352cb4b54ee13bd5e96876b3da8eb",
+      "mismatches": [],
+      "all_output_pairs_sha256": "610ddd37b20d195b1b75c4b83497bf43a67cc6be583fa0e7e7af07838446e7ca"
+    },
+    {
+      "source": "v3_5",
+      "rows": 544,
+      "source_sha256": "ddeaa645573f71b88d636f95881f5ba6b65b1c3bbddf99d2cff5e273a7f27855",
+      "mismatches": [],
+      "all_output_pairs_sha256": "55d53419492b4419e5c07d48a7befd7ca4eac01b237498b3e1a289454ace75ab"
+    },
+    {
+      "source": "v3_7",
+      "rows": 946,
+      "source_sha256": "325a5b9bddfd1f2528123712cd7116391fa54be097d20c216089ef64b6a1455b",
+      "mismatches": [],
+      "all_output_pairs_sha256": "4a97eff47fb646d78fd7f5a6350066d033881ba6c4edbc470b50db4f3e1f2b8e"
+    },
+    {
+      "source": "v3_8",
+      "rows": 68,
+      "source_sha256": "61d1eb6b862a322281365bb0df157e8664bfb0be8b396385a63f13e350d902bc",
+      "mismatches": [],
+      "all_output_pairs_sha256": "1daefe5c36e302c5c3c7a9234abe56f94552a829cd58abcbc810ca8d9bbfca9c"
+    },
+    {
+      "source": "v3_9",
+      "rows": 314,
+      "source_sha256": "3f51535e28c9a830464ebc6493c456ebcdf5ffe8bff1fc8817b4e415941f6a10",
+      "mismatches": [],
+      "all_output_pairs_sha256": "006451f0d7c3c329631dc57116456fb9fcdad81dfb5599625ead03b04aeb5b30"
+    },
+    {
+      "source": "context_stress",
+      "rows": 102,
+      "source_sha256": "b02219741c0c08017a979042dd78e79b802f2595cb1393e16241f7180cd5e284",
+      "mismatches": [],
+      "all_output_pairs_sha256": "e55e0f7926a79273c1e4cedbfd1643b6b556760aa301c3527ad1f3f6987906ea"
+    }
+  ],
+  "validated_t2s_rules": 4390,
+  "old_normalizer_sha256": "2c120c3b6197904c67942bb066e6b39754fdbd3da46ece8b929973f206a3d83c",
+  "current_normalizer_sha256": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80",
+  "code_sha256": "373ffc653dd7481bfca5b249474a4b82c975d8e4ce7ef6e5e05be3109c47fee4",
+  "old_unit_authoring_corrections": "NFKC colon stays ASCII; installed t2s preserves 著 in 干著急, both confirmed against pinned old code; corpus labels unchanged",
+  "GC_settings_modified": false,
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

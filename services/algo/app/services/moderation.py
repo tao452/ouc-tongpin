@@ -200,6 +200,10 @@ class ModerationService:
                 node = node[ch]
                 if _END in node:
                     word, level = node[_END]
+                    if word in found:
+                        # Keep traversing: a different, longer entry can share
+                        # this prefix. Only this canonical hit is already known.
+                        continue
                     left, right = positions[start], positions[index] + 1
                     variant = normalized[start:index + 1]
                     if (not latin_boundary(canonical, left, right, variant)
@@ -236,7 +240,8 @@ class ModerationService:
                     break
                 if token in self.pinyin:
                     word, level = self.pinyin[token]
-                    if ((end == start or token in self.joinable_pinyin)
+                    if (word not in found and (end == start or token in self.joinable_pinyin)
+                            and latin_boundary(canonical, first.start(), segment.end(), token)
                             and (word not in self.targeted_words
                                  or has_target(canonical, first.start()))
                             and not is_context(first.start(), segment.end())
@@ -247,8 +252,11 @@ class ModerationService:
         for index, (pattern, word, level) in enumerate(numeric_candidates):
             if index % 16 == 0:
                 check_budget()
+            if word in found:
+                continue
             for match in pattern.finditer(canonical):
                 if ((word not in self.targeted_words or has_target(canonical, match.start()))
+                        and latin_boundary(canonical, match.start(), match.end(), match.group())
                         and not is_context(match.start(), match.end())
                         and not any(left <= match.start() and match.end() <= right
                                     for left, right in pinyin_allowed.get(word, []))):

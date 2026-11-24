@@ -1,0 +1,49 @@
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+PUBLIC=ROOT/'docs/qa/evidence/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_variant import run
+
+fields=['count','high_blocking','any_level','by_category','by_kind',
+        'mapping_failure_ids','decision_failure_ids','hit_levels']
+reports=[]
+for mode in ['function','http']:
+    output=LAB/f'unicode-v3_9-r3-after-{mode}.json'
+    command=[sys.executable,str(LAB/'check_unicode_v3_9.py'),'--output',str(output)]
+    if mode=='http':command+=['--base-url','http://127.0.0.1:19894']
+    subprocess.run(command,check=True)
+    reports.append(json.loads(output.read_text(encoding='utf-8')))
+    with (PUBLIC/output.name).open('xb') as handle:handle.write(output.read_bytes().replace(b'\r\n',b'\n'))
+old=json.loads((LAB/'unicode-v3_9-after-function.json').read_text(encoding='utf-8'))
+assert reports[0]['cases']==reports[1]['cases']==old['cases']
+for field in fields:assert reports[0]['candidate'][field]==reports[1]['candidate'][field]==old['candidate'][field]
+dictionary=ROOT/'services/algo/app/data/moderation-v3_9-candidate.json'
+count=0
+for version in ['v2','v3','v3_3','v3_4','v3_5','v3_7','v3_8']:
+    path=ROOT/f'docs/qa/data/us24-development.{version}.jsonl'
+    a=run(path,dictionary,PUBLIC/f'unicode-v3_9-r3-{version}-function.json')
+    b=run(path,dictionary,PUBLIC/f'unicode-v3_9-r3-{version}-http.json','http://127.0.0.1:19894')
+    old=json.loads((PUBLIC/f'unicode-v3_9-{version}-function.json').read_text(encoding='utf-8'))
+    for field in fields:assert a['candidate'][field]==b['candidate'][field]==old['candidate'][field],(version,field)
+    count+=a['candidate']['count'];print(version,'same matrices and mappings',flush=True)
+assert count==4085
+for name,dataset,manifest in [('PCR',ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',LAB/'pcr-development.manifest.json'),
+    ('ToxiCN',LAB/'toxcn.csv',ROOT/'docs/qa/data/external/toxicn-v3.sealed.json')]:
+    a=run(dataset,dictionary,PUBLIC/f'unicode-v3_9-r3-{name}-historical.json',historical_manifest=manifest)
+    b=json.loads((PUBLIC/f'unicode-v3_9-{name}-historical.json').read_text(encoding='utf-8'))
+    for field in fields:assert a['candidate'][field]==b['candidate'][field],(name,field)
+    print(name,a['candidate']['any_level']['confusion_matrix'],flush=True)
+for name,fixture in [('quote','us24-quote-boundaries.v1.json'),('help','us24-self-help.v3.json'),('toneless','us24-long-pinyin-toneless.v1.json')]:
+    command=[sys.executable,'scripts/qa/verify_context_candidate.py','--base-url','http://127.0.0.1:19894',
+        '--dictionary',str(dictionary),'--cases',str(ROOT/'docs/qa/data'/fixture),
+        '--output',str(PUBLIC/f'unicode-v3_9-r3-{name}-http.json')]
+    subprocess.run(command,check=True)
+subprocess.run([sys.executable,'scripts/qa/verify_context_stress.py','--base-url','http://127.0.0.1:19894',
+    '--dictionary',str(dictionary),'--output',str(PUBLIC/'unicode-v3_9-r3-context-stress-http.json')],check=True)
+subprocess.run([sys.executable,'services/algo/scripts/audit_dictionary.py','--dictionary',str(dictionary),
+    '--output',str(PUBLIC/'unicode-v3_9-r3-per-entry-audit.json')],check=True)
+print('Current3.9 engine:314 paired cases,4085previous,all132audit and contexts PASS; broad history unchanged',flush=True)

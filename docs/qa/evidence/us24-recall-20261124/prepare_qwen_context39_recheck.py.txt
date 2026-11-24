@@ -1,0 +1,64 @@
+import hashlib
+import json
+import re
+import sys
+from collections import Counter
+from pathlib import Path
+
+import torch
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development,pcr
+from evaluate_comment_model import preprocess
+from evaluate_recall import load_external,source_sha
+from app.services.moderation import ModerationService
+
+torch.set_num_threads(2)
+features=LAB/'qwen-sequence-v5-inputs/features.pt'
+loaded=torch.load(features,map_location='cpu',weights_only=True)
+records=[r for r in loaded['records'] if r['cohort']!='training']
+assert len(records)==3258
+toxic=load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))
+pcr_rows,excluded=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+assert not excluded
+raw={r['id']:r['text'] for r in [*toxic,*pcr_rows]}
+for version in ['v2','v3']:
+    for row in development(ROOT/f'docs/qa/data/us24-development.{version}.jsonl'):
+        if not row['expected_word']:raw[f'{version}-{row["id"]}']=row['text']
+for row in map(json.loads,(ROOT/'docs/qa/data/us24-context-stress.v1.jsonl').read_text(encoding='utf-8').splitlines()):
+    raw[row['id']]=row['text']
+literal=ModerationService(ROOT/'services/algo/app/data/moderation-v3_9-candidate.json')
+encoder=None;ready=[];index=[];changes=[];literal_changes=[]
+for number,row in enumerate(records,1):
+    source=raw[row['id']]
+    assert hashlib.sha256(source.encode()).hexdigest()==row['source_text_sha256']
+    text=re.sub('□+','□',preprocess(source,literal,True)['text'])
+    digest=hashlib.sha256(text.encode()).hexdigest()
+    item=dict(row)
+    if digest!=row['transformed_sha256']:
+        if encoder is None:
+            from qwen_sequence_encoding_v5 import SequenceEncoder
+            encoder=SequenceEncoder(LAB/'qwen3-1_7b-tokenizer')
+        item['windows']=encoder.encode(text)
+        item['previous_transform_sha256']=row['transformed_sha256'];item['transformed_sha256']=digest
+        changes.append(row['id'])
+    value=bool(literal.check(source).hits)
+    if value!=row['literal_any']:literal_changes.append(row['id'])
+    item['literal_any']=value;ready.append(item)
+    index.append({k:v for k,v in item.items() if k!='windows'})
+    if number%500==0:print(f'Context3.9 input recheck {number}/3258',flush=True)
+output=LAB/'qwen-sequence-v5-context39';output.mkdir(exist_ok=False)
+policy=dict(scope='same3258 development rows; context3.9 input drift audit, no gradient training',
+    previous_features_sha256=hashlib.sha256(features.read_bytes()).hexdigest(),
+    dictionary_sha256=literal.dictionary_sha256,evaluation_rows=3258,
+    cohorts=dict(Counter(r['cohort'] for r in ready)),transform_changes=changes,literal_changes=literal_changes,
+    excluded_evaluation_rows=0,labels_or_sources_changed=False,
+    code_sha256=source_sha(Path(__file__)),
+    current_engine_sha256={p.relative_to(ROOT).as_posix():source_sha(p) for p in
+        [*(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py']},
+    COLD_dev_fetched=False,M1_review='PENDING',production_acceptance=False)
+with (output/'features.pt').open('xb') as handle:torch.save(dict(policy=policy,records=ready),handle)
+with (output/'input-audit.json').open('x',encoding='utf-8',newline='\n') as handle:
+    json.dump(dict(policy=policy,rows=index),handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=3258,transform_changes=len(changes),literal_changes=len(literal_changes))),flush=True)

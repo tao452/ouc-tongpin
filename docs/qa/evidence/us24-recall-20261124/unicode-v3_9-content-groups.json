@@ -1,0 +1,72 @@
+{
+  "scope": "literal candidate-content grouping; boundary labels are matching proposals, not semantic gold",
+  "count": 314,
+  "dictionary_sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+  "by_content": {
+    "人身侮辱映射及边界对照": {
+      "confusion_matrix": {
+        "tp": 87,
+        "fp": 0,
+        "fn": 0,
+        "tn": 138
+      },
+      "offensive_samples": 87,
+      "nonoffensive_samples": 138,
+      "recall": 1.0,
+      "precision": 1.0,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        0.9577124930558795,
+        0.9999999999999999
+      ],
+      "false_positive_rate_wilson95": [
+        1.734723475976807e-18,
+        0.027082764465572957
+      ],
+      "broad_benchmark_thresholds_met": true
+    },
+    "定向威胁映射及边界对照": {
+      "confusion_matrix": {
+        "tp": 35,
+        "fp": 0,
+        "fn": 0,
+        "tn": 48
+      },
+      "offensive_samples": 35,
+      "nonoffensive_samples": 48,
+      "recall": 1.0,
+      "precision": 1.0,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        0.9010990076755959,
+        0.9999999999999999
+      ],
+      "false_positive_rate_wilson95": [
+        6.938893903907228e-18,
+        0.07410012966611748
+      ],
+      "broad_benchmark_thresholds_met": true
+    },
+    "普通校园和技术交流": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 6
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 6,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        2.7755575615628914e-17,
+        0.3903342879021653
+      ],
+      "broad_benchmark_thresholds_met": false
+    }
+  },
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}
