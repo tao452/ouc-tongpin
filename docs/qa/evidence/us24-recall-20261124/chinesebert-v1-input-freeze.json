@@ -1,0 +1,19 @@
+{
+  "base_commit": "d8a243e90f235ddd04bc72d08b9180dc2371eb75",
+  "features_sha256": "7bc1e557b84921f45bb4776f0fdd2fed3873aeabd9421882eac4acb03715f098",
+  "input_engine_sha256": {
+    "services/algo/app/services/moderation.py": "c4ae0e2e0692d6c2f84a9ae46086afbeddc7b38e000bdbfaeb56293ad9cde4c7",
+    "services/algo/app/services/moderation_context.py": "6faf50b964279bb7ce7919949315f40ac4439685d67f5cd5417438ac15d6e1a7",
+    "services/algo/app/services/normalization.py": "2c120c3b6197904c67942bb066e6b39754fdbd3da46ece8b929973f206a3d83c",
+    "services/algo/app/services/pronunciation.py": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+    "services/algo/app/services/targeted_matching.py": "9a8127e83b993c6722b8da3db95fefcc8acae09af0324cf0d6a8651fd8cdea90",
+    "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "training_model_code_sha256": {
+    "train_phonetic.py": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668",
+    "phonetic_training_metrics.py": "4c8a320e678cb93652b7edef0a53de777c1849450275b6eb757667a4b3471b7b",
+    "phonetic_encoding.py": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d"
+  },
+  "scope": "All training and development inputs encoded before quote updates; active training does not reload application source",
+  "production_acceptance": false
+}

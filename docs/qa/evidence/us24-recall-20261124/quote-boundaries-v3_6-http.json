@@ -1,0 +1,185 @@
+{
+  "scope": "explicit_dictionary_synthetic_http_regression",
+  "dictionary_sha256": "debcb5c905580ac5b2d0eef86cdd74834cc8ef111f013b07456c15faaf904d5e",
+  "count": 12,
+  "passed": 12,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "QBOUND-01",
+      "request": {
+        "text": "举报：'杀了你'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报杀了你请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-02",
+      "request": {
+        "text": "举报：'杀了你'请处理。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报杀了你请处理杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-03",
+      "request": {
+        "text": "有人威胁我：'捅你一刀'让我很害怕"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "有人威胁我捅你一刀让我很害怕",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-04",
+      "request": {
+        "text": "有人威胁我：'捅你一刀'让我很害怕。你个蠢逼"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "有人威胁我捅你一刀让我很害怕你个蠢逼",
+        "hits": [
+          {
+            "word": "你个蠢逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-05",
+      "request": {
+        "text": "语言科普：'泼你硫酸'是侮辱性表达"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "语言科普泼你硫酸是侮辱性表达",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-06",
+      "request": {
+        "text": "语言科普：'泼你硫酸'是侮辱性表达。泼你硫酸"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "语言科普泼你硫酸是侮辱性表达泼你硫酸",
+        "hits": [
+          {
+            "word": "泼你硫酸",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-07",
+      "request": {
+        "text": "举报：‘杀了你’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报杀了你请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-08",
+      "request": {
+        "text": "举报：‘杀了你’请处理。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报杀了你请处理杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-09",
+      "request": {
+        "text": "有人威胁我：‘捅你一刀’让我很害怕"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "有人威胁我捅你一刀让我很害怕",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-10",
+      "request": {
+        "text": "有人威胁我：‘捅你一刀’让我很害怕。你个蠢逼"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "有人威胁我捅你一刀让我很害怕你个蠢逼",
+        "hits": [
+          {
+            "word": "你个蠢逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-11",
+      "request": {
+        "text": "语言科普：‘泼你硫酸’是侮辱性表达"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "语言科普泼你硫酸是侮辱性表达",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "QBOUND-12",
+      "request": {
+        "text": "语言科普：‘泼你硫酸’是侮辱性表达。泼你硫酸"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "语言科普泼你硫酸是侮辱性表达泼你硫酸",
+        "hits": [
+          {
+            "word": "泼你硫酸",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    }
+  ],
+  "counted_in_original120": false,
+  "business_approval": "PENDING"
+}

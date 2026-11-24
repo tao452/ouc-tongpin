@@ -5,7 +5,7 @@ import unicodedata
 
 from app.services.normalization import normalize
 
-_QUOTES = (("“", "”"), ("「", "」"), ('"', '"'))
+_QUOTES = (("“", "”"), ("「", "」"), ('"', '"'), ("'", "'"), ("‘", "’"))
 _TEMPLATES = (
     (r"(?:举报|有人骂我|有人威胁我)[:：\s]*", r"[,，]?(?:请处理|我该怎么办|让我很害怕)"),
     (r"不要(?:再)?(?:对同学|对别人|对我)说", r""),

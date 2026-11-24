@@ -1,0 +1,95 @@
+{
+  "scope": "same three trained checkpoints; current finite context input plus102 development cases",
+  "evaluation_rows_per_checkpoint": 3258,
+  "total_predictions": 9774,
+  "original_rows_retained": 3156,
+  "previous_transformed_input_changed_rows": 0,
+  "additional_rows": 102,
+  "excluded_evaluation_rows": 0,
+  "gradient_training_on_additional_cases": false,
+  "raw_text_published": false,
+  "weights_published": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "files": [
+    {
+      "file": "policy.json",
+      "source_bytes": 1567,
+      "private_sha256": "36f97d65a8764aeb99878781a95c6729bcc3b95376b2a880bb618fe6251cdf37",
+      "public_lf_sha256": "74b96a6590d7ae2fa4d8da58d1257f1f4f5294a6a5f1aa4952fd88c0f6427941"
+    },
+    {
+      "file": "summary.json",
+      "source_bytes": 112080,
+      "private_sha256": "2a3e9a75c07314932109eb09867702c694f85286ef63ab818dc0293aeef919f1",
+      "public_lf_sha256": "f9cf26190267a58feb0bf51db116728c173e55a6a6ef4b1dbfa0707536d85ca5"
+    },
+    {
+      "file": "epoch-1-report.json",
+      "source_bytes": 32567,
+      "private_sha256": "de7e48c42974cb6e440b558be914e7d93ef1ab308d09e71aaf5df38fefddcc47",
+      "public_lf_sha256": "7be128597e9493350e97a8dba158441b7c45a777350debb2d159ce8c4ff3c41a"
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "source_bytes": 1294253,
+      "private_sha256": "59198314ad01cd5947588d58dd42423dbf264abd6d07b1528fd3360f0aeb52ce",
+      "public_lf_sha256": "16b77323388a827666da87cfbcff2d527a1b7645796eb19c918d979882b4ecfd"
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "source_bytes": 627386,
+      "private_sha256": "86398d878272edad6e5ed4ceeb1f8830a6eaa1eb2a05ef435db5d647aa71e2a4",
+      "public_lf_sha256": "86398d878272edad6e5ed4ceeb1f8830a6eaa1eb2a05ef435db5d647aa71e2a4"
+    },
+    {
+      "file": "epoch-2-report.json",
+      "source_bytes": 32465,
+      "private_sha256": "dcc15d644bd3050d8b64e5abf9b090b4802d624fefe5a5eef116acb4c2a5f2ba",
+      "public_lf_sha256": "1e74fc96a4a532d4ac85f89692a107e76a14fbcb608d738d2cc6e958fdd498d9"
+    },
+    {
+      "file": "epoch-2-predictions.jsonl",
+      "source_bytes": 1294442,
+      "private_sha256": "eac6bc5ed98eb645bde78afcc002a0a070f4b97323b94f276ee983db18eb092e",
+      "public_lf_sha256": "7c481b2b62a551bbabb3bf2f9b88b6346f4a4cd1ca916b81999c68448d03fdca"
+    },
+    {
+      "file": "epoch-2-thresholds.csv",
+      "source_bytes": 632867,
+      "private_sha256": "809c168a9a85ef9c0d228f76565af917eabce73abb1fb7db79f27f7f7d8074ea",
+      "public_lf_sha256": "809c168a9a85ef9c0d228f76565af917eabce73abb1fb7db79f27f7f7d8074ea"
+    },
+    {
+      "file": "epoch-3-report.json",
+      "source_bytes": 32488,
+      "private_sha256": "6649892d7f171c93b3802bcb209f78b4ebfefb20e717c65f703e631a3b5da78a",
+      "public_lf_sha256": "3468d212497024f12f316876c75bf5d88959420794a960beb2de8bc918abc8ae"
+    },
+    {
+      "file": "epoch-3-predictions.jsonl",
+      "source_bytes": 1295392,
+      "private_sha256": "2df4e2cf78d0624463fab80e0a49061f79d9e804768de0e21f2727a5e2dfaddd",
+      "public_lf_sha256": "35f0cc4ba1961985df4b42ba86a3f3595d71545179cc5debda1c12cbf4879220"
+    },
+    {
+      "file": "epoch-3-thresholds.csv",
+      "source_bytes": 641670,
+      "private_sha256": "6ffa82e1b41ee20ec57ded37e37d6084796c2f9ba72303118d737fb846584f99",
+      "public_lf_sha256": "6ffa82e1b41ee20ec57ded37e37d6084796c2f9ba72303118d737fb846584f99"
+    },
+    {
+      "file": "recheck_phonetic.py.txt",
+      "source_bytes": 5256,
+      "private_sha256": "ba84b42d702332e985562d659240330e43f01baa9bb38356d30d0cbe3d0d52a1",
+      "public_lf_sha256": "ba84b42d702332e985562d659240330e43f01baa9bb38356d30d0cbe3d0d52a1"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "source_bytes": 3045,
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    }
+  ]
+}

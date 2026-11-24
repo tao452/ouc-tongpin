@@ -1,0 +1,21 @@
+{
+  "version": "context-stress-v1",
+  "constructed_at_utc": "2026-11-24T17:33:58.446447+00:00",
+  "source": "M6 synthetic additional development cases",
+  "rows": 102,
+  "negative": 90,
+  "positive": 12,
+  "sha256": "b02219741c0c08017a979042dd78e79b802f2595cb1393e16241f7180cd5e284",
+  "label_scope": "broad offense suggestion; no S1 approval",
+  "m1_review": "PENDING",
+  "independent_acceptance": false,
+  "training_usage": "none; all102 held out from gradient training",
+  "source_domains": [
+    "ordinary identity discussion",
+    "animals and medical education",
+    "reports with five quote pairs",
+    "self-help",
+    "normal English and pinyin",
+    "campus conversation"
+  ]
+}

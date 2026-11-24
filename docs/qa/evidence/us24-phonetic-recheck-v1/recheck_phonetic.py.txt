@@ -1,0 +1,79 @@
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+import torch
+from safetensors.torch import load_file
+
+from phonetic_encoding import PhoneticEncoder
+from phonetic_recheck_metrics import summarize
+from train_phonetic import create_model, predict
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development, pcr
+from evaluate_comment_model import preprocess
+from evaluate_recall import load_external, source_sha
+from app.services.moderation import ModerationService
+from app.services.normalization import normalize
+
+sha=lambda b:hashlib.sha256(b).hexdigest()
+torch.set_num_threads(4)
+original=torch.load(LAB/'phonetic-training-v1.features.pt',map_location='cpu',weights_only=True)
+base=LAB/'phonetic-training-v1'
+frozen=json.loads((base/'frozen.json').read_text(encoding='utf-8'))
+for name,digest in frozen['code_sha256'].items():assert source_sha(LAB/name)==digest
+toxic=load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))
+pcr_rows,excluded=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+assert not excluded
+raw={r['id']:r for r in [*toxic,*pcr_rows]}
+for version in ['v2','v3']:
+    for r in development(ROOT/f'docs/qa/data/us24-development.{version}.jsonl'):
+        if not r['expected_word']:raw[f'{version}-{r["id"]}']=dict(text=r['text'],offensive=False)
+literal=ModerationService(ROOT/'services/algo/app/data/moderation-v3_5-candidate.json')
+encoder=PhoneticEncoder(LAB/'chinesebert-model')
+records=[];changed=0
+for row in original['records']:
+    if row['cohort'] not in {'toxicn_dev','PCR','controls'}:continue
+    source=raw[row['id']]
+    assert row['label']==int(source['offensive']) and row['source_text_sha256']==sha(source['text'].encode())
+    text=preprocess(source['text'],literal,True)['text']
+    item=row.copy();item['transformed_sha256']=sha(text.encode())
+    if item['transformed_sha256']!=row['transformed_sha256']:
+        changed+=1;item['windows']=encoder.encode(text)
+    item['literal_any']=bool(literal.check(source['text']).hits)
+    records.append(item)
+stress_path=ROOT/'docs/qa/data/us24-context-stress.v1.jsonl'
+for line in stress_path.read_text(encoding='utf-8').splitlines():
+    row=json.loads(line);text=preprocess(row['text'],literal,True)['text']
+    records.append(dict(id=row['id'],label=int(row['offensive']),cohort='context_stress',category=row['category'],
+        source_text_sha256=sha(row['text'].encode()),normalized_sha256=sha(normalize(row['text']).encode()),
+        transformed_sha256=sha(text.encode()),literal_any=bool(literal.check(row['text']).hits),windows=encoder.encode(text)))
+assert len(records)==3258 and len({r['id'] for r in records})==len(records)
+output=LAB/'phonetic-training-v1-context36';output.mkdir(exist_ok=False)
+policy=dict(scope='development recheck; same3 trained checkpoints; current context and102additional cases',
+    base_frozen_sha256=sha((base/'frozen.json').read_bytes()),stress_source_sha256=sha(stress_path.read_bytes()),
+    dictionary_sha256=literal.dictionary_sha256,original_rows_retained=3156,additional_rows=102,
+    previous_input_transform_changed_rows=changed,excluded_rows=0,training_on_additional_cases=False,
+    engine_sha256={p.relative_to(ROOT).as_posix():source_sha(p) for p in (ROOT/'services/algo/app/services').glob('*.py')},
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'phonetic_recheck_metrics.py']},production_acceptance=False)
+with (output/'policy.json').open('x',encoding='utf-8') as f:json.dump(policy,f,ensure_ascii=False,indent=2)
+with (output/'features.pt').open('xb') as f:torch.save(records,f)
+model=create_model();results=[]
+for epoch in range(1,4):
+    checkpoint=base/f'epoch-{epoch}'
+    prior=json.loads((checkpoint/'report.json').read_text(encoding='utf-8'))
+    weights=checkpoint/'model.safetensors';assert sha(weights.read_bytes())==prior['weights_sha256']
+    state=load_file(str(weights),device='cpu');model.load_state_dict(state,strict=True);del state
+    directory=output/f'epoch-{epoch}';directory.mkdir(exist_ok=False)
+    predictions,seconds=predict(model,records)
+    with (directory/'predictions.jsonl').open('x',encoding='utf-8') as f:
+        for row in predictions:f.write(json.dumps(row,ensure_ascii=False)+'\n')
+    result=dict(epoch=epoch,weights_sha256=prior['weights_sha256'],evaluation_rows=len(predictions),
+        inference_seconds=seconds,metrics=summarize(predictions,directory/'thresholds.csv'),production_acceptance=False)
+    with (directory/'report.json').open('x',encoding='utf-8') as f:json.dump(result,f,ensure_ascii=False,indent=2)
+    results.append(result);point=result['metrics']['literal_or_model']['best_fpr_eligible']
+    print(json.dumps(dict(epoch=epoch,gate=bool(point and point['development_gate_met']),
+        best_threshold=point['threshold'] if point else None,recalls={g:m['recall'] for g,m in point['cohorts'].items()} if point else None)),flush=True)
+with (output/'summary.json').open('x',encoding='utf-8') as f:json.dump(dict(policy=policy,epochs=results),f,ensure_ascii=False,indent=2)

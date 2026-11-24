@@ -1,0 +1,74 @@
+import hashlib
+import json
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+
+from phonetic_encoding import PhoneticEncoder
+
+root=Path.cwd();lab=root/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(root/'services/algo/scripts'))
+from evaluate_candidate import development, pcr
+from evaluate_comment_model import preprocess
+from evaluate_recall import load_external, source_sha
+from app.services.moderation import ModerationService
+from app.services.normalization import normalize, canonicalize
+
+sha=lambda data:hashlib.sha256(data).hexdigest()
+dictionary=root/'services/algo/app/data/moderation-v3_5-candidate.json'
+literal=ModerationService(dictionary)
+sources={}
+def read_manifest(path):
+    sources[path.relative_to(root).as_posix()]=sha(path.read_bytes())
+    return json.loads(path.read_text(encoding='utf-8'))
+toxic_path=lab/'toxcn.csv'
+toxic=load_external(toxic_path,read_manifest(root/'docs/qa/data/external/toxicn-v3.sealed.json'))
+pcr_path=root/'qa-private/us24-m1/PCR-ToxiCN.json'
+pcr_rows,excluded=pcr(pcr_path,read_manifest(root/'docs/qa/data/external/pcr-test.v1.json'))
+assert not excluded
+for r in pcr_rows:r['cohort']='PCR'
+controls=[]
+for version in ['v2','v3']:
+    path=root/f'docs/qa/data/us24-development.{version}.jsonl'
+    sources[path.relative_to(root).as_posix()]=sha(path.read_bytes())
+    controls.extend(dict(id=f'{version}-{r["id"]}',text=r['text'],offensive=False,
+        category='normal_context',cohort='controls') for r in development(path) if not r['expected_word'])
+evaluation=pcr_rows+controls
+evaluation_keys={normalize(r['text']) for r in evaluation}
+for r in toxic:
+    key=normalize(r['text'])
+    fold=int.from_bytes(hashlib.sha256(b'us24-chinesebert-v1\0'+key.encode()).digest()[:8],'big')%10
+    r['cohort']='toxicn_dev' if fold<2 else 'training'
+    if r['cohort']=='training' and key in evaluation_keys:r['cohort']='training_excluded_overlap'
+records=toxic+evaluation
+assert len(toxic)==12011 and len(evaluation)==757 and len({r['id'] for r in records})==len(records)
+policy=dict(created_at_utc=datetime.now(UTC).isoformat(),phase='development_training_only',
+    source_sha256={str(toxic_path.relative_to(root)):sha(toxic_path.read_bytes()),str(pcr_path.relative_to(root)):sha(pcr_path.read_bytes()),**sources},
+    dictionary_sha256=literal.dictionary_sha256,epochs=3,learning_rate=2e-5,batch_size=8,accumulate_steps=4,
+    seed=20261124,max_body_tokens=510,overlap_tokens=128,comment_aggregation='max_window_score',
+    training_preprocess='canonical raw text',evaluation_preprocess='v3.5 finite context mask',
+    frozen_glyph_lookup=True,threshold_grid=[i/1000 for i in range(1,1000)],
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),lab/'phonetic_encoding.py']},
+    engine_sha256={p.relative_to(root).as_posix():source_sha(p) for p in (root/'services/algo/app/services').glob('*.py')},
+    dataset_cohorts={k:sum(r['cohort']==k for r in records) for k in ['training','toxicn_dev','training_excluded_overlap','PCR','controls']},
+    no_new_external_consumed=True,production_enabled=False)
+with (lab/'phonetic-training-v1.policy.json').open('x',encoding='utf-8') as handle:json.dump(policy,handle,ensure_ascii=False,indent=2)
+encoder=PhoneticEncoder(lab/'chinesebert-model')
+prepared=[];index=[]
+for number,row in enumerate(records,1):
+    item=dict(id=row['id'],label=int(row['offensive']),cohort=row['cohort'],category=row.get('category','ungrouped'),
+              source_text_sha256=sha(row['text'].encode()),normalized_sha256=sha(normalize(row['text']).encode()))
+    is_training=row['cohort'] in {'training','training_excluded_overlap'}
+    text=canonicalize(row['text']) if is_training else preprocess(row['text'],literal,True)['text']
+    item['transformed_sha256']=sha(text.encode())
+    item['literal_any']=False if is_training else bool(literal.check(row['text']).hits)
+    item['windows']=encoder.encode(text)
+    prepared.append(item)
+    index.append({**{k:v for k,v in item.items() if k!='windows'},
+                  'windows':len(item['windows']),'window_lengths':[len(w['input_ids']) for w in item['windows']]})
+    if number%250==0:print(f'Prepared {number}/{len(records)} comments',flush=True)
+with (lab/'phonetic-training-v1.features.pt').open('xb') as handle:torch.save(dict(policy=policy,records=prepared),handle)
+with (lab/'phonetic-training-v1.index.json').open('x',encoding='utf-8') as handle:json.dump(dict(policy=policy,rows=index),handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(prepared=len(prepared),cohorts=policy['dataset_cohorts'],excluded_evaluation_rows=0)))
