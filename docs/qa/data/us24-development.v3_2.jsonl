@@ -1,0 +1,488 @@
+{"id": "TONE-001-0", "text": "sha3 bi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-001-0-quote", "text": "举报：“sha3 bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-001-0-continued", "text": "举报：“sha3 bi1”请处理。sha3 bi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-001-1", "text": "sha3bi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-001-1-quote", "text": "举报：“sha3bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-001-1-continued", "text": "举报：“sha3bi1”请处理。sha3bi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-001-2", "text": "sha4.bi4", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-001-2-quote", "text": "举报：“sha4.bi4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-001-2-continued", "text": "举报：“sha4.bi4”请处理。sha4.bi4", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-001-3", "text": "sha bi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-001-3-quote", "text": "举报：“sha bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-001-3-continued", "text": "举报：“sha bi1”请处理。sha bi1", "expected_word": "傻逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-002-0", "text": "cao1 ni3 ma1", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-002-0-quote", "text": "举报：“cao1 ni3 ma1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-002-0-continued", "text": "举报：“cao1 ni3 ma1”请处理。cao1 ni3 ma1", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-002-1", "text": "cao1ni3ma1", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-002-1-quote", "text": "举报：“cao1ni3ma1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-002-1-continued", "text": "举报：“cao1ni3ma1”请处理。cao1ni3ma1", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-002-2", "text": "cao4.ni4.ma4", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-002-2-quote", "text": "举报：“cao4.ni4.ma4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-002-2-continued", "text": "举报：“cao4.ni4.ma4”请处理。cao4.ni4.ma4", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-002-3", "text": "cao ni1 ma", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-002-3-quote", "text": "举报：“cao ni1 ma”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-002-3-continued", "text": "举报：“cao ni1 ma”请处理。cao ni1 ma", "expected_word": "操你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-003-0", "text": "qu4 si3", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-003-0-quote", "text": "举报：“qu4 si3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-003-0-continued", "text": "举报：“qu4 si3”请处理。qu4 si3", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-003-1", "text": "qu4si3", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-003-1-quote", "text": "举报：“qu4si3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-003-1-continued", "text": "举报：“qu4si3”请处理。qu4si3", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-003-2", "text": "qu4.si4", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-003-2-quote", "text": "举报：“qu4.si4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-003-2-continued", "text": "举报：“qu4.si4”请处理。qu4.si4", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-003-3", "text": "qu si1", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-003-3-quote", "text": "举报：“qu si1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-003-3-continued", "text": "举报：“qu si1”请处理。qu si1", "expected_word": "去死", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-004-0", "text": "gun3 ni3 ma1", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-004-0-quote", "text": "举报：“gun3 ni3 ma1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-004-0-continued", "text": "举报：“gun3 ni3 ma1”请处理。gun3 ni3 ma1", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-004-1", "text": "gun3ni3ma1", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-004-1-quote", "text": "举报：“gun3ni3ma1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-004-1-continued", "text": "举报：“gun3ni3ma1”请处理。gun3ni3ma1", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-004-2", "text": "gun4.ni4.ma4", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-004-2-quote", "text": "举报：“gun4.ni4.ma4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-004-2-continued", "text": "举报：“gun4.ni4.ma4”请处理。gun4.ni4.ma4", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-004-3", "text": "gun ni1 ma", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-004-3-quote", "text": "举报：“gun ni1 ma”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-004-3-continued", "text": "举报：“gun ni1 ma”请处理。gun ni1 ma", "expected_word": "滚你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-005-0", "text": "ri4 ni3 ma1", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-005-0-quote", "text": "举报：“ri4 ni3 ma1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-005-0-continued", "text": "举报：“ri4 ni3 ma1”请处理。ri4 ni3 ma1", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-005-1", "text": "ri4ni3ma1", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-005-1-quote", "text": "举报：“ri4ni3ma1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-005-1-continued", "text": "举报：“ri4ni3ma1”请处理。ri4ni3ma1", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-005-2", "text": "ri4.ni4.ma4", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-005-2-quote", "text": "举报：“ri4.ni4.ma4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-005-2-continued", "text": "举报：“ri4.ni4.ma4”请处理。ri4.ni4.ma4", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-005-3", "text": "ri ni1 ma", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-005-3-quote", "text": "举报：“ri ni1 ma”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-005-3-continued", "text": "举报：“ri ni1 ma”请处理。ri ni1 ma", "expected_word": "日你妈", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-007-0", "text": "si3 quan2 jia1", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-007-0-quote", "text": "举报：“si3 quan2 jia1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-007-0-continued", "text": "举报：“si3 quan2 jia1”请处理。si3 quan2 jia1", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-007-1", "text": "si3quan2jia1", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-007-1-quote", "text": "举报：“si3quan2jia1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-007-1-continued", "text": "举报：“si3quan2jia1”请处理。si3quan2jia1", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-007-2", "text": "si4.quan4.jia4", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-007-2-quote", "text": "举报：“si4.quan4.jia4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-007-2-continued", "text": "举报：“si4.quan4.jia4”请处理。si4.quan4.jia4", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-007-3", "text": "si quan1 jia", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-007-3-quote", "text": "举报：“si quan1 jia”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-007-3-continued", "text": "举报：“si quan1 jia”请处理。si quan1 jia", "expected_word": "死全家", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-009-0", "text": "gou3 niang2 yang3 de5", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-009-0-quote", "text": "举报：“gou3 niang2 yang3 de5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-009-0-continued", "text": "举报：“gou3 niang2 yang3 de5”请处理。gou3 niang2 yang3 de5", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-009-1", "text": "gou3niang2yang3de5", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-009-1-quote", "text": "举报：“gou3niang2yang3de5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-009-1-continued", "text": "举报：“gou3niang2yang3de5”请处理。gou3niang2yang3de5", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-009-2", "text": "gou4.niang4.yang4.de4", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-009-2-quote", "text": "举报：“gou4.niang4.yang4.de4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-009-2-continued", "text": "举报：“gou4.niang4.yang4.de4”请处理。gou4.niang4.yang4.de4", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-009-3", "text": "gou niang1 yang de1", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-009-3-quote", "text": "举报：“gou niang1 yang de1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-009-3-continued", "text": "举报：“gou niang1 yang de1”请处理。gou niang1 yang de1", "expected_word": "狗娘养的", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-010-0", "text": "gou3 za2 zhong3", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-010-0-quote", "text": "举报：“gou3 za2 zhong3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-010-0-continued", "text": "举报：“gou3 za2 zhong3”请处理。gou3 za2 zhong3", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-010-1", "text": "gou3za2zhong3", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-010-1-quote", "text": "举报：“gou3za2zhong3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-010-1-continued", "text": "举报：“gou3za2zhong3”请处理。gou3za2zhong3", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-010-2", "text": "gou4.za4.zhong4", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-010-2-quote", "text": "举报：“gou4.za4.zhong4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-010-2-continued", "text": "举报：“gou4.za4.zhong4”请处理。gou4.za4.zhong4", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-010-3", "text": "gou za1 zhong", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-010-3-quote", "text": "举报：“gou za1 zhong”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-010-3-continued", "text": "举报：“gou za1 zhong”请处理。gou za1 zhong", "expected_word": "狗杂种", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-014-0", "text": "sha1 le5 ni3", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-014-0-quote", "text": "举报：“sha1 le5 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-014-0-continued", "text": "举报：“sha1 le5 ni3”请处理。sha1 le5 ni3", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-014-1", "text": "sha1le5ni3", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-014-1-quote", "text": "举报：“sha1le5ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-014-1-continued", "text": "举报：“sha1le5ni3”请处理。sha1le5ni3", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-014-2", "text": "sha4.le4.ni4", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-014-2-quote", "text": "举报：“sha4.le4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-014-2-continued", "text": "举报：“sha4.le4.ni4”请处理。sha4.le4.ni4", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-014-3", "text": "sha le1 ni", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-014-3-quote", "text": "举报：“sha le1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-014-3-continued", "text": "举报：“sha le1 ni”请处理。sha le1 ni", "expected_word": "杀了你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-015-0", "text": "nong4 si3 ni3", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-015-0-quote", "text": "举报：“nong4 si3 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-015-0-continued", "text": "举报：“nong4 si3 ni3”请处理。nong4 si3 ni3", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-015-1", "text": "nong4si3ni3", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-015-1-quote", "text": "举报：“nong4si3ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-015-1-continued", "text": "举报：“nong4si3ni3”请处理。nong4si3ni3", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-015-2", "text": "nong4.si4.ni4", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-015-2-quote", "text": "举报：“nong4.si4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-015-2-continued", "text": "举报：“nong4.si4.ni4”请处理。nong4.si4.ni4", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-015-3", "text": "nong si1 ni", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-015-3-quote", "text": "举报：“nong si1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-015-3-continued", "text": "举报：“nong si1 ni”请处理。nong si1 ni", "expected_word": "弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-016-0", "text": "tong3 si3 ni3", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-016-0-quote", "text": "举报：“tong3 si3 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-016-0-continued", "text": "举报：“tong3 si3 ni3”请处理。tong3 si3 ni3", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-016-1", "text": "tong3si3ni3", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-016-1-quote", "text": "举报：“tong3si3ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-016-1-continued", "text": "举报：“tong3si3ni3”请处理。tong3si3ni3", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-016-2", "text": "tong4.si4.ni4", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-016-2-quote", "text": "举报：“tong4.si4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-016-2-continued", "text": "举报：“tong4.si4.ni4”请处理。tong4.si4.ni4", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-016-3", "text": "tong si1 ni", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-016-3-quote", "text": "举报：“tong si1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-016-3-continued", "text": "举报：“tong si1 ni”请处理。tong si1 ni", "expected_word": "捅死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-018-0", "text": "ni3 bu4 pei4 huo2 zhe5", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-018-0-quote", "text": "举报：“ni3 bu4 pei4 huo2 zhe5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-018-0-continued", "text": "举报：“ni3 bu4 pei4 huo2 zhe5”请处理。ni3 bu4 pei4 huo2 zhe5", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-018-1", "text": "ni3bu4pei4huo2zhe5", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-018-1-quote", "text": "举报：“ni3bu4pei4huo2zhe5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-018-1-continued", "text": "举报：“ni3bu4pei4huo2zhe5”请处理。ni3bu4pei4huo2zhe5", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-018-2", "text": "ni4.bu4.pei4.huo4.zhe4", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-018-2-quote", "text": "举报：“ni4.bu4.pei4.huo4.zhe4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-018-2-continued", "text": "举报：“ni4.bu4.pei4.huo4.zhe4”请处理。ni4.bu4.pei4.huo4.zhe4", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-018-3", "text": "ni bu1 pei huo1 zhe", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-018-3-quote", "text": "举报：“ni bu1 pei huo1 zhe”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-018-3-continued", "text": "举报：“ni bu1 pei huo1 zhe”请处理。ni bu1 pei huo1 zhe", "expected_word": "你不配活着", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-019-0", "text": "jian4 ni3 yi1 ci4 da3 ni3 yi1 ci4", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-019-0-quote", "text": "举报：“jian4 ni3 yi1 ci4 da3 ni3 yi1 ci4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-019-0-continued", "text": "举报：“jian4 ni3 yi1 ci4 da3 ni3 yi1 ci4”请处理。jian4 ni3 yi1 ci4 da3 ni3 yi1 ci4", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-019-1", "text": "jian4ni3yi1ci4da3ni3yi1ci4", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-019-1-quote", "text": "举报：“jian4ni3yi1ci4da3ni3yi1ci4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-019-1-continued", "text": "举报：“jian4ni3yi1ci4da3ni3yi1ci4”请处理。jian4ni3yi1ci4da3ni3yi1ci4", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-019-2", "text": "jian4.ni4.yi4.ci4.da4.ni4.yi4.ci4", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-019-2-quote", "text": "举报：“jian4.ni4.yi4.ci4.da4.ni4.yi4.ci4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-019-2-continued", "text": "举报：“jian4.ni4.yi4.ci4.da4.ni4.yi4.ci4”请处理。jian4.ni4.yi4.ci4.da4.ni4.yi4.ci4", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-019-3", "text": "jian ni1 yi ci1 da ni1 yi ci1", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-019-3-quote", "text": "举报：“jian ni1 yi ci1 da ni1 yi ci1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-019-3-continued", "text": "举报：“jian ni1 yi ci1 da ni1 yi ci1”请处理。jian ni1 yi ci1 da ni1 yi ci1", "expected_word": "见你一次打你一次", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-020-0", "text": "jian4 bi1", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-020-0-quote", "text": "举报：“jian4 bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-020-0-continued", "text": "举报：“jian4 bi1”请处理。jian4 bi1", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-020-1", "text": "jian4bi1", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-020-1-quote", "text": "举报：“jian4bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-020-1-continued", "text": "举报：“jian4bi1”请处理。jian4bi1", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-020-2", "text": "jian4.bi4", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-020-2-quote", "text": "举报：“jian4.bi4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-020-2-continued", "text": "举报：“jian4.bi4”请处理。jian4.bi4", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-020-3", "text": "jian bi1", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-020-3-quote", "text": "举报：“jian bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-020-3-continued", "text": "举报：“jian bi1”请处理。jian bi1", "expected_word": "贱逼", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-021-0", "text": "chi1 shi3 qu4", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-021-0-quote", "text": "举报：“chi1 shi3 qu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-021-0-continued", "text": "举报：“chi1 shi3 qu4”请处理。chi1 shi3 qu4", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-021-1", "text": "chi1shi3qu4", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-021-1-quote", "text": "举报：“chi1shi3qu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-021-1-continued", "text": "举报：“chi1shi3qu4”请处理。chi1shi3qu4", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-021-2", "text": "chi4.shi4.qu4", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-021-2-quote", "text": "举报：“chi4.shi4.qu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-021-2-continued", "text": "举报：“chi4.shi4.qu4”请处理。chi4.shi4.qu4", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-021-3", "text": "chi shi1 qu", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-021-3-quote", "text": "举报：“chi shi1 qu”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-021-3-continued", "text": "举报：“chi shi1 qu”请处理。chi shi1 qu", "expected_word": "吃屎去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-023-0", "text": "fei4 wu4", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-023-0-quote", "text": "举报：“fei4 wu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-023-0-continued", "text": "举报：“fei4 wu4”请处理。fei4 wu4", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-023-1", "text": "fei4wu4", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-023-1-quote", "text": "举报：“fei4wu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-023-1-continued", "text": "举报：“fei4wu4”请处理。fei4wu4", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-023-2", "text": "fei4.wu4", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-023-2-quote", "text": "举报：“fei4.wu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-023-2-continued", "text": "举报：“fei4.wu4”请处理。fei4.wu4", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-023-3", "text": "fei wu1", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-023-3-quote", "text": "举报：“fei wu1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-023-3-continued", "text": "举报：“fei wu1”请处理。fei wu1", "expected_word": "废物", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-024-0", "text": "bai2 chi1", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-024-0-quote", "text": "举报：“bai2 chi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-024-0-continued", "text": "举报：“bai2 chi1”请处理。bai2 chi1", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-024-1", "text": "bai2chi1", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-024-1-quote", "text": "举报：“bai2chi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-024-1-continued", "text": "举报：“bai2chi1”请处理。bai2chi1", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-024-2", "text": "bai4.chi4", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-024-2-quote", "text": "举报：“bai4.chi4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-024-2-continued", "text": "举报：“bai4.chi4”请处理。bai4.chi4", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-024-3", "text": "bai chi1", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-024-3-quote", "text": "举报：“bai chi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-024-3-continued", "text": "举报：“bai chi1”请处理。bai chi1", "expected_word": "白痴", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-027-0", "text": "chun3 huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-027-0-quote", "text": "举报：“chun3 huo4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-027-0-continued", "text": "举报：“chun3 huo4”请处理。chun3 huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-027-1", "text": "chun3huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-027-1-quote", "text": "举报：“chun3huo4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-027-1-continued", "text": "举报：“chun3huo4”请处理。chun3huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-027-2", "text": "chun4.huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-027-2-quote", "text": "举报：“chun4.huo4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-027-2-continued", "text": "举报：“chun4.huo4”请处理。chun4.huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-027-3", "text": "chun huo1", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-027-3-quote", "text": "举报：“chun huo1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-027-3-continued", "text": "举报：“chun huo1”请处理。chun huo1", "expected_word": "蠢货", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-030-0", "text": "hun4 dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-030-0-quote", "text": "举报：“hun4 dan4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-030-0-continued", "text": "举报：“hun4 dan4”请处理。hun4 dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-030-1", "text": "hun4dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-030-1-quote", "text": "举报：“hun4dan4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-030-1-continued", "text": "举报：“hun4dan4”请处理。hun4dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-030-2", "text": "hun4.dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-030-2-quote", "text": "举报：“hun4.dan4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-030-2-continued", "text": "举报：“hun4.dan4”请处理。hun4.dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-030-3", "text": "hun dan1", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-030-3-quote", "text": "举报：“hun dan1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-030-3-continued", "text": "举报：“hun dan1”请处理。hun dan1", "expected_word": "混蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-031-0", "text": "wang2 ba1 dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-031-0-quote", "text": "举报：“wang2 ba1 dan4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-031-0-continued", "text": "举报：“wang2 ba1 dan4”请处理。wang2 ba1 dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-031-1", "text": "wang2ba1dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-031-1-quote", "text": "举报：“wang2ba1dan4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-031-1-continued", "text": "举报：“wang2ba1dan4”请处理。wang2ba1dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-031-2", "text": "wang4.ba4.dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-031-2-quote", "text": "举报：“wang4.ba4.dan4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-031-2-continued", "text": "举报：“wang4.ba4.dan4”请处理。wang4.ba4.dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-031-3", "text": "wang ba1 dan", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-031-3-quote", "text": "举报：“wang ba1 dan”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-031-3-continued", "text": "举报：“wang ba1 dan”请处理。wang ba1 dan", "expected_word": "王八蛋", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-032-0", "text": "ren2 zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-032-0-quote", "text": "举报：“ren2 zha1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-032-0-continued", "text": "举报：“ren2 zha1”请处理。ren2 zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-032-1", "text": "ren2zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-032-1-quote", "text": "举报：“ren2zha1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-032-1-continued", "text": "举报：“ren2zha1”请处理。ren2zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-032-2", "text": "ren4.zha4", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-032-2-quote", "text": "举报：“ren4.zha4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-032-2-continued", "text": "举报：“ren4.zha4”请处理。ren4.zha4", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-032-3", "text": "ren zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-032-3-quote", "text": "举报：“ren zha1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-032-3-continued", "text": "举报：“ren zha1”请处理。ren zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-047-0", "text": "ni3 zhen1 e3 xin1", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-047-0-quote", "text": "举报：“ni3 zhen1 e3 xin1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-047-0-continued", "text": "举报：“ni3 zhen1 e3 xin1”请处理。ni3 zhen1 e3 xin1", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-047-1", "text": "ni3zhen1e3xin1", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-047-1-quote", "text": "举报：“ni3zhen1e3xin1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-047-1-continued", "text": "举报：“ni3zhen1e3xin1”请处理。ni3zhen1e3xin1", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-047-2", "text": "ni4.zhen4.e4.xin4", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-047-2-quote", "text": "举报：“ni4.zhen4.e4.xin4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-047-2-continued", "text": "举报：“ni4.zhen4.e4.xin4”请处理。ni4.zhen4.e4.xin4", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-047-3", "text": "ni zhen1 e xin1", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-047-3-quote", "text": "举报：“ni zhen1 e xin1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-047-3-continued", "text": "举报：“ni zhen1 e xin1”请处理。ni zhen1 e xin1", "expected_word": "你真恶心", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-048-0", "text": "ni3 ge4 chun3 zhu1", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-048-0-quote", "text": "举报：“ni3 ge4 chun3 zhu1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-048-0-continued", "text": "举报：“ni3 ge4 chun3 zhu1”请处理。ni3 ge4 chun3 zhu1", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-048-1", "text": "ni3ge4chun3zhu1", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-048-1-quote", "text": "举报：“ni3ge4chun3zhu1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-048-1-continued", "text": "举报：“ni3ge4chun3zhu1”请处理。ni3ge4chun3zhu1", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-048-2", "text": "ni4.ge4.chun4.zhu4", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-048-2-quote", "text": "举报：“ni4.ge4.chun4.zhu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-048-2-continued", "text": "举报：“ni4.ge4.chun4.zhu4”请处理。ni4.ge4.chun4.zhu4", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-048-3", "text": "ni ge1 chun zhu1", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-048-3-quote", "text": "举报：“ni ge1 chun zhu1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-048-3-continued", "text": "举报：“ni ge1 chun zhu1”请处理。ni ge1 chun zhu1", "expected_word": "你个蠢猪", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-050-0", "text": "ni3 ge4 wo1 nang1 fei4", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-050-0-quote", "text": "举报：“ni3 ge4 wo1 nang1 fei4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-050-0-continued", "text": "举报：“ni3 ge4 wo1 nang1 fei4”请处理。ni3 ge4 wo1 nang1 fei4", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-050-1", "text": "ni3ge4wo1nang1fei4", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-050-1-quote", "text": "举报：“ni3ge4wo1nang1fei4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-050-1-continued", "text": "举报：“ni3ge4wo1nang1fei4”请处理。ni3ge4wo1nang1fei4", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-050-2", "text": "ni4.ge4.wo4.nang4.fei4", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-050-2-quote", "text": "举报：“ni4.ge4.wo4.nang4.fei4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-050-2-continued", "text": "举报：“ni4.ge4.wo4.nang4.fei4”请处理。ni4.ge4.wo4.nang4.fei4", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-050-3", "text": "ni ge1 wo nang1 fei", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-050-3-quote", "text": "举报：“ni ge1 wo nang1 fei”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-050-3-continued", "text": "举报：“ni ge1 wo nang1 fei”请处理。ni ge1 wo nang1 fei", "expected_word": "你个窝囊废", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-051-0", "text": "ni3 ge4 xiao3 bie1 san1", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-051-0-quote", "text": "举报：“ni3 ge4 xiao3 bie1 san1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-051-0-continued", "text": "举报：“ni3 ge4 xiao3 bie1 san1”请处理。ni3 ge4 xiao3 bie1 san1", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-051-1", "text": "ni3ge4xiao3bie1san1", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-051-1-quote", "text": "举报：“ni3ge4xiao3bie1san1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-051-1-continued", "text": "举报：“ni3ge4xiao3bie1san1”请处理。ni3ge4xiao3bie1san1", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-051-2", "text": "ni4.ge4.xiao4.bie4.san4", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-051-2-quote", "text": "举报：“ni4.ge4.xiao4.bie4.san4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-051-2-continued", "text": "举报：“ni4.ge4.xiao4.bie4.san4”请处理。ni4.ge4.xiao4.bie4.san4", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-051-3", "text": "ni ge1 xiao bie1 san", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-051-3-quote", "text": "举报：“ni ge1 xiao bie1 san”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-051-3-continued", "text": "举报：“ni ge1 xiao bie1 san”请处理。ni ge1 xiao bie1 san", "expected_word": "你个小瘪三", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-052-0", "text": "ni3 zhe4 ge5 jian4 ren2", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-052-0-quote", "text": "举报：“ni3 zhe4 ge5 jian4 ren2”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-052-0-continued", "text": "举报：“ni3 zhe4 ge5 jian4 ren2”请处理。ni3 zhe4 ge5 jian4 ren2", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-052-1", "text": "ni3zhe4ge5jian4ren2", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-052-1-quote", "text": "举报：“ni3zhe4ge5jian4ren2”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-052-1-continued", "text": "举报：“ni3zhe4ge5jian4ren2”请处理。ni3zhe4ge5jian4ren2", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-052-2", "text": "ni4.zhe4.ge4.jian4.ren4", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-052-2-quote", "text": "举报：“ni4.zhe4.ge4.jian4.ren4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-052-2-continued", "text": "举报：“ni4.zhe4.ge4.jian4.ren4”请处理。ni4.zhe4.ge4.jian4.ren4", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-052-3", "text": "ni zhe1 ge jian1 ren", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-052-3-quote", "text": "举报：“ni zhe1 ge jian1 ren”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-052-3-continued", "text": "举报：“ni zhe1 ge jian1 ren”请处理。ni zhe1 ge jian1 ren", "expected_word": "你这个贱人", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-054-0", "text": "ni3 ge4 gou3 dong1 xi1", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-054-0-quote", "text": "举报：“ni3 ge4 gou3 dong1 xi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-054-0-continued", "text": "举报：“ni3 ge4 gou3 dong1 xi1”请处理。ni3 ge4 gou3 dong1 xi1", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-054-1", "text": "ni3ge4gou3dong1xi1", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-054-1-quote", "text": "举报：“ni3ge4gou3dong1xi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-054-1-continued", "text": "举报：“ni3ge4gou3dong1xi1”请处理。ni3ge4gou3dong1xi1", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-054-2", "text": "ni4.ge4.gou4.dong4.xi4", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-054-2-quote", "text": "举报：“ni4.ge4.gou4.dong4.xi4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-054-2-continued", "text": "举报：“ni4.ge4.gou4.dong4.xi4”请处理。ni4.ge4.gou4.dong4.xi4", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-054-3", "text": "ni ge1 gou dong1 xi", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-054-3-quote", "text": "举报：“ni ge1 gou dong1 xi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-054-3-continued", "text": "举报：“ni ge1 gou dong1 xi”请处理。ni ge1 gou dong1 xi", "expected_word": "你个狗东西", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-055-0", "text": "wo3 yao4 zou4 ni3", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-055-0-quote", "text": "举报：“wo3 yao4 zou4 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-055-0-continued", "text": "举报：“wo3 yao4 zou4 ni3”请处理。wo3 yao4 zou4 ni3", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-055-1", "text": "wo3yao4zou4ni3", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-055-1-quote", "text": "举报：“wo3yao4zou4ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-055-1-continued", "text": "举报：“wo3yao4zou4ni3”请处理。wo3yao4zou4ni3", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-055-2", "text": "wo4.yao4.zou4.ni4", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-055-2-quote", "text": "举报：“wo4.yao4.zou4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-055-2-continued", "text": "举报：“wo4.yao4.zou4.ni4”请处理。wo4.yao4.zou4.ni4", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-055-3", "text": "wo yao1 zou ni1", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-055-3-quote", "text": "举报：“wo yao1 zou ni1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-055-3-continued", "text": "举报：“wo yao1 zou ni1”请处理。wo yao1 zou ni1", "expected_word": "我要揍你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-056-0", "text": "da3 duan4 ni3 de5 tui3", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-056-0-quote", "text": "举报：“da3 duan4 ni3 de5 tui3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-056-0-continued", "text": "举报：“da3 duan4 ni3 de5 tui3”请处理。da3 duan4 ni3 de5 tui3", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-056-1", "text": "da3duan4ni3de5tui3", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-056-1-quote", "text": "举报：“da3duan4ni3de5tui3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-056-1-continued", "text": "举报：“da3duan4ni3de5tui3”请处理。da3duan4ni3de5tui3", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-056-2", "text": "da4.duan4.ni4.de4.tui4", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-056-2-quote", "text": "举报：“da4.duan4.ni4.de4.tui4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-056-2-continued", "text": "举报：“da4.duan4.ni4.de4.tui4”请处理。da4.duan4.ni4.de4.tui4", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-056-3", "text": "da duan1 ni de1 tui", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-056-3-quote", "text": "举报：“da duan1 ni de1 tui”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-056-3-continued", "text": "举报：“da duan1 ni de1 tui”请处理。da duan1 ni de1 tui", "expected_word": "打断你的腿", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-057-0", "text": "kan3 si3 ni3", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-057-0-quote", "text": "举报：“kan3 si3 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-057-0-continued", "text": "举报：“kan3 si3 ni3”请处理。kan3 si3 ni3", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-057-1", "text": "kan3si3ni3", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-057-1-quote", "text": "举报：“kan3si3ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-057-1-continued", "text": "举报：“kan3si3ni3”请处理。kan3si3ni3", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-057-2", "text": "kan4.si4.ni4", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-057-2-quote", "text": "举报：“kan4.si4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-057-2-continued", "text": "举报：“kan4.si4.ni4”请处理。kan4.si4.ni4", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-057-3", "text": "kan si1 ni", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-057-3-quote", "text": "举报：“kan si1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-057-3-continued", "text": "举报：“kan si1 ni”请处理。kan si1 ni", "expected_word": "砍死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-058-0", "text": "qia1 si3 ni3", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-058-0-quote", "text": "举报：“qia1 si3 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-058-0-continued", "text": "举报：“qia1 si3 ni3”请处理。qia1 si3 ni3", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-058-1", "text": "qia1si3ni3", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-058-1-quote", "text": "举报：“qia1si3ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-058-1-continued", "text": "举报：“qia1si3ni3”请处理。qia1si3ni3", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-058-2", "text": "qia4.si4.ni4", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-058-2-quote", "text": "举报：“qia4.si4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-058-2-continued", "text": "举报：“qia4.si4.ni4”请处理。qia4.si4.ni4", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-058-3", "text": "qia si1 ni", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-058-3-quote", "text": "举报：“qia si1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-058-3-continued", "text": "举报：“qia si1 ni”请处理。qia si1 ni", "expected_word": "掐死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-059-0", "text": "du3 ni3 su4 she4 men2 kou3 da3 ni3", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-059-0-quote", "text": "举报：“du3 ni3 su4 she4 men2 kou3 da3 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-059-0-continued", "text": "举报：“du3 ni3 su4 she4 men2 kou3 da3 ni3”请处理。du3 ni3 su4 she4 men2 kou3 da3 ni3", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-059-1", "text": "du3ni3su4she4men2kou3da3ni3", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-059-1-quote", "text": "举报：“du3ni3su4she4men2kou3da3ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-059-1-continued", "text": "举报：“du3ni3su4she4men2kou3da3ni3”请处理。du3ni3su4she4men2kou3da3ni3", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-059-2", "text": "du4.ni4.su4.she4.men4.kou4.da4.ni4", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-059-2-quote", "text": "举报：“du4.ni4.su4.she4.men4.kou4.da4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-059-2-continued", "text": "举报：“du4.ni4.su4.she4.men4.kou4.da4.ni4”请处理。du4.ni4.su4.she4.men4.kou4.da4.ni4", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-059-3", "text": "du ni1 su she1 men kou1 da ni1", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-059-3-quote", "text": "举报：“du ni1 su she1 men kou1 da ni1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-059-3-continued", "text": "举报：“du ni1 su she1 men kou1 da ni1”请处理。du ni1 su she1 men kou1 da ni1", "expected_word": "堵你宿舍门口打你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-060-0", "text": "rang4 ni3 heng2 zhe5 chu1 qu4", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-060-0-quote", "text": "举报：“rang4 ni3 heng2 zhe5 chu1 qu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-060-0-continued", "text": "举报：“rang4 ni3 heng2 zhe5 chu1 qu4”请处理。rang4 ni3 heng2 zhe5 chu1 qu4", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-060-1", "text": "rang4ni3heng2zhe5chu1qu4", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-060-1-quote", "text": "举报：“rang4ni3heng2zhe5chu1qu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-060-1-continued", "text": "举报：“rang4ni3heng2zhe5chu1qu4”请处理。rang4ni3heng2zhe5chu1qu4", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-060-2", "text": "rang4.ni4.heng4.zhe4.chu4.qu4", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-060-2-quote", "text": "举报：“rang4.ni4.heng4.zhe4.chu4.qu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-060-2-continued", "text": "举报：“rang4.ni4.heng4.zhe4.chu4.qu4”请处理。rang4.ni4.heng4.zhe4.chu4.qu4", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-060-3", "text": "rang ni1 heng zhe1 chu qu1", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-060-3-quote", "text": "举报：“rang ni1 heng zhe1 chu qu1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-060-3-continued", "text": "举报：“rang ni1 heng zhe1 chu qu1”请处理。rang ni1 heng zhe1 chu qu1", "expected_word": "让你横着出去", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-061-0", "text": "wo3 yao4 zhong4 shang1 ni3", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-061-0-quote", "text": "举报：“wo3 yao4 zhong4 shang1 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-061-0-continued", "text": "举报：“wo3 yao4 zhong4 shang1 ni3”请处理。wo3 yao4 zhong4 shang1 ni3", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-061-1", "text": "wo3yao4zhong4shang1ni3", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-061-1-quote", "text": "举报：“wo3yao4zhong4shang1ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-061-1-continued", "text": "举报：“wo3yao4zhong4shang1ni3”请处理。wo3yao4zhong4shang1ni3", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-061-2", "text": "wo4.yao4.zhong4.shang4.ni4", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-061-2-quote", "text": "举报：“wo4.yao4.zhong4.shang4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-061-2-continued", "text": "举报：“wo4.yao4.zhong4.shang4.ni4”请处理。wo4.yao4.zhong4.shang4.ni4", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-061-3", "text": "wo yao1 zhong shang1 ni", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-061-3-quote", "text": "举报：“wo yao1 zhong shang1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-061-3-continued", "text": "举报：“wo yao1 zhong shang1 ni”请处理。wo yao1 zhong shang1 ni", "expected_word": "我要重伤你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-062-0", "text": "fang4 xue2 nong4 si3 ni3", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-062-0-quote", "text": "举报：“fang4 xue2 nong4 si3 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-062-0-continued", "text": "举报：“fang4 xue2 nong4 si3 ni3”请处理。fang4 xue2 nong4 si3 ni3", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-062-1", "text": "fang4xue2nong4si3ni3", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-062-1-quote", "text": "举报：“fang4xue2nong4si3ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-062-1-continued", "text": "举报：“fang4xue2nong4si3ni3”请处理。fang4xue2nong4si3ni3", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-062-2", "text": "fang4.xue4.nong4.si4.ni4", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-062-2-quote", "text": "举报：“fang4.xue4.nong4.si4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-062-2-continued", "text": "举报：“fang4.xue4.nong4.si4.ni4”请处理。fang4.xue4.nong4.si4.ni4", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-062-3", "text": "fang xue1 nong si1 ni", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-062-3-quote", "text": "举报：“fang xue1 nong si1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-062-3-continued", "text": "举报：“fang xue1 nong si1 ni”请处理。fang xue1 nong si1 ni", "expected_word": "放学弄死你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-064-0", "text": "yi4 zhi2 sao1 rao3 ni3", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-064-0-quote", "text": "举报：“yi4 zhi2 sao1 rao3 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-064-0-continued", "text": "举报：“yi4 zhi2 sao1 rao3 ni3”请处理。yi4 zhi2 sao1 rao3 ni3", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-064-1", "text": "yi4zhi2sao1rao3ni3", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-064-1-quote", "text": "举报：“yi4zhi2sao1rao3ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-064-1-continued", "text": "举报：“yi4zhi2sao1rao3ni3”请处理。yi4zhi2sao1rao3ni3", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-064-2", "text": "yi4.zhi4.sao4.rao4.ni4", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-064-2-quote", "text": "举报：“yi4.zhi4.sao4.rao4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-064-2-continued", "text": "举报：“yi4.zhi4.sao4.rao4.ni4”请处理。yi4.zhi4.sao4.rao4.ni4", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-064-3", "text": "yi zhi1 sao rao1 ni", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-064-3-quote", "text": "举报：“yi zhi1 sao rao1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-064-3-continued", "text": "举报：“yi zhi1 sao rao1 ni”请处理。yi zhi1 sao rao1 ni", "expected_word": "一直骚扰你", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-065-0", "text": "bu4 jia1 wo3 jiu4 bao4 guang1 ni3", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-065-0-quote", "text": "举报：“bu4 jia1 wo3 jiu4 bao4 guang1 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-065-0-continued", "text": "举报：“bu4 jia1 wo3 jiu4 bao4 guang1 ni3”请处理。bu4 jia1 wo3 jiu4 bao4 guang1 ni3", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-065-1", "text": "bu4jia1wo3jiu4bao4guang1ni3", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-065-1-quote", "text": "举报：“bu4jia1wo3jiu4bao4guang1ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-065-1-continued", "text": "举报：“bu4jia1wo3jiu4bao4guang1ni3”请处理。bu4jia1wo3jiu4bao4guang1ni3", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-065-2", "text": "bu4.jia4.wo4.jiu4.bao4.guang4.ni4", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-065-2-quote", "text": "举报：“bu4.jia4.wo4.jiu4.bao4.guang4.ni4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-065-2-continued", "text": "举报：“bu4.jia4.wo4.jiu4.bao4.guang4.ni4”请处理。bu4.jia4.wo4.jiu4.bao4.guang4.ni4", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-065-3", "text": "bu jia1 wo jiu1 bao guang1 ni", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": true}
+{"id": "TONE-065-3-quote", "text": "举报：“bu jia1 wo jiu1 bao guang1 ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-065-3-continued", "text": "举报：“bu jia1 wo jiu1 bao guang1 ni”请处理。bu jia1 wo jiu1 bao guang1 ni", "expected_word": "不加我就曝光你", "expected_level": "HIGH", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "TONE-067-0", "text": "ni3 yi1 wu2 shi4 chu4", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-067-0-quote", "text": "举报：“ni3 yi1 wu2 shi4 chu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-067-0-continued", "text": "举报：“ni3 yi1 wu2 shi4 chu4”请处理。ni3 yi1 wu2 shi4 chu4", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-067-1", "text": "ni3yi1wu2shi4chu4", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-067-1-quote", "text": "举报：“ni3yi1wu2shi4chu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-067-1-continued", "text": "举报：“ni3yi1wu2shi4chu4”请处理。ni3yi1wu2shi4chu4", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-067-2", "text": "ni4.yi4.wu4.shi4.chu4", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-067-2-quote", "text": "举报：“ni4.yi4.wu4.shi4.chu4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-067-2-continued", "text": "举报：“ni4.yi4.wu4.shi4.chu4”请处理。ni4.yi4.wu4.shi4.chu4", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-067-3", "text": "ni yi1 wu shi1 chu", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-067-3-quote", "text": "举报：“ni yi1 wu shi1 chu”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-067-3-continued", "text": "举报：“ni yi1 wu shi1 chu”请处理。ni yi1 wu shi1 chu", "expected_word": "你一无是处", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-069-0", "text": "ni3 jiu4 shi4 ge4 xiao4 hua4", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-069-0-quote", "text": "举报：“ni3 jiu4 shi4 ge4 xiao4 hua4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-069-0-continued", "text": "举报：“ni3 jiu4 shi4 ge4 xiao4 hua4”请处理。ni3 jiu4 shi4 ge4 xiao4 hua4", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-069-1", "text": "ni3jiu4shi4ge4xiao4hua4", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-069-1-quote", "text": "举报：“ni3jiu4shi4ge4xiao4hua4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-069-1-continued", "text": "举报：“ni3jiu4shi4ge4xiao4hua4”请处理。ni3jiu4shi4ge4xiao4hua4", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-069-2", "text": "ni4.jiu4.shi4.ge4.xiao4.hua4", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-069-2-quote", "text": "举报：“ni4.jiu4.shi4.ge4.xiao4.hua4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-069-2-continued", "text": "举报：“ni4.jiu4.shi4.ge4.xiao4.hua4”请处理。ni4.jiu4.shi4.ge4.xiao4.hua4", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-069-3", "text": "ni jiu1 shi ge1 xiao hua1", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "numeric_tone", "blocked": false}
+{"id": "TONE-069-3-quote", "text": "举报：“ni jiu1 shi ge1 xiao hua1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "quoted_numeric_tone", "blocked": false}
+{"id": "TONE-069-3-continued", "text": "举报：“ni jiu1 shi ge1 xiao hua1”请处理。ni jiu1 shi ge1 xiao hua1", "expected_word": "你就是个笑话", "expected_level": "MEDIUM", "category": "numeric_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "TONE-NEG-001", "text": "asbestos shabiography SHA256 sbatch q4_report", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-002", "text": "xsha3bi1 sha3bi1x foo_sha3bi1 sha3bi1_bar", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-003", "text": "sha3 b sha3b sha3bid bi1 zhong4shan1", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-004", "text": "ca0 nima ca0-ni-ma sha b1", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-005", "text": "shard3 bit1 shift4 binary1", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-006", "text": "sha3abcdefghi bi1", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-007", "text": "sha3.........bi1", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-008", "text": "sha33bi1", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-009", "text": "bai2 chi1 yi1 dun4 fan4", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-010", "text": "qu4 si1 kao3", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-011", "text": "qu4 si3 hai3", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-012", "text": "举报：“你就是鲨币”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-013", "text": "举报：“你就是sha3 bi4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-014", "text": "举报：“你就是母狗”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-015", "text": "举报：“sha3 bi4”请处理。举报：“cao4 ni3 ma1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-016", "text": "同学们在图书馆复习高等数学", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-017", "text": "我想去死，请帮帮我", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-018", "text": "我觉得自己一无是处，我是不是废物，想求助", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-019", "text": "ASCII UTF-16 code_unit sha256sum", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}
+{"id": "TONE-NEG-020", "text": "zhong4 qing4 yin2 hang2 xing2 zou3", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "negative", "blocked": false}

@@ -14,6 +14,8 @@ class DictionaryEntry(BaseModel):
     target_required: bool = False
     hanzi_homophone: bool = False
     pinyin: bool = False
+    pinyin_tone_numbers: bool = False
+    pinyin_tone_readings: list[str] = Field(default_factory=list, max_length=7)
     pinyin_readings: list[str] = Field(default_factory=list, max_length=7)
     pinyin_aliases: list[str] = Field(default_factory=list, max_length=6)
     pinyin_allow_phrases: list[str] = Field(default_factory=list, max_length=20)
@@ -40,6 +42,10 @@ class DictionaryEntry(BaseModel):
             raise ValueError("Pinyin mappings require pinyin=true")
         if self.hanzi_homophone and not self.pinyin:
             raise ValueError("Hanzi homophones require pinyin=true")
+        if self.pinyin_tone_numbers and not self.pinyin:
+            raise ValueError("Numeric tone matching requires pinyin=true")
+        if self.pinyin_tone_readings and not self.pinyin_tone_numbers:
+            raise ValueError("Explicit tones require numeric tone matching")
         targeted = [normalize(v) for v in self.targeted_aliases]
         if (len(set(targeted)) != len(targeted)
                 or set(targeted) & {normalize(v) for v in [self.word, *self.aliases]}):

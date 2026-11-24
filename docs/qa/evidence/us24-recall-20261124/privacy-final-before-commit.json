@@ -1,0 +1,962 @@
+{
+  "scope": "All staged files, including source archives, public HTTP evidence and prediction reports",
+  "files": 112,
+  "valid_json": 69,
+  "unresolved_findings": [],
+  "phone_like_substrings_inside_verified_hash_fields": [
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-context-development.json",
+      "line": 6227,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-raw-development.json",
+      "line": 6227,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-first.rows.jsonl",
+      "line": 442,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-first.rows.jsonl",
+      "line": 1199,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-first.rows.jsonl",
+      "line": 1956,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 699,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 1435,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 2648,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 2816,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 4488,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 9375,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 10651,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 10819,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 13096,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 20265,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 20337,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 21351,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 27309,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 27346,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 29194,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 29681,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 30434,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 31850,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 38325,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 39811,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 40712,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 44198,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 46684,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 49853,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 51023,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "line": 51592,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 602,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 920,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 2048,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 3710,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 3998,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 6266,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 8852,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 12848,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 14522,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 14822,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 15506,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 16658,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 17828,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 18350,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 21974,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 22526,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 25898,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 27536,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 27686,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 28100,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 29114,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 37112,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 37172,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 39710,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 40298,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 41324,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 43058,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 43388,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 47660,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 52316,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 53024,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 54362,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 55496,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 55910,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 59924,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 60308,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 60392,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 60446,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 62786,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 63836,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 64310,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 65702,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 68084,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 68870,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 69848,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 70598,
+      "kind": "phone"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "line": 70826,
+      "kind": "phone"
+    }
+  ],
+  "source_text_distribution": "External corpus source text and model weights remain ignored in qa-private; public predictions use IDs and hashes",
+  "manual_review": "New HTTP payloads are synthetic; no new SQL outputs or screenshots; CSV contains candidate words and synthetic normal contexts only",
+  "checked_files": [
+    {
+      "file": ".github/workflows/deploy-test.yml",
+      "bytes": 6965,
+      "sha256": "e3da79aedc1500c47d2fbb181c2148fb06b90c10a2176daee931c2afbd44c6db"
+    },
+    {
+      "file": "docs/qa/US24-v3-M1逐条审核补充.md",
+      "bytes": 66448,
+      "sha256": "ba5dbc1da00230219b3f593196ced15d8f09c6f7f0bddf72fc4d2f8e10908475"
+    },
+    {
+      "file": "docs/qa/US24-v3-召回改进与新外部评估-20261124.md",
+      "bytes": 8005,
+      "sha256": "681ac99c5e5748ad08fbb306097c56dd26312755ab72048e3c3759858bd5d136"
+    },
+    {
+      "file": "docs/qa/US24-v3-新增与调整审核清单.csv",
+      "bytes": 23589,
+      "sha256": "92145d608b2e3272b5908da6af1704ee3a3eca0080d69335f1b01ec3c7d005e6"
+    },
+    {
+      "file": "docs/qa/US24-v3_1-正常语境修正.md",
+      "bytes": 1333,
+      "sha256": "11a9d03720d1353c40e7ff310b0d810fa858ab5bd81d956867ba0996ae1c4acc"
+    },
+    {
+      "file": "docs/qa/US24-v3_3-M1逐条审核表.md",
+      "bytes": 137601,
+      "sha256": "e728a9f5d9d7e327638d6f5be2ea362dd4b7bf86123e76ed578c82f5e6e28492"
+    },
+    {
+      "file": "docs/qa/US24-v3_3-完整审核清单.csv",
+      "bytes": 39535,
+      "sha256": "c7c5979210793260ce52c9717f6a9a5698f391bbfe29410f37f6441ee2123769"
+    },
+    {
+      "file": "docs/qa/US24-v3_3-测试与评估报告.md",
+      "bytes": 5951,
+      "sha256": "047c2595abab21117d94d4d39eac4d94bbf0ae7eb1d70a869e8e5e2cc3692a0a"
+    },
+    {
+      "file": "docs/qa/US24-评论分类实验与外部验收方案-20261124.md",
+      "bytes": 4570,
+      "sha256": "64e898eb1fbcb92c2a5c6fe020a8ba89018ddaee49425f0ee881dd45bf5cae22"
+    },
+    {
+      "file": "docs/qa/US24-词库版本变更记录.md",
+      "bytes": 4039,
+      "sha256": "46f3c033a0152c1d73058c09d6a1a5bcda31db28909fd0431dec97baec0dbb49"
+    },
+    {
+      "file": "docs/qa/US24-语义增强实验方案-20261124.md",
+      "bytes": 3327,
+      "sha256": "aac5c75aecabe69837c664dd72ccfed52586d431ffecf673e3fe4347bb89a888"
+    },
+    {
+      "file": "docs/qa/data/comment-classifier.v1.prompt.json",
+      "bytes": 3003,
+      "sha256": "6bd151855736dc9d5618bb5e894fcbb32f9e554ca909258b2326a2e2f274c128"
+    },
+    {
+      "file": "docs/qa/data/comment-classifier.v2.prompt.json",
+      "bytes": 3436,
+      "sha256": "80709c9333988640e5eb4e31446d99ed783d5f24b0ee44c04bce3e5acca06ae4"
+    },
+    {
+      "file": "docs/qa/data/external/pcr-historical.v3_3.json",
+      "bytes": 422,
+      "sha256": "51e0be649de3b48b7a27d04bc5a59a23827cb9263d4aaf161126662e64151351"
+    },
+    {
+      "file": "docs/qa/data/external/toxicn-v3.sealed.json",
+      "bytes": 2274,
+      "sha256": "ad1af9983fa9604493e498a9ca1f453bb6a455223b9f92f2b033b29abaaf55ea"
+    },
+    {
+      "file": "docs/qa/data/us24-development.v3_2.jsonl",
+      "bytes": 100019,
+      "sha256": "b734b3f25a38644ea919083285de4ad54dd74ac1dd859d16205eead4937ff6d3"
+    },
+    {
+      "file": "docs/qa/data/us24-development.v3_3.jsonl",
+      "bytes": 106986,
+      "sha256": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/benchmark_cached.py.txt",
+      "bytes": 1861,
+      "sha256": "fe52896a84f26fbe76091af7c881791eb8ad8ecb6bdf035216293ae7bf75a7b9"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-context-development.json",
+      "bytes": 383404,
+      "sha256": "44846f0e8b346dac379606e5a73c91cfdee52651b751ccc97253e6bf7f509cca"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-context-executed-source.py.txt",
+      "bytes": 14529,
+      "sha256": "e0865925acadc09ff691eada2d1f07928bba6c28623eca43b261830eda3353f5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-raw-development.json",
+      "bytes": 382778,
+      "sha256": "f4680036d75a53926a6b7f9628032506dc1d50e8a6f39615c93deac4b7731cd0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-raw-executed-source.py.txt",
+      "bytes": 14470,
+      "sha256": "682325da3384ac870c624cb2065792185c927bf840307c69032f1000f49141b0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment35-ollama-source.json",
+      "bytes": 622,
+      "sha256": "a24f3597c9a35323d546e3118fe4dbc4d34a44b166761b586cbd981a2e24cad3"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment35-tokenizer.manifest.json",
+      "bytes": 1134,
+      "sha256": "409a1d4117aac97056e5e2a585fe092a6602488d986d84034fa1183f4340b373"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v2-function.json",
+      "bytes": 30187,
+      "sha256": "d6580c914002bdd96b3a9a2b68cf7f6eccf2107a87fdd689c2271e98d0ebde9d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v2-http.json",
+      "bytes": 30181,
+      "sha256": "8d947c80d52b279ec068662fc7b0b436a92d5485a63e0341927d587bd481c161"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v3-function.json",
+      "bytes": 25354,
+      "sha256": "03e1d25927b2a07e3e03d2cd957a3aa15abbe1836a1e7bcae63ccaa5adc51cbe"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v3-http.json",
+      "bytes": 25351,
+      "sha256": "6b870586a2ead2a1990c40914d0ec52efed9dc927e1dfa8d10c0ab8857aa8953"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-first.json",
+      "bytes": 15636,
+      "sha256": "e20e04323681dcdb7475b15a3e73f54a72449d8a338b7bfb0f3d2ce4f76223c8"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-first.rows.jsonl",
+      "bytes": 584176,
+      "sha256": "a27502f6005275b1c5b491bcb0c16f353d1fd22298100c5e0237b64bfbbb99b8"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-prototype.py.txt",
+      "bytes": 7946,
+      "sha256": "99f40fd728cd25b0cbffcf8073fb479a52bc693639dcfff5e055a4d5a39b452e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-policy-before-first-prediction.json",
+      "bytes": 1681,
+      "sha256": "3fd1dbe40416955a3b1e6a5832957520177230058b3b36e77f2d9a575c455bfa"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-runtime-attempts.json",
+      "bytes": 728,
+      "sha256": "97c1d488c2414d685b916086cdaedbbf9570a0b67e2e30974afcc026d97aba5c"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/http-synthetic-spotchecks.json",
+      "bytes": 3670,
+      "sha256": "d41cc174b68970307fd40771375a298155bb472905d8d75249676f8cce29381b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/overlap.json",
+      "bytes": 240394,
+      "sha256": "27ef09cfa575f40daf58519a6711053e3ec4a620ee2ef8cabe66cbcbb10c02b5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/pcr-historical-function.json",
+      "bytes": 12497,
+      "sha256": "81d467432ade02a4b9367b57488fd9161af3d31f2de68d5b70f4cd49e26a0da8"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/pcr-historical-http.json",
+      "bytes": 12493,
+      "sha256": "95bbfb886897b471beec7d577a51ea31d56f349c688f59db06209babd1e54df6"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/performance.json",
+      "bytes": 790,
+      "sha256": "f830264b7340bd12d28d565a4463db4e3c11237090ca0d473fc95f5ad01a1b8d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/privacy-check.json",
+      "bytes": 542,
+      "sha256": "e544ec0071eb497faef834649c23594ba9128ae096ec3f0c0b3208d5a9c2c77f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/qwen-download-first-failure.json",
+      "bytes": 201,
+      "sha256": "04fbecda4cb4fa13f6da045a3301477e3da6218c44d47553b0dcbcc7d6b6edb9"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/qwen-gguf.manifest.json",
+      "bytes": 473,
+      "sha256": "a3e4f0b7f4fba7b39887ec4010a05198daffbba4cf0586fbb6bc808cc9d45d95"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/qwen-model.manifest.json",
+      "bytes": 1415,
+      "sha256": "8e510c35a38ba27e9362975918204188445bc0b2fdd3bbf2050d6be840fa27c4"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/semantic-bucketed-source.py.txt",
+      "bytes": 7067,
+      "sha256": "9c718de59c83df36d688fa792163c66a3060b2f2711d7c568d2ef0e8456e9efe"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/semantic-bucketed-validation.json",
+      "bytes": 1116,
+      "sha256": "ea11b9c4d28ecab8ca757929ff2df4611a6436cba5e704dadd7d8a4cc253f84d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/semantic-cpu-first-interrupted.json",
+      "bytes": 461,
+      "sha256": "1a6aa7fa991b53250a98f72206a435a2f39bda45664712b05acb8a01d624863b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-disjoint-supplement.json",
+      "bytes": 7910,
+      "sha256": "9888365aa6083f1d7a9d722cc2a2ea874810c6d04b6d87f845762626af7abef0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "bytes": 1385448,
+      "sha256": "ae4627fdaf7f99fd53cf48700bceacfc7eaf3dd7dfec02b64a412901bbe6728d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-first-function.json",
+      "bytes": 11940,
+      "sha256": "1b24f1f432f1ebb135a454bbb88f9c4fa8e1a42ce0eefeebae4a53dd3509a7af"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-first-http.json",
+      "bytes": 11935,
+      "sha256": "0516b5f4f41a59d75f7a1370e2b7f957e16900b1886c9779503033eda23c1211"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "bytes": 2342926,
+      "sha256": "05c55cdb3e7440d45ad35a76334bcbd86c475c93a3367e7105b7a10d2f653f58"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_1-development-function.json",
+      "bytes": 23798,
+      "sha256": "7ca6d4e85a2bbafa4e4e48d7d888834af7c56ac56eafc2cb466161e8b1000540"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_1-development-http.json",
+      "bytes": 23798,
+      "sha256": "eb9b5fc75a5f8717f80fb9d9df1c108a8087d77e62a879aa4d27eea896faae3f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_1-http-spotchecks.json",
+      "bytes": 3087,
+      "sha256": "2a513c8cba13e11a9f8b305d18287a2e1546502559c16ac15a97348713b0f810"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-executed-dictionary.py.txt",
+      "bytes": 2733,
+      "sha256": "bcb4e4e15b16c947ef6bef0c51c52d62c798ecb2ec523d13a1da9b8bbdfa3e4e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-executed-moderation.py.txt",
+      "bytes": 12024,
+      "sha256": "7efdd48d2ba0366b2c4af0f6412f6e4704d2364891c593d39df1a8e4a16aa27b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-executed-pronunciation.py.txt",
+      "bytes": 2584,
+      "sha256": "ddf303b8f6b1996974120aa201524d64c70f469a8a198bc34579f1c5249817ce"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-per-entry-audit-executed-source.py.txt",
+      "bytes": 4337,
+      "sha256": "f61e86cc887de6a635520aa1cd452f64f392c9ab6756cdadaa53aacee892ce3e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-per-entry-audit.json",
+      "bytes": 99397,
+      "sha256": "a81884d46885026b280cbcb32b01608f0a0c50534223f0e12a46df1e12b53662"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-tone-development-function.json",
+      "bytes": 9763,
+      "sha256": "eeb5daedb500f9a0023157e3a2f6091f2fba029dca17400a76be949c5f70f8ac"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v2-function.json",
+      "bytes": 30134,
+      "sha256": "fd23b7ff781865b3845777646e2a3970bba5f7338af5ccaae22c19b1fd5617f7"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v2-http.json",
+      "bytes": 30129,
+      "sha256": "a2985fc65b1561a13c732fb3052409e88fccd08592d4e8324e2b03758893eb18"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3-function.json",
+      "bytes": 25125,
+      "sha256": "70a10bb175b3b1aa873ca861e05767b657aadf49e5b53ab95a36d5fcb06f1682"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3-http.json",
+      "bytes": 25120,
+      "sha256": "69ac4c3c92c6912421de247d819fc7ccd2e9c7ad74f695fe84b3b77f83059227"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3_2-function.json",
+      "bytes": 9762,
+      "sha256": "ec6d71070008549e2ada27b80f39b12ce6d2f7a8ba0073a1dd92e79d520c0823"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3_2-http.json",
+      "bytes": 9757,
+      "sha256": "5b5dff76ec693c52e3fd99d650a411639ab612582a0bf027793aa1080d2d1798"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-before-quote-cache-moderation.py.txt",
+      "bytes": 12121,
+      "sha256": "772e658e98ace9103770df50db76a8fe7f9e243339625eaa748de0d52a29498c"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-pcr-historical-function.json",
+      "bytes": 9344,
+      "sha256": "8ded3facf7975d5d37e21003ef4d76a7d736965a735ef91b9ced75d59bc185b3"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-toxicn-historical-function.json",
+      "bytes": 9458,
+      "sha256": "3cdfee1a56e04f79fb4aec6a384ad80389b99aa082bb55a44bfdf07aa58c7585"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v2-function.json",
+      "bytes": 29886,
+      "sha256": "27009ec167714e77a3acfbeb106f093a64a7c4625b482db180e5f54645406adc"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v2-http.json",
+      "bytes": 29881,
+      "sha256": "0f4c4aad6ce688cc10f98e4d57130eb1e5efefca6fc046717c5da8294b5852a3"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3-function.json",
+      "bytes": 25125,
+      "sha256": "a202cbbac898117ebd8a22138e08ac670104951a35fab6019da28c6c34dbb829"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3-http.json",
+      "bytes": 25120,
+      "sha256": "27569f005af88bec3effaf08da92548eca4a0799ef589c029221551180d1ce94"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3_3-function.json",
+      "bytes": 10068,
+      "sha256": "f5b40d55ce1b1b346362742bfc876c3a10acdb3b5e4234384122da30d8cf7314"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3_3-http.json",
+      "bytes": 10063,
+      "sha256": "9a091de6f6b9f962b700237d8636d12f178338c14fd0392b17370d180d69cd5b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-pcr-historical-function.json",
+      "bytes": 9344,
+      "sha256": "cbb866f3e3144cb600b0ac87a775a0c5b2dd5ac21ad73d1f5a5267e4e2a50f85"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-per-entry-audit.json",
+      "bytes": 99397,
+      "sha256": "00b6cd33fab6979ebbe7c312f923e9cdf9a794cce5eb0410f8c5a5f2b9f19186"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-performance-after-cache.json",
+      "bytes": 16437,
+      "sha256": "3fc591287bc1bd214c0bf6bc613d3bb21d74baa78b9cda2d68a201b3ea08c89f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-performance.json",
+      "bytes": 2778,
+      "sha256": "b3eeded96582d3738e4e6cbfc4707febe06a1d8e2a9af9db74d1fa780dcea0de"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-tone-development-function.json",
+      "bytes": 10070,
+      "sha256": "5d4bb0b5e0ad9015b494e09e7ea6d5ab25109b7317e1496aa04d0f73d286e0a8"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-toxicn-historical-function.json",
+      "bytes": 9459,
+      "sha256": "30ab21ee071127685525c72f899e9f1149cbf202013e3199fe2629695e85b691"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v2-function.json",
+      "bytes": 29886,
+      "sha256": "3f123e6ede7b423f6288f59340e2278caf4d3b624d72e989b74805058b35437b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v2-http.json",
+      "bytes": 29880,
+      "sha256": "031e931541a8b51ccdae31c376b1bc307a61fc7c8a633c606e9f34aa8539009d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3-function.json",
+      "bytes": 25125,
+      "sha256": "7027dfab28034fb577790a5285bd369e361c899e1e434e090e2b9a282cf0040f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3-http.json",
+      "bytes": 25120,
+      "sha256": "7c9b821411db37e3552bdd4f7f0003b0b9114c85c029a0908ff293a66bd2e18a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3_3-function.json",
+      "bytes": 10070,
+      "sha256": "2d8569f26d9d0b034a16d432974a1635fb5f37d258657de031524c04c089b311"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3_3-http.json",
+      "bytes": 10065,
+      "sha256": "164bf9775ef86dba62911e23e412820997397b972288268c43b09cb77f54059f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/verification.json",
+      "bytes": 219,
+      "sha256": "60a363ea8f252262231e08820c39507b54a0f9eda1fa76a8674a057d0ba92651"
+    },
+    {
+      "file": "infra/docker-compose.us24-context.yml",
+      "bytes": 114,
+      "sha256": "472fdf99f120324b7b254336ea6956e3640b12845a4403f4973c03c333640914"
+    },
+    {
+      "file": "infra/docker-compose.us24-pronunciation.yml",
+      "bytes": 114,
+      "sha256": "a4ec66609c93b64f77b6ba9339a4637e3daa9ee38f20013fdf05471bcb4d96fe"
+    },
+    {
+      "file": "scripts/qa/fetch_toxicn.py",
+      "bytes": 2304,
+      "sha256": "331a4e6883281404a50b63467947f9e1aa7844d2a1071a3606c6cffc8c4dce0a"
+    },
+    {
+      "file": "scripts/qa/verify_context_candidate.py",
+      "bytes": 3127,
+      "sha256": "7e79b68a5e7cfa5243d40d1a69bc4b83834ae588b6f5937aebe4bdb1d3820e98"
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_1-candidate.json",
+      "bytes": 18633,
+      "sha256": "6d716075bea275a65cb7bc73477c2f9a3d902ad8ba73cfe0d0c22002fc7586b3"
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_1-candidate.manifest.json",
+      "bytes": 1045,
+      "sha256": "3c6302c50dce96a428af5d7740404ebcbdc008b189deff412f2e69cbb1123167"
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_2-candidate.json",
+      "bytes": 19894,
+      "sha256": "cad53ea922b3630a7aedc3bef7024f1050d90100ab955ef0da5bd03a13487f53"
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_2-candidate.manifest.json",
+      "bytes": 1362,
+      "sha256": "ee60ae167b8297211264d47f7b9a1b885e132a0b304a634df6f41d06d6f3ba73"
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_3-candidate.json",
+      "bytes": 19952,
+      "sha256": "916b7d409268a53494129951124b033b0658e7aceb7b6bedccd7f8a84bb7de75"
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_3-candidate.manifest.json",
+      "bytes": 1477,
+      "sha256": "9117d98a96139290d6b5c62267297468c2db6c9c4bb5ded10258e815c54e0447"
+    },
+    {
+      "file": "services/algo/app/models/dictionary.py",
+      "bytes": 2961,
+      "sha256": "dcb78df7c93561a1fab8da2e4b05816b153ad9486aa73fce918e2a68af595d9a"
+    },
+    {
+      "file": "services/algo/app/services/moderation.py",
+      "bytes": 12391,
+      "sha256": "caae1c839b0f8c7e109bfb4771ab352261363240455356caa417d168f731bce1"
+    },
+    {
+      "file": "services/algo/app/services/moderation_context.py",
+      "bytes": 1436,
+      "sha256": "ac95ce485c78d4dc951ad15437d90ddf23d5009ed6d476c1825760d6deb7b42f"
+    },
+    {
+      "file": "services/algo/app/services/pronunciation.py",
+      "bytes": 3438,
+      "sha256": "a27d118b04faf98c8d313bf4192784e0d803f8e4509c94edad136f656b4ff277"
+    },
+    {
+      "file": "services/algo/app/services/targeted_matching.py",
+      "bytes": 2464,
+      "sha256": "9a8127e83b993c6722b8da3db95fefcc8acae09af0324cf0d6a8651fd8cdea90"
+    },
+    {
+      "file": "services/algo/scripts/audit_dictionary.py",
+      "bytes": 4357,
+      "sha256": "9d34f7464b379600424b32e31b658981a452e460906808c029264d7943cc901f"
+    },
+    {
+      "file": "services/algo/scripts/evaluate_comment_model.py",
+      "bytes": 15034,
+      "sha256": "413e6c46ff024aa12479f166fdcf1b87627e3f204318b876e2218afb03697272"
+    },
+    {
+      "file": "services/algo/scripts/evaluate_semantic.py",
+      "bytes": 7067,
+      "sha256": "9c718de59c83df36d688fa792163c66a3060b2f2711d7c568d2ef0e8456e9efe"
+    },
+    {
+      "file": "services/algo/scripts/evaluate_variant.py",
+      "bytes": 3679,
+      "sha256": "fa44dcd312120cb10987e0f113bc24b351b33b8c98d800d058c4fc40ed8cfb94"
+    },
+    {
+      "file": "services/algo/tests/test_candidate_moderation.py",
+      "bytes": 7065,
+      "sha256": "1014687ff2ea49b54ccd05358aa7f91329649322bbb5cdc0b903ee963d69c8e9"
+    },
+    {
+      "file": "services/algo/tests/test_comment_model.py",
+      "bytes": 6602,
+      "sha256": "2f660c02efa3f8a77571bf2c28fd78fb9034f84ee97c7bde3c372e47a95f2f64"
+    },
+    {
+      "file": "services/algo/tests/test_context_candidate.py",
+      "bytes": 1567,
+      "sha256": "07b8623c92829f58e05b877c1dc44664d8d8bf4cb70cf4b3be71f155faee46f9"
+    },
+    {
+      "file": "services/algo/tests/test_fetch_toxicn.py",
+      "bytes": 1959,
+      "sha256": "7d57865627c9285bc521d417ae2146bc0e274a47626cda3d3a6cde41f933d792"
+    },
+    {
+      "file": "services/algo/tests/test_numeric_tones.py",
+      "bytes": 4064,
+      "sha256": "7844af701254dac478ee8987cf485d55641ab91e7380495ccfbb7b30cf5042a0"
+    },
+    {
+      "file": "services/algo/tests/test_recall_candidate.py",
+      "bytes": 6567,
+      "sha256": "61d6d3db31a496968ed4ed1561f32c9c1345d9cc21ad6460cc1497408a2ce185"
+    }
+  ]
+}

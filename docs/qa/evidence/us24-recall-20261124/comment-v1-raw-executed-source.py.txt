@@ -1,0 +1,275 @@
+"""Local-only comment classification experiments, separate from the S1 service."""
+
+import argparse
+import hashlib
+import importlib.metadata
+import json
+import re
+import sys
+import time
+import urllib.request
+from datetime import UTC, datetime
+from pathlib import Path
+from urllib.parse import urlsplit
+
+from pypinyin import lazy_pinyin
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from evaluate_candidate import ROOT, development, pcr, sha  # noqa: E402
+from evaluate_recall import load_external, source_sha  # noqa: E402
+from external_corpus import metrics, record  # noqa: E402
+
+from app.services.moderation import ModerationService  # noqa: E402
+from app.services.moderation_context import context_spans  # noqa: E402
+from app.services.normalization import canonicalize  # noqa: E402
+
+
+def safe_json(value):
+    # Preserve the logical JSON value while escaping model role/control delimiters.
+    return json.dumps(value, ensure_ascii=False).replace("<|", "<\\u007c").replace(
+        "|>", "\\u007c>")
+
+
+def validate_prediction(value):
+    if (not isinstance(value, dict) or set(value) != {"offense_score", "crisis_hint"}
+            or type(value["offense_score"]) is not int
+            or not 0 <= value["offense_score"] <= 100
+            or type(value["crisis_hint"]) is not bool):
+        raise ValueError("Invalid model prediction")
+    return value
+
+
+def preprocess(text, literal, mask):
+    transformed = canonicalize(text) if mask else text
+    if mask:
+        spans = context_spans(transformed, literal.variants)
+        transformed = "".join("□" if any(a <= i < b for a, b in spans) else ch
+                              for i, ch in enumerate(transformed))
+    return dict(text=transformed, pinyin=" ".join(lazy_pinyin(transformed)))
+
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise ValueError("Local inference redirects are not allowed")
+
+
+class LocalModel:
+    def __init__(self, base_url, name, prompt, tokenizer, timeout=60):
+        url = urlsplit(base_url)
+        if (url.scheme != "http" or url.hostname not in {"127.0.0.1", "localhost"}
+                or url.username is not None or url.password is not None
+                or url.path not in {"", "/"} or url.query or url.fragment):
+            raise ValueError("Inference must remain on loopback")
+        self.url, self.name = base_url.rstrip("/"), name
+        self.prompt, self.tokenizer, self.timeout = prompt, tokenizer, timeout
+        self.opener = urllib.request.build_opener(NoRedirect)
+        self.digest = self.current_digest()
+
+    def request(self, path, data=None):
+        request = urllib.request.Request(self.url + path,
+                                         data=json.dumps(data).encode() if data else None,
+                                         headers={"Content-Type": "application/json"})
+        with self.opener.open(request, timeout=self.timeout) as response:
+            body = response.read(65537)
+        if len(body) > 65536:
+            raise ValueError("Inference response is too large")
+        return json.loads(body)
+
+    def current_digest(self):
+        models = self.request("/api/tags")["models"]
+        digest = next(x["digest"] for x in models if x["name"] == self.name)
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise ValueError("Invalid model digest")
+        return digest
+
+    def predict(self, sample):
+        messages = [dict(role="system", content=self.prompt["system"])]
+        for example in self.prompt["examples"]:
+            messages.append(dict(role="user", content=safe_json(dict(
+                text=example["text"], pinyin=" ".join(lazy_pinyin(example["text"]))))))
+            messages.append(dict(role="assistant", content=safe_json(dict(
+                offense_score=example["offense_score"], crisis_hint=example["crisis_hint"]))))
+        messages.append(dict(role="user", content=safe_json(sample)))
+        rendered = self.tokenizer.apply_chat_template(messages, tokenize=False,
+                                                       add_generation_prompt=True)
+        tokens = self.tokenizer(rendered, add_special_tokens=False)["input_ids"]
+        if len(tokens) > 8192:
+            raise ValueError("Input token budget exceeded; no truncation")
+        result = self.request("/api/generate", dict(
+            model=self.name, prompt=rendered, raw=True, stream=False, keep_alive="2m",
+            format=self.prompt["output_schema"], options=dict(
+                temperature=0, seed=20261124, num_predict=96, num_ctx=8192, num_thread=4)))
+        if result.get("model") != self.name or not result.get("done"):
+            raise ValueError("Model identity or completion differs")
+        value = validate_prediction(json.loads(result["response"]))
+        return dict(**value, input_tokens=len(tokens), output_tokens=result.get("eval_count"),
+                    duration_ns=result.get("total_duration"))
+
+
+def threshold_metrics(rows, threshold, ensemble=False):
+    counts, errors = dict(tp=0, fp=0, fn=0, tn=0), 0
+    for row in rows:
+        if row.get("error"):
+            errors += 1
+            predicted = not bool(row["label"])  # Explicit worst-case accounting.
+        else:
+            predicted = row["offense_score"] >= threshold or ensemble and row["literal_any"]
+        record(counts, predicted, bool(row["label"]))
+    result = metrics(counts)
+    result["inference_errors"] = errors
+    result["broad_benchmark_thresholds_met"] &= errors == 0
+    return result
+
+
+def summarize(rows, thresholds):
+    pcr_rows = [r for r in rows if r["cohort"] == "PCR"]
+    controls = [r for r in rows if r["cohort"] == "controls"]
+    if not pcr_rows or not controls:
+        raise ValueError("Both PCR and separate normal controls are required")
+    curves = {}
+    for ensemble in [False, True]:
+        name = "literal_or_model" if ensemble else "model"
+        curves[name] = {}
+        for threshold in thresholds:
+            a = threshold_metrics(pcr_rows, threshold, ensemble)
+            b = threshold_metrics(controls, threshold, ensemble)
+            curves[name][str(threshold)] = dict(pcr=a, controls=b,
+                development_gate_met=(a["broad_benchmark_thresholds_met"]
+                                      and b["false_positive_rate"] < .02
+                                      and b["inference_errors"] == 0))
+    return curves
+
+
+def evaluate(rows, model, literal, mask, checkpoint):
+    if len({r["id"] for r in rows}) != len(rows):
+        raise ValueError("Duplicate evaluation IDs")
+    results, cache = [], {}
+    checkpoint.parent.mkdir(parents=True, exist_ok=True)
+    with checkpoint.open("x", encoding="utf-8") as handle:
+        for index, row in enumerate(rows):
+            began = time.perf_counter()
+            item = dict(id=row["id"], label=int(row["offensive"]), cohort=row["cohort"],
+                        text_sha256=hashlib.sha256(row["text"].encode()).hexdigest())
+            try:
+                lexical = literal.check(row["text"])
+                sample = preprocess(row["text"], literal, mask)
+                key = safe_json(sample)
+                if key not in cache:
+                    cache[key] = model.predict(sample)
+                item.update(**cache[key], literal_any=bool(lexical.hits),
+                            literal_high=not lexical.passed)
+            except (OSError, ValueError, KeyError, TypeError, TimeoutError) as error:
+                item["error"] = type(error).__name__  # No echoed source text or credentials.
+            item["wall_seconds"] = time.perf_counter() - began
+            results.append(item)
+            handle.write(json.dumps(item, ensure_ascii=False) + "\n")
+            handle.flush()
+            if (index + 1) % 50 == 0:
+                print(f"Evaluated {index + 1}/{len(rows)} rows", flush=True)
+    if model.current_digest() != model.digest:
+        raise ValueError("Model changed during evaluation")
+    return results
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--pcr", type=Path)
+    source.add_argument("--external-dataset", type=Path)
+    parser.add_argument("--external-manifest", type=Path)
+    parser.add_argument("--frozen-pipeline", type=Path)
+    parser.add_argument("--tokenizer-dir", required=True, type=Path)
+    parser.add_argument("--model", required=True)
+    parser.add_argument("--base-url", default="http://127.0.0.1:11434")
+    parser.add_argument("--prompt", type=Path,
+                        default=ROOT / "docs/qa/data/comment-classifier.v1.prompt.json")
+    parser.add_argument("--dictionary", type=Path,
+                        default=ROOT / "services/algo/app/data/moderation-v3_1-candidate.json")
+    parser.add_argument("--mask-context", action="store_true")
+    parser.add_argument("--output", required=True, type=Path)
+    args = parser.parse_args(argv)
+    try:
+        if args.output.exists():
+            raise FileExistsError("Evidence already exists")
+        from transformers import AutoTokenizer
+        prompt = json.loads(args.prompt.read_text(encoding="utf-8"))
+        tokenizer = AutoTokenizer.from_pretrained(str(args.tokenizer_dir), local_files_only=True,
+                                                   trust_remote_code=False)
+        model = LocalModel(args.base_url, args.model, prompt, tokenizer)
+        literal = ModerationService(args.dictionary)
+        policy = dict(model=args.model, model_digest=model.digest, prompt_sha256=sha(args.prompt),
+                      dictionary_sha256=literal.dictionary_sha256,
+                      code_sha256=source_sha(Path(__file__)), mask_context=args.mask_context,
+                      tokenizer_files={p.name: sha(p) for p in args.tokenizer_dir.iterdir()
+                                       if p.is_file()},
+                      runtime={p: importlib.metadata.version(p) for p in
+                               ["transformers", "tokenizers", "pypinyin"]},
+                      engine_sha256={p.relative_to(ROOT).as_posix(): source_sha(p)
+                                     for p in [
+                                         *(ROOT / "services/algo/app/services").glob("*.py"),
+                                         *(ROOT / "services/algo/app/models").glob("*.py")]},
+                      ollama_version=model.request("/api/version"),
+                      production_enabled=False)
+        if args.external_dataset:
+            if not args.external_manifest or not args.frozen_pipeline:
+                raise ValueError("External evaluation requires sealed source and pipeline")
+            manifest = json.loads(args.external_manifest.read_text(encoding="utf-8"))
+            frozen = json.loads(args.frozen_pipeline.read_text(encoding="utf-8"))
+            if manifest.get("previously_used", True) or policy != frozen["pipeline"]:
+                raise ValueError("Source was used or pipeline differs from freeze")
+            if (type(frozen["threshold"]) is not int or not 1 <= frozen["threshold"] <= 100
+                    or type(frozen["ensemble"]) is not bool):
+                raise ValueError("Invalid frozen operating point")
+            rows = load_external(args.external_dataset, manifest)
+            for row in rows:
+                row["cohort"] = "external"
+            source_path, phase = args.external_dataset, "new_external_fixed_pipeline"
+        else:
+            if args.external_manifest or args.frozen_pipeline:
+                raise ValueError("Development mode cannot use external acceptance arguments")
+            manifest = json.loads((ROOT / "docs/qa/data/external/pcr-test.v1.json").read_text(
+                encoding="utf-8"))
+            rows, exclusions = pcr(args.pcr, manifest)
+            if exclusions:
+                raise ValueError("No development row may silently disappear")
+            for row in rows:
+                row["cohort"] = "PCR"
+            for version in ["v2", "v3"]:
+                controls = development(ROOT / f"docs/qa/data/us24-development.{version}.jsonl")
+                rows.extend(dict(id=f'{version}-{r["id"]}', text=r["text"], offensive=False,
+                                 cohort="controls") for r in controls if not r["expected_word"])
+            source_path, phase = args.pcr, "development_only"
+        provenance = dict(phase=phase, rows=len(rows), dataset_sha256=sha(source_path),
+                          development_sha256={
+                              v: sha(ROOT / f"docs/qa/data/us24-development.{v}.jsonl")
+                              for v in ["v2", "v3"]})
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        with args.output.with_suffix(".policy.json").open("x", encoding="utf-8") as handle:
+            json.dump(dict(pipeline=policy, provenance=provenance), handle,
+                      ensure_ascii=False, indent=2)
+        predictions = evaluate(rows, model, literal, args.mask_context,
+                               args.output.with_suffix(".rows.jsonl"))
+        result = dict(executed_at_utc=datetime.now(UTC).isoformat(), policy=policy,
+                      provenance=provenance, excluded_rows=0, predictions=predictions,
+                      production_acceptance=False)
+        if args.external_dataset:
+            measured = threshold_metrics(predictions, frozen["threshold"], frozen["ensemble"])
+            result.update(frozen_threshold=frozen["threshold"], ensemble=frozen["ensemble"],
+                          metrics=measured)
+            passed = measured["broad_benchmark_thresholds_met"]
+        else:
+            curves = summarize(predictions, prompt["threshold_grid"])
+            result["thresholds"] = curves
+            passed = any(v["development_gate_met"] for curve in curves.values()
+                         for v in curve.values())
+        with args.output.open("x", encoding="utf-8") as handle:
+            json.dump(result, handle, ensure_ascii=False, indent=2)
+        print(json.dumps(dict(count=len(rows), phase=phase, metric_gate_met=passed)))
+        return 0 if passed else 1
+    except (OSError, ValueError, KeyError, TypeError, ImportError, StopIteration):
+        print("Comment evaluation failed: local model, source, prompt or output", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

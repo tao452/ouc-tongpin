@@ -18,11 +18,14 @@ _PATTERNS = tuple(
 _HELP = re.compile(r"我想(?P<quote>去死)[,，](?:请帮帮我|请陪我聊聊|但我想求助)")
 
 
-def context_spans(canonical, known_variants):
+def context_spans(canonical, known_variants, known_patterns=(), known_targeted_quote=None):
     """Only exempt a complete known token inside a finite context template."""
+    known_patterns = tuple(known_patterns)
     spans = []
     for pattern in (*_PATTERNS, _HELP):
         for match in pattern.finditer(canonical):
-            if normalize(match["quote"]) in known_variants:
+            if (normalize(match["quote"]) in known_variants
+                    or any(p.fullmatch(match["quote"].strip()) for p in known_patterns)
+                    or known_targeted_quote is not None and known_targeted_quote(match["quote"])):
                 spans.append(match.span("quote"))
     return spans

@@ -16,6 +16,10 @@ def has_target(text, left):
     return _TARGET.search(text[max(0, left - TARGET_WINDOW):left]) is not None
 
 
+def is_target_prefix(prefix):
+    return len(prefix) <= TARGET_WINDOW and _TARGET.fullmatch(prefix) is not None
+
+
 def latin_boundary(text, left, right, variant):
     """Latin aliases retain English/identifier boundaries before separator removal."""
     def latin(ch):

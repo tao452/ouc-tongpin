@@ -11,6 +11,8 @@ REVISION = "91d8f6a449967bd310364544d535d6310e45043b"
 BLOB = "37405e18a964b65d49a1ae83b2dee66989059112"
 SIZE = 2318453
 URL = f"https://raw.githubusercontent.com/DUT-lujunyu/ToxiCN/{REVISION}/ToxiCN_1.0.csv"
+MIRROR = ("https://huggingface.co/datasets/JunyuLu/ToxiCN/resolve/"
+          "86d8f868cdb89ffaf4f1daea0cf75bd0e1b2f7cf/ToxiCN_1.0.csv")
 
 
 def fetch(output, opener=urllib.request.urlopen):
@@ -19,8 +21,22 @@ def fetch(output, opener=urllib.request.urlopen):
     if output.exists():
         raw = output.read_bytes()
     else:
-        with opener(URL, timeout=45) as response:
-            raw = response.read(SIZE + 1)
+        raw = b""
+        for url in (URL, MIRROR):
+            try:
+                with opener(url, timeout=45) as response:
+                    chunks, size = [], 0
+                    while size < SIZE:
+                        chunk = response.read(min(65536, SIZE - size))
+                        if not chunk:
+                            break
+                        size += len(chunk)
+                        chunks.append(chunk)
+                    raw = b"".join(chunks)
+                if len(raw) == SIZE:
+                    break
+            except OSError:
+                continue
     blob = hashlib.sha1(f"blob {len(raw)}\0".encode() + raw, usedforsecurity=False).hexdigest()
     if len(raw) != SIZE or blob != BLOB:
         raise ValueError("Pinned source differs")
@@ -28,8 +44,8 @@ def fetch(output, opener=urllib.request.urlopen):
     if not output.exists():
         with output.open("xb") as handle:
             handle.write(raw)
-    return dict(revision=REVISION, git_blob=BLOB, bytes=len(raw),
-                sha256=hashlib.sha256(raw).hexdigest())
+    return {"revision": REVISION, "git_blob": BLOB, "bytes": len(raw),
+                "sha256": hashlib.sha256(raw).hexdigest()}
 
 
 def main(argv=None):

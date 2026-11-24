@@ -1,0 +1,19 @@
+{
+  "checked_files": 40,
+  "patterns": [
+    "jwt",
+    "github_token",
+    "private_key",
+    "mobile"
+  ],
+  "findings": {},
+  "raw_external_text_in_repository": false,
+  "real_student_users_used": false,
+  "raw_static_findings": {
+    "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json": [
+      "mobile"
+    ]
+  },
+  "hash_fragment_false_positives_reviewed": 26,
+  "manual_resolution": "All mobile-pattern matches were digit substrings within 64-character text_sha256 values; no phone fields or plaintext personal records."
+}

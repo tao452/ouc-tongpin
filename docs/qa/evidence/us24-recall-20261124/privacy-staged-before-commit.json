@@ -1,0 +1,569 @@
+{
+  "scope": "Exact Git index blobs after LF normalization",
+  "files": 112,
+  "unresolved_findings": [],
+  "phone_like_substrings_inside_hashes": 78,
+  "all_dictionary_manifest_hashes_verified": true,
+  "checked_files": [
+    {
+      "file": ".github/workflows/deploy-test.yml",
+      "sha256": "e3da79aedc1500c47d2fbb181c2148fb06b90c10a2176daee931c2afbd44c6db",
+      "bytes": 6965
+    },
+    {
+      "file": "docs/qa/US24-v3-M1逐条审核补充.md",
+      "sha256": "ba5dbc1da00230219b3f593196ced15d8f09c6f7f0bddf72fc4d2f8e10908475",
+      "bytes": 66448
+    },
+    {
+      "file": "docs/qa/US24-v3-召回改进与新外部评估-20261124.md",
+      "sha256": "681ac99c5e5748ad08fbb306097c56dd26312755ab72048e3c3759858bd5d136",
+      "bytes": 8005
+    },
+    {
+      "file": "docs/qa/US24-v3-新增与调整审核清单.csv",
+      "sha256": "30d7e9eced2220842dcd83f812ba6e22e6f6ee9e9ef86381c9009b752ad7e772",
+      "bytes": 23507
+    },
+    {
+      "file": "docs/qa/US24-v3_1-正常语境修正.md",
+      "sha256": "11a9d03720d1353c40e7ff310b0d810fa858ab5bd81d956867ba0996ae1c4acc",
+      "bytes": 1333
+    },
+    {
+      "file": "docs/qa/US24-v3_3-M1逐条审核表.md",
+      "sha256": "e728a9f5d9d7e327638d6f5be2ea362dd4b7bf86123e76ed578c82f5e6e28492",
+      "bytes": 137601
+    },
+    {
+      "file": "docs/qa/US24-v3_3-完整审核清单.csv",
+      "sha256": "c7c5979210793260ce52c9717f6a9a5698f391bbfe29410f37f6441ee2123769",
+      "bytes": 39535
+    },
+    {
+      "file": "docs/qa/US24-v3_3-测试与评估报告.md",
+      "sha256": "047c2595abab21117d94d4d39eac4d94bbf0ae7eb1d70a869e8e5e2cc3692a0a",
+      "bytes": 5951
+    },
+    {
+      "file": "docs/qa/US24-评论分类实验与外部验收方案-20261124.md",
+      "sha256": "64e898eb1fbcb92c2a5c6fe020a8ba89018ddaee49425f0ee881dd45bf5cae22",
+      "bytes": 4570
+    },
+    {
+      "file": "docs/qa/US24-词库版本变更记录.md",
+      "sha256": "46f3c033a0152c1d73058c09d6a1a5bcda31db28909fd0431dec97baec0dbb49",
+      "bytes": 4039
+    },
+    {
+      "file": "docs/qa/US24-语义增强实验方案-20261124.md",
+      "sha256": "aac5c75aecabe69837c664dd72ccfed52586d431ffecf673e3fe4347bb89a888",
+      "bytes": 3327
+    },
+    {
+      "file": "docs/qa/data/comment-classifier.v1.prompt.json",
+      "sha256": "6bd151855736dc9d5618bb5e894fcbb32f9e554ca909258b2326a2e2f274c128",
+      "bytes": 3003
+    },
+    {
+      "file": "docs/qa/data/comment-classifier.v2.prompt.json",
+      "sha256": "80709c9333988640e5eb4e31446d99ed783d5f24b0ee44c04bce3e5acca06ae4",
+      "bytes": 3436
+    },
+    {
+      "file": "docs/qa/data/external/pcr-historical.v3_3.json",
+      "sha256": "684092eb5f12b226bfae48edfbf1a69e67f78c9c6461dbd34e221e08a94e6770",
+      "bytes": 412
+    },
+    {
+      "file": "docs/qa/data/external/toxicn-v3.sealed.json",
+      "sha256": "ad1af9983fa9604493e498a9ca1f453bb6a455223b9f92f2b033b29abaaf55ea",
+      "bytes": 2274
+    },
+    {
+      "file": "docs/qa/data/us24-development.v3_2.jsonl",
+      "sha256": "b734b3f25a38644ea919083285de4ad54dd74ac1dd859d16205eead4937ff6d3",
+      "bytes": 100019
+    },
+    {
+      "file": "docs/qa/data/us24-development.v3_3.jsonl",
+      "sha256": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773",
+      "bytes": 106986
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/benchmark_cached.py.txt",
+      "sha256": "fe52896a84f26fbe76091af7c881791eb8ad8ecb6bdf035216293ae7bf75a7b9",
+      "bytes": 1861
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-context-development.json",
+      "sha256": "046dc8b9a96926bbf5821e6559fbb8413811cd6886dc5410f8caec0ce6a25c12",
+      "bytes": 370726
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-context-executed-source.py.txt",
+      "sha256": "e0865925acadc09ff691eada2d1f07928bba6c28623eca43b261830eda3353f5",
+      "bytes": 14529
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-raw-development.json",
+      "sha256": "68d67ac80b9f743372ca011f9cf2371ebd2a527d9e8e484d208b61b5f2865cad",
+      "bytes": 370100
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment-v1-raw-executed-source.py.txt",
+      "sha256": "682325da3384ac870c624cb2065792185c927bf840307c69032f1000f49141b0",
+      "bytes": 14470
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment35-ollama-source.json",
+      "sha256": "5791545e632160586cf5bbf0b1a8e92ae12afe71e89d874ca45bc6c0b953e156",
+      "bytes": 597
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/comment35-tokenizer.manifest.json",
+      "sha256": "ad90a0c6413c4f985541661ff8b3140eaed48766e242d12d9630b0919003b712",
+      "bytes": 1104
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v2-function.json",
+      "sha256": "7e775cfb8c0f321791c963be2fd638ca4083f7a77b1ccad7fbf6364683bd153a",
+      "bytes": 29123
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v2-http.json",
+      "sha256": "1ea65154f7ef5251a2462c6133a0d77684d7d14369324feb80e393af26640bf3",
+      "bytes": 29117
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v3-function.json",
+      "sha256": "f206c629d58752d750d87aafe826765f1f28b6660025e4df98e1bd019ac6634a",
+      "bytes": 24456
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/development-v3-http.json",
+      "sha256": "c994a69805a2082de09529a83d9ad47cd77e26fc5ff7d5af7265ac51ab6088ab",
+      "bytes": 24453
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-first.json",
+      "sha256": "483d892b9428c169220cdc5318daca9afbc08456b9fffa9524212646220862b0",
+      "bytes": 15063
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-first.rows.jsonl",
+      "sha256": "478b61b64e481a6a4077fe891cfa43fba1a9373bbba9e20363e7aea380212da4",
+      "bytes": 581905
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-development-prototype.py.txt",
+      "sha256": "99f40fd728cd25b0cbffcf8073fb479a52bc693639dcfff5e055a4d5a39b452e",
+      "bytes": 7946
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-policy-before-first-prediction.json",
+      "sha256": "8ec8b1424b25d0d2520650ffaa04fd3a74dce34241acd882d28e731fc236a191",
+      "bytes": 1631
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/guard-runtime-attempts.json",
+      "sha256": "97c1d488c2414d685b916086cdaedbbf9570a0b67e2e30974afcc026d97aba5c",
+      "bytes": 728
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/http-synthetic-spotchecks.json",
+      "sha256": "d41cc174b68970307fd40771375a298155bb472905d8d75249676f8cce29381b",
+      "bytes": 3670
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/overlap.json",
+      "sha256": "27ef09cfa575f40daf58519a6711053e3ec4a620ee2ef8cabe66cbcbb10c02b5",
+      "bytes": 240394
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/pcr-historical-function.json",
+      "sha256": "286b0d215efcfd27d4360ebadec362da89027818e83062b1049b49fb9f7b1f51",
+      "bytes": 12148
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/pcr-historical-http.json",
+      "sha256": "97fd97112d464e5bdcbc7fc20b80f05a63291c44c6a956924d15df543f2e3baf",
+      "bytes": 12144
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/performance.json",
+      "sha256": "f830264b7340bd12d28d565a4463db4e3c11237090ca0d473fc95f5ad01a1b8d",
+      "bytes": 790
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/privacy-check.json",
+      "sha256": "e544ec0071eb497faef834649c23594ba9128ae096ec3f0c0b3208d5a9c2c77f",
+      "bytes": 542
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/qwen-download-first-failure.json",
+      "sha256": "1cd2a2feabba6c38fa91d5b4645001ee0891d55186c23e6563b1888f5e3b7094",
+      "bytes": 196
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/qwen-gguf.manifest.json",
+      "sha256": "18dd25e84065510fa2916f36af8fd7ee85b10dbd4ad8502163967bfb5424f205",
+      "bytes": 463
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/qwen-model.manifest.json",
+      "sha256": "12131a957afde1f6e0a83b1bcb899413b1e3fadb69e9dfd293bbc5c13b73484e",
+      "bytes": 1372
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/semantic-bucketed-source.py.txt",
+      "sha256": "9c718de59c83df36d688fa792163c66a3060b2f2711d7c568d2ef0e8456e9efe",
+      "bytes": 7067
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/semantic-bucketed-validation.json",
+      "sha256": "ea11b9c4d28ecab8ca757929ff2df4611a6436cba5e704dadd7d8a4cc253f84d",
+      "bytes": 1116
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/semantic-cpu-first-interrupted.json",
+      "sha256": "1a6aa7fa991b53250a98f72206a435a2f39bda45664712b05acb8a01d624863b",
+      "bytes": 461
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-disjoint-supplement.json",
+      "sha256": "9888365aa6083f1d7a9d722cc2a2ea874810c6d04b6d87f845762626af7abef0",
+      "bytes": 7910
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-errors-kept.json",
+      "sha256": "ae4627fdaf7f99fd53cf48700bceacfc7eaf3dd7dfec02b64a412901bbe6728d",
+      "bytes": 1385448
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-first-function.json",
+      "sha256": "35375a47f7f9b78e533eada1537025dbf5873f1343f7432ce66b1cf09befa78f",
+      "bytes": 11607
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-first-http.json",
+      "sha256": "bd1f8a0ab2c1a974f483d0855b330ce213b304b463c1aa4be5a2f70ac4a1334e",
+      "bytes": 11602
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/toxicn-semantic-bucketed.json",
+      "sha256": "f341f714431b4dd5b6c9e51665c60a47d7897aee144babe584a168a4f8c02854",
+      "bytes": 2270783
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_1-development-function.json",
+      "sha256": "f6cfd5e5264ec744dfe3b810b42a33f5c0923585ef764f76c76f1d4126640e82",
+      "bytes": 22922
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_1-development-http.json",
+      "sha256": "6b9fab3976b4e3f4543653eb2f96475a6840a17559a174e2c3fa00e51cc93d68",
+      "bytes": 22922
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_1-http-spotchecks.json",
+      "sha256": "1aa71c9ad2d9a550d0c467c33fd85a9897db78937646f75ea7b47a6e0104e5b3",
+      "bytes": 2961
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-executed-dictionary.py.txt",
+      "sha256": "bcb4e4e15b16c947ef6bef0c51c52d62c798ecb2ec523d13a1da9b8bbdfa3e4e",
+      "bytes": 2733
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-executed-moderation.py.txt",
+      "sha256": "7efdd48d2ba0366b2c4af0f6412f6e4704d2364891c593d39df1a8e4a16aa27b",
+      "bytes": 12024
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-executed-pronunciation.py.txt",
+      "sha256": "ddf303b8f6b1996974120aa201524d64c70f469a8a198bc34579f1c5249817ce",
+      "bytes": 2584
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-per-entry-audit-executed-source.py.txt",
+      "sha256": "f61e86cc887de6a635520aa1cd452f64f392c9ab6756cdadaa53aacee892ce3e",
+      "bytes": 4337
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-per-entry-audit.json",
+      "sha256": "f995744582d0c943f988eb27d4d12ac54763b325cab78439291e52aee03f3c39",
+      "bytes": 95317
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-tone-development-function.json",
+      "sha256": "7afe39e608cce2ddaba2683cf8c52b51b3e67959861ee6d57480d52e8d594fc5",
+      "bytes": 9433
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v2-function.json",
+      "sha256": "bbb3a2567bebae4f33e5b35f4b34dd928cce88295d161b301fb3e7107cd36c54",
+      "bytes": 29072
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v2-http.json",
+      "sha256": "0e2cc612f11e739500585cd697f070b25f8f4f299f3cc04dc13ce48e4856e001",
+      "bytes": 29067
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3-function.json",
+      "sha256": "ee13f338822875d528167e7fdb099de9f7448e1508398145053777d2209ee01a",
+      "bytes": 24232
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3-http.json",
+      "sha256": "e53925c41aa1d3b3a1eb3bcf6d63ea0404ce2d249a1f89e220db8ce369893691",
+      "bytes": 24227
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3_2-function.json",
+      "sha256": "df711169b5c892c070d87fd725c835903ff6e4e4598d99d8abb01e9e1909ffe9",
+      "bytes": 9432
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_2-v3_2-http.json",
+      "sha256": "19c6a84c5e57de63072672dd03ecd2fd32df931902610c5d9083d50d080d80ab",
+      "bytes": 9427
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-before-quote-cache-moderation.py.txt",
+      "sha256": "772e658e98ace9103770df50db76a8fe7f9e243339625eaa748de0d52a29498c",
+      "bytes": 12121
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-pcr-historical-function.json",
+      "sha256": "d8e60c1c91b3316dc8d595c5eb1ab314b5f506347af06e5eaaf06d398bbe3b31",
+      "bytes": 9033
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-toxicn-historical-function.json",
+      "sha256": "9bd622d745babc6e82a86d396575bc2b7bfb0902217dd1e31d66c36ff4157df5",
+      "bytes": 9164
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v2-function.json",
+      "sha256": "8794f9dac1d9dae3d58f5dc9df8b9eb648ba708db4bc45fe1ac9491517ec5557",
+      "bytes": 28827
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v2-http.json",
+      "sha256": "4930f276bcbcbb8ca9a03c7b3f9d65f303ff52d91ae8964f9bb30e9a26108689",
+      "bytes": 28822
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3-function.json",
+      "sha256": "bb4cb72758a68fee25bf3fb0d0d79410471a6f9f7f4e73dd586c90fa8395889d",
+      "bytes": 24232
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3-http.json",
+      "sha256": "507653cb9a2df3af4f9ed421f8273dd766061d16180ce5ef96b2372016692571",
+      "bytes": 24227
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3_3-function.json",
+      "sha256": "58e3cceda4fa3acfa59b6a1dee915ff012481cba63f02f61da3a7c7ef4d439a6",
+      "bytes": 9736
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-cached-v3_3-http.json",
+      "sha256": "23d8172e5c1794fbdb53434c4d0bbdac4490804ed5cc4dd839acacd4385eec48",
+      "bytes": 9731
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-pcr-historical-function.json",
+      "sha256": "36929bb8b8c04d35e000aee510ba0cd75c5b87ae61d2f93b06be7e23c6c84f60",
+      "bytes": 9033
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-per-entry-audit.json",
+      "sha256": "624526da655d771c82b9cc1d06b4c790ad2d80cf584254ce80695da7314fd1cf",
+      "bytes": 95317
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-performance-after-cache.json",
+      "sha256": "cfc785f4431e69f8935cefd57b90e8a4231878d08f3039e7e13f0bf400351524",
+      "bytes": 15871
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-performance.json",
+      "sha256": "3aed331dacaf772dc72efbd876708fbfeaa7a87a6298ef47a9cf705d1b703273",
+      "bytes": 2615
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-tone-development-function.json",
+      "sha256": "3d90d5746e73a868acefbba643c0eee78ee7bbda45eb56696de720d170bba0dc",
+      "bytes": 9738
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-toxicn-historical-function.json",
+      "sha256": "5949d600a659a935633548693d5ecb9d8065ebf411b8b361f94b682ef41a7988",
+      "bytes": 9165
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v2-function.json",
+      "sha256": "98a1ed0bf7527dc2ff4509cf9d5dda37610507479f0e3f40c7785564748133e6",
+      "bytes": 28827
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v2-http.json",
+      "sha256": "2a21f0a62ecf4d766e10f625bd5f812486e2656e2db931fd6299124becd17b6f",
+      "bytes": 28821
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3-function.json",
+      "sha256": "7ddc7345d165f3ec341bd4b86314236a86ab1b0edd61d624c70163685b909a90",
+      "bytes": 24232
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3-http.json",
+      "sha256": "64c08c83d4ef2d5f8ce265502c9cf839fe5a5422261bbbf88d036f9085e36676",
+      "bytes": 24227
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3_3-function.json",
+      "sha256": "ae6767a8f5d759fbb3417b1f138980752db58d5f12ab29bef32c829b2f342ea2",
+      "bytes": 9738
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/v3_3-v3_3-http.json",
+      "sha256": "8494e79d7e498b6b485c2acd2b2102412ff4c59114ef55694a2d861138faab54",
+      "bytes": 9733
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/verification.json",
+      "sha256": "60a363ea8f252262231e08820c39507b54a0f9eda1fa76a8674a057d0ba92651",
+      "bytes": 219
+    },
+    {
+      "file": "infra/docker-compose.us24-context.yml",
+      "sha256": "472fdf99f120324b7b254336ea6956e3640b12845a4403f4973c03c333640914",
+      "bytes": 114
+    },
+    {
+      "file": "infra/docker-compose.us24-pronunciation.yml",
+      "sha256": "a4ec66609c93b64f77b6ba9339a4637e3daa9ee38f20013fdf05471bcb4d96fe",
+      "bytes": 114
+    },
+    {
+      "file": "scripts/qa/fetch_toxicn.py",
+      "sha256": "331a4e6883281404a50b63467947f9e1aa7844d2a1071a3606c6cffc8c4dce0a",
+      "bytes": 2304
+    },
+    {
+      "file": "scripts/qa/verify_context_candidate.py",
+      "sha256": "7e79b68a5e7cfa5243d40d1a69bc4b83834ae588b6f5937aebe4bdb1d3820e98",
+      "bytes": 3127
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_1-candidate.json",
+      "sha256": "6d716075bea275a65cb7bc73477c2f9a3d902ad8ba73cfe0d0c22002fc7586b3",
+      "bytes": 18633
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_1-candidate.manifest.json",
+      "sha256": "3c6302c50dce96a428af5d7740404ebcbdc008b189deff412f2e69cbb1123167",
+      "bytes": 1045
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_2-candidate.json",
+      "sha256": "cad53ea922b3630a7aedc3bef7024f1050d90100ab955ef0da5bd03a13487f53",
+      "bytes": 19894
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_2-candidate.manifest.json",
+      "sha256": "ee60ae167b8297211264d47f7b9a1b885e132a0b304a634df6f41d06d6f3ba73",
+      "bytes": 1362
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_3-candidate.json",
+      "sha256": "916b7d409268a53494129951124b033b0658e7aceb7b6bedccd7f8a84bb7de75",
+      "bytes": 19952
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_3-candidate.manifest.json",
+      "sha256": "9117d98a96139290d6b5c62267297468c2db6c9c4bb5ded10258e815c54e0447",
+      "bytes": 1477
+    },
+    {
+      "file": "services/algo/app/models/dictionary.py",
+      "sha256": "dcb78df7c93561a1fab8da2e4b05816b153ad9486aa73fce918e2a68af595d9a",
+      "bytes": 2961
+    },
+    {
+      "file": "services/algo/app/services/moderation.py",
+      "sha256": "caae1c839b0f8c7e109bfb4771ab352261363240455356caa417d168f731bce1",
+      "bytes": 12391
+    },
+    {
+      "file": "services/algo/app/services/moderation_context.py",
+      "sha256": "ac95ce485c78d4dc951ad15437d90ddf23d5009ed6d476c1825760d6deb7b42f",
+      "bytes": 1436
+    },
+    {
+      "file": "services/algo/app/services/pronunciation.py",
+      "sha256": "a27d118b04faf98c8d313bf4192784e0d803f8e4509c94edad136f656b4ff277",
+      "bytes": 3438
+    },
+    {
+      "file": "services/algo/app/services/targeted_matching.py",
+      "sha256": "9a8127e83b993c6722b8da3db95fefcc8acae09af0324cf0d6a8651fd8cdea90",
+      "bytes": 2464
+    },
+    {
+      "file": "services/algo/scripts/audit_dictionary.py",
+      "sha256": "9d34f7464b379600424b32e31b658981a452e460906808c029264d7943cc901f",
+      "bytes": 4357
+    },
+    {
+      "file": "services/algo/scripts/evaluate_comment_model.py",
+      "sha256": "413e6c46ff024aa12479f166fdcf1b87627e3f204318b876e2218afb03697272",
+      "bytes": 15034
+    },
+    {
+      "file": "services/algo/scripts/evaluate_semantic.py",
+      "sha256": "9c718de59c83df36d688fa792163c66a3060b2f2711d7c568d2ef0e8456e9efe",
+      "bytes": 7067
+    },
+    {
+      "file": "services/algo/scripts/evaluate_variant.py",
+      "sha256": "fa44dcd312120cb10987e0f113bc24b351b33b8c98d800d058c4fc40ed8cfb94",
+      "bytes": 3679
+    },
+    {
+      "file": "services/algo/tests/test_candidate_moderation.py",
+      "sha256": "1014687ff2ea49b54ccd05358aa7f91329649322bbb5cdc0b903ee963d69c8e9",
+      "bytes": 7065
+    },
+    {
+      "file": "services/algo/tests/test_comment_model.py",
+      "sha256": "2f660c02efa3f8a77571bf2c28fd78fb9034f84ee97c7bde3c372e47a95f2f64",
+      "bytes": 6602
+    },
+    {
+      "file": "services/algo/tests/test_context_candidate.py",
+      "sha256": "07b8623c92829f58e05b877c1dc44664d8d8bf4cb70cf4b3be71f155faee46f9",
+      "bytes": 1567
+    },
+    {
+      "file": "services/algo/tests/test_fetch_toxicn.py",
+      "sha256": "7d57865627c9285bc521d417ae2146bc0e274a47626cda3d3a6cde41f933d792",
+      "bytes": 1959
+    },
+    {
+      "file": "services/algo/tests/test_numeric_tones.py",
+      "sha256": "7844af701254dac478ee8987cf485d55641ab91e7380495ccfbb7b30cf5042a0",
+      "bytes": 4064
+    },
+    {
+      "file": "services/algo/tests/test_recall_candidate.py",
+      "sha256": "61d6d3db31a496968ed4ed1561f32c9c1345d9cc21ad6460cc1497408a2ce185",
+      "bytes": 6567
+    }
+  ]
+}

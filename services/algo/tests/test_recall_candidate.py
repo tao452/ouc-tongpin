@@ -88,7 +88,10 @@ def test_all_new_development_samples_and_hard_negatives_remain_in_counts(expande
     assert any(r["id"] == "R3-NEG-020" for r in rows)
 
 
-def test_deduplication_and_bounded_work(expanded):
+def test_deduplication_and_bounded_work(expanded, monkeypatch):
+    # Keep semantic assertions independent of host scheduling/coverage overhead.
+    # Real latency is measured separately; timeout behavior has its own HTTP test.
+    monkeypatch.setattr(mod.time, "perf_counter", lambda: 0.0)
     result = expanded.check("你就是鲨币，你是sb，你是煞币。" * 80)
     assert len([h for h in result.hits if h.word == "傻逼"]) == 1
     assert not expanded.check("你就是鲨币" + "中文" * 997).passed
@@ -127,3 +130,19 @@ def test_target_requirement_applies_to_pinyin_too(tmp_path):
     service = mod.ModerationService(path)
     assert service.check("ren zha").hits == []
     assert service.check("你是ren zha").hits[0].word == "人渣"
+
+
+@pytest.mark.parametrize("text", ["ca0 nima", "ca0-ni-ma", "ca0 ni ma", "sha b1"])
+def test_explicit_typos_do_not_generate_unreviewed_split_combinations(text):
+    service = mod.ModerationService(mod.RECALL_DICTIONARY)
+    assert service.check(text).hits == []
+
+
+@pytest.mark.parametrize("text, word", [
+    ("ca0nima", "操你妈"), ("shab1", "傻逼"),
+    ("cao ni ma", "操你妈"), ("cao1 ni3 ma1", "操你妈"),
+    ("sha bi", "傻逼"), ("ＳＨＡ．ＢＩ", "傻逼"),
+])
+def test_whole_explicit_typos_and_split_standard_readings_stay_mapped(text, word):
+    service = mod.ModerationService(mod.RECALL_DICTIONARY)
+    assert word in {hit.word for hit in service.check(text).hits}

@@ -1,0 +1,125 @@
+"""Development-only local Qwen3Guard experiment; no S1 decisions or approvals."""
+import gc
+import hashlib
+import json
+import re
+import sys
+import time
+import urllib.request
+from pathlib import Path
+
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parents[1]
+sys.path[:0]=[str(HERE/'modeldeps'),str(ROOT/'services/algo'),str(ROOT/'services/algo/scripts')]
+import torch
+from transformers import AutoTokenizer,AutoModelForCausalLM
+from pypinyin import lazy_pinyin
+from external_corpus import metrics,record
+from evaluate_candidate import development,pcr
+from app.services.moderation import ModerationService,RECALL_DICTIONARY
+from app.services.moderation_context import context_spans
+from app.services.normalization import canonicalize
+
+manifest=json.loads((HERE/'qwen-model.manifest.json').read_text(encoding='utf-8'))
+assert manifest['revision']=='fada3b2f655b89601929198343c94cd2f64d93cc'
+assert manifest['files']['model.safetensors']['bytes']==1503300328
+assert manifest['files']['model.safetensors']['sha256']=='4f3ce47ebd968cddb67de08d8764f8ede7c410a7d1fb9e08145a4c7a2f2e5c0f'
+for name,spec in manifest['files'].items():
+    file=HERE/'qwen-guard'/name
+    with file.open('rb') as f:digest=hashlib.file_digest(f,'sha256').hexdigest()
+    assert file.stat().st_size==spec['bytes'] and digest==spec['sha256']
+
+torch.set_num_threads(4);torch.manual_seed(20261124)
+tokenizer=AutoTokenizer.from_pretrained(str(HERE/'qwen-guard'),trust_remote_code=False,local_files_only=True)
+backend='ollama' if '--ollama' in sys.argv else 'torch'
+if backend=='torch':
+    if not (ROOT/'docs/qa/evidence/us24-recall-20261124/toxicn-first-semantic.json').exists():
+        raise RuntimeError('Wait for prior model evaluation before allocating another CPU model')
+    model=AutoModelForCausalLM.from_pretrained(str(HERE/'qwen-guard'),torch_dtype=torch.float32,
+        trust_remote_code=False,local_files_only=True,attn_implementation='sdpa').eval()
+    torch.ao.quantization.quantize_dynamic(model,{torch.nn.Linear},dtype=torch.qint8,inplace=True)
+    gc.collect()
+else:
+    models=json.load(urllib.request.urlopen('http://127.0.0.1:11434/api/tags',timeout=3))['models']
+    chosen=next(x for x in models if x['name']=='ouc-us24-guard-20261124:f16')
+policy=dict(model=manifest['model'],revision=manifest['revision'],weights_sha256=manifest['files']['model.safetensors']['sha256'],
+    backend=backend,device='ollama-auto-gpu' if backend=='ollama' else 'cpu',precision='f16-gguf-llamacpp-b6500' if backend=='ollama' else 'dynamic-int8-linear-float32-embedding',threads=4,seed=20261124,
+    max_input_tokens=4096,max_new_tokens=64,do_sample=False,
+    positive_policy=['Unsafe','Unsafe-or-Controversial'],
+    modes=['raw','pinyin-gloss','context-pinyin-gloss'],offense_categories=['Unethical Acts','Violent'],
+    crisis_signal_policy='retain native Suicide & Self-Harm category separately; never map it to ordinary insult or S1 HIGH',
+    source='PCR500 historical development plus all original v2/v3 negative controls',
+    production_enabled=False,production_acceptance=False,
+    prompt='official author user-only chat_template; pinyin mode appends line 拼音: plus phrase-first lazy_pinyin; no instructions from source text executed',
+    code_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest())
+if backend=='ollama':policy['ollama_model']={k:chosen[k] for k in ['name','digest','size','details']}
+(HERE/'guard-policy-before-first-prediction.json').write_text(json.dumps(policy,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+m=json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8'))
+rows,_=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',m)
+for v in ['v2','v3']:
+    controls=development(ROOT/f'docs/qa/data/us24-development.{v}.jsonl')
+    rows += [dict(id=f'{v}-{r["id"]}',text=r['text'],offensive=False,category='negative_control')
+             for r in controls if not r['expected_word']]
+cache={};results=[];started=time.perf_counter()
+literal=ModerationService(RECALL_DICTIONARY)
+out=HERE/'guard-development-first.rows.jsonl'
+with out.open('x',encoding='utf-8') as handle:
+ for mode in policy['modes']:
+  for row in rows:
+    text=row['text']
+    if mode=='context-pinyin-gloss':
+        text=canonicalize(text)
+        spans=context_spans(text,literal.variants)
+        text=''.join('□' if any(a<=i<b for a,b in spans) else ch for i,ch in enumerate(text))
+    if mode!='raw':text+='\n拼音：'+' '.join(lazy_pinyin(text))
+    key=(mode,text)
+    if key not in cache:
+        prompt=tokenizer.apply_chat_template([{'role':'user','content':text}],tokenize=False)
+        encoded=tokenizer([prompt],return_tensors='pt')
+        if encoded['input_ids'].shape[-1]>4096:raise ValueError('Input budget exceeded; no row may be truncated')
+        began=time.perf_counter()
+        if backend=='torch':
+            with torch.inference_mode():
+                tokens=model.generate(**encoded,max_new_tokens=64,do_sample=False)
+            generated=tokenizer.decode(tokens[0][encoded['input_ids'].shape[-1]:],skip_special_tokens=True)
+        else:
+            body=dict(model=chosen['name'],prompt=prompt,raw=True,stream=False,
+                keep_alive='2m',options=dict(temperature=0,seed=20261124,num_predict=64,num_ctx=4096,num_thread=4))
+            req=urllib.request.Request('http://127.0.0.1:11434/api/generate',data=json.dumps(body).encode(),headers={'Content-Type':'application/json'})
+            with urllib.request.urlopen(req,timeout=60) as response:data=json.load(response)
+            assert data['model']==chosen['name'] and data['done']
+            generated=data['response']
+        match=re.search(r'Safety:\s*(Safe|Unsafe|Controversial)',generated)
+        category=re.search(r'Categories:\s*([^\n]+)',generated)
+        cache[key]=dict(label=match.group(1) if match else None,
+            categories=category.group(1) if category else None,elapsed_seconds=time.perf_counter()-began,
+            input_tokens=encoded['input_ids'].shape[-1])
+    item=dict(id=row['id'],expected_offensive=int(row['offensive']),mode=mode,
+        text_sha256=hashlib.sha256(row['text'].encode()).hexdigest(),**cache[key])
+    results.append(item);handle.write(json.dumps(item,ensure_ascii=False)+'\n');handle.flush()
+    if len(results)%25==0:print('predictions',len(results),'unique_calls',len(cache),'seconds',round(time.perf_counter()-started,1),flush=True)
+
+summaries={}
+for mode in policy['modes']:
+ for group in ['PCR','controls']:
+  selected=[r for r in results if r['mode']==mode and r['id'].startswith('PCR-')==(group=='PCR')]
+  for loose in [False,True]:
+    counts=dict(tp=0,fp=0,fn=0,tn=0);unknown=0
+    for r in selected:
+      if r['label'] is None:
+        unknown+=1
+        # Retain unknown rows as worst-case errors, rather than dropping them.
+        pred=not bool(r['expected_offensive'])
+      else:pred=r['label']=='Unsafe' or loose and r['label']=='Controversial'
+      record(counts,pred,bool(r['expected_offensive']))
+    summaries[f'{mode}-{group}-{"loose" if loose else "unsafe"}']={**metrics(counts),'unknown_rows':unknown}
+    counts=dict(tp=0,fp=0,fn=0,tn=0);unknown=0
+    for r in selected:
+      if r['label'] is None:
+        unknown+=1;pred=not bool(r['expected_offensive'])
+      else:pred=(r['label']=='Unsafe' or loose and r['label']=='Controversial') and any(c in (r['categories'] or '') for c in policy['offense_categories'])
+      record(counts,pred,bool(r['expected_offensive']))
+    summaries[f'{mode}-{group}-offense-{"loose" if loose else "unsafe"}']={**metrics(counts),'unknown_rows':unknown}
+report=dict(policy=policy,rows_per_mode=len(rows),unique_calls=len(cache),total_predictions=len(results),elapsed_seconds=time.perf_counter()-started,metrics=summaries)
+with (HERE/'guard-development-first.json').open('x',encoding='utf-8') as f:json.dump(report,f,ensure_ascii=False,indent=2)
+print(json.dumps(report,ensure_ascii=False),flush=True)

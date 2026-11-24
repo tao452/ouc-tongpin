@@ -21,12 +21,16 @@ def candidate():
 
 
 def test_development_contract_covers_mappings_and_retains_difficult_negatives(candidate):
-    result = assess(development(DEVELOPMENT), candidate)
+    rows = development(DEVELOPMENT)
+    result = assess(rows, candidate)
     assert result["high_blocking"]["recall"] >= .95
     assert result["high_blocking"]["false_positive_rate"] < .02
     assert result["mapping_failure_ids"] == []
-    # Every hard negative stays in the data and in the error accounting.
-    assert "NEG-normal_pinyin-013" in result["decision_failure_ids"]
+    # Keep the original hard negative and its label after fixing its false hit.
+    row = next(r for r in rows if r["id"] == "NEG-normal_pinyin-013")
+    assert row["text"] == "ca0 nima" and not row["expected_word"]
+    assert candidate.check(row["text"]).hits == []
+    assert "NEG-normal_pinyin-013" not in result["decision_failure_ids"]
     assert "NEG-campus-004" in result["decision_failure_ids"]
 
 

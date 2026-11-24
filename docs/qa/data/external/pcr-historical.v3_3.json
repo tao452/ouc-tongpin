@@ -1,0 +1,11 @@
+{
+  "name": "PCR",
+  "format": "pcr",
+  "sha256": "40dccf7afa3e1bd28b70c2c63a873febfda8c5fb9580fe7b5c3c309552933c78",
+  "bytes": 50466,
+  "rows": 500,
+  "previously_used": true,
+  "source_manifest_sha256": "4824d9278a074e8a8f2f87e129ac0e0637dd0df811dd0684f9a5f9fcb3c37211",
+  "scope": "historical development only",
+  "label_policy": "Keep original offensive_label 1/0; HR/AR/NR/MR cohorts; not S1 HIGH labels"
+}

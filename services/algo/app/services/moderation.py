@@ -13,8 +13,19 @@ from app.models.dictionary import DictionaryEntry
 from app.models.moderation import Hit, ModerationResponse
 from app.services.moderation_context import context_spans
 from app.services.normalization import canonicalize, normalize
-from app.services.pronunciation import MAX_PINYIN_LENGTH, pronunciation_keys
-from app.services.targeted_matching import has_target, homophone_spans, latin_boundary
+from app.services.pronunciation import (
+    MAX_PINYIN_LENGTH,
+    numeric_tone_pattern,
+    numeric_tone_patterns,
+    pronunciation_keys,
+)
+from app.services.targeted_matching import (
+    TARGET_WINDOW,
+    has_target,
+    homophone_spans,
+    is_target_prefix,
+    latin_boundary,
+)
 
 _END = ""
 _RANK = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
@@ -37,6 +48,8 @@ class ModerationService:
         source = dictionary or (Path(configured) if configured else STARTER_DICTIONARY)
         self.trie: dict = {}
         self.pinyin: dict[str, tuple[str, str]] = {}
+        self.joinable_pinyin: set[str] = set()
+        self.numeric_tones: list[tuple[re.Pattern, str, str]] = []
         self.allow_phrases: dict[str, list[str]] = {}
         self.variants: set[str] = set()
         self.pinyin_allow: dict[str, list[re.Pattern]] = {}
@@ -69,7 +82,15 @@ class ModerationService:
                     node = node.setdefault(ch, {})
                 self._put(node, _END, (word, level))
             if record.pinyin:
+                # Only actual phrase readings and numeric tones may be split/joined.
+                # Explicit typo aliases are exact whole Latin tokens; joining parts
+                # would silently invent additional unreviewed typo combinations.
+                self.joinable_pinyin.update(pronunciation_keys(word, record.pinyin_readings))
                 keys = pronunciation_keys(word, record.pinyin_readings, record.pinyin_aliases)
+                if record.pinyin_tone_numbers:
+                    self.numeric_tones.extend((pattern, word, level) for pattern in
+                                              numeric_tone_patterns(word, record.pinyin_readings,
+                                                                    record.pinyin_tone_readings))
                 for phrase in record.pinyin_allow_phrases:
                     if (not re.fullmatch(r"[a-z]+(?: [a-z]+){1,15}", phrase)
                             or len(phrase) > 128
@@ -77,9 +98,12 @@ class ModerationService:
                                        and len(phrase.replace(" ", "")) > len(key)
                                        for key in keys)):
                         raise ValueError("Pinyin exception must be a longer mapped phrase")
-                    pattern = r"(?<![a-z0-9_])" + r"[^\w]*".join(phrase.split())
-                    pattern += r"(?![a-z0-9_])"
-                    self.pinyin_allow.setdefault(word, []).append(re.compile(pattern))
+                    if record.pinyin_tone_numbers:
+                        pattern = numeric_tone_pattern(phrase.split())
+                    else:
+                        expression = r"(?<![a-z0-9_])" + r"[^\w]*".join(phrase.split())
+                        pattern = re.compile(expression + r"(?![a-z0-9_])")
+                    self.pinyin_allow.setdefault(word, []).append(pattern)
                 for token in keys:
                     self._put(self.pinyin, token, (word, level))
                     self.variants.add(token)
@@ -101,21 +125,32 @@ class ModerationService:
         if len(text) > MAX_INPUT_LENGTH:
             raise ModerationInputError("Moderation input exceeds 2000 characters")
         deadline = time.perf_counter() + MATCH_BUDGET_SECONDS
+
+        def check_budget():
+            if time.perf_counter() > deadline:
+                raise TimeoutError("Moderation matching budget exceeded")
+
+        quote_cache = {}  # Request-local; repeated quotation text is never retained globally.
+
+        def known_quote(quote):
+            check_budget()
+            if quote not in quote_cache:
+                quote_cache[quote] = self.known_targeted_quote(quote, check_budget)
+            return quote_cache[quote]
+
         canonical = canonicalize(text)
         positions = [index for index, ch in enumerate(canonical)
                      if unicodedata.category(ch)[0] in {"L", "N"}]
         normalized = "".join(canonical[index] for index in positions)
-        exemptions = context_spans(canonical, self.variants)
+        exemptions = context_spans(canonical, self.variants,
+                                   (p for p, _, _ in self.numeric_tones),
+                                   known_quote)
         pinyin_allowed = {word: [match.span() for pattern in patterns
                                   for match in pattern.finditer(canonical)]
                           for word, patterns in self.pinyin_allow.items()}
 
         def is_context(left, right):
             return any(start <= left and right <= end for start, end in exemptions)
-
-        def check_budget():
-            if time.perf_counter() > deadline:
-                raise TimeoutError("Moderation matching budget exceeded")
 
         found: dict[str, str] = {}
         allowed_spans: dict[str, list[tuple[int, int]]] = {}
@@ -173,12 +208,23 @@ class ModerationService:
                     break
                 if token in self.pinyin:
                     word, level = self.pinyin[token]
-                    if ((word not in self.targeted_words or has_target(canonical, first.start()))
+                    if ((end == start or token in self.joinable_pinyin)
+                            and (word not in self.targeted_words
+                                 or has_target(canonical, first.start()))
                             and not is_context(first.start(), segment.end())
                             and not any(left <= first.start() and segment.end() <= right
                                         for left, right in pinyin_allowed.get(word, []))):
                         found[word] = level
                 previous_end = segment.end()
+        for index, (pattern, word, level) in enumerate(self.numeric_tones):
+            if index % 16 == 0:
+                check_budget()
+            for match in pattern.finditer(canonical):
+                if ((word not in self.targeted_words or has_target(canonical, match.start()))
+                        and not is_context(match.start(), match.end())
+                        and not any(left <= match.start() and match.end() <= right
+                                    for left, right in pinyin_allowed.get(word, []))):
+                    found[word] = level
         check_budget()
         hits = [Hit(word=word, level=level) for word, level in sorted(
             found.items(), key=lambda item: (-_RANK[item[1]], item[0])
@@ -186,3 +232,16 @@ class ModerationService:
         return ModerationResponse(
             passed=all(hit.level != "HIGH" for hit in hits), normalized=normalized, hits=hits
         )
+
+    def known_targeted_quote(self, quote, check_budget=lambda: None):
+        """Only a full finite target prefix plus one known token, inside a template."""
+        for left in range(1, min(TARGET_WINDOW, len(quote) - 1) + 1):
+            check_budget()
+            if not is_target_prefix(quote[:left]):
+                continue
+            token = quote[left:].strip()
+            if (normalize(token) in self.variants
+                    or any(p.fullmatch(token) for p, _, _ in self.numeric_tones)):
+                return True
+        return any(right == len(quote) and is_target_prefix(quote[:left])
+                   for left, right, _ in homophone_spans(quote, self.homophones, check_budget))

@@ -1,0 +1,12 @@
+{
+  "attempt": "semantic-cpu-unsorted-first",
+  "source_commit": "fe510c8",
+  "started_local": "2026-11-24 17:50:23",
+  "ended_at_utc": "2026-11-24T10:20:51.179537+00:00",
+  "status": "INTERRUPTED_NO_COMPLETE_RESULT",
+  "reason": "Length padding on full unsorted corpus made CPU evaluation too slow; restart with length buckets and row checkpoints",
+  "rows_excluded": 0,
+  "weights_changed": false,
+  "threshold_changed": false,
+  "metrics_available": false
+}

@@ -65,8 +65,16 @@ def run(dataset, model_dir, model_manifest, output, manifest_path=None, threshol
     model = BertForSequenceClassification.from_pretrained(
         str(model_dir), local_files_only=True, use_safetensors=True).eval()
     predictions, window_count, elapsed = [], 0, 0.0
-    for offset in range(0, len(rows), 16):
-        batch = rows[offset:offset + 16]
+    # Stable length buckets reduce padding only; labels never participate in batching.
+    original_order = {row["id"]: i for i, row in enumerate(rows)}
+    ordered = sorted(rows, key=lambda row: len(row["text"]))
+    checkpoint = output.with_name(output.stem + ".rows.jsonl")
+    validate_output_path(checkpoint, inputs)
+    checkpoint.parent.mkdir(parents=True, exist_ok=True)
+    if checkpoint.exists():
+        raise FileExistsError("Checkpoint already exists")
+    for offset in range(0, len(ordered), 16):
+        batch = ordered[offset:offset + 16]
         chunks, owners = [], []
         for index, row in enumerate(batch):
             for start in range(0, len(row["text"]), 384):
@@ -85,13 +93,23 @@ def run(dataset, model_dir, model_manifest, output, manifest_path=None, threshol
             for index, probability in zip(owners[start:start + 16], probs, strict=True):
                 maxima[index] = max(maxima[index], probability)
         window_count += len(chunks)
-        predictions.extend(dict(id=row["id"], label=int(row["offensive"]), probability=p,
-                                text_sha256=hashlib.sha256(row["text"].encode()).hexdigest())
-                           for row, p in zip(batch, maxima, strict=True))
+        batch_results = [dict(id=row["id"], label=int(row["offensive"]), probability=p,
+                              text_sha256=hashlib.sha256(row["text"].encode()).hexdigest())
+                         for row, p in zip(batch, maxima, strict=True)]
+        predictions.extend(batch_results)
+        with checkpoint.open("a", encoding="utf-8") as handle:
+            for item in batch_results:
+                handle.write(json.dumps(item) + "\n")
+        if offset % 512 == 0:
+            print(f"Evaluated {offset + len(batch)}/{len(ordered)} rows", flush=True)
+    predictions.sort(key=lambda item: original_order[item["id"]])
+    if len(predictions) != len(rows) or len({p["id"] for p in predictions}) != len(rows):
+        raise ValueError("Row accounting differs after batching")
     result = dict(executed_at_utc=datetime.now(UTC).isoformat(), scope="offline_semantic_baseline",
                   model_manifest=model_spec, dataset_sha256=sha(dataset), count=len(rows),
                   code_sha256=source_sha(Path(__file__)), excluded_rows=0, windows=window_count,
-                  inference_seconds=elapsed, runtime={p: importlib.metadata.version(p) for p in
+                  inference_seconds=elapsed, batching="stable_length_buckets_16",
+                  runtime={p: importlib.metadata.version(p) for p in
                   ["torch", "transformers", "tokenizers", "safetensors", "numpy"]},
                   production_enabled=False, production_acceptance=False,
                   thresholds={str(t): summarize(predictions, t) for t in thresholds},

@@ -1,0 +1,27 @@
+[
+  {
+    "attempt": "first model download",
+    "status": "REJECTED_BEFORE_INFERENCE",
+    "reason": "Truncated safetensors; expected bytes and upstream LFS SHA mismatch"
+  },
+  {
+    "attempt": "Ollama q8_0",
+    "status": "FAILED",
+    "reason": "Installed CLI accepts int8 instead"
+  },
+  {
+    "attempt": "Ollama safetensors int8 import",
+    "status": "FAILED",
+    "reason": "MLX runtime unavailable on this Windows host"
+  },
+  {
+    "attempt": "llama.cpp b6500 F16 conversion",
+    "status": "PASS",
+    "sha256": "2ac101ec0e9785df999b81bf12be53d2528b5d4f4a18b4ec1f18bb311827c09c"
+  },
+  {
+    "attempt": "Ollama F16 GGUF import and format probe",
+    "status": "PASS",
+    "model": "ouc-us24-guard-20261124:f16"
+  }
+]

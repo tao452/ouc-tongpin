@@ -1,0 +1,19 @@
+{
+  "commit": "09f79bd27bfa75446d71acd553ade2395d59daee",
+  "run": "https://github.com/tao452/ouc-tongpin/actions/runs/45415647086",
+  "failures": [
+    {
+      "job": "guard",
+      "reason": "Last own commit subject missing required Conventional Commit prefix"
+    },
+    {
+      "job": "algo",
+      "reason": "E402 in cross-directory QA helper import"
+    }
+  ],
+  "corrections": [
+    "Add fix(algo) prefix to the last own commit subject",
+    "Move QA helper dynamic-path import inside verify"
+  ],
+  "business_metrics_affected": false
+}
