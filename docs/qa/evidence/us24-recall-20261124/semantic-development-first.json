@@ -1,0 +1,5474 @@
+{
+  "model_manifest": {
+    "model": "thu-coai/roberta-base-cold",
+    "revision": "614c097a485910d28beb75f60d90c61e3082b518",
+    "trust_remote_code": false,
+    "files": {
+      "README.md": {
+        "sha256": "3594575ad7089ca9660d5490ecec7b098e9f626302adf52f8f29282f7af5979d",
+        "bytes": 1433
+      },
+      "config.json": {
+        "sha256": "70893df95c0270ba971b62967257ee46ecb9e049122cbdaa9d33b86a1049f7e2",
+        "bytes": 898
+      },
+      "vocab.txt": {
+        "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c",
+        "bytes": 109540
+      },
+      "tokenizer_config.json": {
+        "sha256": "2c809202c59d4f6a58ed3853e99f10495bc5d4e35d0f9bfd91d8ee3f697cd41e",
+        "bytes": 372
+      },
+      "special_tokens_map.json": {
+        "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+        "bytes": 125
+      },
+      "model.safetensors": {
+        "sha256": "7a3dcc70ade1a65cf155f861e85ae9a9d4d61202265f12680662256142468866",
+        "bytes": 409104428
+      }
+    }
+  },
+  "runtime": {
+    "torch": "2.6.0+cpu",
+    "device": "cpu",
+    "threads": 6
+  },
+  "windows": 900,
+  "elapsed_seconds": 33.8145641000001,
+  "scope": "historical_development",
+  "production_enabled": false,
+  "predictions": [
+    {
+      "id": "PCR-001",
+      "label": 1,
+      "probability": 0.01521801296621561
+    },
+    {
+      "id": "PCR-002",
+      "label": 1,
+      "probability": 0.29791849851608276
+    },
+    {
+      "id": "PCR-003",
+      "label": 1,
+      "probability": 0.003487351117655635
+    },
+    {
+      "id": "PCR-004",
+      "label": 1,
+      "probability": 0.0020536899100989103
+    },
+    {
+      "id": "PCR-005",
+      "label": 1,
+      "probability": 0.01070837676525116
+    },
+    {
+      "id": "PCR-006",
+      "label": 1,
+      "probability": 0.015296814031898975
+    },
+    {
+      "id": "PCR-007",
+      "label": 1,
+      "probability": 0.018162962049245834
+    },
+    {
+      "id": "PCR-008",
+      "label": 1,
+      "probability": 0.02361224591732025
+    },
+    {
+      "id": "PCR-009",
+      "label": 1,
+      "probability": 0.006203684955835342
+    },
+    {
+      "id": "PCR-010",
+      "label": 1,
+      "probability": 0.2000235766172409
+    },
+    {
+      "id": "PCR-011",
+      "label": 1,
+      "probability": 0.016821525990962982
+    },
+    {
+      "id": "PCR-012",
+      "label": 1,
+      "probability": 0.05808325111865997
+    },
+    {
+      "id": "PCR-013",
+      "label": 1,
+      "probability": 0.069813072681427
+    },
+    {
+      "id": "PCR-014",
+      "label": 1,
+      "probability": 0.027825796976685524
+    },
+    {
+      "id": "PCR-015",
+      "label": 1,
+      "probability": 0.014308353886008263
+    },
+    {
+      "id": "PCR-016",
+      "label": 1,
+      "probability": 0.02433781698346138
+    },
+    {
+      "id": "PCR-017",
+      "label": 1,
+      "probability": 0.13327713310718536
+    },
+    {
+      "id": "PCR-018",
+      "label": 1,
+      "probability": 0.09639529138803482
+    },
+    {
+      "id": "PCR-019",
+      "label": 1,
+      "probability": 0.11071307212114334
+    },
+    {
+      "id": "PCR-020",
+      "label": 1,
+      "probability": 0.10387808084487915
+    },
+    {
+      "id": "PCR-021",
+      "label": 1,
+      "probability": 0.017851248383522034
+    },
+    {
+      "id": "PCR-022",
+      "label": 1,
+      "probability": 0.009225617162883282
+    },
+    {
+      "id": "PCR-023",
+      "label": 1,
+      "probability": 0.038637761026620865
+    },
+    {
+      "id": "PCR-024",
+      "label": 1,
+      "probability": 0.03458832576870918
+    },
+    {
+      "id": "PCR-025",
+      "label": 1,
+      "probability": 0.1405564397573471
+    },
+    {
+      "id": "PCR-026",
+      "label": 1,
+      "probability": 0.008142851293087006
+    },
+    {
+      "id": "PCR-027",
+      "label": 1,
+      "probability": 0.0032860487699508667
+    },
+    {
+      "id": "PCR-028",
+      "label": 1,
+      "probability": 0.954020082950592
+    },
+    {
+      "id": "PCR-029",
+      "label": 1,
+      "probability": 0.058653153479099274
+    },
+    {
+      "id": "PCR-030",
+      "label": 1,
+      "probability": 0.03311530128121376
+    },
+    {
+      "id": "PCR-031",
+      "label": 1,
+      "probability": 0.004063615575432777
+    },
+    {
+      "id": "PCR-032",
+      "label": 1,
+      "probability": 0.005121262744069099
+    },
+    {
+      "id": "PCR-033",
+      "label": 1,
+      "probability": 0.01779964566230774
+    },
+    {
+      "id": "PCR-034",
+      "label": 1,
+      "probability": 0.06370626389980316
+    },
+    {
+      "id": "PCR-035",
+      "label": 1,
+      "probability": 0.05986455827951431
+    },
+    {
+      "id": "PCR-036",
+      "label": 1,
+      "probability": 0.02238478511571884
+    },
+    {
+      "id": "PCR-037",
+      "label": 1,
+      "probability": 0.019578322768211365
+    },
+    {
+      "id": "PCR-038",
+      "label": 1,
+      "probability": 0.007007503882050514
+    },
+    {
+      "id": "PCR-039",
+      "label": 1,
+      "probability": 0.007935640402138233
+    },
+    {
+      "id": "PCR-040",
+      "label": 1,
+      "probability": 0.00447712792083621
+    },
+    {
+      "id": "PCR-041",
+      "label": 1,
+      "probability": 0.005722042638808489
+    },
+    {
+      "id": "PCR-042",
+      "label": 1,
+      "probability": 0.008923123590648174
+    },
+    {
+      "id": "PCR-043",
+      "label": 1,
+      "probability": 0.02015945315361023
+    },
+    {
+      "id": "PCR-044",
+      "label": 1,
+      "probability": 0.010566937737166882
+    },
+    {
+      "id": "PCR-045",
+      "label": 1,
+      "probability": 0.3037697970867157
+    },
+    {
+      "id": "PCR-046",
+      "label": 1,
+      "probability": 0.1407984346151352
+    },
+    {
+      "id": "PCR-047",
+      "label": 1,
+      "probability": 0.06277374923229218
+    },
+    {
+      "id": "PCR-048",
+      "label": 1,
+      "probability": 0.0067413365468382835
+    },
+    {
+      "id": "PCR-049",
+      "label": 1,
+      "probability": 0.05650884285569191
+    },
+    {
+      "id": "PCR-050",
+      "label": 1,
+      "probability": 0.051081858575344086
+    },
+    {
+      "id": "PCR-051",
+      "label": 1,
+      "probability": 0.0065345983020961285
+    },
+    {
+      "id": "PCR-052",
+      "label": 1,
+      "probability": 0.03885079175233841
+    },
+    {
+      "id": "PCR-053",
+      "label": 1,
+      "probability": 0.2611337900161743
+    },
+    {
+      "id": "PCR-054",
+      "label": 1,
+      "probability": 0.020928816869854927
+    },
+    {
+      "id": "PCR-055",
+      "label": 1,
+      "probability": 0.019824570044875145
+    },
+    {
+      "id": "PCR-056",
+      "label": 1,
+      "probability": 0.008670794777572155
+    },
+    {
+      "id": "PCR-057",
+      "label": 1,
+      "probability": 0.0347449816763401
+    },
+    {
+      "id": "PCR-058",
+      "label": 1,
+      "probability": 0.006782532669603825
+    },
+    {
+      "id": "PCR-059",
+      "label": 1,
+      "probability": 0.054982829838991165
+    },
+    {
+      "id": "PCR-060",
+      "label": 1,
+      "probability": 0.048514094203710556
+    },
+    {
+      "id": "PCR-061",
+      "label": 1,
+      "probability": 0.003815240692347288
+    },
+    {
+      "id": "PCR-062",
+      "label": 1,
+      "probability": 0.04440576955676079
+    },
+    {
+      "id": "PCR-063",
+      "label": 1,
+      "probability": 0.0174776092171669
+    },
+    {
+      "id": "PCR-064",
+      "label": 1,
+      "probability": 0.0015590338734909892
+    },
+    {
+      "id": "PCR-065",
+      "label": 1,
+      "probability": 0.0037632822059094906
+    },
+    {
+      "id": "PCR-066",
+      "label": 1,
+      "probability": 0.005862338934093714
+    },
+    {
+      "id": "PCR-067",
+      "label": 1,
+      "probability": 0.003961126320064068
+    },
+    {
+      "id": "PCR-068",
+      "label": 1,
+      "probability": 0.08856561034917831
+    },
+    {
+      "id": "PCR-069",
+      "label": 1,
+      "probability": 0.10336627066135406
+    },
+    {
+      "id": "PCR-070",
+      "label": 1,
+      "probability": 0.038076043128967285
+    },
+    {
+      "id": "PCR-071",
+      "label": 1,
+      "probability": 0.02599271759390831
+    },
+    {
+      "id": "PCR-072",
+      "label": 1,
+      "probability": 0.02990185283124447
+    },
+    {
+      "id": "PCR-073",
+      "label": 1,
+      "probability": 0.03272652626037598
+    },
+    {
+      "id": "PCR-074",
+      "label": 1,
+      "probability": 0.022468214854598045
+    },
+    {
+      "id": "PCR-075",
+      "label": 1,
+      "probability": 0.07630154490470886
+    },
+    {
+      "id": "PCR-076",
+      "label": 1,
+      "probability": 0.007702397182583809
+    },
+    {
+      "id": "PCR-077",
+      "label": 1,
+      "probability": 0.005139259621500969
+    },
+    {
+      "id": "PCR-078",
+      "label": 1,
+      "probability": 0.013930581510066986
+    },
+    {
+      "id": "PCR-079",
+      "label": 1,
+      "probability": 0.06350127607584
+    },
+    {
+      "id": "PCR-080",
+      "label": 1,
+      "probability": 0.008322037756443024
+    },
+    {
+      "id": "PCR-081",
+      "label": 1,
+      "probability": 0.003176624421030283
+    },
+    {
+      "id": "PCR-082",
+      "label": 1,
+      "probability": 0.017877599224448204
+    },
+    {
+      "id": "PCR-083",
+      "label": 1,
+      "probability": 0.15283045172691345
+    },
+    {
+      "id": "PCR-084",
+      "label": 1,
+      "probability": 0.05888829752802849
+    },
+    {
+      "id": "PCR-085",
+      "label": 1,
+      "probability": 0.020757850259542465
+    },
+    {
+      "id": "PCR-086",
+      "label": 1,
+      "probability": 0.39527857303619385
+    },
+    {
+      "id": "PCR-087",
+      "label": 1,
+      "probability": 0.010768793523311615
+    },
+    {
+      "id": "PCR-088",
+      "label": 1,
+      "probability": 0.005854321178048849
+    },
+    {
+      "id": "PCR-089",
+      "label": 1,
+      "probability": 0.01227087713778019
+    },
+    {
+      "id": "PCR-090",
+      "label": 1,
+      "probability": 0.03827417269349098
+    },
+    {
+      "id": "PCR-091",
+      "label": 1,
+      "probability": 0.9932160973548889
+    },
+    {
+      "id": "PCR-092",
+      "label": 1,
+      "probability": 0.008761264383792877
+    },
+    {
+      "id": "PCR-093",
+      "label": 1,
+      "probability": 0.7198258638381958
+    },
+    {
+      "id": "PCR-094",
+      "label": 1,
+      "probability": 0.17342819273471832
+    },
+    {
+      "id": "PCR-095",
+      "label": 1,
+      "probability": 0.9741265773773193
+    },
+    {
+      "id": "PCR-096",
+      "label": 1,
+      "probability": 0.024628691375255585
+    },
+    {
+      "id": "PCR-097",
+      "label": 1,
+      "probability": 0.048810701817274094
+    },
+    {
+      "id": "PCR-098",
+      "label": 1,
+      "probability": 0.01614988036453724
+    },
+    {
+      "id": "PCR-099",
+      "label": 1,
+      "probability": 0.7854962944984436
+    },
+    {
+      "id": "PCR-100",
+      "label": 1,
+      "probability": 0.4800376296043396
+    },
+    {
+      "id": "PCR-101",
+      "label": 1,
+      "probability": 0.6062862873077393
+    },
+    {
+      "id": "PCR-102",
+      "label": 1,
+      "probability": 0.8800675868988037
+    },
+    {
+      "id": "PCR-103",
+      "label": 1,
+      "probability": 0.015953414142131805
+    },
+    {
+      "id": "PCR-104",
+      "label": 1,
+      "probability": 0.9926902651786804
+    },
+    {
+      "id": "PCR-105",
+      "label": 1,
+      "probability": 0.7079899907112122
+    },
+    {
+      "id": "PCR-106",
+      "label": 1,
+      "probability": 0.8280630111694336
+    },
+    {
+      "id": "PCR-107",
+      "label": 1,
+      "probability": 0.22214391827583313
+    },
+    {
+      "id": "PCR-108",
+      "label": 1,
+      "probability": 0.12094392627477646
+    },
+    {
+      "id": "PCR-109",
+      "label": 1,
+      "probability": 0.8855011463165283
+    },
+    {
+      "id": "PCR-110",
+      "label": 1,
+      "probability": 0.10375554859638214
+    },
+    {
+      "id": "PCR-111",
+      "label": 1,
+      "probability": 0.6166916489601135
+    },
+    {
+      "id": "PCR-112",
+      "label": 1,
+      "probability": 0.07514014095067978
+    },
+    {
+      "id": "PCR-113",
+      "label": 1,
+      "probability": 0.08496424555778503
+    },
+    {
+      "id": "PCR-114",
+      "label": 1,
+      "probability": 0.2296399623155594
+    },
+    {
+      "id": "PCR-115",
+      "label": 1,
+      "probability": 0.03579281270503998
+    },
+    {
+      "id": "PCR-116",
+      "label": 1,
+      "probability": 0.38148823380470276
+    },
+    {
+      "id": "PCR-117",
+      "label": 1,
+      "probability": 0.02808724157512188
+    },
+    {
+      "id": "PCR-118",
+      "label": 1,
+      "probability": 0.24975119531154633
+    },
+    {
+      "id": "PCR-119",
+      "label": 1,
+      "probability": 0.17969542741775513
+    },
+    {
+      "id": "PCR-120",
+      "label": 1,
+      "probability": 0.027744963765144348
+    },
+    {
+      "id": "PCR-121",
+      "label": 1,
+      "probability": 0.8577466011047363
+    },
+    {
+      "id": "PCR-122",
+      "label": 1,
+      "probability": 0.7674288153648376
+    },
+    {
+      "id": "PCR-123",
+      "label": 1,
+      "probability": 0.957833468914032
+    },
+    {
+      "id": "PCR-124",
+      "label": 1,
+      "probability": 0.09935051202774048
+    },
+    {
+      "id": "PCR-125",
+      "label": 1,
+      "probability": 0.014808813109993935
+    },
+    {
+      "id": "PCR-126",
+      "label": 1,
+      "probability": 0.18657293915748596
+    },
+    {
+      "id": "PCR-127",
+      "label": 1,
+      "probability": 0.02802732214331627
+    },
+    {
+      "id": "PCR-128",
+      "label": 1,
+      "probability": 0.02397799678146839
+    },
+    {
+      "id": "PCR-129",
+      "label": 1,
+      "probability": 0.04678826779127121
+    },
+    {
+      "id": "PCR-130",
+      "label": 1,
+      "probability": 0.009094292297959328
+    },
+    {
+      "id": "PCR-131",
+      "label": 1,
+      "probability": 0.026617316529154778
+    },
+    {
+      "id": "PCR-132",
+      "label": 1,
+      "probability": 0.005472040269523859
+    },
+    {
+      "id": "PCR-133",
+      "label": 1,
+      "probability": 0.04105004295706749
+    },
+    {
+      "id": "PCR-134",
+      "label": 1,
+      "probability": 0.4732096791267395
+    },
+    {
+      "id": "PCR-135",
+      "label": 1,
+      "probability": 0.27945417165756226
+    },
+    {
+      "id": "PCR-136",
+      "label": 1,
+      "probability": 0.3266766369342804
+    },
+    {
+      "id": "PCR-137",
+      "label": 1,
+      "probability": 0.007155013736337423
+    },
+    {
+      "id": "PCR-138",
+      "label": 1,
+      "probability": 0.005414680577814579
+    },
+    {
+      "id": "PCR-139",
+      "label": 1,
+      "probability": 0.027552517130970955
+    },
+    {
+      "id": "PCR-140",
+      "label": 1,
+      "probability": 0.026165787130594254
+    },
+    {
+      "id": "PCR-141",
+      "label": 1,
+      "probability": 0.004705189261585474
+    },
+    {
+      "id": "PCR-142",
+      "label": 1,
+      "probability": 0.28233227133750916
+    },
+    {
+      "id": "PCR-143",
+      "label": 1,
+      "probability": 0.5290573239326477
+    },
+    {
+      "id": "PCR-144",
+      "label": 1,
+      "probability": 0.042068131268024445
+    },
+    {
+      "id": "PCR-145",
+      "label": 1,
+      "probability": 0.016073111444711685
+    },
+    {
+      "id": "PCR-146",
+      "label": 1,
+      "probability": 0.36897194385528564
+    },
+    {
+      "id": "PCR-147",
+      "label": 1,
+      "probability": 0.002999239834025502
+    },
+    {
+      "id": "PCR-148",
+      "label": 1,
+      "probability": 0.9796555042266846
+    },
+    {
+      "id": "PCR-149",
+      "label": 1,
+      "probability": 0.04290122911334038
+    },
+    {
+      "id": "PCR-150",
+      "label": 1,
+      "probability": 0.612007737159729
+    },
+    {
+      "id": "PCR-151",
+      "label": 1,
+      "probability": 0.9250355362892151
+    },
+    {
+      "id": "PCR-152",
+      "label": 1,
+      "probability": 0.008909681811928749
+    },
+    {
+      "id": "PCR-153",
+      "label": 1,
+      "probability": 0.011776333674788475
+    },
+    {
+      "id": "PCR-154",
+      "label": 1,
+      "probability": 0.044603850692510605
+    },
+    {
+      "id": "PCR-155",
+      "label": 1,
+      "probability": 0.15864473581314087
+    },
+    {
+      "id": "PCR-156",
+      "label": 1,
+      "probability": 0.007316867355257273
+    },
+    {
+      "id": "PCR-157",
+      "label": 1,
+      "probability": 0.01356967817991972
+    },
+    {
+      "id": "PCR-158",
+      "label": 1,
+      "probability": 0.1594862937927246
+    },
+    {
+      "id": "PCR-159",
+      "label": 1,
+      "probability": 0.36440396308898926
+    },
+    {
+      "id": "PCR-160",
+      "label": 1,
+      "probability": 0.009618578478693962
+    },
+    {
+      "id": "PCR-161",
+      "label": 1,
+      "probability": 0.022755296900868416
+    },
+    {
+      "id": "PCR-162",
+      "label": 1,
+      "probability": 0.038093674927949905
+    },
+    {
+      "id": "PCR-163",
+      "label": 1,
+      "probability": 0.06383814662694931
+    },
+    {
+      "id": "PCR-164",
+      "label": 1,
+      "probability": 0.03911060839891434
+    },
+    {
+      "id": "PCR-165",
+      "label": 1,
+      "probability": 0.970225989818573
+    },
+    {
+      "id": "PCR-166",
+      "label": 1,
+      "probability": 0.2611337900161743
+    },
+    {
+      "id": "PCR-167",
+      "label": 1,
+      "probability": 0.03068763203918934
+    },
+    {
+      "id": "PCR-168",
+      "label": 1,
+      "probability": 0.040137879550457
+    },
+    {
+      "id": "PCR-169",
+      "label": 1,
+      "probability": 0.008809826336801052
+    },
+    {
+      "id": "PCR-170",
+      "label": 1,
+      "probability": 0.42734310030937195
+    },
+    {
+      "id": "PCR-171",
+      "label": 1,
+      "probability": 0.08818180114030838
+    },
+    {
+      "id": "PCR-172",
+      "label": 1,
+      "probability": 0.01433160062879324
+    },
+    {
+      "id": "PCR-173",
+      "label": 1,
+      "probability": 0.09386186301708221
+    },
+    {
+      "id": "PCR-174",
+      "label": 1,
+      "probability": 0.0498172864317894
+    },
+    {
+      "id": "PCR-175",
+      "label": 1,
+      "probability": 0.01610097847878933
+    },
+    {
+      "id": "PCR-176",
+      "label": 1,
+      "probability": 0.22873446345329285
+    },
+    {
+      "id": "PCR-177",
+      "label": 1,
+      "probability": 0.14750996232032776
+    },
+    {
+      "id": "PCR-178",
+      "label": 1,
+      "probability": 0.9805251955986023
+    },
+    {
+      "id": "PCR-179",
+      "label": 1,
+      "probability": 0.18674270808696747
+    },
+    {
+      "id": "PCR-180",
+      "label": 1,
+      "probability": 0.02718835510313511
+    },
+    {
+      "id": "PCR-181",
+      "label": 1,
+      "probability": 0.025203261524438858
+    },
+    {
+      "id": "PCR-182",
+      "label": 1,
+      "probability": 0.46931660175323486
+    },
+    {
+      "id": "PCR-183",
+      "label": 1,
+      "probability": 0.5156372785568237
+    },
+    {
+      "id": "PCR-184",
+      "label": 1,
+      "probability": 0.7173866629600525
+    },
+    {
+      "id": "PCR-185",
+      "label": 1,
+      "probability": 0.44097068905830383
+    },
+    {
+      "id": "PCR-186",
+      "label": 1,
+      "probability": 0.020100900903344154
+    },
+    {
+      "id": "PCR-187",
+      "label": 1,
+      "probability": 0.14069372415542603
+    },
+    {
+      "id": "PCR-188",
+      "label": 1,
+      "probability": 0.015024279244244099
+    },
+    {
+      "id": "PCR-189",
+      "label": 1,
+      "probability": 0.006859059911221266
+    },
+    {
+      "id": "PCR-190",
+      "label": 1,
+      "probability": 0.23667797446250916
+    },
+    {
+      "id": "PCR-191",
+      "label": 1,
+      "probability": 0.4797854721546173
+    },
+    {
+      "id": "PCR-192",
+      "label": 1,
+      "probability": 0.015216485597193241
+    },
+    {
+      "id": "PCR-193",
+      "label": 1,
+      "probability": 0.835209846496582
+    },
+    {
+      "id": "PCR-194",
+      "label": 1,
+      "probability": 0.014997009187936783
+    },
+    {
+      "id": "PCR-195",
+      "label": 1,
+      "probability": 0.17959918081760406
+    },
+    {
+      "id": "PCR-196",
+      "label": 1,
+      "probability": 0.023094207048416138
+    },
+    {
+      "id": "PCR-197",
+      "label": 1,
+      "probability": 0.24165096879005432
+    },
+    {
+      "id": "PCR-198",
+      "label": 1,
+      "probability": 0.05935516953468323
+    },
+    {
+      "id": "PCR-199",
+      "label": 1,
+      "probability": 0.0378631129860878
+    },
+    {
+      "id": "PCR-200",
+      "label": 1,
+      "probability": 0.7349976897239685
+    },
+    {
+      "id": "PCR-201",
+      "label": 1,
+      "probability": 0.0027288454584777355
+    },
+    {
+      "id": "PCR-202",
+      "label": 1,
+      "probability": 0.03308510035276413
+    },
+    {
+      "id": "PCR-203",
+      "label": 1,
+      "probability": 0.00869806483387947
+    },
+    {
+      "id": "PCR-204",
+      "label": 1,
+      "probability": 0.0136575223878026
+    },
+    {
+      "id": "PCR-205",
+      "label": 1,
+      "probability": 0.007662422955036163
+    },
+    {
+      "id": "PCR-206",
+      "label": 1,
+      "probability": 0.0496499240398407
+    },
+    {
+      "id": "PCR-207",
+      "label": 1,
+      "probability": 0.028520315885543823
+    },
+    {
+      "id": "PCR-208",
+      "label": 1,
+      "probability": 0.053876180201768875
+    },
+    {
+      "id": "PCR-209",
+      "label": 1,
+      "probability": 0.005277517717331648
+    },
+    {
+      "id": "PCR-210",
+      "label": 1,
+      "probability": 0.04931338503956795
+    },
+    {
+      "id": "PCR-211",
+      "label": 1,
+      "probability": 0.028034649789333344
+    },
+    {
+      "id": "PCR-212",
+      "label": 1,
+      "probability": 0.00564864045009017
+    },
+    {
+      "id": "PCR-213",
+      "label": 1,
+      "probability": 0.08675900101661682
+    },
+    {
+      "id": "PCR-214",
+      "label": 1,
+      "probability": 0.03879871591925621
+    },
+    {
+      "id": "PCR-215",
+      "label": 1,
+      "probability": 0.8292784690856934
+    },
+    {
+      "id": "PCR-216",
+      "label": 1,
+      "probability": 0.013496441766619682
+    },
+    {
+      "id": "PCR-217",
+      "label": 1,
+      "probability": 0.01291222870349884
+    },
+    {
+      "id": "PCR-218",
+      "label": 1,
+      "probability": 0.00838005356490612
+    },
+    {
+      "id": "PCR-219",
+      "label": 1,
+      "probability": 0.01242521870881319
+    },
+    {
+      "id": "PCR-220",
+      "label": 1,
+      "probability": 0.01141098327934742
+    },
+    {
+      "id": "PCR-221",
+      "label": 1,
+      "probability": 0.054505687206983566
+    },
+    {
+      "id": "PCR-222",
+      "label": 1,
+      "probability": 0.044500596821308136
+    },
+    {
+      "id": "PCR-223",
+      "label": 1,
+      "probability": 0.008946672081947327
+    },
+    {
+      "id": "PCR-224",
+      "label": 1,
+      "probability": 0.0509919635951519
+    },
+    {
+      "id": "PCR-225",
+      "label": 1,
+      "probability": 0.008674041368067265
+    },
+    {
+      "id": "PCR-226",
+      "label": 1,
+      "probability": 0.9943932294845581
+    },
+    {
+      "id": "PCR-227",
+      "label": 1,
+      "probability": 0.037922732532024384
+    },
+    {
+      "id": "PCR-228",
+      "label": 1,
+      "probability": 0.10623970627784729
+    },
+    {
+      "id": "PCR-229",
+      "label": 1,
+      "probability": 0.7231098413467407
+    },
+    {
+      "id": "PCR-230",
+      "label": 1,
+      "probability": 0.06388900429010391
+    },
+    {
+      "id": "PCR-231",
+      "label": 1,
+      "probability": 0.00855131447315216
+    },
+    {
+      "id": "PCR-232",
+      "label": 1,
+      "probability": 0.9681795835494995
+    },
+    {
+      "id": "PCR-233",
+      "label": 1,
+      "probability": 0.10520938783884048
+    },
+    {
+      "id": "PCR-234",
+      "label": 1,
+      "probability": 0.0029442007653415203
+    },
+    {
+      "id": "PCR-235",
+      "label": 1,
+      "probability": 0.9757387042045593
+    },
+    {
+      "id": "PCR-236",
+      "label": 1,
+      "probability": 0.07244593650102615
+    },
+    {
+      "id": "PCR-237",
+      "label": 1,
+      "probability": 0.3648987412452698
+    },
+    {
+      "id": "PCR-238",
+      "label": 1,
+      "probability": 0.01875445619225502
+    },
+    {
+      "id": "PCR-239",
+      "label": 1,
+      "probability": 0.010176485404372215
+    },
+    {
+      "id": "PCR-240",
+      "label": 1,
+      "probability": 0.0037410783115774393
+    },
+    {
+      "id": "PCR-241",
+      "label": 1,
+      "probability": 0.5020362138748169
+    },
+    {
+      "id": "PCR-242",
+      "label": 1,
+      "probability": 0.003292752429842949
+    },
+    {
+      "id": "PCR-243",
+      "label": 1,
+      "probability": 0.03960192948579788
+    },
+    {
+      "id": "PCR-244",
+      "label": 1,
+      "probability": 0.017729928717017174
+    },
+    {
+      "id": "PCR-245",
+      "label": 1,
+      "probability": 0.011000681668519974
+    },
+    {
+      "id": "PCR-246",
+      "label": 1,
+      "probability": 0.013220557942986488
+    },
+    {
+      "id": "PCR-247",
+      "label": 1,
+      "probability": 0.09668322652578354
+    },
+    {
+      "id": "PCR-248",
+      "label": 1,
+      "probability": 0.08901948481798172
+    },
+    {
+      "id": "PCR-249",
+      "label": 1,
+      "probability": 0.06160600110888481
+    },
+    {
+      "id": "PCR-250",
+      "label": 1,
+      "probability": 0.05978049710392952
+    },
+    {
+      "id": "PCR-251",
+      "label": 0,
+      "probability": 0.9524328112602234
+    },
+    {
+      "id": "PCR-252",
+      "label": 0,
+      "probability": 0.05407050997018814
+    },
+    {
+      "id": "PCR-253",
+      "label": 0,
+      "probability": 0.039425838738679886
+    },
+    {
+      "id": "PCR-254",
+      "label": 0,
+      "probability": 0.011393032036721706
+    },
+    {
+      "id": "PCR-255",
+      "label": 0,
+      "probability": 0.03628166764974594
+    },
+    {
+      "id": "PCR-256",
+      "label": 0,
+      "probability": 0.04547952860593796
+    },
+    {
+      "id": "PCR-257",
+      "label": 0,
+      "probability": 0.010821755044162273
+    },
+    {
+      "id": "PCR-258",
+      "label": 0,
+      "probability": 0.011085094884037971
+    },
+    {
+      "id": "PCR-259",
+      "label": 0,
+      "probability": 0.0419558584690094
+    },
+    {
+      "id": "PCR-260",
+      "label": 0,
+      "probability": 0.011432412080466747
+    },
+    {
+      "id": "PCR-261",
+      "label": 0,
+      "probability": 0.053224828094244
+    },
+    {
+      "id": "PCR-262",
+      "label": 0,
+      "probability": 0.09947048872709274
+    },
+    {
+      "id": "PCR-263",
+      "label": 0,
+      "probability": 0.020363450050354004
+    },
+    {
+      "id": "PCR-264",
+      "label": 0,
+      "probability": 0.03407770022749901
+    },
+    {
+      "id": "PCR-265",
+      "label": 0,
+      "probability": 0.41985446214675903
+    },
+    {
+      "id": "PCR-266",
+      "label": 0,
+      "probability": 0.03874028101563454
+    },
+    {
+      "id": "PCR-267",
+      "label": 0,
+      "probability": 0.07737347483634949
+    },
+    {
+      "id": "PCR-268",
+      "label": 0,
+      "probability": 0.03811771050095558
+    },
+    {
+      "id": "PCR-269",
+      "label": 0,
+      "probability": 0.06815928220748901
+    },
+    {
+      "id": "PCR-270",
+      "label": 0,
+      "probability": 0.05152450129389763
+    },
+    {
+      "id": "PCR-271",
+      "label": 0,
+      "probability": 0.07162980735301971
+    },
+    {
+      "id": "PCR-272",
+      "label": 0,
+      "probability": 0.023353293538093567
+    },
+    {
+      "id": "PCR-273",
+      "label": 0,
+      "probability": 0.15027573704719543
+    },
+    {
+      "id": "PCR-274",
+      "label": 0,
+      "probability": 0.05453730747103691
+    },
+    {
+      "id": "PCR-275",
+      "label": 0,
+      "probability": 0.029785247519612312
+    },
+    {
+      "id": "PCR-276",
+      "label": 0,
+      "probability": 0.0024389291647821665
+    },
+    {
+      "id": "PCR-277",
+      "label": 0,
+      "probability": 0.028933603316545486
+    },
+    {
+      "id": "PCR-278",
+      "label": 0,
+      "probability": 0.01978808268904686
+    },
+    {
+      "id": "PCR-279",
+      "label": 0,
+      "probability": 0.03879950940608978
+    },
+    {
+      "id": "PCR-280",
+      "label": 0,
+      "probability": 0.01254337839782238
+    },
+    {
+      "id": "PCR-281",
+      "label": 0,
+      "probability": 0.13287746906280518
+    },
+    {
+      "id": "PCR-282",
+      "label": 0,
+      "probability": 0.17045050859451294
+    },
+    {
+      "id": "PCR-283",
+      "label": 0,
+      "probability": 0.02257469668984413
+    },
+    {
+      "id": "PCR-284",
+      "label": 0,
+      "probability": 0.0072149476036429405
+    },
+    {
+      "id": "PCR-285",
+      "label": 0,
+      "probability": 0.04122450575232506
+    },
+    {
+      "id": "PCR-286",
+      "label": 0,
+      "probability": 0.013432418927550316
+    },
+    {
+      "id": "PCR-287",
+      "label": 0,
+      "probability": 0.08392856270074844
+    },
+    {
+      "id": "PCR-288",
+      "label": 0,
+      "probability": 0.2525254786014557
+    },
+    {
+      "id": "PCR-289",
+      "label": 0,
+      "probability": 0.028219882398843765
+    },
+    {
+      "id": "PCR-290",
+      "label": 0,
+      "probability": 0.04143185541033745
+    },
+    {
+      "id": "PCR-291",
+      "label": 0,
+      "probability": 0.046442948281764984
+    },
+    {
+      "id": "PCR-292",
+      "label": 0,
+      "probability": 0.06448644399642944
+    },
+    {
+      "id": "PCR-293",
+      "label": 0,
+      "probability": 0.025953181087970734
+    },
+    {
+      "id": "PCR-294",
+      "label": 0,
+      "probability": 0.00436061155050993
+    },
+    {
+      "id": "PCR-295",
+      "label": 0,
+      "probability": 0.003708945820108056
+    },
+    {
+      "id": "PCR-296",
+      "label": 0,
+      "probability": 0.01091328077018261
+    },
+    {
+      "id": "PCR-297",
+      "label": 0,
+      "probability": 0.006263260263949633
+    },
+    {
+      "id": "PCR-298",
+      "label": 0,
+      "probability": 0.6245086193084717
+    },
+    {
+      "id": "PCR-299",
+      "label": 0,
+      "probability": 0.00816309079527855
+    },
+    {
+      "id": "PCR-300",
+      "label": 0,
+      "probability": 0.01071839313954115
+    },
+    {
+      "id": "PCR-301",
+      "label": 0,
+      "probability": 0.02052449993789196
+    },
+    {
+      "id": "PCR-302",
+      "label": 0,
+      "probability": 0.1310965120792389
+    },
+    {
+      "id": "PCR-303",
+      "label": 0,
+      "probability": 0.07688882946968079
+    },
+    {
+      "id": "PCR-304",
+      "label": 0,
+      "probability": 0.00995464064180851
+    },
+    {
+      "id": "PCR-305",
+      "label": 0,
+      "probability": 0.021292930468916893
+    },
+    {
+      "id": "PCR-306",
+      "label": 0,
+      "probability": 0.15384195744991302
+    },
+    {
+      "id": "PCR-307",
+      "label": 0,
+      "probability": 0.0029343515634536743
+    },
+    {
+      "id": "PCR-308",
+      "label": 0,
+      "probability": 0.09018967300653458
+    },
+    {
+      "id": "PCR-309",
+      "label": 0,
+      "probability": 0.0634479746222496
+    },
+    {
+      "id": "PCR-310",
+      "label": 0,
+      "probability": 0.04973015561699867
+    },
+    {
+      "id": "PCR-311",
+      "label": 0,
+      "probability": 0.009288860484957695
+    },
+    {
+      "id": "PCR-312",
+      "label": 0,
+      "probability": 0.32666927576065063
+    },
+    {
+      "id": "PCR-313",
+      "label": 0,
+      "probability": 0.009029114618897438
+    },
+    {
+      "id": "PCR-314",
+      "label": 0,
+      "probability": 0.015547866001725197
+    },
+    {
+      "id": "PCR-315",
+      "label": 0,
+      "probability": 0.09987570345401764
+    },
+    {
+      "id": "PCR-316",
+      "label": 0,
+      "probability": 0.011873142793774605
+    },
+    {
+      "id": "PCR-317",
+      "label": 0,
+      "probability": 0.00447316188365221
+    },
+    {
+      "id": "PCR-318",
+      "label": 0,
+      "probability": 0.2779976725578308
+    },
+    {
+      "id": "PCR-319",
+      "label": 0,
+      "probability": 0.015590369701385498
+    },
+    {
+      "id": "PCR-320",
+      "label": 0,
+      "probability": 0.02180767059326172
+    },
+    {
+      "id": "PCR-321",
+      "label": 0,
+      "probability": 0.06471714377403259
+    },
+    {
+      "id": "PCR-322",
+      "label": 0,
+      "probability": 0.16775202751159668
+    },
+    {
+      "id": "PCR-323",
+      "label": 0,
+      "probability": 0.05782238021492958
+    },
+    {
+      "id": "PCR-324",
+      "label": 0,
+      "probability": 0.00630017789080739
+    },
+    {
+      "id": "PCR-325",
+      "label": 0,
+      "probability": 0.08904267102479935
+    },
+    {
+      "id": "PCR-326",
+      "label": 0,
+      "probability": 0.05956282466650009
+    },
+    {
+      "id": "PCR-327",
+      "label": 0,
+      "probability": 0.00401673000305891
+    },
+    {
+      "id": "PCR-328",
+      "label": 0,
+      "probability": 0.020937934517860413
+    },
+    {
+      "id": "PCR-329",
+      "label": 0,
+      "probability": 0.02053675800561905
+    },
+    {
+      "id": "PCR-330",
+      "label": 0,
+      "probability": 0.056756313890218735
+    },
+    {
+      "id": "PCR-331",
+      "label": 0,
+      "probability": 0.015400493517518044
+    },
+    {
+      "id": "PCR-332",
+      "label": 0,
+      "probability": 0.00400190707296133
+    },
+    {
+      "id": "PCR-333",
+      "label": 0,
+      "probability": 0.015228299424052238
+    },
+    {
+      "id": "PCR-334",
+      "label": 0,
+      "probability": 0.026811566203832626
+    },
+    {
+      "id": "PCR-335",
+      "label": 0,
+      "probability": 0.005558798089623451
+    },
+    {
+      "id": "PCR-336",
+      "label": 0,
+      "probability": 0.006891285534948111
+    },
+    {
+      "id": "PCR-337",
+      "label": 0,
+      "probability": 0.007176198996603489
+    },
+    {
+      "id": "PCR-338",
+      "label": 0,
+      "probability": 0.0054955435916781425
+    },
+    {
+      "id": "PCR-339",
+      "label": 0,
+      "probability": 0.011418554000556469
+    },
+    {
+      "id": "PCR-340",
+      "label": 0,
+      "probability": 0.006394946947693825
+    },
+    {
+      "id": "PCR-341",
+      "label": 0,
+      "probability": 0.0026354023721069098
+    },
+    {
+      "id": "PCR-342",
+      "label": 0,
+      "probability": 0.007334746886044741
+    },
+    {
+      "id": "PCR-343",
+      "label": 0,
+      "probability": 0.012969628907740116
+    },
+    {
+      "id": "PCR-344",
+      "label": 0,
+      "probability": 0.029647523537278175
+    },
+    {
+      "id": "PCR-345",
+      "label": 0,
+      "probability": 0.20322875678539276
+    },
+    {
+      "id": "PCR-346",
+      "label": 0,
+      "probability": 0.04653841629624367
+    },
+    {
+      "id": "PCR-347",
+      "label": 0,
+      "probability": 0.005069997161626816
+    },
+    {
+      "id": "PCR-348",
+      "label": 0,
+      "probability": 0.03162682056427002
+    },
+    {
+      "id": "PCR-349",
+      "label": 0,
+      "probability": 0.017013883218169212
+    },
+    {
+      "id": "PCR-350",
+      "label": 0,
+      "probability": 0.0018223371589556336
+    },
+    {
+      "id": "PCR-351",
+      "label": 0,
+      "probability": 0.0518648587167263
+    },
+    {
+      "id": "PCR-352",
+      "label": 0,
+      "probability": 0.014345260336995125
+    },
+    {
+      "id": "PCR-353",
+      "label": 0,
+      "probability": 0.1408679187297821
+    },
+    {
+      "id": "PCR-354",
+      "label": 0,
+      "probability": 0.025303300470113754
+    },
+    {
+      "id": "PCR-355",
+      "label": 0,
+      "probability": 0.012470647692680359
+    },
+    {
+      "id": "PCR-356",
+      "label": 0,
+      "probability": 0.01865583099424839
+    },
+    {
+      "id": "PCR-357",
+      "label": 0,
+      "probability": 0.010317006148397923
+    },
+    {
+      "id": "PCR-358",
+      "label": 0,
+      "probability": 0.03717995434999466
+    },
+    {
+      "id": "PCR-359",
+      "label": 0,
+      "probability": 0.042118094861507416
+    },
+    {
+      "id": "PCR-360",
+      "label": 0,
+      "probability": 0.0258746650069952
+    },
+    {
+      "id": "PCR-361",
+      "label": 0,
+      "probability": 0.030643774196505547
+    },
+    {
+      "id": "PCR-362",
+      "label": 0,
+      "probability": 0.012772660702466965
+    },
+    {
+      "id": "PCR-363",
+      "label": 0,
+      "probability": 0.00809109304100275
+    },
+    {
+      "id": "PCR-364",
+      "label": 0,
+      "probability": 0.018079491332173347
+    },
+    {
+      "id": "PCR-365",
+      "label": 0,
+      "probability": 0.05347837135195732
+    },
+    {
+      "id": "PCR-366",
+      "label": 0,
+      "probability": 0.17867864668369293
+    },
+    {
+      "id": "PCR-367",
+      "label": 0,
+      "probability": 0.02994135580956936
+    },
+    {
+      "id": "PCR-368",
+      "label": 0,
+      "probability": 0.006672776769846678
+    },
+    {
+      "id": "PCR-369",
+      "label": 0,
+      "probability": 0.01375037431716919
+    },
+    {
+      "id": "PCR-370",
+      "label": 0,
+      "probability": 0.03421909362077713
+    },
+    {
+      "id": "PCR-371",
+      "label": 0,
+      "probability": 0.006071936804801226
+    },
+    {
+      "id": "PCR-372",
+      "label": 0,
+      "probability": 0.015435670502483845
+    },
+    {
+      "id": "PCR-373",
+      "label": 0,
+      "probability": 0.06364951282739639
+    },
+    {
+      "id": "PCR-374",
+      "label": 0,
+      "probability": 0.012821950949728489
+    },
+    {
+      "id": "PCR-375",
+      "label": 0,
+      "probability": 0.030242865905165672
+    },
+    {
+      "id": "PCR-376",
+      "label": 0,
+      "probability": 0.0035297106951475143
+    },
+    {
+      "id": "PCR-377",
+      "label": 0,
+      "probability": 0.0028067748062312603
+    },
+    {
+      "id": "PCR-378",
+      "label": 0,
+      "probability": 0.01867036335170269
+    },
+    {
+      "id": "PCR-379",
+      "label": 0,
+      "probability": 0.012400159612298012
+    },
+    {
+      "id": "PCR-380",
+      "label": 0,
+      "probability": 0.022381411865353584
+    },
+    {
+      "id": "PCR-381",
+      "label": 0,
+      "probability": 0.02152620628476143
+    },
+    {
+      "id": "PCR-382",
+      "label": 0,
+      "probability": 0.10167425870895386
+    },
+    {
+      "id": "PCR-383",
+      "label": 0,
+      "probability": 0.0178753063082695
+    },
+    {
+      "id": "PCR-384",
+      "label": 0,
+      "probability": 0.02302895486354828
+    },
+    {
+      "id": "PCR-385",
+      "label": 0,
+      "probability": 0.048860661685466766
+    },
+    {
+      "id": "PCR-386",
+      "label": 0,
+      "probability": 0.006986680906265974
+    },
+    {
+      "id": "PCR-387",
+      "label": 0,
+      "probability": 0.005049892235547304
+    },
+    {
+      "id": "PCR-388",
+      "label": 0,
+      "probability": 0.016032621264457703
+    },
+    {
+      "id": "PCR-389",
+      "label": 0,
+      "probability": 0.023875301703810692
+    },
+    {
+      "id": "PCR-390",
+      "label": 0,
+      "probability": 0.8661644458770752
+    },
+    {
+      "id": "PCR-391",
+      "label": 0,
+      "probability": 0.004118138924241066
+    },
+    {
+      "id": "PCR-392",
+      "label": 0,
+      "probability": 0.011160699650645256
+    },
+    {
+      "id": "PCR-393",
+      "label": 0,
+      "probability": 0.07814139872789383
+    },
+    {
+      "id": "PCR-394",
+      "label": 0,
+      "probability": 0.0598972886800766
+    },
+    {
+      "id": "PCR-395",
+      "label": 0,
+      "probability": 0.003490869188681245
+    },
+    {
+      "id": "PCR-396",
+      "label": 0,
+      "probability": 0.008858174085617065
+    },
+    {
+      "id": "PCR-397",
+      "label": 0,
+      "probability": 0.014743304811418056
+    },
+    {
+      "id": "PCR-398",
+      "label": 0,
+      "probability": 0.006728962529450655
+    },
+    {
+      "id": "PCR-399",
+      "label": 0,
+      "probability": 0.019546128809452057
+    },
+    {
+      "id": "PCR-400",
+      "label": 0,
+      "probability": 0.002930779941380024
+    },
+    {
+      "id": "PCR-401",
+      "label": 0,
+      "probability": 0.010435691103339195
+    },
+    {
+      "id": "PCR-402",
+      "label": 0,
+      "probability": 0.00303982594050467
+    },
+    {
+      "id": "PCR-403",
+      "label": 0,
+      "probability": 0.008271015249192715
+    },
+    {
+      "id": "PCR-404",
+      "label": 0,
+      "probability": 0.08213691413402557
+    },
+    {
+      "id": "PCR-405",
+      "label": 0,
+      "probability": 0.03259081766009331
+    },
+    {
+      "id": "PCR-406",
+      "label": 0,
+      "probability": 0.014284451492130756
+    },
+    {
+      "id": "PCR-407",
+      "label": 0,
+      "probability": 0.013105048798024654
+    },
+    {
+      "id": "PCR-408",
+      "label": 0,
+      "probability": 0.0027988047804683447
+    },
+    {
+      "id": "PCR-409",
+      "label": 0,
+      "probability": 0.04897972568869591
+    },
+    {
+      "id": "PCR-410",
+      "label": 0,
+      "probability": 0.0035555013455450535
+    },
+    {
+      "id": "PCR-411",
+      "label": 0,
+      "probability": 0.0018948465585708618
+    },
+    {
+      "id": "PCR-412",
+      "label": 0,
+      "probability": 0.019455963745713234
+    },
+    {
+      "id": "PCR-413",
+      "label": 0,
+      "probability": 0.16129297018051147
+    },
+    {
+      "id": "PCR-414",
+      "label": 0,
+      "probability": 0.6442459225654602
+    },
+    {
+      "id": "PCR-415",
+      "label": 0,
+      "probability": 0.003707126248627901
+    },
+    {
+      "id": "PCR-416",
+      "label": 0,
+      "probability": 0.004306476563215256
+    },
+    {
+      "id": "PCR-417",
+      "label": 0,
+      "probability": 0.0023613700177520514
+    },
+    {
+      "id": "PCR-418",
+      "label": 0,
+      "probability": 0.06360020488500595
+    },
+    {
+      "id": "PCR-419",
+      "label": 0,
+      "probability": 0.010165411047637463
+    },
+    {
+      "id": "PCR-420",
+      "label": 0,
+      "probability": 0.14564913511276245
+    },
+    {
+      "id": "PCR-421",
+      "label": 0,
+      "probability": 0.007165712770074606
+    },
+    {
+      "id": "PCR-422",
+      "label": 0,
+      "probability": 0.018996557220816612
+    },
+    {
+      "id": "PCR-423",
+      "label": 0,
+      "probability": 0.004340481944382191
+    },
+    {
+      "id": "PCR-424",
+      "label": 0,
+      "probability": 0.005087837111204863
+    },
+    {
+      "id": "PCR-425",
+      "label": 0,
+      "probability": 0.003876506583765149
+    },
+    {
+      "id": "PCR-426",
+      "label": 0,
+      "probability": 0.028122806921601295
+    },
+    {
+      "id": "PCR-427",
+      "label": 0,
+      "probability": 0.04916209727525711
+    },
+    {
+      "id": "PCR-428",
+      "label": 0,
+      "probability": 0.09401823580265045
+    },
+    {
+      "id": "PCR-429",
+      "label": 0,
+      "probability": 0.021374892443418503
+    },
+    {
+      "id": "PCR-430",
+      "label": 0,
+      "probability": 0.02607954852283001
+    },
+    {
+      "id": "PCR-431",
+      "label": 0,
+      "probability": 0.019821589812636375
+    },
+    {
+      "id": "PCR-432",
+      "label": 0,
+      "probability": 0.0650067925453186
+    },
+    {
+      "id": "PCR-433",
+      "label": 0,
+      "probability": 0.0026194558013230562
+    },
+    {
+      "id": "PCR-434",
+      "label": 0,
+      "probability": 0.03101564384996891
+    },
+    {
+      "id": "PCR-435",
+      "label": 0,
+      "probability": 0.004448195919394493
+    },
+    {
+      "id": "PCR-436",
+      "label": 0,
+      "probability": 0.00311870826408267
+    },
+    {
+      "id": "PCR-437",
+      "label": 0,
+      "probability": 0.12455546110868454
+    },
+    {
+      "id": "PCR-438",
+      "label": 0,
+      "probability": 0.02018829621374607
+    },
+    {
+      "id": "PCR-439",
+      "label": 0,
+      "probability": 0.00765530439093709
+    },
+    {
+      "id": "PCR-440",
+      "label": 0,
+      "probability": 0.004066341556608677
+    },
+    {
+      "id": "PCR-441",
+      "label": 0,
+      "probability": 0.013690958730876446
+    },
+    {
+      "id": "PCR-442",
+      "label": 0,
+      "probability": 0.004877953790128231
+    },
+    {
+      "id": "PCR-443",
+      "label": 0,
+      "probability": 0.04406222328543663
+    },
+    {
+      "id": "PCR-444",
+      "label": 0,
+      "probability": 0.0055608078837394714
+    },
+    {
+      "id": "PCR-445",
+      "label": 0,
+      "probability": 0.1416475772857666
+    },
+    {
+      "id": "PCR-446",
+      "label": 0,
+      "probability": 0.022302884608507156
+    },
+    {
+      "id": "PCR-447",
+      "label": 0,
+      "probability": 0.010054418817162514
+    },
+    {
+      "id": "PCR-448",
+      "label": 0,
+      "probability": 0.006653990596532822
+    },
+    {
+      "id": "PCR-449",
+      "label": 0,
+      "probability": 0.00861402414739132
+    },
+    {
+      "id": "PCR-450",
+      "label": 0,
+      "probability": 0.02598743513226509
+    },
+    {
+      "id": "PCR-451",
+      "label": 0,
+      "probability": 0.006254558451473713
+    },
+    {
+      "id": "PCR-452",
+      "label": 0,
+      "probability": 0.0028179220389574766
+    },
+    {
+      "id": "PCR-453",
+      "label": 0,
+      "probability": 0.011047089472413063
+    },
+    {
+      "id": "PCR-454",
+      "label": 0,
+      "probability": 0.004413104150444269
+    },
+    {
+      "id": "PCR-455",
+      "label": 0,
+      "probability": 0.010905100032687187
+    },
+    {
+      "id": "PCR-456",
+      "label": 0,
+      "probability": 0.01269852090626955
+    },
+    {
+      "id": "PCR-457",
+      "label": 0,
+      "probability": 0.007431435398757458
+    },
+    {
+      "id": "PCR-458",
+      "label": 0,
+      "probability": 0.7810753583908081
+    },
+    {
+      "id": "PCR-459",
+      "label": 0,
+      "probability": 0.3491770327091217
+    },
+    {
+      "id": "PCR-460",
+      "label": 0,
+      "probability": 0.03717995434999466
+    },
+    {
+      "id": "PCR-461",
+      "label": 0,
+      "probability": 0.030694445595145226
+    },
+    {
+      "id": "PCR-462",
+      "label": 0,
+      "probability": 0.01807948760688305
+    },
+    {
+      "id": "PCR-463",
+      "label": 0,
+      "probability": 0.02994135580956936
+    },
+    {
+      "id": "PCR-464",
+      "label": 0,
+      "probability": 0.01375037431716919
+    },
+    {
+      "id": "PCR-465",
+      "label": 0,
+      "probability": 0.01126399077475071
+    },
+    {
+      "id": "PCR-466",
+      "label": 0,
+      "probability": 0.04314180836081505
+    },
+    {
+      "id": "PCR-467",
+      "label": 0,
+      "probability": 0.006088163238018751
+    },
+    {
+      "id": "PCR-468",
+      "label": 0,
+      "probability": 0.06228053197264671
+    },
+    {
+      "id": "PCR-469",
+      "label": 0,
+      "probability": 0.0034284063149243593
+    },
+    {
+      "id": "PCR-470",
+      "label": 0,
+      "probability": 0.02146216295659542
+    },
+    {
+      "id": "PCR-471",
+      "label": 0,
+      "probability": 0.030643796548247337
+    },
+    {
+      "id": "PCR-472",
+      "label": 0,
+      "probability": 0.06919573992490768
+    },
+    {
+      "id": "PCR-473",
+      "label": 0,
+      "probability": 0.012118622660636902
+    },
+    {
+      "id": "PCR-474",
+      "label": 0,
+      "probability": 0.0036943235900253057
+    },
+    {
+      "id": "PCR-475",
+      "label": 0,
+      "probability": 0.006476541981101036
+    },
+    {
+      "id": "PCR-476",
+      "label": 0,
+      "probability": 0.002844649599865079
+    },
+    {
+      "id": "PCR-477",
+      "label": 0,
+      "probability": 0.2940780818462372
+    },
+    {
+      "id": "PCR-478",
+      "label": 0,
+      "probability": 0.06777691841125488
+    },
+    {
+      "id": "PCR-479",
+      "label": 0,
+      "probability": 0.154142826795578
+    },
+    {
+      "id": "PCR-480",
+      "label": 0,
+      "probability": 0.6072534322738647
+    },
+    {
+      "id": "PCR-481",
+      "label": 0,
+      "probability": 0.12251297384500504
+    },
+    {
+      "id": "PCR-482",
+      "label": 0,
+      "probability": 0.03591901436448097
+    },
+    {
+      "id": "PCR-483",
+      "label": 0,
+      "probability": 0.9039264917373657
+    },
+    {
+      "id": "PCR-484",
+      "label": 0,
+      "probability": 0.030630717054009438
+    },
+    {
+      "id": "PCR-485",
+      "label": 0,
+      "probability": 0.0041421507485210896
+    },
+    {
+      "id": "PCR-486",
+      "label": 0,
+      "probability": 0.009048779495060444
+    },
+    {
+      "id": "PCR-487",
+      "label": 0,
+      "probability": 0.022137999534606934
+    },
+    {
+      "id": "PCR-488",
+      "label": 0,
+      "probability": 0.008577278815209866
+    },
+    {
+      "id": "PCR-489",
+      "label": 0,
+      "probability": 0.005610876716673374
+    },
+    {
+      "id": "PCR-490",
+      "label": 0,
+      "probability": 0.006156705319881439
+    },
+    {
+      "id": "PCR-491",
+      "label": 0,
+      "probability": 0.009782153181731701
+    },
+    {
+      "id": "PCR-492",
+      "label": 0,
+      "probability": 0.036933619529008865
+    },
+    {
+      "id": "PCR-493",
+      "label": 0,
+      "probability": 0.022049227729439735
+    },
+    {
+      "id": "PCR-494",
+      "label": 0,
+      "probability": 0.03847258538007736
+    },
+    {
+      "id": "PCR-495",
+      "label": 0,
+      "probability": 0.07753017544746399
+    },
+    {
+      "id": "PCR-496",
+      "label": 0,
+      "probability": 0.04039294645190239
+    },
+    {
+      "id": "PCR-497",
+      "label": 0,
+      "probability": 0.009207464754581451
+    },
+    {
+      "id": "PCR-498",
+      "label": 0,
+      "probability": 0.032359153032302856
+    },
+    {
+      "id": "PCR-499",
+      "label": 0,
+      "probability": 0.056563325226306915
+    },
+    {
+      "id": "PCR-500",
+      "label": 0,
+      "probability": 0.007081338670104742
+    },
+    {
+      "id": "R3-001-00",
+      "label": 1,
+      "probability": 0.9966171383857727
+    },
+    {
+      "id": "R3-001-01",
+      "label": 1,
+      "probability": 0.8115297555923462
+    },
+    {
+      "id": "R3-001-02",
+      "label": 1,
+      "probability": 0.9102096557617188
+    },
+    {
+      "id": "R3-001-03",
+      "label": 1,
+      "probability": 0.028081120923161507
+    },
+    {
+      "id": "R3-001-04",
+      "label": 1,
+      "probability": 0.08157449960708618
+    },
+    {
+      "id": "R3-001-05",
+      "label": 1,
+      "probability": 0.9919707775115967
+    },
+    {
+      "id": "R3-001-06",
+      "label": 1,
+      "probability": 0.9937034249305725
+    },
+    {
+      "id": "R3-001-07",
+      "label": 1,
+      "probability": 0.5575705170631409
+    },
+    {
+      "id": "R3-001-08",
+      "label": 1,
+      "probability": 0.09752817451953888
+    },
+    {
+      "id": "R3-001-09",
+      "label": 1,
+      "probability": 0.06837533414363861
+    },
+    {
+      "id": "R3-001-10",
+      "label": 1,
+      "probability": 0.43031734228134155
+    },
+    {
+      "id": "R3-001-11",
+      "label": 1,
+      "probability": 0.030356811359524727
+    },
+    {
+      "id": "R3-001-12",
+      "label": 1,
+      "probability": 0.012400947511196136
+    },
+    {
+      "id": "R3-001-13",
+      "label": 1,
+      "probability": 0.032436974346637726
+    },
+    {
+      "id": "R3-001-14",
+      "label": 1,
+      "probability": 0.062266867607831955
+    },
+    {
+      "id": "R3-001-15",
+      "label": 1,
+      "probability": 0.07610005140304565
+    },
+    {
+      "id": "R3-001-16",
+      "label": 1,
+      "probability": 0.01309509202837944
+    },
+    {
+      "id": "R3-001-17",
+      "label": 1,
+      "probability": 0.0960431694984436
+    },
+    {
+      "id": "R3-001-T00",
+      "label": 1,
+      "probability": 0.9956943988800049
+    },
+    {
+      "id": "R3-001-T01",
+      "label": 1,
+      "probability": 0.004160027019679546
+    },
+    {
+      "id": "R3-001-quote",
+      "label": 0,
+      "probability": 0.9963200092315674
+    },
+    {
+      "id": "R3-002-00",
+      "label": 1,
+      "probability": 0.22976920008659363
+    },
+    {
+      "id": "R3-002-01",
+      "label": 1,
+      "probability": 0.7896532416343689
+    },
+    {
+      "id": "R3-002-02",
+      "label": 1,
+      "probability": 0.9242162108421326
+    },
+    {
+      "id": "R3-002-03",
+      "label": 1,
+      "probability": 0.3500973582267761
+    },
+    {
+      "id": "R3-002-04",
+      "label": 1,
+      "probability": 0.5804020166397095
+    },
+    {
+      "id": "R3-002-05",
+      "label": 1,
+      "probability": 0.023428088054060936
+    },
+    {
+      "id": "R3-002-06",
+      "label": 1,
+      "probability": 0.027083691209554672
+    },
+    {
+      "id": "R3-002-07",
+      "label": 1,
+      "probability": 0.7198258638381958
+    },
+    {
+      "id": "R3-002-08",
+      "label": 1,
+      "probability": 0.0049490733072161674
+    },
+    {
+      "id": "R3-002-09",
+      "label": 1,
+      "probability": 0.028811899945139885
+    },
+    {
+      "id": "R3-002-quote",
+      "label": 0,
+      "probability": 0.921846330165863
+    },
+    {
+      "id": "R3-003-00",
+      "label": 1,
+      "probability": 0.10062304884195328
+    },
+    {
+      "id": "R3-003-01",
+      "label": 1,
+      "probability": 0.1382782906293869
+    },
+    {
+      "id": "R3-003-02",
+      "label": 1,
+      "probability": 0.02269270271062851
+    },
+    {
+      "id": "R3-003-T00",
+      "label": 1,
+      "probability": 0.02346651442348957
+    },
+    {
+      "id": "R3-003-T01",
+      "label": 1,
+      "probability": 0.020876972004771233
+    },
+    {
+      "id": "R3-003-quote",
+      "label": 0,
+      "probability": 0.3069004416465759
+    },
+    {
+      "id": "R3-005-00",
+      "label": 1,
+      "probability": 0.4628376066684723
+    },
+    {
+      "id": "R3-005-01",
+      "label": 1,
+      "probability": 0.0713508129119873
+    },
+    {
+      "id": "R3-005-02",
+      "label": 1,
+      "probability": 0.009615980088710785
+    },
+    {
+      "id": "R3-005-03",
+      "label": 1,
+      "probability": 0.01905747689306736
+    },
+    {
+      "id": "R3-005-quote",
+      "label": 0,
+      "probability": 0.9636051654815674
+    },
+    {
+      "id": "R3-006-00",
+      "label": 1,
+      "probability": 0.2921592891216278
+    },
+    {
+      "id": "R3-006-01",
+      "label": 1,
+      "probability": 0.17883938550949097
+    },
+    {
+      "id": "R3-006-02",
+      "label": 1,
+      "probability": 0.009094292297959328
+    },
+    {
+      "id": "R3-006-03",
+      "label": 1,
+      "probability": 0.6086358428001404
+    },
+    {
+      "id": "R3-006-04",
+      "label": 1,
+      "probability": 0.059714268893003464
+    },
+    {
+      "id": "R3-006-quote",
+      "label": 0,
+      "probability": 0.872490406036377
+    },
+    {
+      "id": "R3-007-00",
+      "label": 1,
+      "probability": 0.09598564356565475
+    },
+    {
+      "id": "R3-007-01",
+      "label": 1,
+      "probability": 0.031673040241003036
+    },
+    {
+      "id": "R3-007-02",
+      "label": 1,
+      "probability": 0.14298023283481598
+    },
+    {
+      "id": "R3-007-quote",
+      "label": 0,
+      "probability": 0.5005506277084351
+    },
+    {
+      "id": "R3-009-00",
+      "label": 1,
+      "probability": 0.2825637757778168
+    },
+    {
+      "id": "R3-009-01",
+      "label": 1,
+      "probability": 0.011328911408782005
+    },
+    {
+      "id": "R3-009-quote",
+      "label": 0,
+      "probability": 0.9798282980918884
+    },
+    {
+      "id": "R3-010-00",
+      "label": 1,
+      "probability": 0.018378177657723427
+    },
+    {
+      "id": "R3-010-quote",
+      "label": 0,
+      "probability": 0.8630872964859009
+    },
+    {
+      "id": "R3-011-00",
+      "label": 1,
+      "probability": 0.010938973166048527
+    },
+    {
+      "id": "R3-011-01",
+      "label": 1,
+      "probability": 0.04706212505698204
+    },
+    {
+      "id": "R3-011-02",
+      "label": 1,
+      "probability": 0.0407731831073761
+    },
+    {
+      "id": "R3-011-03",
+      "label": 1,
+      "probability": 0.15923090279102325
+    },
+    {
+      "id": "R3-011-quote",
+      "label": 0,
+      "probability": 0.8700762391090393
+    },
+    {
+      "id": "R3-012-00",
+      "label": 1,
+      "probability": 0.99700528383255
+    },
+    {
+      "id": "R3-012-01",
+      "label": 1,
+      "probability": 0.9967787861824036
+    },
+    {
+      "id": "R3-012-02",
+      "label": 1,
+      "probability": 0.0547248013317585
+    },
+    {
+      "id": "R3-012-03",
+      "label": 1,
+      "probability": 0.020924942567944527
+    },
+    {
+      "id": "R3-012-04",
+      "label": 1,
+      "probability": 0.039983514696359634
+    },
+    {
+      "id": "R3-012-quote",
+      "label": 0,
+      "probability": 0.9944171905517578
+    },
+    {
+      "id": "R3-020-00",
+      "label": 1,
+      "probability": 0.982487142086029
+    },
+    {
+      "id": "R3-020-01",
+      "label": 1,
+      "probability": 0.9186322689056396
+    },
+    {
+      "id": "R3-020-02",
+      "label": 1,
+      "probability": 0.5382436513900757
+    },
+    {
+      "id": "R3-020-03",
+      "label": 1,
+      "probability": 0.12362692505121231
+    },
+    {
+      "id": "R3-020-04",
+      "label": 1,
+      "probability": 0.22720453143119812
+    },
+    {
+      "id": "R3-020-quote",
+      "label": 0,
+      "probability": 0.9922983050346375
+    },
+    {
+      "id": "R3-021-00",
+      "label": 1,
+      "probability": 0.3357233703136444
+    },
+    {
+      "id": "R3-021-01",
+      "label": 1,
+      "probability": 0.08914653956890106
+    },
+    {
+      "id": "R3-021-02",
+      "label": 1,
+      "probability": 0.04786113649606705
+    },
+    {
+      "id": "R3-021-quote",
+      "label": 0,
+      "probability": 0.8816213011741638
+    },
+    {
+      "id": "R3-022-00",
+      "label": 1,
+      "probability": 0.9962562322616577
+    },
+    {
+      "id": "R3-022-01",
+      "label": 1,
+      "probability": 0.994739830493927
+    },
+    {
+      "id": "R3-022-02",
+      "label": 1,
+      "probability": 0.16697737574577332
+    },
+    {
+      "id": "R3-022-03",
+      "label": 1,
+      "probability": 0.15672239661216736
+    },
+    {
+      "id": "R3-022-quote",
+      "label": 0,
+      "probability": 0.9960317015647888
+    },
+    {
+      "id": "R3-023-00",
+      "label": 1,
+      "probability": 0.30975836515426636
+    },
+    {
+      "id": "R3-023-T00",
+      "label": 1,
+      "probability": 0.08122695237398148
+    },
+    {
+      "id": "R3-023-T01",
+      "label": 1,
+      "probability": 0.017484188079833984
+    },
+    {
+      "id": "R3-023-T02",
+      "label": 1,
+      "probability": 0.18880952894687653
+    },
+    {
+      "id": "R3-023-T03",
+      "label": 1,
+      "probability": 0.5304849147796631
+    },
+    {
+      "id": "R3-023-quote",
+      "label": 0,
+      "probability": 0.5920314788818359
+    },
+    {
+      "id": "R3-024-00",
+      "label": 1,
+      "probability": 0.0540136992931366
+    },
+    {
+      "id": "R3-024-quote",
+      "label": 0,
+      "probability": 0.5284834504127502
+    },
+    {
+      "id": "R3-025-00",
+      "label": 1,
+      "probability": 0.24771206080913544
+    },
+    {
+      "id": "R3-025-T00",
+      "label": 1,
+      "probability": 0.9863280653953552
+    },
+    {
+      "id": "R3-025-T01",
+      "label": 1,
+      "probability": 0.006545801647007465
+    },
+    {
+      "id": "R3-025-T02",
+      "label": 1,
+      "probability": 0.003881661919876933
+    },
+    {
+      "id": "R3-025-quote",
+      "label": 0,
+      "probability": 0.9838852882385254
+    },
+    {
+      "id": "R3-030-00",
+      "label": 1,
+      "probability": 0.9309684038162231
+    },
+    {
+      "id": "R3-030-T00",
+      "label": 1,
+      "probability": 0.9961395859718323
+    },
+    {
+      "id": "R3-030-quote",
+      "label": 0,
+      "probability": 0.9788669943809509
+    },
+    {
+      "id": "R3-031-00",
+      "label": 1,
+      "probability": 0.3866311013698578
+    },
+    {
+      "id": "R3-031-quote",
+      "label": 0,
+      "probability": 0.9741902351379395
+    },
+    {
+      "id": "R3-032-00",
+      "label": 1,
+      "probability": 0.07672251760959625
+    },
+    {
+      "id": "R3-032-T00",
+      "label": 1,
+      "probability": 0.14272558689117432
+    },
+    {
+      "id": "R3-032-quote",
+      "label": 0,
+      "probability": 0.8966848850250244
+    },
+    {
+      "id": "R3-039-00",
+      "label": 1,
+      "probability": 0.9641854166984558
+    },
+    {
+      "id": "R3-039-01",
+      "label": 1,
+      "probability": 0.1407984346151352
+    },
+    {
+      "id": "R3-039-02",
+      "label": 1,
+      "probability": 0.07693251967430115
+    },
+    {
+      "id": "R3-039-quote",
+      "label": 0,
+      "probability": 0.9544597268104553
+    },
+    {
+      "id": "R3-042-00",
+      "label": 1,
+      "probability": 0.9948084950447083
+    },
+    {
+      "id": "R3-042-quote",
+      "label": 0,
+      "probability": 0.9552496671676636
+    },
+    {
+      "id": "R3-047-00",
+      "label": 1,
+      "probability": 0.9981606602668762
+    },
+    {
+      "id": "R3-047-01",
+      "label": 1,
+      "probability": 0.940140962600708
+    },
+    {
+      "id": "R3-047-T00",
+      "label": 1,
+      "probability": 0.009015209041535854
+    },
+    {
+      "id": "R3-047-T01",
+      "label": 1,
+      "probability": 0.7487577795982361
+    },
+    {
+      "id": "R3-047-T02",
+      "label": 1,
+      "probability": 0.005966006778180599
+    },
+    {
+      "id": "R3-047-T03",
+      "label": 1,
+      "probability": 0.0057020969688892365
+    },
+    {
+      "id": "R3-047-T04",
+      "label": 1,
+      "probability": 0.009140939451754093
+    },
+    {
+      "id": "R3-047-T05",
+      "label": 1,
+      "probability": 0.6820034384727478
+    },
+    {
+      "id": "R3-047-T06",
+      "label": 1,
+      "probability": 0.015035856515169144
+    },
+    {
+      "id": "R3-047-T07",
+      "label": 1,
+      "probability": 0.004069262184202671
+    },
+    {
+      "id": "R3-047-quote",
+      "label": 0,
+      "probability": 0.9976807832717896
+    },
+    {
+      "id": "R3-050-00",
+      "label": 1,
+      "probability": 0.990962564945221
+    },
+    {
+      "id": "R3-050-01",
+      "label": 1,
+      "probability": 0.9697449207305908
+    },
+    {
+      "id": "R3-050-T00",
+      "label": 1,
+      "probability": 0.46646055579185486
+    },
+    {
+      "id": "R3-050-quote",
+      "label": 0,
+      "probability": 0.991641640663147
+    },
+    {
+      "id": "R3-054-00",
+      "label": 1,
+      "probability": 0.9914790987968445
+    },
+    {
+      "id": "R3-054-01",
+      "label": 1,
+      "probability": 0.9928784966468811
+    },
+    {
+      "id": "R3-054-02",
+      "label": 1,
+      "probability": 0.857970118522644
+    },
+    {
+      "id": "R3-054-03",
+      "label": 1,
+      "probability": 0.9346984028816223
+    },
+    {
+      "id": "R3-054-quote",
+      "label": 0,
+      "probability": 0.9925729036331177
+    },
+    {
+      "id": "R3-071-00",
+      "label": 1,
+      "probability": 0.12260274589061737
+    },
+    {
+      "id": "R3-071-01",
+      "label": 1,
+      "probability": 0.037922732532024384
+    },
+    {
+      "id": "R3-071-02",
+      "label": 1,
+      "probability": 0.005472040269523859
+    },
+    {
+      "id": "R3-071-quote",
+      "label": 0,
+      "probability": 0.6302808523178101
+    },
+    {
+      "id": "R3-072-00",
+      "label": 1,
+      "probability": 0.9394131302833557
+    },
+    {
+      "id": "R3-072-01",
+      "label": 1,
+      "probability": 0.026617316529154778
+    },
+    {
+      "id": "R3-072-02",
+      "label": 1,
+      "probability": 0.15456293523311615
+    },
+    {
+      "id": "R3-072-03",
+      "label": 1,
+      "probability": 0.011904366314411163
+    },
+    {
+      "id": "R3-072-04",
+      "label": 1,
+      "probability": 0.005854321178048849
+    },
+    {
+      "id": "R3-072-quote",
+      "label": 0,
+      "probability": 0.985527515411377
+    },
+    {
+      "id": "R3-073-00",
+      "label": 1,
+      "probability": 0.9440804719924927
+    },
+    {
+      "id": "R3-073-01",
+      "label": 1,
+      "probability": 0.06765002012252808
+    },
+    {
+      "id": "R3-073-02",
+      "label": 1,
+      "probability": 0.007291797548532486
+    },
+    {
+      "id": "R3-073-quote",
+      "label": 0,
+      "probability": 0.979698896408081
+    },
+    {
+      "id": "R3-074-00",
+      "label": 1,
+      "probability": 0.9920071363449097
+    },
+    {
+      "id": "R3-074-01",
+      "label": 1,
+      "probability": 0.43171948194503784
+    },
+    {
+      "id": "R3-074-02",
+      "label": 1,
+      "probability": 0.14137274026870728
+    },
+    {
+      "id": "R3-074-quote",
+      "label": 0,
+      "probability": 0.9813942909240723
+    },
+    {
+      "id": "R3-075-00",
+      "label": 1,
+      "probability": 0.6296602487564087
+    },
+    {
+      "id": "R3-075-01",
+      "label": 1,
+      "probability": 0.02946551702916622
+    },
+    {
+      "id": "R3-075-02",
+      "label": 1,
+      "probability": 0.09881045669317245
+    },
+    {
+      "id": "R3-075-03",
+      "label": 1,
+      "probability": 0.06319606304168701
+    },
+    {
+      "id": "R3-075-quote",
+      "label": 0,
+      "probability": 0.97578364610672
+    },
+    {
+      "id": "R3-076-00",
+      "label": 1,
+      "probability": 0.4645289182662964
+    },
+    {
+      "id": "R3-076-01",
+      "label": 1,
+      "probability": 0.02759956195950508
+    },
+    {
+      "id": "R3-076-02",
+      "label": 1,
+      "probability": 0.018627241253852844
+    },
+    {
+      "id": "R3-076-03",
+      "label": 1,
+      "probability": 0.27775242924690247
+    },
+    {
+      "id": "R3-076-04",
+      "label": 1,
+      "probability": 0.04688258469104767
+    },
+    {
+      "id": "R3-076-05",
+      "label": 1,
+      "probability": 0.013882408849895
+    },
+    {
+      "id": "R3-076-quote",
+      "label": 0,
+      "probability": 0.7101417779922485
+    },
+    {
+      "id": "R3-077-00",
+      "label": 1,
+      "probability": 0.6991943120956421
+    },
+    {
+      "id": "R3-077-01",
+      "label": 1,
+      "probability": 0.01398186944425106
+    },
+    {
+      "id": "R3-077-02",
+      "label": 1,
+      "probability": 0.14774155616760254
+    },
+    {
+      "id": "R3-077-quote",
+      "label": 0,
+      "probability": 0.7278056740760803
+    },
+    {
+      "id": "R3-078-00",
+      "label": 1,
+      "probability": 0.94361412525177
+    },
+    {
+      "id": "R3-078-01",
+      "label": 1,
+      "probability": 0.9245768189430237
+    },
+    {
+      "id": "R3-078-02",
+      "label": 1,
+      "probability": 0.8629313111305237
+    },
+    {
+      "id": "R3-078-03",
+      "label": 1,
+      "probability": 0.018625549972057343
+    },
+    {
+      "id": "R3-078-quote",
+      "label": 0,
+      "probability": 0.9950947761535645
+    },
+    {
+      "id": "R3-079-00",
+      "label": 1,
+      "probability": 0.11484219878911972
+    },
+    {
+      "id": "R3-079-01",
+      "label": 1,
+      "probability": 0.05304083600640297
+    },
+    {
+      "id": "R3-079-quote",
+      "label": 0,
+      "probability": 0.9181635975837708
+    },
+    {
+      "id": "R3-080-00",
+      "label": 1,
+      "probability": 0.9805694818496704
+    },
+    {
+      "id": "R3-080-01",
+      "label": 1,
+      "probability": 0.9824784994125366
+    },
+    {
+      "id": "R3-080-02",
+      "label": 1,
+      "probability": 0.0862090215086937
+    },
+    {
+      "id": "R3-080-03",
+      "label": 1,
+      "probability": 0.026945428922772408
+    },
+    {
+      "id": "R3-080-T00",
+      "label": 1,
+      "probability": 0.9936875700950623
+    },
+    {
+      "id": "R3-080-T01",
+      "label": 1,
+      "probability": 0.05528856813907623
+    },
+    {
+      "id": "R3-080-T02",
+      "label": 1,
+      "probability": 0.020331475883722305
+    },
+    {
+      "id": "R3-080-quote",
+      "label": 0,
+      "probability": 0.9933454990386963
+    },
+    {
+      "id": "R3-081-00",
+      "label": 1,
+      "probability": 0.8403382897377014
+    },
+    {
+      "id": "R3-081-01",
+      "label": 1,
+      "probability": 0.48645907640457153
+    },
+    {
+      "id": "R3-081-02",
+      "label": 1,
+      "probability": 0.013613917864859104
+    },
+    {
+      "id": "R3-081-T00",
+      "label": 1,
+      "probability": 0.003909438848495483
+    },
+    {
+      "id": "R3-081-quote",
+      "label": 0,
+      "probability": 0.9509173631668091
+    },
+    {
+      "id": "R3-082-00",
+      "label": 1,
+      "probability": 0.9876109957695007
+    },
+    {
+      "id": "R3-082-01",
+      "label": 1,
+      "probability": 0.9951632022857666
+    },
+    {
+      "id": "R3-082-02",
+      "label": 1,
+      "probability": 0.038313355296850204
+    },
+    {
+      "id": "R3-082-quote",
+      "label": 0,
+      "probability": 0.9936093091964722
+    },
+    {
+      "id": "R3-083-00",
+      "label": 1,
+      "probability": 0.9867272973060608
+    },
+    {
+      "id": "R3-083-01",
+      "label": 1,
+      "probability": 0.023489397019147873
+    },
+    {
+      "id": "R3-083-02",
+      "label": 1,
+      "probability": 0.13737596571445465
+    },
+    {
+      "id": "R3-083-03",
+      "label": 1,
+      "probability": 0.2178015261888504
+    },
+    {
+      "id": "R3-083-T00",
+      "label": 1,
+      "probability": 0.016010649502277374
+    },
+    {
+      "id": "R3-083-T01",
+      "label": 1,
+      "probability": 0.042661383748054504
+    },
+    {
+      "id": "R3-083-T02",
+      "label": 1,
+      "probability": 0.06506087630987167
+    },
+    {
+      "id": "R3-083-quote",
+      "label": 0,
+      "probability": 0.9948803186416626
+    },
+    {
+      "id": "R3-084-00",
+      "label": 1,
+      "probability": 0.6227144598960876
+    },
+    {
+      "id": "R3-084-01",
+      "label": 1,
+      "probability": 0.05207907035946846
+    },
+    {
+      "id": "R3-084-02",
+      "label": 1,
+      "probability": 0.013903948478400707
+    },
+    {
+      "id": "R3-084-quote",
+      "label": 0,
+      "probability": 0.9855233430862427
+    },
+    {
+      "id": "R3-085-00",
+      "label": 1,
+      "probability": 0.9082211852073669
+    },
+    {
+      "id": "R3-085-01",
+      "label": 1,
+      "probability": 0.612007737159729
+    },
+    {
+      "id": "R3-085-02",
+      "label": 1,
+      "probability": 0.05178256332874298
+    },
+    {
+      "id": "R3-085-03",
+      "label": 1,
+      "probability": 0.2719261944293976
+    },
+    {
+      "id": "R3-085-quote",
+      "label": 0,
+      "probability": 0.9863256812095642
+    },
+    {
+      "id": "R3-086-00",
+      "label": 1,
+      "probability": 0.27917006611824036
+    },
+    {
+      "id": "R3-086-01",
+      "label": 1,
+      "probability": 0.0630311593413353
+    },
+    {
+      "id": "R3-086-02",
+      "label": 1,
+      "probability": 0.3955112099647522
+    },
+    {
+      "id": "R3-086-03",
+      "label": 1,
+      "probability": 0.7831148505210876
+    },
+    {
+      "id": "R3-086-quote",
+      "label": 0,
+      "probability": 0.92485511302948
+    },
+    {
+      "id": "R3-087-00",
+      "label": 1,
+      "probability": 0.926895797252655
+    },
+    {
+      "id": "R3-087-01",
+      "label": 1,
+      "probability": 0.0811493769288063
+    },
+    {
+      "id": "R3-087-02",
+      "label": 1,
+      "probability": 0.050799738615751266
+    },
+    {
+      "id": "R3-087-quote",
+      "label": 0,
+      "probability": 0.9815285205841064
+    },
+    {
+      "id": "R3-088-00",
+      "label": 1,
+      "probability": 0.9788599014282227
+    },
+    {
+      "id": "R3-088-01",
+      "label": 1,
+      "probability": 0.26800447702407837
+    },
+    {
+      "id": "R3-088-02",
+      "label": 1,
+      "probability": 0.16883738338947296
+    },
+    {
+      "id": "R3-088-quote",
+      "label": 0,
+      "probability": 0.9694315791130066
+    },
+    {
+      "id": "R3-089-00",
+      "label": 1,
+      "probability": 0.0669964998960495
+    },
+    {
+      "id": "R3-089-01",
+      "label": 1,
+      "probability": 0.8848307728767395
+    },
+    {
+      "id": "R3-089-02",
+      "label": 1,
+      "probability": 0.02940112166106701
+    },
+    {
+      "id": "R3-089-03",
+      "label": 1,
+      "probability": 0.28974276781082153
+    },
+    {
+      "id": "R3-089-04",
+      "label": 1,
+      "probability": 0.5090205669403076
+    },
+    {
+      "id": "R3-089-quote",
+      "label": 0,
+      "probability": 0.6379058957099915
+    },
+    {
+      "id": "R3-090-00",
+      "label": 1,
+      "probability": 0.9979189038276672
+    },
+    {
+      "id": "R3-090-01",
+      "label": 1,
+      "probability": 0.9981616139411926
+    },
+    {
+      "id": "R3-090-quote",
+      "label": 0,
+      "probability": 0.9965426325798035
+    },
+    {
+      "id": "R3-091-00",
+      "label": 1,
+      "probability": 0.11241228133440018
+    },
+    {
+      "id": "R3-091-01",
+      "label": 1,
+      "probability": 0.02193494513630867
+    },
+    {
+      "id": "R3-091-02",
+      "label": 1,
+      "probability": 0.023110974580049515
+    },
+    {
+      "id": "R3-091-quote",
+      "label": 0,
+      "probability": 0.39200812578201294
+    },
+    {
+      "id": "R3-092-00",
+      "label": 1,
+      "probability": 0.6087718605995178
+    },
+    {
+      "id": "R3-092-01",
+      "label": 1,
+      "probability": 0.0851665586233139
+    },
+    {
+      "id": "R3-092-02",
+      "label": 1,
+      "probability": 0.013863549567759037
+    },
+    {
+      "id": "R3-092-quote",
+      "label": 0,
+      "probability": 0.9352633357048035
+    },
+    {
+      "id": "R3-093-00",
+      "label": 1,
+      "probability": 0.08646905422210693
+    },
+    {
+      "id": "R3-093-01",
+      "label": 1,
+      "probability": 0.01652408577501774
+    },
+    {
+      "id": "R3-093-02",
+      "label": 1,
+      "probability": 0.039827730506658554
+    },
+    {
+      "id": "R3-093-03",
+      "label": 1,
+      "probability": 0.01405033003538847
+    },
+    {
+      "id": "R3-093-quote",
+      "label": 0,
+      "probability": 0.6742138266563416
+    },
+    {
+      "id": "R3-094-00",
+      "label": 1,
+      "probability": 0.1255289763212204
+    },
+    {
+      "id": "R3-094-01",
+      "label": 1,
+      "probability": 0.015666618943214417
+    },
+    {
+      "id": "R3-094-02",
+      "label": 1,
+      "probability": 0.40946704149246216
+    },
+    {
+      "id": "R3-094-quote",
+      "label": 0,
+      "probability": 0.878516674041748
+    },
+    {
+      "id": "R3-095-00",
+      "label": 1,
+      "probability": 0.15770071744918823
+    },
+    {
+      "id": "R3-095-01",
+      "label": 1,
+      "probability": 0.08157646656036377
+    },
+    {
+      "id": "R3-095-02",
+      "label": 1,
+      "probability": 0.5450598001480103
+    },
+    {
+      "id": "R3-095-03",
+      "label": 1,
+      "probability": 0.003292752429842949
+    },
+    {
+      "id": "R3-095-quote",
+      "label": 0,
+      "probability": 0.7909793853759766
+    },
+    {
+      "id": "R3-096-00",
+      "label": 1,
+      "probability": 0.34200966358184814
+    },
+    {
+      "id": "R3-096-01",
+      "label": 1,
+      "probability": 0.5155640244483948
+    },
+    {
+      "id": "R3-096-02",
+      "label": 1,
+      "probability": 0.18130594491958618
+    },
+    {
+      "id": "R3-096-quote",
+      "label": 0,
+      "probability": 0.8937028050422668
+    },
+    {
+      "id": "R3-097-00",
+      "label": 1,
+      "probability": 0.30977654457092285
+    },
+    {
+      "id": "R3-097-01",
+      "label": 1,
+      "probability": 0.5810592174530029
+    },
+    {
+      "id": "R3-097-02",
+      "label": 1,
+      "probability": 0.34342384338378906
+    },
+    {
+      "id": "R3-097-03",
+      "label": 1,
+      "probability": 0.008203251287341118
+    },
+    {
+      "id": "R3-097-quote",
+      "label": 0,
+      "probability": 0.7750113606452942
+    },
+    {
+      "id": "R3-098-00",
+      "label": 1,
+      "probability": 0.22383128106594086
+    },
+    {
+      "id": "R3-098-01",
+      "label": 1,
+      "probability": 0.09696613997220993
+    },
+    {
+      "id": "R3-098-02",
+      "label": 1,
+      "probability": 0.03401746228337288
+    },
+    {
+      "id": "R3-098-quote",
+      "label": 0,
+      "probability": 0.6124230623245239
+    },
+    {
+      "id": "R3-099-00",
+      "label": 1,
+      "probability": 0.012178703211247921
+    },
+    {
+      "id": "R3-099-01",
+      "label": 1,
+      "probability": 0.012235995382070541
+    },
+    {
+      "id": "R3-099-02",
+      "label": 1,
+      "probability": 0.01888585276901722
+    },
+    {
+      "id": "R3-099-quote",
+      "label": 0,
+      "probability": 0.21040715277194977
+    },
+    {
+      "id": "R3-100-00",
+      "label": 1,
+      "probability": 0.011748203076422215
+    },
+    {
+      "id": "R3-100-01",
+      "label": 1,
+      "probability": 0.009627258405089378
+    },
+    {
+      "id": "R3-100-quote",
+      "label": 0,
+      "probability": 0.4876360595226288
+    },
+    {
+      "id": "R3-101-00",
+      "label": 1,
+      "probability": 0.9969964027404785
+    },
+    {
+      "id": "R3-101-01",
+      "label": 1,
+      "probability": 0.03252280503511429
+    },
+    {
+      "id": "R3-101-02",
+      "label": 1,
+      "probability": 0.061624206602573395
+    },
+    {
+      "id": "R3-101-quote",
+      "label": 0,
+      "probability": 0.9971529245376587
+    },
+    {
+      "id": "R3-102-00",
+      "label": 1,
+      "probability": 0.9957728981971741
+    },
+    {
+      "id": "R3-102-01",
+      "label": 1,
+      "probability": 0.3837706446647644
+    },
+    {
+      "id": "R3-102-02",
+      "label": 1,
+      "probability": 0.9937219023704529
+    },
+    {
+      "id": "R3-102-quote",
+      "label": 0,
+      "probability": 0.9933979511260986
+    },
+    {
+      "id": "R3-103-00",
+      "label": 1,
+      "probability": 0.3379535973072052
+    },
+    {
+      "id": "R3-103-01",
+      "label": 1,
+      "probability": 0.47269192337989807
+    },
+    {
+      "id": "R3-103-02",
+      "label": 1,
+      "probability": 0.3566611409187317
+    },
+    {
+      "id": "R3-103-quote",
+      "label": 0,
+      "probability": 0.9610092043876648
+    },
+    {
+      "id": "R3-104-00",
+      "label": 1,
+      "probability": 0.9063956141471863
+    },
+    {
+      "id": "R3-104-01",
+      "label": 1,
+      "probability": 0.028553778305649757
+    },
+    {
+      "id": "R3-104-02",
+      "label": 1,
+      "probability": 0.016048729419708252
+    },
+    {
+      "id": "R3-104-quote",
+      "label": 0,
+      "probability": 0.990486204624176
+    },
+    {
+      "id": "R3-105-00",
+      "label": 1,
+      "probability": 0.253059059381485
+    },
+    {
+      "id": "R3-105-01",
+      "label": 1,
+      "probability": 0.10534145683050156
+    },
+    {
+      "id": "R3-105-02",
+      "label": 1,
+      "probability": 0.09751292318105698
+    },
+    {
+      "id": "R3-105-03",
+      "label": 1,
+      "probability": 0.06759070605039597
+    },
+    {
+      "id": "R3-105-quote",
+      "label": 0,
+      "probability": 0.40174296498298645
+    },
+    {
+      "id": "R3-106-00",
+      "label": 1,
+      "probability": 0.12349286675453186
+    },
+    {
+      "id": "R3-106-01",
+      "label": 1,
+      "probability": 0.1876702606678009
+    },
+    {
+      "id": "R3-106-02",
+      "label": 1,
+      "probability": 0.1771131157875061
+    },
+    {
+      "id": "R3-106-quote",
+      "label": 0,
+      "probability": 0.41420814394950867
+    },
+    {
+      "id": "R3-107-00",
+      "label": 1,
+      "probability": 0.9804310202598572
+    },
+    {
+      "id": "R3-107-01",
+      "label": 1,
+      "probability": 0.2824063301086426
+    },
+    {
+      "id": "R3-107-02",
+      "label": 1,
+      "probability": 0.185183584690094
+    },
+    {
+      "id": "R3-107-T00",
+      "label": 1,
+      "probability": 0.20598435401916504
+    },
+    {
+      "id": "R3-107-quote",
+      "label": 0,
+      "probability": 0.9927757978439331
+    },
+    {
+      "id": "R3-108-00",
+      "label": 1,
+      "probability": 0.309590220451355
+    },
+    {
+      "id": "R3-108-01",
+      "label": 1,
+      "probability": 0.0760541632771492
+    },
+    {
+      "id": "R3-108-02",
+      "label": 1,
+      "probability": 0.4370511770248413
+    },
+    {
+      "id": "R3-108-T00",
+      "label": 1,
+      "probability": 0.011760893277823925
+    },
+    {
+      "id": "R3-108-quote",
+      "label": 0,
+      "probability": 0.98414546251297
+    },
+    {
+      "id": "R3-109-00",
+      "label": 1,
+      "probability": 0.6043484807014465
+    },
+    {
+      "id": "R3-109-01",
+      "label": 1,
+      "probability": 0.9866904020309448
+    },
+    {
+      "id": "R3-109-02",
+      "label": 1,
+      "probability": 0.10577884316444397
+    },
+    {
+      "id": "R3-109-03",
+      "label": 1,
+      "probability": 0.026683924719691277
+    },
+    {
+      "id": "R3-109-quote",
+      "label": 0,
+      "probability": 0.9888148903846741
+    },
+    {
+      "id": "R3-110-00",
+      "label": 1,
+      "probability": 0.5405677556991577
+    },
+    {
+      "id": "R3-110-01",
+      "label": 1,
+      "probability": 0.9150434732437134
+    },
+    {
+      "id": "R3-110-02",
+      "label": 1,
+      "probability": 0.26644837856292725
+    },
+    {
+      "id": "R3-110-03",
+      "label": 1,
+      "probability": 0.06054278463125229
+    },
+    {
+      "id": "R3-110-quote",
+      "label": 0,
+      "probability": 0.985283613204956
+    },
+    {
+      "id": "R3-111-00",
+      "label": 1,
+      "probability": 0.9904313683509827
+    },
+    {
+      "id": "R3-111-01",
+      "label": 1,
+      "probability": 0.05928133800625801
+    },
+    {
+      "id": "R3-111-02",
+      "label": 1,
+      "probability": 0.011985749937593937
+    },
+    {
+      "id": "R3-111-quote",
+      "label": 0,
+      "probability": 0.9862222075462341
+    },
+    {
+      "id": "R3-112-00",
+      "label": 1,
+      "probability": 0.2514584958553314
+    },
+    {
+      "id": "R3-112-01",
+      "label": 1,
+      "probability": 0.0380314439535141
+    },
+    {
+      "id": "R3-112-02",
+      "label": 1,
+      "probability": 0.028073981404304504
+    },
+    {
+      "id": "R3-112-quote",
+      "label": 0,
+      "probability": 0.7197433114051819
+    },
+    {
+      "id": "R3-113-00",
+      "label": 1,
+      "probability": 0.7900041937828064
+    },
+    {
+      "id": "R3-113-01",
+      "label": 1,
+      "probability": 0.042068131268024445
+    },
+    {
+      "id": "R3-113-quote",
+      "label": 0,
+      "probability": 0.9671794176101685
+    },
+    {
+      "id": "R3-114-00",
+      "label": 1,
+      "probability": 0.9968718886375427
+    },
+    {
+      "id": "R3-114-01",
+      "label": 1,
+      "probability": 0.015612567774951458
+    },
+    {
+      "id": "R3-114-02",
+      "label": 1,
+      "probability": 0.9618554711341858
+    },
+    {
+      "id": "R3-114-quote",
+      "label": 0,
+      "probability": 0.9824144244194031
+    },
+    {
+      "id": "R3-115-00",
+      "label": 1,
+      "probability": 0.991483747959137
+    },
+    {
+      "id": "R3-115-01",
+      "label": 1,
+      "probability": 0.9937137961387634
+    },
+    {
+      "id": "R3-115-quote",
+      "label": 0,
+      "probability": 0.9940540194511414
+    },
+    {
+      "id": "R3-116-00",
+      "label": 1,
+      "probability": 0.983494222164154
+    },
+    {
+      "id": "R3-116-01",
+      "label": 1,
+      "probability": 0.9880061745643616
+    },
+    {
+      "id": "R3-116-02",
+      "label": 1,
+      "probability": 0.18544907867908478
+    },
+    {
+      "id": "R3-116-quote",
+      "label": 0,
+      "probability": 0.9950729012489319
+    },
+    {
+      "id": "R3-117-00",
+      "label": 1,
+      "probability": 0.9262068271636963
+    },
+    {
+      "id": "R3-117-01",
+      "label": 1,
+      "probability": 0.9789988994598389
+    },
+    {
+      "id": "R3-117-quote",
+      "label": 0,
+      "probability": 0.9935181736946106
+    },
+    {
+      "id": "R3-118-00",
+      "label": 1,
+      "probability": 0.9976256489753723
+    },
+    {
+      "id": "R3-118-01",
+      "label": 1,
+      "probability": 0.9978558421134949
+    },
+    {
+      "id": "R3-118-quote",
+      "label": 0,
+      "probability": 0.9975222945213318
+    },
+    {
+      "id": "R3-119-00",
+      "label": 1,
+      "probability": 0.9970083832740784
+    },
+    {
+      "id": "R3-119-01",
+      "label": 1,
+      "probability": 0.9929999113082886
+    },
+    {
+      "id": "R3-119-quote",
+      "label": 0,
+      "probability": 0.9824112057685852
+    },
+    {
+      "id": "R3-120-00",
+      "label": 1,
+      "probability": 0.015298846177756786
+    },
+    {
+      "id": "R3-120-01",
+      "label": 1,
+      "probability": 0.015076585114002228
+    },
+    {
+      "id": "R3-120-02",
+      "label": 1,
+      "probability": 0.02998213842511177
+    },
+    {
+      "id": "R3-120-quote",
+      "label": 0,
+      "probability": 0.3327999711036682
+    },
+    {
+      "id": "R3-121-00",
+      "label": 1,
+      "probability": 0.5818807482719421
+    },
+    {
+      "id": "R3-121-01",
+      "label": 1,
+      "probability": 0.5949229598045349
+    },
+    {
+      "id": "R3-121-02",
+      "label": 1,
+      "probability": 0.28047797083854675
+    },
+    {
+      "id": "R3-121-quote",
+      "label": 0,
+      "probability": 0.898516833782196
+    },
+    {
+      "id": "R3-122-00",
+      "label": 1,
+      "probability": 0.1303623765707016
+    },
+    {
+      "id": "R3-122-01",
+      "label": 1,
+      "probability": 0.11242340505123138
+    },
+    {
+      "id": "R3-122-02",
+      "label": 1,
+      "probability": 0.13118311762809753
+    },
+    {
+      "id": "R3-122-quote",
+      "label": 0,
+      "probability": 0.3175094723701477
+    },
+    {
+      "id": "R3-123-00",
+      "label": 1,
+      "probability": 0.9983008503913879
+    },
+    {
+      "id": "R3-123-quote",
+      "label": 0,
+      "probability": 0.9976582527160645
+    },
+    {
+      "id": "R3-124-00",
+      "label": 1,
+      "probability": 0.0235721655189991
+    },
+    {
+      "id": "R3-124-quote",
+      "label": 0,
+      "probability": 0.9479398727416992
+    },
+    {
+      "id": "R3-125-00",
+      "label": 1,
+      "probability": 0.03100443445146084
+    },
+    {
+      "id": "R3-125-quote",
+      "label": 0,
+      "probability": 0.8388822674751282
+    },
+    {
+      "id": "R3-126-00",
+      "label": 1,
+      "probability": 0.943300724029541
+    },
+    {
+      "id": "R3-126-quote",
+      "label": 0,
+      "probability": 0.9677731990814209
+    },
+    {
+      "id": "R3-127-00",
+      "label": 1,
+      "probability": 0.9894633293151855
+    },
+    {
+      "id": "R3-127-01",
+      "label": 1,
+      "probability": 0.9959672689437866
+    },
+    {
+      "id": "R3-127-02",
+      "label": 1,
+      "probability": 0.03708600625395775
+    },
+    {
+      "id": "R3-127-quote",
+      "label": 0,
+      "probability": 0.9911099672317505
+    },
+    {
+      "id": "R3-128-00",
+      "label": 1,
+      "probability": 0.994734525680542
+    },
+    {
+      "id": "R3-128-quote",
+      "label": 0,
+      "probability": 0.9461686015129089
+    },
+    {
+      "id": "R3-129-00",
+      "label": 1,
+      "probability": 0.04908198118209839
+    },
+    {
+      "id": "R3-129-quote",
+      "label": 0,
+      "probability": 0.6334131956100464
+    },
+    {
+      "id": "R3-130-00",
+      "label": 1,
+      "probability": 0.053776223212480545
+    },
+    {
+      "id": "R3-130-quote",
+      "label": 0,
+      "probability": 0.9053871035575867
+    },
+    {
+      "id": "R3-NEG-001",
+      "label": 0,
+      "probability": 0.007544616237282753
+    },
+    {
+      "id": "R3-NEG-002",
+      "label": 0,
+      "probability": 0.011239312589168549
+    },
+    {
+      "id": "R3-NEG-003",
+      "label": 0,
+      "probability": 0.012362725101411343
+    },
+    {
+      "id": "R3-NEG-004",
+      "label": 0,
+      "probability": 0.01310046762228012
+    },
+    {
+      "id": "R3-NEG-005",
+      "label": 0,
+      "probability": 0.041686758399009705
+    },
+    {
+      "id": "R3-NEG-006",
+      "label": 0,
+      "probability": 0.014695567078888416
+    },
+    {
+      "id": "R3-NEG-007",
+      "label": 0,
+      "probability": 0.011669029481709003
+    },
+    {
+      "id": "R3-NEG-008",
+      "label": 0,
+      "probability": 0.01870914362370968
+    },
+    {
+      "id": "R3-NEG-009",
+      "label": 0,
+      "probability": 0.056126661598682404
+    },
+    {
+      "id": "R3-NEG-010",
+      "label": 0,
+      "probability": 0.0032412430737167597
+    },
+    {
+      "id": "R3-NEG-011",
+      "label": 0,
+      "probability": 0.0623566135764122
+    },
+    {
+      "id": "R3-NEG-012",
+      "label": 0,
+      "probability": 0.005941187497228384
+    },
+    {
+      "id": "R3-NEG-013",
+      "label": 0,
+      "probability": 0.006875395309180021
+    },
+    {
+      "id": "R3-NEG-014",
+      "label": 0,
+      "probability": 0.016033628955483437
+    },
+    {
+      "id": "R3-NEG-015",
+      "label": 0,
+      "probability": 0.005514425691217184
+    },
+    {
+      "id": "R3-NEG-016",
+      "label": 0,
+      "probability": 0.0019361649174243212
+    },
+    {
+      "id": "R3-NEG-017",
+      "label": 0,
+      "probability": 0.007328239735215902
+    },
+    {
+      "id": "R3-NEG-018",
+      "label": 0,
+      "probability": 0.010029803030192852
+    },
+    {
+      "id": "R3-NEG-019",
+      "label": 0,
+      "probability": 0.01446156669408083
+    },
+    {
+      "id": "R3-NEG-020",
+      "label": 0,
+      "probability": 0.9045223593711853
+    },
+    {
+      "id": "R3-NEG-021",
+      "label": 0,
+      "probability": 0.7096379399299622
+    },
+    {
+      "id": "R3-NEG-022",
+      "label": 0,
+      "probability": 0.9983034133911133
+    },
+    {
+      "id": "R3-NEG-023",
+      "label": 0,
+      "probability": 0.9952436089515686
+    }
+  ],
+  "thresholds": {
+    "pcr": {
+      "0.01": {
+        "confusion_matrix": {
+          "tp": 199,
+          "fp": 177,
+          "fn": 51,
+          "tn": 73
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.796,
+        "precision": 0.5292553191489362,
+        "false_positive_rate": 0.708,
+        "recall_wilson95": [
+          0.7417463408228052,
+          0.8412947458758916
+        ],
+        "false_positive_rate_wilson95": [
+          0.6488299033041979,
+          0.7608746441056972
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.05": {
+        "confusion_matrix": {
+          "tp": 107,
+          "fp": 62,
+          "fn": 143,
+          "tn": 188
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.428,
+        "precision": 0.6331360946745562,
+        "false_positive_rate": 0.248,
+        "recall_wilson95": [
+          0.3682121709415855,
+          0.4899670241857584
+        ],
+        "false_positive_rate_wilson95": [
+          0.19855156651487427,
+          0.3050756164308297
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.1": {
+        "confusion_matrix": {
+          "tp": 76,
+          "fp": 29,
+          "fn": 174,
+          "tn": 221
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.304,
+        "precision": 0.7238095238095238,
+        "false_positive_rate": 0.116,
+        "recall_wilson95": [
+          0.2503025409687237,
+          0.36362971243349046
+        ],
+        "false_positive_rate_wilson95": [
+          0.08199160692455615,
+          0.16163076708794527
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.15": {
+        "confusion_matrix": {
+          "tp": 64,
+          "fp": 21,
+          "fn": 186,
+          "tn": 229
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.256,
+        "precision": 0.7529411764705882,
+        "false_positive_rate": 0.084,
+        "recall_wilson95": [
+          0.20587818222534185,
+          0.3135068679284351
+        ],
+        "false_positive_rate_wilson95": [
+          0.05559603876664466,
+          0.12499486641356522
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.2": {
+        "confusion_matrix": {
+          "tp": 56,
+          "fp": 14,
+          "fn": 194,
+          "tn": 236
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.224,
+        "precision": 0.8,
+        "false_positive_rate": 0.056,
+        "recall_wilson95": [
+          0.17671830028529711,
+          0.2796352810361883
+        ],
+        "false_positive_rate_wilson95": [
+          0.03364764921901088,
+          0.0917907207329439
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.25": {
+        "confusion_matrix": {
+          "tp": 49,
+          "fp": 13,
+          "fn": 201,
+          "tn": 237
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.196,
+        "precision": 0.7903225806451613,
+        "false_positive_rate": 0.052,
+        "recall_wilson95": [
+          0.1515502357896319,
+          0.24965081030359842
+        ],
+        "false_positive_rate_wilson95": [
+          0.030637655164191247,
+          0.08692178118372709
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.3": {
+        "confusion_matrix": {
+          "tp": 44,
+          "fp": 10,
+          "fn": 206,
+          "tn": 240
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.176,
+        "precision": 0.8148148148148148,
+        "false_positive_rate": 0.04,
+        "recall_wilson95": [
+          0.13379976146744743,
+          0.22800661660560062
+        ],
+        "false_positive_rate_wilson95": [
+          0.021869911954542545,
+          0.07205272358126646
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.35": {
+        "confusion_matrix": {
+          "tp": 42,
+          "fp": 8,
+          "fn": 208,
+          "tn": 242
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.168,
+        "precision": 0.84,
+        "false_positive_rate": 0.032,
+        "recall_wilson95": [
+          0.1267585530934315,
+          0.21928995777154373
+        ],
+        "false_positive_rate_wilson95": [
+          0.01630236549364963,
+          0.06186240283408649
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.4": {
+        "confusion_matrix": {
+          "tp": 37,
+          "fp": 8,
+          "fn": 213,
+          "tn": 242
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.148,
+        "precision": 0.8222222222222222,
+        "false_positive_rate": 0.032,
+        "recall_wilson95": [
+          0.10931982398325646,
+          0.1973340188615365
+        ],
+        "false_positive_rate_wilson95": [
+          0.01630236549364963,
+          0.06186240283408649
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.45": {
+        "confusion_matrix": {
+          "tp": 35,
+          "fp": 7,
+          "fn": 215,
+          "tn": 243
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.14,
+        "precision": 0.8333333333333334,
+        "false_positive_rate": 0.028,
+        "recall_wilson95": [
+          0.1024162573102742,
+          0.1884797183264459
+        ],
+        "false_positive_rate_wilson95": [
+          0.013628058600839217,
+          0.05665777612286046
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.5": {
+        "confusion_matrix": {
+          "tp": 31,
+          "fp": 7,
+          "fn": 219,
+          "tn": 243
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.124,
+        "precision": 0.8157894736842105,
+        "false_positive_rate": 0.028,
+        "recall_wilson95": [
+          0.08874849146643424,
+          0.17063174975414006
+        ],
+        "false_positive_rate_wilson95": [
+          0.013628058600839217,
+          0.05665777612286046
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.55": {
+        "confusion_matrix": {
+          "tp": 28,
+          "fp": 7,
+          "fn": 222,
+          "tn": 243
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.112,
+        "precision": 0.8,
+        "false_positive_rate": 0.028,
+        "recall_wilson95": [
+          0.07863430779240635,
+          0.1571091326160586
+        ],
+        "false_positive_rate_wilson95": [
+          0.013628058600839217,
+          0.05665777612286046
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.6": {
+        "confusion_matrix": {
+          "tp": 28,
+          "fp": 7,
+          "fn": 222,
+          "tn": 243
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.112,
+        "precision": 0.8,
+        "false_positive_rate": 0.028,
+        "recall_wilson95": [
+          0.07863430779240635,
+          0.1571091326160586
+        ],
+        "false_positive_rate_wilson95": [
+          0.013628058600839217,
+          0.05665777612286046
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.65": {
+        "confusion_matrix": {
+          "tp": 25,
+          "fp": 4,
+          "fn": 225,
+          "tn": 246
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.1,
+        "precision": 0.8620689655172413,
+        "false_positive_rate": 0.016,
+        "recall_wilson95": [
+          0.06865492898829106,
+          0.14345171060806458
+        ],
+        "false_positive_rate_wilson95": [
+          0.006239224570471175,
+          0.04040980934111918
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.7": {
+        "confusion_matrix": {
+          "tp": 25,
+          "fp": 4,
+          "fn": 225,
+          "tn": 246
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.1,
+        "precision": 0.8620689655172413,
+        "false_positive_rate": 0.016,
+        "recall_wilson95": [
+          0.06865492898829106,
+          0.14345171060806458
+        ],
+        "false_positive_rate_wilson95": [
+          0.006239224570471175,
+          0.04040980934111918
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.75": {
+        "confusion_matrix": {
+          "tp": 20,
+          "fp": 4,
+          "fn": 230,
+          "tn": 246
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.08,
+        "precision": 0.8333333333333334,
+        "false_positive_rate": 0.016,
+        "recall_wilson95": [
+          0.052382328372331775,
+          0.12032964320384165
+        ],
+        "false_positive_rate_wilson95": [
+          0.006239224570471175,
+          0.04040980934111918
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.8": {
+        "confusion_matrix": {
+          "tp": 18,
+          "fp": 3,
+          "fn": 232,
+          "tn": 247
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.072,
+        "precision": 0.8571428571428571,
+        "false_positive_rate": 0.012,
+        "recall_wilson95": [
+          0.04602556925826497,
+          0.11092853510983557
+        ],
+        "false_positive_rate_wilson95": [
+          0.0040893198805342975,
+          0.0346807804270196
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.85": {
+        "confusion_matrix": {
+          "tp": 15,
+          "fp": 3,
+          "fn": 235,
+          "tn": 247
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.06,
+        "precision": 0.8333333333333334,
+        "false_positive_rate": 0.012,
+        "recall_wilson95": [
+          0.036694410839108495,
+          0.09662289271688271
+        ],
+        "false_positive_rate_wilson95": [
+          0.0040893198805342975,
+          0.0346807804270196
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.9": {
+        "confusion_matrix": {
+          "tp": 12,
+          "fp": 2,
+          "fn": 238,
+          "tn": 248
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.048,
+        "precision": 0.8571428571428571,
+        "false_positive_rate": 0.008,
+        "recall_wilson95": [
+          0.02766820153069461,
+          0.08201230121318728
+        ],
+        "false_positive_rate_wilson95": [
+          0.0021966371203094217,
+          0.02869452958320804
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.95": {
+        "confusion_matrix": {
+          "tp": 11,
+          "fp": 1,
+          "fn": 239,
+          "tn": 249
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.044,
+        "precision": 0.9166666666666666,
+        "false_positive_rate": 0.004,
+        "recall_wilson95": [
+          0.02474379816749356,
+          0.07705777097235189
+        ],
+        "false_positive_rate_wilson95": [
+          0.0007064475340650966,
+          0.02230578556541592
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.99": {
+        "confusion_matrix": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 247,
+          "tn": 250
+        },
+        "offensive_samples": 250,
+        "nonoffensive_samples": 250,
+        "recall": 0.012,
+        "precision": 1.0,
+        "false_positive_rate": 0.0,
+        "recall_wilson95": [
+          0.0040893198805342975,
+          0.0346807804270196
+        ],
+        "false_positive_rate_wilson95": [
+          8.673617379884035e-19,
+          0.015133299495444574
+        ],
+        "broad_benchmark_thresholds_met": false
+      }
+    },
+    "development_controls": {
+      "0.01": {
+        "confusion_matrix": {
+          "tp": 275,
+          "fp": 100,
+          "fn": 18,
+          "tn": 7
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.9385665529010239,
+        "precision": 0.7333333333333333,
+        "false_positive_rate": 0.9345794392523364,
+        "recall_wilson95": [
+          0.9049914030201691,
+          0.9607906242647721
+        ],
+        "false_positive_rate_wilson95": [
+          0.8710845366643586,
+          0.9679516957118693
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.05": {
+        "confusion_matrix": {
+          "tp": 204,
+          "fp": 90,
+          "fn": 89,
+          "tn": 17
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.6962457337883959,
+        "precision": 0.6938775510204082,
+        "false_positive_rate": 0.8411214953271028,
+        "recall_wilson95": [
+          0.6413292417649161,
+          0.7460829494326258
+        ],
+        "false_positive_rate_wilson95": [
+          0.7602251013923458,
+          0.8983732315481341
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.1": {
+        "confusion_matrix": {
+          "tp": 165,
+          "fp": 88,
+          "fn": 128,
+          "tn": 19
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.5631399317406144,
+        "precision": 0.6521739130434783,
+        "false_positive_rate": 0.822429906542056,
+        "recall_wilson95": [
+          0.5058927486276857,
+          0.6187529128880452
+        ],
+        "false_positive_rate_wilson95": [
+          0.7392402603548631,
+          0.8832704926984671
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.15": {
+        "confusion_matrix": {
+          "tp": 146,
+          "fp": 88,
+          "fn": 147,
+          "tn": 19
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.49829351535836175,
+        "precision": 0.6239316239316239,
+        "false_positive_rate": 0.822429906542056,
+        "recall_wilson95": [
+          0.4414364200476055,
+          0.5551947782898071
+        ],
+        "false_positive_rate_wilson95": [
+          0.7392402603548631,
+          0.8832704926984671
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.2": {
+        "confusion_matrix": {
+          "tp": 133,
+          "fp": 88,
+          "fn": 160,
+          "tn": 19
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.4539249146757679,
+        "precision": 0.6018099547511312,
+        "false_positive_rate": 0.822429906542056,
+        "recall_wilson95": [
+          0.39788054830485503,
+          0.5111618068052873
+        ],
+        "false_positive_rate_wilson95": [
+          0.7392402603548631,
+          0.8832704926984671
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.25": {
+        "confusion_matrix": {
+          "tp": 127,
+          "fp": 87,
+          "fn": 166,
+          "tn": 20
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.4334470989761092,
+        "precision": 0.5934579439252337,
+        "false_positive_rate": 0.8130841121495327,
+        "recall_wilson95": [
+          0.3779284059356578,
+          0.49068832922343675
+        ],
+        "false_positive_rate_wilson95": [
+          0.7288517015069753,
+          0.8756152616027801
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.3": {
+        "confusion_matrix": {
+          "tp": 115,
+          "fp": 87,
+          "fn": 178,
+          "tn": 20
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.3924914675767918,
+        "precision": 0.5693069306930693,
+        "false_positive_rate": 0.8130841121495327,
+        "recall_wilson95": [
+          0.3383162163429109,
+          0.44944927891408787
+        ],
+        "false_positive_rate_wilson95": [
+          0.7288517015069753,
+          0.8756152616027801
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.35": {
+        "confusion_matrix": {
+          "tp": 108,
+          "fp": 84,
+          "fn": 185,
+          "tn": 23
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.36860068259385664,
+        "precision": 0.5625,
+        "false_positive_rate": 0.7850467289719626,
+        "recall_wilson95": [
+          0.31539456678735606,
+          0.42520770519342027
+        ],
+        "false_positive_rate_wilson95": [
+          0.6980578396844189,
+          0.8522777535946121
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.4": {
+        "confusion_matrix": {
+          "tp": 103,
+          "fp": 83,
+          "fn": 190,
+          "tn": 24
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.3515358361774744,
+        "precision": 0.553763440860215,
+        "false_positive_rate": 0.7757009345794392,
+        "recall_wilson95": [
+          0.29910892954261714,
+          0.407805325812286
+        ],
+        "false_positive_rate_wilson95": [
+          0.6879073136504652,
+          0.844384489684991
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.45": {
+        "confusion_matrix": {
+          "tp": 99,
+          "fp": 81,
+          "fn": 194,
+          "tn": 26
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.3378839590443686,
+        "precision": 0.55,
+        "false_positive_rate": 0.7570093457943925,
+        "recall_wilson95": [
+          0.28613429926677225,
+          0.3938295427874322
+        ],
+        "false_positive_rate_wilson95": [
+          0.6677627943120699,
+          0.828441429136237
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.5": {
+        "confusion_matrix": {
+          "tp": 94,
+          "fp": 80,
+          "fn": 199,
+          "tn": 27
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.32081911262798635,
+        "precision": 0.5402298850574713,
+        "false_positive_rate": 0.7476635514018691,
+        "recall_wilson95": [
+          0.2699855807593161,
+          0.3762902446690153
+        ],
+        "false_positive_rate_wilson95": [
+          0.6577647569908553,
+          0.8203956765138767
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.55": {
+        "confusion_matrix": {
+          "tp": 88,
+          "fp": 78,
+          "fn": 205,
+          "tn": 29
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.3003412969283277,
+        "precision": 0.5301204819277109,
+        "false_positive_rate": 0.7289719626168224,
+        "recall_wilson95": [
+          0.2507132750473243,
+          0.3551369304299592
+        ],
+        "false_positive_rate_wilson95": [
+          0.6379084109244534,
+          0.804164442693129
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.6": {
+        "confusion_matrix": {
+          "tp": 83,
+          "fp": 77,
+          "fn": 210,
+          "tn": 30
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.2832764505119454,
+        "precision": 0.51875,
+        "false_positive_rate": 0.719626168224299,
+        "recall_wilson95": [
+          0.2347458057937935,
+          0.33741638305761684
+        ],
+        "false_positive_rate_wilson95": [
+          0.6280470858860803,
+          0.7959819777879273
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.65": {
+        "confusion_matrix": {
+          "tp": 77,
+          "fp": 73,
+          "fn": 216,
+          "tn": 34
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.2627986348122867,
+        "precision": 0.5133333333333333,
+        "false_positive_rate": 0.6822429906542056,
+        "recall_wilson95": [
+          0.21570279950663018,
+          0.3160337693937323
+        ],
+        "false_positive_rate_wilson95": [
+          0.5890181027627126,
+          0.7628358011369958
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.7": {
+        "confusion_matrix": {
+          "tp": 75,
+          "fp": 72,
+          "fn": 218,
+          "tn": 35
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.25597269624573377,
+        "precision": 0.5102040816326531,
+        "false_positive_rate": 0.6728971962616822,
+        "recall_wilson95": [
+          0.2093851632506211,
+          0.3088761989993921
+        ],
+        "false_positive_rate_wilson95": [
+          0.5793596907035756,
+          0.754450423252558
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.75": {
+        "confusion_matrix": {
+          "tp": 73,
+          "fp": 68,
+          "fn": 220,
+          "tn": 39
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.24914675767918087,
+        "precision": 0.5177304964539007,
+        "false_positive_rate": 0.6355140186915887,
+        "recall_wilson95": [
+          0.20308317127053616,
+          0.30170298432912773
+        ],
+        "false_positive_rate_wilson95": [
+          0.5410961319079854,
+          0.7205388222738489
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.8": {
+        "confusion_matrix": {
+          "tp": 70,
+          "fp": 66,
+          "fn": 223,
+          "tn": 41
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.23890784982935154,
+        "precision": 0.5147058823529411,
+        "false_positive_rate": 0.616822429906542,
+        "recall_wilson95": [
+          0.19366044015290382,
+          0.29091290547123616
+        ],
+        "false_positive_rate_wilson95": [
+          0.5221772310609086,
+          0.7033701432337761
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.85": {
+        "confusion_matrix": {
+          "tp": 68,
+          "fp": 65,
+          "fn": 225,
+          "tn": 42
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.23208191126279865,
+        "precision": 0.5112781954887218,
+        "false_positive_rate": 0.6074766355140186,
+        "recall_wilson95": [
+          0.18739945892896626,
+          0.28369868004482446
+        ],
+        "false_positive_rate_wilson95": [
+          0.5127690996854534,
+          0.6947344846656566
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.9": {
+        "confusion_matrix": {
+          "tp": 65,
+          "fp": 57,
+          "fn": 228,
+          "tn": 50
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.22184300341296928,
+        "precision": 0.5327868852459017,
+        "false_positive_rate": 0.5327102803738317,
+        "recall_wilson95": [
+          0.17804050358894485,
+          0.2728448254093219
+        ],
+        "false_positive_rate_wilson95": [
+          0.4386868443759583,
+          0.6244664204265534
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.95": {
+        "confusion_matrix": {
+          "tp": 49,
+          "fp": 49,
+          "fn": 244,
+          "tn": 58
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.16723549488054607,
+        "precision": 0.5,
+        "false_positive_rate": 0.45794392523364486,
+        "recall_wilson95": [
+          0.1288707153126604,
+          0.2142129604828121
+        ],
+        "false_positive_rate_wilson95": [
+          0.3666376045158097,
+          0.5521653407381039
+        ],
+        "broad_benchmark_thresholds_met": false
+      },
+      "0.99": {
+        "confusion_matrix": {
+          "tp": 33,
+          "fp": 24,
+          "fn": 260,
+          "tn": 83
+        },
+        "offensive_samples": 293,
+        "nonoffensive_samples": 107,
+        "recall": 0.11262798634812286,
+        "precision": 0.5789473684210527,
+        "false_positive_rate": 0.22429906542056074,
+        "recall_wilson95": [
+          0.0813298137681305,
+          0.15395220882454771
+        ],
+        "false_positive_rate_wilson95": [
+          0.15561551031500886,
+          0.3120926863495348
+        ],
+        "broad_benchmark_thresholds_met": false
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Offline experiment only. Not installed in the moderation service image.
+-r requirements.txt
+torch==2.6.0
+transformers==4.57.6
+tokenizers==0.22.2
+safetensors==0.7.0
+numpy==2.2.6

@@ -198,6 +198,10 @@ jobs:
         run: >-
           python scripts/evaluate_candidate.py ../../docs/qa/data/us24-development.v2.jsonl
           --output ../../qa-private/us24-candidate-development.json
+      - name: Verify v3 recall candidate development cases
+        run: >-
+          python scripts/evaluate_recall.py ../../docs/qa/data/us24-development.v3.jsonl
+          --output ../../qa-private/us24-v3-development.json
       - uses: actions/cache@v4
         with:
           path: qa-private/cold-test.csv
@@ -228,6 +232,7 @@ jobs:
             services/algo/pytest-junit.xml
             qa-private/w2-moderation-function.json
             qa-private/us24-candidate-development.json
+            qa-private/us24-v3-development.json
           if-no-files-found: warn
 
   stack:

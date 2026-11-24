@@ -7,17 +7,20 @@ import unicodedata
 from pathlib import Path
 
 from pydantic import TypeAdapter
+from pypinyin import Style, pinyin
 
 from app.models.dictionary import DictionaryEntry
 from app.models.moderation import Hit, ModerationResponse
 from app.services.moderation_context import context_spans
 from app.services.normalization import canonicalize, normalize
 from app.services.pronunciation import MAX_PINYIN_LENGTH, pronunciation_keys
+from app.services.targeted_matching import has_target, homophone_spans, latin_boundary
 
 _END = ""
 _RANK = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
 DEFAULT_DICTIONARY = Path(__file__).resolve().parents[1] / "data" / "moderation-v1.json"
 CANDIDATE_DICTIONARY = DEFAULT_DICTIONARY.with_name("moderation-v2-candidate.json")
+RECALL_DICTIONARY = DEFAULT_DICTIONARY.with_name("moderation-v3-candidate.json")
 STARTER_DICTIONARY = DEFAULT_DICTIONARY.with_name("words.json")
 MATCH_BUDGET_SECONDS = 0.05
 MAX_INPUT_LENGTH = 2000
@@ -37,6 +40,9 @@ class ModerationService:
         self.allow_phrases: dict[str, list[str]] = {}
         self.variants: set[str] = set()
         self.pinyin_allow: dict[str, list[re.Pattern]] = {}
+        self.targeted_variants: set[tuple[str, str]] = set()
+        self.targeted_words: set[str] = set()
+        self.homophones: dict = {}
         dictionary_bytes = source.read_bytes()
         self.dictionary_sha256 = hashlib.sha256(dictionary_bytes).hexdigest()
         records = json.loads(dictionary_bytes.decode("utf-8-sig"))
@@ -46,13 +52,17 @@ class ModerationService:
         seen_words = set()
         for record in entries:
             word, level = record.word, record.level
+            if record.target_required:
+                self.targeted_words.add(word)
             if normalize(word) in seen_words:
                 raise ValueError("Duplicate dictionary word")
             seen_words.add(normalize(word))
             self.allow_phrases.setdefault(word, []).extend(
                 normalize(phrase) for phrase in record.allow_phrases)
-            for variant in [word, *record.aliases]:
+            for variant in [word, *record.aliases, *record.targeted_aliases]:
                 token = normalize(variant)
+                if record.target_required or variant in record.targeted_aliases:
+                    self.targeted_variants.add((word, token))
                 self.variants.add(token)
                 node = self.trie
                 for ch in token:
@@ -73,6 +83,11 @@ class ModerationService:
                 for token in keys:
                     self._put(self.pinyin, token, (word, level))
                     self.variants.add(token)
+            if record.hanzi_homophone:
+                node = self.homophones
+                for part in pinyin(word, style=Style.NORMAL, heteronym=False):
+                    node = node.setdefault(part[0], {})
+                self._put(node, _END, (word, level))
         self.pinyin_prefixes = {token[:end] for token in self.pinyin
                                 for end in range(1, len(token) + 1)}
 
@@ -122,10 +137,23 @@ class ModerationService:
                 node = node[ch]
                 if _END in node:
                     word, level = node[_END]
+                    left, right = positions[start], positions[index] + 1
+                    variant = normalized[start:index + 1]
+                    if (not latin_boundary(canonical, left, right, variant)
+                            or ((word, variant) in self.targeted_variants
+                                and not has_target(canonical, left))):
+                        continue
                     if (not any(left <= start and index < right
                                 for left, right in allowed_spans.get(word, []))
                             and not is_context(positions[start], positions[index] + 1)):
                         found[word] = level
+        if self.homophones:
+            for left, right, (word, level) in homophone_spans(
+                    canonical, self.homophones, check_budget):
+                if (not is_context(left, right)
+                        and not any(positions[a] <= left and right <= positions[b - 1] + 1
+                                    for a, b in allowed_spans.get(word, []))):
+                    found[word] = level
         # Preserve whole Latin-token boundaries before removing separators. This detects
         # "say shabi now" and "sha bi", without treating "shabilist" as a match.
         tokens = list(re.finditer(r"(?<![a-z0-9_])[a-z0-9]+(?![a-z0-9_])", canonical))
@@ -145,7 +173,8 @@ class ModerationService:
                     break
                 if token in self.pinyin:
                     word, level = self.pinyin[token]
-                    if (not is_context(first.start(), segment.end())
+                    if ((word not in self.targeted_words or has_target(canonical, first.start()))
+                            and not is_context(first.start(), segment.end())
                             and not any(left <= first.start() and segment.end() <= right
                                         for left, right in pinyin_allowed.get(word, []))):
                         found[word] = level

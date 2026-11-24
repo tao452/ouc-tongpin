@@ -10,6 +10,9 @@ class DictionaryEntry(BaseModel):
     word: str = Field(min_length=1, max_length=64)
     level: Literal["LOW", "MEDIUM", "HIGH"]
     aliases: list[str] = Field(default_factory=list, max_length=50)
+    targeted_aliases: list[str] = Field(default_factory=list, max_length=50)
+    target_required: bool = False
+    hanzi_homophone: bool = False
     pinyin: bool = False
     pinyin_readings: list[str] = Field(default_factory=list, max_length=7)
     pinyin_aliases: list[str] = Field(default_factory=list, max_length=6)
@@ -23,7 +26,7 @@ class DictionaryEntry(BaseModel):
             raise ValueError("Empty normalized word")
         return word
 
-    @field_validator("aliases")
+    @field_validator("aliases", "targeted_aliases")
     @classmethod
     def valid_aliases(cls, aliases):
         if any(not normalize(word) or len(word) > 64 for word in aliases):
@@ -35,6 +38,12 @@ class DictionaryEntry(BaseModel):
         if ((self.pinyin_readings or self.pinyin_aliases or self.pinyin_allow_phrases)
                 and not self.pinyin):
             raise ValueError("Pinyin mappings require pinyin=true")
+        if self.hanzi_homophone and not self.pinyin:
+            raise ValueError("Hanzi homophones require pinyin=true")
+        targeted = [normalize(v) for v in self.targeted_aliases]
+        if (len(set(targeted)) != len(targeted)
+                or set(targeted) & {normalize(v) for v in [self.word, *self.aliases]}):
+            raise ValueError("Duplicate targeted variant")
         if any(len(value) > 128 for value in self.pinyin_readings):
             raise ValueError("Reading is too long")
         variants = [normalize(value) for value in [self.word, *self.aliases]]

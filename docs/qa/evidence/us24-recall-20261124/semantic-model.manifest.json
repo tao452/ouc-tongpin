@@ -1,0 +1,31 @@
+{
+  "model": "thu-coai/roberta-base-cold",
+  "revision": "614c097a485910d28beb75f60d90c61e3082b518",
+  "trust_remote_code": false,
+  "files": {
+    "README.md": {
+      "sha256": "3594575ad7089ca9660d5490ecec7b098e9f626302adf52f8f29282f7af5979d",
+      "bytes": 1433
+    },
+    "config.json": {
+      "sha256": "70893df95c0270ba971b62967257ee46ecb9e049122cbdaa9d33b86a1049f7e2",
+      "bytes": 898
+    },
+    "vocab.txt": {
+      "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c",
+      "bytes": 109540
+    },
+    "tokenizer_config.json": {
+      "sha256": "2c809202c59d4f6a58ed3853e99f10495bc5d4e35d0f9bfd91d8ee3f697cd41e",
+      "bytes": 372
+    },
+    "special_tokens_map.json": {
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "bytes": 125
+    },
+    "model.safetensors": {
+      "sha256": "7a3dcc70ade1a65cf155f861e85ae9a9d4d61202265f12680662256142468866",
+      "bytes": 409104428
+    }
+  }
+}

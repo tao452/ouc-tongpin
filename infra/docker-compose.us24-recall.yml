@@ -1,0 +1,5 @@
+# Explicit review-only v3 vocabulary; ordinary deployment continues using words.json.
+services:
+  algo:
+    environment:
+      MODERATION_DICTIONARY_PATH: /app/app/data/moderation-v3-candidate.json

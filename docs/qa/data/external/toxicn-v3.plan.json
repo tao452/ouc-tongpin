@@ -1,0 +1,30 @@
+{
+  "name": "ToxiCN",
+  "format": "csv",
+  "previously_used": false,
+  "revision": "91d8f6a449967bd310364544d535d6310e45043b",
+  "url": "https://raw.githubusercontent.com/DUT-lujunyu/ToxiCN/91d8f6a449967bd310364544d535d6310e45043b/ToxiCN_1.0.csv",
+  "git_blob": "37405e18a964b65d49a1ae83b2dee66989059112",
+  "bytes": 2318453,
+  "license": "CC BY-NC-ND 4.0; local evaluation, no raw redistribution",
+  "frozen_artifacts": {
+    "services/algo/app/services/moderation.py": "6504cbc023de72d07207a4ea9de4c5b0be8f9b6e38261180260a1c2002c192eb",
+    "services/algo/app/services/moderation_context.py": "9cba33aec668660dfcda6ed2694dfd8f445d880d1866a453690eaa969316f25a",
+    "services/algo/app/services/normalization.py": "2c120c3b6197904c67942bb066e6b39754fdbd3da46ece8b929973f206a3d83c",
+    "services/algo/app/services/pronunciation.py": "625673ee72ba4794cd2db78027c4f7b7a48d608dd6136a5c09e24eee3e0ebdfd",
+    "services/algo/app/services/targeted_matching.py": "21cadcb6d2a1b1b2a51808403ea9646dba54a125cc319922421ee39c0a90b6d8",
+    "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "services/algo/app/models/dictionary.py": "219756256b88e5d954d0c353d536b674cf9b4a5cc0fddff90518196068ec4513",
+    "services/algo/scripts/evaluate_recall.py": "8b31d3404b4f89b3e2e230999602657895a4ac6e3c6caddd87e15d19615ca1ca",
+    "services/algo/app/data/moderation-v3-candidate.json": "301da843f88be51759a968772275668c7f7337ab54ab9ed2e022c650e3e16858"
+  },
+  "semantic_code_sha256": "2bd9c4148b6d25d8365fda2c944587364d44350ee57f22f884359feece2b82c2",
+  "semantic_threshold": 0.5,
+  "semantic_deployable_threshold": null,
+  "thresholds": {
+    "recall_minimum": 0.95,
+    "fpr_strict_maximum": 0.02
+  },
+  "exclusions": "none; invalid rows fail explicitly; retain hard examples and duplicates",
+  "overlap": "report all rows and separate exact/normalized disjoint cohort; never tune on heldout outputs"
+}
