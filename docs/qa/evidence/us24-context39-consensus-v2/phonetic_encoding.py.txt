@@ -1,0 +1,49 @@
+import json
+from pathlib import Path
+
+from pypinyin import Style, pinyin
+from transformers import BertTokenizerFast
+
+
+class PhoneticEncoder:
+    def __init__(self, model_dir):
+        model_dir=Path(model_dir)
+        self.tokenizer=BertTokenizerFast(vocab_file=str(model_dir/'vocab.txt'),do_lower_case=True)
+        self.lookup=json.loads((model_dir/'config/pinyin2tensor.json').read_text(encoding='utf-8'))
+        self.characters=json.loads((model_dir/'config/pinyin_map.json').read_text(encoding='utf-8'))['char2idx']
+
+    def encode(self,text):
+        if not isinstance(text,str) or len(text)>2000:
+            raise ValueError('Encoding input must respect the2000-character contract')
+        encoded=self.tokenizer(text,add_special_tokens=False,return_offsets_mapping=True,truncation=False)
+        readings=pinyin(text,style=Style.TONE3,heteronym=False,neutral_tone_with_five=True,
+                        errors=lambda value:['not_chinese']*len(value))
+        if len(readings)!=len(text):raise ValueError('Contextual pinyin offset differs')
+        phonetic=[]
+        for left,right in encoded['offset_mapping']:
+            values=[0]*8
+            if right-left==1:
+                reading=readings[left][0]
+                if reading in self.lookup:
+                    values=list(self.lookup[reading])
+                elif reading!='not_chinese' and len(reading)<=8 and all(c in self.characters for c in reading):
+                    values=[self.characters[c] for c in reading]+[0]*(8-len(reading))
+            if len(values)!=8 or any(type(v) is not int or v<0 for v in values):
+                raise ValueError('Invalid pinyin embedding indices')
+            phonetic.append(values)
+        token_ids=encoded['input_ids']
+        windows=[]
+        left=0
+        while True:
+            right=min(left+510,len(token_ids))
+            windows.append(dict(input_ids=[self.tokenizer.cls_token_id,*token_ids[left:right],self.tokenizer.sep_token_id],
+                                pinyin_ids=[[0]*8,*phonetic[left:right],[0]*8],
+                                token_span=[left,right]))
+            if right==len(token_ids):break
+            left=right-128
+        covered=set()
+        for window in windows:
+            a,b=window['token_span'];covered.update(range(a,b))
+            assert len(window['input_ids'])==len(window['pinyin_ids'])<=512
+        if covered!=set(range(len(token_ids))):raise ValueError('An input token was omitted')
+        return windows

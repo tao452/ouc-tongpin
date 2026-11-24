@@ -1,0 +1,1074 @@
+{
+  "method": "equal_logit_mean",
+  "evaluation_rows": 3258,
+  "excluded_evaluation_rows": 0,
+  "metrics": {
+    "model": {
+      "at_0_5": {
+        "threshold": 0.5,
+        "ensemble": false,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 1048,
+              "fp": 167,
+              "fn": 244,
+              "tn": 940
+            },
+            "offensive_samples": 1292,
+            "nonoffensive_samples": 1107,
+            "recall": 0.8111455108359134,
+            "precision": 0.8625514403292182,
+            "false_positive_rate": 0.15085817524841916,
+            "recall_wilson95": [
+              0.7888930969278916,
+              0.831553173352499
+            ],
+            "false_positive_rate_wilson95": [
+              0.1309836484850647,
+              0.17314747314174048
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 95,
+              "fp": 42,
+              "fn": 155,
+              "tn": 208
+            },
+            "offensive_samples": 250,
+            "nonoffensive_samples": 250,
+            "recall": 0.38,
+            "precision": 0.6934306569343066,
+            "false_positive_rate": 0.168,
+            "recall_wilson95": [
+              0.3220773718978933,
+              0.4415546199810133
+            ],
+            "false_positive_rate_wilson95": [
+              0.1267585530934315,
+              0.21928995777154373
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 3,
+              "fn": 0,
+              "tn": 254
+            },
+            "offensive_samples": 0,
+            "nonoffensive_samples": 257,
+            "recall": null,
+            "precision": 0.0,
+            "false_positive_rate": 0.011673151750972763,
+            "recall_wilson95": null,
+            "false_positive_rate_wilson95": [
+              0.003977718469482005,
+              0.033751938714575054
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 6,
+              "fp": 3,
+              "fn": 6,
+              "tn": 87
+            },
+            "offensive_samples": 12,
+            "nonoffensive_samples": 90,
+            "recall": 0.5,
+            "precision": 0.6666666666666666,
+            "false_positive_rate": 0.03333333333333333,
+            "recall_wilson95": [
+              0.2537815976337061,
+              0.7462184023662939
+            ],
+            "false_positive_rate_wilson95": [
+              0.011400390222806277,
+              0.09347286030389873
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": false,
+        "development_gate_met": false
+      },
+      "best_fpr_eligible": {
+        "threshold": 0.922,
+        "ensemble": false,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 433,
+              "fp": 22,
+              "fn": 859,
+              "tn": 1085
+            },
+            "offensive_samples": 1292,
+            "nonoffensive_samples": 1107,
+            "recall": 0.3351393188854489,
+            "precision": 0.9516483516483516,
+            "false_positive_rate": 0.01987353206865402,
+            "recall_wilson95": [
+              0.30992238516736786,
+              0.36133369550496247
+            ],
+            "false_positive_rate_wilson95": [
+              0.013160314558997703,
+              0.029907450368937376
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 14,
+              "fp": 1,
+              "fn": 236,
+              "tn": 249
+            },
+            "offensive_samples": 250,
+            "nonoffensive_samples": 250,
+            "recall": 0.056,
+            "precision": 0.9333333333333333,
+            "false_positive_rate": 0.004,
+            "recall_wilson95": [
+              0.03364764921901088,
+              0.0917907207329439
+            ],
+            "false_positive_rate_wilson95": [
+              0.0007064475340650966,
+              0.02230578556541592
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 257
+            },
+            "offensive_samples": 0,
+            "nonoffensive_samples": 257,
+            "recall": null,
+            "precision": null,
+            "false_positive_rate": 0.0,
+            "recall_wilson95": null,
+            "false_positive_rate_wilson95": [
+              0,
+              0.014727178869731728
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 2,
+              "fp": 1,
+              "fn": 10,
+              "tn": 89
+            },
+            "offensive_samples": 12,
+            "nonoffensive_samples": 90,
+            "recall": 0.16666666666666666,
+            "precision": 0.6666666666666666,
+            "false_positive_rate": 0.011111111111111112,
+            "recall_wilson95": [
+              0.04696514218385378,
+              0.4480308622529734
+            ],
+            "false_positive_rate_wilson95": [
+              0.0019640841009183445,
+              0.06028408311753451
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": true,
+        "development_gate_met": false
+      },
+      "by_category": {
+        "PCR:AR": {
+          "confusion_matrix": {
+            "tp": 9,
+            "fp": 0,
+            "fn": 41,
+            "tn": 37
+          },
+          "offensive_samples": 50,
+          "nonoffensive_samples": 37,
+          "recall": 0.18,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.09770192670234178,
+            0.30796053674300783
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.09405782583720251
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "PCR:HR": {
+          "confusion_matrix": {
+            "tp": 3,
+            "fp": 1,
+            "fn": 166,
+            "tn": 182
+          },
+          "offensive_samples": 169,
+          "nonoffensive_samples": 183,
+          "recall": 0.01775147928994083,
+          "precision": 0.75,
+          "false_positive_rate": 0.00546448087431694,
+          "recall_wilson95": [
+            0.006055167189316268,
+            0.05088405843307138
+          ],
+          "false_positive_rate_wilson95": [
+            0.0009652672143726834,
+            0.030298986755620073
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "PCR:MR": {
+          "confusion_matrix": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 17,
+            "tn": 11
+          },
+          "offensive_samples": 18,
+          "nonoffensive_samples": 11,
+          "recall": 0.05555555555555555,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.009875190978303097,
+            0.25757300781872594
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.2588329669680317
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "PCR:NR": {
+          "confusion_matrix": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 12,
+            "tn": 19
+          },
+          "offensive_samples": 13,
+          "nonoffensive_samples": 19,
+          "recall": 0.07692307692307693,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.013710421242556586,
+            0.3331395092109959
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.16817922405261626
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:campus": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.20388330103584862
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:explicit_attack": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 10,
+            "tn": 0
+          },
+          "offensive_samples": 12,
+          "nonoffensive_samples": 0,
+          "recall": 0.16666666666666666,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.04696514218385378,
+            0.4480308622529734
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:identity": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.20388330103584862
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:normal_latin": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 10,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.2775327998628892
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:report": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 20
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 20,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.16112515805281938
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:science": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.20388330103584862
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:self_help": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "tn": 14
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.06666666666666667,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.011866895493268553,
+            0.2981652987378003
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "controls:normal_context": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 257
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 257,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.014727178869731728
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:0": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 22,
+            "fn": 137,
+            "tn": 1085
+          },
+          "offensive_samples": 171,
+          "nonoffensive_samples": 1107,
+          "recall": 0.19883040935672514,
+          "precision": 0.6071428571428571,
+          "false_positive_rate": 0.01987353206865402,
+          "recall_wilson95": [
+            0.14591834770221057,
+            0.26497652417351536
+          ],
+          "false_positive_rate_wilson95": [
+            0.013160314558997703,
+            0.029907450368937376
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:1": {
+          "confusion_matrix": {
+            "tp": 264,
+            "fp": 0,
+            "fn": 279,
+            "tn": 0
+          },
+          "offensive_samples": 543,
+          "nonoffensive_samples": 0,
+          "recall": 0.4861878453038674,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.44439367564466536,
+            0.5281760705623091
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:2": {
+          "confusion_matrix": {
+            "tp": 53,
+            "fp": 0,
+            "fn": 335,
+            "tn": 0
+          },
+          "offensive_samples": 388,
+          "nonoffensive_samples": 0,
+          "recall": 0.13659793814432988,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.10597112721329817,
+            0.17435004949750355
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:3": {
+          "confusion_matrix": {
+            "tp": 82,
+            "fp": 0,
+            "fn": 108,
+            "tn": 0
+          },
+          "offensive_samples": 190,
+          "nonoffensive_samples": 0,
+          "recall": 0.43157894736842106,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.3631964699040065,
+            0.5026732972852184
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        }
+      }
+    },
+    "literal_or_model": {
+      "at_0_5": {
+        "threshold": 0.5,
+        "ensemble": true,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 1054,
+              "fp": 172,
+              "fn": 238,
+              "tn": 935
+            },
+            "offensive_samples": 1292,
+            "nonoffensive_samples": 1107,
+            "recall": 0.8157894736842105,
+            "precision": 0.8597063621533442,
+            "false_positive_rate": 0.15537488708220415,
+            "recall_wilson95": [
+              0.793725973885482,
+              0.8359806884886456
+            ],
+            "false_positive_rate_wilson95": [
+              0.13523016258283066,
+              0.1779031437577286
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 119,
+              "fp": 42,
+              "fn": 131,
+              "tn": 208
+            },
+            "offensive_samples": 250,
+            "nonoffensive_samples": 250,
+            "recall": 0.476,
+            "precision": 0.7391304347826086,
+            "false_positive_rate": 0.168,
+            "recall_wilson95": [
+              0.41492428638011175,
+              0.5378021119956694
+            ],
+            "false_positive_rate_wilson95": [
+              0.1267585530934315,
+              0.21928995777154373
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 3,
+              "fn": 0,
+              "tn": 254
+            },
+            "offensive_samples": 0,
+            "nonoffensive_samples": 257,
+            "recall": null,
+            "precision": 0.0,
+            "false_positive_rate": 0.011673151750972763,
+            "recall_wilson95": null,
+            "false_positive_rate_wilson95": [
+              0.003977718469482005,
+              0.033751938714575054
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 12,
+              "fp": 3,
+              "fn": 0,
+              "tn": 87
+            },
+            "offensive_samples": 12,
+            "nonoffensive_samples": 90,
+            "recall": 1.0,
+            "precision": 0.8,
+            "false_positive_rate": 0.03333333333333333,
+            "recall_wilson95": [
+              0.7575059933447592,
+              1
+            ],
+            "false_positive_rate_wilson95": [
+              0.011400390222806277,
+              0.09347286030389873
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": false,
+        "development_gate_met": false
+      },
+      "best_fpr_eligible": {
+        "threshold": 0.951,
+        "ensemble": true,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 303,
+              "fp": 22,
+              "fn": 989,
+              "tn": 1085
+            },
+            "offensive_samples": 1292,
+            "nonoffensive_samples": 1107,
+            "recall": 0.23452012383900928,
+            "precision": 0.9323076923076923,
+            "false_positive_rate": 0.01987353206865402,
+            "recall_wilson95": [
+              0.21222468786344362,
+              0.25838956411124797
+            ],
+            "false_positive_rate_wilson95": [
+              0.013160314558997703,
+              0.029907450368937376
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 54,
+              "fp": 0,
+              "fn": 196,
+              "tn": 250
+            },
+            "offensive_samples": 250,
+            "nonoffensive_samples": 250,
+            "recall": 0.216,
+            "precision": 1.0,
+            "false_positive_rate": 0.0,
+            "recall_wilson95": [
+              0.16949229589420706,
+              0.2711034182192054
+            ],
+            "false_positive_rate_wilson95": [
+              8.673617379884035e-19,
+              0.015133299495444574
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 257
+            },
+            "offensive_samples": 0,
+            "nonoffensive_samples": 257,
+            "recall": null,
+            "precision": null,
+            "false_positive_rate": 0.0,
+            "recall_wilson95": null,
+            "false_positive_rate_wilson95": [
+              0,
+              0.014727178869731728
+            ],
+            "broad_benchmark_thresholds_met": false,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "tn": 90
+            },
+            "offensive_samples": 12,
+            "nonoffensive_samples": 90,
+            "recall": 1.0,
+            "precision": 1.0,
+            "false_positive_rate": 0.0,
+            "recall_wilson95": [
+              0.7575059933447592,
+              1
+            ],
+            "false_positive_rate_wilson95": [
+              0,
+              0.04093562556432678
+            ],
+            "broad_benchmark_thresholds_met": true,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": true,
+        "development_gate_met": false
+      },
+      "by_category": {
+        "PCR:AR": {
+          "confusion_matrix": {
+            "tp": 11,
+            "fp": 0,
+            "fn": 39,
+            "tn": 37
+          },
+          "offensive_samples": 50,
+          "nonoffensive_samples": 37,
+          "recall": 0.22,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.1275391597021442,
+            0.3524154958125367
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.09405782583720251
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "PCR:HR": {
+          "confusion_matrix": {
+            "tp": 36,
+            "fp": 0,
+            "fn": 133,
+            "tn": 183
+          },
+          "offensive_samples": 169,
+          "nonoffensive_samples": 183,
+          "recall": 0.21301775147928995,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.15802369228612162,
+            0.28076836222536067
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.02055999158292086
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "PCR:MR": {
+          "confusion_matrix": {
+            "tp": 4,
+            "fp": 0,
+            "fn": 14,
+            "tn": 11
+          },
+          "offensive_samples": 18,
+          "nonoffensive_samples": 11,
+          "recall": 0.2222222222222222,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.09000928108601694,
+            0.45214584316212625
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.2588329669680317
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "PCR:NR": {
+          "confusion_matrix": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 10,
+            "tn": 19
+          },
+          "offensive_samples": 13,
+          "nonoffensive_samples": 19,
+          "recall": 0.23076923076923078,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.08179528718498569,
+            0.5025637594672749
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.16817922405261626
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:campus": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.20388330103584862
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:explicit_attack": {
+          "confusion_matrix": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 12,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.7575059933447592,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:identity": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.20388330103584862
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:normal_latin": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 10
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 10,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.2775327998628892
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:report": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 20
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 20,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.16112515805281938
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:science": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.20388330103584862
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "context_stress:self_help": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 15
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 15,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.20388330103584862
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "controls:normal_context": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 257
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 257,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.014727178869731728
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:0": {
+          "confusion_matrix": {
+            "tp": 29,
+            "fp": 22,
+            "fn": 142,
+            "tn": 1085
+          },
+          "offensive_samples": 171,
+          "nonoffensive_samples": 1107,
+          "recall": 0.1695906432748538,
+          "precision": 0.5686274509803921,
+          "false_positive_rate": 0.01987353206865402,
+          "recall_wilson95": [
+            0.12075302396653986,
+            0.23294717527576142
+          ],
+          "false_positive_rate_wilson95": [
+            0.013160314558997703,
+            0.029907450368937376
+          ],
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:1": {
+          "confusion_matrix": {
+            "tp": 191,
+            "fp": 0,
+            "fn": 352,
+            "tn": 0
+          },
+          "offensive_samples": 543,
+          "nonoffensive_samples": 0,
+          "recall": 0.35174953959484345,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.31275479989325994,
+            0.39282714272826535
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:2": {
+          "confusion_matrix": {
+            "tp": 25,
+            "fp": 0,
+            "fn": 363,
+            "tn": 0
+          },
+          "offensive_samples": 388,
+          "nonoffensive_samples": 0,
+          "recall": 0.06443298969072164,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.04402096089623524,
+            0.09338527218266891
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        },
+        "toxicn_dev:3": {
+          "confusion_matrix": {
+            "tp": 58,
+            "fp": 0,
+            "fn": 132,
+            "tn": 0
+          },
+          "offensive_samples": 190,
+          "nonoffensive_samples": 0,
+          "recall": 0.30526315789473685,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.24417817890676133,
+            0.37406654309334
+          ],
+          "false_positive_rate_wilson95": null,
+          "broad_benchmark_thresholds_met": false,
+          "inference_errors": 0
+        }
+      }
+    }
+  },
+  "production_acceptance": false
+}

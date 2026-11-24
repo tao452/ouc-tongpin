@@ -1,0 +1,202 @@
+import argparse
+import hashlib
+import importlib.metadata
+import json
+import math
+import random
+import time
+from datetime import UTC, datetime
+from pathlib import Path
+
+import numpy as np
+import torch
+from safetensors.torch import save_file
+from torch.nn import functional as F
+
+from phonetic_recheck_metrics import summarize
+from qwen_sequence_model_v5 import create_model, digest, inputs
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+source_sha = lambda p: hashlib.sha256(p.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+
+
+def predict(model, records):
+    model.eval()
+    flattened = [(i, window) for i, row in enumerate(records) for window in row['windows']]
+    flattened.sort(key=lambda item: len(item[1]['input_ids']))
+    scores = [None] * len(records)
+    errors = {}
+    began = time.perf_counter()
+    with torch.inference_mode():
+        for start in range(0, len(flattened), 8):
+            batch = flattened[start:start + 8]
+            try:
+                with torch.autocast('cuda', dtype=torch.bfloat16):
+                    logits = model(**inputs([window for _, window in batch])).logits
+                probabilities = logits.float().softmax(dim=-1)[:, 1].cpu().tolist()
+                for (index, _), score in zip(batch, probabilities, strict=True):
+                    if not math.isfinite(score):
+                        errors[index] = 'NonFinite'
+                    else:
+                        scores[index] = max(scores[index] or 0, score)
+            except RuntimeError as error:
+                for index, _ in batch:
+                    errors[index] = type(error).__name__
+                torch.cuda.empty_cache()
+            if (start // 8 + 1) % 100 == 0:
+                print(f'Evaluated Qwen windows={min(start + 8, len(flattened))}/{len(flattened)}', flush=True)
+    result = []
+    for index, row in enumerate(records):
+        item = {k: v for k, v in row.items() if k != 'windows'}
+        if index in errors or scores[index] is None:
+            item['error'] = errors.get(index, 'MissingScore')
+        else:
+            item['score'] = scores[index]
+        result.append(item)
+    return result, time.perf_counter() - began
+
+
+def main(preflight):
+    assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    torch.set_num_threads(4)
+    random.seed(20261124)
+    np.random.seed(20261124)
+    torch.manual_seed(20261124)
+    torch.cuda.manual_seed_all(20261124)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    torch.use_deterministic_algorithms(True, warn_only=True)
+    features = LAB / 'qwen-sequence-v5-inputs/features.pt'
+    prepared = torch.load(features, map_location='cpu', weights_only=True)
+    policy, records = prepared['policy'], prepared['records']
+    assert len(records) == 42114
+    assert policy['dictionary_sha256'] == 'e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c'
+    assert digest(ROOT / 'services/algo/app/data/moderation-v3_8-candidate.json') == policy['dictionary_sha256']
+    for name, value in policy['engine_sha256'].items():
+        assert source_sha(ROOT / name) == value
+    training = [(window, row['label'], row['id'], w) for row in records if row['cohort'] == 'training'
+                for w, window in enumerate(row['windows'])]
+    evaluation = [row for row in records if row['cohort'] != 'training']
+    assert len(evaluation) == 3258
+    model, model_metadata = create_model()
+    trainable = [p for p in model.parameters() if p.requires_grad]
+    metadata = dict(created_at_utc=datetime.now(UTC).isoformat(), dataset_policy=policy,
+        features_sha256=digest(features), input_index_sha256=digest(features.with_name('index.json')),
+        code_sha256={p.name: source_sha(p) for p in [Path(__file__), LAB / 'qwen_sequence_model_v5.py',
+            LAB / 'qwen_sequence_encoding_v5.py', LAB / 'phonetic_recheck_metrics.py']},
+        model=model_metadata, trainable_parameters={name: p.numel() for name, p in model.named_parameters() if p.requires_grad},
+        total_parameters=sum(p.numel() for p in model.parameters()), optimizer='AdamW', weight_decay=.01,
+        learning_rate_schedule='5% optimizer-step linear warmup then constant1e-4', gradient_clip=1.,training_time_budget_minutes=180,
+        training_rows=38856, training_windows=len(training), evaluation_rows=len(evaluation),
+        excluded_evaluation_rows=0, runtime=dict(torch=torch.__version__, cuda=torch.version.cuda,
+            device=torch.cuda.get_device_name(0), packages={p: importlib.metadata.version(p)
+            for p in ['transformers', 'safetensors', 'numpy', 'pypinyin', 'accelerate']}),
+        production_acceptance=False,resource_amendment=dict(micro_batch_size=16,accumulate_steps=2,activation_checkpointing=True,effective_batch=32,reason='physical-budget checked larger batches amortize frozen-backbone compute; smaller batches underutilize GPU; all39107 windows retained'))
+    torch.cuda.reset_peak_memory_stats()
+    if preflight:
+        # Exercise the sixteen longest training windows; no optimizer or weight update.
+        worst = sorted(training, key=lambda row: len(row[0]['input_ids']), reverse=True)[:16]
+        model.train()
+        with torch.autocast('cuda', dtype=torch.bfloat16):
+            logits = model(**inputs([window for window, _, _, _ in worst])).logits.float()
+            loss = F.cross_entropy(logits, torch.tensor([label for _, label, _, _ in worst], device='cuda'))
+        assert logits.shape == (16, 2) and torch.isfinite(loss)
+        loss.backward()
+        assert any(p.grad is not None and torch.isfinite(p.grad).all() and p.grad.abs().max() > 0 for p in trainable)
+        model.zero_grad(set_to_none=True)
+        metadata.update(shape=list(logits.shape), finite_loss=float(loss.detach()), optimizer_updates=0,
+                        peak_cuda_bytes=torch.cuda.max_memory_allocated(), accuracy_evaluated=False)
+        metadata['physical_total_bytes']=torch.cuda.get_device_properties(0).total_memory
+        assert metadata['peak_cuda_bytes'] < .92*metadata['physical_total_bytes'], metadata['peak_cuda_bytes']
+        with (LAB / 'qwen-sequence-v5d-preflight.json').open('x', encoding='utf-8') as handle:
+            json.dump(metadata, handle, ensure_ascii=False, indent=2)
+        print(json.dumps(dict(preflight='PASS', peak_cuda_bytes=metadata['peak_cuda_bytes'])), flush=True)
+        return 0
+    preflight_result = json.loads((LAB / 'qwen-sequence-v5d-preflight.json').read_text(encoding='utf-8'))
+    assert preflight_result['features_sha256'] == metadata['features_sha256']
+    assert preflight_result['code_sha256'] == metadata['code_sha256']
+    output = LAB / 'qwen-sequence-v5d'
+    output.mkdir(exist_ok=False)
+    rng = random.Random(20261124)
+    order = list(range(len(training)))
+    rng.shuffle(order)
+    # Sort within random 256-window pools, then shuffle batches. Every window exactly once.
+    batches = []
+    for start in range(0, len(order), 256):
+        pool = sorted(order[start:start + 256], key=lambda i: len(training[i][0]['input_ids']))
+        batches.extend(pool[i:i + 16] for i in range(0, len(pool), 16))
+    rng.shuffle(batches)
+    assert sorted(i for batch in batches for i in batch) == list(range(len(training)))
+    with (output / 'training-window-order.json').open('x', encoding='utf-8') as handle:
+        json.dump(batches, handle)
+    metadata['training_order_sha256'] = digest(output / 'training-window-order.json')
+    metadata['preflight_sha256'] = digest(LAB / 'qwen-sequence-v5d-preflight.json')
+    with (output / 'frozen.json').open('x', encoding='utf-8') as handle:
+        json.dump(metadata, handle, ensure_ascii=False, indent=2)
+    optimizer = torch.optim.AdamW(trainable, lr=1e-4, weight_decay=.01)
+    optimizer.zero_grad(set_to_none=True)
+    model.train()
+    began = time.perf_counter()
+    deadline = time.monotonic() + 180 * 60
+    steps = math.ceil(len(batches) / 2)
+    warmup = max(1, math.ceil(steps * .05))
+    loss_sum = 0.
+    seen = 0
+    for step, indices in enumerate(batches, 1):
+        if time.monotonic() > deadline:
+            raise TimeoutError('Sequence experiment exceeded180-minute training budget')
+        batch = [training[i] for i in indices]
+        group_start = ((step - 1) // 2) * 2
+        group_count = sum(len(b) for b in batches[group_start:group_start + 2])
+        with torch.autocast('cuda', dtype=torch.bfloat16):
+            logits = model(**inputs([window for window, _, _, _ in batch])).logits.float()
+            loss = F.cross_entropy(logits, torch.tensor([label for _, label, _, _ in batch], device='cuda'))
+        if not torch.isfinite(loss):
+            raise RuntimeError('Nonfinite sequence training loss')
+        loss_sum += float(loss.detach()) * len(batch)
+        seen += len(batch)
+        (loss * len(batch) / group_count).backward()
+        if step % 2 == 0 or step == len(batches):
+            learning_rate = 1e-4 * min(1., math.ceil(step / 2) / warmup)
+            for group in optimizer.param_groups:
+                group['lr'] = learning_rate
+            torch.nn.utils.clip_grad_norm_(trainable, 1.)
+            optimizer.step()
+            optimizer.zero_grad(set_to_none=True)
+            if math.ceil(step/2)%250==0:
+                checkpoint=output/f'partial-step-{step}'
+                checkpoint.mkdir(exist_ok=False)
+                save_file({name:p.detach().cpu().contiguous() for name,p in model.named_parameters() if p.requires_grad},str(checkpoint/'adapters.safetensors'))
+                torch.save(dict(optimizer=optimizer.state_dict(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all()),checkpoint/'optimizer-and-rng.pt')
+                with (checkpoint/'progress.json').open('x',encoding='utf-8') as handle:
+                    json.dump(dict(completed_batches=step,total_batches=len(batches),training_windows_seen=seen,loss_sum=loss_sum,epoch_complete=False,evaluation_run=False,accuracy_status='NOT_RUN',code_sha256=metadata['code_sha256'],features_sha256=metadata['features_sha256']),handle,indent=2)
+
+        if step % 25 == 0:
+            print(f'Qwen batch={step}/{len(batches)} loss={loss_sum / seen:.5f} elapsed={time.perf_counter() - began:.1f}s', flush=True)
+    assert seen == len(training)
+    training_seconds = time.perf_counter() - began
+    directory = output / 'epoch-1'
+    directory.mkdir(exist_ok=False)
+    weights = directory / 'adapters.safetensors'
+    save_file({name: p.detach().cpu().contiguous() for name, p in model.named_parameters() if p.requires_grad}, str(weights))
+    predictions, inference_seconds = predict(model, evaluation)
+    with (directory / 'predictions.jsonl').open('x', encoding='utf-8') as handle:
+        for row in predictions:
+            handle.write(json.dumps(row, ensure_ascii=False) + '\n')
+    result = dict(epoch=1, weights_sha256=digest(weights), training_seconds=training_seconds,
+        inference_seconds=inference_seconds, training_loss=loss_sum / seen, training_windows_seen=seen,
+        peak_cuda_bytes=torch.cuda.max_memory_allocated(), evaluation_rows=len(predictions), excluded_evaluation_rows=0,
+        metrics=summarize(predictions, directory / 'thresholds.csv'), production_acceptance=False)
+    with (directory / 'report.json').open('x', encoding='utf-8') as handle:
+        json.dump(result, handle, ensure_ascii=False, indent=2)
+    with (output / 'summary.json').open('x', encoding='utf-8') as handle:
+        json.dump(dict(frozen=metadata, epochs=[result]), handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(best=result['metrics']['literal_or_model']['best_fpr_eligible'])), flush=True)
+    return 0 if any(m['best_fpr_eligible'] and m['best_fpr_eligible']['development_gate_met'] for m in result['metrics'].values()) else 1
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--preflight', action='store_true')
+    raise SystemExit(main(parser.parse_args().preflight))

@@ -1,0 +1,152 @@
+{
+  "scope": "same-weight current3.9 recheck and fixed development combinations",
+  "files": [
+    {
+      "file": "encoder-frozen.json",
+      "private_path": "phonetic-encoder-context39-r2/frozen.json",
+      "private_sha256": "d654073f59b239e89a033ce4f8c48af9d57c2a39250cb689bc2c788b4e820e47",
+      "public_lf_sha256": "682d95103cb104b7e7812a52bf5077221cd64f7ac3185b9de10d6aa02a0a1292"
+    },
+    {
+      "file": "encoder-report.json",
+      "private_path": "phonetic-encoder-context39-r2/report.json",
+      "private_sha256": "f0545fe056d6cbc13a9c7801a8ad9156bf9f9b3d53fa20e6f5e199cac090f722",
+      "public_lf_sha256": "5f8d26f6932d94d967343ad9ff89f0fae6e38e7538f78a54c9df107e43be3621"
+    },
+    {
+      "file": "encoder-predictions.jsonl",
+      "private_path": "phonetic-encoder-context39-r2/predictions.jsonl",
+      "private_sha256": "a1c31c197e2aed89dd0bce3f91f26d83769690459f3fc9ff73b392c57152fa05",
+      "public_lf_sha256": "99fb5eeeeb0538a8526d590348a393fe1a3287d8643d4395d2adc4c6f32b85e8"
+    },
+    {
+      "file": "encoder-thresholds.csv",
+      "private_path": "phonetic-encoder-context39-r2/thresholds.csv",
+      "private_sha256": "b5fd355f21e1456c5870766dac1cf7aff29f12b77882504cba2eefde9d482bf7",
+      "public_lf_sha256": "b5fd355f21e1456c5870766dac1cf7aff29f12b77882504cba2eefde9d482bf7"
+    },
+    {
+      "file": "equal_probability_mean-report.json",
+      "private_path": "encoder-decoder-consensus-v2/equal_probability_mean/report.json",
+      "private_sha256": "8096c26ef3cf6bd19c48b1134968a3f4d5213e2427f5d08853927b4038a61a72",
+      "public_lf_sha256": "108e1e5658c9dabc3a182b3cf256dee2a8d7151bb8f7deb096657d1ff4c52e20"
+    },
+    {
+      "file": "equal_probability_mean-predictions.jsonl",
+      "private_path": "encoder-decoder-consensus-v2/equal_probability_mean/predictions.jsonl",
+      "private_sha256": "c230fb5aad5b3b1304b880acba25e2ea2081f1d7ce449388a1c62e874c5761ee",
+      "public_lf_sha256": "b34d617dc4090f29a76a6617803109395ae96af91498a3dc9cc056144a7e6ee1"
+    },
+    {
+      "file": "equal_probability_mean-thresholds.csv",
+      "private_path": "encoder-decoder-consensus-v2/equal_probability_mean/thresholds.csv",
+      "private_sha256": "ef78df40e8a4e99f893b55d383f1f73194eca04eb5dc8233309fc03d243c6322",
+      "public_lf_sha256": "ef78df40e8a4e99f893b55d383f1f73194eca04eb5dc8233309fc03d243c6322"
+    },
+    {
+      "file": "equal_logit_mean-report.json",
+      "private_path": "encoder-decoder-consensus-v2/equal_logit_mean/report.json",
+      "private_sha256": "c3c63814762b6cb64bb286b70939be8a01bba545a84c9d5f41446a0f3f6bcdfb",
+      "public_lf_sha256": "45d6ebc2f0b80644fc9df264b38a2ea77cb12297b159103e91e9bce5ee7e2c43"
+    },
+    {
+      "file": "equal_logit_mean-predictions.jsonl",
+      "private_path": "encoder-decoder-consensus-v2/equal_logit_mean/predictions.jsonl",
+      "private_sha256": "e8e5ba93bc95309db13fd2cd5138896159646699305d4cbb93ae1e2e5c9b1826",
+      "public_lf_sha256": "095563593d0b32d608810a9a4b7218712e6f50f1b109a993679ecbb420e78c25"
+    },
+    {
+      "file": "equal_logit_mean-thresholds.csv",
+      "private_path": "encoder-decoder-consensus-v2/equal_logit_mean/thresholds.csv",
+      "private_sha256": "bfb49c0cc98895d58d288d850e1d41aa47b4d497a6621fef937f3d736ac3a5fc",
+      "public_lf_sha256": "bfb49c0cc98895d58d288d850e1d41aa47b4d497a6621fef937f3d736ac3a5fc"
+    },
+    {
+      "file": "maximum_score_diagnostic-report.json",
+      "private_path": "encoder-decoder-consensus-v2/maximum_score_diagnostic/report.json",
+      "private_sha256": "87fb0339e66a28aede5d98f43e5118e8c22b0170714ce2be75fd64c72b9ec2b1",
+      "public_lf_sha256": "edcba1393dd149f92c2b526d4891feb440e54ec38409d292be17d0ef770ef7b7"
+    },
+    {
+      "file": "maximum_score_diagnostic-predictions.jsonl",
+      "private_path": "encoder-decoder-consensus-v2/maximum_score_diagnostic/predictions.jsonl",
+      "private_sha256": "ffecd8d81c56df3af8111de1162f96412641aa8310a881f50688f2f45aa331f3",
+      "public_lf_sha256": "6e97c282c4e76b2eeda1f26052b5a1a4849ae898837f0eec89619d5d1372a544"
+    },
+    {
+      "file": "maximum_score_diagnostic-thresholds.csv",
+      "private_path": "encoder-decoder-consensus-v2/maximum_score_diagnostic/thresholds.csv",
+      "private_sha256": "e692be3695409d3097dbe885e70c823462e6df632ecaa1557b5c2aa17cab93dc",
+      "public_lf_sha256": "e692be3695409d3097dbe885e70c823462e6df632ecaa1557b5c2aa17cab93dc"
+    },
+    {
+      "file": "consensus-frozen.json",
+      "private_path": "encoder-decoder-consensus-v2/frozen.json",
+      "private_sha256": "16123f48c14c1153e98fda0ea3ffafbfd4d896b9e292b7a412f30808a85a7d1d",
+      "public_lf_sha256": "b269b3e2b049bd1b4f9f81b19422108b38fdadf9a67c62efd88990ec52ba8896"
+    },
+    {
+      "file": "consensus-summary.json",
+      "private_path": "encoder-decoder-consensus-v2/summary.json",
+      "private_sha256": "f3379df9ad2623b0c621bc6d6cbda2f71c2092d8117812c23417325a2fc6f0fb",
+      "public_lf_sha256": "7f325ca03b3ce0116c6c07cf56e93954c531ef9d895bb1a9d31560d2a9834b56"
+    },
+    {
+      "file": "recheck_encoder_context39.py.txt",
+      "private_path": "recheck_encoder_context39.py",
+      "private_sha256": "229c462b5437fcb09e856b4caf4460616d9a89b570cb2d1382b6d87aa5a78bb9",
+      "public_lf_sha256": "229c462b5437fcb09e856b4caf4460616d9a89b570cb2d1382b6d87aa5a78bb9"
+    },
+    {
+      "file": "recheck_encoder_context39_r2.py.txt",
+      "private_path": "recheck_encoder_context39_r2.py",
+      "private_sha256": "1fe1ffccd3c645e7b4ef198c4c11ff2b4d506a8a0e5ff0e835673edbef0823fd",
+      "public_lf_sha256": "1fe1ffccd3c645e7b4ef198c4c11ff2b4d506a8a0e5ff0e835673edbef0823fd"
+    },
+    {
+      "file": "evaluate_encoder_decoder_consensus_v2.py.txt",
+      "private_path": "evaluate_encoder_decoder_consensus_v2.py",
+      "private_sha256": "5eaac5f073e9678cfc16df906bc430483b3e33458d8a18d960278021cbd0b7e5",
+      "public_lf_sha256": "5eaac5f073e9678cfc16df906bc430483b3e33458d8a18d960278021cbd0b7e5"
+    },
+    {
+      "file": "phonetic_encoding.py.txt",
+      "private_path": "phonetic_encoding.py",
+      "private_sha256": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d",
+      "public_lf_sha256": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d"
+    },
+    {
+      "file": "train_phonetic.py.txt",
+      "private_path": "train_phonetic.py",
+      "private_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668",
+      "public_lf_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "publish_context39_consensus_v2.py.txt",
+      "private_path": "publish_context39_consensus_v2.py",
+      "private_sha256": "1d8815cad79fb6e83c1b9a37b7479e0c3bc77077ed716a0ee68c66669ca4d921",
+      "public_lf_sha256": "1d8815cad79fb6e83c1b9a37b7479e0c3bc77077ed716a0ee68c66669ca4d921"
+    },
+    {
+      "file": "initial-input-build-failure.json",
+      "private_path": "encoder39-initial-build-failure.json",
+      "private_sha256": "5dbda1a395f7058f0a18ba3ec4638bcbaa7dca69366ea0b865c49ee54188995e",
+      "public_lf_sha256": "66542815303f0c8597b6c44c9a73413d7c5f87c2b976fa325af9b5e834508613"
+    }
+  ],
+  "evaluation_rows": 3258,
+  "excluded_evaluation_rows": 0,
+  "gradient_updates": 0,
+  "literal_flags": "reuse sealed complete3258 audit after exact engine/dictionary SHA checks; not live service availability",
+  "initial_attempt": "input preparation timeout before model inference; accuracy NOT_RUN; original source retained",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

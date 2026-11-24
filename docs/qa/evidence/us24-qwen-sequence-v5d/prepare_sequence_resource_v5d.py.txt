@@ -1,0 +1,51 @@
+import hashlib
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+
+LAB = Path.cwd() / 'qa-private/us24-recall-20261124'
+trainer = (LAB / 'train_qwen_sequence_v5.py').read_text(encoding='utf-8')
+changes = {
+    "'qwen-sequence-v5-preflight.json'": "'qwen-sequence-v5d-preflight.json'",
+    "output = LAB / 'qwen-sequence-v5'": "output = LAB / 'qwen-sequence-v5d'",
+    'reverse=True)[:8]': 'reverse=True)[:16]',
+    'logits.shape == (8, 2)': 'logits.shape == (16, 2)',
+    '# Exercise the eight longest training windows; no optimizer or weight update.': '# Exercise the sixteen longest training windows; no optimizer or weight update.',
+    'pool[i:i + 8] for i in range(0, len(pool), 8)': 'pool[i:i + 16] for i in range(0, len(pool), 16)',
+    'steps = math.ceil(len(batches) / 4)': 'steps = math.ceil(len(batches) / 2)',
+    'group_start = ((step - 1) // 4) * 4': 'group_start = ((step - 1) // 2) * 2',
+    'batches[group_start:group_start + 4]': 'batches[group_start:group_start + 2]',
+    'step % 4 == 0': 'step % 2 == 0',
+    'math.ceil(step / 4) / warmup': 'math.ceil(step / 2) / warmup',
+    'deadline = time.monotonic() + 120 * 60': 'deadline = time.monotonic() + 180 * 60',
+    'exceeded120-minute training budget': 'exceeded180-minute training budget',
+    'gradient_clip=1.,': 'gradient_clip=1.,training_time_budget_minutes=180,',
+    'production_acceptance=False)\n    torch.cuda.reset_peak_memory_stats()': "production_acceptance=False,resource_amendment=dict(micro_batch_size=16,accumulate_steps=2,activation_checkpointing=True,effective_batch=32,reason='physical-budget checked larger batches amortize frozen-backbone compute; smaller batches underutilize GPU; all39107 windows retained'))\n    torch.cuda.reset_peak_memory_stats()",
+}
+for before, after in changes.items():
+    assert before in trainer, before
+    trainer = trainer.replace(before, after)
+trainer = trainer.replace("        with (LAB / 'qwen-sequence-v5d-preflight.json')", "        metadata['physical_total_bytes']=torch.cuda.get_device_properties(0).total_memory\n        assert metadata['peak_cuda_bytes'] < .92*metadata['physical_total_bytes'], metadata['peak_cuda_bytes']\n        with (LAB / 'qwen-sequence-v5d-preflight.json')")
+needle = "            optimizer.step()\n            optimizer.zero_grad(set_to_none=True)"
+assert trainer.count(needle)==1
+trainer = trainer.replace(needle, needle + '''
+            if math.ceil(step/2)%250==0:
+                checkpoint=output/f'partial-step-{step}'
+                checkpoint.mkdir(exist_ok=False)
+                save_file({name:p.detach().cpu().contiguous() for name,p in model.named_parameters() if p.requires_grad},str(checkpoint/'adapters.safetensors'))
+                torch.save(dict(optimizer=optimizer.state_dict(),torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all()),checkpoint/'optimizer-and-rng.pt')
+                with (checkpoint/'progress.json').open('x',encoding='utf-8') as handle:
+                    json.dump(dict(completed_batches=step,total_batches=len(batches),training_windows_seen=seen,loss_sum=loss_sum,epoch_complete=False,evaluation_run=False,accuracy_status='NOT_RUN',code_sha256=metadata['code_sha256'],features_sha256=metadata['features_sha256']),handle,indent=2)
+''')
+with (LAB / 'train_qwen_sequence_v5d.py').open('x', encoding='utf-8', newline='\n') as handle:
+    handle.write(trainer)
+audit = dict(created_at_utc=datetime.now(UTC).isoformat(), original_run='v5c', replacement_run='v5d',
+    original_outcome='resource throughput restart before complete epoch; no evaluation; NOT_RUN accuracy',
+    original_files={name:hashlib.sha256((LAB/name).read_bytes()).hexdigest() for name in
+        ['train_qwen_sequence_v5c.py','qwen_sequence_model_v5c.py','qwen-sequence-v5c-preflight.json','train-qwen-sequence-v5c.log']},
+    reason='micro4 adaptive25/9777 batches32.1s projects209min; micro8 checkpointed projected135min; choose larger checkpointed16 after physical-budget probe',
+    replacement='micro16 accumulate2; checkpointed; effective batch32;180minute budget; periodic partial state retained',
+    labels_or_datasets_or_learning_rate_changed=False, production_acceptance=False)
+with (LAB / 'qwen-sequence-v5c-resource-restart.json').open('x',encoding='utf-8') as handle:
+    json.dump(audit,handle,ensure_ascii=False,indent=2)
+print('Prepared larger checkpointed batch resource probe; all prior attempts preserved')

@@ -1,0 +1,84 @@
+import csv
+import hashlib
+import json
+import re
+import sys
+from collections import Counter
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+from pypinyin import Style, pinyin
+
+from qwen_sequence_encoding_v5 import SequenceEncoder, SYSTEM
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development,pcr
+from evaluate_comment_model import preprocess
+from evaluate_recall import load_external,source_sha
+from app.services.moderation import ModerationService
+from app.services.normalization import canonicalize
+
+sha=lambda data:hashlib.sha256(data).hexdigest()
+torch.set_num_threads(2)
+features=LAB/'phonetic-training-v3.features.pt'
+prepared=torch.load(features,map_location='cpu',weights_only=True)
+records=prepared['records'];assert len(records)==42114
+toxic=load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))
+pcr_rows,excluded=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+assert not excluded
+raw={row['id']:row['text'] for row in [*toxic,*pcr_rows]}
+for version in ['v2','v3']:
+    for row in development(ROOT/f'docs/qa/data/us24-development.{version}.jsonl'):
+        if not row['expected_word']:raw[f'{version}-{row["id"]}']=row['text']
+for row in map(json.loads,(ROOT/'docs/qa/data/us24-context-stress.v1.jsonl').read_text(encoding='utf-8').splitlines()):raw[row['id']]=row['text']
+with (LAB/'cold-official-train.csv').open(encoding='utf-8-sig',newline='') as handle:
+    for n,row in enumerate(csv.DictReader(handle),1):raw[f'COLD-TRAIN-{n:05d}']=row['TEXT']
+literal=ModerationService(ROOT/'services/algo/app/data/moderation-v3_8-candidate.json')
+encoder=SequenceEncoder(LAB/'qwen3-1_7b-tokenizer')
+probe=encoder.encode('重庆银行今天开放。')
+assert probe and all(len(window['input_ids'])<=512 for window in probe)
+output=LAB/'qwen-sequence-v5-inputs';output.mkdir(exist_ok=False)
+policy=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='supervised decoder/LoRA development; no new independent evaluation',
+    base_model_repo='Qwen/Qwen3-1.7B',base_revision='70d244cc86ccca08cf5af4e1e306ecf908b1ad5e',
+    previous_features_sha256=sha(features.read_bytes()),dictionary_sha256=literal.dictionary_sha256,
+    tokenizer_manifest_sha256=sha((LAB/'qwen3-1_7b-tokenizer.manifest.json').read_bytes()),
+    labels='all42114 original/augmented training and evaluation rows retain IDs/native labels/source hashes',
+    training_preprocess='same canonical originals and3563 unchanged-label toneless training augmentations',
+    evaluation_preprocess='current3.8 finite context mask; collapse consecutive protected square markers; all other text retained',
+    template='system instruction plus escaped JSON text and one context-first toneless pinyin view; labels/IDs never rendered',
+    system_instruction_sha256=sha(SYSTEM.encode()),maximum_tokens=512,char_overlap=32,
+    window_policy='binary-search fitting windows; all transformed characters covered, no comment truncation; maximum window score',
+    epochs=1,micro_batch_size=8,accumulate_steps=4,learning_rate=1e-4,warmup_fraction=.05,seed=20261124,
+    adapter=dict(targets=['q_proj','v_proj'],rank=8,alpha=16,dropout=.05),
+    backbone='frozen BF16; train FP32 adapters and2-label readout only; activation checkpointing',
+    cohorts=dict(Counter(row['cohort'] for row in records)),excluded_evaluation_rows=0,
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'qwen_sequence_encoding_v5.py',ROOT/'services/algo/scripts/evaluate_comment_model.py']},
+    engine_sha256={p.relative_to(ROOT).as_posix():source_sha(p) for p in [*(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py']},
+    upstream_evaluation_exposure='unknown; formal campus acceptance still requires fresh M3 samples',
+    COLD_dev_fetched=False,M1_review='PENDING',production_acceptance=False)
+with (output/'policy.json').open('x',encoding='utf-8') as handle:json.dump(policy,handle,ensure_ascii=False,indent=2)
+ready=[];index=[];changed=0
+for number,row in enumerate(records,1):
+    source=raw[row.get('source_id',row['id'])]
+    assert len(source)<=2000 and sha(source.encode())==row['source_text_sha256']
+    training=row['cohort']=='training'
+    if training:
+        text=canonicalize(source)
+        if row.get('augmentation'):text=' '.join(parts[0] for parts in pinyin(text,style=Style.NORMAL,heteronym=False)).lower()
+        assert sha(text.encode())==row['transformed_sha256']
+    else:
+        text=re.sub('□+','□',preprocess(source,literal,True)['text'])
+        changed+=sha(text.encode())!=row['transformed_sha256']
+    item={k:v for k,v in row.items() if k!='windows'}
+    item['previous_transform_sha256']=row['transformed_sha256'];item['transformed_sha256']=sha(text.encode())
+    if not training:item['literal_any']=bool(literal.check(source).hits)
+    item['windows']=encoder.encode(text);ready.append(item)
+    index.append({**{k:v for k,v in item.items() if k!='windows'},'windows':len(item['windows']),
+                  'window_lengths':[len(w['input_ids']) for w in item['windows']]})
+    if number%1000==0:print(f'Prepared Qwen dual-view {number}/{len(records)}',flush=True)
+assert len(ready)==42114 and len({r['id'] for r in ready})==42114
+with (output/'features.pt').open('xb') as handle:torch.save(dict(policy=policy,records=ready),handle)
+with (output/'index.json').open('x',encoding='utf-8') as handle:json.dump(dict(policy=policy,evaluation_transform_changes=changed,rows=index),handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(prepared=len(ready),cohorts=policy['cohorts'],evaluation_transformation_changes=changed,excluded_evaluation=0)),flush=True)

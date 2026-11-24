@@ -1,0 +1,2054 @@
+[
+  {
+    "id": "COLD-TRAIN-24434-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "9d5c9f471447201d218fcff41e1228e97805c285aa94a0a7f79d4c2d65036f96",
+    "normalized_sha256": "9d5c9f471447201d218fcff41e1228e97805c285aa94a0a7f79d4c2d65036f96",
+    "transformed_sha256": "2fd2590ad7a7d181e3d4d3d960b5fdffa7718e1166ec07c5ebf4c27e95a2d94d",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24434",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "2fd2590ad7a7d181e3d4d3d960b5fdffa7718e1166ec07c5ebf4c27e95a2d94d",
+    "windows": 1,
+    "window_lengths": [
+      93
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24444-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "c04882ab18284ee3a7f67a0f61bc016d45623179ca606e66710946ba5e2fc1da",
+    "normalized_sha256": "75e09933497c8763128e8d9bedd34890f49e7de84c2737d852b86633a685e3b1",
+    "transformed_sha256": "b830bc7f49f0c4873f63f2684f3f2df35203df488d7668065e1284140018682d",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24444",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "b830bc7f49f0c4873f63f2684f3f2df35203df488d7668065e1284140018682d",
+    "windows": 1,
+    "window_lengths": [
+      188
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24460-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "682c662487d1872b3679ece6ab2dabc30a2aaec24a665dd225c945024205083f",
+    "normalized_sha256": "4ca0926883012389e0f37085d5268f3c5a21566b5c44a12a77325d42cc2ef306",
+    "transformed_sha256": "ecd6a678ee1591a088bdd8205132f2f13d7a4fb6e4a898c1ac2b7e08bf5f92ce",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24460",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "ecd6a678ee1591a088bdd8205132f2f13d7a4fb6e4a898c1ac2b7e08bf5f92ce",
+    "windows": 1,
+    "window_lengths": [
+      147
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24468-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "c8c5868d53dd7667dc5236397d638ae4361362e931d3dbb5b32ceea71f896a9e",
+    "normalized_sha256": "a0de0be06620f7b726cea51c6a84bc211c33f3f443b8b7c030ffd50ad4db8f8d",
+    "transformed_sha256": "78018610bed71acedf66dee55c044a91f6bc259abfc6851651454fddc20493a2",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24468",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "78018610bed71acedf66dee55c044a91f6bc259abfc6851651454fddc20493a2",
+    "windows": 1,
+    "window_lengths": [
+      239
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24471-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "7893e3063321ecc64a8481a4c2ab2338ac409faaa586c3b790cedd4c77676ced",
+    "normalized_sha256": "8641db3cf33874e8efc5ab4f5677b4038a764c12624b3128cb430751977f1323",
+    "transformed_sha256": "3cadf93172f779284eb6684be52cb731a61c125ce663b62d888beacba9c71a1d",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24471",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "3cadf93172f779284eb6684be52cb731a61c125ce663b62d888beacba9c71a1d",
+    "windows": 1,
+    "window_lengths": [
+      315
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24475-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "f4c91ed7a186d2eef2eba2737fb856beddb1f7039a4386b359b38571e0a5bc84",
+    "normalized_sha256": "f4c91ed7a186d2eef2eba2737fb856beddb1f7039a4386b359b38571e0a5bc84",
+    "transformed_sha256": "9546cd5feb359a1b6186728bfecd4c0b605b1e5f3097356f71be0f41f5a5a6cd",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24475",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9546cd5feb359a1b6186728bfecd4c0b605b1e5f3097356f71be0f41f5a5a6cd",
+    "windows": 1,
+    "window_lengths": [
+      149
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24484-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "b4e9e084996929d8df4a5636e62e6afffe4744fabc8144ca84eca0c6c01f04f1",
+    "normalized_sha256": "91e0e84d393962bc92d11232ad38a83dc431580fa29fde76d36048e9a44fc0b3",
+    "transformed_sha256": "26d1d79f59711cea2167b78da301c0707036680e24cb51d49397686149b28ab6",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24484",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "26d1d79f59711cea2167b78da301c0707036680e24cb51d49397686149b28ab6",
+    "windows": 1,
+    "window_lengths": [
+      280
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24521-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "a2a0d291d6e3ac2e4578f48b3d7b2dc1e4ce5ca6e260dbb8b9da0de059ab4a77",
+    "normalized_sha256": "a0d2ce22dbe6f9bdb16ad10206319cec20b6d868cd7cf54551b2af28e67a68c4",
+    "transformed_sha256": "eba7df90f7b956a1857a58a3a7de29a4a0b62c83bda1cdf4464aa36e96f2976b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24521",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "eba7df90f7b956a1857a58a3a7de29a4a0b62c83bda1cdf4464aa36e96f2976b",
+    "windows": 1,
+    "window_lengths": [
+      125
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24533-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "e836f13f9255ef9c63897bee2ec19c8e5d2ebd1c473f1c82beec90d570b87d50",
+    "normalized_sha256": "2d4eb731a18f713e51a340bf4c3fce653406ba9968d23ea72d312ba7bd86ca4f",
+    "transformed_sha256": "4fc8e7686fde265e8e5f4e5343af043a79efd5db4d3b9e3d4be70fa979370b93",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24533",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "4fc8e7686fde265e8e5f4e5343af043a79efd5db4d3b9e3d4be70fa979370b93",
+    "windows": 1,
+    "window_lengths": [
+      116
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24542-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "f0c3570c56cf5ee59242e80d88d7814392673e6bdbedf1be1f315cc384a022b9",
+    "normalized_sha256": "29da165fa51b8987a9ee9b3c595354a5510fbb98c679fabad84dc2e85333cf0e",
+    "transformed_sha256": "a8dcc2b6e53c3901b3415b59add91948346308997e2560d49d0fa01d3ac8b4f8",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24542",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "a8dcc2b6e53c3901b3415b59add91948346308997e2560d49d0fa01d3ac8b4f8",
+    "windows": 1,
+    "window_lengths": [
+      213
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24551-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "4f505942f3a46969fdc3e5ba531bf4ddacabf0dd273fe747c6e75c42ea3e8906",
+    "normalized_sha256": "97e15d470c4bb8e859b54da6405a41dfcf5a5852efdfe75ec5fca2bcdf33f7d5",
+    "transformed_sha256": "15f1fd20d59aca92da384e6ff34cf03e3536882eedc21d9e0db6f85f885586bd",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24551",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "15f1fd20d59aca92da384e6ff34cf03e3536882eedc21d9e0db6f85f885586bd",
+    "windows": 1,
+    "window_lengths": [
+      272
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24564-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "38a1151d8efc886e609385f71104b33c2a355ad5a022c989a21f02ab7850e6a3",
+    "normalized_sha256": "c888bf91ea8e479141244db1b9ecd398f3e1193ab0bb4d137343ae8aa6fc4fb2",
+    "transformed_sha256": "a8f1ff21203a1cdc9f31aed1a566ae53786fd923aaa2b0e6ca32ddab7b44a134",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24564",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "a8f1ff21203a1cdc9f31aed1a566ae53786fd923aaa2b0e6ca32ddab7b44a134",
+    "windows": 1,
+    "window_lengths": [
+      241
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24568-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "75d89e98c4929c9cdb37f487d73127f98e1775273c3ffaeac499c132c5b54a64",
+    "normalized_sha256": "1ffee1780e6d85a8c2cbbffd76d90ce0f8c5f8b26c014af9e38f22d19b300e0a",
+    "transformed_sha256": "cdf9866f82d1d3ccd051ddb49865229485de9e39eb5ebe421814ce84393d03d4",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24568",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "cdf9866f82d1d3ccd051ddb49865229485de9e39eb5ebe421814ce84393d03d4",
+    "windows": 1,
+    "window_lengths": [
+      175
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24569-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "0616a3d6385cf0b2a30468174f37976f5dbc36357633c0dae7767303fba371dd",
+    "normalized_sha256": "37913229cb04529dd4e1eb80e3dea016a3def9d96b9a1fb8b992cb56ddcd495f",
+    "transformed_sha256": "99dac372177ea16526ef211584fd1c6b70c097575fc4b7a5bac348784ba0b74c",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24569",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "99dac372177ea16526ef211584fd1c6b70c097575fc4b7a5bac348784ba0b74c",
+    "windows": 1,
+    "window_lengths": [
+      263
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24571-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "72f1ac107a3811fb3d313ca225078a1cdd6f15f52ab8d597815854c49ea234ca",
+    "normalized_sha256": "6b4d5816fde407ae8d9b4afa585cadeadd59ed36d397862ee96dc26ac4a36496",
+    "transformed_sha256": "02c584a7b774d318b22e3845f2e38ec73887d1946b2b0060b62370c91933ea6e",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24571",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "02c584a7b774d318b22e3845f2e38ec73887d1946b2b0060b62370c91933ea6e",
+    "windows": 1,
+    "window_lengths": [
+      171
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24573-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "df08a4ad67953bb4a7b1c0401e827ac02d6d8c41d912e3c1891faba51479ab04",
+    "normalized_sha256": "1375a4ec3f4cd031b673283564c6483be089b532044ebc4b145237ef2b686e38",
+    "transformed_sha256": "16549f3bcf58c2e0b251ec58213bd2292eee16abd8af4ddd107fca0a5b2492dc",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24573",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "16549f3bcf58c2e0b251ec58213bd2292eee16abd8af4ddd107fca0a5b2492dc",
+    "windows": 1,
+    "window_lengths": [
+      221
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24599-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "8a6bc931c9a2ba669edbe411051db9586568085444612a7ec4051a4609b3f1f5",
+    "normalized_sha256": "8a6bc931c9a2ba669edbe411051db9586568085444612a7ec4051a4609b3f1f5",
+    "transformed_sha256": "7c233bfd56f8b2b591fdcb0570616c02c0c6dc56f369b5bad6bc8b2dfc75030e",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24599",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "7c233bfd56f8b2b591fdcb0570616c02c0c6dc56f369b5bad6bc8b2dfc75030e",
+    "windows": 1,
+    "window_lengths": [
+      123
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24616-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "362a88ca39a94c2cf152e53966aa9e1780c423d174e90fb4d0823a817cc8d00a",
+    "normalized_sha256": "7ab7df51be0675badfd845688e7fa4b3cdaeabcd7f839ad624da942a615d8e2f",
+    "transformed_sha256": "316843501b383b9995e3285a6201e822652b948adf04c1b4a8e8fd4d389d3395",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24616",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "316843501b383b9995e3285a6201e822652b948adf04c1b4a8e8fd4d389d3395",
+    "windows": 1,
+    "window_lengths": [
+      275
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24627-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "78e6b6bd3eece8ec2629c451b3318d878bd8fb242c88405479fdd3c611937583",
+    "normalized_sha256": "2f75994eaf88f9b5db1bd1fba123ab5c8438e2e072fc618dea127d5c169450ce",
+    "transformed_sha256": "a78e1418cfaaea4d3c7092dd65f062beb7facc137e27be7ca36371dec40710a4",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24627",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "a78e1418cfaaea4d3c7092dd65f062beb7facc137e27be7ca36371dec40710a4",
+    "windows": 1,
+    "window_lengths": [
+      185
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24632-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "54c9b26dd245082415b651abad59f79ea8d3fd0756306c777cc96c728ff71e41",
+    "normalized_sha256": "7a532637ea10edcaed0bb135829ba967db4cf09118d703c0b88987dcea1e81fb",
+    "transformed_sha256": "fdd983cad909bdaba73dd38aa3d1c9d05fd7d5ad99f72a05c8a9455379c96b14",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24632",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "fdd983cad909bdaba73dd38aa3d1c9d05fd7d5ad99f72a05c8a9455379c96b14",
+    "windows": 1,
+    "window_lengths": [
+      395
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24639-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "6b6ee3cb0074f22885b63d39133fcf5ee49d081dfc4f53237ffc1f9a3803a8cf",
+    "normalized_sha256": "565013fbb47217b0ed9efbebfaa6461e06f7bce91b2f7718776c6774ae01fe4e",
+    "transformed_sha256": "f1baa94c192988a354de2e762afdbecc7ef4207c4e2152c5bf77a384005a8ddc",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24639",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "f1baa94c192988a354de2e762afdbecc7ef4207c4e2152c5bf77a384005a8ddc",
+    "windows": 1,
+    "window_lengths": [
+      139
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24671-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "ab5fb8283ffc7a5cf4e0e066e8953b3599922eae1119609cc2240ecce4c503e4",
+    "normalized_sha256": "98505310b53f000b4895338d5c8d6060902e7b3772a31b3d4c8e8696c33be23d",
+    "transformed_sha256": "d2ca773d3d27f1cb1c0805bcf739a6f2b2fc347b3e116d1aabd243fe650f568b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24671",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "d2ca773d3d27f1cb1c0805bcf739a6f2b2fc347b3e116d1aabd243fe650f568b",
+    "windows": 1,
+    "window_lengths": [
+      220
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24680-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "beecf01cdb39deb7582f1d3ddef36f5bddd0c98c35bd4de5c16abfe4c18f4dd0",
+    "normalized_sha256": "616d5aadd34966299f8a9ced5db8f575c7fc6c589bcad33ba73e8081635b5adf",
+    "transformed_sha256": "47ad110844dd07fd7b026f4dfc3565d7af63341c032e2eb3f7768be693f1b334",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24680",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "47ad110844dd07fd7b026f4dfc3565d7af63341c032e2eb3f7768be693f1b334",
+    "windows": 1,
+    "window_lengths": [
+      175
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24692-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "ebc00895f97630e02bd2ab9918009aac1215bd0095e17a48ff7ea2c1915d8636",
+    "normalized_sha256": "3a120400e45eacb65b1f04153c5e2e1267dd4001a9cefa01cca7f52ee177de2f",
+    "transformed_sha256": "9b6355d3bb6586fd4552c09546d1d77b051e487e65b9d5306efa05a96b0f0fbc",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24692",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9b6355d3bb6586fd4552c09546d1d77b051e487e65b9d5306efa05a96b0f0fbc",
+    "windows": 1,
+    "window_lengths": [
+      120
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24716-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "b48cb80684456e6d631f2c13bd9cfb511b53d9d4ffecf6c4a5a00344b167258a",
+    "normalized_sha256": "e0364092b0cd15ecc5f84d60a0a6510ff4cbb3c0ca761eb232720cd7d08e6373",
+    "transformed_sha256": "213cffae357a13933fa594cf4dc565d39366830f3369c3ae6a5954998a857a85",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24716",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "213cffae357a13933fa594cf4dc565d39366830f3369c3ae6a5954998a857a85",
+    "windows": 1,
+    "window_lengths": [
+      352
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24717-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "47ef7d1c2e63f049bfd82cd5a827f9da2f37d53a3d364d975a6693e17b66aa1b",
+    "normalized_sha256": "ad6e8bec0ff4a569e5908b1e80b95f13480e8e09b4a64e35d139ee4d0fd5e848",
+    "transformed_sha256": "775bc06eb014506b6bdcc356d4a672cd7fcd84af3049e1eb3e86f75134db53d2",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24717",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "775bc06eb014506b6bdcc356d4a672cd7fcd84af3049e1eb3e86f75134db53d2",
+    "windows": 1,
+    "window_lengths": [
+      135
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24724-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "f47688d777bb2eabdcc39469d7bc041dca5cfd1139d7d27265b36c91a58565dc",
+    "normalized_sha256": "577f212cf0e8e9ac8a52a8d080136b07fc298c003ffd0dc60ad7efc5c650ed4c",
+    "transformed_sha256": "8dc7f1b52dc4a328234439b1adec17753e83a19093260dd8c94fbf3f67bd6491",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24724",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "8dc7f1b52dc4a328234439b1adec17753e83a19093260dd8c94fbf3f67bd6491",
+    "windows": 1,
+    "window_lengths": [
+      141
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24747-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "d63055d2b3f682e87f36d6580ff13b65f078967a416d100e9363933887379d56",
+    "normalized_sha256": "9bfca5341c8047314417982d155e157c4c954e7dd0b339ebd4f949f0297f4523",
+    "transformed_sha256": "b949c3112bd19c8d9168b27d71a7a39b4e33651441a23ebe00f659c391a8752c",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24747",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "b949c3112bd19c8d9168b27d71a7a39b4e33651441a23ebe00f659c391a8752c",
+    "windows": 1,
+    "window_lengths": [
+      171
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24758-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "618e1455989c5f709c372dc92c8f88704b0a3f5b63174345e8ef56d40a5385c2",
+    "normalized_sha256": "42ea59593b3c8ba0bf4f772597370b6c4eaea2387cbb699ee71ca160020bd258",
+    "transformed_sha256": "5cd6eb9c8f14a497f03b88a31f1ba447d112dceb87e0773e06f98e53e0c670d6",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24758",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "5cd6eb9c8f14a497f03b88a31f1ba447d112dceb87e0773e06f98e53e0c670d6",
+    "windows": 1,
+    "window_lengths": [
+      246
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24761-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "c8e393bd186b6f2c669d5578582f58ac2407439a42dee9c4a2d37f3f46cce6f1",
+    "normalized_sha256": "97a4131f779acf87f2c8543b90eb61144438ddcdf0c284f30147e99cfced8dee",
+    "transformed_sha256": "92253b87ea0f9319e16327f0100fd8d7ddf2a94cd2ccfad62f5472cc9b9e1c32",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24761",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "92253b87ea0f9319e16327f0100fd8d7ddf2a94cd2ccfad62f5472cc9b9e1c32",
+    "windows": 1,
+    "window_lengths": [
+      411
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24764-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "fa1aecc6aa30bc90c5661670eec55df6378d1d0ea6954be61450a5490590ec69",
+    "normalized_sha256": "2f5e65ffb7ad7fd32969b39255b8f38657eafb840e33bd0ccf4df98f1e6fb7ac",
+    "transformed_sha256": "0571a9ec0ca7171fb91240111d76203bd0cfba7ea1caf4378b6fdd6e66e2cec8",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24764",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "0571a9ec0ca7171fb91240111d76203bd0cfba7ea1caf4378b6fdd6e66e2cec8",
+    "windows": 1,
+    "window_lengths": [
+      240
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24777-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "d315545b74e4c084c1619113b981adaac1861bb3f2843a2d1745cc34d7acf7d0",
+    "normalized_sha256": "8341ec1c8c4df7f2c254a9d2a0d11b0400479ceffa839b5c7e73bce840ef6ca4",
+    "transformed_sha256": "010205bf2f2c47f2c18b92d36852a5cb39b69f996903a96475124b82c3340c8a",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24777",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "010205bf2f2c47f2c18b92d36852a5cb39b69f996903a96475124b82c3340c8a",
+    "windows": 1,
+    "window_lengths": [
+      143
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24787-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "f94d0465ebba4c91069b9d8c4c7f398d332da3bdf5c5e606e2e22267b476a337",
+    "normalized_sha256": "534842cfb1f0cb1a34b4f0c5759980dc9ec2960b35d431d41b6a5215cad35362",
+    "transformed_sha256": "ce3e79fce6c7887ff38cf302b64e15a972ad0830ad1d27ca19e49530a58b9ba9",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24787",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "ce3e79fce6c7887ff38cf302b64e15a972ad0830ad1d27ca19e49530a58b9ba9",
+    "windows": 1,
+    "window_lengths": [
+      115
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24795-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "681b0bab30aae0ddd0c83445972e84a37ed9ca5e8e285588d6bb5f9992fe84dd",
+    "normalized_sha256": "cb7366be728040d9588796f1890789ed4cb4734a1ecd6085782fb6e6dc7258d8",
+    "transformed_sha256": "ce756785ca3c272f354758d7028e074778814e66fa385342218c259f475706e1",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24795",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "ce756785ca3c272f354758d7028e074778814e66fa385342218c259f475706e1",
+    "windows": 1,
+    "window_lengths": [
+      147
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24797-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "2b02cd36528d9846e88b8b7d6d5db4ae32741ca740615cce6c02b298690fe249",
+    "normalized_sha256": "d6524df94a489be5b47e0a972973112aafeb6cd39792edc5115576b61bf66ea0",
+    "transformed_sha256": "22c5111f0f3e4cd944931440294911c79c8bd303890ff965614d719a603549bd",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24797",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "22c5111f0f3e4cd944931440294911c79c8bd303890ff965614d719a603549bd",
+    "windows": 1,
+    "window_lengths": [
+      163
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24831-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "eb64516f78404fac4025ff4102d381e3ceac2e762bfd3d03a6bd41191a7fedd2",
+    "normalized_sha256": "80c2ff48269c078eca6ef755da5fc340a5f7dfd211c123f5c97a03e1fafc10ad",
+    "transformed_sha256": "eb3a61e03426fb1be45a39b8891c06555990d9c29ac3fe06d3556b08233ec8b6",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24831",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "eb3a61e03426fb1be45a39b8891c06555990d9c29ac3fe06d3556b08233ec8b6",
+    "windows": 1,
+    "window_lengths": [
+      135
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24842-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "51c64da7fec25f5e752fdcabd61e921c2f3d9d3c794930050e18f78701c3b8f1",
+    "normalized_sha256": "3c8ea0c955a50b1742c7e8de1ce2cd00fa4b7c6e22f09f1ffbfcd7753ac8e1b4",
+    "transformed_sha256": "084e08470bf6d08db1a28e1fab8aa65f49b59472b1deb1707b72610962648976",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24842",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "084e08470bf6d08db1a28e1fab8aa65f49b59472b1deb1707b72610962648976",
+    "windows": 1,
+    "window_lengths": [
+      317
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24878-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "6f515aadaa9f3d37c204afef719eef0f2ebaf6d66738335c849d1f34f0d0721d",
+    "normalized_sha256": "21cee1041e1cab1c409c84c7143f92caa4314e262503531fc7d2e6aae1e4bfb3",
+    "transformed_sha256": "9397e0cdd5ca4224999c09d9683b230fe5bf7e6fe302034f5033d6c82730ba87",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24878",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9397e0cdd5ca4224999c09d9683b230fe5bf7e6fe302034f5033d6c82730ba87",
+    "windows": 1,
+    "window_lengths": [
+      264
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24889-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "9d1d449b297ff9b4afe2b3067fc56608a66be97d1bc292569ea331c6f0b3c409",
+    "normalized_sha256": "d712bbfb4e652ca933cc17cd51f2403afb9e90df47b66cae44e86984e9cfc98a",
+    "transformed_sha256": "d117eb358d6b34a37de511d9fd8ab2f5adec6f8c15445f5cf719a77b863d073a",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24889",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "d117eb358d6b34a37de511d9fd8ab2f5adec6f8c15445f5cf719a77b863d073a",
+    "windows": 1,
+    "window_lengths": [
+      355
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24898-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "98b1f3fb14732f1c0583fa6a7c033a1debdf31c2ce31eba575323a54fdaa9477",
+    "normalized_sha256": "98b1f3fb14732f1c0583fa6a7c033a1debdf31c2ce31eba575323a54fdaa9477",
+    "transformed_sha256": "ecc3e3bbefc0f0a0eb622c04cfd2a1b6617f8d89b8adea38fe4dc63a7af5ba7b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24898",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "ecc3e3bbefc0f0a0eb622c04cfd2a1b6617f8d89b8adea38fe4dc63a7af5ba7b",
+    "windows": 1,
+    "window_lengths": [
+      111
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24918-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "352b77626b9469239d96d22ca4787685696aec81d34c03cc869ccd1055a7aaf8",
+    "normalized_sha256": "d8ff324266cddad14ce60e3fc6aa81653cc233403c5eeb1269a81f72fe41c498",
+    "transformed_sha256": "bdea38c5bac0f14929187bfb3315700cb7add0e2ef43871a9514f3d71d079b4b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24918",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "bdea38c5bac0f14929187bfb3315700cb7add0e2ef43871a9514f3d71d079b4b",
+    "windows": 1,
+    "window_lengths": [
+      141
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24947-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "57cd2b60d2c53beaf66575e05f863b80267c310739ea4d2116d4c7835d0d2dfa",
+    "normalized_sha256": "eb89f36ff4b7f4febaa9456e910306a424a8e34501517ae730fc2fcaa03f628e",
+    "transformed_sha256": "9373eb1348a6635551dabbe2108305ddceb7659c109624ce9519cfee4b3f1558",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24947",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9373eb1348a6635551dabbe2108305ddceb7659c109624ce9519cfee4b3f1558",
+    "windows": 1,
+    "window_lengths": [
+      237
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24958-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "a292ffca2d31603754f596bbe957b9b95c4c4270c126055792f29fab154c73b1",
+    "normalized_sha256": "e01ad98822b99675f94654399bf0a459a464784a0c162b89132e718f6fa2f47f",
+    "transformed_sha256": "b7d0cc71fcfc7c2cd11065fd646bd385b1d7a0e8e6108e6b690e8aee46423afd",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24958",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "b7d0cc71fcfc7c2cd11065fd646bd385b1d7a0e8e6108e6b690e8aee46423afd",
+    "windows": 1,
+    "window_lengths": [
+      227
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24969-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "e43eee8a2eeca7bf2aa52018186c57cf7cb8c9e1e0ba7bd73a1e1fe96a03d0c0",
+    "normalized_sha256": "5dde988f2fc04b1ca320155f4517afa31df6985450c0a94101947023a7c9d8df",
+    "transformed_sha256": "fb1ac86e822086be2833caafaec25f0a6678ba7d8d0637613e4b550af71f7bf7",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24969",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "fb1ac86e822086be2833caafaec25f0a6678ba7d8d0637613e4b550af71f7bf7",
+    "windows": 1,
+    "window_lengths": [
+      404
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24988-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "52fdd096aec05f76faca3b3d854cbba68b2b646c5842663d42a07eba5fd06d53",
+    "normalized_sha256": "a5efa4d7b49ee4437bfe83274aa0a10ea9e3e4ed4314d0844275144f86517216",
+    "transformed_sha256": "24dec52114f569f461d85ba179c3c50a94b84a009569386f14f63e2f433c33ac",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24988",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "24dec52114f569f461d85ba179c3c50a94b84a009569386f14f63e2f433c33ac",
+    "windows": 1,
+    "window_lengths": [
+      363
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24994-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "cf6a767fd4d04024d0ff9a0bc3965299099db683409daa544a7f327d79d91ccf",
+    "normalized_sha256": "2c1778b4e7c012e0bb0e863272c31c4e97bd7b7e376a887f69b10e9cdcdbee59",
+    "transformed_sha256": "9fdb3dc9a247b9202e7e57edd21e776e09d847b02f0e3f355b87fc8d34f7adf6",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24994",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9fdb3dc9a247b9202e7e57edd21e776e09d847b02f0e3f355b87fc8d34f7adf6",
+    "windows": 1,
+    "window_lengths": [
+      340
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24998-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "6535c5b10dcd7cddf58858e4c6d5a6b94ba33d711d59ab8702385a5506bd794e",
+    "normalized_sha256": "fee0c9b9dcc309f2936e863808de30418526e3ba9689b67b2206b3d7787e41fc",
+    "transformed_sha256": "506cc8d2203e3bdd1035df1be3370494cee9c401aa98f97fe8e742b9dc0e0157",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-24998",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "506cc8d2203e3bdd1035df1be3370494cee9c401aa98f97fe8e742b9dc0e0157",
+    "windows": 1,
+    "window_lengths": [
+      212
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25016-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "b9687fec15851e9b43d907135605005343742ea2d7d2c2dec18c3dacd6021971",
+    "normalized_sha256": "146bdc4f6e468976fe8e0a8e0d5ac162fd3dbc6b25d8e84573ce097474f0f578",
+    "transformed_sha256": "7acdc21acd6a24026dbf05c6968948d198e978c5b1194e4494d22882cb021c29",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25016",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "7acdc21acd6a24026dbf05c6968948d198e978c5b1194e4494d22882cb021c29",
+    "windows": 1,
+    "window_lengths": [
+      201
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25020-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "15b0b9225ede99fc26178df43e0e2b2d301012c4b948891fc78657572b3ddb47",
+    "normalized_sha256": "c231af4560f92b9743026e87bf0f8d5a0f4ce8db4558db3011ec1283e182dca3",
+    "transformed_sha256": "0ee384ce4c10cbfc25548afc42ea8a9055171f1765a8e638001117670476084b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25020",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "0ee384ce4c10cbfc25548afc42ea8a9055171f1765a8e638001117670476084b",
+    "windows": 1,
+    "window_lengths": [
+      179
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25051-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "fbe8f19c5f9c599d8fc86640cbb9f3850d73c094f90f4b3599be03823f33101b",
+    "normalized_sha256": "99f65982d229ae486d84c694195334d3763c66ef1ad012e3be13e2ea390b3d76",
+    "transformed_sha256": "c9d8c128782ff04462bbaff07b196b9a5206d6c8fb91f73f498ef1a5a9fc2871",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25051",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "c9d8c128782ff04462bbaff07b196b9a5206d6c8fb91f73f498ef1a5a9fc2871",
+    "windows": 1,
+    "window_lengths": [
+      397
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25056-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "3238caee8d402f0c004b32daa63d3713af25f6a4b8ce66ed0526d1676513e270",
+    "normalized_sha256": "62a6e083ef59ab8ba4c9b4c85569ae9733b54e80cf2fc1b066ff689c7ba694b2",
+    "transformed_sha256": "49930584db9f3e105302622e0997c2b1add347985ec4dc71f7ec9c4f7d7af815",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25056",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "49930584db9f3e105302622e0997c2b1add347985ec4dc71f7ec9c4f7d7af815",
+    "windows": 1,
+    "window_lengths": [
+      386
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25060-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "590835c5cb069aeacfe0cf4d4fbb6f1e51f70e0a707ffc062bd30e65295f5c72",
+    "normalized_sha256": "9494f57bd37bf16f1f3eb794028c90fe5e5813368c6f49908232b71165c38666",
+    "transformed_sha256": "7ced335d0504d6abe4d580ff6559646f1d4b1b67d8562856d19ad14aef4dc043",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25060",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "7ced335d0504d6abe4d580ff6559646f1d4b1b67d8562856d19ad14aef4dc043",
+    "windows": 1,
+    "window_lengths": [
+      213
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25066-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "cf7220e6d87927d167b143a86e40e78ae0845419ab841169f5ffd0563ac9d4ac",
+    "normalized_sha256": "b9b74f16f0e90b2fa688ddf23cd2c8e0b0b62b4419d5dbeef7e2e2bf7b1d253c",
+    "transformed_sha256": "7e790b3ece484b084906f11d52e409e80fa72fd2917a351518ea7746870390df",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25066",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "7e790b3ece484b084906f11d52e409e80fa72fd2917a351518ea7746870390df",
+    "windows": 1,
+    "window_lengths": [
+      385
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25070-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "ba3dc8a1609466277dd3a6fb05e24d2d3909bd5e6032ddf0821d8b47b3ee71fb",
+    "normalized_sha256": "ba3dc8a1609466277dd3a6fb05e24d2d3909bd5e6032ddf0821d8b47b3ee71fb",
+    "transformed_sha256": "54df016da718dd7a5282688cdd78125bb9dfeafcc5b93b12632fccbd184bdeeb",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25070",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "54df016da718dd7a5282688cdd78125bb9dfeafcc5b93b12632fccbd184bdeeb",
+    "windows": 1,
+    "window_lengths": [
+      107
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25072-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "e7d938cbca94758d849c00c3b83e3577ad0094c064321cb4b6556d01d6b8c098",
+    "normalized_sha256": "b2892da97d8ef64c4eab3f0516242e268aee0120081326f4271f448c7fc6e18d",
+    "transformed_sha256": "c4235b62e601a7f8f07e718726f4130acf32bb429bc0382b8c9af447a4fe4673",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25072",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "c4235b62e601a7f8f07e718726f4130acf32bb429bc0382b8c9af447a4fe4673",
+    "windows": 1,
+    "window_lengths": [
+      407
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25081-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "2f38520f77a3ac0e7f143303c47ccf3f81f7fca45051c5e338eea1bf514f5880",
+    "normalized_sha256": "2f38520f77a3ac0e7f143303c47ccf3f81f7fca45051c5e338eea1bf514f5880",
+    "transformed_sha256": "732e2863a67330c70833d5cb5e977df48106c780d3a3ca7ce4db3dd9568755ec",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25081",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "732e2863a67330c70833d5cb5e977df48106c780d3a3ca7ce4db3dd9568755ec",
+    "windows": 1,
+    "window_lengths": [
+      107
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25090-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "5cdfd957c847ad59943a56b6d01594b51949995988ce34cd9d8891668df12df2",
+    "normalized_sha256": "360df519768c54ef5880d7599c4fe67d7e40122320fa256eca80ef62626c5b11",
+    "transformed_sha256": "445850515106309cc37b2358f5638714ecb9aac098332d9267d58bd23fc8adc5",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25090",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "445850515106309cc37b2358f5638714ecb9aac098332d9267d58bd23fc8adc5",
+    "windows": 1,
+    "window_lengths": [
+      259
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25112-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "86c85f52c0d14114f387e76cbfd1f9ce74f22be0e022aec12f14662393866ad0",
+    "normalized_sha256": "e076894245a8ef2f321e3ed1e3980b81694f8bf234d199f91599c5a8dc49697b",
+    "transformed_sha256": "f05f42692ca7dbe9907b8e925e5ed726579c4a46583f9262ec98d0a05a7d96d6",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25112",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "f05f42692ca7dbe9907b8e925e5ed726579c4a46583f9262ec98d0a05a7d96d6",
+    "windows": 1,
+    "window_lengths": [
+      124
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25152-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "556cdce662733f72980bf025b60906df0e9055e78a2a06ed7b5116c9a6bacdf5",
+    "normalized_sha256": "e8dcd209acfd825e4d6377d34d2151605b9990584ba0ee0cbb631db211fed341",
+    "transformed_sha256": "228788bec3b61d022b207e8f486354620c5cc22c8de3c50b8efa38369e6ffdec",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25152",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "228788bec3b61d022b207e8f486354620c5cc22c8de3c50b8efa38369e6ffdec",
+    "windows": 1,
+    "window_lengths": [
+      123
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25165-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "617faad2cc957b26c3fc96d3510f77f6d157e22918ef24f9d51f3a0b5a384831",
+    "normalized_sha256": "ccd6a1226120a8055d4c5eba6f8e41ef90b4f87501fade7d7f9ffb7cb1d4dd31",
+    "transformed_sha256": "4aa02abbeba84689741c734d17d8da31a386790002400d9ea82082539f9c5c39",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25165",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "4aa02abbeba84689741c734d17d8da31a386790002400d9ea82082539f9c5c39",
+    "windows": 1,
+    "window_lengths": [
+      188
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25188-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "dca98d3c8caca3bdfa77eee67fea5cda2fac6cb4ea39d06450aef623f054facd",
+    "normalized_sha256": "f3144980a69e4358e27e6a580be86445bf375ab6507cd2a5315451eade1d1d97",
+    "transformed_sha256": "02e8b940e1bfe1a033bce469bd9fda9cd2652db6b9cca7a8711d3352ed132c04",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25188",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "02e8b940e1bfe1a033bce469bd9fda9cd2652db6b9cca7a8711d3352ed132c04",
+    "windows": 1,
+    "window_lengths": [
+      193
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25218-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "0809b3874ee4e0b55f6ecc07b65a9c79a0dd3937c56a91a597265b664b99941b",
+    "normalized_sha256": "c5cc220f1ba951966ebc77667e21b469698b0d2c262db47e64ce569971405982",
+    "transformed_sha256": "02a0b278a4c301384a52fcfecfe5c93406786a692d3658a4565e2e413f43e94b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25218",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "02a0b278a4c301384a52fcfecfe5c93406786a692d3658a4565e2e413f43e94b",
+    "windows": 1,
+    "window_lengths": [
+      367
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25221-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "8d8577f32e966153deb4f3a98b43073e2b9c5a79741784230d0eb813b1348d38",
+    "normalized_sha256": "f3cc12f4966773ff87df6e24f45db736636aaa9ccf25318a30423097742f550b",
+    "transformed_sha256": "898e13a5237a9ecbbe1a405d319ddbcce14e48f1555289b1c37c42b322441fcb",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25221",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "898e13a5237a9ecbbe1a405d319ddbcce14e48f1555289b1c37c42b322441fcb",
+    "windows": 1,
+    "window_lengths": [
+      129
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25255-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "63adc3de7feaf6d18113911edb25360676d4f3095e15c42ecc9c00db55faf6db",
+    "normalized_sha256": "523e0db347901f7fd4a2084bca71534df642578d79b76f8f3e4cf78dd3883b1d",
+    "transformed_sha256": "78ae65f65cdd5cb155f8f15aa7a6af7570ca3295e2adb169ab56282f8b95d5d0",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25255",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "78ae65f65cdd5cb155f8f15aa7a6af7570ca3295e2adb169ab56282f8b95d5d0",
+    "windows": 1,
+    "window_lengths": [
+      390
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25257-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "981a01e165207ffbe38eec68f81cab3cab1e875e55c4abf7df66835b26422b09",
+    "normalized_sha256": "5c9268af2ccb0575c9a144c2f1c1f662de3f97de942900018571b61f7738f0f7",
+    "transformed_sha256": "2c61c5ee28655e8eac27b7f2544b659d3ad86565bc148219fc6ce6c1f8d4cc75",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25257",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "2c61c5ee28655e8eac27b7f2544b659d3ad86565bc148219fc6ce6c1f8d4cc75",
+    "windows": 1,
+    "window_lengths": [
+      121
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25266-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "331277ee1a38f806dcbf83e322390205399264697f12067b089f3b24a85b2fe4",
+    "normalized_sha256": "debd317dcfbe7f2f472aa4d9088ac71e719ce249902e6489de6c16c318525fc1",
+    "transformed_sha256": "86471a13c1acf346bdc11410eddb1163eed2f5b22f31c13bcca6a071096b105b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25266",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "86471a13c1acf346bdc11410eddb1163eed2f5b22f31c13bcca6a071096b105b",
+    "windows": 1,
+    "window_lengths": [
+      269
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25272-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "061f4d2eab6cb3364bfb09b5ecac7280a053e465e7a3d41bfa12d7dc2fb68411",
+    "normalized_sha256": "061f4d2eab6cb3364bfb09b5ecac7280a053e465e7a3d41bfa12d7dc2fb68411",
+    "transformed_sha256": "b4477c0da72d688c1f6f7cad4884d6b4202955d41a163c7f34b1c1508f1dcf69",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25272",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "b4477c0da72d688c1f6f7cad4884d6b4202955d41a163c7f34b1c1508f1dcf69",
+    "windows": 1,
+    "window_lengths": [
+      93
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25294-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "88f82c7d1d11c67f222f08d4134de4f13d1aa92ff691b6d3f17041e5b30a73f2",
+    "normalized_sha256": "5a391dc8bac3d07bc078eb47b8395b875c38e2f4b3bb049499dfa83083e444de",
+    "transformed_sha256": "3e4d86c1e4c4f639b0d073be7edbdeafde067a9999c8950dda03a29bc7cc8f46",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25294",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "3e4d86c1e4c4f639b0d073be7edbdeafde067a9999c8950dda03a29bc7cc8f46",
+    "windows": 1,
+    "window_lengths": [
+      367
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25313-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "a30958faf76063efad4f348fa686a9e7177ae4fd4c1899babe390699c0720a88",
+    "normalized_sha256": "98820d168f0ee376c845639a75ad9cee0a00addc49ef9518a1fa94664e7df985",
+    "transformed_sha256": "df6190b252ee9d180ff786c6ccd57c02766930e3bb46bf51ef7920b471236c4d",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25313",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "df6190b252ee9d180ff786c6ccd57c02766930e3bb46bf51ef7920b471236c4d",
+    "windows": 1,
+    "window_lengths": [
+      235
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25317-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "9241359f98e424964dd1431bbe5ce5e3012ff088d0f3c5050547e61f46565c15",
+    "normalized_sha256": "e8115dfa7b441ac7ecebeea19fe246c2c1669c8155cb6c3bdf1e1c77a8849a95",
+    "transformed_sha256": "8bd67a09f9366417503aa33ae8b13da3404c62590ee40ecfafaa1c620dea75fc",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25317",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "8bd67a09f9366417503aa33ae8b13da3404c62590ee40ecfafaa1c620dea75fc",
+    "windows": 1,
+    "window_lengths": [
+      151
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25332-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "eba3cfd28099ce23f39cc078edc7f79f47cf298b06fe999f18f8679ea47caf8a",
+    "normalized_sha256": "4b1843ab2de7031862c24ca0ba718ede1b0d7a7ab713a1d7608e9f7f43f49370",
+    "transformed_sha256": "dbd25470f60a1d3e7778df0b6d4a9ca55d172f16d161468a5cd42f157c6919de",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25332",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "dbd25470f60a1d3e7778df0b6d4a9ca55d172f16d161468a5cd42f157c6919de",
+    "windows": 1,
+    "window_lengths": [
+      123
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25336-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "5a002e88d7b6f9a4ba183b56cbc2242490affdf6afa84c84319958b326c71440",
+    "normalized_sha256": "0419ea7a19368f305d21b2694cc149236e1007390bff988829dff5d1c12e5c72",
+    "transformed_sha256": "c57b297682cb127520ab40153fd8a7826919d4a7e9b716e2c0119a17fd828bcb",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25336",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "c57b297682cb127520ab40153fd8a7826919d4a7e9b716e2c0119a17fd828bcb",
+    "windows": 1,
+    "window_lengths": [
+      267
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25338-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "ddd2078567630eb27e0b22109f6db22743010d6f6ea02d63b5e5695da61046aa",
+    "normalized_sha256": "85da7d572554e7da823516280b4a21a7a57a30162fd7a935ac83d42693aefeb7",
+    "transformed_sha256": "ffae77de279da1e4101c0dd04e44b4f9a7ca0b28603ab41b115b7fab10dddcd7",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25338",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "ffae77de279da1e4101c0dd04e44b4f9a7ca0b28603ab41b115b7fab10dddcd7",
+    "windows": 1,
+    "window_lengths": [
+      153
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25342-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "7640b7f0dd2461f15bb742c427c2ff65735bdd3a56c6aff689a82002a2108241",
+    "normalized_sha256": "42af99f42e1cffb0a6dfdb0f5c29114e1d0f70a9f2c907e707d4ac69dcddf6f4",
+    "transformed_sha256": "cd9beec579be2bb7cf266d1db14a118adaf23b4d13fd5c9413c85278fcd2f89f",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25342",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "cd9beec579be2bb7cf266d1db14a118adaf23b4d13fd5c9413c85278fcd2f89f",
+    "windows": 1,
+    "window_lengths": [
+      199
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25366-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "9e720ed1e5afd05519398bb2b781ff0adec20d657dc2d4b1c4d412a908f5650e",
+    "normalized_sha256": "33069b8496a753dddc277b3190c65b942853674ee7c275d0b7b9e3967aa69a38",
+    "transformed_sha256": "236061798e71a0942c0f1815c038d227914d42b0226091cb6fc503f79195a164",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25366",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "236061798e71a0942c0f1815c038d227914d42b0226091cb6fc503f79195a164",
+    "windows": 1,
+    "window_lengths": [
+      317
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25371-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "e1e2a098a151c2149e669048c6394b31c01292ec2c924efa101f2977f3d0bf63",
+    "normalized_sha256": "1f39765921c2882aa5e7cb50cbdd55cf614618fcc1fb9e93242e7e3d5723b280",
+    "transformed_sha256": "345699bc3b35a897f08e8a242a2399be7f1ba244e4ad2e6c8f0dfd9d3117450b",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25371",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "345699bc3b35a897f08e8a242a2399be7f1ba244e4ad2e6c8f0dfd9d3117450b",
+    "windows": 1,
+    "window_lengths": [
+      139
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25374-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "2f4198773a06cf382273e07741771694148900993ce7a86d4df356956c697b51",
+    "normalized_sha256": "3800af4f98004ef3030c0eaf181e464559d7087fbd1d730c908f2b2e4a57521f",
+    "transformed_sha256": "cf913abd08770a7e4c5265c3eed544705935101c69e45ca222f03582cb884c8a",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25374",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "cf913abd08770a7e4c5265c3eed544705935101c69e45ca222f03582cb884c8a",
+    "windows": 1,
+    "window_lengths": [
+      171
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25377-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "eb4dc5390dcaeb76eb0237afc7dc8f24084603ffa8a05c54ee2db277728a6473",
+    "normalized_sha256": "eb4dc5390dcaeb76eb0237afc7dc8f24084603ffa8a05c54ee2db277728a6473",
+    "transformed_sha256": "fddfe85d61d603ab0981d057505bfa3acb937adc59979c16ca2329cd951e2ec1",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25377",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "fddfe85d61d603ab0981d057505bfa3acb937adc59979c16ca2329cd951e2ec1",
+    "windows": 1,
+    "window_lengths": [
+      101
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25378-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "0451f0f59f259d05d75df21448cadf2bbac694f8e857263449700e55fc9c0ae6",
+    "normalized_sha256": "9a2d591f3ced8511cb5ea211a64dc17ffc47f2c89d253fca7d173e1d42a2d89e",
+    "transformed_sha256": "84201eb3b972430a7b863c830be1c8d11232a5168ce695b142ffffb3d1231584",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25378",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "84201eb3b972430a7b863c830be1c8d11232a5168ce695b142ffffb3d1231584",
+    "windows": 1,
+    "window_lengths": [
+      299
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25382-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "2153208e33b30c7abe64117da3575bcc403db6b3cd6eac4e37a955f85b7006cf",
+    "normalized_sha256": "ed09747e6a0f70039a3d13004d8fa9ec6749fdfeb29dfe930b26d378845dc586",
+    "transformed_sha256": "c90cfa6f8188f9716dd1739cfea8879ca4c0893c50fb85ae42909c7fc3292af7",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25382",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "c90cfa6f8188f9716dd1739cfea8879ca4c0893c50fb85ae42909c7fc3292af7",
+    "windows": 1,
+    "window_lengths": [
+      100
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25383-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "61567ebddb2526c1a103a251577d2437e97b15a74f797e93da3ca84f3fc6cfa6",
+    "normalized_sha256": "f82ee23d19bed55200d4790c189beac44a48152e41dba9687295e9ed43902b4a",
+    "transformed_sha256": "07114d5d1641031e3f3a0e3bb5b1bc5324567a1d9fc27655a36c9764c29ad47e",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25383",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "07114d5d1641031e3f3a0e3bb5b1bc5324567a1d9fc27655a36c9764c29ad47e",
+    "windows": 1,
+    "window_lengths": [
+      183
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25389-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "dfe3055e4ad8e116fbaa9e9558c45ca4a7a45fb4d82d1a5f79d85c5b0b1f203d",
+    "normalized_sha256": "63e3b5f46b52064453f42cff397efb63a2be7309d48619e2df49cfed3839b1ce",
+    "transformed_sha256": "545cacf894925906537040a121ec7e92b961f4e957ed9f641f27a2d284c68a5a",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25389",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "545cacf894925906537040a121ec7e92b961f4e957ed9f641f27a2d284c68a5a",
+    "windows": 1,
+    "window_lengths": [
+      231
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25412-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "6faaa0e69a8fb9fc51610b988f9302045800f574d42eab6809dbc9701a97dc7c",
+    "normalized_sha256": "06a04284b0f509ce4940d6a49da024d830358f5a57fec4e8522d4cdddf21ef06",
+    "transformed_sha256": "3bd7e230aa094a62cdbbcd7772b6867d98001f3bca570f1d0d46aaf57c58fa83",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25412",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "3bd7e230aa094a62cdbbcd7772b6867d98001f3bca570f1d0d46aaf57c58fa83",
+    "windows": 1,
+    "window_lengths": [
+      203
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25424-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "f3a576e2fc39161f526f6b002d109484b7898eebf2957296e4951a894a66c140",
+    "normalized_sha256": "a490d0da4433096d287eb0fe50233e15f7c7f6ea16224f9f30783c00e2fec505",
+    "transformed_sha256": "9a0aa862bd451acd1d9f7d2bf5cc85d7545a9ee7bb4faeae4525d605639d4d41",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25424",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9a0aa862bd451acd1d9f7d2bf5cc85d7545a9ee7bb4faeae4525d605639d4d41",
+    "windows": 1,
+    "window_lengths": [
+      256
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25425-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "2d6840c6b082472d3a25acdffa939d4096fce31e32a952976dcb7fd1c99bce3a",
+    "normalized_sha256": "efb005fd654b2614166c4fdebac8f2522569f094f16a2cffc9ead87e895ca902",
+    "transformed_sha256": "9fb2f6e435d36749449681a701cbaf913c2bbcfb69cf3c084c7aad0c74948026",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25425",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9fb2f6e435d36749449681a701cbaf913c2bbcfb69cf3c084c7aad0c74948026",
+    "windows": 1,
+    "window_lengths": [
+      291
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25427-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "073944adc1535018a1e7f2584fc753db2ecf1c19ca932e5d9dafd70faf2ab10e",
+    "normalized_sha256": "2d1c6abde034269028887df0fc3c14416d61245b766137a004664d35c5a63975",
+    "transformed_sha256": "4a9fc160e0ab4140333e4ac1b8f4582b560f7536c26eb6106e36d74aba274af0",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25427",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "4a9fc160e0ab4140333e4ac1b8f4582b560f7536c26eb6106e36d74aba274af0",
+    "windows": 1,
+    "window_lengths": [
+      349
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25455-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "f8fe2ab0082db78f099248f7762529e6e7588366baea6a4f47a1f1e312de3e4b",
+    "normalized_sha256": "f5d25c18d24901b9c0226965902a80ad0160e01194d27efdd9c60073fab2f847",
+    "transformed_sha256": "2848890979b455d8b4fd430267e5ad813c08061b0ae862d17590a8a0d6d586a8",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25455",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "2848890979b455d8b4fd430267e5ad813c08061b0ae862d17590a8a0d6d586a8",
+    "windows": 1,
+    "window_lengths": [
+      139
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25471-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "7ae83158251731304a4058634fa6a4ac98172de26bd20259666298e3d76aff2f",
+    "normalized_sha256": "ea227dcbd7feda81ad35b9f11f0b3035e1f40e5f0b8459572386085256bfd6d8",
+    "transformed_sha256": "565b1351c4ff17c9a8a8560b670d47cef54f7d0fb66100f9b1f4dd8526b3cacb",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25471",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "565b1351c4ff17c9a8a8560b670d47cef54f7d0fb66100f9b1f4dd8526b3cacb",
+    "windows": 1,
+    "window_lengths": [
+      127
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25477-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "08fba6b76480e26143dd25398acc9edad5f468ae5c7d4d71920fdb746c538809",
+    "normalized_sha256": "0f2ae92a4e89fbecebf20db291064637bb1d46965a2d337362aa725e058d556f",
+    "transformed_sha256": "d92afc10594fc9ed24e5563eada96fa478ef3e292a1cdd3bb20808684d7f7e81",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25477",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "d92afc10594fc9ed24e5563eada96fa478ef3e292a1cdd3bb20808684d7f7e81",
+    "windows": 1,
+    "window_lengths": [
+      233
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25492-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "3a688cc29cbd29787bd56c8a5fdeb075597f83f3efce3d887217485cbdbbb735",
+    "normalized_sha256": "2b0f1607062e30ac6426b23cb13845079a6e70fabc8f08cbc672b19ec1ab1ce7",
+    "transformed_sha256": "945a45141dc3218631c2a8c53537692c4b0edfb58524a6d4afc2c751b97a41ee",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25492",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "945a45141dc3218631c2a8c53537692c4b0edfb58524a6d4afc2c751b97a41ee",
+    "windows": 1,
+    "window_lengths": [
+      247
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25498-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "39c9bbe86e5a6b3e6a4839458ce561f99d70d7cf58cd22ed5ac73b688f66e02f",
+    "normalized_sha256": "bdb3ef9eeab75b92a6f0c6e675a10b1f1bf1dbb2cf6fba71e793d6b95877eaf1",
+    "transformed_sha256": "8d30d9d031dfb950317df9479734543ee0a1398c2287d579dba395207d642faf",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25498",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "8d30d9d031dfb950317df9479734543ee0a1398c2287d579dba395207d642faf",
+    "windows": 1,
+    "window_lengths": [
+      131
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25511-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "dabde3e4a20f8287cf0173569f2bb53170fb2f0d95b160004ee96872133ae9d4",
+    "normalized_sha256": "3cd73e4399b096edd920d61651055b6b65fc8d586d378c3eeb3e60e5f65284fe",
+    "transformed_sha256": "7a43bfd8c07da347c8e2cace4286f316fe7915d9708dd769ceb63d32f0a04cb8",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25511",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "7a43bfd8c07da347c8e2cace4286f316fe7915d9708dd769ceb63d32f0a04cb8",
+    "windows": 1,
+    "window_lengths": [
+      129
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25523-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "28a8a4b7654fcb2f12af73c70fe1d807b0aac34b3436751b562ee3c4d1ff9de2",
+    "normalized_sha256": "591c676c8d655ae47a1ad1e2200788613687ecd7fe07c187745a30b79310a5c5",
+    "transformed_sha256": "99fbdcee15b94e7d739cf28b97a9bf9e753fb6a49844fde236e6e9439deffe6c",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25523",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "99fbdcee15b94e7d739cf28b97a9bf9e753fb6a49844fde236e6e9439deffe6c",
+    "windows": 1,
+    "window_lengths": [
+      213
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25528-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "361863a855b9ed729f1730217f5e0df08a3d5e7b79f98f8a76eab1ff22cc6138",
+    "normalized_sha256": "3801571b347c9fb7af5343b1872c1277d2c5bdae561da697fefa739e0a88c38c",
+    "transformed_sha256": "fad71073a39587737a315c8b7c04b689593d7fae7212959c633e381af55b38e5",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25528",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "fad71073a39587737a315c8b7c04b689593d7fae7212959c633e381af55b38e5",
+    "windows": 1,
+    "window_lengths": [
+      121
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25535-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "eea79539b6053db05d5a1749743f4ec563bf93cacacaaccb7f3e10630f667353",
+    "normalized_sha256": "980fc2de2b187fc6d0471f1eba6b88f08ca6367692846d9f5e79ffc504fdff9f",
+    "transformed_sha256": "9d25116c44bb7cc15d48b48eee172ab6421cd0d227bdf9fb7e8c1db130d6b3d4",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25535",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "9d25116c44bb7cc15d48b48eee172ab6421cd0d227bdf9fb7e8c1db130d6b3d4",
+    "windows": 1,
+    "window_lengths": [
+      206
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25541-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "3437fc17bf0779bcfd439b1d015d20a23195a78acc6dedc9e975671e6674b25f",
+    "normalized_sha256": "1feb9d7070d10d17683b3c4b436d9cb5575167aa860c0de291473810e9772268",
+    "transformed_sha256": "4cab8970530e38b309e2066700167e24bca2db9e3a628c2dd672f935ec026393",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25541",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "4cab8970530e38b309e2066700167e24bca2db9e3a628c2dd672f935ec026393",
+    "windows": 1,
+    "window_lengths": [
+      195
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25543-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "24b03b19b56a8374475d601357c05552e93a9c3d01178899af995ce0d4148b48",
+    "normalized_sha256": "00c777f00f13fff5a54678eefd04520444792ba0efd5c4d025028fccaab85463",
+    "transformed_sha256": "fd15f4de291a4bec116ccd37459d97a0544cbda7e6aeb108a3736ddc6daa6711",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25543",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "fd15f4de291a4bec116ccd37459d97a0544cbda7e6aeb108a3736ddc6daa6711",
+    "windows": 1,
+    "window_lengths": [
+      319
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25544-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "1d51881ce099c8d793ee556721f6b920cda566ffb9b2d7876d9c2c836a6f539a",
+    "normalized_sha256": "ecd37e7911667cde105043aef9fb20cece6017c80cccba92528482548234149f",
+    "transformed_sha256": "14603fb19e97519dca95bf0e9000be822877d1ec7b5a2979f35d24b81066e91f",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25544",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "14603fb19e97519dca95bf0e9000be822877d1ec7b5a2979f35d24b81066e91f",
+    "windows": 1,
+    "window_lengths": [
+      143
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25554-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "d6f055bd78f16d9ce5f68881f69ab128d63c552806e90a17083d561e33b04602",
+    "normalized_sha256": "76c5792e7f88c1326b1cb0404d2b26960d14251b8783151ff46caf035e3b0d48",
+    "transformed_sha256": "6ff9aab96ffa5919b3438450a4f9adfacef88d8088e63ceccc839a0f81338ce5",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25554",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "6ff9aab96ffa5919b3438450a4f9adfacef88d8088e63ceccc839a0f81338ce5",
+    "windows": 1,
+    "window_lengths": [
+      197
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25562-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "b25c1af41101244fbbc05a0a2c27421ffd48f903e7050b2040fd9af373262110",
+    "normalized_sha256": "c28496aecb9c64d7be72b70e7bb242db85bc433be2e1d14efb586f058b3c7c9b",
+    "transformed_sha256": "37da619ef89ed92fa2f7e2b392e12cd4bdf3e9d0ca14e64af8b80beec5a2f999",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25562",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "37da619ef89ed92fa2f7e2b392e12cd4bdf3e9d0ca14e64af8b80beec5a2f999",
+    "windows": 1,
+    "window_lengths": [
+      407
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25583-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "d69d32e5ac00b444a4d2bb418e5cf9372be09c43f9b4bc75726e5fa134cbe0da",
+    "normalized_sha256": "9d64f1ac937d6f9fd6495d4ef88adf48e6c5ef58a3af04aff1bb87accecaa69b",
+    "transformed_sha256": "16adf30c5cbbd811a5d4e78b6da5a1e391defd9967bcd7e404d6b2a677f064d0",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25583",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "16adf30c5cbbd811a5d4e78b6da5a1e391defd9967bcd7e404d6b2a677f064d0",
+    "windows": 1,
+    "window_lengths": [
+      121
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25598-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "f6c8e782d898efa6c7b3fafedf54784631d15d34a5d1d90503d84a5447d02dda",
+    "normalized_sha256": "4663c425aef0e648640ce5bf094984a7644fd0ae107904924673fa60434e8927",
+    "transformed_sha256": "3f57fee7d2c3c3661325cc31e03c5dde3964d9b399b2af002e094841c99798ba",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25598",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "3f57fee7d2c3c3661325cc31e03c5dde3964d9b399b2af002e094841c99798ba",
+    "windows": 1,
+    "window_lengths": [
+      106
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25631-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "40bf89641f59d58f48c1e7329bedeff49d9b9bf32e2c472fd8dba4c97b076ae4",
+    "normalized_sha256": "82ba469575ba8eb46ee8f67084d17d87e330ee0e16642a2b9c704c6dd11f75e3",
+    "transformed_sha256": "bac8d5b706e28507be607ec2e6cafb3b272ccd48a2c2c30009cc58f271662bea",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25631",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "bac8d5b706e28507be607ec2e6cafb3b272ccd48a2c2c30009cc58f271662bea",
+    "windows": 1,
+    "window_lengths": [
+      387
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25640-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "cb69240d4c28ccf183178e9ce25b3ca2a37fdddb9b1dafd4ff8e7c5fab18084e",
+    "normalized_sha256": "2e943480b5fbbe3e1c4cf953b8f685167e7db5a6cb76cfcdbfa0c6236448fa32",
+    "transformed_sha256": "d962cca5f0c9f9ae2acc9bbedcc32bdd4fe76791624337b5dd3bdb62a77e00b4",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25640",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "d962cca5f0c9f9ae2acc9bbedcc32bdd4fe76791624337b5dd3bdb62a77e00b4",
+    "windows": 1,
+    "window_lengths": [
+      247
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25676-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "1b6c927ca435f04ac8f1ef00a05c0fa56c1de01efa2633bef73b3463481792fb",
+    "normalized_sha256": "59b4b8ee6b9e02e251f140e965f0125f8f7cf471279f576d5fedec4bc04f8df6",
+    "transformed_sha256": "d741bb671e8f1b9e33bdded24aacebf202f7d0054e016632fa8df5367d8214ac",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25676",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "d741bb671e8f1b9e33bdded24aacebf202f7d0054e016632fa8df5367d8214ac",
+    "windows": 1,
+    "window_lengths": [
+      147
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25678-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "dee603008f68049cd89d0cedfd4d51ca213872b3605e8b22400405e7dc922ee2",
+    "normalized_sha256": "4d6a5bbffbf698275d5f8bfbb32eb6ded6fe53a373e2e271849d30234287cf16",
+    "transformed_sha256": "a1cab6566291c1795ace4eb297bc004a09fe5556124ee3f77660709f54c630a0",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25678",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "a1cab6566291c1795ace4eb297bc004a09fe5556124ee3f77660709f54c630a0",
+    "windows": 1,
+    "window_lengths": [
+      308
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25683-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "8eb832141fbf0ec66a0729f1ac88fd1404610f8dc5c4a970b532da009378d982",
+    "normalized_sha256": "b642f699886cc1e5e438affd1f598db7dd945ca073d497c877510e93fcdc8531",
+    "transformed_sha256": "c4d766ba20bd6ad3559b86a15c498b46ff075e6b95e00d074b3af71c0bf8cc8c",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25683",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "c4d766ba20bd6ad3559b86a15c498b46ff075e6b95e00d074b3af71c0bf8cc8c",
+    "windows": 1,
+    "window_lengths": [
+      179
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25687-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "region",
+    "source_text_sha256": "46cf1b6c6991383e2464bbf1afbd3f10613a07177cb4dab35aca142581aa7363",
+    "normalized_sha256": "1a065ccc2e7f0624420de01ab959c459cc8ad815c8dc234ce6c910fdd341f14b",
+    "transformed_sha256": "d60683f91251fe6338a4bcc6c562bf27d85f1bec21f63d9b91feee92c1ec478a",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25687",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "d60683f91251fe6338a4bcc6c562bf27d85f1bec21f63d9b91feee92c1ec478a",
+    "windows": 1,
+    "window_lengths": [
+      108
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25698-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "60d3b200d7f6650525ed221d1c96f3b75af5f2ad355d9febdb808c490f8fd83c",
+    "normalized_sha256": "b8dbf48504ed5de22fda71a4984c5fe2ec7b46da586f2c217519e2a6dc93a379",
+    "transformed_sha256": "fd4179615c5f74974c417401e9c55a42de54422e680f1f6b35a3b117af6726fd",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25698",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "fd4179615c5f74974c417401e9c55a42de54422e680f1f6b35a3b117af6726fd",
+    "windows": 1,
+    "window_lengths": [
+      202
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25700-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "a860b4bcebd8c941e7fcc6323664cf455b7c58216955586dfa3058e7bf3457c1",
+    "normalized_sha256": "33c8863fe4353fedd5df20efbc93844a1557cdb6429e6fdd3419431094b908f3",
+    "transformed_sha256": "f36aea364477ea5a39766c6e1bf6387cb062ba5b4797ca16361f44769b418d57",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25700",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "f36aea364477ea5a39766c6e1bf6387cb062ba5b4797ca16361f44769b418d57",
+    "windows": 1,
+    "window_lengths": [
+      225
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25701-PY",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "0ac8832192b5e4e045127f6076b97873c39345afffba578902140515ad1f12e6",
+    "normalized_sha256": "7ec96cba9c41347951ca61a53c83214267aff186949a2abe6e813c8f0701c7ac",
+    "transformed_sha256": "498f9a45c0816224fa9b27b1e460e98ff6718f61925ae200f36188b86e22d488",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25701",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "498f9a45c0816224fa9b27b1e460e98ff6718f61925ae200f36188b86e22d488",
+    "windows": 1,
+    "window_lengths": [
+      156
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25708-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "race",
+    "source_text_sha256": "485f957d13194cac58de283098c6f217c37e1336f6a94803b34d267a02bd9ac6",
+    "normalized_sha256": "c4a980672be5d0dda5be0d46a89f824538db51199ecb6a343088beafaa93b8bf",
+    "transformed_sha256": "65fdd78a5fabd109c9a15588d9fa81a1465e8a6aa7651d91c39f8acba5ccc408",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25708",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "65fdd78a5fabd109c9a15588d9fa81a1465e8a6aa7651d91c39f8acba5ccc408",
+    "windows": 1,
+    "window_lengths": [
+      211
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25713-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "a188ff48f70f00579e66dfe8422759859f1806f7a58394f127e33c49e6d0cd5a",
+    "normalized_sha256": "d08c1cadf5b10fda66659d32178f04db3c8e7491f023b18114ac594d6b053dfd",
+    "transformed_sha256": "8d6f4571914cab7544d0ce4e6ee8c53ffd363596ae7ccc970bfe4fd17d89e1ba",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25713",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "8d6f4571914cab7544d0ce4e6ee8c53ffd363596ae7ccc970bfe4fd17d89e1ba",
+    "windows": 1,
+    "window_lengths": [
+      157
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25723-PY",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train_pinyin_augmentation",
+    "category": "gender",
+    "source_text_sha256": "2d67de5f1b21acb8861de6292e1f11ac809917b4fc63c3135f330131777180cd",
+    "normalized_sha256": "2d67de5f1b21acb8861de6292e1f11ac809917b4fc63c3135f330131777180cd",
+    "transformed_sha256": "2e647797234b441c38204d9bcec2136bcd50299e9cde96552d78a3b4e2480002",
+    "literal_any": false,
+    "source_id": "COLD-TRAIN-25723",
+    "augmentation": "context-first toneless whole-comment pinyin; source label unchanged",
+    "previous_transform_sha256": "2e647797234b441c38204d9bcec2136bcd50299e9cde96552d78a3b4e2480002",
+    "windows": 1,
+    "window_lengths": [
+      107
+    ]
+  }
+]

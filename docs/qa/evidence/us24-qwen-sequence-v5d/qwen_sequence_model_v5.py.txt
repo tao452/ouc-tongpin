@@ -1,0 +1,86 @@
+import hashlib
+import json
+import math
+from pathlib import Path
+
+import torch
+from torch import nn
+from torch.nn import functional as F
+from transformers import AutoConfig, AutoModelForSequenceClassification
+
+LAB = Path.cwd() / 'qa-private/us24-recall-20261124'
+PAD = 151643
+
+
+def digest(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+class LoRALinear(nn.Module):
+    def __init__(self, base):
+        super().__init__()
+        assert isinstance(base, nn.Linear)
+        self.base = base
+        self.A = nn.Parameter(torch.empty(8, base.in_features, device=base.weight.device, dtype=torch.float32))
+        self.B = nn.Parameter(torch.zeros(base.out_features, 8, device=base.weight.device, dtype=torch.float32))
+        nn.init.kaiming_uniform_(self.A, a=math.sqrt(5))
+        self.dropout = nn.Dropout(.05)
+
+    def forward(self, values):
+        update = F.linear(F.linear(self.dropout(values), self.A.to(values.dtype)), self.B.to(values.dtype))
+        return self.base(values) + 2 * update
+
+
+def create_model():
+    directory = LAB / 'qwen3-1_7b-range-base'
+    manifest = json.loads((LAB / 'qwen3-1_7b-range-base.manifest.json').read_text(encoding='utf-8'))
+    assert manifest['repo'] == 'Qwen/Qwen3-1.7B'
+    assert manifest['revision'] == '70d244cc86ccca08cf5af4e1e306ecf908b1ad5e'
+    for name, metadata in manifest['files'].items():
+        assert (directory / name).stat().st_size == metadata['bytes']
+        assert digest(directory / name) == metadata['sha256']
+    config = AutoConfig.from_pretrained(str(directory), local_files_only=True, trust_remote_code=False)
+    assert config.model_type == 'qwen3' and config.num_hidden_layers == 28
+    config.num_labels = 2
+    config.id2label = {0: 'nonoffensive', 1: 'offensive'}
+    config.label2id = {'nonoffensive': 0, 'offensive': 1}
+    config.pad_token_id = PAD
+    config.use_cache = False
+    model, loading = AutoModelForSequenceClassification.from_pretrained(
+        str(directory), config=config, local_files_only=True, trust_remote_code=False,
+        dtype=torch.bfloat16, device_map={'': 'cuda:0'}, attn_implementation='sdpa',
+        output_loading_info=True)
+    assert set(loading['missing_keys']) == {'score.weight'}, loading
+    assert all(key.startswith('lm_head.') for key in loading['unexpected_keys']), loading
+    assert not loading['mismatched_keys'] and not loading['error_msgs'], loading
+    for parameter in model.parameters():
+        parameter.requires_grad_(False)
+    replaced = []
+    for name, module in list(model.named_modules()):
+        if name.rsplit('.', 1)[-1] in {'q_proj', 'v_proj'}:
+            parent_name, child = name.rsplit('.', 1)
+            setattr(model.get_submodule(parent_name), child, LoRALinear(module))
+            replaced.append(name)
+    assert len(replaced) == 56
+    model.score.float()
+    for parameter in model.score.parameters():
+        parameter.requires_grad_(True)
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant': False})
+    model.enable_input_require_grads()
+    assert all(p.dtype == torch.float32 for p in model.parameters() if p.requires_grad)
+    return model, dict(loading=loading, replaced_modules=replaced, base_manifest=manifest)
+
+
+def inputs(windows):
+    longest = max(len(window['input_ids']) for window in windows)
+    assert longest <= 512
+    tokens = torch.full((len(windows), longest), PAD, dtype=torch.long)
+    mask = torch.zeros_like(tokens)
+    for index, window in enumerate(windows):
+        length = len(window['input_ids'])
+        assert length > 0
+        assert PAD not in window['input_ids'], 'Padding token inside rendered sample would change pooling'
+        tokens[index, :length] = torch.tensor(window['input_ids'], dtype=torch.long)
+        mask[index, :length] = 1
+    return dict(input_ids=tokens.cuda(), attention_mask=mask.cuda(), use_cache=False)

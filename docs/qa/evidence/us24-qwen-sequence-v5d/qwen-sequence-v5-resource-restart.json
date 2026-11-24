@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-11-24T20:41:23.008160+00:00",
+  "original_run": "v5",
+  "replacement_run": "v5b",
+  "original_outcome": "resource restart before epoch completion; no evaluation; NOT_RUN accuracy",
+  "original_files": {
+    "train_qwen_sequence_v5.py": "9721289040882fd203758188aa2ff724837ddd6ed552a840501f043ec26abf6b",
+    "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+    "train-qwen-sequence-v5.log": "8baa23662bfd8024069d021167d619519769ecfdf7f636db351506b78a914bee",
+    "qwen-sequence-v5-preflight.json": "89a6d4ce656caa5ff5bb7b1c8d597cc06de1290d5410716ea0375ffbaa8ffa3d",
+    "qwen-sequence-v5/frozen.json": "ce6d3882a8d34d3e9ed75e8701826afdc6e30f0e0a4f9eb917d6b3c572e93892"
+  },
+  "reason": "first75/4889 batches124.1s; projected epoch134.8min exceeds120min budget",
+  "changes": "microbatch4 accumulation8; no activation checkpointing; worst4x512 forward/backward must fit before restart",
+  "training_rows": 38856,
+  "training_windows": 39107,
+  "evaluation_rows": 3258,
+  "excluded_evaluation_rows": 0,
+  "learning_rate_or_loss_or_labels_changed": false,
+  "production_acceptance": false
+}

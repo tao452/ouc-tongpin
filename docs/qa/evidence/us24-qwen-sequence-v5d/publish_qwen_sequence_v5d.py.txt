@@ -1,0 +1,84 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+PRIVATE = LAB / 'qwen-sequence-v5d'
+PUBLIC = ROOT / 'docs/qa/evidence/us24-qwen-sequence-v5d'
+summary = json.loads((PRIVATE / 'summary.json').read_text(encoding='utf-8'))
+assert len(summary['epochs']) == 1 and summary['epochs'][0]['evaluation_rows'] == 3258
+assert summary['epochs'][0]['training_windows_seen'] == 39107
+assert summary['epochs'][0]['excluded_evaluation_rows'] == 0
+PUBLIC.mkdir(exist_ok=False)
+entries = []
+
+
+def copy(source, name):
+    raw = source.read_bytes()
+    data = raw.replace(b'\r\n', b'\n')
+    assert len(data) < 5 * 1024 * 1024
+    with (PUBLIC / name).open('xb') as handle:
+        handle.write(data)
+    entries.append(dict(file=name, private_path=source.relative_to(LAB).as_posix(),
+        private_bytes=len(raw), private_sha256=hashlib.sha256(raw).hexdigest(),
+        public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+
+def write(value, name):
+    data = (json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode()
+    assert len(data) < 5 * 1024 * 1024
+    with (PUBLIC / name).open('xb') as handle:
+        handle.write(data)
+    entries.append(dict(file=name, bytes=len(data), public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+
+for filename in ['frozen.json', 'summary.json', 'training-window-order.json']:
+    copy(PRIVATE / filename, filename)
+for filename in ['report.json', 'predictions.jsonl', 'thresholds.csv']:
+    copy(PRIVATE / 'epoch-1' / filename, 'epoch-1-' + filename)
+for filename in ['train_qwen_sequence_v5d.py', 'qwen_sequence_model_v5.py',
+                 'qwen_sequence_encoding_v5.py', 'prepare_qwen_sequence_v5.py',
+                 'phonetic_recheck_metrics.py', 'prepare_sequence_resource_v5b.py',
+                 'prepare_sequence_resource_v5c.py', 'prepare_sequence_resource_v5d.py']:
+    copy(LAB / filename, filename + '.txt')
+for filename in ['qwen3-1_7b-range-base.manifest.json', 'qwen3-1_7b-tokenizer.manifest.json',
+                 'qwen-sequence-v5-resource-restart.json', 'qwen-sequence-v5b-resource-restart.json',
+                 'qwen-sequence-v5c-resource-restart.json', 'qwen-sequence-v5d-preflight.json']:
+    copy(LAB / filename, filename)
+for run in ['v5', 'v5b', 'v5c']:
+    copy(LAB / f'train_qwen_sequence_{run}.py', f'train_qwen_sequence_{run}.py.txt')
+    copy(LAB / f'qwen-sequence-{run}-preflight.json', f'qwen-sequence-{run}-preflight.json')
+    if run != 'v5':
+        copy(LAB / f'qwen_sequence_model_{run}.py', f'qwen_sequence_model_{run}.py.txt')
+index = json.loads((LAB / 'qwen-sequence-v5-inputs/index.json').read_text(encoding='utf-8'))
+assert len(index['rows']) == 42114
+assert all(not any(k in row for k in ['text', 'pinyin', 'input_ids']) for row in index['rows'])
+write({k: v for k, v in index.items() if k != 'rows'}, 'input-policy.json')
+for start in range(0, len(index['rows']), 3500):
+    write(index['rows'][start:start + 3500], f'input-index-{start // 3500 + 1:02d}.json')
+partials = []
+for directory in sorted(PRIVATE.glob('partial-step-*')):
+    row = json.loads((directory / 'progress.json').read_text(encoding='utf-8'))
+    assert row['accuracy_status'] == 'NOT_RUN' and not row['evaluation_run']
+    row['files'] = {}
+    for path in directory.iterdir():
+        if path.suffix != '.json':
+            with path.open('rb') as handle:
+                row['files'][path.name] = dict(bytes=path.stat().st_size,
+                    sha256=hashlib.file_digest(handle, 'sha256').hexdigest())
+    partials.append(row)
+write(partials, 'partial-state-index.json')
+manifest = dict(scope='supervised Qwen3 LoRA development evaluation, not independent campus acceptance',
+    files=entries, training_rows=38856, training_windows=39107, evaluation_rows=3258,
+    evaluation_transformation_changes=index['evaluation_transform_changes'],
+    original_labels_and_hard_samples_retained=True, excluded_evaluation_rows=0,
+    prior_resource_attempts='v5/v5b/v5c incomplete; accuracy NOT_RUN; original private logs and sources retained',
+    runtime_warning='CUDA memory-efficient attention backward may be nondeterministic; fixed seed is not a bitwise guarantee',
+    default_S1_service_changed=False, upstream_pretraining_evaluation_exposure='unknown',
+    private_assets='raw text, token features, base weights, trained adapters, optimizer/RNG states and full logs',
+    COLD_dev_fetched=False, M1_review='PENDING', M3_reproduction='PENDING', production_acceptance=False)
+with (PUBLIC / 'manifest.json').open('x', encoding='utf-8', newline='\n') as handle:
+    json.dump(manifest, handle, ensure_ascii=False, indent=2)
+print(json.dumps(dict(public_files=len(entries)+1, evaluation_rows=3258,
+    gate=summary['epochs'][0]['metrics']['literal_or_model']['best_fpr_eligible'])))

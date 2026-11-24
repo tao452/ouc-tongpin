@@ -1,0 +1,61 @@
+import hashlib
+import json
+import re
+import sys
+from pathlib import Path
+
+import torch
+from safetensors.torch import load_file
+
+from phonetic_encoding import PhoneticEncoder
+from phonetic_recheck_metrics import summarize
+from train_phonetic import create_model,predict
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development,pcr
+from evaluate_comment_model import preprocess
+from evaluate_recall import load_external,source_sha
+from app.services.moderation import ModerationService
+
+torch.set_num_threads(4)
+prior=LAB/'phonetic-training-v1/epoch-3'
+weights=prior/'model.safetensors'
+expected=json.loads((prior/'report.json').read_text(encoding='utf-8'))['weights_sha256']
+assert hashlib.sha256(weights.read_bytes()).hexdigest()==expected
+current=torch.load(LAB/'qwen-sequence-v5-context39/features.pt',map_location='cpu',weights_only=True)
+records=current['records'];assert len(records)==3258
+raw={r['id']:r['text'] for r in load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))}
+rows,excluded=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+assert not excluded
+raw.update({r['id']:r['text'] for r in rows})
+for version in ['v2','v3']:
+    for row in development(ROOT/f'docs/qa/data/us24-development.{version}.jsonl'):
+        if not row['expected_word']:raw[f'{version}-{row["id"]}']=row['text']
+for row in map(json.loads,(ROOT/'docs/qa/data/us24-context-stress.v1.jsonl').read_text(encoding='utf-8').splitlines()):raw[row['id']]=row['text']
+literal=ModerationService(ROOT/'services/algo/app/data/moderation-v3_9-candidate.json')
+encoder=PhoneticEncoder(LAB/'chinesebert-model')
+prepared=[]
+for number,row in enumerate(records,1):
+    text=raw[row['id']]
+    assert hashlib.sha256(text.encode()).hexdigest()==row['source_text_sha256']
+    transformed=re.sub('□+','□',preprocess(text,literal,True)['text'])
+    assert hashlib.sha256(transformed.encode()).hexdigest()==row['transformed_sha256']
+    assert bool(literal.check(text).hits)==row['literal_any']
+    prepared.append({**{k:v for k,v in row.items() if k!='windows'},'windows':encoder.encode(transformed)})
+    if number%500==0:print(f'Encoder current-context inputs{number}/3258',flush=True)
+output=LAB/'phonetic-encoder-context39';output.mkdir(exist_ok=False)
+policy=dict(scope='same-weight current3.9 development recheck; no gradient updates',weights_sha256=expected,
+    checkpoint='ChineseBERT-v1 epoch3',evaluation_rows=3258,excluded_evaluation_rows=0,
+    input_policy=current['policy'],code_sha256=source_sha(Path(__file__)),
+    encoder_code_sha256=source_sha(LAB/'phonetic_encoding.py'),production_acceptance=False)
+with (output/'frozen.json').open('x',encoding='utf-8') as handle:json.dump(policy,handle,ensure_ascii=False,indent=2)
+with (output/'features.pt').open('xb') as handle:torch.save(prepared,handle)
+model=create_model();state=load_file(str(weights),device='cpu');model.load_state_dict(state,strict=True);del state
+predictions,seconds=predict(model,prepared)
+with (output/'predictions.jsonl').open('x',encoding='utf-8') as handle:
+    for row in predictions:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+result=dict(weights_sha256=expected,inference_seconds=seconds,evaluation_rows=len(predictions),excluded_evaluation_rows=0,
+    metrics=summarize(predictions,output/'thresholds.csv'),production_acceptance=False)
+with (output/'report.json').open('x',encoding='utf-8') as handle:json.dump(result,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(best=result['metrics']['literal_or_model']['best_fpr_eligible'])),flush=True)

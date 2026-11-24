@@ -1,0 +1,43 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+PUBLIC=ROOT/'docs/qa/evidence/us24-context39-consensus-v2'
+PUBLIC.mkdir(exist_ok=False)
+entries=[]
+
+
+def copy(source,name):
+    raw=source.read_bytes();data=raw.replace(b'\r\n',b'\n')
+    assert len(data)<5*1024*1024
+    with (PUBLIC/name).open('xb') as handle:handle.write(data)
+    entries.append(dict(file=name,private_path=source.relative_to(LAB).as_posix(),
+        private_sha256=hashlib.sha256(raw).hexdigest(),public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+
+encoder=LAB/'phonetic-encoder-context39-r2'
+for name in ['frozen.json','report.json','predictions.jsonl','thresholds.csv']:
+    copy(encoder/name,'encoder-'+name)
+summary=json.loads((LAB/'encoder-decoder-consensus-v2/summary.json').read_text(encoding='utf-8'))
+for method in summary['results']:
+    for name in ['report.json','predictions.jsonl','thresholds.csv']:
+        copy(LAB/'encoder-decoder-consensus-v2'/method/name,method+'-'+name)
+for name in ['frozen.json','summary.json']:
+    copy(LAB/'encoder-decoder-consensus-v2'/name,'consensus-'+name)
+for name in ['recheck_encoder_context39.py','recheck_encoder_context39_r2.py',
+             'evaluate_encoder_decoder_consensus_v2.py','phonetic_encoding.py',
+             'train_phonetic.py','phonetic_recheck_metrics.py',Path(__file__).name]:
+    copy(LAB/name,name+'.txt')
+copy(LAB/'encoder39-initial-build-failure.json','initial-input-build-failure.json')
+for path in [encoder/'predictions.jsonl',*(LAB/'encoder-decoder-consensus-v2').glob('*/predictions.jsonl')]:
+    rows=list(map(json.loads,path.read_text(encoding='utf-8').splitlines()))
+    assert len(rows)==3258 and len({r['id'] for r in rows})==3258
+    assert all(not any(k in r for k in ['text','input_ids','pinyin']) for r in rows)
+manifest=dict(scope='same-weight current3.9 recheck and fixed development combinations',files=entries,
+    evaluation_rows=3258,excluded_evaluation_rows=0,gradient_updates=0,
+    literal_flags='reuse sealed complete3258 audit after exact engine/dictionary SHA checks; not live service availability',
+    initial_attempt='input preparation timeout before model inference; accuracy NOT_RUN; original source retained',
+    COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (PUBLIC/'manifest.json').open('x',encoding='utf-8') as handle:json.dump(manifest,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(public_files=len(entries)+1,evaluation_rows=3258,all_gates_met=False)))

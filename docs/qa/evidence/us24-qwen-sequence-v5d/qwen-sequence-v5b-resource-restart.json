@@ -1,0 +1,17 @@
+{
+  "created_at_utc": "2026-11-24T20:44:53.905296+00:00",
+  "original_run": "v5b",
+  "replacement_run": "v5c",
+  "original_outcome": "shape/gradient passed, physical VRAM budget failed; no evaluation; NOT_RUN accuracy",
+  "peak_cuda_bytes": 11344562176,
+  "physical_device": "RTX4060Laptop8GB",
+  "original_files": {
+    "train_qwen_sequence_v5b.py": "587e3a2811c8e6d75ff2c70b57092c4d030271d737a4df4c67073e135f707b23",
+    "qwen_sequence_model_v5b.py": "0657d40a798440e34c65ad60811700d6221d6374bdd68cca694e76fb2f1af266",
+    "qwen-sequence-v5b-preflight.json": "89d62841b723bae8d20315e3d201465896c9c6bc92f84ac5f28ab528dc2c860d",
+    "train-qwen-sequence-v5b.log": "af4e19c91c9a0f49021be2997e9b473e2e2539823b7da36ca061874ee300e28f"
+  },
+  "replacement": "microbatch4 accumulation8; checkpoint if batch maximum length>192;180minute bounded budget",
+  "labels_or_datasets_or_learning_rate_changed": false,
+  "production_acceptance": false
+}

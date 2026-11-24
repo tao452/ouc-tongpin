@@ -1,0 +1,24 @@
+{
+  "created_at_utc": "2026-11-24T22:28:12.350085+00:00",
+  "scope": "fixed two-model development combination; no per-row/category switching",
+  "methods": [
+    "equal_probability_mean",
+    "equal_logit_mean",
+    "maximum_score_diagnostic"
+  ],
+  "sources": [
+    {
+      "path": "phonetic-encoder-context39-r2/predictions.jsonl",
+      "sha256": "a1c31c197e2aed89dd0bce3f91f26d83769690459f3fc9ff73b392c57152fa05"
+    },
+    {
+      "path": "qwen-sequence-v5d/epoch-1/predictions.jsonl",
+      "sha256": "8b5b59b242a1e62c91f214433e1509061f07317740c6699c1b16fcf414f3f197"
+    }
+  ],
+  "code_sha256": "5eaac5f073e9678cfc16df906bc430483b3e33458d8a18d960278021cbd0b7e5",
+  "evaluation_rows": 3258,
+  "excluded_evaluation_rows": 0,
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}
