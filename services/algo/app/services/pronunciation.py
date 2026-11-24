@@ -31,7 +31,7 @@ def phrase_readings(word, readings=()):
     return choices
 
 
-def numeric_tone_patterns(word, readings=(), tone_readings=()):
+def numeric_tone_prefixed_patterns(word, readings=(), tone_readings=()):
     """Respect contextual or explicitly mapped tones without enumerating products."""
     bases = phrase_readings(word, readings)
     paths = [[part[0] for part in pinyin(word, style=Style.TONE3, neutral_tone_with_five=True)]]
@@ -51,7 +51,14 @@ def numeric_tone_patterns(word, readings=(), tone_readings=()):
             paths.append(path)
     if len(paths) > MAX_READINGS:
         raise ValueError("Too many numeric tone readings")
-    return tuple(numeric_tone_pattern(path) for path in paths)
+    # Every compiled path requires this literal first syllable. Keeping the
+    # metadata alongside compilation avoids reverse-parsing regex expressions.
+    return tuple((re.sub(r"[1-5]$", "", path[0]), numeric_tone_pattern(path)) for path in paths)
+
+
+def numeric_tone_patterns(word, readings=(), tone_readings=()):
+    return tuple(pattern for _, pattern in numeric_tone_prefixed_patterns(
+        word, readings, tone_readings))
 
 
 def numeric_tone_pattern(syllables):

@@ -1,0 +1,46 @@
+import hashlib
+import json
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, 'services/algo')
+from app.services.moderation import ModerationService
+
+dictionary = Path('services/algo/app/data/moderation-v3_4-candidate.json')
+service = ModerationService(dictionary)
+units = {
+    'campus': '今天去图书馆复习数学，晚上到食堂吃饭。',
+    'targets': '你就是鲨币，你是sb，你是煞币。',
+    'targeted_quotations': '举报：“你就是鲨币”请处理。',
+    'numeric_quotations': '举报：“你就是sha3 bi1”请处理。',
+    'self_help': '我想去死，请帮帮我。',
+    'whitelist_boundary': '你去死，海边是好地方。',
+    'numeric_near_misses': 'sha1bi sha1 bi ca0 nima sha33bi1 foo_sha3bi1 ',
+    'full_phrase_quotations': '举报：“ni ge nao tan”请处理。',
+    'full_numeric_quotations': '举报：“ni3 ge4 nao3 tan1”请处理。',
+    'long_full_phrase': 'zhu4 ni3 quan2 jia1 si3 guang1 ',
+}
+measurements = {}
+for key, unit in units.items():
+    text = (unit * (2000 // len(unit) + 1))[:2000]
+    timings, errors = [], []
+    for index in range(100):
+        started = time.perf_counter()
+        try:
+            service.check(text)
+        except TimeoutError:
+            errors.append(index)
+        timings.append((time.perf_counter() - started) * 1000)
+    measurements[key] = dict(characters=len(text), input_unit=unit,
+        input_sha256=hashlib.sha256(text.encode()).hexdigest(), iterations=100,
+        p95_ms=sorted(timings)[94], max_ms=max(timings), timeouts=len(errors),
+        timeout_iteration_ids=errors, latencies_ms=timings)
+    print(key, measurements[key]['p95_ms'], len(errors), flush=True)
+output = Path('docs/qa/evidence/us24-recall-20261124/full-pinyin-v3_4-performance-after-prefilter.json')
+with output.open('x', encoding='utf-8') as handle:
+    json.dump(dict(dictionary_sha256=service.dictionary_sha256,
+        source_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+        scope='serial local function after offline model inference; not concurrent capacity',
+        measurements=measurements), handle, ensure_ascii=False, indent=2)
+raise SystemExit(int(any(r['timeouts'] for r in measurements.values())))

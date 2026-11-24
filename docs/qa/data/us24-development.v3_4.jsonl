@@ -1,0 +1,890 @@
+{"id": "FULL-008-0", "text": "zhu ni quan jia si guang", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-008-0-quote", "text": "举报：“zhu ni quan jia si guang”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-008-0-continued", "text": "举报：“zhu ni quan jia si guang”请处理。zhu ni quan jia si guang", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-008-1", "text": "zhuniquanjiasiguang", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-008-1-quote", "text": "举报：“zhuniquanjiasiguang”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-008-1-continued", "text": "举报：“zhuniquanjiasiguang”请处理。zhuniquanjiasiguang", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-008-2", "text": "zhu-ni-quan-jia-si-guang", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-008-2-quote", "text": "举报：“zhu-ni-quan-jia-si-guang”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-008-2-continued", "text": "举报：“zhu-ni-quan-jia-si-guang”请处理。zhu-ni-quan-jia-si-guang", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-008-3", "text": "ZHU NI QUAN JIA SI GUANG", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-008-3-quote", "text": "举报：“ZHU NI QUAN JIA SI GUANG”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-008-3-continued", "text": "举报：“ZHU NI QUAN JIA SI GUANG”请处理。ZHU NI QUAN JIA SI GUANG", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-008-4", "text": "ｚｈｕｎｉｑｕａｎｊｉａｓｉｇｕａｎｇ", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-008-4-quote", "text": "举报：“ｚｈｕｎｉｑｕａｎｊｉａｓｉｇｕａｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-008-4-continued", "text": "举报：“ｚｈｕｎｉｑｕａｎｊｉａｓｉｇｕａｎｇ”请处理。ｚｈｕｎｉｑｕａｎｊｉａｓｉｇｕａｎｇ", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-008-5", "text": "zhù nǐ quán jiā sǐ guāng", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-008-5-quote", "text": "举报：“zhù nǐ quán jiā sǐ guāng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-008-5-continued", "text": "举报：“zhù nǐ quán jiā sǐ guāng”请处理。zhù nǐ quán jiā sǐ guāng", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-008-6", "text": "zhu4 ni3 quan2 jia1 si3 guang1", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-008-6-quote", "text": "举报：“zhu4 ni3 quan2 jia1 si3 guang1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-008-6-continued", "text": "举报：“zhu4 ni3 quan2 jia1 si3 guang1”请处理。zhu4 ni3 quan2 jia1 si3 guang1", "expected_word": "祝你全家死光", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-008-prefix", "text": "xzhuniquanjiasiguang", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-008-suffix", "text": "zhuniquanjiasiguangx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-008-underscore", "text": "zhuniquanjiasiguang_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-008-incomplete", "text": "zhuniquanjiasiguan", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-011-0", "text": "ni zhe ge za zhong", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-011-0-quote", "text": "举报：“ni zhe ge za zhong”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-011-0-continued", "text": "举报：“ni zhe ge za zhong”请处理。ni zhe ge za zhong", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-011-1", "text": "nizhegezazhong", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-011-1-quote", "text": "举报：“nizhegezazhong”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-011-1-continued", "text": "举报：“nizhegezazhong”请处理。nizhegezazhong", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-011-2", "text": "ni-zhe-ge-za-zhong", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-011-2-quote", "text": "举报：“ni-zhe-ge-za-zhong”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-011-2-continued", "text": "举报：“ni-zhe-ge-za-zhong”请处理。ni-zhe-ge-za-zhong", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-011-3", "text": "NI ZHE GE ZA ZHONG", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-011-3-quote", "text": "举报：“NI ZHE GE ZA ZHONG”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-011-3-continued", "text": "举报：“NI ZHE GE ZA ZHONG”请处理。NI ZHE GE ZA ZHONG", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-011-4", "text": "ｎｉｚｈｅｇｅｚａｚｈｏｎｇ", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-011-4-quote", "text": "举报：“ｎｉｚｈｅｇｅｚａｚｈｏｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-011-4-continued", "text": "举报：“ｎｉｚｈｅｇｅｚａｚｈｏｎｇ”请处理。ｎｉｚｈｅｇｅｚａｚｈｏｎｇ", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-011-5", "text": "nǐ zhè ge zá zhǒng", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-011-5-quote", "text": "举报：“nǐ zhè ge zá zhǒng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-011-5-continued", "text": "举报：“nǐ zhè ge zá zhǒng”请处理。nǐ zhè ge zá zhǒng", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-011-6", "text": "ni3 zhe4 ge5 za2 zhong3", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-011-6-quote", "text": "举报：“ni3 zhe4 ge5 za2 zhong3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-011-6-continued", "text": "举报：“ni3 zhe4 ge5 za2 zhong3”请处理。ni3 zhe4 ge5 za2 zhong3", "expected_word": "你这个杂种", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-011-prefix", "text": "xnizhegezazhong", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-011-suffix", "text": "nizhegezazhongx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-011-underscore", "text": "nizhegezazhong_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-011-incomplete", "text": "nizhegezazhon", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-012-0", "text": "ni ge chu sheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-012-0-quote", "text": "举报：“ni ge chu sheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-012-0-continued", "text": "举报：“ni ge chu sheng”请处理。ni ge chu sheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-012-1", "text": "nigechusheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-012-1-quote", "text": "举报：“nigechusheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-012-1-continued", "text": "举报：“nigechusheng”请处理。nigechusheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-012-2", "text": "ni-ge-chu-sheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-012-2-quote", "text": "举报：“ni-ge-chu-sheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-012-2-continued", "text": "举报：“ni-ge-chu-sheng”请处理。ni-ge-chu-sheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-012-3", "text": "NI GE CHU SHENG", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-012-3-quote", "text": "举报：“NI GE CHU SHENG”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-012-3-continued", "text": "举报：“NI GE CHU SHENG”请处理。NI GE CHU SHENG", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-012-4", "text": "ｎｉｇｅｃｈｕｓｈｅｎｇ", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-012-4-quote", "text": "举报：“ｎｉｇｅｃｈｕｓｈｅｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-012-4-continued", "text": "举报：“ｎｉｇｅｃｈｕｓｈｅｎｇ”请处理。ｎｉｇｅｃｈｕｓｈｅｎｇ", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-012-5", "text": "nǐ gè chù sheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-012-5-quote", "text": "举报：“nǐ gè chù sheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-012-5-continued", "text": "举报：“nǐ gè chù sheng”请处理。nǐ gè chù sheng", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-012-6", "text": "ni3 ge4 chu4 sheng5", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-012-6-quote", "text": "举报：“ni3 ge4 chu4 sheng5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-012-6-continued", "text": "举报：“ni3 ge4 chu4 sheng5”请处理。ni3 ge4 chu4 sheng5", "expected_word": "你个畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-012-prefix", "text": "xnigechusheng", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-012-suffix", "text": "nigechushengx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-012-underscore", "text": "nigechusheng_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-012-incomplete", "text": "nigechushen", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-013-0", "text": "ni shi chu sheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-013-0-quote", "text": "举报：“ni shi chu sheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-013-0-continued", "text": "举报：“ni shi chu sheng”请处理。ni shi chu sheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-013-1", "text": "nishichusheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-013-1-quote", "text": "举报：“nishichusheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-013-1-continued", "text": "举报：“nishichusheng”请处理。nishichusheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-013-2", "text": "ni-shi-chu-sheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-013-2-quote", "text": "举报：“ni-shi-chu-sheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-013-2-continued", "text": "举报：“ni-shi-chu-sheng”请处理。ni-shi-chu-sheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-013-3", "text": "NI SHI CHU SHENG", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-013-3-quote", "text": "举报：“NI SHI CHU SHENG”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-013-3-continued", "text": "举报：“NI SHI CHU SHENG”请处理。NI SHI CHU SHENG", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-013-4", "text": "ｎｉｓｈｉｃｈｕｓｈｅｎｇ", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-013-4-quote", "text": "举报：“ｎｉｓｈｉｃｈｕｓｈｅｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-013-4-continued", "text": "举报：“ｎｉｓｈｉｃｈｕｓｈｅｎｇ”请处理。ｎｉｓｈｉｃｈｕｓｈｅｎｇ", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-013-5", "text": "nǐ shì chù sheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-013-5-quote", "text": "举报：“nǐ shì chù sheng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-013-5-continued", "text": "举报：“nǐ shì chù sheng”请处理。nǐ shì chù sheng", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-013-6", "text": "ni3 shi4 chu4 sheng5", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-013-6-quote", "text": "举报：“ni3 shi4 chu4 sheng5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-013-6-continued", "text": "举报：“ni3 shi4 chu4 sheng5”请处理。ni3 shi4 chu4 sheng5", "expected_word": "你是畜生", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-013-prefix", "text": "xnishichusheng", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-013-suffix", "text": "nishichushengx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-013-underscore", "text": "nishichusheng_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-013-incomplete", "text": "nishichushen", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-022-0", "text": "ni ge biao zi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-022-0-quote", "text": "举报：“ni ge biao zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-022-0-continued", "text": "举报：“ni ge biao zi”请处理。ni ge biao zi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-022-1", "text": "nigebiaozi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-022-1-quote", "text": "举报：“nigebiaozi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-022-1-continued", "text": "举报：“nigebiaozi”请处理。nigebiaozi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-022-2", "text": "ni-ge-biao-zi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-022-2-quote", "text": "举报：“ni-ge-biao-zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-022-2-continued", "text": "举报：“ni-ge-biao-zi”请处理。ni-ge-biao-zi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-022-3", "text": "NI GE BIAO ZI", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-022-3-quote", "text": "举报：“NI GE BIAO ZI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-022-3-continued", "text": "举报：“NI GE BIAO ZI”请处理。NI GE BIAO ZI", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-022-4", "text": "ｎｉｇｅｂｉａｏｚｉ", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-022-4-quote", "text": "举报：“ｎｉｇｅｂｉａｏｚｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-022-4-continued", "text": "举报：“ｎｉｇｅｂｉａｏｚｉ”请处理。ｎｉｇｅｂｉａｏｚｉ", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-022-5", "text": "nǐ gè biǎo zi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-022-5-quote", "text": "举报：“nǐ gè biǎo zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-022-5-continued", "text": "举报：“nǐ gè biǎo zi”请处理。nǐ gè biǎo zi", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-022-6", "text": "ni3 ge4 biao3 zi5", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-022-6-quote", "text": "举报：“ni3 ge4 biao3 zi5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-022-6-continued", "text": "举报：“ni3 ge4 biao3 zi5”请处理。ni3 ge4 biao3 zi5", "expected_word": "你个婊子", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-022-prefix", "text": "xnigebiaozi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-022-suffix", "text": "nigebiaozix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-022-underscore", "text": "nigebiaozi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-022-incomplete", "text": "nigebiaoz", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-049-0", "text": "ni shi ge fan tong", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-049-0-quote", "text": "举报：“ni shi ge fan tong”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-049-0-continued", "text": "举报：“ni shi ge fan tong”请处理。ni shi ge fan tong", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-049-1", "text": "nishigefantong", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-049-1-quote", "text": "举报：“nishigefantong”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-049-1-continued", "text": "举报：“nishigefantong”请处理。nishigefantong", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-049-2", "text": "ni-shi-ge-fan-tong", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-049-2-quote", "text": "举报：“ni-shi-ge-fan-tong”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-049-2-continued", "text": "举报：“ni-shi-ge-fan-tong”请处理。ni-shi-ge-fan-tong", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-049-3", "text": "NI SHI GE FAN TONG", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-049-3-quote", "text": "举报：“NI SHI GE FAN TONG”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-049-3-continued", "text": "举报：“NI SHI GE FAN TONG”请处理。NI SHI GE FAN TONG", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-049-4", "text": "ｎｉｓｈｉｇｅｆａｎｔｏｎｇ", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-049-4-quote", "text": "举报：“ｎｉｓｈｉｇｅｆａｎｔｏｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-049-4-continued", "text": "举报：“ｎｉｓｈｉｇｅｆａｎｔｏｎｇ”请处理。ｎｉｓｈｉｇｅｆａｎｔｏｎｇ", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-049-5", "text": "nǐ shì gè fàn tǒng", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-049-5-quote", "text": "举报：“nǐ shì gè fàn tǒng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-049-5-continued", "text": "举报：“nǐ shì gè fàn tǒng”请处理。nǐ shì gè fàn tǒng", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-049-6", "text": "ni3 shi4 ge4 fan4 tong3", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-049-6-quote", "text": "举报：“ni3 shi4 ge4 fan4 tong3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-049-6-continued", "text": "举报：“ni3 shi4 ge4 fan4 tong3”请处理。ni3 shi4 ge4 fan4 tong3", "expected_word": "你是个饭桶", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-049-prefix", "text": "xnishigefantong", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-049-suffix", "text": "nishigefantongx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-049-underscore", "text": "nishigefantong_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-049-incomplete", "text": "nishigefanton", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-053-0", "text": "ni ge chou bu yao lian de", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-053-0-quote", "text": "举报：“ni ge chou bu yao lian de”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-053-0-continued", "text": "举报：“ni ge chou bu yao lian de”请处理。ni ge chou bu yao lian de", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-053-1", "text": "nigechoubuyaoliande", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-053-1-quote", "text": "举报：“nigechoubuyaoliande”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-053-1-continued", "text": "举报：“nigechoubuyaoliande”请处理。nigechoubuyaoliande", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-053-2", "text": "ni-ge-chou-bu-yao-lian-de", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-053-2-quote", "text": "举报：“ni-ge-chou-bu-yao-lian-de”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-053-2-continued", "text": "举报：“ni-ge-chou-bu-yao-lian-de”请处理。ni-ge-chou-bu-yao-lian-de", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-053-3", "text": "NI GE CHOU BU YAO LIAN DE", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-053-3-quote", "text": "举报：“NI GE CHOU BU YAO LIAN DE”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-053-3-continued", "text": "举报：“NI GE CHOU BU YAO LIAN DE”请处理。NI GE CHOU BU YAO LIAN DE", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-053-4", "text": "ｎｉｇｅｃｈｏｕｂｕｙａｏｌｉａｎｄｅ", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-053-4-quote", "text": "举报：“ｎｉｇｅｃｈｏｕｂｕｙａｏｌｉａｎｄｅ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-053-4-continued", "text": "举报：“ｎｉｇｅｃｈｏｕｂｕｙａｏｌｉａｎｄｅ”请处理。ｎｉｇｅｃｈｏｕｂｕｙａｏｌｉａｎｄｅ", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-053-5", "text": "nǐ gè chòu bú yào liǎn de", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-053-5-quote", "text": "举报：“nǐ gè chòu bú yào liǎn de”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-053-5-continued", "text": "举报：“nǐ gè chòu bú yào liǎn de”请处理。nǐ gè chòu bú yào liǎn de", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-053-6", "text": "ni3 ge4 chou4 bu2 yao4 lian3 de5", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-053-6-quote", "text": "举报：“ni3 ge4 chou4 bu2 yao4 lian3 de5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-053-6-continued", "text": "举报：“ni3 ge4 chou4 bu2 yao4 lian3 de5”请处理。ni3 ge4 chou4 bu2 yao4 lian3 de5", "expected_word": "你个臭不要脸的", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-053-prefix", "text": "xnigechoubuyaoliande", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-053-suffix", "text": "nigechoubuyaoliandex", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-053-underscore", "text": "nigechoubuyaoliande_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-053-incomplete", "text": "nigechoubuyaoliand", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-068-0", "text": "quan ban dou tao yan ni", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-068-0-quote", "text": "举报：“quan ban dou tao yan ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-068-0-continued", "text": "举报：“quan ban dou tao yan ni”请处理。quan ban dou tao yan ni", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-068-1", "text": "quanbandoutaoyanni", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-068-1-quote", "text": "举报：“quanbandoutaoyanni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-068-1-continued", "text": "举报：“quanbandoutaoyanni”请处理。quanbandoutaoyanni", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-068-2", "text": "quan-ban-dou-tao-yan-ni", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-068-2-quote", "text": "举报：“quan-ban-dou-tao-yan-ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-068-2-continued", "text": "举报：“quan-ban-dou-tao-yan-ni”请处理。quan-ban-dou-tao-yan-ni", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-068-3", "text": "QUAN BAN DOU TAO YAN NI", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-068-3-quote", "text": "举报：“QUAN BAN DOU TAO YAN NI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-068-3-continued", "text": "举报：“QUAN BAN DOU TAO YAN NI”请处理。QUAN BAN DOU TAO YAN NI", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-068-4", "text": "ｑｕａｎｂａｎｄｏｕｔａｏｙａｎｎｉ", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-068-4-quote", "text": "举报：“ｑｕａｎｂａｎｄｏｕｔａｏｙａｎｎｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-068-4-continued", "text": "举报：“ｑｕａｎｂａｎｄｏｕｔａｏｙａｎｎｉ”请处理。ｑｕａｎｂａｎｄｏｕｔａｏｙａｎｎｉ", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-068-5", "text": "quán bān dōu tǎo yàn nǐ", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-068-5-quote", "text": "举报：“quán bān dōu tǎo yàn nǐ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-068-5-continued", "text": "举报：“quán bān dōu tǎo yàn nǐ”请处理。quán bān dōu tǎo yàn nǐ", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-068-6", "text": "quan2 ban1 dou1 tao3 yan4 ni3", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-068-6-quote", "text": "举报：“quan2 ban1 dou1 tao3 yan4 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-068-6-continued", "text": "举报：“quan2 ban1 dou1 tao3 yan4 ni3”请处理。quan2 ban1 dou1 tao3 yan4 ni3", "expected_word": "全班都讨厌你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-068-prefix", "text": "xquanbandoutaoyanni", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-068-suffix", "text": "quanbandoutaoyannix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-068-underscore", "text": "quanbandoutaoyanni_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-068-incomplete", "text": "quanbandoutaoyann", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-070-0", "text": "ni bu pei dai zai zhe ge xue xiao", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-070-0-quote", "text": "举报：“ni bu pei dai zai zhe ge xue xiao”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-070-0-continued", "text": "举报：“ni bu pei dai zai zhe ge xue xiao”请处理。ni bu pei dai zai zhe ge xue xiao", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-070-1", "text": "nibupeidaizaizhegexuexiao", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-070-1-quote", "text": "举报：“nibupeidaizaizhegexuexiao”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-070-1-continued", "text": "举报：“nibupeidaizaizhegexuexiao”请处理。nibupeidaizaizhegexuexiao", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-070-2", "text": "ni-bu-pei-dai-zai-zhe-ge-xue-xiao", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-070-2-quote", "text": "举报：“ni-bu-pei-dai-zai-zhe-ge-xue-xiao”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-070-2-continued", "text": "举报：“ni-bu-pei-dai-zai-zhe-ge-xue-xiao”请处理。ni-bu-pei-dai-zai-zhe-ge-xue-xiao", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-070-3", "text": "NI BU PEI DAI ZAI ZHE GE XUE XIAO", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-070-3-quote", "text": "举报：“NI BU PEI DAI ZAI ZHE GE XUE XIAO”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-070-3-continued", "text": "举报：“NI BU PEI DAI ZAI ZHE GE XUE XIAO”请处理。NI BU PEI DAI ZAI ZHE GE XUE XIAO", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-070-4", "text": "ｎｉｂｕｐｅｉｄａｉｚａｉｚｈｅｇｅｘｕｅｘｉａｏ", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-070-4-quote", "text": "举报：“ｎｉｂｕｐｅｉｄａｉｚａｉｚｈｅｇｅｘｕｅｘｉａｏ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-070-4-continued", "text": "举报：“ｎｉｂｕｐｅｉｄａｉｚａｉｚｈｅｇｅｘｕｅｘｉａｏ”请处理。ｎｉｂｕｐｅｉｄａｉｚａｉｚｈｅｇｅｘｕｅｘｉａｏ", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-070-5", "text": "nǐ bù pèi dài zài zhè ge xué xiào", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-070-5-quote", "text": "举报：“nǐ bù pèi dài zài zhè ge xué xiào”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-070-5-continued", "text": "举报：“nǐ bù pèi dài zài zhè ge xué xiào”请处理。nǐ bù pèi dài zài zhè ge xué xiào", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-070-6", "text": "ni3 bu4 pei4 dai4 zai4 zhe4 ge5 xue2 xiao4", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-070-6-quote", "text": "举报：“ni3 bu4 pei4 dai4 zai4 zhe4 ge5 xue2 xiao4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-070-6-continued", "text": "举报：“ni3 bu4 pei4 dai4 zai4 zhe4 ge5 xue2 xiao4”请处理。ni3 bu4 pei4 dai4 zai4 zhe4 ge5 xue2 xiao4", "expected_word": "你不配待在这个学校", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-070-prefix", "text": "xnibupeidaizaizhegexuexiao", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-070-suffix", "text": "nibupeidaizaizhegexuexiaox", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-070-underscore", "text": "nibupeidaizaizhegexuexiao_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-070-incomplete", "text": "nibupeidaizaizhegexuexia", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-071-0", "text": "qu ni ma de", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-071-0-quote", "text": "举报：“qu ni ma de”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-071-0-continued", "text": "举报：“qu ni ma de”请处理。qu ni ma de", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-071-1", "text": "qunimade", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-071-1-quote", "text": "举报：“qunimade”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-071-1-continued", "text": "举报：“qunimade”请处理。qunimade", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-071-2", "text": "qu-ni-ma-de", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-071-2-quote", "text": "举报：“qu-ni-ma-de”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-071-2-continued", "text": "举报：“qu-ni-ma-de”请处理。qu-ni-ma-de", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-071-3", "text": "QU NI MA DE", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-071-3-quote", "text": "举报：“QU NI MA DE”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-071-3-continued", "text": "举报：“QU NI MA DE”请处理。QU NI MA DE", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-071-4", "text": "ｑｕｎｉｍａｄｅ", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-071-4-quote", "text": "举报：“ｑｕｎｉｍａｄｅ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-071-4-continued", "text": "举报：“ｑｕｎｉｍａｄｅ”请处理。ｑｕｎｉｍａｄｅ", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-071-5", "text": "qù nǐ mā de", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-071-5-quote", "text": "举报：“qù nǐ mā de”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-071-5-continued", "text": "举报：“qù nǐ mā de”请处理。qù nǐ mā de", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-071-6", "text": "qu4 ni3 ma1 de5", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-071-6-quote", "text": "举报：“qu4 ni3 ma1 de5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-071-6-continued", "text": "举报：“qu4 ni3 ma1 de5”请处理。qu4 ni3 ma1 de5", "expected_word": "去你妈的", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-071-prefix", "text": "xqunimade", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-071-suffix", "text": "qunimadex", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-071-underscore", "text": "qunimade_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-071-incomplete", "text": "qunimad", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-077-0", "text": "ni ge nao tan", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-077-0-quote", "text": "举报：“ni ge nao tan”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-077-0-continued", "text": "举报：“ni ge nao tan”请处理。ni ge nao tan", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-077-1", "text": "nigenaotan", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-077-1-quote", "text": "举报：“nigenaotan”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-077-1-continued", "text": "举报：“nigenaotan”请处理。nigenaotan", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-077-2", "text": "ni-ge-nao-tan", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-077-2-quote", "text": "举报：“ni-ge-nao-tan”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-077-2-continued", "text": "举报：“ni-ge-nao-tan”请处理。ni-ge-nao-tan", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-077-3", "text": "NI GE NAO TAN", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-077-3-quote", "text": "举报：“NI GE NAO TAN”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-077-3-continued", "text": "举报：“NI GE NAO TAN”请处理。NI GE NAO TAN", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-077-4", "text": "ｎｉｇｅｎａｏｔａｎ", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-077-4-quote", "text": "举报：“ｎｉｇｅｎａｏｔａｎ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-077-4-continued", "text": "举报：“ｎｉｇｅｎａｏｔａｎ”请处理。ｎｉｇｅｎａｏｔａｎ", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-077-5", "text": "nǐ gè nǎo tān", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-077-5-quote", "text": "举报：“nǐ gè nǎo tān”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-077-5-continued", "text": "举报：“nǐ gè nǎo tān”请处理。nǐ gè nǎo tān", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-077-6", "text": "ni3 ge4 nao3 tan1", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-077-6-quote", "text": "举报：“ni3 ge4 nao3 tan1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-077-6-continued", "text": "举报：“ni3 ge4 nao3 tan1”请处理。ni3 ge4 nao3 tan1", "expected_word": "你个脑瘫", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-077-prefix", "text": "xnigenaotan", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-077-suffix", "text": "nigenaotanx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-077-underscore", "text": "nigenaotan_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-077-incomplete", "text": "nigenaota", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-078-0", "text": "ni ge zhi zhang", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-078-0-quote", "text": "举报：“ni ge zhi zhang”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-078-0-continued", "text": "举报：“ni ge zhi zhang”请处理。ni ge zhi zhang", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-078-1", "text": "nigezhizhang", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-078-1-quote", "text": "举报：“nigezhizhang”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-078-1-continued", "text": "举报：“nigezhizhang”请处理。nigezhizhang", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-078-2", "text": "ni-ge-zhi-zhang", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-078-2-quote", "text": "举报：“ni-ge-zhi-zhang”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-078-2-continued", "text": "举报：“ni-ge-zhi-zhang”请处理。ni-ge-zhi-zhang", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-078-3", "text": "NI GE ZHI ZHANG", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-078-3-quote", "text": "举报：“NI GE ZHI ZHANG”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-078-3-continued", "text": "举报：“NI GE ZHI ZHANG”请处理。NI GE ZHI ZHANG", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-078-4", "text": "ｎｉｇｅｚｈｉｚｈａｎｇ", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-078-4-quote", "text": "举报：“ｎｉｇｅｚｈｉｚｈａｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-078-4-continued", "text": "举报：“ｎｉｇｅｚｈｉｚｈａｎｇ”请处理。ｎｉｇｅｚｈｉｚｈａｎｇ", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-078-5", "text": "nǐ gè zhì zhàng", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-078-5-quote", "text": "举报：“nǐ gè zhì zhàng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-078-5-continued", "text": "举报：“nǐ gè zhì zhàng”请处理。nǐ gè zhì zhàng", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-078-6", "text": "ni3 ge4 zhi4 zhang4", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-078-6-quote", "text": "举报：“ni3 ge4 zhi4 zhang4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-078-6-continued", "text": "举报：“ni3 ge4 zhi4 zhang4”请处理。ni3 ge4 zhi4 zhang4", "expected_word": "你个智障", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-078-prefix", "text": "xnigezhizhang", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-078-suffix", "text": "nigezhizhangx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-078-underscore", "text": "nigezhizhang_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-078-incomplete", "text": "nigezhizhan", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-079-0", "text": "ni ge shen jing bing", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-079-0-quote", "text": "举报：“ni ge shen jing bing”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-079-0-continued", "text": "举报：“ni ge shen jing bing”请处理。ni ge shen jing bing", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-079-1", "text": "nigeshenjingbing", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-079-1-quote", "text": "举报：“nigeshenjingbing”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-079-1-continued", "text": "举报：“nigeshenjingbing”请处理。nigeshenjingbing", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-079-2", "text": "ni-ge-shen-jing-bing", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-079-2-quote", "text": "举报：“ni-ge-shen-jing-bing”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-079-2-continued", "text": "举报：“ni-ge-shen-jing-bing”请处理。ni-ge-shen-jing-bing", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-079-3", "text": "NI GE SHEN JING BING", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-079-3-quote", "text": "举报：“NI GE SHEN JING BING”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-079-3-continued", "text": "举报：“NI GE SHEN JING BING”请处理。NI GE SHEN JING BING", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-079-4", "text": "ｎｉｇｅｓｈｅｎｊｉｎｇｂｉｎｇ", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-079-4-quote", "text": "举报：“ｎｉｇｅｓｈｅｎｊｉｎｇｂｉｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-079-4-continued", "text": "举报：“ｎｉｇｅｓｈｅｎｊｉｎｇｂｉｎｇ”请处理。ｎｉｇｅｓｈｅｎｊｉｎｇｂｉｎｇ", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-079-5", "text": "nǐ gè shén jīng bìng", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-079-5-quote", "text": "举报：“nǐ gè shén jīng bìng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-079-5-continued", "text": "举报：“nǐ gè shén jīng bìng”请处理。nǐ gè shén jīng bìng", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-079-6", "text": "ni3 ge4 shen2 jing1 bing4", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-079-6-quote", "text": "举报：“ni3 ge4 shen2 jing1 bing4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-079-6-continued", "text": "举报：“ni3 ge4 shen2 jing1 bing4”请处理。ni3 ge4 shen2 jing1 bing4", "expected_word": "你个神经病", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-079-prefix", "text": "xnigeshenjingbing", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-079-suffix", "text": "nigeshenjingbingx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-079-underscore", "text": "nigeshenjingbing_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-079-incomplete", "text": "nigeshenjingbin", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-080-0", "text": "ni shi ge sha zi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-080-0-quote", "text": "举报：“ni shi ge sha zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-080-0-continued", "text": "举报：“ni shi ge sha zi”请处理。ni shi ge sha zi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-080-1", "text": "nishigeshazi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-080-1-quote", "text": "举报：“nishigeshazi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-080-1-continued", "text": "举报：“nishigeshazi”请处理。nishigeshazi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-080-2", "text": "ni-shi-ge-sha-zi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-080-2-quote", "text": "举报：“ni-shi-ge-sha-zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-080-2-continued", "text": "举报：“ni-shi-ge-sha-zi”请处理。ni-shi-ge-sha-zi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-080-3", "text": "NI SHI GE SHA ZI", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-080-3-quote", "text": "举报：“NI SHI GE SHA ZI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-080-3-continued", "text": "举报：“NI SHI GE SHA ZI”请处理。NI SHI GE SHA ZI", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-080-4", "text": "ｎｉｓｈｉｇｅｓｈａｚｉ", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-080-4-quote", "text": "举报：“ｎｉｓｈｉｇｅｓｈａｚｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-080-4-continued", "text": "举报：“ｎｉｓｈｉｇｅｓｈａｚｉ”请处理。ｎｉｓｈｉｇｅｓｈａｚｉ", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-080-5", "text": "nǐ shì gè shǎ zi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-080-5-quote", "text": "举报：“nǐ shì gè shǎ zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-080-5-continued", "text": "举报：“nǐ shì gè shǎ zi”请处理。nǐ shì gè shǎ zi", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-080-6", "text": "ni3 shi4 ge4 sha3 zi5", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-080-6-quote", "text": "举报：“ni3 shi4 ge4 sha3 zi5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-080-6-continued", "text": "举报：“ni3 shi4 ge4 sha3 zi5”请处理。ni3 shi4 ge4 sha3 zi5", "expected_word": "你是个傻子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-080-prefix", "text": "xnishigeshazi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-080-suffix", "text": "nishigeshazix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-080-underscore", "text": "nishigeshazi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-080-incomplete", "text": "nishigeshaz", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-081-0", "text": "ni ge er bi", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-081-0-quote", "text": "举报：“ni ge er bi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-081-0-continued", "text": "举报：“ni ge er bi”请处理。ni ge er bi", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-081-1", "text": "nigeerbi", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-081-1-quote", "text": "举报：“nigeerbi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-081-1-continued", "text": "举报：“nigeerbi”请处理。nigeerbi", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-081-2", "text": "ni-ge-er-bi", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-081-2-quote", "text": "举报：“ni-ge-er-bi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-081-2-continued", "text": "举报：“ni-ge-er-bi”请处理。ni-ge-er-bi", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-081-3", "text": "NI GE ER BI", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-081-3-quote", "text": "举报：“NI GE ER BI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-081-3-continued", "text": "举报：“NI GE ER BI”请处理。NI GE ER BI", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-081-4", "text": "ｎｉｇｅｅｒｂｉ", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-081-4-quote", "text": "举报：“ｎｉｇｅｅｒｂｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-081-4-continued", "text": "举报：“ｎｉｇｅｅｒｂｉ”请处理。ｎｉｇｅｅｒｂｉ", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-081-5", "text": "nǐ gè èr bī", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-081-5-quote", "text": "举报：“nǐ gè èr bī”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-081-5-continued", "text": "举报：“nǐ gè èr bī”请处理。nǐ gè èr bī", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-081-6", "text": "ni3 ge4 er4 bi1", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-081-6-quote", "text": "举报：“ni3 ge4 er4 bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-081-6-continued", "text": "举报：“ni3 ge4 er4 bi1”请处理。ni3 ge4 er4 bi1", "expected_word": "你个二逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-081-prefix", "text": "xnigeerbi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-081-suffix", "text": "nigeerbix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-081-underscore", "text": "nigeerbi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-081-incomplete", "text": "nigeerb", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-082-0", "text": "ni ge er huo", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-082-0-quote", "text": "举报：“ni ge er huo”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-082-0-continued", "text": "举报：“ni ge er huo”请处理。ni ge er huo", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-082-1", "text": "nigeerhuo", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-082-1-quote", "text": "举报：“nigeerhuo”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-082-1-continued", "text": "举报：“nigeerhuo”请处理。nigeerhuo", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-082-2", "text": "ni-ge-er-huo", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-082-2-quote", "text": "举报：“ni-ge-er-huo”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-082-2-continued", "text": "举报：“ni-ge-er-huo”请处理。ni-ge-er-huo", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-082-3", "text": "NI GE ER HUO", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-082-3-quote", "text": "举报：“NI GE ER HUO”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-082-3-continued", "text": "举报：“NI GE ER HUO”请处理。NI GE ER HUO", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-082-4", "text": "ｎｉｇｅｅｒｈｕｏ", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-082-4-quote", "text": "举报：“ｎｉｇｅｅｒｈｕｏ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-082-4-continued", "text": "举报：“ｎｉｇｅｅｒｈｕｏ”请处理。ｎｉｇｅｅｒｈｕｏ", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-082-5", "text": "nǐ gè èr huò", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-082-5-quote", "text": "举报：“nǐ gè èr huò”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-082-5-continued", "text": "举报：“nǐ gè èr huò”请处理。nǐ gè èr huò", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-082-6", "text": "ni3 ge4 er4 huo4", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-082-6-quote", "text": "举报：“ni3 ge4 er4 huo4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-082-6-continued", "text": "举报：“ni3 ge4 er4 huo4”请处理。ni3 ge4 er4 huo4", "expected_word": "你个二货", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-082-prefix", "text": "xnigeerhuo", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-082-suffix", "text": "nigeerhuox", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-082-underscore", "text": "nigeerhuo_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-082-incomplete", "text": "nigeerhu", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-083-0", "text": "ni jiu shi yi tuo shi", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-083-0-quote", "text": "举报：“ni jiu shi yi tuo shi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-083-0-continued", "text": "举报：“ni jiu shi yi tuo shi”请处理。ni jiu shi yi tuo shi", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-083-1", "text": "nijiushiyituoshi", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-083-1-quote", "text": "举报：“nijiushiyituoshi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-083-1-continued", "text": "举报：“nijiushiyituoshi”请处理。nijiushiyituoshi", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-083-2", "text": "ni-jiu-shi-yi-tuo-shi", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-083-2-quote", "text": "举报：“ni-jiu-shi-yi-tuo-shi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-083-2-continued", "text": "举报：“ni-jiu-shi-yi-tuo-shi”请处理。ni-jiu-shi-yi-tuo-shi", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-083-3", "text": "NI JIU SHI YI TUO SHI", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-083-3-quote", "text": "举报：“NI JIU SHI YI TUO SHI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-083-3-continued", "text": "举报：“NI JIU SHI YI TUO SHI”请处理。NI JIU SHI YI TUO SHI", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-083-4", "text": "ｎｉｊｉｕｓｈｉｙｉｔｕｏｓｈｉ", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-083-4-quote", "text": "举报：“ｎｉｊｉｕｓｈｉｙｉｔｕｏｓｈｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-083-4-continued", "text": "举报：“ｎｉｊｉｕｓｈｉｙｉｔｕｏｓｈｉ”请处理。ｎｉｊｉｕｓｈｉｙｉｔｕｏｓｈｉ", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-083-5", "text": "nǐ jiù shì yī tuó shǐ", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-083-5-quote", "text": "举报：“nǐ jiù shì yī tuó shǐ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-083-5-continued", "text": "举报：“nǐ jiù shì yī tuó shǐ”请处理。nǐ jiù shì yī tuó shǐ", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-083-6", "text": "ni3 jiu4 shi4 yi1 tuo2 shi3", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-083-6-quote", "text": "举报：“ni3 jiu4 shi4 yi1 tuo2 shi3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-083-6-continued", "text": "举报：“ni3 jiu4 shi4 yi1 tuo2 shi3”请处理。ni3 jiu4 shi4 yi1 tuo2 shi3", "expected_word": "你就是一坨屎", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-083-prefix", "text": "xnijiushiyituoshi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-083-suffix", "text": "nijiushiyituoshix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-083-underscore", "text": "nijiushiyituoshi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-083-incomplete", "text": "nijiushiyituosh", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-084-0", "text": "ni nao zi jin shui le", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-084-0-quote", "text": "举报：“ni nao zi jin shui le”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-084-0-continued", "text": "举报：“ni nao zi jin shui le”请处理。ni nao zi jin shui le", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-084-1", "text": "ninaozijinshuile", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-084-1-quote", "text": "举报：“ninaozijinshuile”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-084-1-continued", "text": "举报：“ninaozijinshuile”请处理。ninaozijinshuile", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-084-2", "text": "ni-nao-zi-jin-shui-le", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-084-2-quote", "text": "举报：“ni-nao-zi-jin-shui-le”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-084-2-continued", "text": "举报：“ni-nao-zi-jin-shui-le”请处理。ni-nao-zi-jin-shui-le", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-084-3", "text": "NI NAO ZI JIN SHUI LE", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-084-3-quote", "text": "举报：“NI NAO ZI JIN SHUI LE”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-084-3-continued", "text": "举报：“NI NAO ZI JIN SHUI LE”请处理。NI NAO ZI JIN SHUI LE", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-084-4", "text": "ｎｉｎａｏｚｉｊｉｎｓｈｕｉｌｅ", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-084-4-quote", "text": "举报：“ｎｉｎａｏｚｉｊｉｎｓｈｕｉｌｅ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-084-4-continued", "text": "举报：“ｎｉｎａｏｚｉｊｉｎｓｈｕｉｌｅ”请处理。ｎｉｎａｏｚｉｊｉｎｓｈｕｉｌｅ", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-084-5", "text": "nǐ nǎo zi jìn shuǐ le", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-084-5-quote", "text": "举报：“nǐ nǎo zi jìn shuǐ le”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-084-5-continued", "text": "举报：“nǐ nǎo zi jìn shuǐ le”请处理。nǐ nǎo zi jìn shuǐ le", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-084-6", "text": "ni3 nao3 zi5 jin4 shui3 le5", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-084-6-quote", "text": "举报：“ni3 nao3 zi5 jin4 shui3 le5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-084-6-continued", "text": "举报：“ni3 nao3 zi5 jin4 shui3 le5”请处理。ni3 nao3 zi5 jin4 shui3 le5", "expected_word": "你脑子进水了", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-084-prefix", "text": "xninaozijinshuile", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-084-suffix", "text": "ninaozijinshuilex", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-084-underscore", "text": "ninaozijinshuile_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-084-incomplete", "text": "ninaozijinshuil", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-085-0", "text": "ni mei nao zi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-085-0-quote", "text": "举报：“ni mei nao zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-085-0-continued", "text": "举报：“ni mei nao zi”请处理。ni mei nao zi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-085-1", "text": "nimeinaozi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-085-1-quote", "text": "举报：“nimeinaozi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-085-1-continued", "text": "举报：“nimeinaozi”请处理。nimeinaozi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-085-2", "text": "ni-mei-nao-zi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-085-2-quote", "text": "举报：“ni-mei-nao-zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-085-2-continued", "text": "举报：“ni-mei-nao-zi”请处理。ni-mei-nao-zi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-085-3", "text": "NI MEI NAO ZI", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-085-3-quote", "text": "举报：“NI MEI NAO ZI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-085-3-continued", "text": "举报：“NI MEI NAO ZI”请处理。NI MEI NAO ZI", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-085-4", "text": "ｎｉｍｅｉｎａｏｚｉ", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-085-4-quote", "text": "举报：“ｎｉｍｅｉｎａｏｚｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-085-4-continued", "text": "举报：“ｎｉｍｅｉｎａｏｚｉ”请处理。ｎｉｍｅｉｎａｏｚｉ", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-085-5", "text": "nǐ méi nǎo zi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-085-5-quote", "text": "举报：“nǐ méi nǎo zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-085-5-continued", "text": "举报：“nǐ méi nǎo zi”请处理。nǐ méi nǎo zi", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-085-6", "text": "ni3 mei2 nao3 zi5", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-085-6-quote", "text": "举报：“ni3 mei2 nao3 zi5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-085-6-continued", "text": "举报：“ni3 mei2 nao3 zi5”请处理。ni3 mei2 nao3 zi5", "expected_word": "你没脑子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-085-prefix", "text": "xnimeinaozi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-085-suffix", "text": "nimeinaozix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-085-underscore", "text": "nimeinaozi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-085-incomplete", "text": "nimeinaoz", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-087-0", "text": "ni shi ge huo hai", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-087-0-quote", "text": "举报：“ni shi ge huo hai”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-087-0-continued", "text": "举报：“ni shi ge huo hai”请处理。ni shi ge huo hai", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-087-1", "text": "nishigehuohai", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-087-1-quote", "text": "举报：“nishigehuohai”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-087-1-continued", "text": "举报：“nishigehuohai”请处理。nishigehuohai", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-087-2", "text": "ni-shi-ge-huo-hai", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-087-2-quote", "text": "举报：“ni-shi-ge-huo-hai”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-087-2-continued", "text": "举报：“ni-shi-ge-huo-hai”请处理。ni-shi-ge-huo-hai", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-087-3", "text": "NI SHI GE HUO HAI", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-087-3-quote", "text": "举报：“NI SHI GE HUO HAI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-087-3-continued", "text": "举报：“NI SHI GE HUO HAI”请处理。NI SHI GE HUO HAI", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-087-4", "text": "ｎｉｓｈｉｇｅｈｕｏｈａｉ", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-087-4-quote", "text": "举报：“ｎｉｓｈｉｇｅｈｕｏｈａｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-087-4-continued", "text": "举报：“ｎｉｓｈｉｇｅｈｕｏｈａｉ”请处理。ｎｉｓｈｉｇｅｈｕｏｈａｉ", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-087-5", "text": "nǐ shì gè huò hài", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-087-5-quote", "text": "举报：“nǐ shì gè huò hài”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-087-5-continued", "text": "举报：“nǐ shì gè huò hài”请处理。nǐ shì gè huò hài", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-087-6", "text": "ni3 shi4 ge4 huo4 hai4", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-087-6-quote", "text": "举报：“ni3 shi4 ge4 huo4 hai4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-087-6-continued", "text": "举报：“ni3 shi4 ge4 huo4 hai4”请处理。ni3 shi4 ge4 huo4 hai4", "expected_word": "你是个祸害", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-087-prefix", "text": "xnishigehuohai", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-087-suffix", "text": "nishigehuohaix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-087-underscore", "text": "nishigehuohai_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-087-incomplete", "text": "nishigehuoha", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-088-0", "text": "ni bu pei fa yan", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-088-0-quote", "text": "举报：“ni bu pei fa yan”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-088-0-continued", "text": "举报：“ni bu pei fa yan”请处理。ni bu pei fa yan", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-088-1", "text": "nibupeifayan", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-088-1-quote", "text": "举报：“nibupeifayan”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-088-1-continued", "text": "举报：“nibupeifayan”请处理。nibupeifayan", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-088-2", "text": "ni-bu-pei-fa-yan", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-088-2-quote", "text": "举报：“ni-bu-pei-fa-yan”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-088-2-continued", "text": "举报：“ni-bu-pei-fa-yan”请处理。ni-bu-pei-fa-yan", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-088-3", "text": "NI BU PEI FA YAN", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-088-3-quote", "text": "举报：“NI BU PEI FA YAN”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-088-3-continued", "text": "举报：“NI BU PEI FA YAN”请处理。NI BU PEI FA YAN", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-088-4", "text": "ｎｉｂｕｐｅｉｆａｙａｎ", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-088-4-quote", "text": "举报：“ｎｉｂｕｐｅｉｆａｙａｎ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-088-4-continued", "text": "举报：“ｎｉｂｕｐｅｉｆａｙａｎ”请处理。ｎｉｂｕｐｅｉｆａｙａｎ", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-088-5", "text": "nǐ bù pèi fā yán", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-088-5-quote", "text": "举报：“nǐ bù pèi fā yán”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-088-5-continued", "text": "举报：“nǐ bù pèi fā yán”请处理。nǐ bù pèi fā yán", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-088-6", "text": "ni3 bu4 pei4 fa1 yan2", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-088-6-quote", "text": "举报：“ni3 bu4 pei4 fa1 yan2”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-088-6-continued", "text": "举报：“ni3 bu4 pei4 fa1 yan2”请处理。ni3 bu4 pei4 fa1 yan2", "expected_word": "你不配发言", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-088-prefix", "text": "xnibupeifayan", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-088-suffix", "text": "nibupeifayanx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-088-underscore", "text": "nibupeifayan_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-088-incomplete", "text": "nibupeifaya", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-089-0", "text": "ni huo zhe lang fei kong qi", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-089-0-quote", "text": "举报：“ni huo zhe lang fei kong qi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-089-0-continued", "text": "举报：“ni huo zhe lang fei kong qi”请处理。ni huo zhe lang fei kong qi", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-089-1", "text": "nihuozhelangfeikongqi", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-089-1-quote", "text": "举报：“nihuozhelangfeikongqi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-089-1-continued", "text": "举报：“nihuozhelangfeikongqi”请处理。nihuozhelangfeikongqi", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-089-2", "text": "ni-huo-zhe-lang-fei-kong-qi", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-089-2-quote", "text": "举报：“ni-huo-zhe-lang-fei-kong-qi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-089-2-continued", "text": "举报：“ni-huo-zhe-lang-fei-kong-qi”请处理。ni-huo-zhe-lang-fei-kong-qi", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-089-3", "text": "NI HUO ZHE LANG FEI KONG QI", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-089-3-quote", "text": "举报：“NI HUO ZHE LANG FEI KONG QI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-089-3-continued", "text": "举报：“NI HUO ZHE LANG FEI KONG QI”请处理。NI HUO ZHE LANG FEI KONG QI", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-089-4", "text": "ｎｉｈｕｏｚｈｅｌａｎｇｆｅｉｋｏｎｇｑｉ", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-089-4-quote", "text": "举报：“ｎｉｈｕｏｚｈｅｌａｎｇｆｅｉｋｏｎｇｑｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-089-4-continued", "text": "举报：“ｎｉｈｕｏｚｈｅｌａｎｇｆｅｉｋｏｎｇｑｉ”请处理。ｎｉｈｕｏｚｈｅｌａｎｇｆｅｉｋｏｎｇｑｉ", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-089-5", "text": "nǐ huó zhe làng fèi kōng qì", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-089-5-quote", "text": "举报：“nǐ huó zhe làng fèi kōng qì”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-089-5-continued", "text": "举报：“nǐ huó zhe làng fèi kōng qì”请处理。nǐ huó zhe làng fèi kōng qì", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-089-6", "text": "ni3 huo2 zhe5 lang4 fei4 kong1 qi4", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-089-6-quote", "text": "举报：“ni3 huo2 zhe5 lang4 fei4 kong1 qi4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-089-6-continued", "text": "举报：“ni3 huo2 zhe5 lang4 fei4 kong1 qi4”请处理。ni3 huo2 zhe5 lang4 fei4 kong1 qi4", "expected_word": "你活着浪费空气", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-089-prefix", "text": "xnihuozhelangfeikongqi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-089-suffix", "text": "nihuozhelangfeikongqix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-089-underscore", "text": "nihuozhelangfeikongqi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-089-incomplete", "text": "nihuozhelangfeikongq", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-090-0", "text": "ni si le mei ren xin teng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-090-0-quote", "text": "举报：“ni si le mei ren xin teng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-090-0-continued", "text": "举报：“ni si le mei ren xin teng”请处理。ni si le mei ren xin teng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-090-1", "text": "nisilemeirenxinteng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-090-1-quote", "text": "举报：“nisilemeirenxinteng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-090-1-continued", "text": "举报：“nisilemeirenxinteng”请处理。nisilemeirenxinteng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-090-2", "text": "ni-si-le-mei-ren-xin-teng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-090-2-quote", "text": "举报：“ni-si-le-mei-ren-xin-teng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-090-2-continued", "text": "举报：“ni-si-le-mei-ren-xin-teng”请处理。ni-si-le-mei-ren-xin-teng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-090-3", "text": "NI SI LE MEI REN XIN TENG", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-090-3-quote", "text": "举报：“NI SI LE MEI REN XIN TENG”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-090-3-continued", "text": "举报：“NI SI LE MEI REN XIN TENG”请处理。NI SI LE MEI REN XIN TENG", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-090-4", "text": "ｎｉｓｉｌｅｍｅｉｒｅｎｘｉｎｔｅｎｇ", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-090-4-quote", "text": "举报：“ｎｉｓｉｌｅｍｅｉｒｅｎｘｉｎｔｅｎｇ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-090-4-continued", "text": "举报：“ｎｉｓｉｌｅｍｅｉｒｅｎｘｉｎｔｅｎｇ”请处理。ｎｉｓｉｌｅｍｅｉｒｅｎｘｉｎｔｅｎｇ", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-090-5", "text": "nǐ sǐ le méi rén xīn téng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-090-5-quote", "text": "举报：“nǐ sǐ le méi rén xīn téng”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-090-5-continued", "text": "举报：“nǐ sǐ le méi rén xīn téng”请处理。nǐ sǐ le méi rén xīn téng", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-090-6", "text": "ni3 si3 le5 mei2 ren2 xin1 teng2", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-090-6-quote", "text": "举报：“ni3 si3 le5 mei2 ren2 xin1 teng2”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-090-6-continued", "text": "举报：“ni3 si3 le5 mei2 ren2 xin1 teng2”请处理。ni3 si3 le5 mei2 ren2 xin1 teng2", "expected_word": "你死了没人心疼", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-090-prefix", "text": "xnisilemeirenxinteng", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-090-suffix", "text": "nisilemeirenxintengx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-090-underscore", "text": "nisilemeirenxinteng_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-090-incomplete", "text": "nisilemeirenxinten", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-091-0", "text": "ni zen me hai bu qu si", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-091-0-quote", "text": "举报：“ni zen me hai bu qu si”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-091-0-continued", "text": "举报：“ni zen me hai bu qu si”请处理。ni zen me hai bu qu si", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-091-1", "text": "nizenmehaibuqusi", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-091-1-quote", "text": "举报：“nizenmehaibuqusi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-091-1-continued", "text": "举报：“nizenmehaibuqusi”请处理。nizenmehaibuqusi", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-091-2", "text": "ni-zen-me-hai-bu-qu-si", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-091-2-quote", "text": "举报：“ni-zen-me-hai-bu-qu-si”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-091-2-continued", "text": "举报：“ni-zen-me-hai-bu-qu-si”请处理。ni-zen-me-hai-bu-qu-si", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-091-3", "text": "NI ZEN ME HAI BU QU SI", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-091-3-quote", "text": "举报：“NI ZEN ME HAI BU QU SI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-091-3-continued", "text": "举报：“NI ZEN ME HAI BU QU SI”请处理。NI ZEN ME HAI BU QU SI", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-091-4", "text": "ｎｉｚｅｎｍｅｈａｉｂｕｑｕｓｉ", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-091-4-quote", "text": "举报：“ｎｉｚｅｎｍｅｈａｉｂｕｑｕｓｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-091-4-continued", "text": "举报：“ｎｉｚｅｎｍｅｈａｉｂｕｑｕｓｉ”请处理。ｎｉｚｅｎｍｅｈａｉｂｕｑｕｓｉ", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-091-5", "text": "nǐ zěn me hái bù qù sǐ", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-091-5-quote", "text": "举报：“nǐ zěn me hái bù qù sǐ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-091-5-continued", "text": "举报：“nǐ zěn me hái bù qù sǐ”请处理。nǐ zěn me hái bù qù sǐ", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-091-6", "text": "ni3 zen3 me5 hai2 bu4 qu4 si3", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-091-6-quote", "text": "举报：“ni3 zen3 me5 hai2 bu4 qu4 si3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-091-6-continued", "text": "举报：“ni3 zen3 me5 hai2 bu4 qu4 si3”请处理。ni3 zen3 me5 hai2 bu4 qu4 si3", "expected_word": "你怎么还不去死", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-091-prefix", "text": "xnizenmehaibuqusi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-091-suffix", "text": "nizenmehaibuqusix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-091-underscore", "text": "nizenmehaibuqusi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-091-incomplete", "text": "nizenmehaibuqus", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-092-0", "text": "wo yao yi qiang beng le ni", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-092-0-quote", "text": "举报：“wo yao yi qiang beng le ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-092-0-continued", "text": "举报：“wo yao yi qiang beng le ni”请处理。wo yao yi qiang beng le ni", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-092-1", "text": "woyaoyiqiangbengleni", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-092-1-quote", "text": "举报：“woyaoyiqiangbengleni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-092-1-continued", "text": "举报：“woyaoyiqiangbengleni”请处理。woyaoyiqiangbengleni", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-092-2", "text": "wo-yao-yi-qiang-beng-le-ni", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-092-2-quote", "text": "举报：“wo-yao-yi-qiang-beng-le-ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-092-2-continued", "text": "举报：“wo-yao-yi-qiang-beng-le-ni”请处理。wo-yao-yi-qiang-beng-le-ni", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-092-3", "text": "WO YAO YI QIANG BENG LE NI", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-092-3-quote", "text": "举报：“WO YAO YI QIANG BENG LE NI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-092-3-continued", "text": "举报：“WO YAO YI QIANG BENG LE NI”请处理。WO YAO YI QIANG BENG LE NI", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-092-4", "text": "ｗｏｙａｏｙｉｑｉａｎｇｂｅｎｇｌｅｎｉ", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-092-4-quote", "text": "举报：“ｗｏｙａｏｙｉｑｉａｎｇｂｅｎｇｌｅｎｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-092-4-continued", "text": "举报：“ｗｏｙａｏｙｉｑｉａｎｇｂｅｎｇｌｅｎｉ”请处理。ｗｏｙａｏｙｉｑｉａｎｇｂｅｎｇｌｅｎｉ", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-092-5", "text": "wǒ yào yī qiāng bēng le nǐ", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-092-5-quote", "text": "举报：“wǒ yào yī qiāng bēng le nǐ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-092-5-continued", "text": "举报：“wǒ yào yī qiāng bēng le nǐ”请处理。wǒ yào yī qiāng bēng le nǐ", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-092-6", "text": "wo3 yao4 yi1 qiang1 beng1 le5 ni3", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-092-6-quote", "text": "举报：“wo3 yao4 yi1 qiang1 beng1 le5 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-092-6-continued", "text": "举报：“wo3 yao4 yi1 qiang1 beng1 le5 ni3”请处理。wo3 yao4 yi1 qiang1 beng1 le5 ni3", "expected_word": "我要一枪崩了你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-092-prefix", "text": "xwoyaoyiqiangbengleni", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-092-suffix", "text": "woyaoyiqiangbenglenix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-092-underscore", "text": "woyaoyiqiangbengleni_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-092-incomplete", "text": "woyaoyiqiangbenglen", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-093-0", "text": "wo yao shan ni", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-093-0-quote", "text": "举报：“wo yao shan ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-093-0-continued", "text": "举报：“wo yao shan ni”请处理。wo yao shan ni", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-093-1", "text": "woyaoshanni", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-093-1-quote", "text": "举报：“woyaoshanni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-093-1-continued", "text": "举报：“woyaoshanni”请处理。woyaoshanni", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-093-2", "text": "wo-yao-shan-ni", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-093-2-quote", "text": "举报：“wo-yao-shan-ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-093-2-continued", "text": "举报：“wo-yao-shan-ni”请处理。wo-yao-shan-ni", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-093-3", "text": "WO YAO SHAN NI", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-093-3-quote", "text": "举报：“WO YAO SHAN NI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-093-3-continued", "text": "举报：“WO YAO SHAN NI”请处理。WO YAO SHAN NI", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-093-4", "text": "ｗｏｙａｏｓｈａｎｎｉ", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-093-4-quote", "text": "举报：“ｗｏｙａｏｓｈａｎｎｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-093-4-continued", "text": "举报：“ｗｏｙａｏｓｈａｎｎｉ”请处理。ｗｏｙａｏｓｈａｎｎｉ", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-093-5", "text": "wǒ yào shàn nǐ", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-093-5-quote", "text": "举报：“wǒ yào shàn nǐ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-093-5-continued", "text": "举报：“wǒ yào shàn nǐ”请处理。wǒ yào shàn nǐ", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-093-6", "text": "wo3 yao4 shan4 ni3", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-093-6-quote", "text": "举报：“wo3 yao4 shan4 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-093-6-continued", "text": "举报：“wo3 yao4 shan4 ni3”请处理。wo3 yao4 shan4 ni3", "expected_word": "我要扇你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-093-prefix", "text": "xwoyaoshanni", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-093-suffix", "text": "woyaoshannix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-093-underscore", "text": "woyaoshanni_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-093-incomplete", "text": "woyaoshann", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-096-0", "text": "wo yao ren rou ni", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-096-0-quote", "text": "举报：“wo yao ren rou ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-096-0-continued", "text": "举报：“wo yao ren rou ni”请处理。wo yao ren rou ni", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-096-1", "text": "woyaorenrouni", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-096-1-quote", "text": "举报：“woyaorenrouni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-096-1-continued", "text": "举报：“woyaorenrouni”请处理。woyaorenrouni", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-096-2", "text": "wo-yao-ren-rou-ni", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-096-2-quote", "text": "举报：“wo-yao-ren-rou-ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-096-2-continued", "text": "举报：“wo-yao-ren-rou-ni”请处理。wo-yao-ren-rou-ni", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-096-3", "text": "WO YAO REN ROU NI", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-096-3-quote", "text": "举报：“WO YAO REN ROU NI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-096-3-continued", "text": "举报：“WO YAO REN ROU NI”请处理。WO YAO REN ROU NI", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-096-4", "text": "ｗｏｙａｏｒｅｎｒｏｕｎｉ", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-096-4-quote", "text": "举报：“ｗｏｙａｏｒｅｎｒｏｕｎｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-096-4-continued", "text": "举报：“ｗｏｙａｏｒｅｎｒｏｕｎｉ”请处理。ｗｏｙａｏｒｅｎｒｏｕｎｉ", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-096-5", "text": "wǒ yào rén ròu nǐ", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-096-5-quote", "text": "举报：“wǒ yào rén ròu nǐ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-096-5-continued", "text": "举报：“wǒ yào rén ròu nǐ”请处理。wǒ yào rén ròu nǐ", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-096-6", "text": "wo3 yao4 ren2 rou4 ni3", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-096-6-quote", "text": "举报：“wo3 yao4 ren2 rou4 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-096-6-continued", "text": "举报：“wo3 yao4 ren2 rou4 ni3”请处理。wo3 yao4 ren2 rou4 ni3", "expected_word": "我要人肉你", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-096-prefix", "text": "xwoyaorenrouni", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-096-suffix", "text": "woyaorenrounix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-096-underscore", "text": "woyaorenrouni_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-096-incomplete", "text": "woyaorenroun", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-097-0", "text": "ni zhen xia jian", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-097-0-quote", "text": "举报：“ni zhen xia jian”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-097-0-continued", "text": "举报：“ni zhen xia jian”请处理。ni zhen xia jian", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-097-1", "text": "nizhenxiajian", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-097-1-quote", "text": "举报：“nizhenxiajian”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-097-1-continued", "text": "举报：“nizhenxiajian”请处理。nizhenxiajian", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-097-2", "text": "ni-zhen-xia-jian", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-097-2-quote", "text": "举报：“ni-zhen-xia-jian”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-097-2-continued", "text": "举报：“ni-zhen-xia-jian”请处理。ni-zhen-xia-jian", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-097-3", "text": "NI ZHEN XIA JIAN", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-097-3-quote", "text": "举报：“NI ZHEN XIA JIAN”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-097-3-continued", "text": "举报：“NI ZHEN XIA JIAN”请处理。NI ZHEN XIA JIAN", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-097-4", "text": "ｎｉｚｈｅｎｘｉａｊｉａｎ", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-097-4-quote", "text": "举报：“ｎｉｚｈｅｎｘｉａｊｉａｎ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-097-4-continued", "text": "举报：“ｎｉｚｈｅｎｘｉａｊｉａｎ”请处理。ｎｉｚｈｅｎｘｉａｊｉａｎ", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-097-5", "text": "nǐ zhēn xià jiàn", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-097-5-quote", "text": "举报：“nǐ zhēn xià jiàn”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-097-5-continued", "text": "举报：“nǐ zhēn xià jiàn”请处理。nǐ zhēn xià jiàn", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-097-6", "text": "ni3 zhen1 xia4 jian4", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-097-6-quote", "text": "举报：“ni3 zhen1 xia4 jian4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-097-6-continued", "text": "举报：“ni3 zhen1 xia4 jian4”请处理。ni3 zhen1 xia4 jian4", "expected_word": "你真下贱", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-097-prefix", "text": "xnizhenxiajian", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-097-suffix", "text": "nizhenxiajianx", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-097-underscore", "text": "nizhenxiajian_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-097-incomplete", "text": "nizhenxiajia", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-099-0", "text": "ni jiu shi ge xiao chou", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-099-0-quote", "text": "举报：“ni jiu shi ge xiao chou”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-099-0-continued", "text": "举报：“ni jiu shi ge xiao chou”请处理。ni jiu shi ge xiao chou", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-099-1", "text": "nijiushigexiaochou", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-099-1-quote", "text": "举报：“nijiushigexiaochou”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-099-1-continued", "text": "举报：“nijiushigexiaochou”请处理。nijiushigexiaochou", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-099-2", "text": "ni-jiu-shi-ge-xiao-chou", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-099-2-quote", "text": "举报：“ni-jiu-shi-ge-xiao-chou”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-099-2-continued", "text": "举报：“ni-jiu-shi-ge-xiao-chou”请处理。ni-jiu-shi-ge-xiao-chou", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-099-3", "text": "NI JIU SHI GE XIAO CHOU", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-099-3-quote", "text": "举报：“NI JIU SHI GE XIAO CHOU”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-099-3-continued", "text": "举报：“NI JIU SHI GE XIAO CHOU”请处理。NI JIU SHI GE XIAO CHOU", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-099-4", "text": "ｎｉｊｉｕｓｈｉｇｅｘｉａｏｃｈｏｕ", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-099-4-quote", "text": "举报：“ｎｉｊｉｕｓｈｉｇｅｘｉａｏｃｈｏｕ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-099-4-continued", "text": "举报：“ｎｉｊｉｕｓｈｉｇｅｘｉａｏｃｈｏｕ”请处理。ｎｉｊｉｕｓｈｉｇｅｘｉａｏｃｈｏｕ", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-099-5", "text": "nǐ jiù shì gè xiǎo chǒu", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-099-5-quote", "text": "举报：“nǐ jiù shì gè xiǎo chǒu”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-099-5-continued", "text": "举报：“nǐ jiù shì gè xiǎo chǒu”请处理。nǐ jiù shì gè xiǎo chǒu", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-099-6", "text": "ni3 jiu4 shi4 ge4 xiao3 chou3", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-099-6-quote", "text": "举报：“ni3 jiu4 shi4 ge4 xiao3 chou3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-099-6-continued", "text": "举报：“ni3 jiu4 shi4 ge4 xiao3 chou3”请处理。ni3 jiu4 shi4 ge4 xiao3 chou3", "expected_word": "你就是个小丑", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-099-prefix", "text": "xnijiushigexiaochou", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-099-suffix", "text": "nijiushigexiaochoux", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-099-underscore", "text": "nijiushigexiaochou_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-099-incomplete", "text": "nijiushigexiaocho", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-101-0", "text": "ni ge cai bi", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-101-0-quote", "text": "举报：“ni ge cai bi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-101-0-continued", "text": "举报：“ni ge cai bi”请处理。ni ge cai bi", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-101-1", "text": "nigecaibi", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-101-1-quote", "text": "举报：“nigecaibi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-101-1-continued", "text": "举报：“nigecaibi”请处理。nigecaibi", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-101-2", "text": "ni-ge-cai-bi", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-101-2-quote", "text": "举报：“ni-ge-cai-bi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-101-2-continued", "text": "举报：“ni-ge-cai-bi”请处理。ni-ge-cai-bi", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-101-3", "text": "NI GE CAI BI", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-101-3-quote", "text": "举报：“NI GE CAI BI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-101-3-continued", "text": "举报：“NI GE CAI BI”请处理。NI GE CAI BI", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-101-4", "text": "ｎｉｇｅｃａｉｂｉ", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-101-4-quote", "text": "举报：“ｎｉｇｅｃａｉｂｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-101-4-continued", "text": "举报：“ｎｉｇｅｃａｉｂｉ”请处理。ｎｉｇｅｃａｉｂｉ", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-101-5", "text": "nǐ gè cài bī", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-101-5-quote", "text": "举报：“nǐ gè cài bī”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-101-5-continued", "text": "举报：“nǐ gè cài bī”请处理。nǐ gè cài bī", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-101-6", "text": "ni3 ge4 cai4 bi1", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-101-6-quote", "text": "举报：“ni3 ge4 cai4 bi1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-101-6-continued", "text": "举报：“ni3 ge4 cai4 bi1”请处理。ni3 ge4 cai4 bi1", "expected_word": "你个菜逼", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-101-prefix", "text": "xnigecaibi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-101-suffix", "text": "nigecaibix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-101-underscore", "text": "nigecaibi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-101-incomplete", "text": "nigecaib", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-102-0", "text": "ni ge diao si", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-102-0-quote", "text": "举报：“ni ge diao si”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-102-0-continued", "text": "举报：“ni ge diao si”请处理。ni ge diao si", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-102-1", "text": "nigediaosi", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-102-1-quote", "text": "举报：“nigediaosi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-102-1-continued", "text": "举报：“nigediaosi”请处理。nigediaosi", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-102-2", "text": "ni-ge-diao-si", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-102-2-quote", "text": "举报：“ni-ge-diao-si”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-102-2-continued", "text": "举报：“ni-ge-diao-si”请处理。ni-ge-diao-si", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-102-3", "text": "NI GE DIAO SI", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-102-3-quote", "text": "举报：“NI GE DIAO SI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-102-3-continued", "text": "举报：“NI GE DIAO SI”请处理。NI GE DIAO SI", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-102-4", "text": "ｎｉｇｅｄｉａｏｓｉ", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-102-4-quote", "text": "举报：“ｎｉｇｅｄｉａｏｓｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-102-4-continued", "text": "举报：“ｎｉｇｅｄｉａｏｓｉ”请处理。ｎｉｇｅｄｉａｏｓｉ", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-102-5", "text": "nǐ gè diǎo sī", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-102-5-quote", "text": "举报：“nǐ gè diǎo sī”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-102-5-continued", "text": "举报：“nǐ gè diǎo sī”请处理。nǐ gè diǎo sī", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-102-6", "text": "ni3 ge4 diao3 si1", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-102-6-quote", "text": "举报：“ni3 ge4 diao3 si1”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-102-6-continued", "text": "举报：“ni3 ge4 diao3 si1”请处理。ni3 ge4 diao3 si1", "expected_word": "你个屌丝", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-102-prefix", "text": "xnigediaosi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-102-suffix", "text": "nigediaosix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-102-underscore", "text": "nigediaosi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-102-incomplete", "text": "nigediaos", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-106-0", "text": "fang ni ma de pi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-106-0-quote", "text": "举报：“fang ni ma de pi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-106-0-continued", "text": "举报：“fang ni ma de pi”请处理。fang ni ma de pi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-106-1", "text": "fangnimadepi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-106-1-quote", "text": "举报：“fangnimadepi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-106-1-continued", "text": "举报：“fangnimadepi”请处理。fangnimadepi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-106-2", "text": "fang-ni-ma-de-pi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-106-2-quote", "text": "举报：“fang-ni-ma-de-pi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-106-2-continued", "text": "举报：“fang-ni-ma-de-pi”请处理。fang-ni-ma-de-pi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-106-3", "text": "FANG NI MA DE PI", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-106-3-quote", "text": "举报：“FANG NI MA DE PI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-106-3-continued", "text": "举报：“FANG NI MA DE PI”请处理。FANG NI MA DE PI", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-106-4", "text": "ｆａｎｇｎｉｍａｄｅｐｉ", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-106-4-quote", "text": "举报：“ｆａｎｇｎｉｍａｄｅｐｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-106-4-continued", "text": "举报：“ｆａｎｇｎｉｍａｄｅｐｉ”请处理。ｆａｎｇｎｉｍａｄｅｐｉ", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-106-5", "text": "fàng nǐ mā de pì", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-106-5-quote", "text": "举报：“fàng nǐ mā de pì”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-106-5-continued", "text": "举报：“fàng nǐ mā de pì”请处理。fàng nǐ mā de pì", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-106-6", "text": "fang4 ni3 ma1 de5 pi4", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "positive", "blocked": true}
+{"id": "FULL-106-6-quote", "text": "举报：“fang4 ni3 ma1 de5 pi4”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-106-6-continued", "text": "举报：“fang4 ni3 ma1 de5 pi4”请处理。fang4 ni3 ma1 de5 pi4", "expected_word": "放你妈的屁", "expected_level": "HIGH", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": true}
+{"id": "FULL-106-prefix", "text": "xfangnimadepi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-106-suffix", "text": "fangnimadepix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-106-underscore", "text": "fangnimadepi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-106-incomplete", "text": "fangnimadep", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-108-0", "text": "ni jiu shi ge pian zi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-108-0-quote", "text": "举报：“ni jiu shi ge pian zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-108-0-continued", "text": "举报：“ni jiu shi ge pian zi”请处理。ni jiu shi ge pian zi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-108-1", "text": "nijiushigepianzi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-108-1-quote", "text": "举报：“nijiushigepianzi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-108-1-continued", "text": "举报：“nijiushigepianzi”请处理。nijiushigepianzi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-108-2", "text": "ni-jiu-shi-ge-pian-zi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-108-2-quote", "text": "举报：“ni-jiu-shi-ge-pian-zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-108-2-continued", "text": "举报：“ni-jiu-shi-ge-pian-zi”请处理。ni-jiu-shi-ge-pian-zi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-108-3", "text": "NI JIU SHI GE PIAN ZI", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-108-3-quote", "text": "举报：“NI JIU SHI GE PIAN ZI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-108-3-continued", "text": "举报：“NI JIU SHI GE PIAN ZI”请处理。NI JIU SHI GE PIAN ZI", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-108-4", "text": "ｎｉｊｉｕｓｈｉｇｅｐｉａｎｚｉ", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-108-4-quote", "text": "举报：“ｎｉｊｉｕｓｈｉｇｅｐｉａｎｚｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-108-4-continued", "text": "举报：“ｎｉｊｉｕｓｈｉｇｅｐｉａｎｚｉ”请处理。ｎｉｊｉｕｓｈｉｇｅｐｉａｎｚｉ", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-108-5", "text": "nǐ jiù shì gè piàn zi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-108-5-quote", "text": "举报：“nǐ jiù shì gè piàn zi”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-108-5-continued", "text": "举报：“nǐ jiù shì gè piàn zi”请处理。nǐ jiù shì gè piàn zi", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-108-6", "text": "ni3 jiu4 shi4 ge4 pian4 zi5", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-108-6-quote", "text": "举报：“ni3 jiu4 shi4 ge4 pian4 zi5”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-108-6-continued", "text": "举报：“ni3 jiu4 shi4 ge4 pian4 zi5”请处理。ni3 jiu4 shi4 ge4 pian4 zi5", "expected_word": "你就是个骗子", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-108-prefix", "text": "xnijiushigepianzi", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-108-suffix", "text": "nijiushigepianzix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-108-underscore", "text": "nijiushigepianzi_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-108-incomplete", "text": "nijiushigepianz", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-110-0", "text": "ni bu pei shang da xue", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-110-0-quote", "text": "举报：“ni bu pei shang da xue”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-110-0-continued", "text": "举报：“ni bu pei shang da xue”请处理。ni bu pei shang da xue", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-110-1", "text": "nibupeishangdaxue", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-110-1-quote", "text": "举报：“nibupeishangdaxue”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-110-1-continued", "text": "举报：“nibupeishangdaxue”请处理。nibupeishangdaxue", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-110-2", "text": "ni-bu-pei-shang-da-xue", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-110-2-quote", "text": "举报：“ni-bu-pei-shang-da-xue”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-110-2-continued", "text": "举报：“ni-bu-pei-shang-da-xue”请处理。ni-bu-pei-shang-da-xue", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-110-3", "text": "NI BU PEI SHANG DA XUE", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-110-3-quote", "text": "举报：“NI BU PEI SHANG DA XUE”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-110-3-continued", "text": "举报：“NI BU PEI SHANG DA XUE”请处理。NI BU PEI SHANG DA XUE", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-110-4", "text": "ｎｉｂｕｐｅｉｓｈａｎｇｄａｘｕｅ", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-110-4-quote", "text": "举报：“ｎｉｂｕｐｅｉｓｈａｎｇｄａｘｕｅ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-110-4-continued", "text": "举报：“ｎｉｂｕｐｅｉｓｈａｎｇｄａｘｕｅ”请处理。ｎｉｂｕｐｅｉｓｈａｎｇｄａｘｕｅ", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-110-5", "text": "nǐ bù pèi shàng dà xué", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-110-5-quote", "text": "举报：“nǐ bù pèi shàng dà xué”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-110-5-continued", "text": "举报：“nǐ bù pèi shàng dà xué”请处理。nǐ bù pèi shàng dà xué", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-110-6", "text": "ni3 bu4 pei4 shang4 da4 xue2", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-110-6-quote", "text": "举报：“ni3 bu4 pei4 shang4 da4 xue2”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-110-6-continued", "text": "举报：“ni3 bu4 pei4 shang4 da4 xue2”请处理。ni3 bu4 pei4 shang4 da4 xue2", "expected_word": "你不配上大学", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-110-prefix", "text": "xnibupeishangdaxue", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-110-suffix", "text": "nibupeishangdaxuex", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-110-underscore", "text": "nibupeishangdaxue_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-110-incomplete", "text": "nibupeishangdaxu", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-111-0", "text": "quan qin dou xian qi ni", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-111-0-quote", "text": "举报：“quan qin dou xian qi ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-111-0-continued", "text": "举报：“quan qin dou xian qi ni”请处理。quan qin dou xian qi ni", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-111-1", "text": "quanqindouxianqini", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-111-1-quote", "text": "举报：“quanqindouxianqini”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-111-1-continued", "text": "举报：“quanqindouxianqini”请处理。quanqindouxianqini", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-111-2", "text": "quan-qin-dou-xian-qi-ni", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-111-2-quote", "text": "举报：“quan-qin-dou-xian-qi-ni”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-111-2-continued", "text": "举报：“quan-qin-dou-xian-qi-ni”请处理。quan-qin-dou-xian-qi-ni", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-111-3", "text": "QUAN QIN DOU XIAN QI NI", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-111-3-quote", "text": "举报：“QUAN QIN DOU XIAN QI NI”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-111-3-continued", "text": "举报：“QUAN QIN DOU XIAN QI NI”请处理。QUAN QIN DOU XIAN QI NI", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-111-4", "text": "ｑｕａｎｑｉｎｄｏｕｘｉａｎｑｉｎｉ", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-111-4-quote", "text": "举报：“ｑｕａｎｑｉｎｄｏｕｘｉａｎｑｉｎｉ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-111-4-continued", "text": "举报：“ｑｕａｎｑｉｎｄｏｕｘｉａｎｑｉｎｉ”请处理。ｑｕａｎｑｉｎｄｏｕｘｉａｎｑｉｎｉ", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-111-5", "text": "quán qǐn dōu xián qì nǐ", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-111-5-quote", "text": "举报：“quán qǐn dōu xián qì nǐ”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-111-5-continued", "text": "举报：“quán qǐn dōu xián qì nǐ”请处理。quán qǐn dōu xián qì nǐ", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-111-6", "text": "quan2 qin3 dou1 xian2 qi4 ni3", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "positive", "blocked": false}
+{"id": "FULL-111-6-quote", "text": "举报：“quan2 qin3 dou1 xian2 qi4 ni3”请处理", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "local_report", "blocked": false}
+{"id": "FULL-111-6-continued", "text": "举报：“quan2 qin3 dou1 xian2 qi4 ni3”请处理。quan2 qin3 dou1 xian2 qi4 ni3", "expected_word": "全寝都嫌弃你", "expected_level": "MEDIUM", "category": "complete_target_pinyin", "kind": "continued_attack", "blocked": false}
+{"id": "FULL-111-prefix", "text": "xquanqindouxianqini", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-111-suffix", "text": "quanqindouxianqinix", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-111-underscore", "text": "quanqindouxianqini_func", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-111-incomplete", "text": "quanqindouxianqin", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "identifier_or_incomplete", "blocked": false}
+{"id": "FULL-NORMAL-001", "text": "ni hao tong xue", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-002", "text": "ni zai na li shang ke", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-003", "text": "yin hang chong qing xing zou", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-004", "text": "ni shi nao tan kang fu huo dong de zhi yuan zhe ma", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-005", "text": "nao tan huan zhe xu yao bang zhu", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-006", "text": "zhi zhang fu wu xiang mu", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-007", "text": "shen jing bing xue yan jiu", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-008", "text": "fan tong de rong ji shi duo shao", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-009", "text": "zhe shi ge yin hang xiang mu", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-010", "text": "chang da hou xiang dang yi sheng", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-011", "text": "python unicode codepoint sbatch namespace sha256", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-012", "text": "negligence ethnography classification", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-013", "text": "wo xiang qiu zhu", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-014", "text": "我不想去死，请帮帮我", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}
+{"id": "FULL-NORMAL-015", "text": "校园心理讲座和反网暴科普下午开始", "expected_word": "", "expected_level": "", "category": "normal_context", "kind": "normal_language", "blocked": false}

@@ -1,0 +1,31 @@
+{
+  "commit": "d7965d1d02550cba219537923bacf3e6e2528882",
+  "verified_at_utc": "2026-11-24T16:29:33.419185+00:00",
+  "run_id": 45433040132,
+  "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45433040132",
+  "status": "completed",
+  "conclusion": "success",
+  "linux_python": {
+    "passed": 567,
+    "skipped": 0,
+    "coverage_percent": 97.96,
+    "job_id": 138583394304
+  },
+  "ruff": "PASS",
+  "java": "PASS",
+  "five_service_docker": "PASS",
+  "docker_v3_4_in_this_run": false,
+  "docker_context": {
+    "count": 29,
+    "passed": 29,
+    "failed": 0
+  },
+  "docker_numeric": {
+    "count": 530,
+    "retained_fp": 1
+  },
+  "miniprogram": "PASS",
+  "admin_web": "PASS",
+  "quality": "PASS",
+  "release_created": false
+}

@@ -1,7 +1,13 @@
+import json
+
 import pytest
 
 from app.services.moderation import RECALL_DICTIONARY, ModerationService
-from app.services.pronunciation import MAX_READINGS, numeric_tone_patterns
+from app.services.pronunciation import (
+    MAX_READINGS,
+    numeric_tone_patterns,
+    numeric_tone_prefixed_patterns,
+)
 
 DICTIONARY = RECALL_DICTIONARY.with_name("moderation-v3_3-candidate.json")
 
@@ -20,6 +26,24 @@ def test_numeric_tones_keep_the_canonical_mapping(service, text, word):
     if word == "我要重伤你":
         text = "wo3 yao4 " + text + " ni3"
     assert word in {h.word for h in service.check(text).hits}
+
+
+def test_required_syllable_metadata_retains_every_registered_polyphone_path():
+    matchers = numeric_tone_prefixed_patterns("我要重伤你", ["wo yao chong shang ni"])
+    assert [prefix for prefix, _ in matchers] == ["wo", "wo"]
+    for (_, pattern), text in zip(matchers, ["wo3 yao4 zhong4 shang1 ni3",
+                                            "wo3 yao4 chong2 shang1 ni3"], strict=True):
+        assert pattern.fullmatch(text)
+
+
+def test_prefilter_keeps_an_explicit_nondefault_initial_reading(tmp_path):
+    dictionary = tmp_path / "words.json"
+    dictionary.write_text(json.dumps([dict(word="重伤", level="HIGH", pinyin=True,
+        pinyin_readings=["chong shang"], pinyin_tone_numbers=True)]), encoding="utf-8")
+    service = ModerationService(dictionary)
+    assert not service.check("zhong4 shang1").passed
+    assert not service.check("chong2 shang1").passed
+    assert service.check("chang2 shang1").hits == []
 
 
 @pytest.mark.parametrize("text", [

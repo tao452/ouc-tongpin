@@ -16,7 +16,7 @@ from app.services.normalization import canonicalize, normalize
 from app.services.pronunciation import (
     MAX_PINYIN_LENGTH,
     numeric_tone_pattern,
-    numeric_tone_patterns,
+    numeric_tone_prefixed_patterns,
     pronunciation_keys,
 )
 from app.services.targeted_matching import (
@@ -50,6 +50,7 @@ class ModerationService:
         self.pinyin: dict[str, tuple[str, str]] = {}
         self.joinable_pinyin: set[str] = set()
         self.numeric_tones: list[tuple[re.Pattern, str, str]] = []
+        self.numeric_prefixes: dict[re.Pattern, str] = {}
         self.self_context_variants: dict[str, set[str]] = {
             word: set() for word in ["去死", "傻逼", "废物", "杀了你", "弄死你", "捅死你",
                                     "打死你", "砍死你", "掐死你"]}
@@ -93,9 +94,10 @@ class ModerationService:
                 self.joinable_pinyin.update(pronunciation_keys(word, record.pinyin_readings))
                 keys = pronunciation_keys(word, record.pinyin_readings, record.pinyin_aliases)
                 if record.pinyin_tone_numbers:
-                    self.numeric_tones.extend((pattern, word, level) for pattern in
-                                              numeric_tone_patterns(word, record.pinyin_readings,
-                                                                    record.pinyin_tone_readings))
+                    for prefix, pattern in numeric_tone_prefixed_patterns(
+                            word, record.pinyin_readings, record.pinyin_tone_readings):
+                        self.numeric_tones.append((pattern, word, level))
+                        self.numeric_prefixes[pattern] = prefix
                 for phrase in record.pinyin_allow_phrases:
                     if (not re.fullmatch(r"[a-z]+(?: [a-z]+){1,15}", phrase)
                             or len(phrase) > 128
@@ -154,11 +156,16 @@ class ModerationService:
             return self_cache[key]
 
         canonical = canonicalize(text)
+        # A necessary literal syllable check only removes impossible paths.
+        # It never creates new pronunciation combinations or relaxes boundaries.
+        numeric_candidates = [item for item in self.numeric_tones
+                              if self.numeric_prefixes[item[0]] in canonical]
+        check_budget()
         positions = [index for index, ch in enumerate(canonical)
                      if unicodedata.category(ch)[0] in {"L", "N"}]
         normalized = "".join(canonical[index] for index in positions)
         exemptions = context_spans(canonical, self.variants,
-                                   (p for p, _, _ in self.numeric_tones),
+                                   (p for p, _, _ in numeric_candidates),
                                    known_quote, known_self_context)
         pinyin_allowed = {word: [match.span() for pattern in patterns
                                   for match in pattern.finditer(canonical)
@@ -236,7 +243,7 @@ class ModerationService:
                                         for left, right in pinyin_allowed.get(word, []))):
                         found[word] = level
                 previous_end = segment.end()
-        for index, (pattern, word, level) in enumerate(self.numeric_tones):
+        for index, (pattern, word, level) in enumerate(numeric_candidates):
             if index % 16 == 0:
                 check_budget()
             for match in pattern.finditer(canonical):
