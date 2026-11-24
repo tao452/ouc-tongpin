@@ -59,7 +59,7 @@
 
 最新两种顺序共4600次、超时0；视觉别名P95 3.492ms，希腊字母拼音标识符3.158ms，混写举报4.559ms。二代GC仍可能占用约45ms；计时包含GC和调度，50ms为协作式预算，超时返回503。同期离线GPU训练继续运行，这些串行检查不代表并发服务容量。
 
-本地完整Python649 PASS、4 SKIP、覆盖率98.14%，Ruff通过。当前提交的Java、Linux及完整Docker结果随CI补充；上一代码提交`31120a3`完整CI为623 PASS、98.06%，Java及五服务Docker通过。
+本地完整Python649 PASS、4 SKIP、覆盖率98.14%，Ruff通过。提交`037867484b6b1aac69aea76f923745bd5ea5764c`的[完整CI](https://github.com/tao452/ouc-tongpin/actions/runs/45492950766)全部通过：Linux Python653 PASS、0 SKIP、覆盖率98.14%，Java、Ruff、小程序、管理端及五服务Docker通过。新314条在构建后的网关得到相同矩阵，artifact为`us24-v3_9-unicode-http-evidence`，详见[CI记录](evidence/us24-recall-20261124/ci-v3_9-0378674.json)。
 
 ## 广义结果与审核
 
