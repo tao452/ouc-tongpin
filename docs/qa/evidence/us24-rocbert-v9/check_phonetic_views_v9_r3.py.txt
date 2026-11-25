@@ -1,0 +1,43 @@
+import hashlib
+import json
+from pathlib import Path
+
+import torch
+
+from rocbert_phonetic_view_v9 import PhoneticView, representation
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+path = LAB / 'rocbert-v9-inputs/features.pt'
+prepared = torch.load(path, map_location='cpu', weights_only=True)
+rows = prepared['records']
+by_id = {r['id']: r for r in rows}
+phonetics = PhoneticView(LAB / 'rocbert-base', LAB / 'rocbert-v8-inputs/mapping-qualification.json')
+checked = 0
+evaluation = []
+for row in rows:
+    if row.get('augmentation') == 'word_and_shape_unknown_keep_contextual_pronunciation':
+        view, count = phonetics.apply(by_id[row['source_id']]['windows'])
+        assert view == row['windows'] and count == row['masked_body_tokens']
+        checked += 1
+    elif row['cohort'] != 'training':
+        view, count = phonetics.apply(row['windows'])
+        assert all(a['input_pronunciation_ids'] == b['input_pronunciation_ids']
+                   for a, b in zip(view, row['windows'], strict=True))
+        evaluation.append(dict(id=row['id'], cohort=row['cohort'], label=row['label'],
+                               full_input_representation_sha256=representation(row['windows']),
+                               phonetic_view_sha256=representation(view), phonetic_masked_body_tokens=count))
+assert checked == 4745 and len(evaluation) == 3258
+source = LAB / 'rocbert_phonetic_view_v9.py'
+with path.open('rb') as handle:
+    cache_sha = hashlib.file_digest(handle, 'sha256').hexdigest()
+report = dict(scope='complete feature reconstruction and fixed two-view inputs, no semantic predictions',
+              vocabulary_audit=phonetics.vocabulary_audit,
+              features_sha256=cache_sha, checked_training_views=4745,
+              checked_evaluation_views=3258, source_lf_sha256=hashlib.sha256(source.read_bytes().replace(b'\r\n', b'\n')).hexdigest(),
+              evaluation=evaluation, accuracy_status='NOT_RUN', COLD_dev_fetched=False,
+              production_acceptance=False)
+with (LAB / 'phonetic-views-v9-qualification-r3.json').open('x', encoding='utf-8') as handle:
+    json.dump(report, handle, ensure_ascii=False, indent=2)
+print(json.dumps(dict(checked_training_views=checked, checked_evaluation_views=len(evaluation),
+                      accuracy_status='NOT_RUN')))

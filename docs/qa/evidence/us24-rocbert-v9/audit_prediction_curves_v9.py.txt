@@ -1,0 +1,126 @@
+"""Recompute both registered evaluation paths from complete scores and frozen feature metadata."""
+import argparse
+import csv
+import hashlib
+import json
+import math
+from collections import Counter, defaultdict
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+EXPECTED = {'toxicn_dev': (1292, 1107), 'PCR': (250, 250),
+            'controls': (0, 257), 'context_stress': (12, 90)}
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def rows(path):
+    return [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()]
+
+
+def main(directory):
+    directory = directory.resolve()
+    assert directory.parent == (LAB / 'rocbert-v9').resolve()
+    assert directory.name in {'epoch-1', 'epoch-1-phonetic-max'}
+    maximum = directory.name == 'epoch-1-phonetic-max'
+    index_path = LAB / 'rocbert-v9-inputs/index.json'
+    index = json.loads(index_path.read_text(encoding='utf-8'))
+    frozen = json.loads((directory.parent / 'frozen.json').read_text(encoding='utf-8'))
+    assert sha(index_path) == frozen['index_sha256']
+    qualification_path = LAB / 'phonetic-views-v9-qualification-r3.json'
+    assert sha(qualification_path) == frozen['phonetic_view_qualification_sha256']
+    qualification = json.loads(qualification_path.read_text(encoding='utf-8'))
+    expected = {r['id']: r for r in index['rows'] if r['cohort'] != 'training'}
+    phonetic = {r['id']: r for r in qualification['evaluation']}
+    predictions_path = directory / 'predictions.jsonl'
+    predictions = rows(predictions_path)
+    full = {r['id']: r for r in rows(directory.parent / 'epoch-1/predictions.jsonl')}
+    assert len(predictions) == len(expected) == len(phonetic) == len(full) == 3258
+    assert len({r['id'] for r in predictions}) == 3258
+    assert {r['id'] for r in predictions} == expected.keys() == phonetic.keys() == full.keys()
+    groups = defaultdict(list)
+    for row in predictions:
+        original = expected[row['id']]
+        for key in ['label', 'cohort', 'category', 'literal_any', 'transformed_sha256', 'representation_sha256']:
+            assert row[key] == original[key], (row['id'], key)
+        assert row['label'] in {0, 1} and isinstance(row['literal_any'], bool)
+        assert row.get('error') or math.isfinite(row['score']) and 0 <= row['score'] <= 1
+        if maximum:
+            probe = phonetic[row['id']]
+            assert row['phonetic_view_sha256'] == probe['phonetic_view_sha256']
+            assert row['phonetic_masked_body_tokens'] == probe['phonetic_masked_body_tokens']
+            assert row['full_input_score'] == full[row['id']].get('score')
+            if not row.get('error'):
+                assert math.isfinite(row['phonetic_input_score']) and 0 <= row['phonetic_input_score'] <= 1
+                assert row['score'] == max(row['full_input_score'], row['phonetic_input_score'])
+        groups[row['cohort']].append(row)
+    assert groups.keys() == EXPECTED.keys()
+    for key, (positive, negative) in EXPECTED.items():
+        assert Counter(r['label'] for r in groups[key]) == Counter({1: positive, 0: negative})
+    curve_path = directory / 'thresholds.csv'
+    with curve_path.open(encoding='utf-8', newline='') as handle:
+        curves = list(csv.DictReader(handle))
+    assert len(curves) == 7992
+    observed = set()
+    point_groups = defaultdict(dict)
+    for curve in curves:
+        mode, threshold, cohort = curve['mode'], float(curve['threshold']), curve['cohort']
+        assert mode in {'model', 'literal_or_model'} and cohort in EXPECTED
+        number = round(threshold * 1000)
+        assert 1 <= number <= 999 and abs(number / 1000 - threshold) < 1e-12
+        identity = (mode, number, cohort)
+        assert identity not in observed
+        observed.add(identity)
+        actual = dict(tp=0, fp=0, fn=0, tn=0, errors=0)
+        for row in groups[cohort]:
+            prediction = bool(row.get('score', 0) >= threshold or
+                              mode == 'literal_or_model' and row['literal_any'])
+            if row.get('error'):
+                prediction = not row['label']
+                actual['errors'] += 1
+            actual[('t' if prediction == bool(row['label']) else 'f') +
+                   ('p' if prediction else 'n')] += 1
+        assert actual == {key: int(curve[key]) for key in actual}, identity
+        point_groups[(mode, number)][cohort] = actual
+    passing = []
+    for (mode, number), cohorts in sorted(point_groups.items()):
+        assert cohorts.keys() == EXPECTED.keys()
+        fp_ok = all(c['fp'] * 50 < c['fp'] + c['tn'] and c['errors'] == 0 for c in cohorts.values())
+        recall_ok = all(c['tp'] * 100 >= 95 * (c['tp'] + c['fn'])
+                        for key, c in cohorts.items() if key != 'controls')
+        if fp_ok and recall_ok:
+            passing.append(dict(mode=mode, threshold=number / 1000, cohorts=cohorts))
+    report = json.loads((directory / 'report.json').read_text(encoding='utf-8'))
+    for mode in ['model', 'literal_or_model']:
+        for key in ['at_0_5', 'best_fpr_eligible']:
+            selected = report['metrics'][mode][key]
+            if selected is None:
+                continue
+            counts = point_groups[(mode, round(selected['threshold'] * 1000))]
+            for cohort, measurement in selected['cohorts'].items():
+                assert measurement['confusion_matrix'] == {k: counts[cohort][k] for k in ['tp', 'fp', 'fn', 'tn']}
+                assert measurement['inference_errors'] == counts[cohort]['errors']
+    audit = dict(scope='stdlib recomputation from all3258 predictions and frozen input/view metadata',
+                 predictions_sha256=sha(predictions_path), thresholds_sha256=sha(curve_path),
+                 index_sha256=sha(index_path), view_qualification_sha256=sha(qualification_path),
+                 checked_prediction_rows=3258, checked_group_matrices=7992,
+                 checked_operating_points=1998, checked_fixed_max_aggregation=maximum,
+                 excluded_evaluation_rows=0, inference_errors=sum(bool(r.get('error')) for r in predictions),
+                 passing_operating_points=passing, development_gate_met=bool(passing),
+                 fpr_policy='FP*50 < negatives in each group',
+                 recall_policy='TP*100 >=95*positives in each positive group',
+                 code_sha256=sha(Path(__file__)), COLD_dev_fetched=False, production_acceptance=False)
+    with (directory / 'prediction-curve-recomputation.json').open('x', encoding='utf-8') as handle:
+        json.dump(audit, handle, indent=2)
+    print(json.dumps(dict(directory=directory.name, checked_matrices=7992,
+                          errors=audit['inference_errors'], development_gate_met=bool(passing))))
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('directory', type=Path)
+    main(parser.parse_args().directory)

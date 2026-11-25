@@ -1,0 +1,20 @@
+{
+  "scope": "stdlib recomputation from all3258 predictions and frozen input/view metadata",
+  "predictions_sha256": "1ece778752e4091db9ff74568804371e99d7871ccf8cb382ebc86e4e482c7b1a",
+  "thresholds_sha256": "a8ffcdd3a32269b1dd40f09621fdf5f9dae4dbef61f7220fd5915d8b7f51df1a",
+  "index_sha256": "ef28c89ac4feef1e0e43ab3ebd0e0e73756c56edd7d70d282326e8efd085c9e1",
+  "view_qualification_sha256": "58d39bbcc3ad76c9556f2068db095fd9218d5cecaf9dee04ae9e51c0133f02c6",
+  "checked_prediction_rows": 3258,
+  "checked_group_matrices": 7992,
+  "checked_operating_points": 1998,
+  "checked_fixed_max_aggregation": true,
+  "excluded_evaluation_rows": 0,
+  "inference_errors": 0,
+  "passing_operating_points": [],
+  "development_gate_met": false,
+  "fpr_policy": "FP*50 < negatives in each group",
+  "recall_policy": "TP*100 >=95*positives in each positive group",
+  "code_sha256": "4229c5f444079a78990304d8156ba5ddc42be52f18ded135b6e127501ab9fbd0",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

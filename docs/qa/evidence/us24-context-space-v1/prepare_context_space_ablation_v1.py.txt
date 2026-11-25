@@ -1,0 +1,94 @@
+import hashlib
+import json
+import re
+import sys
+from collections import Counter
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+
+from rocbert_encoding_v9 import SyllableEncoder
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+sys.path.insert(0, str(ROOT / 'services/algo/scripts'))
+from evaluate_candidate import development, pcr
+from evaluate_recall import load_external, source_sha
+from app.services.moderation import ModerationService
+from app.services.moderation_context import context_spans
+from app.services.normalization import canonicalize
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def main():
+    torch.set_num_threads(2)
+    previous = torch.load(LAB / 'rocbert-v9-inputs/features.pt', map_location='cpu', weights_only=True)
+    evaluation = [r for r in previous['records'] if r['cohort'] != 'training']
+    assert len(evaluation) == 3258
+    raw = {r['id']: r['text'] for r in load_external(LAB / 'toxcn.csv', json.loads(
+        (ROOT / 'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))}
+    pcr_rows, excluded = pcr(ROOT / 'qa-private/us24-m1/PCR-ToxiCN.json', json.loads(
+        (ROOT / 'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+    assert not excluded
+    raw.update({r['id']: r['text'] for r in pcr_rows})
+    for version in ['v2', 'v3']:
+        for row in development(ROOT / f'docs/qa/data/us24-development.{version}.jsonl'):
+            if not row['expected_word']:
+                raw[f'{version}-{row["id"]}'] = row['text']
+    for row in map(json.loads, (ROOT / 'docs/qa/data/us24-context-stress.v1.jsonl').read_text(encoding='utf-8').splitlines()):
+        raw[row['id']] = row['text']
+    literal = ModerationService(ROOT / 'services/algo/app/data/moderation-v3_10-candidate.json')
+    encoder = SyllableEncoder(LAB / 'rocbert-base')
+    output = LAB / 'rocbert-context-space-v1-inputs'
+    output.mkdir(exist_ok=False)
+    ready = []
+    index = []
+    changes = Counter()
+    protected_counts = Counter()
+    for row in evaluation:
+        source = raw[row['id']]
+        assert hashlib.sha256(source.encode()).hexdigest() == row['source_text_sha256']
+        canonical = canonicalize(source)
+        spans = context_spans(canonical, literal.variants, tuple(p for p, _, _ in literal.numeric_tones),
+                              literal.known_targeted_quote, literal.self_context)
+        old = re.sub('□+', '□', ''.join('□' if any(a <= i < b for a, b in spans) else ch
+                                      for i, ch in enumerate(canonical)))
+        assert hashlib.sha256(old.encode()).hexdigest() == row['transformed_sha256'], row['id']
+        text = re.sub('□+', '□', ''.join(' ' if any(a <= i < b for a, b in spans) else ch
+                                       for i, ch in enumerate(canonical)))
+        windows, audit = encoder.encode(text)
+        metadata = {k: v for k, v in row.items() if k not in {'windows', 'representation_sha256'}}
+        metadata.update(previous_transformed_sha256=row['transformed_sha256'],
+                        transformed_sha256=hashlib.sha256(text.encode()).hexdigest(),
+                        context_protected_ranges=spans)
+        ready.append({**metadata, 'windows': windows})
+        index.append({**metadata, 'windows': len(windows), 'window_lengths': [len(w['input_ids']) for w in windows], **audit})
+        changes[row['cohort']] += old != text
+        protected_counts[row['cohort']] += len(spans)
+    policy = dict(created_at_utc=datetime.now(UTC).isoformat(),
+                  scope='same weights/labels and finite ranges; censor-symbol versus ASCII-space input ablation',
+                  original_features_sha256=sha(LAB / 'rocbert-v9-inputs/features.pt'),
+                  original_evaluation_rows=3258, excluded_rows=0,
+                  replacement='only characters within existing precise context_spans become spaces; all outside text and boundaries retained',
+                  no_global_whitelist=True, no_forced_normal_decisions=True,
+                  changed_rows_by_cohort=dict(changes), protected_ranges_by_cohort=dict(protected_counts),
+                  code_sha256={p.name: source_sha(p) for p in [Path(__file__), LAB / 'rocbert_encoding_v9.py', LAB / 'rocbert_encoding_v8.py']},
+                  S1_source_sha256={p.relative_to(ROOT).as_posix(): source_sha(p) for p in
+                                   [*(ROOT / 'services/algo/app/services').glob('*.py'), ROOT / 'services/algo/app/models/dictionary.py']},
+                  dictionary_sha256=literal.dictionary_sha256, COLD_dev_fetched=False,
+                  M1_review='PENDING', production_acceptance=False)
+    with (output / 'features.pt').open('xb') as handle:
+        torch.save(dict(policy=policy, records=ready), handle)
+    for name, value in [('policy.json', policy), ('index.json', dict(policy=policy, rows=index))]:
+        with (output / name).open('x', encoding='utf-8') as handle:
+            json.dump(value, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(rows=3258, changes_by_cohort=dict(changes), original_labels_retained=True)), flush=True)
+
+
+if __name__ == '__main__':
+    main()

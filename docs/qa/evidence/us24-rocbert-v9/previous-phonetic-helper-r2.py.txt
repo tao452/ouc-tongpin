@@ -1,0 +1,39 @@
+"""One deterministic pronunciation view, applied equally to positive and negative texts."""
+import hashlib
+import json
+from pathlib import Path
+
+
+def representation(windows):
+    return hashlib.sha256(json.dumps(windows, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+class PhoneticView:
+    def __init__(self, assets, qualification):
+        assets = Path(assets)
+        vocab = (assets / 'vocab.txt').read_text(encoding='utf-8').splitlines()
+        # Official RoCBertTokenizer.load_vocab assigns each token its last line index.
+        # The pinned upstream file contains repeated entries; preserve official IDs.
+        vocabulary = {token: i for i, token in enumerate(vocab)}
+        self.vocabulary_audit = dict(rows=len(vocab), distinct_tokens=len(vocabulary),
+                                     duplicate_rows=len(vocab)-len(vocabulary),
+                                     mapping='last line index, matching official load_vocab and saved training views')
+        self.hanzis = {i for token, i in vocabulary.items() if len(token) == 1 and '\u3400' <= token <= '\u9fff'}
+        self.unknown_word = vocabulary['[UNK]']
+        self.unknown_shape = json.loads((assets / 'word_shape.json').read_text(encoding='utf-8'))['[UNK]']
+        qualified = json.loads(Path(qualification).read_text(encoding='utf-8'))
+        self.pronunciations = set(qualified['mapping']['qualified_mapping'].values())
+        assert len(self.pronunciations) == 391 and not self.pronunciations.intersection({0, 2})
+
+    def apply(self, windows):
+        output = [{key: value.copy() for key, value in w.items()} for w in windows]
+        changed = set()
+        for window in output:
+            left, _ = window['token_span']
+            for offset in range(1, len(window['input_ids']) - 1):
+                if (window['input_ids'][offset] in self.hanzis and
+                        window['input_pronunciation_ids'][offset] in self.pronunciations):
+                    window['input_ids'][offset] = self.unknown_word
+                    window['input_shape_ids'][offset] = self.unknown_shape
+                    changed.add(left + offset - 1)
+        return output, len(changed)

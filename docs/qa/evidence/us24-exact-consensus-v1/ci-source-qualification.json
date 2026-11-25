@@ -1,0 +1,87 @@
+{
+  "head": "5574647c9bbbb499f1c658e095dfad54b07fa4a7",
+  "run_id": 45525105273,
+  "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45525105273",
+  "jobs": [
+    {
+      "name": "changes",
+      "id": 138906376047,
+      "conclusion": "success"
+    },
+    {
+      "name": "w1-poc",
+      "id": 138906376323,
+      "conclusion": "success"
+    },
+    {
+      "name": "guard",
+      "id": 138906376386,
+      "conclusion": "success"
+    },
+    {
+      "name": "stack / Deploy and verify temporary test environment",
+      "id": 138906376438,
+      "conclusion": "success"
+    },
+    {
+      "name": "algo",
+      "id": 138906484475,
+      "conclusion": "success"
+    },
+    {
+      "name": "api-server",
+      "id": 138906484483,
+      "conclusion": "success"
+    },
+    {
+      "name": "miniprogram",
+      "id": 138906484543,
+      "conclusion": "success"
+    },
+    {
+      "name": "admin-web",
+      "id": 138906484548,
+      "conclusion": "success"
+    },
+    {
+      "name": "W3 delivery evidence",
+      "id": 138908506646,
+      "conclusion": "success"
+    },
+    {
+      "name": "quality",
+      "id": 138908613958,
+      "conclusion": "success"
+    }
+  ],
+  "python": {
+    "passed": 663,
+    "skipped": 0,
+    "coverage": 98.25
+  },
+  "ruff": "PASS",
+  "java": {
+    "passed": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "miniprogram": "PASS",
+  "admin_web": "PASS",
+  "five_service_Docker": "PASS",
+  "new_247_function_and_gateway": {
+    "any": {
+      "tp": 142,
+      "fp": 0,
+      "fn": 0,
+      "tn": 105
+    },
+    "high": {
+      "tp": 55,
+      "fp": 0,
+      "fn": 0,
+      "tn": 192
+    }
+  },
+  "production_acceptance": false
+}

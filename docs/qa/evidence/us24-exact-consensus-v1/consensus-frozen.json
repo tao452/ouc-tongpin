@@ -1,0 +1,29 @@
+{
+  "scope": "fixed three-member uniform development comparison; no gradient updates",
+  "members": {
+    "rocbert_epoch2": {
+      "path": "rocbert-v8\\epoch-2\\predictions.jsonl",
+      "sha256": "d536e83d0a403dd08a7dcf4a7c8c8475111b7019d321d7672bb7599c8eb56e65"
+    },
+    "chinesebert_context39": {
+      "path": "phonetic-encoder-context39-r2\\predictions.jsonl",
+      "sha256": "a1c31c197e2aed89dd0bce3f91f26d83769690459f3fc9ff73b392c57152fa05"
+    },
+    "qwen_domain_epoch2": {
+      "path": "qwen-cntp-domain-v7\\epoch-2\\predictions.jsonl",
+      "sha256": "38ec524fcfbdf1de2e42b0ef018f3795e173fd3a35df874907acfff93791ea84"
+    }
+  },
+  "member_selection": "completed development-selected checkpoints; not independent validation",
+  "methods": [
+    "arithmetic_mean",
+    "geometric_mean",
+    "minimum",
+    "maximum"
+  ],
+  "row_policy": "all3258sameIDs/native labels/source hashes/literal flags; no routing or deletion",
+  "error_policy": "any member error counts as worst-direction error for every combination",
+  "code_sha256": "9caa51f5c9d91f4181106c0b86207c19bf009fa11c6ad66bdc77f49712fc4348",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

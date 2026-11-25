@@ -1,0 +1,726 @@
+{
+  "scope": "synthetic feature/representation checks only, not semantic accuracy",
+  "first_check": "failed because normal pinyin wo ai python was wrongly expected to have no syllable features; original source/log retained; it remains a semantic negative, whose classification is NOT_RUN",
+  "cases": [
+    {
+      "id": "SYL9-001",
+      "kind": "unchanged",
+      "synthetic_text": "hello world",
+      "canonical_sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+      "audit": {
+        "wordpiece_tokens": 10,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-002",
+      "kind": "unchanged",
+      "synthetic_text": "can you help",
+      "canonical_sha256": "c2f6228ddc671b276b5174d27b470101ca4c2c2260ed4fd97ca029bc3c51bce2",
+      "audit": {
+        "wordpiece_tokens": 10,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-003",
+      "kind": "unchanged",
+      "synthetic_text": "we can do it",
+      "canonical_sha256": "75d12a45f43567e5fbbb1ec8db56fde5a39b6aed7aec2d7ab1db1c1a76a76df6",
+      "audit": {
+        "wordpiece_tokens": 9,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-004",
+      "kind": "unchanged",
+      "synthetic_text": "you and me",
+      "canonical_sha256": "e99f58b0c2113205457bb88d0a3069f9d1cce108fb9a289266e8bf0f6f9ae59f",
+      "audit": {
+        "wordpiece_tokens": 8,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-005",
+      "kind": "unchanged",
+      "synthetic_text": "day by day",
+      "canonical_sha256": "7d4c15b7b9476a1f2e355bccde8ba5c0a3271d6876dd52476cec2b12f7bbe227",
+      "audit": {
+        "wordpiece_tokens": 8,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-006",
+      "kind": "unchanged",
+      "synthetic_text": "class assignment",
+      "canonical_sha256": "a9671684485f9e54a91552b74be438e8427f03b90bac1f378476eed1e44a9343",
+      "audit": {
+        "wordpiece_tokens": 15,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-007",
+      "kind": "unchanged",
+      "synthetic_text": "classification model",
+      "canonical_sha256": "e79fafda111b55f6355b44a02df5f9b0b61bea5428adeb3eb3dc39bdf5761f57",
+      "audit": {
+        "wordpiece_tokens": 19,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-008",
+      "kind": "unchanged",
+      "synthetic_text": "cache hit",
+      "canonical_sha256": "c04954927ddc62561c4215c80aaf4b62e20487b6f07c4d4a4c687f945b97461e",
+      "audit": {
+        "wordpiece_tokens": 8,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-009",
+      "kind": "unchanged",
+      "synthetic_text": "assert isinstance(value, str)",
+      "canonical_sha256": "e38a4bf6b11fdd3b7b85c638c2c02ce9c1f3d4904bbd757a99223912cb3c4f1e",
+      "audit": {
+        "wordpiece_tokens": 27,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-010",
+      "kind": "unchanged",
+      "synthetic_text": "sha256 checksum",
+      "canonical_sha256": "c0cbde619b877247b1357eb7b430dc281168f92c935482553a59a8e7d039b579",
+      "audit": {
+        "wordpiece_tokens": 14,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-011",
+      "kind": "unchanged",
+      "synthetic_text": "sha1 digest",
+      "canonical_sha256": "fc815741fef84d6db38e26ed6d4453e88f084352f6967f2d4705594236e711d0",
+      "audit": {
+        "wordpiece_tokens": 10,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-012",
+      "kind": "unchanged",
+      "synthetic_text": "ni_ma",
+      "canonical_sha256": "d13813fc35b22f296e62734ab6081023bf47ef03c55b8d38486bd34c687f2864",
+      "audit": {
+        "wordpiece_tokens": 5,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-013",
+      "kind": "unchanged",
+      "synthetic_text": "ni_ma sha_bi",
+      "canonical_sha256": "7a144d78ac22eefdbb351629b29e96fc755d353e66145de4cbf0cca93316b242",
+      "audit": {
+        "wordpiece_tokens": 11,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-014",
+      "kind": "unchanged",
+      "synthetic_text": "x-ni-ma-y",
+      "canonical_sha256": "a956968023eb9b6ddcc30539e7c125002038d8b656b35b3fd4e0c0533baed7b6",
+      "audit": {
+        "wordpiece_tokens": 9,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-015",
+      "kind": "unchanged",
+      "synthetic_text": "api.ni.ma.example",
+      "canonical_sha256": "76fd1fa269cdd31caa287261376bd48099ff368a7281f6212a7c619ba1758985",
+      "audit": {
+        "wordpiece_tokens": 17,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-016",
+      "kind": "unchanged",
+      "synthetic_text": "https://sha.bi",
+      "canonical_sha256": "ca2f1e0a235a192b6b02527579478e0c899e5fcb240b0d14ac32261d37a06389",
+      "audit": {
+        "wordpiece_tokens": 14,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-017",
+      "kind": "unchanged",
+      "synthetic_text": "/tmp/ni/ma",
+      "canonical_sha256": "daa0a10e35ef98f4b12e9c846ebeee34f8f956dfd648f7f46aa885c17f120983",
+      "audit": {
+        "wordpiece_tokens": 10,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-018",
+      "kind": "unchanged",
+      "synthetic_text": "D:/data/sha/bi.txt",
+      "canonical_sha256": "9fbf6d520bed161e46475f7f130543218a7308226879fc701a7771ccb8c6fb07",
+      "audit": {
+        "wordpiece_tokens": 18,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-019",
+      "kind": "unchanged",
+      "synthetic_text": "foo_shabi_bar",
+      "canonical_sha256": "0ad2a13e6f4e923e2518637ff3e94e2f4c08e8610c9cadbb424bcfd94c6d9030",
+      "audit": {
+        "wordpiece_tokens": 13,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-020",
+      "kind": "unchanged",
+      "synthetic_text": "prefixshabisuffix",
+      "canonical_sha256": "dec81da79b245f61d2aeeaa47885fd0d563c6ae23749e5b01504600ad128f3fc",
+      "audit": {
+        "wordpiece_tokens": 17,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-021",
+      "kind": "unchanged",
+      "synthetic_text": "sha",
+      "canonical_sha256": "d600474b1b8e50d3633c91c0cf1efc454b79c9624a43fd7de441ee71745726ab",
+      "audit": {
+        "wordpiece_tokens": 3,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-022",
+      "kind": "unchanged",
+      "synthetic_text": "bi",
+      "canonical_sha256": "d9065d6da185ec28758619fc14b755f740043e1060d342aacef26f459fae8d9d",
+      "audit": {
+        "wordpiece_tokens": 2,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-023",
+      "kind": "unchanged",
+      "synthetic_text": "shab",
+      "canonical_sha256": "8e93fcf7c8ba5f3c08a6dd9405a6107999df4588b2db015985f132d0c4a12dc3",
+      "audit": {
+        "wordpiece_tokens": 4,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-024",
+      "kind": "unchanged",
+      "synthetic_text": "shal bi",
+      "canonical_sha256": "a74bc27d3c5e813f7363c49fed37b1341b34f670c83a541db9ee709df59f852d",
+      "audit": {
+        "wordpiece_tokens": 6,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-025",
+      "kind": "unchanged",
+      "synthetic_text": "重庆银行今天营业",
+      "canonical_sha256": "5cf8349da45e88b6db5e5f83a6b6a6a832e456c89773196451760ffa318be80e",
+      "audit": {
+        "wordpiece_tokens": 8,
+        "contextual_pronunciation_changes": 2,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-026",
+      "kind": "unchanged",
+      "synthetic_text": "重新检查重量",
+      "canonical_sha256": "4da2c49297a3e0d66fb95c2cdddc276663bf6f9e35aea8a83fbf9062a8d34639",
+      "audit": {
+        "wordpiece_tokens": 6,
+        "contextual_pronunciation_changes": 1,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-027",
+      "kind": "unchanged",
+      "synthetic_text": "音乐课让我快乐",
+      "canonical_sha256": "59e8451beb3bd6ba10cb4a56eeb3a37ac2f163adf11601e89a18bd3beefa50f1",
+      "audit": {
+        "wordpiece_tokens": 7,
+        "contextual_pronunciation_changes": 1,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-028",
+      "kind": "unchanged",
+      "synthetic_text": "他还钱以后还没回家",
+      "canonical_sha256": "81a10234aef562480c1e767ac6507906c48422751610b90145f9034a836b4d5f",
+      "audit": {
+        "wordpiece_tokens": 9,
+        "contextual_pronunciation_changes": 1,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-029",
+      "kind": "unchanged",
+      "synthetic_text": "普通校园交流，今晚图书馆见。",
+      "canonical_sha256": "cae77a5611057c589f816ffc1eecd19f385512ee64b0ac61cefc04d7129fec82",
+      "audit": {
+        "wordpiece_tokens": 14,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 0,
+        "latin_wordpiece_merges": 0
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-030",
+      "kind": "syllable_features",
+      "synthetic_text": "ni shi sha bi",
+      "canonical_sha256": "d32798fda9568cc65d4549fb8294c179b6c25920503c9904152c75ec0312ecc1",
+      "audit": {
+        "wordpiece_tokens": 10,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 4,
+        "latin_wordpiece_merges": 6,
+        "encoded_body_tokens": 4
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-031",
+      "kind": "syllable_features",
+      "synthetic_text": "sha bi",
+      "canonical_sha256": "820907880c8649a188e173805867c3175b9f8484dcd63536502449dd4b3af827",
+      "audit": {
+        "wordpiece_tokens": 5,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 2
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-032",
+      "kind": "syllable_features",
+      "synthetic_text": "qu si",
+      "canonical_sha256": "af776892406e9e825947123baad9d600814c3d216bf216f7b4e4c1e294d72892",
+      "audit": {
+        "wordpiece_tokens": 4,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 2,
+        "encoded_body_tokens": 2
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-033",
+      "kind": "syllable_features",
+      "synthetic_text": "ni ma",
+      "canonical_sha256": "dbdfea185b5d9be1f7213f64663215b2476feb6cbbfdbcd635c5a3b9329756ed",
+      "audit": {
+        "wordpiece_tokens": 4,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 2,
+        "encoded_body_tokens": 2
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-034",
+      "kind": "syllable_features",
+      "synthetic_text": "ni3 shi4 sha3 bi1",
+      "canonical_sha256": "72319c9143f6fe38a221327657e39d5d1a19682113a29b4ffaecbe0ddf9edf51",
+      "audit": {
+        "wordpiece_tokens": 14,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 4,
+        "latin_wordpiece_merges": 10,
+        "encoded_body_tokens": 4
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-035",
+      "kind": "syllable_features",
+      "synthetic_text": "SHA BI",
+      "canonical_sha256": "820907880c8649a188e173805867c3175b9f8484dcd63536502449dd4b3af827",
+      "audit": {
+        "wordpiece_tokens": 5,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 2
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-036",
+      "kind": "syllable_features",
+      "synthetic_text": "ＳＨＡ ＢＩ",
+      "canonical_sha256": "820907880c8649a188e173805867c3175b9f8484dcd63536502449dd4b3af827",
+      "audit": {
+        "wordpiece_tokens": 5,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 2
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-037",
+      "kind": "syllable_features",
+      "synthetic_text": "shǎ bī",
+      "canonical_sha256": "820907880c8649a188e173805867c3175b9f8484dcd63536502449dd4b3af827",
+      "audit": {
+        "wordpiece_tokens": 5,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 2
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-038",
+      "kind": "syllable_features",
+      "synthetic_text": "sha'bi",
+      "canonical_sha256": "93816df9030702cb578956e76345ed012ba119eb071c006ec9b6aeaaf35925e8",
+      "audit": {
+        "wordpiece_tokens": 6,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 3
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-039",
+      "kind": "syllable_features",
+      "synthetic_text": "sha-bi",
+      "canonical_sha256": "ba8127fa9db1b83e0ed685c7bc20e9b98ac457e5adc84bded2824add2e18ae88",
+      "audit": {
+        "wordpiece_tokens": 6,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 3
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-040",
+      "kind": "syllable_features",
+      "synthetic_text": "sha.bi",
+      "canonical_sha256": "125e6fe0ff074de275d351110574cab1ff5c02402187be2ab2d6f444cb7b87f3",
+      "audit": {
+        "wordpiece_tokens": 6,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 3
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-041",
+      "kind": "syllable_features",
+      "synthetic_text": "你这个sha bi，别再来骚扰我",
+      "canonical_sha256": "b6614496998d5e1cd237ade2d6cf1b3f8a86d4fd92150d83dce5ed4fc2739a58",
+      "audit": {
+        "wordpiece_tokens": 15,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 12
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-042",
+      "kind": "syllable_features",
+      "synthetic_text": "普通话拼音是 ni shi xue sheng",
+      "canonical_sha256": "d866933115e51410236580fd39b1ea52b449e058fc7c5ea6a5cfd71ca696cc90",
+      "audit": {
+        "wordpiece_tokens": 19,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 4,
+        "latin_wordpiece_merges": 9,
+        "encoded_body_tokens": 10
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-043",
+      "kind": "syllable_features",
+      "synthetic_text": "ni hao",
+      "canonical_sha256": "3f173c86c87a1d8f7849b866268f31276a872c356a62b742eb61123f9e0da138",
+      "audit": {
+        "wordpiece_tokens": 5,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 2
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-044",
+      "kind": "syllable_features",
+      "synthetic_text": "wo xi huan yin yue",
+      "canonical_sha256": "f251c9e33e6cb366a47215f340ddc638f74839cc9a4ae415934d7e82e4bb9222",
+      "audit": {
+        "wordpiece_tokens": 14,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 5,
+        "latin_wordpiece_merges": 9,
+        "encoded_body_tokens": 5
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-045",
+      "kind": "syllable_features",
+      "synthetic_text": "wo ai python",
+      "canonical_sha256": "2f344720ec85cbbaeedf1e2526f9e814704b2152b83eeef2f1b5e443de7c761a",
+      "audit": {
+        "wordpiece_tokens": 10,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 2,
+        "encoded_body_tokens": 8
+      },
+      "windows": 1
+    },
+    {
+      "id": "SYL9-046",
+      "kind": "syllable_features",
+      "synthetic_text": "sha bi 普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文普通正文",
+      "canonical_sha256": "c100d1c20715a4492b5a762816339b30bd284163d55592fdf929250fe1215182",
+      "audit": {
+        "wordpiece_tokens": 1205,
+        "contextual_pronunciation_changes": 0,
+        "official_wordpiece_ids_equal": true,
+        "all_body_tokens_covered": true,
+        "latin_syllable_features": 2,
+        "latin_wordpiece_merges": 3,
+        "encoded_body_tokens": 1202
+      },
+      "windows": 3
+    }
+  ],
+  "checked": 46,
+  "negatives_unchanged": 29,
+  "feature_positive_cases": 17,
+  "parser_2000_char_calls": 1000,
+  "maximum_parser_seconds": 0.005100900001707487,
+  "maximum_syllables_per_group": 16,
+  "maximum_gap_characters": 8,
+  "heteronym_combinations": 0,
+  "full_concatenated_pinyin": "not segmented here; literal closed mappings remain separate",
+  "semantic_accuracy": "NOT_RUN",
+  "service_integration": false,
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

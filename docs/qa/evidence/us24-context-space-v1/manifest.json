@@ -1,0 +1,114 @@
+{
+  "scope": "same-weight finite-context input ablation; repeated development data",
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_path": "rocbert-context-space-v1/frozen.json",
+      "private_sha256": "7b3ce9b217a92feb590d9c5de385cf41f1255692e5e2ffadaadcf0f61d85f665",
+      "public_lf_sha256": "99c4bf68d90a505ecb3a6660577f8388e027086ca84fc2fa21946b5b373dee23"
+    },
+    {
+      "file": "report.json",
+      "private_path": "rocbert-context-space-v1/report.json",
+      "private_sha256": "d5cde70e373e7dc4da328effe03fefab310c3e3b177807635d228bcd06378ade",
+      "public_lf_sha256": "a8204a6641329c781a3b404f9db81d89c761262ad2a38e78f13a95af91eb7d71"
+    },
+    {
+      "file": "predictions.jsonl",
+      "private_path": "rocbert-context-space-v1/predictions.jsonl",
+      "private_sha256": "48695d2a0aeb82011a08dd80b6b17a3e454a3fd7abdc016942c52de97474690f",
+      "public_lf_sha256": "21e9d0510495cd75e3e92c20de2391f0685e5986fcdf1dad74a893be91843541"
+    },
+    {
+      "file": "thresholds.csv",
+      "private_path": "rocbert-context-space-v1/thresholds.csv",
+      "private_sha256": "7509cf1910dbe36bf9c5b4e2bd938f9c9edb00a411e8753fa7ccb6f4f71dbef8",
+      "public_lf_sha256": "7509cf1910dbe36bf9c5b4e2bd938f9c9edb00a411e8753fa7ccb6f4f71dbef8"
+    },
+    {
+      "file": "threshold-grid-gate-audit.json",
+      "private_path": "rocbert-context-space-v1/threshold-grid-gate-audit.json",
+      "private_sha256": "8c2c436aa217e210308d432ad57a7f70ff6cdc3fcbcf7795ca1d1ae01e67e07a",
+      "public_lf_sha256": "28b6fec0f9e9830062944e828c9c44b72fbfac20df4cb7fbd7d409836dd7f0bc"
+    },
+    {
+      "file": "exact-score-report.json",
+      "private_path": "rocbert-context-space-v1/exact-score-sweep-v2/report.json",
+      "private_sha256": "68c9af198c3651c49b3f561f547bb03a711243dd077c0ce6c2cf9f3047fae69b",
+      "public_lf_sha256": "017bf8b8ba1768417fad51499d9e3b674e6ac6c89582a18bc6638b6c6df425e0"
+    },
+    {
+      "file": "prepare_context_space_ablation_v1.py.txt",
+      "private_path": "prepare_context_space_ablation_v1.py",
+      "private_sha256": "9c9c59a8dfcf21d813fedc586400b4e35f5d57aabdc96d5b72f0350c2c10a9cc",
+      "public_lf_sha256": "9c9c59a8dfcf21d813fedc586400b4e35f5d57aabdc96d5b72f0350c2c10a9cc"
+    },
+    {
+      "file": "evaluate_context_space_ablation_v1.py.txt",
+      "private_path": "evaluate_context_space_ablation_v1.py",
+      "private_sha256": "7c87da195b67b37259b79dc9db97cc5b51e74e1058393b39c13b88b79ad30c31",
+      "public_lf_sha256": "7c87da195b67b37259b79dc9db97cc5b51e74e1058393b39c13b88b79ad30c31"
+    },
+    {
+      "file": "audit_exact_operating_points_v2.py.txt",
+      "private_path": "audit_exact_operating_points_v2.py",
+      "private_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925",
+      "public_lf_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "publish_context_space_v1.py.txt",
+      "private_path": "publish_context_space_v1.py",
+      "private_sha256": "7f473f38b3b2c039189c7f9d85b1146f9556344752c7a442f918b8796661cf22",
+      "public_lf_sha256": "7f473f38b3b2c039189c7f9d85b1146f9556344752c7a442f918b8796661cf22"
+    },
+    {
+      "file": "input-policy.json",
+      "private_path": "rocbert-context-space-v1-inputs/policy.json",
+      "private_sha256": "243c6c25cd124bb89130bfe726a7c2744b6017d18aa02403f2cab60e2476a303",
+      "public_lf_sha256": "193317c3f2be053bb0495aaa2c047560c5679ca6d9399d2da9a920e21ca01771"
+    },
+    {
+      "file": "input-index.json",
+      "private_path": "rocbert-context-space-v1-inputs/index.json",
+      "private_sha256": "79341743f7fab8c6af89a3afa7cb624752d50a36db7b5747fe36edda26e0fa05",
+      "public_lf_sha256": "c26a22507999e513ef96afaea514affcbc90e4ba80e038cfa9b72a0b887ab0ea"
+    }
+  ],
+  "rows": 3258,
+  "excluded_rows": 0,
+  "gradient_updates": 0,
+  "changed_rows": 189,
+  "changed_controls": 166,
+  "changed_context_stress": 23,
+  "changed_PCR_inputs": 0,
+  "changed_ToxiCN_inputs": 0,
+  "no_forced_normal_labels": true,
+  "baseline_default_controls_FP": 158,
+  "revised_default_controls_FP": 2,
+  "baseline_default_context_FP": 13,
+  "revised_default_context_FP": 6,
+  "unchanged_input_max_score_delta": 0.00019534863531589508,
+  "exact_curves_private": [
+    {
+      "file": "model.csv",
+      "bytes": 1257133,
+      "sha256": "d1ac1a067b00e0ffcf680ebc2bff31ec4c4e6e499edaf607c188d5cca02d04f7"
+    },
+    {
+      "file": "literal_or_model.csv",
+      "bytes": 1215938,
+      "sha256": "7c8093a5e56e03afb2b396b794feecc6cae9a30000970d5e1ef1aee1d1cbeff3"
+    }
+  ],
+  "development_gate_met": false,
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

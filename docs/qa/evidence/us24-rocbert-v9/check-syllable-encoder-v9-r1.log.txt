@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<workspace>\qa-private\us24-recall-20261124\check_syllable_encoder_v9.py", line 31, in <module>
+    assert windows == original and audit['latin_syllable_features'] == 0, text
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: wo ai python

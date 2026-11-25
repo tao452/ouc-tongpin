@@ -1,0 +1,77 @@
+"""Fixed uniform three-member score combinations on reused development rows."""
+import hashlib
+import json
+import math
+from pathlib import Path
+
+from phonetic_recheck_metrics import summarize
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def main():
+    files = {'rocbert_epoch2': LAB / 'rocbert-v8/epoch-2/predictions.jsonl',
+             'chinesebert_context39': LAB / 'phonetic-encoder-context39-r2/predictions.jsonl',
+             'qwen_domain_epoch2': LAB / 'qwen-cntp-domain-v7/epoch-2/predictions.jsonl'}
+    sources = {name: [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()]
+               for name, path in files.items()}
+    by_id = {name: {r['id']: r for r in rows} for name, rows in sources.items()}
+    reference = sources['rocbert_epoch2']
+    assert len(reference) == 3258
+    for name, mapping in by_id.items():
+        assert len(mapping) == len(sources[name]) == 3258
+        assert mapping.keys() == by_id['rocbert_epoch2'].keys()
+        for row in reference:
+            for key in ['label', 'cohort', 'category', 'literal_any', 'source_text_sha256']:
+                assert row[key] == mapping[row['id']][key], (name, row['id'], key)
+            item = mapping[row['id']]
+            assert item.get('error') or math.isfinite(item['score']) and 0 <= item['score'] <= 1
+    methods = {'arithmetic_mean': lambda s: sum(s) / 3,
+               'geometric_mean': lambda s: math.prod(s) ** (1 / 3),
+               'minimum': min, 'maximum': max}
+    output = LAB / 'rocbert-complement-consensus-v1'
+    output.mkdir(exist_ok=False)
+    frozen = dict(scope='fixed three-member uniform development comparison; no gradient updates',
+                  members={name: dict(path=str(path.relative_to(LAB)), sha256=sha(path)) for name, path in files.items()},
+                  member_selection='completed development-selected checkpoints; not independent validation',
+                  methods=list(methods), row_policy='all3258sameIDs/native labels/source hashes/literal flags; no routing or deletion',
+                  error_policy='any member error counts as worst-direction error for every combination',
+                  code_sha256=sha(Path(__file__)), COLD_dev_fetched=False, production_acceptance=False)
+    with (output / 'frozen.json').open('x', encoding='utf-8') as handle:
+        json.dump(frozen, handle, indent=2)
+    results = {}
+    for name, method in methods.items():
+        directory = output / name
+        directory.mkdir(exist_ok=False)
+        rows = []
+        for original in reference:
+            members = {member: mapping[original['id']] for member, mapping in by_id.items()}
+            row = {**original, 'member_scores': {member: r.get('score') for member, r in members.items()}}
+            if any(r.get('error') for r in members.values()):
+                row['error'] = 'MemberInferenceError'
+            else:
+                row['score'] = method(list(row['member_scores'].values()))
+                assert math.isfinite(row['score']) and 0 <= row['score'] <= 1
+            rows.append(row)
+        with (directory / 'predictions.jsonl').open('x', encoding='utf-8') as handle:
+            for row in rows:
+                handle.write(json.dumps(row, ensure_ascii=False) + '\n')
+        result = dict(method=name, rows=3258, excluded_rows=0, gradient_updates=0,
+                      metrics=summarize(rows, directory / 'thresholds.csv'), production_acceptance=False)
+        with (directory / 'report.json').open('x', encoding='utf-8') as handle:
+            json.dump(result, handle, ensure_ascii=False, indent=2)
+        results[name] = result
+        selected = result['metrics']['literal_or_model']['best_fpr_eligible']
+        print(json.dumps(dict(method=name, selected=selected)), flush=True)
+    with (output / 'summary.json').open('x', encoding='utf-8') as handle:
+        json.dump(dict(frozen=frozen, methods=results), handle, ensure_ascii=False, indent=2)
+
+
+if __name__ == '__main__':
+    main()

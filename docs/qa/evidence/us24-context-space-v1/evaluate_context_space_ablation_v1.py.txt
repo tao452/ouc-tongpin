@@ -1,0 +1,80 @@
+import json
+import time
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+from safetensors.torch import load_file
+
+from phonetic_recheck_metrics import summarize
+from train_rocbert_v8 import create_model, digest, predict, source_sha
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+
+
+def main():
+    torch.set_num_threads(4)
+    torch.manual_seed(20261124)
+    torch.cuda.manual_seed_all(20261124)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    torch.use_deterministic_algorithms(True, warn_only=True)
+    feature_path = LAB / 'rocbert-context-space-v1-inputs/features.pt'
+    prepared = torch.load(feature_path, map_location='cpu', weights_only=True)
+    records, policy = prepared['records'], prepared['policy']
+    assert len(records) == len({r['id'] for r in records}) == 3258
+    for name, value in policy['code_sha256'].items():
+        assert source_sha(LAB / name) == value
+    for name, value in policy['S1_source_sha256'].items():
+        assert source_sha(ROOT / name) == value
+    weights = LAB / 'rocbert-v9/epoch-1/model.safetensors'
+    old_report = json.loads((weights.parent / 'report.json').read_text(encoding='utf-8'))
+    assert digest(weights) == old_report['weights_sha256']
+    baseline = {r['id']: r for r in map(json.loads, (weights.parent / 'predictions.jsonl').read_text(encoding='utf-8').splitlines())}
+    assert baseline.keys() == {r['id'] for r in records}
+    for row in records:
+        for key in ['label', 'cohort', 'category', 'literal_any', 'source_text_sha256']:
+            assert row[key] == baseline[row['id']][key]
+    output = LAB / 'rocbert-context-space-v1'
+    output.mkdir(exist_ok=False)
+    frozen = dict(created_at_utc=datetime.now(UTC).isoformat(), dataset_policy=policy,
+                  features_sha256=digest(feature_path), index_sha256=digest(feature_path.with_name('index.json')),
+                  weights_sha256=old_report['weights_sha256'], gradient_updates=0,
+                  source_sha256={p.name: source_sha(p) for p in [Path(__file__), LAB / 'train_rocbert_v8.py',
+                                                             LAB / 'phonetic_recheck_metrics.py']},
+                  changed_input_rows=189, evaluation_rows=3258, excluded_rows=0,
+                  fp32_parameters=True, BF16_inference=True, COLD_dev_fetched=False,
+                  M1_review='PENDING', production_acceptance=False)
+    with (output / 'frozen.json').open('x', encoding='utf-8') as handle:
+        json.dump(frozen, handle, ensure_ascii=False, indent=2)
+    model, _ = create_model()
+    missing, unexpected = model.load_state_dict(load_file(str(weights), device='cpu'), strict=True)
+    assert not missing and not unexpected
+    torch.cuda.reset_peak_memory_stats()
+    began = time.perf_counter()
+    predictions, seconds = predict(model, records)
+    assert len(predictions) == 3258
+    same = []
+    for row in predictions:
+        old = baseline[row['id']]
+        if row['transformed_sha256'] == old['transformed_sha256'] and not row.get('error') and not old.get('error'):
+            same.append(abs(row['score'] - old['score']))
+    with (output / 'predictions.jsonl').open('x', encoding='utf-8') as handle:
+        for row in predictions:
+            handle.write(json.dumps(row, ensure_ascii=False) + '\n')
+    report = dict(scope='same fine-tuned weights, only registered-context censor symbol replaced by spaces',
+                  evaluation_rows=3258, excluded_rows=0, gradient_updates=0, inference_seconds=seconds,
+                  peak_cuda_bytes=torch.cuda.max_memory_allocated(),
+                  unchanged_input_rows=len(same), unchanged_input_max_score_delta=max(same, default=0),
+                  numerical_note='dynamic padding/batch grouping can cause BF16 score differences even with identical logical input',
+                  metrics=summarize(predictions, output / 'thresholds.csv'), production_acceptance=False)
+    with (output / 'report.json').open('x', encoding='utf-8') as handle:
+        json.dump(report, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(seconds=time.perf_counter()-began,
+                          default={k:v['confusion_matrix'] for k,v in report['metrics']['model']['at_0_5']['cohorts'].items()},
+                          selected=report['metrics']['literal_or_model']['best_fpr_eligible'])), flush=True)
+
+
+if __name__ == '__main__':
+    main()
