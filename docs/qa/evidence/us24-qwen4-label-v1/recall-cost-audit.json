@@ -1,0 +1,117 @@
+{
+  "scope": "highest global threshold satisfying95percent recall in every positive development cohort; all3258 retained",
+  "results": {
+    "model": {
+      "threshold": 1.6052279505629485e-09,
+      "cohorts": {
+        "toxicn_dev": {
+          "confusion_matrix": {
+            "tp": 1267,
+            "fp": 851,
+            "fn": 25,
+            "tn": 256
+          },
+          "recall": 0.9806501547987616,
+          "precision": 0.5982058545797923,
+          "false_positive_rate": 0.7687443541102078,
+          "inference_errors": 0
+        },
+        "PCR": {
+          "confusion_matrix": {
+            "tp": 238,
+            "fp": 228,
+            "fn": 12,
+            "tn": 22
+          },
+          "recall": 0.952,
+          "precision": 0.5107296137339056,
+          "false_positive_rate": 0.912,
+          "inference_errors": 0
+        },
+        "controls": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 213,
+            "fn": 0,
+            "tn": 44
+          },
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.8287937743190662,
+          "inference_errors": 0
+        },
+        "context_stress": {
+          "confusion_matrix": {
+            "tp": 12,
+            "fp": 35,
+            "fn": 0,
+            "tn": 55
+          },
+          "recall": 1.0,
+          "precision": 0.2553191489361702,
+          "false_positive_rate": 0.3888888888888889,
+          "inference_errors": 0
+        }
+      },
+      "each_fpr_below_2pct": false
+    },
+    "literal_or_model": {
+      "threshold": 3.3982678893096363e-09,
+      "cohorts": {
+        "toxicn_dev": {
+          "confusion_matrix": {
+            "tp": 1257,
+            "fp": 814,
+            "fn": 35,
+            "tn": 293
+          },
+          "recall": 0.9729102167182663,
+          "precision": 0.6069531627233221,
+          "false_positive_rate": 0.7353206865401988,
+          "inference_errors": 0
+        },
+        "PCR": {
+          "confusion_matrix": {
+            "tp": 238,
+            "fp": 227,
+            "fn": 12,
+            "tn": 23
+          },
+          "recall": 0.952,
+          "precision": 0.5118279569892473,
+          "false_positive_rate": 0.908,
+          "inference_errors": 0
+        },
+        "controls": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 211,
+            "fn": 0,
+            "tn": 46
+          },
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.8210116731517509,
+          "inference_errors": 0
+        },
+        "context_stress": {
+          "confusion_matrix": {
+            "tp": 12,
+            "fp": 33,
+            "fn": 0,
+            "tn": 57
+          },
+          "recall": 1.0,
+          "precision": 0.26666666666666666,
+          "false_positive_rate": 0.36666666666666664,
+          "inference_errors": 0
+        }
+      },
+      "each_fpr_below_2pct": false
+    }
+  },
+  "predictions_sha256": "752e75191e252f48cad4d69d7b1196d8997a8edb8edc0f2e56cb0730e5d6c8cf",
+  "code_sha256": "254f3b25c5025b4638938f3f20ae63d2ee5bd2fd48d57c1964fdc8df3eb27c13",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

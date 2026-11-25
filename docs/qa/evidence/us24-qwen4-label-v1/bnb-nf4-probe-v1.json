@@ -1,0 +1,13 @@
+{
+  "scope": "official Windows CUDA124 NF4 kernel qualification, not semantic accuracy",
+  "package": "bitsandbytes0.45.5",
+  "torch": "2.6.0+cu124",
+  "cuda": "12.4",
+  "packed_storage": "torch.uint8",
+  "compute_dtype": "torch.bfloat16",
+  "maximum_absolute_error_versus_FP32": 0.04017307609319687,
+  "source_sha256": "2d6b6bfc967dcd612bd56efbf6a348ab149f24e1e1d1ddeed16e52815eeb7ca5",
+  "qualification": "PASS",
+  "accuracy_status": "NOT_RUN",
+  "production_acceptance": false
+}

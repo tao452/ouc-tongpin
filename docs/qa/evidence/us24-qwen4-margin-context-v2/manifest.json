@@ -1,0 +1,176 @@
+{
+  "scope": "fixed4B exact logit margin and finite-context comparison; reused development only",
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_path": "qwen4-margin-context-v2/frozen.json",
+      "private_sha256": "744bb8628a36b3b4e0b0e48c47df9babf0d3108747ff0587ca9a55ff1bb3339f",
+      "public_lf_sha256": "d0a0e31a05f0cfd98455392637a17b90296bbd44c0b15f80f3f9d3bd88f60784"
+    },
+    {
+      "file": "evaluation-complete.json",
+      "private_path": "qwen4-margin-context-v2/evaluation-complete.json",
+      "private_sha256": "cc624e9b0a523bc10577345a1ebcd461adf16dd802efbfcf3a6f4875252c1f56",
+      "public_lf_sha256": "c5bcae8d8339541f0be8cbac840107ff858e082d31d0271ebf06bc57f2202909"
+    },
+    {
+      "file": "precision-context-audit.json",
+      "private_path": "qwen4-margin-context-v2/precision-context-audit.json",
+      "private_sha256": "678e61e8ee0635f235a5e34f344b1ae244c1d207c760d1fb092bf0cf924413dc",
+      "public_lf_sha256": "9dc512d9bd2659f9d895ad6073a92447ebbebfd78320672fe44ad07bf27b1f49"
+    },
+    {
+      "file": "full-report.json",
+      "private_path": "qwen4-margin-context-v2/full/report.json",
+      "private_sha256": "e44bdc6b4ce4c479671ead23f63500f6e2a3f7e7e82861c5fc8226694adc3246",
+      "public_lf_sha256": "8b0377967e1e31ff692449c1f4a18e022c015e6f4b99101b82f8e94470da1b5a"
+    },
+    {
+      "file": "full-predictions.jsonl",
+      "private_path": "qwen4-margin-context-v2/full/predictions.jsonl",
+      "private_sha256": "1305b3e5858c8d722065417678f0b130cd6e9a5b6106c38c66efa12394c331f5",
+      "public_lf_sha256": "9e6618f7bc1f5fdfe1bde56f4a4987051b946afd6b0be38b0f6f9c2a6d1aa0cf"
+    },
+    {
+      "file": "full-thresholds.csv",
+      "private_path": "qwen4-margin-context-v2/full/thresholds.csv",
+      "private_sha256": "95f4f0c570b6f7e411abc81f9a8b3b1f24a97926dcd413da6e0e3815bd3283d3",
+      "public_lf_sha256": "95f4f0c570b6f7e411abc81f9a8b3b1f24a97926dcd413da6e0e3815bd3283d3"
+    },
+    {
+      "file": "full-threshold-grid-gate-audit.json",
+      "private_path": "qwen4-margin-context-v2/full/threshold-grid-gate-audit.json",
+      "private_sha256": "46129090f3d38cd5603b0599f2637a823ab69668d59f5cfafc2362738c3935e9",
+      "public_lf_sha256": "aab7e1d42762b561af6c6d288f792e4e953ed03a97423676956072bbe9a688da"
+    },
+    {
+      "file": "full-recall-cost-audit.json",
+      "private_path": "qwen4-margin-context-v2/full/recall-cost-audit.json",
+      "private_sha256": "a220c1f88a7de3bf5f5416614a39f82196422a1377e5d2971b29a37ffbd4545f",
+      "public_lf_sha256": "ca56d3d2db0bf0402af798a0baf776aeae30817cea7837b6a7f1e34787c9b5ea"
+    },
+    {
+      "file": "full-exact-score-report.json",
+      "private_path": "qwen4-margin-context-v2/full/exact-score-sweep-v2/report.json",
+      "private_sha256": "71364d2ab7862f4968fca8d7b03f4bc10f014d76c1b79d15d63bda41e732fe7d",
+      "public_lf_sha256": "d168d80347f081a3e896a497afce972787cc50b3284bee0fc31cdc4932f118cd"
+    },
+    {
+      "file": "context-spaces-report.json",
+      "private_path": "qwen4-margin-context-v2/context-spaces/report.json",
+      "private_sha256": "495fcca8410acc19eb33be1a30c518e80bbeaa7fc9a9cccc3043f2b509c4b84b",
+      "public_lf_sha256": "4680d717b984860c5e55253b1eb71c1258034de748020b830510b7f564506964"
+    },
+    {
+      "file": "context-spaces-predictions.jsonl",
+      "private_path": "qwen4-margin-context-v2/context-spaces/predictions.jsonl",
+      "private_sha256": "92506f4faeaac8a09b6b56211a4ddb4c1fbebd23b1281f3d16248df90193c686",
+      "public_lf_sha256": "e265f458f28a3d7269de342256bc3c1aed5808cf180009b281838e4f47367cf0"
+    },
+    {
+      "file": "context-spaces-thresholds.csv",
+      "private_path": "qwen4-margin-context-v2/context-spaces/thresholds.csv",
+      "private_sha256": "fdd25475242a3459e0ad112f8c9ffc626748c23f467be32bb5eb165cd436472e",
+      "public_lf_sha256": "fdd25475242a3459e0ad112f8c9ffc626748c23f467be32bb5eb165cd436472e"
+    },
+    {
+      "file": "context-spaces-threshold-grid-gate-audit.json",
+      "private_path": "qwen4-margin-context-v2/context-spaces/threshold-grid-gate-audit.json",
+      "private_sha256": "e06c432cd0477d38c2002412334fc7704d5613d589795a004beb6a8a93a93c20",
+      "public_lf_sha256": "610c4963c7ebf13e992fdc02fa81f1cd5cef218a5d80834b7c68c06f6cae719e"
+    },
+    {
+      "file": "context-spaces-recall-cost-audit.json",
+      "private_path": "qwen4-margin-context-v2/context-spaces/recall-cost-audit.json",
+      "private_sha256": "f5e6d873786db3cf250c05c5e08afef47a3f230e4f8e38d8256d135f263e93de",
+      "public_lf_sha256": "eead461db2e7746f1ab17bb81eb341b9eb08ea96f825cf4399e8c8018464fe24"
+    },
+    {
+      "file": "context-spaces-exact-score-report.json",
+      "private_path": "qwen4-margin-context-v2/context-spaces/exact-score-sweep-v2/report.json",
+      "private_sha256": "c956080908281bca9a95b0ff408493391db3488612e6b26f39d65bcfd885dbd0",
+      "public_lf_sha256": "65fb70fc28943bc9c136814b42d7561c9dd572f562621108d3f9184862450fff"
+    },
+    {
+      "file": "input-policy.json",
+      "private_path": "qwen4-margin-context-v2-inputs/policy.json",
+      "private_sha256": "43e8009d90cb6ddfed98cfa7688f68acb3844dd52ec837c5fdca16f6492bd687",
+      "public_lf_sha256": "35428f48352e07bd68040615d8b1cc7b06b9fc795367dc012134a5bf3d36f90a"
+    },
+    {
+      "file": "input-index.json",
+      "private_path": "qwen4-margin-context-v2-inputs/index.json",
+      "private_sha256": "80b77d4dd4963fd4dd6ebbcad79d1037a56672a2a89f040c182042acc581115d",
+      "public_lf_sha256": "6db86b443f172d5f61f748b5002579f842b5afad06ca311f7bbb6035272788cb"
+    },
+    {
+      "file": "prepare_qwen4_margin_context_v2.py.txt",
+      "private_path": "prepare_qwen4_margin_context_v2.py",
+      "private_sha256": "f9167859aa1cb4ce3b51a1196be5cbc61633e04aeff7d50cbb6339accf3df356",
+      "public_lf_sha256": "f9167859aa1cb4ce3b51a1196be5cbc61633e04aeff7d50cbb6339accf3df356"
+    },
+    {
+      "file": "evaluate_qwen4_margin_context_v2.py.txt",
+      "private_path": "evaluate_qwen4_margin_context_v2.py",
+      "private_sha256": "1397032b6edece9753cc516c01bcc2c86dc42dcc16d2909b90a335b0c9f6a5c1",
+      "public_lf_sha256": "1397032b6edece9753cc516c01bcc2c86dc42dcc16d2909b90a335b0c9f6a5c1"
+    },
+    {
+      "file": "audit_qwen4_margin_context_v2.py.txt",
+      "private_path": "audit_qwen4_margin_context_v2.py",
+      "private_sha256": "4bd19f3cf9fbcb877b20f1eb1473ad60442de1bd59b3732f81fc9a24e5774ebe",
+      "public_lf_sha256": "4bd19f3cf9fbcb877b20f1eb1473ad60442de1bd59b3732f81fc9a24e5774ebe"
+    },
+    {
+      "file": "audit_recall_cost_v2.py.txt",
+      "private_path": "audit_recall_cost_v2.py",
+      "private_sha256": "b428edf6aa0ef6570e6f677eeee28c353b2edf03b949cd893ef52d43a018ff2b",
+      "public_lf_sha256": "b428edf6aa0ef6570e6f677eeee28c353b2edf03b949cd893ef52d43a018ff2b"
+    },
+    {
+      "file": "publish_qwen4_margin_context_v2.py.txt",
+      "private_path": "publish_qwen4_margin_context_v2.py",
+      "private_sha256": "6e92536527edd5e04b8189fc4ab63fa1e202a74adf832058d3475cdcde1a8408",
+      "public_lf_sha256": "6e92536527edd5e04b8189fc4ab63fa1e202a74adf832058d3475cdcde1a8408"
+    }
+  ],
+  "rows_per_view": 3258,
+  "views": 2,
+  "excluded_rows": 0,
+  "gradient_updates": 0,
+  "actual_full_inference_windows": 3258,
+  "actual_additional_context_inference_windows": 189,
+  "exact_unchanged_input_scores_reused": 3069,
+  "exact_curves_private": [
+    {
+      "view": "full",
+      "file": "model.csv",
+      "bytes": 454442,
+      "sha256": "3c0f1b42a56f977cf2a9d17e0fb10d9fa7efd8004230f23a99c37ac22b86daa1"
+    },
+    {
+      "view": "full",
+      "file": "literal_or_model.csv",
+      "bytes": 455191,
+      "sha256": "c7f6844af67b452d9ab070f66b5e91d4b2409f6b0836719311f77d5be851e20a"
+    },
+    {
+      "view": "context-spaces",
+      "file": "model.csv",
+      "bytes": 452227,
+      "sha256": "63a4a87092f68b2fc35f400a414f2be84a57e5f6e1ccc54ef768ad2782b5f389"
+    },
+    {
+      "view": "context-spaces",
+      "file": "literal_or_model.csv",
+      "bytes": 452740,
+      "sha256": "eab589c46284c8d42b3f31b13b7a53943dd53b3be2c10aa231d48f2a4869443e"
+    }
+  ],
+  "score_policy": "0.5+atan(positive_logit-negative_logit)/pi; monotonic confidence, not a calibrated probability",
+  "development_gate_met": false,
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

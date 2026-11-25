@@ -1,0 +1,15 @@
+{
+  "scope": "complete instruction-model prediction accounting, immutable source and full window coverage",
+  "rows": 3258,
+  "excluded_rows": 0,
+  "fully_scored_rows": 3258,
+  "error_rows": 0,
+  "errors": {},
+  "windows_attempted": 3258,
+  "predictions_sha256": "752e75191e252f48cad4d69d7b1196d8997a8edb8edc0f2e56cb0730e5d6c8cf",
+  "input_audit_sha256": "fb27d39302fa57a8f6449406b2cb5055aa49a0097fd67caaad1e2627f1a89560",
+  "frozen_sha256": "400ca1530ca67510fd9603c67b6011d619c2e97f7d4be2ecff5a66d87c32ed0e",
+  "code_sha256": "ae13e3a7accbb218f4602cb858d5875c88e25da222b53488d93d090ac1e8dbb7",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

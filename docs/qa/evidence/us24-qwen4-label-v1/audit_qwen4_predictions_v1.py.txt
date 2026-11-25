@@ -1,0 +1,61 @@
+"""Check complete rows, immutable input and code hashes, error accounting and score ranges."""
+import hashlib
+import json
+import math
+from collections import Counter
+from pathlib import Path
+
+ROOT=Path.cwd()
+LAB=ROOT/'qa-private/us24-recall-20261124'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle,'sha256').hexdigest()
+
+
+def main():
+    directory=LAB/'qwen4-label-v1'
+    frozen=json.loads((directory/'frozen.json').read_text(encoding='utf-8'))
+    report=json.loads((directory/'report.json').read_text(encoding='utf-8'))
+    checked=json.loads((LAB/'qwen4-inputs-audit-v1.json').read_text(encoding='utf-8'))
+    index_path=LAB/'qwen4-label-v1-inputs/index.json'
+    assert sha(index_path)==frozen['index_sha256']==checked['index_sha256']
+    assert frozen['features_sha256']==checked['features_sha256']
+    assert frozen['gradient_updates']==0 and not frozen['COLD_dev_fetched']
+    for name,expected in frozen['code_sha256'].items():
+        assert hashlib.sha256((LAB/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest()==expected
+    for key in ['missing_keys','unexpected_keys','mismatched_keys','error_msgs']:
+        assert frozen['model_loading']['loading'][key]==[]
+    index=json.loads(index_path.read_text(encoding='utf-8'))['rows']
+    rows=[json.loads(line) for line in (directory/'predictions.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert len(rows)==len({r['id'] for r in rows})==len(index)==3258
+    assert report['windows_attempted']==report['expected_windows']==checked['windows']
+    errors=Counter()
+    scored=0
+    for row,expected in zip(rows,index,strict=True):
+        for key,value in expected.items():
+            if key not in ['windows','window_lengths','all_source_characters_covered']:
+                assert row[key]==value,(row['id'],key)
+        assert row['input_windows']==expected['windows']
+        assert 0<=row['minimum_digit_probability_mass']<=1
+        if row.get('error'):
+            errors[row['error']]+=1
+        else:
+            assert row['windows_scored']==row['input_windows']
+            assert math.isfinite(row['score']) and 0<=row['score']<=1
+            scored+=1
+    assert report['rows_with_errors']==sum(errors.values())
+    value=dict(scope='complete instruction-model prediction accounting, immutable source and full window coverage',
+        rows=3258,excluded_rows=0,fully_scored_rows=scored,error_rows=sum(errors.values()),
+        errors=dict(errors),windows_attempted=report['windows_attempted'],
+        predictions_sha256=sha(directory/'predictions.jsonl'),input_audit_sha256=sha(LAB/'qwen4-inputs-audit-v1.json'),
+        frozen_sha256=sha(directory/'frozen.json'),code_sha256=sha(Path(__file__)),
+        COLD_dev_fetched=False,production_acceptance=False)
+    with (directory/'prediction-accounting-audit.json').open('x',encoding='utf-8') as handle:
+        json.dump(value,handle,ensure_ascii=False,indent=2)
+    print(json.dumps(value),flush=True)
+
+
+if __name__=='__main__':
+    main()

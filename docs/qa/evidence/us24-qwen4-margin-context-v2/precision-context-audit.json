@@ -1,0 +1,27 @@
+{
+  "scope": "all3258 native rows, both views, explicit logit precision and exact unchanged-input reuse audit",
+  "rows_per_view": 3258,
+  "views": 2,
+  "original_inference_windows": 3258,
+  "additional_context_inference_windows": 189,
+  "exact_unchanged_inputs_reused_in_context": 3069,
+  "excluded_rows": 0,
+  "error_rows": {
+    "full": 0,
+    "context-spaces": 0
+  },
+  "full_float32_saturated_one_windows_by_cohort_label": {
+    "toxicn_dev:1": 674,
+    "toxicn_dev:0": 128,
+    "PCR:1": 112,
+    "PCR:0": 36,
+    "controls:0": 107,
+    "context_stress:0": 15,
+    "context_stress:1": 12
+  },
+  "frozen_sha256": "744bb8628a36b3b4e0b0e48c47df9babf0d3108747ff0587ca9a55ff1bb3339f",
+  "input_index_sha256": "80b77d4dd4963fd4dd6ebbcad79d1037a56672a2a89f040c182042acc581115d",
+  "code_sha256": "4bd19f3cf9fbcb877b20f1eb1473ad60442de1bd59b3732f81fc9a24e5774ebe",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

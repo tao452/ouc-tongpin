@@ -1,0 +1,23 @@
+{
+  "views": {
+    "full": {
+      "predictions_sha256": "1305b3e5858c8d722065417678f0b130cd6e9a5b6106c38c66efa12394c331f5",
+      "report_sha256": "e44bdc6b4ce4c479671ead23f63500f6e2a3f7e7e82861c5fc8226694adc3246",
+      "error_rows": 0
+    },
+    "context-spaces": {
+      "predictions_sha256": "92506f4faeaac8a09b6b56211a4ddb4c1fbebd23b1281f3d16248df90193c686",
+      "report_sha256": "495fcca8410acc19eb33be1a30c518e80bbeaa7fc9a9cccc3043f2b509c4b84b",
+      "error_rows": 0
+    }
+  },
+  "raw_float32_replay_max_difference": 0.0,
+  "full_windows_attempted": 3258,
+  "additional_context_windows_attempted": 189,
+  "full_inference_seconds": 429.8700727999967,
+  "context_inference_seconds": 19.44226530000742,
+  "peak_cuda_bytes": 3701834752,
+  "excluded_rows": 0,
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

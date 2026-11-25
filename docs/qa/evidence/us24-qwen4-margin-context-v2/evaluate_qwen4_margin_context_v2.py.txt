@@ -1,0 +1,168 @@
+import json
+import math
+import time
+from collections import Counter
+from datetime import UTC,datetime
+from pathlib import Path
+
+import torch
+from transformers import AutoTokenizer
+
+from evaluate_qwen4_label_v1 import create_model,inputs
+from phonetic_recheck_metrics import summarize
+from prepare_qwen4_margin_context_v2 import sha,code_sha
+
+LAB=Path.cwd()/'qa-private/us24-recall-20261124'
+
+
+def diagnostics(model,windows,labels,pad):
+    with torch.inference_mode():
+        logits=model(**inputs(windows,pad),use_cache=False,logits_to_keep=1).logits[:,-1,:].float()
+        selected=logits[:,labels]
+        pairs=selected.cpu().tolist()
+        scores=selected.softmax(-1)[:,1].cpu().tolist()
+        masses=torch.exp(selected.logsumexp(-1)-logits.logsumexp(-1)).cpu().tolist()
+        tops=logits.argmax(-1).cpu().tolist()
+    results=[]
+    for (negative,positive),score,mass,top in zip(pairs,scores,masses,tops,strict=True):
+        margin=float(positive)-float(negative)
+        assert all(math.isfinite(v) for v in [negative,positive,margin,score,mass])
+        stable_sigmoid=(1/(1+math.exp(-margin))) if margin>=0 else (math.exp(margin)/(1+math.exp(margin)))
+        results.append(dict(negative_logit=negative,positive_logit=positive,margin=margin,
+                            score=.5+math.atan(margin)/math.pi,
+                            conditional_softmax_float32=score,conditional_sigmoid_float64=stable_sigmoid,
+                            digit_probability_mass=mass,native_top_token=top))
+    return results
+
+
+def evaluate_phase(model,flat,labels,pad,deadline,phase):
+    flat.sort(key=lambda item:len(item[1]['input_ids']))
+    values={}
+    errors={}
+    count=0
+    began=time.perf_counter()
+    for start in range(0,len(flat),8):
+        current=flat[start:start+8]
+        if time.monotonic()>deadline:
+            for index,_ in flat[start:]:
+                errors[index]='NOT_RUN_InferenceBudgetExceeded'
+            break
+        count+=len(current)
+        try:
+            batch=diagnostics(model,[w for _,w in current],labels,pad)
+            for (index,window),value in zip(current,batch,strict=True):
+                values.setdefault(index,[]).append(value)
+                if value['native_top_token'] not in labels:
+                    errors[index]='NonDigitUnconstrainedTopToken'
+        except RuntimeError as error:
+            for index,_ in current:
+                errors[index]=type(error).__name__
+            torch.cuda.empty_cache()
+        if start//8%16==0:
+            print(json.dumps(dict(phase=phase,windows_attempted=count,expected_windows=len(flat),
+                                  errors=len(errors),elapsed_seconds=time.perf_counter()-began)),flush=True)
+    return values,errors,count,time.perf_counter()-began
+
+
+def records_for(rows,values,errors,view):
+    outputs=[]
+    for index,row in enumerate(rows):
+        item={k:v for k,v in row.items() if k not in ['windows','context_windows']}
+        current=values.get(index,[])
+        expected=len(row['context_windows']) if view=='context-spaces' and row['context_input_changed'] else len(row['windows'])
+        item.update(input_view=view,input_windows=expected,windows_scored=len(current),window_diagnostics=current)
+        if index in errors or not current:
+            item['error']=errors.get(index,'MissingScore')
+        else:
+            item['score']=max(v['score'] for v in current)
+        outputs.append(item)
+    return outputs
+
+
+def main():
+    torch.set_num_threads(4)
+    torch.manual_seed(20261124)
+    torch.cuda.manual_seed_all(20261124)
+    torch.backends.cudnn.deterministic=True
+    torch.backends.cudnn.benchmark=False
+    torch.use_deterministic_algorithms(True,warn_only=True)
+    path=LAB/'qwen4-margin-context-v2-inputs/features.pt'
+    prepared=torch.load(path,map_location='cpu',weights_only=True)
+    policy,rows=prepared['policy'],prepared['records']
+    for name,expected in policy['code_sha256'].items():
+        assert code_sha(LAB/name)==expected
+    labels=policy['previous_policy']['label_token_ids']
+    tokenizer=AutoTokenizer.from_pretrained(str(LAB/'qwen3-4b-instruct2507'),local_files_only=True,trust_remote_code=False)
+    pad=tokenizer.pad_token_id
+    assert pad is not None
+    physical_path=LAB/'qwen4-label-v1-preflight-8.json'
+    physical=json.loads(physical_path.read_text(encoding='utf-8'))
+    assert physical['physical_budget_pass'] and physical['probe_batch']==8
+    assert physical['maximum_tokens']==2048 and physical['model_loading']['assets_manifest_sha256']==sha(LAB/'qwen4-instruct-assets-verified.json')
+    assert len(rows)==len({r['id'] for r in rows})==3258
+    assert all(len(w['input_ids'])<=2048 for r in rows for w in r['windows']+r['context_windows'])
+    torch.cuda.reset_peak_memory_stats()
+    model,loading=create_model()
+    output=LAB/'qwen4-margin-context-v2'
+    output.mkdir(exist_ok=False)
+    metadata=dict(created_at_utc=datetime.now(UTC).isoformat(),dataset_policy=policy,model_loading=loading,
+        features_sha256=sha(path),index_sha256=sha(path.with_name('index.json')),
+        code_sha256={p.name:code_sha(p) for p in [Path(__file__),LAB/'evaluate_qwen4_label_v1.py',
+                                                LAB/'qwen4_label_encoding_v1.py',LAB/'phonetic_recheck_metrics.py']},
+        preflight_sha256=sha(physical_path),preflight_policy='same verified weights, quantization, 8x2048 shape and forward path; changed score arithmetic on CPU',
+        labels=labels,batch_size=8,gradient_updates=0,original_rows=3258,excluded_rows=0,
+        score_policy='exact stored logit difference mapped monotonically by0.5+atan(margin)/pi; not probability',
+        same_run_reuse='context view reuses only exact unchanged token inputs;189changed rows separately inferred',
+        COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+    with (output/'frozen.json').open('x',encoding='utf-8') as handle:
+        json.dump(metadata,handle,ensure_ascii=False,indent=2)
+    deadline=time.monotonic()+90*60
+    full,full_errors,full_attempted,full_seconds=evaluate_phase(model,
+        [(i,w) for i,r in enumerate(rows) for w in r['windows']],labels,pad,deadline,'full')
+    alternative,alternative_errors,context_attempted,context_seconds=evaluate_phase(model,
+        [(i,w) for i,r in enumerate(rows) for w in r['context_windows']],labels,pad,deadline,'context-spaces')
+    context_values={}
+    context_errors={}
+    for i,row in enumerate(rows):
+        changed=row['context_input_changed']
+        branch=alternative if changed else full
+        errors=alternative_errors if changed else full_errors
+        if i in branch:
+            context_values[i]=branch[i]
+        if i in errors:
+            context_errors[i]=errors[i]
+    reports={}
+    previous={r['id']:r for r in map(json.loads,(LAB/'qwen4-label-v1/predictions.jsonl').read_text(encoding='utf-8').splitlines())}
+    differences=[]
+    for view,values,errors in [('full',full,full_errors),('context-spaces',context_values,context_errors)]:
+        directory=output/view
+        directory.mkdir(exist_ok=False)
+        predictions=records_for(rows,values,errors,view)
+        with (directory/'predictions.jsonl').open('x',encoding='utf-8') as handle:
+            for row in predictions:
+                handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+                if view=='full' and not row.get('error'):
+                    old=previous[row['id']]
+                    assert old['source_text_sha256']==row['source_text_sha256'] and old['label']==row['label']
+                    differences.append(abs(max(v['conditional_softmax_float32'] for v in row['window_diagnostics'])-old['score']))
+        report=dict(scope='same fixed4B precision/context development',view=view,rows=3258,excluded_rows=0,
+            gradient_updates=0,rows_with_errors=sum(bool(r.get('error')) for r in predictions),
+            full_windows_attempted=full_attempted,additional_context_windows_attempted=context_attempted,
+            full_inference_seconds=full_seconds,context_inference_seconds=context_seconds,
+            peak_cuda_bytes=torch.cuda.max_memory_allocated(),
+            metrics=summarize(predictions,directory/'thresholds.csv'),production_acceptance=False)
+        with (directory/'report.json').open('x',encoding='utf-8') as handle:
+            json.dump(report,handle,ensure_ascii=False,indent=2)
+        reports[view]=dict(predictions_sha256=sha(directory/'predictions.jsonl'),report_sha256=sha(directory/'report.json'),
+                           error_rows=report['rows_with_errors'])
+    completed=dict(views=reports,raw_float32_replay_max_difference=max(differences),
+        full_windows_attempted=full_attempted,additional_context_windows_attempted=context_attempted,
+        full_inference_seconds=full_seconds,context_inference_seconds=context_seconds,
+        peak_cuda_bytes=torch.cuda.max_memory_allocated(),excluded_rows=0,COLD_dev_fetched=False,production_acceptance=False)
+    with (output/'evaluation-complete.json').open('x',encoding='utf-8') as handle:
+        json.dump(completed,handle,ensure_ascii=False,indent=2)
+    print(json.dumps(completed),flush=True)
+
+
+if __name__=='__main__':
+    main()

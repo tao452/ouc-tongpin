@@ -1,0 +1,193 @@
+import argparse
+import importlib.metadata
+import json
+import math
+import time
+from collections import Counter
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+from transformers import AutoModelForCausalLM, BitsAndBytesConfig
+
+from phonetic_recheck_metrics import summarize
+from train_rocbert_v8 import digest, source_sha
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+
+
+def create_model():
+    path = LAB/'qwen4-instruct-assets-verified.json'
+    assets = json.loads(path.read_text(encoding='utf-8'))
+    assert assets['state'] == 'ALL_SELECTED_ASSETS_VERIFIED'
+    assert assets['revision'] == 'cdbee75f17c01a7cc42f958dc650907174af0554'
+    directory = LAB/'qwen3-4b-instruct2507'
+    for entry in [*assets['metadata_assets'], *assets['weights']]:
+        assert digest(directory/entry['file']) == entry['sha256']
+    quant = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16,
+                              bnb_4bit_quant_type='nf4', bnb_4bit_use_double_quant=True)
+    model, loading = AutoModelForCausalLM.from_pretrained(
+        str(directory), local_files_only=True, trust_remote_code=False, use_safetensors=True,
+        quantization_config=quant, device_map={'':0}, dtype=torch.bfloat16,
+        attn_implementation='sdpa', output_loading_info=True, low_cpu_mem_usage=True)
+    assert not any(loading[key] for key in ['missing_keys','unexpected_keys','mismatched_keys','error_msgs']), loading
+    assert model.config.model_type == 'qwen3' and model.config.num_hidden_layers == 36
+    assert model.is_loaded_in_4bit and all(p.device.type == 'cuda' for p in model.parameters())
+    model.eval()
+    return model, dict(assets_manifest_sha256=digest(path), loading=loading,
+                       quantized_linear_modules=sum(type(m).__name__=='Linear4bit' for m in model.modules()))
+
+
+def inputs(windows, pad, minimum=0):
+    longest = max(minimum, max(len(w['input_ids']) for w in windows))
+    assert longest <= 2048
+    ids = torch.full((len(windows),longest),pad,dtype=torch.long,device='cuda')
+    mask = torch.zeros_like(ids)
+    for number, window in enumerate(windows):
+        length = len(window['input_ids'])
+        ids[number,-length:] = torch.tensor(window['input_ids'],dtype=torch.long,device='cuda')
+        mask[number,-length:] = 1
+    positions = (mask.cumsum(-1)-1).masked_fill(mask==0,0)
+    return dict(input_ids=ids,attention_mask=mask,position_ids=positions)
+
+
+def forward(model, windows, labels, pad, minimum=0):
+    with torch.inference_mode():
+        logits = model(**inputs(windows,pad,minimum),use_cache=False,logits_to_keep=1).logits[:,-1,:].float()
+        selected = logits[:,labels]
+        scores = selected.softmax(-1)[:,1]
+        masses = torch.exp(selected.logsumexp(-1)-logits.logsumexp(-1))
+        tops = logits.argmax(-1)
+        assert torch.isfinite(scores).all() and torch.isfinite(masses).all()
+        return scores.cpu().tolist(),masses.cpu().tolist(),tops.cpu().tolist()
+
+
+def main(probe):
+    assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    assert importlib.metadata.version('bitsandbytes') == '0.45.5'
+    torch.set_num_threads(4)
+    torch.manual_seed(20261124)
+    torch.cuda.manual_seed_all(20261124)
+    torch.backends.cudnn.deterministic=True
+    torch.backends.cudnn.benchmark=False
+    torch.use_deterministic_algorithms(True,warn_only=True)
+    path = LAB/'qwen4-label-v1-inputs/features.pt'
+    prepared = torch.load(path,map_location='cpu',weights_only=True)
+    policy, records = prepared['policy'],prepared['records']
+    assert len(records)==len({r['id'] for r in records})==3258
+    for name, value in policy['code_sha256'].items():
+        assert source_sha(LAB/name)==value
+    labels = policy['label_token_ids']
+    config = json.loads((LAB/'qwen3-4b-instruct2507/tokenizer_config.json').read_text(encoding='utf-8'))
+    # All rows are left-padded explicitly; the attention mask excludes padding.
+    from transformers import AutoTokenizer
+    tokenizer=AutoTokenizer.from_pretrained(str(LAB/'qwen3-4b-instruct2507'),local_files_only=True,trust_remote_code=False)
+    pad=tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
+    assert pad is not None and config
+    flat=[(i,w) for i,r in enumerate(records) for w in r['windows']]
+    flat.sort(key=lambda item:len(item[1]['input_ids']))
+    torch.cuda.reset_peak_memory_stats()
+    model, loading = create_model()
+    code={p.name:source_sha(p) for p in [Path(__file__),LAB/'qwen4_label_encoding_v1.py',LAB/'phonetic_recheck_metrics.py']}
+    metadata=dict(created_at_utc=datetime.now(UTC).isoformat(),dataset_policy=policy,model_loading=loading,
+                  features_sha256=digest(path),index_sha256=digest(path.with_name('index.json')),
+                  code_sha256=code,gradient_updates=0,quantization='NF4 double quantization, BF16 compute',
+                  device='cuda:0 only; no CPU offload',attention='standard Qwen3 SDPA',
+                  labels=labels,pad_token_id=pad,maximum_tokens=2048,original_rows=3258,
+                  windows=len(flat),excluded_rows=0,inference_time_budget_minutes=90,
+                  runtime={p:importlib.metadata.version(p) for p in ['torch','transformers','bitsandbytes','accelerate','pypinyin']},
+                  physical_total_bytes=torch.cuda.get_device_properties(0).total_memory,
+                  upstream_pretraining_evaluation_exposure='unknown',COLD_dev_fetched=False,
+                  M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+    if probe:
+        assert probe in {8,4,2,1}
+        worst=sorted(flat,key=lambda item:len(item[1]['input_ids']),reverse=True)[:probe]
+        began=time.perf_counter()
+        scores,masses,tops=forward(model,[w for _,w in worst],labels,pad,minimum=2048)
+        metadata.update(probe_batch=probe,maximum_padded_tokens=2048,elapsed_seconds=time.perf_counter()-began,
+                        peak_cuda_bytes=torch.cuda.max_memory_allocated(),accuracy_status='NOT_RUN',
+                        native_digit_top_tokens=sum(top in labels for top in tops),probe_rows=len(tops),
+                        minimum_digit_probability_mass=min(masses))
+        metadata['physical_budget_pass']=metadata['peak_cuda_bytes']<.92*metadata['physical_total_bytes']
+        with (LAB/f'qwen4-label-v1-preflight-{probe}.json').open('x',encoding='utf-8') as handle:
+            json.dump(metadata,handle,ensure_ascii=False,indent=2)
+        print(json.dumps({k:metadata[k] for k in ['physical_budget_pass','peak_cuda_bytes','elapsed_seconds',
+                                                 'native_digit_top_tokens','probe_rows','minimum_digit_probability_mass']}),flush=True)
+        return 0 if metadata['physical_budget_pass'] else 2
+    qualified=[]
+    for size in [8,4,2,1]:
+        check=LAB/f'qwen4-label-v1-preflight-{size}.json'
+        if check.exists():
+            value=json.loads(check.read_text(encoding='utf-8'))
+            assert value['features_sha256']==metadata['features_sha256'] and value['code_sha256']==code
+            if value['physical_budget_pass']:
+                qualified.append(value)
+    assert qualified
+    batch=qualified[0]['probe_batch']
+    metadata.update(batch_size=batch,preflight_sha256=digest(LAB/f'qwen4-label-v1-preflight-{batch}.json'))
+    output=LAB/'qwen4-label-v1'
+    output.mkdir(exist_ok=False)
+    with (output/'frozen.json').open('x',encoding='utf-8') as handle:
+        json.dump(metadata,handle,ensure_ascii=False,indent=2)
+    scores=[None]*3258
+    errors={}
+    minimum_masses=[1.]*3258
+    window_counts=Counter()
+    began=time.perf_counter()
+    deadline=time.monotonic()+90*60
+    attempted=0
+    for start in range(0,len(flat),batch):
+        current=flat[start:start+batch]
+        if time.monotonic()>deadline:
+            for index,_ in flat[start:]:
+                errors[index]='NOT_RUN_InferenceBudgetExceeded'
+            break
+        attempted+=len(current)
+        try:
+            probabilities,masses,tops=forward(model,[w for _,w in current],labels,pad)
+            for (index,_),score,mass,top in zip(current,probabilities,masses,tops,strict=True):
+                window_counts[index]+=1
+                minimum_masses[index]=min(minimum_masses[index],mass)
+                if top not in labels:
+                    errors[index]='NonDigitUnconstrainedTopToken'
+                elif not math.isfinite(score):
+                    errors[index]='NonFiniteScore'
+                else:
+                    scores[index]=max(scores[index] or 0,score)
+        except RuntimeError as error:
+            for index,_ in current:
+                errors[index]=type(error).__name__
+            torch.cuda.empty_cache()
+        if start//batch%16==0:
+            print(json.dumps(dict(windows_attempted=attempted,total_windows=len(flat),elapsed_seconds=time.perf_counter()-began,
+                                  error_rows=len(errors))),flush=True)
+    predictions=[]
+    for number,row in enumerate(records):
+        item={k:v for k,v in row.items() if k!='windows'}
+        item.update(input_windows=len(row['windows']),windows_scored=window_counts[number],
+                    minimum_digit_probability_mass=minimum_masses[number])
+        if number in errors or scores[number] is None:
+            item['error']=errors.get(number,'MissingScore')
+        else:
+            item['score']=scores[number]
+        predictions.append(item)
+    with (output/'predictions.jsonl').open('x',encoding='utf-8') as handle:
+        for row in predictions:
+            handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+    report=dict(scope='zero-gradient instruction label-token development; not S1 severity',
+                rows=3258,excluded_rows=0,windows_attempted=attempted,expected_windows=len(flat),
+                rows_with_errors=sum(bool(r.get('error')) for r in predictions),
+                inference_seconds=time.perf_counter()-began,peak_cuda_bytes=torch.cuda.max_memory_allocated(),
+                metrics=summarize(predictions,output/'thresholds.csv'),production_acceptance=False)
+    with (output/'report.json').open('x',encoding='utf-8') as handle:
+        json.dump(report,handle,ensure_ascii=False,indent=2)
+    print(json.dumps(dict(rows=3258,error_rows=report['rows_with_errors'],selected=report['metrics']['literal_or_model']['best_fpr_eligible'])),flush=True)
+    selected=report['metrics']['literal_or_model']['best_fpr_eligible']
+    return 0 if selected and selected['development_gate_met'] else 1
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--probe-batch',type=int,default=0)
+    raise SystemExit(main(parser.parse_args().probe_batch))

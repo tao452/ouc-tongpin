@@ -1,0 +1,33 @@
+{
+  "scope": "complete-score development sweep and independent recomputation of all prior7992 matrices; reused rows, not independent accuracy",
+  "source_predictions_sha256": "752e75191e252f48cad4d69d7b1196d8997a8edb8edc0f2e56cb0730e5d6c8cf",
+  "original_rows": 3258,
+  "excluded_rows": 0,
+  "reference_input_index_sha256": "cdfe87c0efaf48a14d69fc058ee5137f9d1d68bd6b6de65bf7d35114676d1286",
+  "previous_grid_sha256": "44fe83a6ae689686a881693ad2b0cca6b96f22628daa4cf80ebf57d67c604054",
+  "previous_grid_matrices_recomputed": 7992,
+  "unique_finite_scores": 209,
+  "thresholds_per_mode": 1416,
+  "decision_policy": "one global >=threshold; all actual unique scores and nextafter boundaries in[0,1]",
+  "fpr_policy": "FP*50 < negatives for each cohort; errors0",
+  "recall_policy": "TP*100 >=95*positives for each positive cohort",
+  "results": {
+    "model": {
+      "best_fpr_eligible": null,
+      "fpr_eligible_decision_points": 0,
+      "passing_points": 0
+    },
+    "literal_or_model": {
+      "best_fpr_eligible": null,
+      "fpr_eligible_decision_points": 0,
+      "passing_points": 0
+    }
+  },
+  "passing_points": [],
+  "development_gate_met": false,
+  "old_grid_reports_modified": false,
+  "code_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

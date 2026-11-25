@@ -1,0 +1,143 @@
+"""Publish only hashes, scores, metadata and source; keep corpora, token windows and weights private."""
+import csv
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd()
+LAB=ROOT/'qa-private/us24-recall-20261124'
+QA=ROOT/'docs/qa'
+PRIVATE=LAB/'qwen4-label-v1'
+PUBLIC=QA/'evidence/us24-qwen4-label-v1'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle,'sha256').hexdigest()
+
+
+def percent(value):
+    return '—' if value is None else f'{100*value:.2f}%'
+
+
+def table(point,names):
+    lines=['|开发组|TP|FP|FN|TN|Recall|Precision|FPR|错误|',
+           '|---|---:|---:|---:|---:|---:|---:|---:|---:|']
+    for name,metric in point['cohorts'].items():
+        c=metric['confusion_matrix']
+        lines.append(f"|{names[name]}|{c['tp']}|{c['fp']}|{c['fn']}|{c['tn']}|"
+                     f"{percent(metric['recall'])}|{percent(metric['precision'])}|"
+                     f"{percent(metric['false_positive_rate'])}|{metric['inference_errors']}|")
+    return lines
+
+
+def main():
+    report=json.loads((PRIVATE/'report.json').read_text(encoding='utf-8'))
+    accounting=json.loads((PRIVATE/'prediction-accounting-audit.json').read_text(encoding='utf-8'))
+    exact=json.loads((PRIVATE/'exact-score-sweep-v2/report.json').read_text(encoding='utf-8'))
+    grid=json.loads((PRIVATE/'threshold-grid-gate-audit.json').read_text(encoding='utf-8'))
+    costs=json.loads((PRIVATE/'recall-cost-audit.json').read_text(encoding='utf-8'))
+    assert report['rows']==accounting['rows']==3258 and report['excluded_rows']==0
+    assert exact['previous_grid_matrices_recomputed']==7992
+    assert exact['source_predictions_sha256']==accounting['predictions_sha256']
+    assert grid['development_gate_met']==exact['development_gate_met']
+    PUBLIC.mkdir(exist_ok=False)
+    files=[]
+
+    def copy(path,name):
+        data=path.read_bytes().replace(b'\r\n',b'\n')
+        assert len(data)<5*1024*1024
+        assert all(line==line.rstrip(b' \t') for line in data.split(b'\n'))
+        with (PUBLIC/name).open('xb') as handle:
+            handle.write(data)
+        files.append(dict(file=name,private_path=path.relative_to(LAB).as_posix(),
+                          private_sha256=sha(path),public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+    for name in ['frozen.json','report.json','predictions.jsonl','thresholds.csv',
+                 'prediction-accounting-audit.json','threshold-grid-gate-audit.json','recall-cost-audit.json']:
+        copy(PRIVATE/name,name)
+    copy(PRIVATE/'exact-score-sweep-v2/report.json','exact-score-report.json')
+    for name in ['policy.json','index.json']:
+        copy(LAB/'qwen4-label-v1-inputs'/name,'input-'+name)
+    for name in ['qwen4-inputs-audit-v1.json','qwen4-label-v1-preflight-8.json',
+                 'qwen4-instruct-assets-verified.json','bnb-nf4-probe-v1.json','ci-d5db298-qualified.json']:
+        copy(LAB/name,name)
+    for name in ['prepare_qwen4_label_v1.py','qwen4_label_encoding_v1.py','evaluate_qwen4_label_v1.py',
+                 'audit_qwen4_inputs_v1.py','audit_qwen4_predictions_v1.py','audit_qwen4_recall_cost_v1.py','audit_threshold_grid.py',
+                 'audit_exact_operating_points_v2.py','phonetic_recheck_metrics.py',Path(__file__).name]:
+        copy(LAB/name,name+'.txt')
+    curves=[]
+    for mode in ['model','literal_or_model']:
+        path=PRIVATE/'exact-score-sweep-v2'/f'{mode}.csv'
+        with path.open(encoding='utf-8',newline='') as handle:
+            count=sum(1 for _ in csv.DictReader(handle))
+        assert count==4*exact['thresholds_per_mode']
+        curves.append(dict(file=mode+'.csv',rows=count,bytes=path.stat().st_size,sha256=sha(path)))
+    manifest=dict(scope='fixed zero-gradient instruction-model development; all reused3258 rows; not new independent accuracy',
+        files=files,rows=3258,excluded_rows=0,gradient_updates=0,
+        original_cohorts=['ToxiCN development2399','PCR500','normal257','context stress102'],
+        model='Qwen/Qwen3-4B-Instruct-2507',revision='cdbee75f17c01a7cc42f958dc650907174af0554',
+        model_source='https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507',license='Apache-2.0',
+        quantization='NF4 double quantization, BF16 compute; all CUDA, no CPU offload',
+        score_policy='uncalibrated softmax over explicit0/1 logits; native top token must be a digit',
+        production_dictionary='moderation-v3_10-candidate.json',
+        dictionary_sha256='4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722',
+        exact_curves_private=curves,development_gate_met=exact['development_gate_met'],
+        COLD_dev_fetched=False,upstream_pretraining_evaluation_exposure='unknown',
+        M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+    with (PUBLIC/'manifest.json').open('x',encoding='utf-8',newline='\n') as handle:
+        json.dump(manifest,handle,ensure_ascii=False,indent=2)
+    names={'toxicn_dev':'ToxiCN开发2399','PCR':'PCR500','controls':'正常257','context_stress':'语境102'}
+    lines=['# US24 4B指令模型开发复测\n',
+        '前面的字音字形模型、音模态训练与固定组合均未通过广义冒犯召回门槛。本次固定Qwen3-4B-Instruct-2507的官方版本、统一提示和0/1标签读出，使用原3258条开发样本检查更大模型的语境判断能力，训练更新为0。\n',
+        '## 输入与执行\n',
+        '- 输入完整归一化原文和上下文确定的单路无调拼音；所有组使用相同提示，模型输入不包含样本ID、类别或金标。引用、举报、否定攻击、科普、自责和求助语境由模型判断，未套用全局正常白名单。\n',
+        '- 每窗最多2048 token、最多32窗，逐字覆盖检查和角色分隔符转义检查通过。全部3258条输入从原始来源重新构造，与已冻结特征逐项相同。多音字沿用词语上下文读音，不展开笛卡尔积。\n',
+        '- NF4双重量化、BF16计算，全部权重在CUDA；8×2048最坏长度预检峰值4035480064字节，8条原生最高分token均为标签。模型与分词器文件逐个校验SHA256，禁止远程自定义代码。\n',
+        f"- 完整执行{report['windows_attempted']}/{report['expected_windows']}窗，错误{report['rows_with_errors']}条，耗时{report['inference_seconds']:.2f}秒，峰值显存{report['peak_cuda_bytes']}字节。分数是两个标签logit的条件softmax，未经概率校准。\n",
+        '## 默认0.5阈值\n',
+        '下表先列模型单独判断，随后列字面规则或模型命中。二者都表示广义冒犯开发检测，不等同于HIGH阻断等级。\n',
+        '### 模型\n',*table(report['metrics']['model']['at_0_5'],names),
+        '\n### 字面规则或模型\n',*table(report['metrics']['literal_or_model']['at_0_5'],names),
+        '\n## 受控误报选点\n',
+        '固定条件为每个正样本组Recall≥95%，四组各自FPR<2%，错误为0。各组独立计算，未通过增加正常样本稀释误报率。999点网格和全部实际分数边界均复核，原网格7992个矩阵独立重算一致。\n']
+    for mode,title in [('model','模型'),('literal_or_model','字面规则或模型')]:
+        result=exact['results'][mode]
+        point=result['best_fpr_eligible']
+        lines.append('### '+title+'\n')
+        if point is None:
+            lines.append('没有同时满足四组FPR限制与零错误的选点。\n')
+        else:
+            lines.append(f"同一全局阈值`{point['threshold']!r}`。\n")
+            lines.extend(table(point,names))
+        lines.append(f"\n全部分数边界中通过整体门槛的点数：{result['passing_points']}。\n")
+    lines.append('\n## 95%召回的误报代价\n')
+    for mode,title in [('model','模型'),('literal_or_model','字面规则或模型')]:
+        point=costs['results'][mode]
+        lines.append('### '+title+'\n')
+        if point is None:
+            lines.append('没有在零错误条件下达到所有正样本组95%召回的阈值。\n')
+        else:
+            lines.append(f"满足全部正样本组95%召回的最高全局阈值`{point['threshold']!r}`，下表保留对应误报。\n")
+            lines.extend(table(point,names))
+    outcome='开发门槛通过，仍需冻结最终方案后进行封存独立样本反测。' if exact['development_gate_met'] else '广义召回仍未达标，需要继续调整语义方案。'
+    lines += ['\n## 结论与边界\n',outcome+'\n',
+        '本次3258条沿用先前开发数据，结果只用于开发比较；COLD旧测试结果保留，新独立COLD开发分区仍封存。上游预训练是否接触这些公开数据未知。完整分数、类别分组、曲线、输入哈希和执行源码见[证据索引](evidence/us24-qwen4-label-v1/manifest.json)。语料、原始token窗和模型权重保留在私有目录。\n',
+        'S1默认仍使用原5条，HIGH阻断、MEDIUM/LOW放行；132条候选规则的M1逐条审核与M3复现仍待完成。该模型为离线开发实验，未接入业务，未实现W9完整危机理解。\n']
+    with (QA/'US24-4B指令模型开发复测.md').open('x',encoding='utf-8',newline='\n') as handle:
+        handle.write('\n'.join(lines))
+    main_path=QA/'US24-拼音语义分类训练与复测报告.md'
+    original=main_path.read_text(encoding='utf-8')
+    assert '## 4B指令模型开发复测' not in original
+    selected=exact['results']['literal_or_model']['best_fpr_eligible']
+    if selected:
+        numbers='PCR'+percent(selected['cohorts']['PCR']['recall'])+'、ToxiCN开发'+percent(selected['cohorts']['toxicn_dev']['recall'])
+    else:
+        numbers='四组误报限制内无可选阈值'
+    main_path.write_text(original+'\n\n## 4B指令模型开发复测\n\n统一提示和0/1标签读出，原3258条完整执行，训练更新0。'+numbers+'。'+outcome+'完整结果见[本次报告](US24-4B指令模型开发复测.md)。\n',encoding='utf-8',newline='\n')
+    print(json.dumps(dict(public_files=len(files)+1,rows=3258,errors=report['rows_with_errors'],
+                          development_gate_met=exact['development_gate_met'])),flush=True)
+
+
+if __name__=='__main__':
+    main()
