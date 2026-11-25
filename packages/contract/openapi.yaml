@@ -342,7 +342,7 @@ paths:
                         word: { type: string }
                         level: { type: string, enum: [LOW, MEDIUM, HIGH] }
 
-      # 16 KiB 请求限制由网关执行；服务限制 text 字符数。
+        # 16 KiB 请求限制由网关执行；服务限制 text 字符数。
         '422':
           description: 参数无效（不回显输入）
         '413':
@@ -370,6 +370,7 @@ paths:
         '200':
           description: 更新成功
 
+  # ---------------- 组队空间 US-17 + 画像聚合 US-04（W6 新增） ----------------
   /api/teams:
     post:
       tags: [team]
@@ -533,4 +534,3 @@ components:
               date: { type: string, format: date }
               emotion: { type: string }
               intensity: { type: integer }
-
