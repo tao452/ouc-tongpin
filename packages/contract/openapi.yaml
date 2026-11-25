@@ -342,7 +342,7 @@ paths:
                         word: { type: string }
                         level: { type: string, enum: [LOW, MEDIUM, HIGH] }
 
-      # 16 KiB 请求限制由网关执行；服务限制 text 字符数。
+        # 16 KiB 请求限制由网关执行；服务限制 text 字符数。
         '422':
           description: 参数无效（不回显输入）
         '413':
@@ -369,6 +369,95 @@ paths:
       responses:
         '200':
           description: 更新成功
+
+  # ---------------- 组队空间 US-17 + 画像聚合 US-04（W6 新增） ----------------
+  /api/teams:
+    post:
+      tags: [team]
+      summary: 创建组队（US-17）
+      description: 创建即成为组长并生成 8 位邀请码，7 天有效；一人同一时间只能在一个组队。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: { type: string, maxLength: 32 }
+                notice: { type: string, maxLength: 200 }
+      responses:
+        '201':
+          description: 创建成功，返回组队信息（含邀请码与过期时间）
+        '409': { description: 已在一个组队中 }
+    get:
+      tags: [team]
+      summary: 我的组队空间
+      responses:
+        '200':
+          description: inTeam=false 表示未加入任何组队（兜底，不报错）
+  /api/teams/join:
+    post:
+      tags: [team]
+      summary: 凭邀请码加入组队
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [inviteCode]
+              properties:
+                inviteCode: { type: string }
+      responses:
+        '200': { description: 加入成功，返回组队信息 }
+        '400': { description: 邀请码无效或已过期（含已撤销） }
+        '409': { description: 已在一个组队中，或组队人数已满 }
+  /api/teams/mine/notice:
+    put:
+      tags: [team]
+      summary: 更新组队公告（仅组长）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                notice: { type: string, maxLength: 200 }
+      responses:
+        '200': { description: 更新成功 }
+        '403': { description: 非组长 }
+  /api/teams/mine/invite:
+    delete:
+      tags: [team]
+      summary: 撤销邀请码（仅组长）
+      description: 撤销后旧邀请码立刻失效；需要再次邀请须（后续版本）重新生成。
+      responses:
+        '200': { description: 已撤销，inviteCode/inviteExpiresAt 返回 null }
+        '403': { description: 非组长 }
+  /api/teams/mine/members/me:
+    delete:
+      tags: [team]
+      summary: 退出组队
+      description: 组长退出时自动转让给最早加入的成员；最后一人退出则解散。
+      responses:
+        '200': { description: 已退出 }
+        '404': { description: 未加入任何组队 }
+  /api/user/profile/weekly:
+    get:
+      tags: [user]
+      summary: 画像周聚合（US-04）
+      description: 按自然周（周一起始）聚合打卡数据；Redis 缓存 10 分钟，打卡后主动失效。本周无数据时各项为 0/空集合兜底。
+      parameters:
+        - name: date
+          in: query
+          required: false
+          schema: { type: string, format: date }
+          description: 定位目标周的任意一天，默认本周
+      responses:
+        '200':
+          description: 周画像；字段见 WeeklyProfile schema
 
 components:
   securitySchemes:
@@ -406,3 +495,42 @@ components:
           format: date-time
           description: 24h 后焚毁；到期列表与详情均不可见，库里仅留内容哈希
         hugCount: { type: integer, description: 抱抱数，每人每帖每日限 1 次（Redis SETNX + 24h） }
+    TeamResponse:
+      type: object
+      properties:
+        inTeam: { type: boolean }
+        id: { type: string }
+        name: { type: string }
+        notice: { type: string, nullable: true }
+        isOwner: { type: boolean, nullable: true }
+        inviteCode: { type: string, nullable: true, description: 撤销后为 null }
+        inviteExpiresAt: { type: string, format: date-time, nullable: true }
+        members:
+          type: array
+          items:
+            type: object
+            properties:
+              userId: { type: string }
+              nickname: { type: string }
+              role: { type: string, enum: [OWNER, MEMBER] }
+              joinedAt: { type: string, format: date-time }
+    WeeklyProfile:
+      type: object
+      properties:
+        weekStart: { type: string, format: date }
+        weekEnd: { type: string, format: date }
+        daysCheckedIn: { type: integer }
+        totalCheckins: { type: integer }
+        avgIntensity: { type: number }
+        streakDays: { type: integer }
+        emotionCounts:
+          type: object
+          additionalProperties: { type: integer }
+        trend:
+          type: array
+          items:
+            type: object
+            properties:
+              date: { type: string, format: date }
+              emotion: { type: string }
+              intensity: { type: integer }

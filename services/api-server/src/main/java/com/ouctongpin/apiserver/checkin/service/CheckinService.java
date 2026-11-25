@@ -3,6 +3,7 @@ package com.ouctongpin.apiserver.checkin.service;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.ouctongpin.apiserver.checkin.entity.Checkin;
 import com.ouctongpin.apiserver.checkin.mapper.CheckinMapper;
+import com.ouctongpin.apiserver.profile.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
@@ -16,14 +17,16 @@ import org.springframework.web.server.ResponseStatusException;
 @Service
 public class CheckinService {
     @Autowired private CheckinMapper checkinMapper;
+    // W6/US-04：打卡变化后清画像缓存；切片测试可能不加载画像模块，因此设为可选依赖。
+    @Autowired(required = false) private ProfileService profileService;
 
     // 契约：POST /api/emotions/checkins -> Checkin（幂等：同日重复提交只记一次）
     public Checkin doCheckin(Long userId, String emotion, Integer intensity, String note, LocalDate date) {
         LocalDate d = (date != null) ? date : LocalDate.now();
         // 1. 先查是否已打卡
         Checkin exist = checkinMapper.selectOne(new LambdaQueryWrapper<Checkin>()
-                .eq(Checkin::getUserId, userId)
-                .eq(Checkin::getCheckinDate, d));
+            .eq(Checkin::getUserId, userId)
+            .eq(Checkin::getCheckinDate, d));
         if (exist != null) {
             exist.setStreakDays(calcStreak(userId, d));
             return exist; // 幂等返回
@@ -38,11 +41,15 @@ public class CheckinService {
         c.setCheckinDate(d);
         try {
             checkinMapper.insert(c);
+            // 新打卡落库后清掉本周画像缓存，保证画像与打卡数据一致（幂等返回无需清）
+            if (profileService != null) {
+                profileService.evictWeeklyCache(userId, d);
+            }
         } catch (DuplicateKeyException e) {
             // 3. 并发兜底（数据库唯一约束生效）
             Checkin fallback = checkinMapper.selectOne(new LambdaQueryWrapper<Checkin>()
-                    .eq(Checkin::getUserId, userId)
-                    .eq(Checkin::getCheckinDate, d));
+                .eq(Checkin::getUserId, userId)
+                .eq(Checkin::getCheckinDate, d));
             if (fallback != null) {
                 fallback.setStreakDays(calcStreak(userId, d));
                 return fallback;
@@ -61,10 +68,10 @@ public class CheckinService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid date range");
         }
         List<Checkin> items = checkinMapper.selectList(new LambdaQueryWrapper<Checkin>()
-                .eq(Checkin::getUserId, userId)
-                .ge(start != null, Checkin::getCheckinDate, start)
-                .le(end != null, Checkin::getCheckinDate, end)
-                .orderByAsc(Checkin::getCheckinDate));
+            .eq(Checkin::getUserId, userId)
+            .ge(start != null, Checkin::getCheckinDate, start)
+            .le(end != null, Checkin::getCheckinDate, end)
+            .orderByAsc(Checkin::getCheckinDate));
         items.forEach(c -> c.setStreakDays(calcStreak(userId, c.getCheckinDate())));
         return items;
     }
@@ -86,12 +93,12 @@ public class CheckinService {
         int streak = 0;
         LocalDate d = upTo;
         boolean todayHas = checkinMapper.selectCount(new LambdaQueryWrapper<Checkin>()
-                .eq(Checkin::getUserId, userId)
-                .eq(Checkin::getCheckinDate, d)) > 0;
+            .eq(Checkin::getUserId, userId)
+            .eq(Checkin::getCheckinDate, d)) > 0;
         if (!todayHas) d = d.minusDays(1);
         while (checkinMapper.selectCount(new LambdaQueryWrapper<Checkin>()
-                .eq(Checkin::getUserId, userId)
-                .eq(Checkin::getCheckinDate, d)) > 0) {
+            .eq(Checkin::getUserId, userId)
+            .eq(Checkin::getCheckinDate, d)) > 0) {
             streak++;
             d = d.minusDays(1);
         }
