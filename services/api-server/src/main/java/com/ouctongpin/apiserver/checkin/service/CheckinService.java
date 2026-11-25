@@ -17,7 +17,8 @@ import org.springframework.web.server.ResponseStatusException;
 @Service
 public class CheckinService {
     @Autowired private CheckinMapper checkinMapper;
-    @Autowired private ProfileService profileService; // W6/US-04：打卡变化后清画像缓存
+    // W6/US-04：打卡变化后清画像缓存；切片测试可能不加载画像模块，因此设为可选依赖。
+    @Autowired(required = false) private ProfileService profileService;
 
     // 契约：POST /api/emotions/checkins -> Checkin（幂等：同日重复提交只记一次）
     public Checkin doCheckin(Long userId, String emotion, Integer intensity, String note, LocalDate date) {
@@ -41,7 +42,9 @@ public class CheckinService {
         try {
             checkinMapper.insert(c);
             // 新打卡落库后清掉本周画像缓存，保证画像与打卡数据一致（幂等返回无需清）
-            profileService.evictWeeklyCache(userId, d);
+            if (profileService != null) {
+                profileService.evictWeeklyCache(userId, d);
+            }
         } catch (DuplicateKeyException e) {
             // 3. 并发兜底（数据库唯一约束生效）
             Checkin fallback = checkinMapper.selectOne(new LambdaQueryWrapper<Checkin>()

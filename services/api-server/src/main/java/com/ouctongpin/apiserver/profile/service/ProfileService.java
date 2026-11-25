@@ -5,7 +5,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ouctongpin.apiserver.checkin.entity.Checkin;
 import com.ouctongpin.apiserver.checkin.mapper.CheckinMapper;
-import com.ouctongpin.apiserver.checkin.service.CheckinService;
 import com.ouctongpin.apiserver.profile.dto.WeeklyProfileResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -31,7 +30,6 @@ public class ProfileService {
         List.of("HAPPY", "CALM", "ANXIOUS", "LONELY", "IRRITABLE", "DOWN");
 
     @Autowired private CheckinMapper checkinMapper;
-    @Autowired private CheckinService checkinService;
     @Autowired private StringRedisTemplate redisTemplate;
     @Autowired private ObjectMapper objectMapper;
 
@@ -68,6 +66,23 @@ public class ProfileService {
         redisTemplate.delete(cacheKey(userId, anyDateInWeek.with(DayOfWeek.MONDAY)));
     }
 
+    /** 与打卡接口同一口径统计连续天数；直接走 CheckinMapper，避免与 CheckinService 循环依赖。 */
+    private int streakDays(Long userId) {
+        int streak = 0;
+        LocalDate d = LocalDate.now();
+        boolean todayHas = checkinMapper.selectCount(new LambdaQueryWrapper<Checkin>()
+            .eq(Checkin::getUserId, userId)
+            .eq(Checkin::getCheckinDate, d)) > 0;
+        if (!todayHas) d = d.minusDays(1);
+        while (checkinMapper.selectCount(new LambdaQueryWrapper<Checkin>()
+            .eq(Checkin::getUserId, userId)
+            .eq(Checkin::getCheckinDate, d)) > 0) {
+            streak++;
+            d = d.minusDays(1);
+        }
+        return streak;
+    }
+
     private String cacheKey(Long userId, LocalDate weekStart) {
         return "profile:weekly:" + userId + ":" + weekStart;
     }
@@ -85,7 +100,7 @@ public class ProfileService {
         resp.setWeekEnd(weekEnd.toString());
         resp.setTotalCheckins(items.size());
         resp.setDaysCheckedIn((int) items.stream().map(Checkin::getCheckinDate).distinct().count());
-        resp.setStreakDays(checkinService.streakDays(userId));
+        resp.setStreakDays(streakDays(userId));
 
         if (items.isEmpty()) {
             // 无数据兜底：全 0 + 空分布，前端展示“本周还没有记录”
