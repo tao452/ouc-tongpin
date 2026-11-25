@@ -1,0 +1,20 @@
+import argparse
+import json
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
+service=ModerationService(ROOT/'services/algo/app/data/moderation-v3_13-candidate.json')
+rows=[json.loads(s) for s in (ROOT/'docs/qa/data/us24-development.v3_13.jsonl').read_text(encoding='utf-8').splitlines()]
+results=[]
+for row in rows:
+    result=service.check(row['text']).model_dump()
+    results.append(dict(id=row['id'],request=dict(text=row['text']),expected_hits=row['expected_hits'],
+        response=result,expected_result_met=result['hits']==row['expected_hits'] and result['passed']==(not row['blocked'])))
+failed=[r['id'] for r in results if not r['expected_result_met']]
+with args.output.open('x',encoding='utf-8') as handle:json.dump(dict(scope='all proposed alias development cases retained',rows=len(results),
+    failures=failed,cases=results,dictionary_sha256=service.dictionary_sha256,production_acceptance=False),handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=len(results),failures=failed)),flush=True)
+raise SystemExit(int(bool(failed)))

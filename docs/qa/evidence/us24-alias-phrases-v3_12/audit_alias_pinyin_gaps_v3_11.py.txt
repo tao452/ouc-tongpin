@@ -1,0 +1,27 @@
+import hashlib
+import json
+import re
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+from pypinyin import Style,pinyin
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_11-candidate.json'
+entries=json.loads(path.read_text(encoding='utf-8'));service=ModerationService(path)
+gaps=[];total=0
+for index,entry in enumerate(entries,1):
+    if not entry.get('pinyin'):continue
+    for alias in entry.get('aliases',[]):
+        if not re.fullmatch(r'[\u3400-\u9fff]{2,16}',alias):continue
+        text=' '.join(parts[0] for parts in pinyin(alias,style=Style.NORMAL,heteronym=False))
+        result=service.check('你就是'+text).model_dump();total+=1
+        if not any(h['word']==entry['word'] for h in result['hits']):
+            gaps.append(dict(candidate_id=f'US24-{index:03d}',word=entry['word'],alias=alias,
+                generated_phrase_reading=text,current=result,requires_context_reading_review=True))
+report=dict(scope='read-only probe of declared Hanzi aliases; no automatic alias-to-pinyin expansion',
+    checked_aliases=total,gaps=gaps,dictionary_sha256=service.dictionary_sha256,
+    COLD_dev_fetched=False,production_acceptance=False)
+with (LAB/'alias-pinyin-gaps-v3_11.json').open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(checked=total,gaps=len(gaps),proposals=[{k:r[k] for k in ['candidate_id','word','alias','generated_phrase_reading']} for r in gaps]),ensure_ascii=False),flush=True)

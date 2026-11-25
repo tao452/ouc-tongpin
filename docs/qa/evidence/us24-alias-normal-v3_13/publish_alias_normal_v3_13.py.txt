@@ -1,0 +1,92 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124';QA=ROOT/'docs/qa'
+
+def read(name):return json.loads((LAB/name).read_text(encoding='utf-8'))
+
+paired=read('alias-normal-v3_13-paired.json');http=read('alias-normal-v3_13-http.json')
+perf=read('alias-normal-v3_13-performance.json');equiv=read('alias-normal-v3_13-model-input-equivalence.json')
+history=read('historical-v3_13-http/summary.json');comparison=read('historical-v3_13-http/comparison.json')
+review=read('alias-normal-v3_13-review-structure.json');technical=read('all-candidate-mappings-v3_13.json')
+assert paired['rows']==6515 and not paired['old_output_changes'] and not paired['new_mapping_failures'] and not paired['errors']
+assert not http['failed_ids'] and http['rows']==149
+assert not any(v['timeouts'] for v in perf['measurements'].values())
+assert not equiv['context_input_changes'] and not equiv['literal_flag_changes']
+assert not comparison['changed_outputs'] and all(not r['errors'] for r in history['reports'])
+assert technical['checks']==1349 and not technical['failures']
+assert '688 passed, 4 skipped' in (LAB/'pytest-v3_13-final.log').read_text(encoding='utf-8')
+assert 'All checks passed!' in (LAB/'ruff-v3_13-final.log').read_text(encoding='utf-8')
+public=QA/'evidence/us24-alias-normal-v3_13';public.mkdir(exist_ok=False);files=[]
+
+def copy(name,target=None):
+    source=LAB/name;raw=source.read_bytes();text=raw.decode('utf-8-sig').replace('\r\n','\n')
+    for path,label in [(ROOT,'<workspace>'),(ROOT.parent,'<workspace-parent>'),(Path.home(),'<userhome>')]:
+        for prefix in {str(path),str(path).replace('\\','/'),str(path).replace('/','\\')}:text=text.replace(prefix,label)
+    data=('\n'.join(s.rstrip(' \t') for s in text.split('\n')).rstrip('\n')+'\n').encode()
+    assert len(data)<5*1024*1024
+    target=target or Path(name).name.replace('.log','.txt')
+    with (public/target).open('xb') as handle:handle.write(data)
+    files.append(dict(file=target,private_sha256=hashlib.sha256(raw).hexdigest(),public_lf_sha256=hashlib.sha256(data).hexdigest(),
+        normalization='local paths, LF and terminal whitespace only; numeric outcomes unchanged'))
+
+for name in ['alias-normal-homophones-v3_13-first-probe.json','alias-normal-context-v3_13-policy.json',
+             'alias-normal-v3_13-fixture-freeze.json','alias-normal-v3_13-paired.json',
+             'alias-normal-v3_13-probe.json','alias-normal-v3_13-probe-r2.json',
+             'alias-normal-v3_13-s1-flag-correction.json','us24-development.v3_13.initial-invalid-s1-flags.jsonl',
+             'alias-normal-v3_13-http.json','alias-normal-v3_13-performance.json',
+             'alias-normal-v3_13-model-input-equivalence.json','alias-normal-v3_13-review-structure.json',
+             'pytest-v3_13-final.log','ruff-v3_13-final.log']:
+    copy(name)
+for name in ['summary.json','predictions.jsonl','comparison.json']:copy('historical-v3_13-http/'+name,'historical-http-'+name)
+for name in ['probe_alias_normal_homophones_v3_13.py','build_alias_normal_context_v3_13.py',
+             'complete_alias_normal_fixture_v3_13_r2.py','correct_s1_fixture_flags_v3_13.py',
+             'probe_alias_normal_fixture_v3_13.py','check_alias_normal_pairs_v3_13.py',
+             'check_alias_normal_http_v3_13.py','benchmark_alias_normal_v3_13.py',
+             'qualify_alias_normal_inputs_v3_13.py','evaluate_historical_v3_13_http.py',
+             'compare_historical_aliases_v3_13.py','build_alias_normal_review_v3_13.py',
+             'audit_every_candidate_mapping_v3_13.py',Path(__file__).name]:copy(name,name+'.txt')
+manifest=dict(scope='exact normal homophone context development; not new independent evaluation',files=files,
+    dictionary_sha256=review['dictionary_sha256'],rules=132,new_rules=0,new_hanzi_normal_phrases=7,new_pinyin_normal_phrases=17,
+    rows=149,old_rows=6366,old_output_changes=0,technical_mapping_checks=1349,
+    initial_normal_probe_rows=25,initial_any_level_false_positives=24,
+    fixture_derived_S1_flags_corrected=2,existing_development_labels_changed=0,new_any_level_labels_changed=0,
+    M1_pending=132,decision_blanks=792,variant_M1_pending=27,variant_decision_blanks=162,
+    M1_review='PENDING',M3_reproduction='PENDING',COLD_dev_fetched=False,production_acceptance=False)
+with (public/'manifest.json').open('x',encoding='utf-8',newline='\n') as handle:json.dump(manifest,handle,ensure_ascii=False,indent=2)
+
+def percent(value):return '—' if value is None else f'{100*value:.4f}%'
+
+def line(label,m):
+    cm=m['confusion_matrix']
+    return '|'+label+'|'+'|'.join(str(cm[k]) for k in ['tp','fp','fn','tn'])+'|'+ '|'.join(percent(m[k]) for k in ['recall','precision','fpr'])+'|'
+
+maximum=max(v['max_ms'] for v in perf['measurements'].values())
+text=['# US24 v3.13 正常同音短语与范围复测\n',
+    f'候选词库仍132条，SHA256：`{review["dictionary_sha256"]}`。沿用3.12的27项别名整词拼音，本次为8条规则补充7个精确汉字正常短语、17个拼音正常短语，等级建议保持HIGH47/MEDIUM80/LOW5。\n',
+    '## 改了什么\n',
+    '新增日常同音负样本发现：电话、题目、菜品、出生日期、杂种水稻、表字号及代码讨论等正常表达可能被较短攻击拼音前缀命中。首轮25条正常探测有24条任意等级误报，原记录保留。\n',
+    '本次按具体词条登记完整正常短语，例如“我要打你电话”“wo yao da ni dian hua”“gei ni yi dao ti”“ni zhe chu sheng ri qi”。只豁免该词条在对应词组中的出现位置；前后出现同词攻击、其他词攻击或跨分句拼接仍匹配。没有扩大读音组合、词库等级或全局白名单。\n',
+    '## 怎么自测\n',
+    '|149条开发样本口径|TP|FP|FN|TN|Recall|Precision|FPR|\n|---|---:|---:|---:|---:|---:|---:|---:|',
+    line('原3.12：任意等级',paired['before']['any_level']),
+    line('3.13：任意等级',paired['after']['any_level']),
+    line('原3.12：HIGH阻断',paired['before']['high_blocking']),
+    line('3.13：HIGH阻断',paired['after']['high_blocking']),
+    '\n29条正常文本覆盖无调、数字声调、全角及繁体，另120条检查同词、其他攻击的前后位置和句界。函数与149次实际HTTP响应一致，全部200且词库哈希一致；原6366条输出差异0。MEDIUM命中继续放行。\n',
+    '新增样本初稿有2处把MEDIUM命中写成阻断，独立样本契约检查在评分前拒绝了该初稿；按既有S1口径修正这2个派生字段，未改变词条等级、任意等级标签或旧6366条标签。初稿、2条失败记录、契约检查和修正前后SHA256均保留。\n',
+    f'完整Python688 PASS、4 SKIP，覆盖率98.37%，Ruff通过；132条登记映射共1349项技术核对通过。96类2000字符输入共9600次，超时0、最大{maximum:.4f}ms，GC保持开启；原72类输入全部保留。临时Docker已配置1148条别名映射及149条正常语境检查，当前提交CI结果另列。\n',
+    '## 广义效果\n',
+    '同一批历史PCR500与ToxiCN完整12011条重新执行HTTP，共12511条、错误0，与3.10逐条输出差异0。任意等级字面召回仍为21.20%和2.8324%，未达到95%；本次效果体现在新增变体和正常语境的开发覆盖。历史样本继续作为开发对照，不能作为新独立结果。\n',
+    '本组模型原3258条的完整输入、有限语境输入和字面OR标记均无变化。语义适配训练另列，当前广义门槛仍未通过。封存COLD dev未获取或读取，新独立评估为NOT_RUN。\n',
+    '## 审核与回滚\n',
+    '132条及27项别名映射仍为M1 PENDING，主表792项、变体表162项业务决定均空白；M3独立复现待安排。精确词组无法覆盖所有转述、反讽和求助，W9完整危机识别仍未实现。\n',
+    '默认原5条、HIGH阻断/MEDIUM与LOW放行沿用。3.12及更早词库和证据保留；切换词库路径可回退本次正常短语，回滚代码提交可恢复旧编译及否定范围。\n',
+    '材料：[完整审核表](US24-v3_13-M1逐条审核表.md)、[CSV](US24-v3_13-完整审核清单.csv)、[别名映射](US24-v3_13-别名拼音映射.csv)、[证据索引](evidence/us24-alias-normal-v3_13/manifest.json)。\n']
+with (QA/'US24-v3_13-正常同音短语与范围复测.md').open('x',encoding='utf-8',newline='\n') as handle:handle.write('\n'.join(text))
+with (QA/'US24-词库版本变更记录.md').open('a',encoding='utf-8',newline='\n') as handle:
+    handle.write(f'\n\n## 3.13 正常同音语境修正\n\n132条和等级建议保持相同，为8条增加7个汉字、17个拼音精确正常短语，SHA256 `{review["dictionary_sha256"]}`。新149条函数/HTTP任意等级TP120/FP0/FN0/TN29，原6366条输出不变。首轮25条正常探测24项误报、149条初稿2处S1派生字段修正记录保留，旧标签未改。完整Python688 PASS、4 SKIP、98.37%，9600次性能检查0超时，最大{maximum:.4f}ms；12511条历史广义HTTP召回仍未达标。全部M1状态PENDING，见[3.13报告](US24-v3_13-正常同音短语与范围复测.md)。\n')
+with (QA/'US24-v3_12-别名拼音与否定边界复测.md').open('a',encoding='utf-8',newline='\n') as handle:
+    handle.write('\n\n## 后续同音负样本复核\n\n随后补测25条日常同音正常表达，发现24条任意等级误报。3.13补充精确正常短语并保留前后攻击检查；当前审核与误报结果以[3.13报告](US24-v3_13-正常同音短语与范围复测.md)为准。原3.12结果和词库继续保留作对照。\n')
+print(json.dumps(dict(public_files=len(files)+1,rows=149,technical_checks=1349,production_acceptance=False)),flush=True)

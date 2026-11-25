@@ -1,0 +1,406 @@
+{
+  "scope": "new synthetic normal homophone probes, before any exemption adjustment; not independent evaluation",
+  "rows": [
+    {
+      "id": "AP313-N-001",
+      "text": "我要打你的电话",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "我要打你的电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-002",
+      "text": "我要打你电话",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "我要打你电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-003",
+      "text": "再说我就打你电话",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "再说我就打你电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-004",
+      "text": "再说我就打你的电话",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "再说我就打你的电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-005",
+      "text": "ni zhe chu sheng ri qi zen me tian",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "nizhechushengriqizenmetian",
+        "hits": [
+          {
+            "word": "你个畜生",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-006",
+      "text": "ni jiu shi chu sheng ti xing yi xia ye hao",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "nijiushichushengtixingyixiayehao",
+        "hits": [
+          {
+            "word": "你是畜生",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-007",
+      "text": "ni zhe za zhong shui dao zhang de hen hao",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "nizhezazhongshuidaozhangdehenhao",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-008",
+      "text": "你这杂种水稻长得很好",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "你这杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-009",
+      "text": "你这个杂种水稻长得很好",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-010",
+      "text": "ni zhe biao zi hao tai xiao",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "nizhebiaozihaotaixiao",
+        "hits": [
+          {
+            "word": "你个婊子",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-011",
+      "text": "你这表字号太小",
+      "expected_offensive": false,
+      "response": {
+        "passed": true,
+        "normalized": "你这表字号太小",
+        "hits": []
+      }
+    },
+    {
+      "id": "AP313-N-012",
+      "text": "ni zhe gou dong xi de gong ju zen me yong",
+      "expected_offensive": false,
+      "response": {
+        "passed": true,
+        "normalized": "nizhegoudongxidegongjuzenmeyong",
+        "hits": [
+          {
+            "word": "你个狗东西",
+            "level": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-013",
+      "text": "wo yao da ni de dian hua",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidedianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-014",
+      "text": "wo yao da ni dian hua",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-015",
+      "text": "zai shuo wo jiu da ni dian hua",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanidianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-016",
+      "text": "zai shuo wo jiu da ni de dian hua",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanidedianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-017",
+      "text": "zai shuo wo jiu da ni zhe dao ti",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanizhedaoti",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-018",
+      "text": "wo yao da ni wu mo xing",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "woyaodaniwumoxing",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-019",
+      "text": "da duan ni tui li guo cheng",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "daduannituiliguocheng",
+        "hits": [
+          {
+            "word": "打断你的腿",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-020",
+      "text": "gei ni yi dao cai",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaocai",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-021",
+      "text": "gei ni yi dao ti",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaoti",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-022",
+      "text": "gei ni yi dao shu xue ti",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaoshuxueti",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-023",
+      "text": "wo jiu dong shou da ni fa lai de dai ma",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "wojiudongshoudanifalaidedaima",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-024",
+      "text": "我就动手打你发来的代码",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "我就动手打你发来的代码",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "AP313-N-025",
+      "text": "ni zhe ge za zhong shui dao zhang de hen hao",
+      "expected_offensive": false,
+      "response": {
+        "passed": false,
+        "normalized": "nizhegezazhongshuidaozhangdehenhao",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      }
+    }
+  ],
+  "false_positives": [
+    "AP313-N-001",
+    "AP313-N-002",
+    "AP313-N-003",
+    "AP313-N-004",
+    "AP313-N-005",
+    "AP313-N-006",
+    "AP313-N-007",
+    "AP313-N-008",
+    "AP313-N-009",
+    "AP313-N-010",
+    "AP313-N-012",
+    "AP313-N-013",
+    "AP313-N-014",
+    "AP313-N-015",
+    "AP313-N-016",
+    "AP313-N-017",
+    "AP313-N-018",
+    "AP313-N-019",
+    "AP313-N-020",
+    "AP313-N-021",
+    "AP313-N-022",
+    "AP313-N-023",
+    "AP313-N-024",
+    "AP313-N-025"
+  ],
+  "source_sha256": "6e12da5d97d7f228702a0f7ae1f9693fb396810e500fd02a0a701fc87cfaefce",
+  "dictionary_sha256": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890",
+  "M1_review": "PENDING",
+  "production_acceptance": false,
+  "COLD_dev_fetched": false
+}

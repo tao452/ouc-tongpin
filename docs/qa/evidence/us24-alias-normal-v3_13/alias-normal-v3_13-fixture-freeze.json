@@ -1,0 +1,76 @@
+{
+  "scope": "exact file list frozen before paired replay; future fixtures excluded",
+  "datasets": [
+    {
+      "file": "us24-development.v2.jsonl",
+      "sha256": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06"
+    },
+    {
+      "file": "us24-development.v3.jsonl",
+      "sha256": "33d33a05200ceed80d87da759dd9cfa66c1b91729b5e67b84db5fdfde7a36831"
+    },
+    {
+      "file": "us24-development.v3_10.jsonl",
+      "sha256": "4ea86df33f8d21829268289dae94cbf31626b5849ef539f85d5609c61346acd5"
+    },
+    {
+      "file": "us24-development.v3_11.jsonl",
+      "sha256": "41700456c3525857b1f050a15ebdd1412ce0e0a6168591838739d9d4d6f9d7c2"
+    },
+    {
+      "file": "us24-development.v3_12.jsonl",
+      "sha256": "243369d85488381794bd9d0c9bbf2bc2bb7dd26aa366cd0c71889323e7dda873"
+    },
+    {
+      "file": "us24-development.v3_13.jsonl",
+      "sha256": "ad53c03c599f091716023836549b6562d48a9b826b7f517e40991fa717f061d7"
+    },
+    {
+      "file": "us24-development.v3_2.jsonl",
+      "sha256": "b734b3f25a38644ea919083285de4ad54dd74ac1dd859d16205eead4937ff6d3"
+    },
+    {
+      "file": "us24-development.v3_3.jsonl",
+      "sha256": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773"
+    },
+    {
+      "file": "us24-development.v3_4.jsonl",
+      "sha256": "3bc4cc797af07df988dd3a63dc78210db78352cb4b54ee13bd5e96876b3da8eb"
+    },
+    {
+      "file": "us24-development.v3_5.jsonl",
+      "sha256": "ddeaa645573f71b88d636f95881f5ba6b65b1c3bbddf99d2cff5e273a7f27855"
+    },
+    {
+      "file": "us24-development.v3_7.jsonl",
+      "sha256": "325a5b9bddfd1f2528123712cd7116391fa54be097d20c216089ef64b6a1455b"
+    },
+    {
+      "file": "us24-development.v3_8.jsonl",
+      "sha256": "61d1eb6b862a322281365bb0df157e8664bfb0be8b396385a63f13e350d902bc"
+    },
+    {
+      "file": "us24-development.v3_9.jsonl",
+      "sha256": "3f51535e28c9a830464ebc6493c456ebcdf5ffe8bff1fc8817b4e415941f6a10"
+    }
+  ],
+  "dictionaries": {
+    "before": {
+      "file": "services/algo/app/data/moderation-v3_12-candidate.json",
+      "sha256": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890"
+    },
+    "after": {
+      "file": "services/algo/app/data/moderation-v3_13-candidate.json",
+      "sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827"
+    }
+  },
+  "code_sha256": {
+    "services/algo/app/services/moderation.py": "95ef15da6c200b45d4d4ca78cbabf6f05517766bfc08bc74401083d0a0a9b2cc",
+    "services/algo/app/services/moderation_context.py": "9397db82fbcb2e2469d39a0cc9805d35486438b579bed721f04b971c8b9fc6b8",
+    "services/algo/app/services/normalization.py": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80",
+    "services/algo/app/services/pronunciation.py": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+    "services/algo/app/services/targeted_matching.py": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d",
+    "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "services/algo/app/models/dictionary.py": "9cfefdd8a2e634fffebca7d7edaf33cd5ae7a7fd9ef6e10bd40ad87df2bc7d21"
+  }
+}

@@ -1,0 +1,43 @@
+import hashlib
+import json
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_12-candidate.json'
+original=path.read_bytes()
+with (LAB/'moderation-v3_12-initial-proposal.json').open('xb') as handle:handle.write(original)
+entries=json.loads(original)
+extra={
+    '你就是个饭桶':'ni3 jiu4 shi4 ge5 fan4 tong3',
+    '你这窝囊废':'ni3 zhe4 wo1 nang5 fei4',
+    '你个贱人':'ni3 ge5 jian4 ren2',
+    '你这狗东西':'ni3 zhe4 gou3 dong1 xi5',
+    '捅他一刀':'tong3 ta1 yi4 dao1',
+    '给你一刀':'gei3 ni3 yi4 dao1',
+}
+for entry in entries:
+    for form in entry.get('pinyin_phrases',[]):
+        if form['phrase'] in extra:
+            assert extra[form['phrase']] not in form.get('tone_readings',[])
+            form.setdefault('tone_readings',[]).append(extra[form['phrase']])
+path.write_text(json.dumps(entries,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+service=ModerationService(path)
+policy_path=LAB/'alias-phrases-v3_12-policy.json'
+policy=json.loads(policy_path.read_text(encoding='utf-8'))
+policy['initial_proposal_sha256']=hashlib.sha256(original).hexdigest()
+policy['initial_policy_sha256']=hashlib.sha256(policy_path.read_bytes()).hexdigest()
+policy['after_dictionary_sha256']=service.dictionary_sha256
+policy['manual_whole_phrase_tones']=extra
+policy['pronunciation_sources']=[
+    dict(url='https://www.gsjtxy.edu.cn/jcjxb/content/169/t2024210-169-17094.html',use='一 before non-fourth and 不 before fourth'),
+    dict(url='https://dict.concised.moe.edu.tw/dictView.jsp?ID=43137',use='窝囊 has a neutral final syllable'),
+    dict(url='https://dict.concised.moe.edu.tw/search.jsp?page=2&word=%E8%A5%BF',use='东西 has neutral xi when referring to a thing'),
+    dict(url='https://rsc.xmu.edu.cn/info/1066/63545.htm',use='classifier 个 commonly neutral'),
+]
+for item in policy['mappings']:
+    if item['alias'] in extra:item['explicit_extra_tones'].append(extra[item['alias']])
+with (LAB/'alias-phrases-v3_12-policy-r2.json').open('x',encoding='utf-8') as handle:
+    json.dump(policy,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rules=132,alias_phrases=27,manual_additional_tones=6,dictionary_sha256=service.dictionary_sha256)),flush=True)

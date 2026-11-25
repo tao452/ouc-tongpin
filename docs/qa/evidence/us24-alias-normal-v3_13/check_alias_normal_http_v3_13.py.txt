@@ -1,0 +1,35 @@
+import hashlib
+import json
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+dictionary=ROOT/'services/algo/app/data/moderation-v3_13-candidate.json'
+service=ModerationService(dictionary)
+rows=[json.loads(s) for s in (ROOT/'docs/qa/data/us24-development.v3_13.jsonl').read_text(encoding='utf-8').splitlines()]
+cases=[]
+for row in rows:
+    request=dict(text=row['text'])
+    call=urllib.request.Request('http://127.0.0.1:19899/api/moderation/check',
+        data=json.dumps(request,ensure_ascii=False).encode(),headers={'Content-Type':'application/json'})
+    status=None;body=None;digest=None;failure=None
+    try:
+        with urllib.request.urlopen(call,timeout=10) as response:
+            status=response.status;digest=response.headers.get('X-Moderation-Dictionary-SHA256');body=json.load(response)
+    except Exception as error:failure=type(error).__name__
+    expected=service.check(row['text']).model_dump()
+    okay=(status==200 and digest==service.dictionary_sha256 and body==expected
+          and body['hits']==row['expected_hits'] and body['passed']==(not row['blocked']))
+    cases.append(dict(id=row['id'],request=request,http_status=status,dictionary_header_sha256=digest,
+                      response=body,error=failure,expected_hits=row['expected_hits'],passed=okay))
+report=dict(scope='actual loopback HTTP candidate3.13; synthetic literal development only',
+    cases=cases,rows=len(cases),failed_ids=[r['id'] for r in cases if not r['passed']],
+    dictionary_sha256=service.dictionary_sha256,source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    production_acceptance=False,M1_review='PENDING',M3_reproduction='PENDING',COLD_dev_fetched=False)
+with (LAB/'alias-normal-v3_13-http.json').open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=len(cases),failures=report['failed_ids'])),flush=True)
+raise SystemExit(int(bool(report['failed_ids'])))

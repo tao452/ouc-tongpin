@@ -40,7 +40,9 @@ _SELF_BLAME = re.compile(
     r"我(?:是不是|是)(?:个)?[ \t]*(?P<quote>[^，,。！？!?;；\n]{1,32}?)[了吧啊呀]{0,2}"
     r"[,，](?:请帮帮我|想找人聊聊|想求助)"
 )
-_DENIAL = re.compile(r"^我不会(?P<quote>[^，,。！？!?;；\n]{1,32})[。！!?]?$")
+_DENIAL = re.compile(
+    r"^我不会" + rf"(?P<quote>[^，,。！？!?;；\n]{{1,{MAX_PINYIN_QUOTE_LENGTH}}})[。！!?]?$"
+)
 _CLAUSE_BREAKS = frozenset(",，。;；:：!?！？、—\r\n")
 
 

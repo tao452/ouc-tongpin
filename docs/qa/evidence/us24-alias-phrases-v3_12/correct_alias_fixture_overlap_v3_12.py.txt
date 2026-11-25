@@ -1,0 +1,22 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'docs/qa/data/us24-development.v3_12.jsonl';raw=path.read_bytes()
+with (LAB/'us24-development.v3_12.initial.jsonl').open('xb') as handle:handle.write(raw)
+baseline=json.loads((LAB/'alias-fixture-baseline-overlap.json').read_text(encoding='utf-8'))
+rows=[json.loads(line) for line in raw.decode('utf-8').splitlines()]
+target=next(r for r in rows if r['id']=='AP312-005-hanzi')
+assert target['expected_word']=='你个婊子' and target['blocked'] is True
+before=target['expected_hits'];target['expected_hits']=baseline['response']['hits']
+assert before[0] in target['expected_hits']
+with path.open('w',encoding='utf-8',newline='\n') as handle:
+    for row in rows:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+report=dict(reason='correct missing nested MEDIUM canonical mapping using verified unchanged3.11 behavior; HIGH binary gold and every row retained',
+    case_id=target['id'],before=before,after=target['expected_hits'],rows=len(rows),
+    binary_gold_changes=0,removed_rows=0,initial_fixture_sha256=hashlib.sha256(raw).hexdigest(),
+    corrected_fixture_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),original_fixture_retained=True)
+with (LAB/'alias-fixture-overlap-correction-v3_12.json').open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=len(rows),binary_gold_changes=0,removed_rows=0,mapping_expectations_corrected=1)))

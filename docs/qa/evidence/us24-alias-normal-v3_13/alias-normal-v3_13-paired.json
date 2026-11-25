@@ -1,0 +1,162 @@
+{
+  "scope": "literal development; exact6515 file list, no new broad or independent evaluation",
+  "rows": 6515,
+  "old_development_rows": 6366,
+  "new_development_rows": 149,
+  "before": {
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 120,
+        "fp": 27,
+        "fn": 0,
+        "tn": 2
+      },
+      "recall": 1.0,
+      "precision": 0.8163265306122449,
+      "fpr": 0.9310344827586207
+    },
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 118,
+        "fp": 26,
+        "fn": 0,
+        "tn": 5
+      },
+      "recall": 1.0,
+      "precision": 0.8194444444444444,
+      "fpr": 0.8387096774193549
+    }
+  },
+  "after": {
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 120,
+        "fp": 0,
+        "fn": 0,
+        "tn": 29
+      },
+      "recall": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0
+    },
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 118,
+        "fp": 0,
+        "fn": 0,
+        "tn": 31
+      },
+      "recall": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0
+    }
+  },
+  "old_output_changes": [],
+  "new_mapping_failures": [],
+  "errors": 0,
+  "by_category": {
+    "benign_homophone_context": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 29
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 29
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      }
+    },
+    "clause_or_incomplete_exemption": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      }
+    },
+    "other_rule_scope": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 58,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 58,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      }
+    },
+    "same_rule_scope": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 58,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 56,
+          "fp": 0,
+          "fn": 0,
+          "tn": 2
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0
+      }
+    }
+  },
+  "registry_sha256": "02608b3fb45035c32bb2536f5e28c9a530ab0834392764bcaa1657d1af6e59d5",
+  "before_predictions_sha256": "1e6fc2bdd4d6f0d2ccb6139ed40e2023dba79142e32a5bdcf41473f414e85196",
+  "after_predictions_sha256": "d32c704e4c4611fee238b54d276a5a41e7163044d9c6c1962f98ae10d125bb79",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

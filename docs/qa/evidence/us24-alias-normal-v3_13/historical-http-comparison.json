@@ -1,0 +1,10 @@
+{
+  "scope": "same12511 historical external rows, original labels and sources; fresh HTTP rerun, not independent evaluation",
+  "rows": 12511,
+  "changed_outputs": [],
+  "old_predictions_sha256": "bb663388f6c6a890cfce4a63bfe3b5a7e6ac68c0220edb0c0aa4b4b42fb91b04",
+  "new_predictions_sha256": "bb663388f6c6a890cfce4a63bfe3b5a7e6ac68c0220edb0c0aa4b4b42fb91b04",
+  "source_sha256": "c445426386fb74b7dde2d85b8098d0e3502af19e5216819083c94c523f80264f",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

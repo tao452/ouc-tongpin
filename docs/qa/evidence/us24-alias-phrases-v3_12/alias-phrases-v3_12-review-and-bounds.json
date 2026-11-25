@@ -1,0 +1,20 @@
+{
+  "rules": 132,
+  "changed_entries": 18,
+  "alias_phrases": 27,
+  "new_canonical_rules": 0,
+  "M1_pending": 132,
+  "parent_decision_blanks": 792,
+  "variant_M1_pending": 27,
+  "variant_decision_blanks": 162,
+  "actual_maximum_compiled_keys_per_entry": 10,
+  "actual_maximum_numeric_paths_per_entry": 6,
+  "actual_maximum_alias_forms_per_entry": 4,
+  "shared_path_limit": 8,
+  "shared_key_limit": 16,
+  "alias_field_limit": 6,
+  "dictionary_sha256": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890",
+  "schema_sha256": "9cfefdd8a2e634fffebca7d7edaf33cd5ae7a7fd9ef6e10bd40ad87df2bc7d21",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

@@ -1,0 +1,282 @@
+{
+  "scope": "selected existing ordinary Hanzi aliases, explicitly mapped to parent word; no new canonical rules",
+  "canonical_rules": 132,
+  "changed_entries": 18,
+  "new_alias_phrases": 27,
+  "mappings": [
+    {
+      "candidate_id": "US24-008",
+      "word": "祝你全家死光",
+      "alias": "咒你全家死光",
+      "primary_numeric": "zhou4 ni3 quan2 jia1 si3 guang1",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-011",
+      "word": "你这个杂种",
+      "alias": "你这杂种",
+      "primary_numeric": "ni3 zhe4 za2 zhong3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-012",
+      "word": "你个畜生",
+      "alias": "你这畜生",
+      "primary_numeric": "ni3 zhe4 chu4 sheng5",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "alias": "你就是畜生",
+      "primary_numeric": "ni3 jiu4 shi4 chu4 sheng5",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-022",
+      "word": "你个婊子",
+      "alias": "你这婊子",
+      "primary_numeric": "ni3 zhe4 biao3 zi5",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-048",
+      "word": "你个蠢猪",
+      "alias": "你这蠢猪",
+      "primary_numeric": "ni3 zhe4 chun3 zhu1",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-049",
+      "word": "你是个饭桶",
+      "alias": "你就是个饭桶",
+      "primary_numeric": "ni3 jiu4 shi4 ge4 fan4 tong3",
+      "explicit_extra_tones": [
+        "ni3 jiu4 shi4 ge5 fan4 tong3"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-050",
+      "word": "你个窝囊废",
+      "alias": "你这窝囊废",
+      "primary_numeric": "ni3 zhe4 wo1 nang1 fei4",
+      "explicit_extra_tones": [
+        "ni3 zhe4 wo1 nang5 fei4"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "alias": "你这贱人",
+      "primary_numeric": "ni3 zhe4 jian4 ren2",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "alias": "你个贱人",
+      "primary_numeric": "ni3 ge4 jian4 ren2",
+      "explicit_extra_tones": [
+        "ni3 ge5 jian4 ren2"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-054",
+      "word": "你个狗东西",
+      "alias": "你这狗东西",
+      "primary_numeric": "ni3 zhe4 gou3 dong1 xi1",
+      "explicit_extra_tones": [
+        "ni3 zhe4 gou3 dong1 xi5"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "我要打你",
+      "primary_numeric": "wo3 yao4 da3 ni3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "我就动手打你",
+      "primary_numeric": "wo3 jiu4 dong4 shou3 da3 ni3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "再说我就打你",
+      "primary_numeric": "zai4 shuo1 wo3 jiu4 da3 ni3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "再哔哔我就动手了",
+      "primary_numeric": "zai4 bi4 bi4 wo3 jiu4 dong4 shou3 le5",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-056",
+      "word": "打断你的腿",
+      "alias": "打断你腿",
+      "primary_numeric": "da3 duan4 ni3 tui3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-064",
+      "word": "一直骚扰你",
+      "alias": "不停骚扰你",
+      "primary_numeric": "bu4 ting2 sao1 rao3 ni3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "alias": "你不配读大学",
+      "primary_numeric": "ni3 bu4 pei4 du2 da4 xue2",
+      "explicit_extra_tones": [
+        "ni3 bu2 pei4 du2 da4 xue2"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "alias": "你不配当大学生",
+      "primary_numeric": "ni3 bu4 pei4 dang1 da4 xue2 sheng1",
+      "explicit_extra_tones": [
+        "ni3 bu2 pei4 dang1 da4 xue2 sheng1"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "alias": "全宿舍都嫌弃你",
+      "primary_numeric": "quan2 su4 she4 dou1 xian2 qi4 ni3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "alias": "全班都嫌弃你",
+      "primary_numeric": "quan2 ban1 dou1 xian2 qi4 ni3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "alias": "往你脸上泼硫酸",
+      "primary_numeric": "wang3 ni3 lian3 shang4 po1 liu2 suan1",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "alias": "给你泼硫酸",
+      "primary_numeric": "gei3 ni3 po1 liu2 suan1",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "alias": "泼他硫酸",
+      "primary_numeric": "po1 ta1 liu2 suan1",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "alias": "捅他一刀",
+      "primary_numeric": "tong3 ta1 yi1 dao1",
+      "explicit_extra_tones": [
+        "tong3 ta1 yi4 dao1"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "alias": "给你一刀",
+      "primary_numeric": "gei3 ni3 yi1 dao1",
+      "explicit_extra_tones": [
+        "gei3 ni3 yi4 dao1"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-131",
+      "word": "不答应就一直缠着你",
+      "alias": "不答应我就一直缠着你",
+      "primary_numeric": "bu4 da1 ying4 wo3 jiu4 yi4 zhi2 chan2 zhe5 ni3",
+      "explicit_extra_tones": [],
+      "M1_status": "PENDING"
+    }
+  ],
+  "shared_per_entry_whole_phrase_path_limit": 8,
+  "shared_compiled_key_limit": 16,
+  "alias_phrase_field_limit": 6,
+  "max_syllables": 16,
+  "max_key_characters": 64,
+  "match_budget_ms": 50,
+  "before_dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+  "after_dictionary_sha256": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890",
+  "excluded_gap_forms": "not all83 gaps expanded; short ambiguous forms and wrong library defaults such as 活著->huozhu remain proposals only",
+  "other_registered_aliases": "Hanzi aliases remain usable; this opt-in phrase list selects which receive phonetic mappings",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "COLD_dev_fetched": false,
+  "initial_proposal_sha256": "7c944e7bf9e274a84e8634a2be49eb3f5df7cd14a4d307c9c2fccfadc9b1c2c3",
+  "initial_policy_sha256": "8875439c88065fe12090ba5e3206418874fd0c00e0682decdfa984228d9c5bd5",
+  "manual_whole_phrase_tones": {
+    "你就是个饭桶": "ni3 jiu4 shi4 ge5 fan4 tong3",
+    "你这窝囊废": "ni3 zhe4 wo1 nang5 fei4",
+    "你个贱人": "ni3 ge5 jian4 ren2",
+    "你这狗东西": "ni3 zhe4 gou3 dong1 xi5",
+    "捅他一刀": "tong3 ta1 yi4 dao1",
+    "给你一刀": "gei3 ni3 yi4 dao1"
+  },
+  "pronunciation_sources": [
+    {
+      "url": "https://www.gsjtxy.edu.cn/jcjxb/content/169/t2024210-169-17094.html",
+      "use": "一 before non-fourth and 不 before fourth"
+    },
+    {
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=43137",
+      "use": "窝囊 has a neutral final syllable"
+    },
+    {
+      "url": "https://dict.concised.moe.edu.tw/search.jsp?page=2&word=%E8%A5%BF",
+      "use": "东西 has neutral xi when referring to a thing"
+    },
+    {
+      "url": "https://rsc.xmu.edu.cn/info/1066/63545.htm",
+      "use": "classifier 个 commonly neutral"
+    }
+  ]
+}

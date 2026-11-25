@@ -1,0 +1,81 @@
+import csv
+import hashlib
+import json
+from collections import Counter
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+
+ROOT=Path.cwd();QA=ROOT/'docs/qa';LAB=ROOT/'qa-private/us24-recall-20261124'
+dictionary=ROOT/'services/algo/app/data/moderation-v3_12-candidate.json'
+entries=json.loads(dictionary.read_text(encoding='utf-8'))
+policy=json.loads((LAB/'alias-phrases-v3_12-policy-r2.json').read_text(encoding='utf-8'))
+service=ModerationService(dictionary)
+assert service.dictionary_sha256==policy['after_dictionary_sha256']
+with (QA/'US24-v3_11-完整审核清单.csv').open(encoding='utf-8-sig',newline='') as handle:
+    reader=csv.DictReader(handle);fields=list(reader.fieldnames);rows=list(reader)
+fields.insert(fields.index('context_numeric_tones')+1,'pinyin_alias_phrases')
+decisions=['include','agree_level','agree_aliases','agree_pinyin','needs_exemption','m1_comments']
+variants=[]
+for number,item in enumerate(policy['mappings'],1):
+    parent=next(r for r in rows if r['candidate_id']==item['candidate_id'])
+    variants.append(dict(variant_id=f'AP312-{number:03d}',candidate_id=item['candidate_id'],
+        canonical_word=item['word'],hanzi_alias=item['alias'],suggested_level=parent['suggested_level'],
+        default_tool_numeric_reading=item['primary_numeric'],
+        proposed_additional_whole_phrase_tones=' / '.join(item['explicit_extra_tones']),
+        rationale='对已登记普通汉字别名增加显式整词拼音映射；保持原标准词与等级建议',
+        normal_context='完整登记引文的举报、语言科普和反网暴模板；部分已登记动作的明示否定',
+        false_positive_risk='默认工具声调和真实语流可能不同；仅接受登记整词路径及英文边界，未覆盖所有自由语境',
+        test_ids=f'AP312-{number:03d}-*',m1_status='PENDING',**{k:'' for k in decisions}))
+for row,entry in zip(rows,entries,strict=True):
+    assert row['word']==entry['word'] and row['suggested_level']==entry['level']
+    assert row['m1_status']=='PENDING' and all(not row[k] for k in decisions)
+    forms=entry.get('pinyin_phrases',[])
+    row['pinyin_alias_phrases']=json.dumps(forms,ensure_ascii=False,separators=(',',':')) if forms else ''
+    if forms:
+        row['rationale']+='；为已登记汉字别名补充显式整词拼音，避免通过标准词读音猜测不同长度别名'
+        row['normal_context']+='；完整别名拼音的精确引用范围，明示否定与其反转分别测试'
+        row['false_positive_risk']+='；默认工具声调与补充语流路径分别登记；不自动展开其他别名'
+        row['test_ids']+=';'+ ';'.join(v['test_ids'] for v in variants if v['candidate_id']==row['candidate_id'])
+    row['technical_self_check']='FUNCTIONAL_PASS; SHARED_BOUND_CHECKED; BUSINESS_PENDING'
+for name,values,headers in [('US24-v3_12-完整审核清单.csv',rows,fields),
+                            ('US24-v3_12-别名拼音映射.csv',variants,list(variants[0]))]:
+    with (QA/name).open('x',encoding='utf-8',newline='') as handle:
+        writer=csv.DictWriter(handle,fieldnames=headers,lineterminator='\n');writer.writeheader();writer.writerows(values)
+digest=service.dictionary_sha256
+text=['# US24 v3.12 词库逐条审核表\n',
+    '共132条：原5条、PR83新增41条、v2新增24条、v3新增50条、v3.5新增12条。标准词及等级建议不变；本次18条规则的27个已登记汉字别名增加整词拼音映射。\n',
+    f'词库SHA256：`{digest}`。HIGH47、MEDIUM80、LOW5；HIGH阻断，MEDIUM/LOW放行，默认原5条。全部132条PENDING、792个业务决定栏留空。27个别名另有独立编号和162个空白决定栏，见[映射CSV](US24-v3_12-别名拼音映射.csv)。\n',
+    '每词标准词与别名共享8个完整读音路径、16个编译键；最多6个显式汉字别名，不展开所有别名或多音字组合。数字路径区分工具默认值与登记补充值，具体是否保留由M1逐项确认。正常语境仅在完整已知表达和精确范围内处理。\n',
+    '见[本次复测](US24-v3_12-别名拼音与否定边界复测.md)、[完整CSV](US24-v3_12-完整审核清单.csv)、[历史训练结果](US24-拼音语义分类训练与复测报告.md)。广义95%目标仍未通过，M3独立复现待安排；原[3.11审核表](US24-v3_11-M1逐条审核表.md)保留。\n']
+for row in rows:
+    def value(name):return row[name] or '无'
+    text.extend([f"\n## {row['candidate_id']} · {row['word']}\n",
+        f"来源：{row['origin']}；类别：{row['category']}；等级建议：{row['suggested_level']}；状态：PENDING。\n",
+        f"别名：{value('variants')}。定向别名：{value('targeted_aliases')}。标准词需定向：{row['target_required']}。\n",
+        f"拼音：{row['pinyin']}；标准词整词读音：{value('context_pronunciation')}；数字声调路径：{value('context_numeric_tones')}；完整拼写别名：{value('pinyin_aliases')}；汉字同音：{row['hanzi_homophone']}。\n"])
+    for variant in variants:
+        if variant['candidate_id']==row['candidate_id']:
+            text.append(f"{variant['variant_id']}：{variant['hanzi_alias']}；默认工具路径：{variant['default_tool_numeric_reading']}；建议补充路径：{variant['proposed_additional_whole_phrase_tones'] or '无'}；业务状态：PENDING。\n")
+    text.append(f"精确正常短语：{value('allow_phrases')}；拼音正常短语：{value('pinyin_allow_phrases')}。\n")
+    if row['unicode_variant_ids']:text.append(f"Unicode变体编号：{row['unicode_variant_ids']}；码点：{row['unicode_codepoints']}。\n")
+    text.extend([f"收录理由：{row['rationale']}。\n",f"正常语境：{row['normal_context']}。误报风险：{row['false_positive_risk']}。\n",
+        f"对应测试：{row['test_ids']}。\n\n",'- 是否收录：____\n','- 是否同意等级：____\n',
+        '- 是否同意别名：____\n','- 是否同意拼音规则：____\n','- 是否需要豁免：____\n','- 修改意见：____\n'])
+with (QA/'US24-v3_12-M1逐条审核表.md').open('x',encoding='utf-8',newline='\n') as handle:handle.write('\n'.join(text))
+key_counts=Counter(word for word,_ in service.pinyin.values())
+tone_counts=Counter(word for _,word,_ in service.numeric_tones)
+audit=dict(rules=132,changed_entries=18,alias_phrases=27,new_canonical_rules=0,
+    M1_pending=132,parent_decision_blanks=sum(not r[k] for r in rows for k in decisions),
+    variant_M1_pending=27,variant_decision_blanks=sum(not r[k] for r in variants for k in decisions),
+    actual_maximum_compiled_keys_per_entry=max(key_counts.values()),
+    actual_maximum_numeric_paths_per_entry=max(tone_counts.values()),
+    actual_maximum_alias_forms_per_entry=max(len(e.get('pinyin_phrases',[])) for e in entries),
+    shared_path_limit=8,shared_key_limit=16,alias_field_limit=6,dictionary_sha256=digest,
+    schema_sha256=hashlib.sha256((ROOT/'services/algo/app/models/dictionary.py').read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+    M3_reproduction='PENDING',production_acceptance=False)
+assert audit['parent_decision_blanks']==792 and audit['variant_decision_blanks']==162
+assert audit['actual_maximum_compiled_keys_per_entry']<=16 and audit['actual_maximum_numeric_paths_per_entry']<=8
+with (LAB/'alias-phrases-v3_12-review-and-bounds.json').open('x',encoding='utf-8') as handle:
+    json.dump(audit,handle,ensure_ascii=False,indent=2)
+print(json.dumps(audit,ensure_ascii=False),flush=True)

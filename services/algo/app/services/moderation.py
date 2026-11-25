@@ -14,12 +14,14 @@ from pypinyin import Style, pinyin
 
 from app.models.dictionary import DictionaryEntry
 from app.models.moderation import Hit, ModerationResponse
-from app.services.moderation_context import context_spans, has_clause_boundary
+from app.services.moderation_context import bounded_long_pinyin, context_spans, has_clause_boundary
 from app.services.normalization import canonicalize, normalize
 from app.services.pronunciation import (
     MAX_PINYIN_LENGTH,
+    MAX_READINGS,
     numeric_tone_pattern,
     numeric_tone_prefixed_patterns,
+    phrase_readings,
     pronunciation_keys,
 )
 from app.services.targeted_matching import (
@@ -116,13 +118,26 @@ class ModerationService:
                 # Only actual phrase readings and numeric tones may be split/joined.
                 # Explicit typo aliases are exact whole Latin tokens; joining parts
                 # would silently invent additional unreviewed typo combinations.
-                self.joinable_pinyin.update(pronunciation_keys(word, record.pinyin_readings))
-                keys = pronunciation_keys(word, record.pinyin_readings, record.pinyin_aliases)
-                if record.pinyin_tone_numbers:
-                    for prefix, pattern in numeric_tone_prefixed_patterns(
-                            word, record.pinyin_readings, record.pinyin_tone_readings):
-                        self.numeric_tones.append((pattern, word, level))
-                        self.numeric_prefixes[pattern] = prefix
+                forms = [(word, record.pinyin_readings, record.pinyin_tone_readings)]
+                forms.extend((value.phrase, value.readings, value.tone_readings)
+                             for value in record.pinyin_phrases)
+                keys, joinable, phonemes, tone_paths = set(), set(), set(), {}
+                for index, (phrase, readings, tones) in enumerate(forms):
+                    aliases = record.pinyin_aliases if index == 0 else ()
+                    keys.update(pronunciation_keys(phrase, readings, aliases))
+                    joinable.update(pronunciation_keys(phrase, readings))
+                    phonemes.update(tuple(path) for path in phrase_readings(phrase, readings))
+                    if record.pinyin_tone_numbers:
+                        for prefix, pattern in numeric_tone_prefixed_patterns(
+                                phrase, readings, tones):
+                            tone_paths.setdefault(pattern.pattern, (prefix, pattern))
+                if (len(phonemes) > MAX_READINGS or len(tone_paths) > MAX_READINGS
+                        or len(keys) > MAX_READINGS * 2):
+                    raise ValueError("Too many entry pinyin mappings")
+                self.joinable_pinyin.update(joinable)
+                for prefix, pattern in tone_paths.values():
+                    self.numeric_tones.append((pattern, word, level))
+                    self.numeric_prefixes[pattern] = prefix
                 for phrase in record.pinyin_allow_phrases:
                     if (not re.fullmatch(r"[a-z]+(?: [a-z]+){1,15}", phrase)
                             or len(phrase) > 128
@@ -328,6 +343,8 @@ class ModerationService:
 
     def self_context(self, kind, quote):
         """Finite first-person forms, never a global exemption for asking for help."""
+        if kind == "denial" and len(quote) > 32 and not bounded_long_pinyin(quote):
+            return False
         words = {"harm": {"去死"}, "blame": {"傻逼", "废物"},
                  "denial": {"杀了你", "弄死你", "捅死你", "打死你", "砍死你", "掐死你",
                             "泼你硫酸", "捅你一刀", "骚扰到你退学", "堵到你不敢出门"}}

@@ -1,0 +1,213 @@
+{
+  "scope": "exact normal homophone context development; not new independent evaluation",
+  "files": [
+    {
+      "file": "alias-normal-homophones-v3_13-first-probe.json",
+      "private_sha256": "b0c207f57f7eec45fd87d881c902e6f320e1b6d1e62df88fce3a584d80480b36",
+      "public_lf_sha256": "6a0b3bbb224f858a8b52876395676151c2a197c32514a5870d78aa808e41a20a",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-context-v3_13-policy.json",
+      "private_sha256": "055a51415c458b1335624e3270d681c1ba418d8871ecdc8b810660ccaf995ff3",
+      "public_lf_sha256": "519c223785845be4916de580538e67c06883bd4fd1c2755d19e10b244319de09",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-fixture-freeze.json",
+      "private_sha256": "02608b3fb45035c32bb2536f5e28c9a530ab0834392764bcaa1657d1af6e59d5",
+      "public_lf_sha256": "30bc992f3d8adf2814e6d323ae0c1b323e8df7dc7004443b946ec32255b817c2",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-paired.json",
+      "private_sha256": "8e62698063f6f4003bfb12f4cfd4b0f54612f69c9f029126ba866ce216b806b0",
+      "public_lf_sha256": "dbdc3874df3bb2248120263093cf7a07399267dc66ed49db11101d553567c145",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-probe.json",
+      "private_sha256": "7deb9990bf0fd39c08425317044f583bb9ff72758f4f4a1899caa0d984028949",
+      "public_lf_sha256": "4c66d59eb7417326b5f1808bfc216d546bdf88fa227379c4495f6c72761f568e",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-probe-r2.json",
+      "private_sha256": "3e0b3a61c912f0e00d004f62758ace5279cf2923150368165d1c5b42da923921",
+      "public_lf_sha256": "6206ebf2aae5915d4db1217928b3042fa1d2440703f294dda9e3e65519b342d3",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-s1-flag-correction.json",
+      "private_sha256": "00d73139ee0fe53e58d50d7fb55df8773137fa403731e439dffc83a1548d04f9",
+      "public_lf_sha256": "988ff8eeb8c8590de26f601bc045cc76dd61c466260434bb1b430f4013cb8277",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "us24-development.v3_13.initial-invalid-s1-flags.jsonl",
+      "private_sha256": "545a163fe37f74abf3626a5e9a2588325e520772cf5773f8452b8e30bc65c046",
+      "public_lf_sha256": "545a163fe37f74abf3626a5e9a2588325e520772cf5773f8452b8e30bc65c046",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-http.json",
+      "private_sha256": "47872c7b37c3bf775b82e0b0257120dca1e1a8d9e596f460cfd08000c88e46ee",
+      "public_lf_sha256": "876ccf21b71a8de9fb32e624277ac7675c0f3dfba977a4f912c37684fc0a4343",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-performance.json",
+      "private_sha256": "d770e34b334d69beada32113f45b0bae4ec73b619fd91bb5aba1d86f9c2e4e5e",
+      "public_lf_sha256": "f90d4ee22c8d45b023142b47ed56f685a67b94d926e67964d8663cf9466dd5fa",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-model-input-equivalence.json",
+      "private_sha256": "c720da56796ff3ff78430cc91de9e7f32d62ac77cd2668623f37a7a71297dbc7",
+      "public_lf_sha256": "bfc596d22d55c2c1f4021e6f516bbe4d5cd728a17e53aa6b85f4b7ce7eab38b6",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-normal-v3_13-review-structure.json",
+      "private_sha256": "605a13e0bd2db50188285f8116347c20c46d790dde786b1f9c0675efc012fd5a",
+      "public_lf_sha256": "42b1b13101b8868482ebcd5b7f582995490adf5f8a5a5bd0b5a3d609589d8b03",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "pytest-v3_13-final.txt",
+      "private_sha256": "98c1814eef8f9a72857ad40a873a18f7cdd7a830e47b19fe9f38e3231a0f00c5",
+      "public_lf_sha256": "a74b1fb25d94247d22936024c86a7e17bd27d9f43c1c63888630e2c09b9f7f5a",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "ruff-v3_13-final.txt",
+      "private_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "public_lf_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "historical-http-summary.json",
+      "private_sha256": "deeb30a959a004dc4fa471c48dbaebea59edeec37943b3cb8484b6766b321eba",
+      "public_lf_sha256": "c0580f667aacd47992c2ff668178560a5c9983becb39c7d8ad3d5b90665fec0a",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "historical-http-predictions.jsonl",
+      "private_sha256": "bb663388f6c6a890cfce4a63bfe3b5a7e6ac68c0220edb0c0aa4b4b42fb91b04",
+      "public_lf_sha256": "8d4278111342787020faf0a98a7a2a17969d659b685a38f692c4deb1fea9e9c6",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "historical-http-comparison.json",
+      "private_sha256": "72902102b20af652a928803cc98a2bdd33711875e1326700532fbc061f1b998e",
+      "public_lf_sha256": "a824045275e04a8cbf4a32d471f81e798339943bf2f0c50af0d266a4f14c1bb1",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "probe_alias_normal_homophones_v3_13.py.txt",
+      "private_sha256": "6e12da5d97d7f228702a0f7ae1f9693fb396810e500fd02a0a701fc87cfaefce",
+      "public_lf_sha256": "6e12da5d97d7f228702a0f7ae1f9693fb396810e500fd02a0a701fc87cfaefce",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "build_alias_normal_context_v3_13.py.txt",
+      "private_sha256": "bc0e2ba276028e766cd087c8c97168ada49d7f955f46b1639acea9739fb779c0",
+      "public_lf_sha256": "bc0e2ba276028e766cd087c8c97168ada49d7f955f46b1639acea9739fb779c0",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "complete_alias_normal_fixture_v3_13_r2.py.txt",
+      "private_sha256": "59adac56a7b806a98cec15b510922d64e74c08d5ac44fc8ea18a108fca1d1e28",
+      "public_lf_sha256": "59adac56a7b806a98cec15b510922d64e74c08d5ac44fc8ea18a108fca1d1e28",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "correct_s1_fixture_flags_v3_13.py.txt",
+      "private_sha256": "63ad13e43efe81e7aba7c88bf5c1f7528827565bfa104a427a233070d0eb015e",
+      "public_lf_sha256": "63ad13e43efe81e7aba7c88bf5c1f7528827565bfa104a427a233070d0eb015e",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "probe_alias_normal_fixture_v3_13.py.txt",
+      "private_sha256": "6cf985650dd9354a23cc313ce8f705e5d4e72742898ce94ea9b59eafa001b01a",
+      "public_lf_sha256": "6cf985650dd9354a23cc313ce8f705e5d4e72742898ce94ea9b59eafa001b01a",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "check_alias_normal_pairs_v3_13.py.txt",
+      "private_sha256": "d793c7c35d13e85547f5b420024c35c7c6a6af1b108cb5254d7d9a0dbe4c272d",
+      "public_lf_sha256": "d793c7c35d13e85547f5b420024c35c7c6a6af1b108cb5254d7d9a0dbe4c272d",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "check_alias_normal_http_v3_13.py.txt",
+      "private_sha256": "7542714cb701ef392c456c1c2a569a327d67ee04e5b67797b07a1eaa81786bdc",
+      "public_lf_sha256": "7542714cb701ef392c456c1c2a569a327d67ee04e5b67797b07a1eaa81786bdc",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "benchmark_alias_normal_v3_13.py.txt",
+      "private_sha256": "5e4d05e3d8d48646e378c261822e309f05775cea022f31d1eee238abc3c94a8b",
+      "public_lf_sha256": "5e4d05e3d8d48646e378c261822e309f05775cea022f31d1eee238abc3c94a8b",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "qualify_alias_normal_inputs_v3_13.py.txt",
+      "private_sha256": "baa07c2aa4f41ccc35b6087029c631868f528a92c7e334abd4df59d3e95ed179",
+      "public_lf_sha256": "baa07c2aa4f41ccc35b6087029c631868f528a92c7e334abd4df59d3e95ed179",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "evaluate_historical_v3_13_http.py.txt",
+      "private_sha256": "c47a11c4236e8bfda1f437ac2e6e3457fd9e6238d8adbbaaf15739826ea31672",
+      "public_lf_sha256": "c47a11c4236e8bfda1f437ac2e6e3457fd9e6238d8adbbaaf15739826ea31672",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "compare_historical_aliases_v3_13.py.txt",
+      "private_sha256": "c445426386fb74b7dde2d85b8098d0e3502af19e5216819083c94c523f80264f",
+      "public_lf_sha256": "c445426386fb74b7dde2d85b8098d0e3502af19e5216819083c94c523f80264f",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "build_alias_normal_review_v3_13.py.txt",
+      "private_sha256": "09875d749d76fc25379cc8849fc68cf987377300a2d6083226bd2692d5c2ecc8",
+      "public_lf_sha256": "09875d749d76fc25379cc8849fc68cf987377300a2d6083226bd2692d5c2ecc8",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "audit_every_candidate_mapping_v3_13.py.txt",
+      "private_sha256": "fa444d0a77a69836aef13b993a1a186705b22536fc6adcf2bfe592aedb739fdd",
+      "public_lf_sha256": "fa444d0a77a69836aef13b993a1a186705b22536fc6adcf2bfe592aedb739fdd",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "publish_alias_normal_v3_13.py.txt",
+      "private_sha256": "301a950728a62882c0793011a2a54560ac70b6193cd4f77c13ca9512da8e0826",
+      "public_lf_sha256": "301a950728a62882c0793011a2a54560ac70b6193cd4f77c13ca9512da8e0826",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    }
+  ],
+  "dictionary_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+  "rules": 132,
+  "new_rules": 0,
+  "new_hanzi_normal_phrases": 7,
+  "new_pinyin_normal_phrases": 17,
+  "rows": 149,
+  "old_rows": 6366,
+  "old_output_changes": 0,
+  "technical_mapping_checks": 1349,
+  "initial_normal_probe_rows": 25,
+  "initial_any_level_false_positives": 24,
+  "fixture_derived_S1_flags_corrected": 2,
+  "existing_development_labels_changed": 0,
+  "new_any_level_labels_changed": 0,
+  "M1_pending": 132,
+  "decision_blanks": 792,
+  "variant_M1_pending": 27,
+  "variant_decision_blanks": 162,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

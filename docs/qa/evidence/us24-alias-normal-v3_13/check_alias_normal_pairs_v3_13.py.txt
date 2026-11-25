@@ -1,0 +1,86 @@
+import argparse
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+REGISTRY=LAB/'alias-normal-v3_13-fixture-freeze.json'
+parser=argparse.ArgumentParser();parser.add_argument('--worker',choices=['before','after']);args=parser.parse_args()
+
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def score(rows):
+    report={}
+    for mode in ['any_level','high_blocking']:
+        cm=dict(tp=0,fp=0,fn=0,tn=0)
+        for row in rows:
+            gold=bool(row['expected_hits']) if mode=='any_level' else row['blocked']
+            pred=(not gold if row['error'] else bool(row['response']['hits'])
+                  if mode=='any_level' else not row['response']['passed'])
+            cm['tp' if pred and gold else 'fp' if pred else 'fn' if gold else 'tn']+=1
+        tp,fp,fn,tn=(cm[k] for k in ['tp','fp','fn','tn'])
+        report[mode]=dict(confusion_matrix=cm,recall=tp/(tp+fn) if tp+fn else None,
+                         precision=tp/(tp+fp) if tp+fp else None,fpr=fp/(fp+tn) if fp+tn else None)
+    return report
+
+if not args.worker:
+    assert not REGISTRY.exists()
+    files=sorted((ROOT/'docs/qa/data').glob('us24-development.*.jsonl'))
+    registry=dict(scope='exact file list frozen before paired replay; future fixtures excluded',
+        datasets=[dict(file=p.name,sha256=sha(p)) for p in files],
+        dictionaries={v:dict(file=f'services/algo/app/data/moderation-v3_{n}-candidate.json',
+                            sha256=sha(ROOT/f'services/algo/app/data/moderation-v3_{n}-candidate.json'))
+                      for v,n in [('before',12),('after',13)]},
+        code_sha256={p.relative_to(ROOT).as_posix():sha(p) for p in [
+            *(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py']})
+    with REGISTRY.open('x',encoding='utf-8') as handle:json.dump(registry,handle,ensure_ascii=False,indent=2)
+registry=json.loads(REGISTRY.read_text(encoding='utf-8'))
+for name,expected in registry['code_sha256'].items():assert sha(ROOT/name)==expected
+for entry in registry['datasets']:assert sha(ROOT/'docs/qa/data'/entry['file'])==entry['sha256']
+if args.worker:
+    from app.services.moderation import ModerationService
+    sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+    from evaluate_candidate import development
+    source=registry['dictionaries'][args.worker];assert sha(ROOT/source['file'])==source['sha256']
+    service=ModerationService(ROOT/source['file']);count=0
+    with (LAB/f'alias-normal-v3_13-{args.worker}.jsonl').open('x',encoding='utf-8',newline='\n') as handle:
+        for entry in registry['datasets']:
+            for row in development(ROOT/'docs/qa/data'/entry['file']):
+                failure=None;response=None;began=time.perf_counter()
+                try:response=service.check(row['text']).model_dump()
+                except Exception as error:failure=type(error).__name__
+                expected=row.get('expected_hits',([dict(word=row['expected_word'],level=row['expected_level'])] if row['expected_word'] else []))
+                handle.write(json.dumps(dict(dataset=entry['file'],id=row['id'],source_text_sha256=hashlib.sha256(row['text'].encode()).hexdigest(),
+                    expected_hits=expected,blocked=row['blocked'],category=row['category'],response=response,error=failure,
+                    elapsed_ms=(time.perf_counter()-began)*1000),ensure_ascii=False)+'\n');count+=1
+    print(json.dumps(dict(variant=args.worker,rows=count,dictionary_sha256=service.dictionary_sha256)),flush=True)
+    raise SystemExit(0)
+env=dict(os.environ);env['PYTHONPATH']=str(ROOT/'services/algo')
+for variant in ['before','after']:
+    subprocess.run([sys.executable,'-X','utf8',str(Path(__file__)),'--worker',variant],env=env,check=True)
+old,new=([json.loads(line) for line in (LAB/f'alias-normal-v3_13-{v}.jsonl').read_text(encoding='utf-8').splitlines()] for v in ['before','after'])
+assert len(old)==len(new)==6515
+changes=[];fresh=[];before_fresh=[];failures=[]
+for a,b in zip(old,new,strict=True):
+    for key in ['dataset','id','source_text_sha256','expected_hits','blocked']:assert a[key]==b[key]
+    if b['dataset']=='us24-development.v3_13.jsonl':
+        fresh.append(b);before_fresh.append(a)
+        if b['error'] or b['response']['hits']!=b['expected_hits'] or b['response']['passed']!=(not b['blocked']):failures.append(b['id'])
+    elif a['response']!=b['response'] or a['error']!=b['error']:
+        changes.append(dict(dataset=b['dataset'],id=b['id'],before=a['response'],after=b['response']))
+assert len(fresh)==149
+report=dict(scope='literal development; exact6515 file list, no new broad or independent evaluation',
+    rows=6515,old_development_rows=6366,new_development_rows=149,
+    before=score(before_fresh),after=score(fresh),old_output_changes=changes,new_mapping_failures=failures,
+    errors=sum(bool(r['error']) for r in new),
+    by_category={key:score([r for r in fresh if r['category']==key]) for key in sorted({r['category'] for r in fresh})},
+    registry_sha256=sha(REGISTRY),before_predictions_sha256=sha(LAB/'alias-normal-v3_13-before.jsonl'),
+    after_predictions_sha256=sha(LAB/'alias-normal-v3_13-after.jsonl'),
+    M1_review='PENDING',M3_reproduction='PENDING',COLD_dev_fetched=False,production_acceptance=False)
+with (LAB/'alias-normal-v3_13-paired.json').open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps({k:report[k] for k in ['rows','before','after','old_output_changes','new_mapping_failures','errors']},ensure_ascii=False),flush=True)
+raise SystemExit(int(bool(changes or failures or report['errors'])))

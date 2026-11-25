@@ -1,0 +1,47 @@
+import copy
+import hashlib
+import json
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+from pypinyin import Style,lazy_pinyin,pinyin
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+old_path=ROOT/'services/algo/app/data/moderation-v3_11-candidate.json'
+entries=json.loads(old_path.read_text(encoding='utf-8'))
+selected={
+    8:['咒你全家死光'],11:['你这杂种'],12:['你这畜生'],13:['你就是畜生'],22:['你这婊子'],
+    48:['你这蠢猪'],49:['你就是个饭桶'],50:['你这窝囊废'],52:['你这贱人','你个贱人'],54:['你这狗东西'],
+    55:['我要打你','我就动手打你','再说我就打你','再哔哔我就动手了'],56:['打断你腿'],64:['不停骚扰你'],
+    110:['你不配读大学','你不配当大学生'],111:['全宿舍都嫌弃你','全班都嫌弃你'],
+    128:['往你脸上泼硫酸','给你泼硫酸','泼他硫酸'],129:['捅他一刀','给你一刀'],
+    131:['不答应我就一直缠着你'],
+}
+mapping=[]
+for index,aliases in selected.items():
+    entry=entries[index-1];assert entry['pinyin'] and entry['pinyin_tone_numbers']
+    forms=[]
+    for alias in aliases:
+        assert alias in entry['aliases']
+        primary=' '.join(p[0] for p in pinyin(alias,style=Style.TONE3,neutral_tone_with_five=True))
+        sandhi=' '.join(lazy_pinyin(alias,style=Style.TONE3,neutral_tone_with_five=True,tone_sandhi=True))
+        form=dict(phrase=alias)
+        if primary!=sandhi:form['tone_readings']=[sandhi]
+        forms.append(form)
+        mapping.append(dict(candidate_id=f'US24-{index:03d}',word=entry['word'],alias=alias,
+            primary_numeric=primary,explicit_extra_tones=form.get('tone_readings',[]),M1_status='PENDING'))
+    entry['pinyin_phrases']=forms
+new_path=ROOT/'services/algo/app/data/moderation-v3_12-candidate.json'
+with new_path.open('x',encoding='utf-8',newline='\n') as handle:
+    json.dump(entries,handle,ensure_ascii=False,indent=2);handle.write('\n')
+service=ModerationService(new_path)
+policy=dict(scope='selected existing ordinary Hanzi aliases, explicitly mapped to parent word; no new canonical rules',
+    canonical_rules=132,changed_entries=len(selected),new_alias_phrases=len(mapping),mappings=mapping,
+    shared_per_entry_whole_phrase_path_limit=8,shared_compiled_key_limit=16,alias_phrase_field_limit=6,
+    max_syllables=16,max_key_characters=64,match_budget_ms=50,
+    before_dictionary_sha256=hashlib.sha256(old_path.read_bytes()).hexdigest(),after_dictionary_sha256=service.dictionary_sha256,
+    excluded_gap_forms='not all83 gaps expanded; short ambiguous forms and wrong library defaults such as 活著->huozhu remain proposals only',
+    other_registered_aliases='Hanzi aliases remain usable; this opt-in phrase list selects which receive phonetic mappings',
+    M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False,COLD_dev_fetched=False)
+with (LAB/'alias-phrases-v3_12-policy.json').open('x',encoding='utf-8') as handle:json.dump(policy,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rules=132,changed_entries=len(selected),new_alias_phrases=len(mapping),dictionary_sha256=service.dictionary_sha256)),flush=True)
