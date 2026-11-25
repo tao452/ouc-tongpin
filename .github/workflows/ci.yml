@@ -202,6 +202,11 @@ jobs:
         run: >-
           python scripts/evaluate_recall.py ../../docs/qa/data/us24-development.v3.jsonl
           --output ../../qa-private/us24-v3-development.json
+      - name: Verify scoped normal-phrase candidate
+        run: >-
+          python scripts/evaluate_variant.py ../../docs/qa/data/us24-development.v3_10.jsonl
+          --dictionary app/data/moderation-v3_10-candidate.json
+          --output ../../qa-private/us24-v3_10-function.json
       - uses: actions/cache@v4
         with:
           path: qa-private/cold-test.csv

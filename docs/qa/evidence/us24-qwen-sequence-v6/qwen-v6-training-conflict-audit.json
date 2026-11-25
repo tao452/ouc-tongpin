@@ -1,0 +1,177 @@
+{
+  "scope": "training label/input audit; native labels retained; no evaluation rows removed",
+  "training_rows": 42371,
+  "unique_transformed_inputs": 42294,
+  "mixed_label_groups": 14,
+  "mixed_label_groups_including_new_homophones": 0,
+  "conflict_groups": [
+    [
+      {
+        "id": "COLD-TRAIN-02143",
+        "label": 1,
+        "transformed_sha256": "bc0fda9d1a1079f3be0f6a3e3f431a16198d5a93c8def4858297607a5d78ea8e"
+      },
+      {
+        "id": "COLD-TRAIN-23742",
+        "label": 0,
+        "transformed_sha256": "bc0fda9d1a1079f3be0f6a3e3f431a16198d5a93c8def4858297607a5d78ea8e"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-02209",
+        "label": 0,
+        "transformed_sha256": "c28a4543b2a461cda1b5b0e7762dfb6ccf1d369cd7d075ccd102b122e8e2eb2c"
+      },
+      {
+        "id": "COLD-TRAIN-03527",
+        "label": 1,
+        "transformed_sha256": "c28a4543b2a461cda1b5b0e7762dfb6ccf1d369cd7d075ccd102b122e8e2eb2c"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-03558",
+        "label": 1,
+        "transformed_sha256": "ba8bc27c9980ad3819f358b89ce031d3964465690ef50b9b36cc8a4554d307a2"
+      },
+      {
+        "id": "COLD-TRAIN-12694",
+        "label": 0,
+        "transformed_sha256": "ba8bc27c9980ad3819f358b89ce031d3964465690ef50b9b36cc8a4554d307a2"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-03936",
+        "label": 0,
+        "transformed_sha256": "517c4e35358203c64ae916aeda0ba83c85dd56c5197a2bd22f263a072d3f5469"
+      },
+      {
+        "id": "COLD-TRAIN-16746",
+        "label": 1,
+        "transformed_sha256": "517c4e35358203c64ae916aeda0ba83c85dd56c5197a2bd22f263a072d3f5469"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-04174",
+        "label": 0,
+        "transformed_sha256": "67fdc19acf62478436e377267ec34ecfee747cae89d1e388c7959bb1833b30f1"
+      },
+      {
+        "id": "COLD-TRAIN-25019",
+        "label": 1,
+        "transformed_sha256": "67fdc19acf62478436e377267ec34ecfee747cae89d1e388c7959bb1833b30f1"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-05381",
+        "label": 0,
+        "transformed_sha256": "eef78fd0ed798cfddba045b49b382d7649b289bfe0afa48b1e046a5da98e8a60"
+      },
+      {
+        "id": "COLD-TRAIN-06556",
+        "label": 1,
+        "transformed_sha256": "eef78fd0ed798cfddba045b49b382d7649b289bfe0afa48b1e046a5da98e8a60"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-07132",
+        "label": 1,
+        "transformed_sha256": "29432cd7b7f32f6d0fb23c5f50bd25452984258eda4212660f1917cedbd0bbac"
+      },
+      {
+        "id": "COLD-TRAIN-22441",
+        "label": 0,
+        "transformed_sha256": "29432cd7b7f32f6d0fb23c5f50bd25452984258eda4212660f1917cedbd0bbac"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-07882",
+        "label": 1,
+        "transformed_sha256": "3713f4eb19fff998c0a745649cbaf4e1111fb165c962fe4c25344ce2e0f9198f"
+      },
+      {
+        "id": "COLD-TRAIN-22721",
+        "label": 0,
+        "transformed_sha256": "3713f4eb19fff998c0a745649cbaf4e1111fb165c962fe4c25344ce2e0f9198f"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-08660",
+        "label": 1,
+        "transformed_sha256": "c44123adf2e7170ac7c6378022d6bb283057f484fb9c75af6c00c7aaa29a1091"
+      },
+      {
+        "id": "COLD-TRAIN-21203",
+        "label": 0,
+        "transformed_sha256": "c44123adf2e7170ac7c6378022d6bb283057f484fb9c75af6c00c7aaa29a1091"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-12284",
+        "label": 1,
+        "transformed_sha256": "6b25c2e21d5a66b7bf38b7e0897491da2aa1369d03732d0e7e703c301fba624f"
+      },
+      {
+        "id": "COLD-TRAIN-15848",
+        "label": 0,
+        "transformed_sha256": "6b25c2e21d5a66b7bf38b7e0897491da2aa1369d03732d0e7e703c301fba624f"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-17798",
+        "label": 0,
+        "transformed_sha256": "078e2ae0e19886af8e29c16ea5f0b70c4b65fc7c1fa00d7d0eafb512d808d1d9"
+      },
+      {
+        "id": "COLD-TRAIN-20642",
+        "label": 1,
+        "transformed_sha256": "078e2ae0e19886af8e29c16ea5f0b70c4b65fc7c1fa00d7d0eafb512d808d1d9"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-18324",
+        "label": 1,
+        "transformed_sha256": "c4aacb9558bf427cc7eed46cd1320091aae0d284227c80a18ac32a44f5da29e1"
+      },
+      {
+        "id": "COLD-TRAIN-23764",
+        "label": 0,
+        "transformed_sha256": "c4aacb9558bf427cc7eed46cd1320091aae0d284227c80a18ac32a44f5da29e1"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-18484",
+        "label": 1,
+        "transformed_sha256": "f238ba6697e790ee37140b81e1358a351c0c2cfb46c50582326c96b11a396107"
+      },
+      {
+        "id": "COLD-TRAIN-20146",
+        "label": 0,
+        "transformed_sha256": "f238ba6697e790ee37140b81e1358a351c0c2cfb46c50582326c96b11a396107"
+      }
+    ],
+    [
+      {
+        "id": "COLD-TRAIN-12284-PY",
+        "label": 1,
+        "transformed_sha256": "e91b2a21fd00b268bef46d0a2de5ff118b061c9bdfed910d9f98fd6cfc1d18ae"
+      },
+      {
+        "id": "COLD-TRAIN-15848-PY",
+        "label": 0,
+        "transformed_sha256": "e91b2a21fd00b268bef46d0a2de5ff118b061c9bdfed910d9f98fd6cfc1d18ae"
+      }
+    ]
+  ]
+}

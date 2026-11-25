@@ -1,0 +1,40 @@
+import json
+from pathlib import Path
+
+import torch
+from safetensors.torch import load_file
+
+from phonetic_recheck_metrics import summarize
+from qwen_sequence_model_v6 import create_model,digest
+from train_qwen_sequence_v5d import predict,source_sha
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+torch.set_num_threads(4)
+weights=LAB/'qwen-sequence-v6/epoch-1/parameters.safetensors'
+report=json.loads((weights.parent/'report.json').read_text(encoding='utf-8'))
+assert digest(weights)==report['weights_sha256']
+features=LAB/'qwen-raw-probe-v1-inputs/features.pt'
+prepared=torch.load(features,map_location='cpu',weights_only=True)
+assert len(prepared['records'])==3258
+model,metadata=create_model();state=load_file(str(weights),device='cpu')
+expected={name for name,p in model.named_parameters() if p.requires_grad}
+assert set(state)==expected
+parameters=dict(model.named_parameters())
+with torch.no_grad():
+    for name,value in state.items():parameters[name].copy_(value)
+del state
+output=LAB/'qwen-raw-probe-v1';output.mkdir(exist_ok=False)
+policy=dict(scope='sameV6weights raw-input ablation; all3258 development rows; no parameter updates',
+    weights_sha256=digest(weights),features_sha256=digest(features),input_policy=prepared['policy'],
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'qwen_sequence_model_v6.py',
+        LAB/'train_qwen_sequence_v5d.py',LAB/'phonetic_recheck_metrics.py']},
+    excluded_evaluation_rows=0,COLD_dev_fetched=False,production_acceptance=False)
+with (output/'frozen.json').open('x',encoding='utf-8') as f:json.dump(policy,f,ensure_ascii=False,indent=2)
+predictions,seconds=predict(model,prepared['records'])
+with (output/'predictions.jsonl').open('x',encoding='utf-8') as f:
+    for row in predictions:f.write(json.dumps(row,ensure_ascii=False)+'\n')
+result=dict(evaluation_rows=len(predictions),excluded_evaluation_rows=0,inference_seconds=seconds,
+    metrics=summarize(predictions,output/'thresholds.csv'),production_acceptance=False)
+with (output/'report.json').open('x',encoding='utf-8') as f:json.dump(result,f,ensure_ascii=False,indent=2)
+print(json.dumps(dict(best=result['metrics']['literal_or_model']['best_fpr_eligible'])),flush=True)
+raise SystemExit(0 if any(m['best_fpr_eligible'] and m['best_fpr_eligible']['development_gate_met'] for m in result['metrics'].values()) else 1)

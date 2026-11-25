@@ -4,6 +4,9 @@ import os
 import re
 import time
 import unicodedata
+from bisect import bisect_left, bisect_right
+from collections import deque
+from itertools import islice
 from pathlib import Path
 
 from pydantic import TypeAdapter
@@ -36,6 +39,27 @@ STARTER_DICTIONARY = DEFAULT_DICTIONARY.with_name("words.json")
 MATCH_BUDGET_SECONDS = 0.05
 MAX_INPUT_LENGTH = 2000
 MAX_TOKEN_PARTS = 64
+
+
+def _phrase_index(spans):
+    """Index exact phrase containment without merging adjacent exemptions."""
+    if not spans:
+        return None
+    starts, ends = [], []
+    maximum = -1
+    for left, right in sorted(spans):
+        starts.append(left)
+        maximum = max(maximum, right)
+        ends.append(maximum)
+    return tuple(starts), tuple(ends)
+
+
+def _inside_phrase(index, left, right):
+    if index is None:
+        return False
+    starts, ends = index
+    position = bisect_right(starts, left) - 1
+    return position >= 0 and right <= ends[position]
 
 
 class ModerationInputError(ValueError):
@@ -180,15 +204,22 @@ class ModerationService:
         allowed_spans: dict[str, list[tuple[int, int]]] = {}
         for word, phrases in self.allow_phrases.items():
             check_budget()
-            spans = allowed_spans.setdefault(word, [])
+            spans = None
             for phrase in phrases:
                 offset = normalized.find(phrase)
                 while offset >= 0:
                     check_budget()
                     end = offset + len(phrase)
                     if not has_clause_boundary(canonical[positions[offset]:positions[end - 1] + 1]):
+                        if spans is None:
+                            spans = []
+                            allowed_spans[word] = spans
                         spans.append((offset, end))
                     offset = normalized.find(phrase, offset + 1)
+        phrase_indices = {}
+        for word, spans in allowed_spans.items():
+            check_budget()
+            phrase_indices[word] = _phrase_index(spans)
         for start in range(len(normalized)):
             if start % 32 == 0:
                 check_budget()
@@ -210,27 +241,29 @@ class ModerationService:
                             or ((word, variant) in self.targeted_variants
                                 and not has_target(canonical, left))):
                         continue
-                    if (not any(left <= start and index < right
-                                for left, right in allowed_spans.get(word, []))
+                    if (not _inside_phrase(phrase_indices.get(word), start, index + 1)
                             and not is_context(positions[start], positions[index] + 1)):
                         found[word] = level
         if self.homophones:
             for left, right, (word, level) in homophone_spans(
                     canonical, self.homophones, check_budget):
                 if (not is_context(left, right)
-                        and not any(positions[a] <= left and right <= positions[b - 1] + 1
-                                    for a, b in allowed_spans.get(word, []))):
+                        and not _inside_phrase(phrase_indices.get(word),
+                                               bisect_left(positions, left),
+                                               bisect_left(positions, right))):
                     found[word] = level
         # Preserve whole Latin-token boundaries before removing separators. This detects
         # "say shabi now" and "sha bi", without treating "shabilist" as a match.
-        tokens = list(re.finditer(r"(?<![a-z0-9_])[a-z0-9]+(?![a-z0-9_])", canonical))
-        for start, first in enumerate(tokens):
+        matches = re.finditer(r"(?<![a-z0-9_])[a-z0-9]+(?![a-z0-9_])", canonical)
+        tokens = deque(islice(matches, MAX_TOKEN_PARTS))
+        start = 0
+        while tokens:
+            first = tokens[0]
             if start % 32 == 0:
                 check_budget()
             token = ""
             previous_end = first.start()
-            for end in range(start, min(len(tokens), start + MAX_TOKEN_PARTS)):
-                segment = tokens[end]
+            for end, segment in enumerate(tokens):
                 gap = canonical[previous_end:segment.start()]
                 if (len(gap) > 8 or "_" in gap
                         or any(unicodedata.category(ch)[0] in {"L", "N"} for ch in gap)):
@@ -240,15 +273,20 @@ class ModerationService:
                     break
                 if token in self.pinyin:
                     word, level = self.pinyin[token]
-                    if (word not in found and (end == start or token in self.joinable_pinyin)
+                    if (word not in found and (end == 0 or token in self.joinable_pinyin)
                             and latin_boundary(canonical, first.start(), segment.end(), token)
                             and (word not in self.targeted_words
                                  or has_target(canonical, first.start()))
                             and not is_context(first.start(), segment.end())
                             and not any(left <= first.start() and segment.end() <= right
-                                        for left, right in pinyin_allowed.get(word, []))):
+                                        for left, right in pinyin_allowed.get(word, ()))):
                         found[word] = level
                 previous_end = segment.end()
+            tokens.popleft()
+            following = next(matches, None)
+            if following is not None:
+                tokens.append(following)
+            start += 1
         for index, (pattern, word, level) in enumerate(numeric_candidates):
             if index % 16 == 0:
                 check_budget()
@@ -259,7 +297,7 @@ class ModerationService:
                         and latin_boundary(canonical, match.start(), match.end(), match.group())
                         and not is_context(match.start(), match.end())
                         and not any(left <= match.start() and match.end() <= right
-                                    for left, right in pinyin_allowed.get(word, []))):
+                                    for left, right in pinyin_allowed.get(word, ()))):
                     found[word] = level
         check_budget()
         hits = [Hit(word=word, level=level) for word, level in sorted(

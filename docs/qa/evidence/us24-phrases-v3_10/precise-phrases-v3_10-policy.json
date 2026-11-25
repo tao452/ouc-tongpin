@@ -1,0 +1,58 @@
+{
+  "scope": "proposed per-entry exact normal phrases; no global whitelist or new canonical word/severity change",
+  "previous_dictionary_sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+  "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "additions": {
+    "傻逼": [
+      "砂比参数",
+      "砂比试验",
+      "水砂比",
+      "沙比是音译词",
+      "沙比是虚构人物名"
+    ],
+    "鸡巴": [
+      "几把椅子",
+      "几把钥匙",
+      "几把雨伞",
+      "几把扫帚",
+      "几把扇子",
+      "几把尺子",
+      "几把剪刀",
+      "几把吉他",
+      "几把游戏",
+      "击靶训练",
+      "击靶练习",
+      "击靶比赛",
+      "击靶水平",
+      "击靶成绩",
+      "击靶计分",
+      "G8峰会",
+      "G8会议",
+      "G8项目",
+      "G8接口",
+      "G8节点",
+      "G8寄存器",
+      "鸡把玉米吃完了",
+      "鸡把饲料吃完了",
+      "鸡把米啄干净了",
+      "吉巴罗舞蹈",
+      "吉巴罗的配乐"
+    ],
+    "放屁": [
+      "最近总是放屁",
+      "放屁是正常生理现象",
+      "饭后老是放屁"
+    ]
+  },
+  "pinyin_additions": {
+    "傻逼": [
+      "sha bi can shu",
+      "sha bi shi yan"
+    ]
+  },
+  "normal_phrase_additions": 34,
+  "development_cases": 247,
+  "label_scope": "literal matching proposals; not broad semantic gold or M1 approval",
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

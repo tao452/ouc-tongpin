@@ -1,0 +1,67 @@
+........................................................................ [ 11%]
+........................................................................ [ 22%]
+........................................................................ [ 33%]
+........................................................................ [ 44%]
+........................................................................ [ 55%]
+.................s.............................s........................ [ 66%]
+.....F.................................................................. [ 77%]
+........................................................................ [ 88%]
+.....................................ss................................. [ 99%]
+......                                                                   [100%]
+================================== FAILURES ===================================
+____ test_all_new_development_samples_and_hard_negatives_remain_in_counts _____
+
+expanded = <app.services.moderation.ModerationService object at 0x0000018908847C20>
+
+    def test_all_new_development_samples_and_hard_negatives_remain_in_counts(expanded):
+        rows = development(ROOT / "docs/qa/data/us24-development.v3.jsonl")
+>       result = assess(rows, expanded)
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_recall_candidate.py:83:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\evaluate_candidate.py:72: in assess
+    result = service.check(row["text"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\services\moderation.py:264: in check
+    check_budget()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def check_budget():
+        if time.perf_counter() > deadline:
+>           raise TimeoutError("Moderation matching budget exceeded")
+E           TimeoutError: Moderation matching budget exceeded
+
+app\services\moderation.py:141: TimeoutError
+============================== warnings summary ===============================
+..\..\..\ouc-tongpin\.venv\Lib\site-packages\fastapi\testclient.py:1
+  D:\18199\����\��������\ouc-tongpin\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.12.14-final-0 _______________
+
+Name                                 Stmts   Miss Branch BrPart  Cover   Missing
+--------------------------------------------------------------------------------
+app\__init__.py                          0      0      0      0   100%
+app\body_limit.py                       35      1     16      1    96%   38
+app\main.py                             15      0      0      0   100%
+app\models\__init__.py                   0      0      0      0   100%
+app\models\dictionary.py                51      3     20      3    92%   28, 46, 48
+app\models\moderation.py                18      0      2      0   100%
+app\routers\__init__.py                  0      0      0      0   100%
+app\routers\moderation.py               14      0      0      0   100%
+app\services\__init__.py                 0      0      0      0   100%
+app\services\moderation.py             211      0    110      2    99%   148->150, 155->157
+app\services\moderation_context.py      56      0     24      0   100%
+app\services\normalization.py           25      0      8      0   100%
+app\services\pronunciation.py           55      1     30      3    95%   27->18, 30, 50->45
+app\services\targeted_matching.py       42      0     22      0   100%
+--------------------------------------------------------------------------------
+TOTAL                                  522      5    232      9    98%
+Coverage XML written to file coverage.xml
+Required test coverage of 90% reached. Total coverage: 98.14%
+=========================== short test summary info ===========================
+FAILED tests/test_recall_candidate.py::test_all_new_development_samples_and_hard_negatives_remain_in_counts
+1 failed, 649 passed, 4 skipped, 1 warning in 40.42s

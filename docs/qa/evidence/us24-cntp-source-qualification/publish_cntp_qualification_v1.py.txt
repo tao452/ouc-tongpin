@@ -1,0 +1,34 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+PUBLIC=ROOT/'docs/qa/evidence/us24-cntp-source-qualification'
+PUBLIC.mkdir(exist_ok=False);entries=[]
+
+
+def copy(path,name):
+    raw=path.read_bytes();data=raw.replace(b'\r\n',b'\n');assert len(data)<5*1024*1024
+    with (PUBLIC/name).open('xb') as f:f.write(data)
+    entries.append(dict(file=name,private_path=path.relative_to(LAB).as_posix(),
+        private_sha256=hashlib.sha256(raw).hexdigest(),public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+
+source=LAB/'cntp-parent-audit-v1'
+for name in ['acquisition-policy.json','source-manifest.json','initial-parent-ID-assumption-failure.json','training-parent-audit-r2.json']:
+    copy(source/name,name)
+for name in ['policy.json','new-view-decisions.json']:
+    copy(LAB/'qwen-cntp-domain-v7-inputs'/name,'domain-input-'+name)
+for name in ['acquire_cntp_parent_audit_v1.py','audit_cntp_training_parents_v1.py',
+             'audit_cntp_training_parents_v1_r2.py','prepare_qwen_cntp_domain_v7.py',Path(__file__).name]:copy(LAB/name,name+'.txt')
+policy=json.loads((LAB/'qwen-cntp-domain-v7-inputs/policy.json').read_text(encoding='utf-8'))
+manifest=dict(scope='source/parent qualification and prepared training inputs; not model accuracy or independent assessment',
+    files=entries,upstream_revision='b1e6922487785aec59841bfb909bf40326174373',
+    upstream_homophone_rows=2533,upstream_non_toxic_base_rows=2696,
+    training_rows=policy['training_rows'],training_windows=15967,new_positive_views=1978,new_normal_views=2184,
+    evaluation_rows=3258,excluded_evaluation_rows=0,model_accuracy='NOT_RUN',
+    licence='repository MIT fingerprint retained; parent ToxiCN CC BY-NC-ND4.0; raw/derived text kept private',
+    normal_view_labels='inherited assumptions, not newly annotated gold',
+    COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (PUBLIC/'manifest.json').open('x',encoding='utf-8',newline='\n') as f:json.dump(manifest,f,ensure_ascii=False,indent=2)
+print(json.dumps(dict(public_files=len(entries)+1,training_rows=policy['training_rows'],model_accuracy='NOT_RUN')))

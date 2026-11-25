@@ -1,0 +1,51 @@
+import gc
+import hashlib
+import json
+import sys
+import time
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo'))
+from app.services.moderation import ModerationService
+
+prior=ROOT/'docs/qa/evidence/us24-recall-20261124/unicode-v3_9-performance-r3.json'
+previous=json.loads(prior.read_text(encoding='utf-8'))
+units={k:v['input_unit'] for k,v in previous['measurements'].items()}
+units.update(quantity_phrase='你看这几把椅子。',quantifier_other_attack='这几把椅子旁，弄死你。',
+    material_phrase='这次水砂比参数要填全。',overlapping_material='水砂比参数砂比试验。',
+    shooting_phrase='你这击靶训练成绩很好。',code_phrase='Ｇ８接口和g8节点对齐。',
+    pinyin_material='sha bi can shu ',pinyin_outside='sha bi can shu，shabi。',
+    physiology='饭后老是放屁，想咨询医生。',feed='鸡把玉米吃完了。',culture='吉巴罗的配乐。')
+service=ModerationService(ROOT/'services/algo/app/data/moderation-v3_10-candidate.json')
+active={};starts={};events=[]
+
+
+def observe(phase,info):
+    generation=info['generation']
+    if phase=='start':starts[generation]=time.perf_counter()
+    else:events.append(dict(group=active.get('group'),iteration=active.get('iteration'),generation=generation,
+        milliseconds=(time.perf_counter()-starts.pop(generation))*1000,collected=info['collected']))
+
+
+gc.callbacks.append(observe);measurements={}
+for key,unit in units.items():
+    text=(unit*(2000//len(unit)+1))[:2000]
+    if key in previous['measurements']:
+        assert hashlib.sha256(text.encode()).hexdigest()==previous['measurements'][key]['input_sha256']
+    latencies=[];errors=[]
+    for index in range(100):
+        active.update(group=key,iteration=index);began=time.perf_counter()
+        try:service.check(text)
+        except TimeoutError:errors.append(index)
+        latencies.append((time.perf_counter()-began)*1000)
+    measurements[key]=dict(input_unit=unit,input_sha256=hashlib.sha256(text.encode()).hexdigest(),characters=2000,
+        iterations=100,p95_ms=sorted(latencies)[94],max_ms=max(latencies),timeouts=len(errors),
+        timeout_iteration_ids=errors,latencies_ms=latencies)
+    print(key,'p95',measurements[key]['p95_ms'],'timeouts',len(errors),flush=True)
+with (LAB/'precise-phrases-v3_10-performance-r2.json').open('x',encoding='utf-8') as handle:
+    json.dump(dict(scope='real50ms service budget; old23input types retained +11normal/scope types; GPU domain training active; GC settings unchanged',
+        dictionary_sha256=service.dictionary_sha256,prior_report_sha256=hashlib.sha256(prior.read_bytes()).hexdigest(),
+        source_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+        measurements=measurements,gc_events=events,gc_enabled=gc.isenabled(),gc_thresholds=gc.get_threshold(),engine_sha256={q.relative_to(ROOT).as_posix():hashlib.sha256(q.read_bytes().replace(b'\r\n',b'\n')).hexdigest() for q in [*(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py']},production_acceptance=False),handle,ensure_ascii=False,indent=2)
+raise SystemExit(int(any(v['timeouts'] for v in measurements.values())))

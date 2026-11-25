@@ -1,0 +1,132 @@
+[
+  {
+    "completed_batches": 1000,
+    "total_batches": 2666,
+    "windows_seen": 16000,
+    "epoch_complete": false,
+    "accuracy_status": "NOT_RUN",
+    "evaluation_run": false,
+    "code_sha256": {
+      "train_qwen_sequence_v6.py": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d",
+      "qwen_sequence_model_v6.py": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "dd5f8062c875563da87dd7979ce6de16dafe408c1ee4310c8ed67cd416983f6c",
+    "files": {
+      "optimizer-and-rng.pt": {
+        "bytes": 806375024,
+        "sha256": "069a368d399dd3dfab0cb9f2ee45308e1789c540c7c8c5bf91a1a91443cb91cd"
+      },
+      "parameters.safetensors": {
+        "bytes": 403174848,
+        "sha256": "6f2e7c036a54374d36ae1a48a800aa6b4a7d6874afdcdb1bcde35d9d51fdd6ab"
+      }
+    }
+  },
+  {
+    "completed_batches": 1500,
+    "total_batches": 2666,
+    "windows_seen": 24000,
+    "epoch_complete": false,
+    "accuracy_status": "NOT_RUN",
+    "evaluation_run": false,
+    "code_sha256": {
+      "train_qwen_sequence_v6.py": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d",
+      "qwen_sequence_model_v6.py": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "dd5f8062c875563da87dd7979ce6de16dafe408c1ee4310c8ed67cd416983f6c",
+    "files": {
+      "optimizer-and-rng.pt": {
+        "bytes": 806375024,
+        "sha256": "da8e8930a7b89b4c7e151cd694dba6c0a0c198734be6b745e6d01d7917641341"
+      },
+      "parameters.safetensors": {
+        "bytes": 403174848,
+        "sha256": "d172f61b21893af6d663e7ee714a939d304bff2a220a4b6a5596f360378ccfb7"
+      }
+    }
+  },
+  {
+    "completed_batches": 2000,
+    "total_batches": 2666,
+    "windows_seen": 32000,
+    "epoch_complete": false,
+    "accuracy_status": "NOT_RUN",
+    "evaluation_run": false,
+    "code_sha256": {
+      "train_qwen_sequence_v6.py": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d",
+      "qwen_sequence_model_v6.py": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "dd5f8062c875563da87dd7979ce6de16dafe408c1ee4310c8ed67cd416983f6c",
+    "files": {
+      "optimizer-and-rng.pt": {
+        "bytes": 806375024,
+        "sha256": "d05b5de379a0e3b756a24fd96496f258c340b6caf3461da95887c4416efde4b4"
+      },
+      "parameters.safetensors": {
+        "bytes": 403174848,
+        "sha256": "55d4ec209f4bb047ddce266eb63a6811b92868e3c2950ed8873048539d73e961"
+      }
+    }
+  },
+  {
+    "completed_batches": 2500,
+    "total_batches": 2666,
+    "windows_seen": 40000,
+    "epoch_complete": false,
+    "accuracy_status": "NOT_RUN",
+    "evaluation_run": false,
+    "code_sha256": {
+      "train_qwen_sequence_v6.py": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d",
+      "qwen_sequence_model_v6.py": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "dd5f8062c875563da87dd7979ce6de16dafe408c1ee4310c8ed67cd416983f6c",
+    "files": {
+      "optimizer-and-rng.pt": {
+        "bytes": 806375024,
+        "sha256": "9dc89d00e0c56189822650d7e32adf9166b4b632cadece9fe8655ad808a2538d"
+      },
+      "parameters.safetensors": {
+        "bytes": 403174848,
+        "sha256": "039603e38653cc0d470ae35c362035f271080345965a070ff97b50e626086238"
+      }
+    }
+  },
+  {
+    "completed_batches": 500,
+    "total_batches": 2666,
+    "windows_seen": 8000,
+    "epoch_complete": false,
+    "accuracy_status": "NOT_RUN",
+    "evaluation_run": false,
+    "code_sha256": {
+      "train_qwen_sequence_v6.py": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d",
+      "qwen_sequence_model_v6.py": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "dd5f8062c875563da87dd7979ce6de16dafe408c1ee4310c8ed67cd416983f6c",
+    "files": {
+      "optimizer-and-rng.pt": {
+        "bytes": 806375024,
+        "sha256": "629e389b37288813361c50d1f2f69848e6a02e45b7b5fa67c8f66622a80767ed"
+      },
+      "parameters.safetensors": {
+        "bytes": 403174848,
+        "sha256": "12d69b6792776183882908410dcc9e1f68e32fc8ec7aa5ebe80d71eacabc6172"
+      }
+    }
+  }
+]

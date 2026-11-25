@@ -1,0 +1,47 @@
+import json
+from pathlib import Path
+
+import torch
+from safetensors.torch import load_file
+
+from qwen_sequence_model_v5 import create_model as create_previous, digest
+
+LAB = Path.cwd() / 'qa-private/us24-recall-20261124'
+
+
+def create_model():
+    model, previous = create_previous()
+    weights = LAB / 'qwen-sequence-v5d/epoch-1/adapters.safetensors'
+    report = json.loads((weights.parent / 'report.json').read_text(encoding='utf-8'))
+    assert digest(weights) == report['weights_sha256']
+    state = load_file(str(weights), device='cpu')
+    assert set(state) == {name for name, p in model.named_parameters() if p.requires_grad}
+    actual = dict(model.named_parameters())
+    with torch.no_grad():
+        for name, value in state.items():
+            actual[name].copy_(value)
+    del state
+    # Earlier layers have no trainable parameters and no input-grad hook.
+    model.disable_input_require_grads()
+    for parameter in model.parameters():
+        parameter.requires_grad_(False)
+    for layer in model.model.layers[-2:]:
+        layer.float()
+        for parameter in layer.parameters():
+            parameter.requires_grad_(True)
+    model.model.norm.float()
+    for parameter in model.model.norm.parameters():
+        parameter.requires_grad_(True)
+    model.score.float()
+    for parameter in model.score.parameters():
+        parameter.requires_grad_(True)
+    assert all(p.dtype == torch.float32 for p in model.parameters() if p.requires_grad)
+    return model, dict(previous=previous, warm_start_weights_sha256=digest(weights),
+        frozen_decoder_layers=26, fully_trainable_decoder_layers=2,
+        input_gradient_hook=False, final_norm_trainable=True, classifier_trainable=True)
+
+
+def training_mode(model):
+    model.train()
+    for layer in model.model.layers[:-2]:
+        layer.eval()

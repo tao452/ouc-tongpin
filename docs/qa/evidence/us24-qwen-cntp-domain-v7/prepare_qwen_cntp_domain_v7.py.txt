@@ -1,0 +1,134 @@
+import csv
+import difflib
+import hashlib
+import json
+import sys
+from collections import Counter,defaultdict
+from datetime import UTC,datetime
+from pathlib import Path
+
+import torch
+
+from prepare_qwen_homophone_v6 import readings,sha
+from qwen_sequence_encoding_v5 import SequenceEncoder
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_recall import load_external,source_sha
+from app.services.normalization import canonicalize
+
+
+def main():
+    torch.set_num_threads(2)
+    source=LAB/'cntp-parent-audit-v1'
+    manifest=json.loads((source/'source-manifest.json').read_text(encoding='utf-8'))
+    for entry in manifest['files']:
+        assert hashlib.sha256((source/entry['file']).read_bytes()).hexdigest()==entry['sha256']
+    audit_file=source/'training-parent-audit-r2.json'
+    audit=json.loads(audit_file.read_text(encoding='utf-8'))
+    previous_file=LAB/'qwen-homophone-v6-inputs/features.pt'
+    previous=torch.load(previous_file,map_location='cpu',weights_only=True)
+    native_rows=load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))
+    raw={r['id']:r['text'] for r in native_rows}
+    all_training=[r for r in previous['records'] if r['cohort']=='training']
+    training=[r for r in all_training if r.get('source_id',r['id']).startswith('ToxiCN-')]
+    originals={r['id']:r for r in training if not r.get('augmentation')}
+    assert len(originals)==9612
+    evaluation=[r for r in previous['records'] if r['cohort']!='training']
+    assert len(evaluation)==3258
+    for name,value in previous['policy']['current_evaluation_policy']['current_engine_sha256'].items():
+        assert source_sha(ROOT/name)==value
+    excluded={r[k] for r in evaluation for k in ['normalized_sha256','transformed_sha256']}
+    with (LAB/'cold-test.csv').open(encoding='utf-8-sig',newline='') as f:
+        for row in csv.DictReader(f):excluded.add(sha(canonicalize(row['TEXT'])))
+    existing={r['transformed_sha256'] for r in all_training}
+    output=LAB/'qwen-cntp-domain-v7-inputs';output.mkdir(exist_ok=False)
+    encoder=SequenceEncoder(LAB/'qwen3-1_7b-tokenizer')
+    homo={r['sentence_id']:r for r in json.loads((source/'homo_toxi_transform.json').read_text(encoding='utf-8'))['results']}
+    negatives={r['sentence_id']:r for r in json.loads((source/'non_toxic_base.json').read_text(encoding='utf-8'))}
+    added=[];decisions=[];edit_counts=[]
+
+    def record(parent_id,text,identifier,kind,upstream):
+        parent=originals[parent_id];canonical=canonicalize(text);digest=sha(canonical)
+        if digest in excluded:return 'overlap_with_existing_evaluation'
+        if digest in existing:return 'already_present_training_view'
+        row=dict(id=identifier,cohort='training',category=parent['category'],label=parent['label'],
+            source_id=parent_id,parent_training_source_text_sha256=parent['source_text_sha256'],
+            source_text_sha256=sha(text),normalized_sha256=digest,transformed_sha256=digest,
+            augmentation=kind,upstream_sentence_id=upstream,windows=encoder.encode(canonical))
+        added.append(row);existing.add(digest)
+        return 'added_training_view'
+
+    for row in audit['records']:
+        if row['kind']!='positive_homophone' or not row['eligible']:continue
+        item=homo[row['upstream_sentence_id']];parent_id=row['training_parent_ids'][0]
+        assert originals[parent_id]['label']==1
+        assert sha(canonicalize(raw[parent_id]))==row['parent_normalized_sha256']
+        status=record(parent_id,item['perturbed_text'],f"CNTP-HOMO-{row['upstream_sentence_id']:05d}",
+                      'CNTP_Homo_explicit_parent_in_training',row['upstream_sentence_id'])
+        if status=='added_training_view':
+            a=canonicalize(item['original_text']);b=canonicalize(item['perturbed_text'])
+            changes=sum(max(i2-i1,j2-j1) for tag,i1,i2,j1,j2 in difflib.SequenceMatcher(None,a,b,autojunk=False).get_opcodes() if tag!='equal')
+            edit_counts.append(max(1,changes))
+        decisions.append(dict(kind='positive_homophone',upstream_sentence_id=row['upstream_sentence_id'],
+            parent_training_id=parent_id,decision=status,transformed_sha256=sha(canonicalize(item['perturbed_text']))))
+    assert edit_counts
+    frequency=defaultdict(Counter)
+    for parent_id in originals:
+        text=canonicalize(raw[parent_id])
+        for char,sound in zip(text,readings(text),strict=True):
+            if '\u4e00'<=char<='\u9fff' and sound.isascii() and sound.isalpha():frequency[sound][char]+=1
+    table={sound:[c for c,count in sorted(counts.items(),key=lambda item:(-item[1],item[0])) if count>=20]
+           for sound,counts in frequency.items()}
+    print(f'CNTP mapped positive views={len(added)}; negative augmentation starting',flush=True)
+    for row in audit['records']:
+        if row['kind']!='negative_parent' or not row['eligible']:continue
+        item=negatives[row['upstream_sentence_id']];parent_id=row['training_parent_ids'][0]
+        assert originals[parent_id]['label']==0
+        text=canonicalize(item['original_text']);sounds=readings(text)
+        assert sha(text)==row['parent_normalized_sha256']
+        positions=[i for i,c in enumerate(text) if '\u4e00'<=c<='\u9fff' and any(v!=c for v in table.get(sounds[i],[]))]
+        positions.sort(key=lambda i:sha('cntp-normal-v7:'+str(row['upstream_sentence_id'])+':'+str(i)))
+        target=min(8,edit_counts[int(sha(row['source_text_sha256']),16)%len(edit_counts)])
+        value=text;attempts=0;edits=0
+        for index in positions[:16]:
+            for char in [c for c in table.get(sounds[index],[]) if c!=value[index]][:3]:
+                candidate=value[:index]+char+value[index+1:];attempts+=1
+                if readings(candidate)==sounds:
+                    value=candidate;edits+=1;break
+            if edits>=target:break
+        assert attempts<=48 and edits<=8
+        status='no_valid_new_view_only'
+        if value!=text:
+            status=record(parent_id,value,f"CNTP-NORMAL-HOMO-{row['upstream_sentence_id']:05d}",
+                'training_only_normal_homophone_assumed_label',row['upstream_sentence_id'])
+        decisions.append(dict(kind='negative_parent',upstream_sentence_id=row['upstream_sentence_id'],
+            parent_training_id=parent_id,decision=status,candidate_attempts=attempts,edited_characters=edits,
+            target_edits=target,transformed_sha256=sha(value)))
+        if len(decisions)%500==0:print(f'CNTP qualification/augmentation decisions={len(decisions)}',flush=True)
+    records=training+added+evaluation
+    assert len({r['id'] for r in records})==len(records)
+    policy=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='ToxiCN domain adaptation from completeV6; no new independent assessment',
+        previous_full_training_features_sha256=hashlib.sha256(previous_file.read_bytes()).hexdigest(),
+        previous_full_training_rows=42371,previous_training_rows_active=len(training),
+        inactive_training_rows_retained_in_previous_cache=42371-len(training),
+        native_ToxiCN_training_originals=9612,training_rows=len(training)+len(added),
+        added_by_label=dict(Counter(str(r['label']) for r in added)),
+        added_homophone_labels='upstreampositive explicit native training parent; generatednormal inherited-label assumption, not new gold',
+        parent_qualification_sha256=hashlib.sha256(audit_file.read_bytes()).hexdigest(),
+        source_manifest_sha256=hashlib.sha256((source/'source-manifest.json').read_bytes()).hexdigest(),
+        negative_augmentation='training-only common-character table count>=20; max16positions x3candidates,8changes; entire contextual no-tone sequence preserved',
+        decisions=dict(Counter(r['decision'] for r in decisions)),
+        evaluation_rows=3258,excluded_evaluation_rows=0,
+        current_evaluation_policy=previous['policy']['current_evaluation_policy'],
+        code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'prepare_qwen_homophone_v6.py',LAB/'qwen_sequence_encoding_v5.py']},
+        COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+    with (output/'features.pt').open('xb') as f:torch.save(dict(policy=policy,records=records),f)
+    for name,value in [('policy.json',policy),('new-view-decisions.json',decisions),('index.json',
+        [dict(**{k:v for k,v in r.items() if k!='windows'},windows=len(r['windows']),window_lengths=[len(w['input_ids']) for w in r['windows']]) for r in records])]:
+        with (output/name).open('x',encoding='utf-8') as f:json.dump(value,f,ensure_ascii=False,indent=2)
+    print(json.dumps(dict(training_rows=policy['training_rows'],added_by_label=policy['added_by_label'],evaluation_rows=3258,
+        training_windows=sum(len(r['windows']) for r in records if r['cohort']=='training'),decisions=policy['decisions'])),flush=True)
+
+
+if __name__=='__main__':main()

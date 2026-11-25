@@ -1,0 +1,8408 @@
+{
+  "scope": "247 paired literal context proposals; not new broad semantic evaluation",
+  "dictionary_before_sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+  "dictionary_after_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "dataset_sha256": "4ea86df33f8d21829268289dae94cbf31626b5849ef539f85d5609c61346acd5",
+  "source_sha256": "739387ee88004aa460c65d65bf2d5a076d11944b2ec569a26ebe0e595dec5fbd",
+  "mode": "function",
+  "before": {
+    "count": 247,
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 55,
+        "fp": 18,
+        "fn": 0,
+        "tn": 174
+      },
+      "offensive_samples": 55,
+      "nonoffensive_samples": 192,
+      "recall": 1.0,
+      "precision": 0.7534246575342466,
+      "false_positive_rate": 0.09375,
+      "recall_wilson95": [
+        0.9347150988829137,
+        1
+      ],
+      "false_positive_rate_wilson95": [
+        0.06012513639418231,
+        0.1433121697850554
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 142,
+        "fp": 88,
+        "fn": 0,
+        "tn": 17
+      },
+      "offensive_samples": 142,
+      "nonoffensive_samples": 105,
+      "recall": 1.0,
+      "precision": 0.6173913043478261,
+      "false_positive_rate": 0.8380952380952381,
+      "recall_wilson95": [
+        0.9736600356869919,
+        0.9999999999999999
+      ],
+      "false_positive_rate_wilson95": [
+        0.7559378330310743,
+        0.8963871244740037
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "by_category": {
+      "normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.14705882352941177,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.06449441444782457,
+            0.3012805649545216
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 34,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 1.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "addressed_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.14705882352941177,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.06449441444782457,
+            0.3012805649545216
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 34,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 1.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "same_word_outside_before": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 5,
+          "nonoffensive_samples": 29,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.5655175352168251,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.11696979849974075
+          ],
+          "thresholds_met_on_supplied_rows": true
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "same_word_outside_after": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 5,
+          "nonoffensive_samples": 29,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.5655175352168251,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.11696979849974075
+          ],
+          "thresholds_met_on_supplied_rows": true
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "other_rule_outside": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "literal_clause_scope_guard": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 5,
+          "nonoffensive_samples": 29,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.5655175352168251,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.11696979849974075
+          ],
+          "thresholds_met_on_supplied_rows": true
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "fullwidth_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 6
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 6,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 1.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.6096657120978346,
+            1
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "casefold_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 6
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 6,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 1.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.6096657120978346,
+            1
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 8,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 8,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 1.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.6755924351161198,
+            1
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 8,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 8,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 1.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.6755924351161198,
+            1
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_outside_before": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_outside_after": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_clause_scope_guard": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "ordinary_language_identifier": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 12
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 12,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 12
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 12,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "finite_quote_help_context": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 5
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 5,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.43448246478317476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 5
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 5,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.43448246478317476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      }
+    },
+    "by_kind": {
+      "proposed_literal_context_policy": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 55,
+            "fp": 18,
+            "fn": 0,
+            "tn": 174
+          },
+          "offensive_samples": 55,
+          "nonoffensive_samples": 192,
+          "recall": 1.0,
+          "precision": 0.7534246575342466,
+          "false_positive_rate": 0.09375,
+          "recall_wilson95": [
+            0.9347150988829137,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            0.06012513639418231,
+            0.1433121697850554
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 142,
+            "fp": 88,
+            "fn": 0,
+            "tn": 17
+          },
+          "offensive_samples": 142,
+          "nonoffensive_samples": 105,
+          "recall": 1.0,
+          "precision": 0.6173913043478261,
+          "false_positive_rate": 0.8380952380952381,
+          "recall_wilson95": [
+            0.9736600356869919,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": [
+            0.7559378330310743,
+            0.8963871244740037
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      }
+    },
+    "hit_levels": {
+      "HIGH": 73,
+      "MEDIUM": 186
+    },
+    "decision_failure_ids": [
+      "P310-001-01-normal",
+      "P310-001-01-addressed",
+      "P310-001-02-normal",
+      "P310-001-02-addressed",
+      "P310-001-03-normal",
+      "P310-001-03-addressed",
+      "P310-001-04-normal",
+      "P310-001-04-addressed",
+      "P310-001-05-normal",
+      "P310-001-05-addressed",
+      "P310-075-01-normal",
+      "P310-075-01-addressed",
+      "P310-075-02-normal",
+      "P310-075-02-addressed",
+      "P310-075-03-normal",
+      "P310-075-03-addressed",
+      "P310-076-01-normal",
+      "P310-076-01-addressed",
+      "P310-076-02-normal",
+      "P310-076-02-addressed",
+      "P310-076-03-normal",
+      "P310-076-03-addressed",
+      "P310-076-04-normal",
+      "P310-076-04-addressed",
+      "P310-076-05-normal",
+      "P310-076-05-addressed",
+      "P310-076-06-normal",
+      "P310-076-06-addressed",
+      "P310-076-07-normal",
+      "P310-076-07-addressed",
+      "P310-076-08-normal",
+      "P310-076-08-addressed",
+      "P310-076-09-normal",
+      "P310-076-09-addressed",
+      "P310-076-10-normal",
+      "P310-076-10-addressed",
+      "P310-076-11-normal",
+      "P310-076-11-addressed",
+      "P310-076-12-normal",
+      "P310-076-12-addressed",
+      "P310-076-13-normal",
+      "P310-076-13-addressed",
+      "P310-076-14-normal",
+      "P310-076-14-addressed",
+      "P310-076-15-normal",
+      "P310-076-15-addressed",
+      "P310-076-16-normal",
+      "P310-076-16-addressed",
+      "P310-076-16-fullwidth",
+      "P310-076-16-lowercase",
+      "P310-076-17-normal",
+      "P310-076-17-addressed",
+      "P310-076-17-fullwidth",
+      "P310-076-17-lowercase",
+      "P310-076-18-normal",
+      "P310-076-18-addressed",
+      "P310-076-18-fullwidth",
+      "P310-076-18-lowercase",
+      "P310-076-19-normal",
+      "P310-076-19-addressed",
+      "P310-076-19-fullwidth",
+      "P310-076-19-lowercase",
+      "P310-076-20-normal",
+      "P310-076-20-addressed",
+      "P310-076-20-fullwidth",
+      "P310-076-20-lowercase",
+      "P310-076-21-normal",
+      "P310-076-21-addressed",
+      "P310-076-21-fullwidth",
+      "P310-076-21-lowercase",
+      "P310-076-22-normal",
+      "P310-076-22-addressed",
+      "P310-076-23-normal",
+      "P310-076-23-addressed",
+      "P310-076-24-normal",
+      "P310-076-24-addressed",
+      "P310-076-25-normal",
+      "P310-076-25-addressed",
+      "P310-076-26-normal",
+      "P310-076-26-addressed",
+      "P310-PY-01-N1",
+      "P310-PY-01-N2",
+      "P310-PY-01-N3",
+      "P310-PY-01-N4",
+      "P310-PY-02-N1",
+      "P310-PY-02-N2",
+      "P310-PY-02-N3",
+      "P310-PY-02-N4"
+    ],
+    "mapping_failure_ids": [],
+    "p95_ms": 0.29879999783588573,
+    "max_ms": 0.8933999997680075,
+    "dictionary_sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b"
+  },
+  "after": {
+    "count": 247,
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 55,
+        "fp": 0,
+        "fn": 0,
+        "tn": 192
+      },
+      "offensive_samples": 55,
+      "nonoffensive_samples": 192,
+      "recall": 1.0,
+      "precision": 1.0,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        0.9347150988829137,
+        1
+      ],
+      "false_positive_rate_wilson95": [
+        1.734723475976807e-18,
+        0.01961514606675411
+      ],
+      "thresholds_met_on_supplied_rows": true
+    },
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 142,
+        "fp": 0,
+        "fn": 0,
+        "tn": 105
+      },
+      "offensive_samples": 142,
+      "nonoffensive_samples": 105,
+      "recall": 1.0,
+      "precision": 1.0,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        0.9736600356869919,
+        0.9999999999999999
+      ],
+      "false_positive_rate_wilson95": [
+        0,
+        0.035294076929109894
+      ],
+      "thresholds_met_on_supplied_rows": true
+    },
+    "by_category": {
+      "normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 34
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.10151455415332376
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 34
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.10151455415332376
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "addressed_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 34
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.10151455415332376
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 34
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 34,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.10151455415332376
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "same_word_outside_before": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 5,
+          "nonoffensive_samples": 29,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.5655175352168251,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.11696979849974075
+          ],
+          "thresholds_met_on_supplied_rows": true
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "same_word_outside_after": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 5,
+          "nonoffensive_samples": 29,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.5655175352168251,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.11696979849974075
+          ],
+          "thresholds_met_on_supplied_rows": true
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "other_rule_outside": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "literal_clause_scope_guard": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "tn": 29
+          },
+          "offensive_samples": 5,
+          "nonoffensive_samples": 29,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.5655175352168251,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.11696979849974075
+          ],
+          "thresholds_met_on_supplied_rows": true
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 34,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.8984854458466761,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "fullwidth_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 6
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 6
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "casefold_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 6
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 6
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 6,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_normal_phrase": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 8
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 8,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.32440756488388023
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 8
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 8,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.32440756488388023
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_outside_before": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_outside_after": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "pinyin_clause_scope_guard": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 2,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.34238022750665303,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "ordinary_language_identifier": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 12
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 12,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 12
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 12,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "finite_quote_help_context": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 5
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 5,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.43448246478317476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 5
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 5,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.43448246478317476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      }
+    },
+    "by_kind": {
+      "proposed_literal_context_policy": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 55,
+            "fp": 0,
+            "fn": 0,
+            "tn": 192
+          },
+          "offensive_samples": 55,
+          "nonoffensive_samples": 192,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.9347150988829137,
+            1
+          ],
+          "false_positive_rate_wilson95": [
+            1.734723475976807e-18,
+            0.01961514606675411
+          ],
+          "thresholds_met_on_supplied_rows": true
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 142,
+            "fp": 0,
+            "fn": 0,
+            "tn": 105
+          },
+          "offensive_samples": 142,
+          "nonoffensive_samples": 105,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": [
+            0.9736600356869919,
+            0.9999999999999999
+          ],
+          "false_positive_rate_wilson95": [
+            0,
+            0.035294076929109894
+          ],
+          "thresholds_met_on_supplied_rows": true
+        }
+      }
+    },
+    "hit_levels": {
+      "HIGH": 55,
+      "MEDIUM": 87
+    },
+    "decision_failure_ids": [],
+    "mapping_failure_ids": [],
+    "p95_ms": 0.28359999851090834,
+    "max_ms": 1.3206999938120134,
+    "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722"
+  },
+  "cases": [
+    {
+      "id": "P310-001-01-normal",
+      "request": {
+        "text": "课程讨论砂比参数。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论砂比参数",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论砂比参数",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-01-addressed",
+      "request": {
+        "text": "同学请核对砂比参数。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "同学请核对砂比参数",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对砂比参数",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-01-outside-before",
+      "request": {
+        "text": "你是傻逼。课程讨论砂比参数。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论砂比参数",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论砂比参数",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-01-outside-after",
+      "request": {
+        "text": "课程讨论砂比参数。你是傻逼。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论砂比参数你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论砂比参数你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-01-other-threat",
+      "request": {
+        "text": "课程讨论砂比参数。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论砂比参数我要弄死你",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          },
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论砂比参数我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-01-clause-boundary",
+      "request": {
+        "text": "砂比。参数"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "砂比参数",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "砂比参数",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-02-normal",
+      "request": {
+        "text": "课程讨论砂比试验。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论砂比试验",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论砂比试验",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-02-addressed",
+      "request": {
+        "text": "同学请核对砂比试验。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "同学请核对砂比试验",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对砂比试验",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-02-outside-before",
+      "request": {
+        "text": "你是傻逼。课程讨论砂比试验。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论砂比试验",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论砂比试验",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-02-outside-after",
+      "request": {
+        "text": "课程讨论砂比试验。你是傻逼。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论砂比试验你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论砂比试验你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-02-other-threat",
+      "request": {
+        "text": "课程讨论砂比试验。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论砂比试验我要弄死你",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          },
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论砂比试验我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-02-clause-boundary",
+      "request": {
+        "text": "砂比。试验"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "砂比试验",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "砂比试验",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-03-normal",
+      "request": {
+        "text": "课程讨论水砂比。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论水砂比",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论水砂比",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-03-addressed",
+      "request": {
+        "text": "同学请核对水砂比。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "同学请核对水砂比",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对水砂比",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-03-outside-before",
+      "request": {
+        "text": "你是傻逼。课程讨论水砂比。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论水砂比",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论水砂比",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-03-outside-after",
+      "request": {
+        "text": "课程讨论水砂比。你是傻逼。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论水砂比你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论水砂比你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-03-other-threat",
+      "request": {
+        "text": "课程讨论水砂比。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论水砂比我要弄死你",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          },
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论水砂比我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-03-clause-boundary",
+      "request": {
+        "text": "水。砂比"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "水砂比",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "水砂比",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-04-normal",
+      "request": {
+        "text": "课程讨论沙比是音译词。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论沙比是音译词",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论沙比是音译词",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-04-addressed",
+      "request": {
+        "text": "同学请核对沙比是音译词。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "同学请核对沙比是音译词",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对沙比是音译词",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-04-outside-before",
+      "request": {
+        "text": "你是傻逼。课程讨论沙比是音译词。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论沙比是音译词",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论沙比是音译词",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-04-outside-after",
+      "request": {
+        "text": "课程讨论沙比是音译词。你是傻逼。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论沙比是音译词你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论沙比是音译词你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-04-other-threat",
+      "request": {
+        "text": "课程讨论沙比是音译词。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论沙比是音译词我要弄死你",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          },
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论沙比是音译词我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-04-clause-boundary",
+      "request": {
+        "text": "沙比。是音译词"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "沙比是音译词",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "沙比是音译词",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-05-normal",
+      "request": {
+        "text": "课程讨论沙比是虚构人物名。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论沙比是虚构人物名",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论沙比是虚构人物名",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-05-addressed",
+      "request": {
+        "text": "同学请核对沙比是虚构人物名。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "同学请核对沙比是虚构人物名",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对沙比是虚构人物名",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-001-05-outside-before",
+      "request": {
+        "text": "你是傻逼。课程讨论沙比是虚构人物名。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论沙比是虚构人物名",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "你是傻逼课程讨论沙比是虚构人物名",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-05-outside-after",
+      "request": {
+        "text": "课程讨论沙比是虚构人物名。你是傻逼。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论沙比是虚构人物名你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论沙比是虚构人物名你是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-05-other-threat",
+      "request": {
+        "text": "课程讨论沙比是虚构人物名。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论沙比是虚构人物名我要弄死你",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          },
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论沙比是虚构人物名我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-001-05-clause-boundary",
+      "request": {
+        "text": "沙比。是虚构人物名"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "沙比是虚构人物名",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "沙比是虚构人物名",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-01-normal",
+      "request": {
+        "text": "课程讨论最近总是放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论最近总是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论最近总是放屁",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-075-01-addressed",
+      "request": {
+        "text": "同学请核对最近总是放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对最近总是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对最近总是放屁",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-075-01-outside-before",
+      "request": {
+        "text": "你在放屁。课程讨论最近总是放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你在放屁课程讨论最近总是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你在放屁课程讨论最近总是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-01-outside-after",
+      "request": {
+        "text": "课程讨论最近总是放屁。你在放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论最近总是放屁你在放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论最近总是放屁你在放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-01-other-threat",
+      "request": {
+        "text": "课程讨论最近总是放屁。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论最近总是放屁我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论最近总是放屁我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-01-clause-boundary",
+      "request": {
+        "text": "最近总是。放屁"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "最近总是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "最近总是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-02-normal",
+      "request": {
+        "text": "课程讨论放屁是正常生理现象。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论放屁是正常生理现象",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论放屁是正常生理现象",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-075-02-addressed",
+      "request": {
+        "text": "同学请核对放屁是正常生理现象。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对放屁是正常生理现象",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对放屁是正常生理现象",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-075-02-outside-before",
+      "request": {
+        "text": "你在放屁。课程讨论放屁是正常生理现象。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你在放屁课程讨论放屁是正常生理现象",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你在放屁课程讨论放屁是正常生理现象",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-02-outside-after",
+      "request": {
+        "text": "课程讨论放屁是正常生理现象。你在放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论放屁是正常生理现象你在放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论放屁是正常生理现象你在放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-02-other-threat",
+      "request": {
+        "text": "课程讨论放屁是正常生理现象。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论放屁是正常生理现象我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论放屁是正常生理现象我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-02-clause-boundary",
+      "request": {
+        "text": "放屁。是正常生理现象"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "放屁是正常生理现象",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "放屁是正常生理现象",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-03-normal",
+      "request": {
+        "text": "课程讨论饭后老是放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论饭后老是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论饭后老是放屁",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-075-03-addressed",
+      "request": {
+        "text": "同学请核对饭后老是放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对饭后老是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对饭后老是放屁",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-075-03-outside-before",
+      "request": {
+        "text": "你在放屁。课程讨论饭后老是放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你在放屁课程讨论饭后老是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你在放屁课程讨论饭后老是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-03-outside-after",
+      "request": {
+        "text": "课程讨论饭后老是放屁。你在放屁。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论饭后老是放屁你在放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论饭后老是放屁你在放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-03-other-threat",
+      "request": {
+        "text": "课程讨论饭后老是放屁。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论饭后老是放屁我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论饭后老是放屁我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-075-03-clause-boundary",
+      "request": {
+        "text": "饭后老是。放屁"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "饭后老是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "饭后老是放屁",
+        "hits": [
+          {
+            "word": "放屁",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "放屁",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-01-normal",
+      "request": {
+        "text": "课程讨论几把椅子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把椅子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把椅子",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-01-addressed",
+      "request": {
+        "text": "同学请核对几把椅子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把椅子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把椅子",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-01-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把椅子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把椅子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把椅子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-01-outside-after",
+      "request": {
+        "text": "课程讨论几把椅子。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把椅子你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把椅子你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-01-other-threat",
+      "request": {
+        "text": "课程讨论几把椅子。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把椅子我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把椅子我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-01-clause-boundary",
+      "request": {
+        "text": "几把。椅子"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把椅子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把椅子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-02-normal",
+      "request": {
+        "text": "课程讨论几把钥匙。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把钥匙",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把钥匙",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-02-addressed",
+      "request": {
+        "text": "同学请核对几把钥匙。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把钥匙",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把钥匙",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-02-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把钥匙。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把钥匙",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把钥匙",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-02-outside-after",
+      "request": {
+        "text": "课程讨论几把钥匙。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把钥匙你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把钥匙你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-02-other-threat",
+      "request": {
+        "text": "课程讨论几把钥匙。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把钥匙我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把钥匙我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-02-clause-boundary",
+      "request": {
+        "text": "几把。钥匙"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把钥匙",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把钥匙",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-03-normal",
+      "request": {
+        "text": "课程讨论几把雨伞。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把雨伞",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把雨伞",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-03-addressed",
+      "request": {
+        "text": "同学请核对几把雨伞。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把雨伞",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把雨伞",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-03-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把雨伞。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把雨伞",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把雨伞",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-03-outside-after",
+      "request": {
+        "text": "课程讨论几把雨伞。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把雨伞你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把雨伞你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-03-other-threat",
+      "request": {
+        "text": "课程讨论几把雨伞。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把雨伞我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把雨伞我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-03-clause-boundary",
+      "request": {
+        "text": "几把。雨伞"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把雨伞",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把雨伞",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-04-normal",
+      "request": {
+        "text": "课程讨论几把扫帚。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把扫帚",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把扫帚",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-04-addressed",
+      "request": {
+        "text": "同学请核对几把扫帚。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把扫帚",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把扫帚",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-04-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把扫帚。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把扫帚",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把扫帚",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-04-outside-after",
+      "request": {
+        "text": "课程讨论几把扫帚。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把扫帚你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把扫帚你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-04-other-threat",
+      "request": {
+        "text": "课程讨论几把扫帚。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把扫帚我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把扫帚我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-04-clause-boundary",
+      "request": {
+        "text": "几把。扫帚"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把扫帚",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把扫帚",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-05-normal",
+      "request": {
+        "text": "课程讨论几把扇子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把扇子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把扇子",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-05-addressed",
+      "request": {
+        "text": "同学请核对几把扇子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把扇子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把扇子",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-05-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把扇子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把扇子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把扇子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-05-outside-after",
+      "request": {
+        "text": "课程讨论几把扇子。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把扇子你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把扇子你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-05-other-threat",
+      "request": {
+        "text": "课程讨论几把扇子。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把扇子我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把扇子我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-05-clause-boundary",
+      "request": {
+        "text": "几把。扇子"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把扇子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把扇子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-06-normal",
+      "request": {
+        "text": "课程讨论几把尺子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把尺子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把尺子",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-06-addressed",
+      "request": {
+        "text": "同学请核对几把尺子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把尺子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把尺子",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-06-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把尺子。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把尺子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把尺子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-06-outside-after",
+      "request": {
+        "text": "课程讨论几把尺子。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把尺子你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把尺子你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-06-other-threat",
+      "request": {
+        "text": "课程讨论几把尺子。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把尺子我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把尺子我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-06-clause-boundary",
+      "request": {
+        "text": "几把。尺子"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把尺子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把尺子",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-07-normal",
+      "request": {
+        "text": "课程讨论几把剪刀。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把剪刀",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把剪刀",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-07-addressed",
+      "request": {
+        "text": "同学请核对几把剪刀。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把剪刀",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把剪刀",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-07-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把剪刀。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把剪刀",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把剪刀",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-07-outside-after",
+      "request": {
+        "text": "课程讨论几把剪刀。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把剪刀你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把剪刀你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-07-other-threat",
+      "request": {
+        "text": "课程讨论几把剪刀。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把剪刀我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把剪刀我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-07-clause-boundary",
+      "request": {
+        "text": "几把。剪刀"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把剪刀",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把剪刀",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-08-normal",
+      "request": {
+        "text": "课程讨论几把吉他。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把吉他",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把吉他",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-08-addressed",
+      "request": {
+        "text": "同学请核对几把吉他。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把吉他",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把吉他",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-08-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把吉他。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把吉他",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把吉他",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-08-outside-after",
+      "request": {
+        "text": "课程讨论几把吉他。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把吉他你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把吉他你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-08-other-threat",
+      "request": {
+        "text": "课程讨论几把吉他。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把吉他我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把吉他我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-08-clause-boundary",
+      "request": {
+        "text": "几把。吉他"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把吉他",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把吉他",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-09-normal",
+      "request": {
+        "text": "课程讨论几把游戏。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把游戏",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把游戏",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-09-addressed",
+      "request": {
+        "text": "同学请核对几把游戏。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对几把游戏",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对几把游戏",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-09-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论几把游戏。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把游戏",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论几把游戏",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-09-outside-after",
+      "request": {
+        "text": "课程讨论几把游戏。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论几把游戏你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论几把游戏你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-09-other-threat",
+      "request": {
+        "text": "课程讨论几把游戏。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论几把游戏我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论几把游戏我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-09-clause-boundary",
+      "request": {
+        "text": "几把。游戏"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "几把游戏",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "几把游戏",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-10-normal",
+      "request": {
+        "text": "课程讨论击靶训练。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶训练",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶训练",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-10-addressed",
+      "request": {
+        "text": "同学请核对击靶训练。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对击靶训练",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对击靶训练",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-10-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论击靶训练。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶训练",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶训练",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-10-outside-after",
+      "request": {
+        "text": "课程讨论击靶训练。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶训练你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶训练你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-10-other-threat",
+      "request": {
+        "text": "课程讨论击靶训练。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论击靶训练我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论击靶训练我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-10-clause-boundary",
+      "request": {
+        "text": "击靶。训练"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "击靶训练",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "击靶训练",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-11-normal",
+      "request": {
+        "text": "课程讨论击靶练习。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶练习",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶练习",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-11-addressed",
+      "request": {
+        "text": "同学请核对击靶练习。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对击靶练习",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对击靶练习",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-11-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论击靶练习。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶练习",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶练习",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-11-outside-after",
+      "request": {
+        "text": "课程讨论击靶练习。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶练习你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶练习你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-11-other-threat",
+      "request": {
+        "text": "课程讨论击靶练习。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论击靶练习我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论击靶练习我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-11-clause-boundary",
+      "request": {
+        "text": "击靶。练习"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "击靶练习",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "击靶练习",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-12-normal",
+      "request": {
+        "text": "课程讨论击靶比赛。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶比赛",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶比赛",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-12-addressed",
+      "request": {
+        "text": "同学请核对击靶比赛。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对击靶比赛",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对击靶比赛",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-12-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论击靶比赛。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶比赛",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶比赛",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-12-outside-after",
+      "request": {
+        "text": "课程讨论击靶比赛。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶比赛你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶比赛你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-12-other-threat",
+      "request": {
+        "text": "课程讨论击靶比赛。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论击靶比赛我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论击靶比赛我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-12-clause-boundary",
+      "request": {
+        "text": "击靶。比赛"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "击靶比赛",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "击靶比赛",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-13-normal",
+      "request": {
+        "text": "课程讨论击靶水平。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶水平",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶水平",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-13-addressed",
+      "request": {
+        "text": "同学请核对击靶水平。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对击靶水平",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对击靶水平",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-13-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论击靶水平。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶水平",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶水平",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-13-outside-after",
+      "request": {
+        "text": "课程讨论击靶水平。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶水平你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶水平你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-13-other-threat",
+      "request": {
+        "text": "课程讨论击靶水平。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论击靶水平我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论击靶水平我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-13-clause-boundary",
+      "request": {
+        "text": "击靶。水平"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "击靶水平",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "击靶水平",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-14-normal",
+      "request": {
+        "text": "课程讨论击靶成绩。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶成绩",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶成绩",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-14-addressed",
+      "request": {
+        "text": "同学请核对击靶成绩。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对击靶成绩",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对击靶成绩",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-14-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论击靶成绩。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶成绩",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶成绩",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-14-outside-after",
+      "request": {
+        "text": "课程讨论击靶成绩。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶成绩你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶成绩你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-14-other-threat",
+      "request": {
+        "text": "课程讨论击靶成绩。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论击靶成绩我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论击靶成绩我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-14-clause-boundary",
+      "request": {
+        "text": "击靶。成绩"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "击靶成绩",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "击靶成绩",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-15-normal",
+      "request": {
+        "text": "课程讨论击靶计分。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶计分",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶计分",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-15-addressed",
+      "request": {
+        "text": "同学请核对击靶计分。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对击靶计分",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对击靶计分",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-15-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论击靶计分。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶计分",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论击靶计分",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-15-outside-after",
+      "request": {
+        "text": "课程讨论击靶计分。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论击靶计分你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论击靶计分你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-15-other-threat",
+      "request": {
+        "text": "课程讨论击靶计分。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论击靶计分我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论击靶计分我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-15-clause-boundary",
+      "request": {
+        "text": "击靶。计分"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "击靶计分",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "击靶计分",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-16-normal",
+      "request": {
+        "text": "课程讨论G8峰会。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8峰会",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-16-addressed",
+      "request": {
+        "text": "同学请核对G8峰会。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对g8峰会",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-16-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论G8峰会。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-16-outside-after",
+      "request": {
+        "text": "课程讨论G8峰会。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8峰会你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8峰会你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-16-other-threat",
+      "request": {
+        "text": "课程讨论G8峰会。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论g8峰会我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论g8峰会我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-16-clause-boundary",
+      "request": {
+        "text": "G8。峰会"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-16-fullwidth",
+      "request": {
+        "text": "Ｇ８峰会"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8峰会",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-16-lowercase",
+      "request": {
+        "text": "g8峰会"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8峰会",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8峰会",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-17-normal",
+      "request": {
+        "text": "课程讨论G8会议。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8会议",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-17-addressed",
+      "request": {
+        "text": "同学请核对G8会议。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对g8会议",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-17-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论G8会议。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-17-outside-after",
+      "request": {
+        "text": "课程讨论G8会议。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8会议你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8会议你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-17-other-threat",
+      "request": {
+        "text": "课程讨论G8会议。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论g8会议我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论g8会议我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-17-clause-boundary",
+      "request": {
+        "text": "G8。会议"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-17-fullwidth",
+      "request": {
+        "text": "Ｇ８会议"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8会议",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-17-lowercase",
+      "request": {
+        "text": "g8会议"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8会议",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8会议",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-18-normal",
+      "request": {
+        "text": "课程讨论G8项目。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8项目",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-18-addressed",
+      "request": {
+        "text": "同学请核对G8项目。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对g8项目",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-18-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论G8项目。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-18-outside-after",
+      "request": {
+        "text": "课程讨论G8项目。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8项目你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8项目你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-18-other-threat",
+      "request": {
+        "text": "课程讨论G8项目。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论g8项目我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论g8项目我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-18-clause-boundary",
+      "request": {
+        "text": "G8。项目"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-18-fullwidth",
+      "request": {
+        "text": "Ｇ８项目"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8项目",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-18-lowercase",
+      "request": {
+        "text": "g8项目"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8项目",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8项目",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-19-normal",
+      "request": {
+        "text": "课程讨论G8接口。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8接口",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-19-addressed",
+      "request": {
+        "text": "同学请核对G8接口。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对g8接口",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-19-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论G8接口。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-19-outside-after",
+      "request": {
+        "text": "课程讨论G8接口。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8接口你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8接口你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-19-other-threat",
+      "request": {
+        "text": "课程讨论G8接口。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论g8接口我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论g8接口我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-19-clause-boundary",
+      "request": {
+        "text": "G8。接口"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-19-fullwidth",
+      "request": {
+        "text": "Ｇ８接口"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8接口",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-19-lowercase",
+      "request": {
+        "text": "g8接口"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8接口",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8接口",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-20-normal",
+      "request": {
+        "text": "课程讨论G8节点。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8节点",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-20-addressed",
+      "request": {
+        "text": "同学请核对G8节点。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对g8节点",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-20-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论G8节点。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-20-outside-after",
+      "request": {
+        "text": "课程讨论G8节点。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8节点你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8节点你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-20-other-threat",
+      "request": {
+        "text": "课程讨论G8节点。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论g8节点我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论g8节点我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-20-clause-boundary",
+      "request": {
+        "text": "G8。节点"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-20-fullwidth",
+      "request": {
+        "text": "Ｇ８节点"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8节点",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-20-lowercase",
+      "request": {
+        "text": "g8节点"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8节点",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8节点",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-21-normal",
+      "request": {
+        "text": "课程讨论G8寄存器。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8寄存器",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-21-addressed",
+      "request": {
+        "text": "同学请核对G8寄存器。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对g8寄存器",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-21-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论G8寄存器。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-21-outside-after",
+      "request": {
+        "text": "课程讨论G8寄存器。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论g8寄存器你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论g8寄存器你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-21-other-threat",
+      "request": {
+        "text": "课程讨论G8寄存器。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论g8寄存器我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论g8寄存器我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-21-clause-boundary",
+      "request": {
+        "text": "G8。寄存器"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-21-fullwidth",
+      "request": {
+        "text": "Ｇ８寄存器"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8寄存器",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-21-lowercase",
+      "request": {
+        "text": "g8寄存器"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8寄存器",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8寄存器",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-22-normal",
+      "request": {
+        "text": "课程讨论鸡把玉米吃完了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论鸡把玉米吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论鸡把玉米吃完了",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-22-addressed",
+      "request": {
+        "text": "同学请核对鸡把玉米吃完了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对鸡把玉米吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对鸡把玉米吃完了",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-22-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论鸡把玉米吃完了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论鸡把玉米吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论鸡把玉米吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-22-outside-after",
+      "request": {
+        "text": "课程讨论鸡把玉米吃完了。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论鸡把玉米吃完了你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论鸡把玉米吃完了你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-22-other-threat",
+      "request": {
+        "text": "课程讨论鸡把玉米吃完了。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论鸡把玉米吃完了我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论鸡把玉米吃完了我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-22-clause-boundary",
+      "request": {
+        "text": "鸡把。玉米吃完了"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "鸡把玉米吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "鸡把玉米吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-23-normal",
+      "request": {
+        "text": "课程讨论鸡把饲料吃完了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论鸡把饲料吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论鸡把饲料吃完了",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-23-addressed",
+      "request": {
+        "text": "同学请核对鸡把饲料吃完了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对鸡把饲料吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对鸡把饲料吃完了",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-23-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论鸡把饲料吃完了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论鸡把饲料吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论鸡把饲料吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-23-outside-after",
+      "request": {
+        "text": "课程讨论鸡把饲料吃完了。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论鸡把饲料吃完了你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论鸡把饲料吃完了你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-23-other-threat",
+      "request": {
+        "text": "课程讨论鸡把饲料吃完了。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论鸡把饲料吃完了我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论鸡把饲料吃完了我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-23-clause-boundary",
+      "request": {
+        "text": "鸡把。饲料吃完了"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "鸡把饲料吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "鸡把饲料吃完了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-24-normal",
+      "request": {
+        "text": "课程讨论鸡把米啄干净了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论鸡把米啄干净了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论鸡把米啄干净了",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-24-addressed",
+      "request": {
+        "text": "同学请核对鸡把米啄干净了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对鸡把米啄干净了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对鸡把米啄干净了",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-24-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论鸡把米啄干净了。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论鸡把米啄干净了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论鸡把米啄干净了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-24-outside-after",
+      "request": {
+        "text": "课程讨论鸡把米啄干净了。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论鸡把米啄干净了你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论鸡把米啄干净了你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-24-other-threat",
+      "request": {
+        "text": "课程讨论鸡把米啄干净了。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论鸡把米啄干净了我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论鸡把米啄干净了我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-24-clause-boundary",
+      "request": {
+        "text": "鸡把。米啄干净了"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "鸡把米啄干净了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "鸡把米啄干净了",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-25-normal",
+      "request": {
+        "text": "课程讨论吉巴罗舞蹈。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗舞蹈",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗舞蹈",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-25-addressed",
+      "request": {
+        "text": "同学请核对吉巴罗舞蹈。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对吉巴罗舞蹈",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对吉巴罗舞蹈",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-25-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论吉巴罗舞蹈。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论吉巴罗舞蹈",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论吉巴罗舞蹈",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-25-outside-after",
+      "request": {
+        "text": "课程讨论吉巴罗舞蹈。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗舞蹈你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗舞蹈你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-25-other-threat",
+      "request": {
+        "text": "课程讨论吉巴罗舞蹈。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论吉巴罗舞蹈我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论吉巴罗舞蹈我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-25-clause-boundary",
+      "request": {
+        "text": "吉巴。罗舞蹈"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "吉巴罗舞蹈",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "吉巴罗舞蹈",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-26-normal",
+      "request": {
+        "text": "课程讨论吉巴罗的配乐。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗的配乐",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗的配乐",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-26-addressed",
+      "request": {
+        "text": "同学请核对吉巴罗的配乐。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "同学请核对吉巴罗的配乐",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "同学请核对吉巴罗的配乐",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-076-26-outside-before",
+      "request": {
+        "text": "你就是鸡巴。课程讨论吉巴罗的配乐。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论吉巴罗的配乐",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "你就是鸡巴课程讨论吉巴罗的配乐",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-26-outside-after",
+      "request": {
+        "text": "课程讨论吉巴罗的配乐。你就是鸡巴。"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗的配乐你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "课程讨论吉巴罗的配乐你就是鸡巴",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-26-other-threat",
+      "request": {
+        "text": "课程讨论吉巴罗的配乐。我要弄死你。"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "课程讨论吉巴罗的配乐我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "课程讨论吉巴罗的配乐我要弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "弄死你",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-076-26-clause-boundary",
+      "request": {
+        "text": "吉巴。罗的配乐"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "吉巴罗的配乐",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "吉巴罗的配乐",
+        "hits": [
+          {
+            "word": "鸡巴",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "鸡巴",
+          "level": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "id": "P310-PY-01-N1",
+      "request": {
+        "text": "sha bi can shu"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabicanshu",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-01-N2",
+      "request": {
+        "text": "SHA BI CAN SHU"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabicanshu",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-01-N3",
+      "request": {
+        "text": "ｓｈａ ｂｉ ｃａｎ ｓｈｕ"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabicanshu",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-01-N4",
+      "request": {
+        "text": "sha.bi.can.shu"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabicanshu",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-01-before",
+      "request": {
+        "text": "shabi。sha bi can shu"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "shabishabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-PY-01-after",
+      "request": {
+        "text": "sha bi can shu。shabi"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabicanshushabi",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "shabicanshushabi",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-PY-01-boundary",
+      "request": {
+        "text": "sha bi，can shu"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "shabicanshu",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-PY-02-N1",
+      "request": {
+        "text": "sha bi shi yan"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabishiyan",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-02-N2",
+      "request": {
+        "text": "SHA BI SHI YAN"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabishiyan",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-02-N3",
+      "request": {
+        "text": "ｓｈａ ｂｉ ｓｈｉ ｙａｎ"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabishiyan",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-02-N4",
+      "request": {
+        "text": "sha.bi.shi.yan"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabishiyan",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-PY-02-before",
+      "request": {
+        "text": "shabi。sha bi shi yan"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "shabishabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-PY-02-after",
+      "request": {
+        "text": "sha bi shi yan。shabi"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishiyanshabi",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "shabishiyanshabi",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-PY-02-boundary",
+      "request": {
+        "text": "sha bi，shi yan"
+      },
+      "before": {
+        "passed": false,
+        "normalized": "shabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "after": {
+        "passed": false,
+        "normalized": "shabishiyan",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "expected_hits": [
+        {
+          "word": "傻逼",
+          "level": "HIGH"
+        }
+      ]
+    },
+    {
+      "id": "P310-NORMAL-01",
+      "request": {
+        "text": "shuffle bitmap Redis SQL"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "shufflebitmapredissql",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shufflebitmapredissql",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-02",
+      "request": {
+        "text": "g8_handler(node)"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8handlernode",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8handlernode",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-03",
+      "request": {
+        "text": "g8counter"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "g8counter",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "g8counter",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-04",
+      "request": {
+        "text": "class ShabiDemo:"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "classshabidemo",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "classshabidemo",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-05",
+      "request": {
+        "text": "sha bitmap algorithm"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "shabitmapalgorithm",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabitmapalgorithm",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-06",
+      "request": {
+        "text": "sha biologist parser"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "shabiologistparser",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shabiologistparser",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-07",
+      "request": {
+        "text": "sha"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "sha",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "sha",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-08",
+      "request": {
+        "text": "sha b"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "shab",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "shab",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-09",
+      "request": {
+        "text": "zhe ji ba yi zi"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "zhejibayizi",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "zhejibayizi",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-10",
+      "request": {
+        "text": "ji ba yao shi"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "jibayaoshi",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "jibayaoshi",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-11",
+      "request": {
+        "text": "chong qing yin hang"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "chongqingyinhang",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "chongqingyinhang",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-NORMAL-12",
+      "request": {
+        "text": "Python Java HTTP"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "pythonjavahttp",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "pythonjavahttp",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-CONTEXT-01",
+      "request": {
+        "text": "举报：“傻逼”，请处理"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "举报傻逼请处理",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "举报傻逼请处理",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-CONTEXT-02",
+      "request": {
+        "text": "网络暴力讨论：“傻逼”属于攻击性言论"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "网络暴力讨论傻逼属于攻击性言论",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "网络暴力讨论傻逼属于攻击性言论",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-CONTEXT-03",
+      "request": {
+        "text": "不要对同学说“傻逼”"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "不要对同学说傻逼",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "不要对同学说傻逼",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-CONTEXT-04",
+      "request": {
+        "text": "我想去死，请陪我聊聊"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "我想去死请陪我聊聊",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "我想去死请陪我聊聊",
+        "hits": []
+      },
+      "expected_hits": []
+    },
+    {
+      "id": "P310-CONTEXT-05",
+      "request": {
+        "text": "我是不是个废物，想找人聊聊"
+      },
+      "before": {
+        "passed": true,
+        "normalized": "我是不是个废物想找人聊聊",
+        "hits": []
+      },
+      "after": {
+        "passed": true,
+        "normalized": "我是不是个废物想找人聊聊",
+        "hits": []
+      },
+      "expected_hits": []
+    }
+  ],
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "legacy": {
+    "count": 4887,
+    "sources": [
+      {
+        "file": "docs/qa/data/us24-development.v2.jsonl",
+        "rows": 701,
+        "sha256": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3.jsonl",
+        "rows": 406,
+        "sha256": "33d33a05200ceed80d87da759dd9cfa66c1b91729b5e67b84db5fdfde7a36831"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3_2.jsonl",
+        "rows": 488,
+        "sha256": "b734b3f25a38644ea919083285de4ad54dd74ac1dd859d16205eead4937ff6d3"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3_3.jsonl",
+        "rows": 530,
+        "sha256": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3_4.jsonl",
+        "rows": 890,
+        "sha256": "3bc4cc797af07df988dd3a63dc78210db78352cb4b54ee13bd5e96876b3da8eb"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3_5.jsonl",
+        "rows": 544,
+        "sha256": "ddeaa645573f71b88d636f95881f5ba6b65b1c3bbddf99d2cff5e273a7f27855"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3_7.jsonl",
+        "rows": 946,
+        "sha256": "325a5b9bddfd1f2528123712cd7116391fa54be097d20c216089ef64b6a1455b"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3_8.jsonl",
+        "rows": 68,
+        "sha256": "61d1eb6b862a322281365bb0df157e8664bfb0be8b396385a63f13e350d902bc"
+      },
+      {
+        "file": "docs/qa/data/us24-development.v3_9.jsonl",
+        "rows": 314,
+        "sha256": "3f51535e28c9a830464ebc6493c456ebcdf5ffe8bff1fc8817b4e415941f6a10"
+      }
+    ],
+    "changed": []
+  }
+}

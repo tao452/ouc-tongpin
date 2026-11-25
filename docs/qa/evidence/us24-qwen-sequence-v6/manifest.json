@@ -1,0 +1,175 @@
+{
+  "scope": "current3.9 supervised last-two-layer and training-only homophone development experiment",
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_path": "qwen-sequence-v6/frozen.json",
+      "private_sha256": "691ecf7bb855b7f143b5945490bdcc3a930aaf19983d401e06aed2786f97c526",
+      "public_lf_sha256": "72db005660c71a0ac8bfb4c71e08394aba29145b7590dc4618dc50ffe2075f66"
+    },
+    {
+      "file": "summary.json",
+      "private_path": "qwen-sequence-v6/summary.json",
+      "private_sha256": "ad30c69a07d2b962a444f4be17ca0877cea8b3a2d7ea0bcd2311620ce2157c8a",
+      "public_lf_sha256": "106434c499dabe747bec38968961c07017c0fec8735dafdee98394d12d5841c3"
+    },
+    {
+      "file": "training-window-order.json",
+      "private_path": "qwen-sequence-v6/training-window-order.json",
+      "private_sha256": "c98641e0e5a15e83358bd9baf57ff913cb4a01d5053fc346e3f92ba087d12596",
+      "public_lf_sha256": "c98641e0e5a15e83358bd9baf57ff913cb4a01d5053fc346e3f92ba087d12596"
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "private_path": "qwen-sequence-v6/epoch-1/predictions.jsonl",
+      "private_sha256": "d99cb3f724dafe5fd8fc0c04b20b55096a23139b00b01a070d5292b9a0cf05ab",
+      "public_lf_sha256": "1f4770ed69e1b79d417503bcc52d910f272548bedb9c6de8c88d4fed3148b159"
+    },
+    {
+      "file": "epoch-1-report.json",
+      "private_path": "qwen-sequence-v6/epoch-1/report.json",
+      "private_sha256": "1d61c451a28965c9c37dd221a6ffbc7d208fb8b893d7a52dc14c67278e0a54e0",
+      "public_lf_sha256": "110145bc39d67cb34e6c82dc780e5612496303c15c45e77b4e936e26ee60baaa"
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "private_path": "qwen-sequence-v6/epoch-1/thresholds.csv",
+      "private_sha256": "399f82132aabb978a0db276fc3117b28b02b0b301ca059d851e9329a34fa2091",
+      "public_lf_sha256": "399f82132aabb978a0db276fc3117b28b02b0b301ca059d851e9329a34fa2091"
+    },
+    {
+      "file": "epoch-1-threshold-grid-gate-audit.json",
+      "private_path": "qwen-sequence-v6/epoch-1/threshold-grid-gate-audit.json",
+      "private_sha256": "43b2ac0e4f12ca3dcbe0bcd066067babfc1724c951943ffcab2dfe94e49eaea7",
+      "public_lf_sha256": "05e3acac38fe0eae9610db7cf1ba3926dd08ca05f436ff4a1cda1463cdfc699b"
+    },
+    {
+      "file": "policy.json",
+      "private_path": "qwen-homophone-v6-inputs/policy.json",
+      "private_sha256": "c54563f2c4e3673fcb5d11fae0418086a87d171ed732aca4b17596143f74e245",
+      "public_lf_sha256": "816d17a37e2d137fd3cf79778d197a0a29b86ce68e4317f3ea605445f8e2bac0"
+    },
+    {
+      "file": "augmentation-index.json",
+      "private_path": "qwen-homophone-v6-inputs/augmentation-index.json",
+      "private_sha256": "19cb0c45402bf0bc1552a9919a209b8c4149e61442dc1422f1474b4e1859f7bd",
+      "public_lf_sha256": "7d4b1c30ca6a6053b9f497f88ebffcde391b219d930dfda599e198af00052b0b"
+    },
+    {
+      "file": "prepare_qwen_homophone_v6.py.txt",
+      "private_path": "prepare_qwen_homophone_v6.py",
+      "private_sha256": "fda4257ac40ebcb51f6ad20b8b03573bb7392d0e61f6645ad935d8100c851e34",
+      "public_lf_sha256": "fda4257ac40ebcb51f6ad20b8b03573bb7392d0e61f6645ad935d8100c851e34"
+    },
+    {
+      "file": "qwen_sequence_model_v6.py.txt",
+      "private_path": "qwen_sequence_model_v6.py",
+      "private_sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "public_lf_sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088"
+    },
+    {
+      "file": "train_qwen_sequence_v6.py.txt",
+      "private_path": "train_qwen_sequence_v6.py",
+      "private_sha256": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d",
+      "public_lf_sha256": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d"
+    },
+    {
+      "file": "qwen_sequence_model_v5.py.txt",
+      "private_path": "qwen_sequence_model_v5.py",
+      "private_sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "public_lf_sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476"
+    },
+    {
+      "file": "qwen_sequence_encoding_v5.py.txt",
+      "private_path": "qwen_sequence_encoding_v5.py",
+      "private_sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482",
+      "public_lf_sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482"
+    },
+    {
+      "file": "train_qwen_sequence_v5d.py.txt",
+      "private_path": "train_qwen_sequence_v5d.py",
+      "private_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "public_lf_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "audit_threshold_grid.py.txt",
+      "private_path": "audit_threshold_grid.py",
+      "private_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5",
+      "public_lf_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5"
+    },
+    {
+      "file": "document_qwen_sequence_v6.py.txt",
+      "private_path": "document_qwen_sequence_v6.py",
+      "private_sha256": "3937be29c5a376ebf889caa1232291c6d278ada44cfb0086f95c73c060d4693f",
+      "public_lf_sha256": "3937be29c5a376ebf889caa1232291c6d278ada44cfb0086f95c73c060d4693f"
+    },
+    {
+      "file": "publish_qwen_sequence_v6.py.txt",
+      "private_path": "publish_qwen_sequence_v6.py",
+      "private_sha256": "6b8b115e234c00e4093549cc57b26649347049569af020ab547abb1af66e356d",
+      "public_lf_sha256": "6b8b115e234c00e4093549cc57b26649347049569af020ab547abb1af66e356d"
+    },
+    {
+      "file": "preflight-16.json",
+      "private_path": "qwen-sequence-v6-preflight-16.json",
+      "private_sha256": "08dab261072e5580aa6697890ad7697a09c419585aeecbc00b00291dd815dff0",
+      "public_lf_sha256": "e2ca86e7fcb7205415ee0c8c15be3eebc899ebc4e8dc8f11ef59bc6005b9b808"
+    },
+    {
+      "file": "ci-db6-qualified.json",
+      "private_path": "ci-db6-qualified.json",
+      "private_sha256": "dfd2b7f5b008821d68cbfb7394c0c0df0638c122d57bec9a14120d0a98527a28",
+      "public_lf_sha256": "dfd2b7f5b008821d68cbfb7394c0c0df0638c122d57bec9a14120d0a98527a28"
+    },
+    {
+      "file": "v5d-complete-grid-audit.json",
+      "private_path": "qwen-sequence-v5d/epoch-1/threshold-grid-gate-audit.json",
+      "private_sha256": "08b37f84edf2cdcffabcfe2ba4cfd2c08109fc6cddb7b4ca17b06fe54f11ffd7",
+      "public_lf_sha256": "0608091be5e60d82f3ba785f7f3406b1f4c89b556a2328b536a1aae47beb9ecf"
+    },
+    {
+      "file": "qwen-v6-historical-overlap-audit.json",
+      "private_path": "qwen-v6-historical-overlap-audit.json",
+      "private_sha256": "d15a95d42b047ca5fdb2c0eee0d1c3ae6c580435b42592163556878009ca28c6",
+      "public_lf_sha256": "ea6e37e7315fc571a40dcbd33c7c25513d10a0f7cbf8ca47c0cdffeb2f5c4fd4"
+    },
+    {
+      "file": "qwen-v6-training-conflict-audit.json",
+      "private_path": "qwen-v6-training-conflict-audit.json",
+      "private_sha256": "207e55a8e6c7283022128c076411bb2884976b3c053eb3866576324a9ee995b5",
+      "public_lf_sha256": "ef1dce14e9e2a0bc459887cd7c6859c1fa2a5b9f655d45ea4f09bc560a3816fc"
+    },
+    {
+      "file": "added-input-index.jsonl",
+      "public_lf_sha256": "406044a310caf92a24b463570d769554e2112cebf43e6c31527c5a14e95821fd"
+    },
+    {
+      "file": "input-derivation-audit.json",
+      "public_lf_sha256": "295d2aa063ad375bf568786320283e851b72aaa4a97756ed97d1ceddf0305441"
+    },
+    {
+      "file": "partial-state-index.json",
+      "public_lf_sha256": "74639a0733f304082722120e5c94ecb489b152e8015c4651364b3194bbda80d0"
+    }
+  ],
+  "training_rows": 42371,
+  "training_windows": 42643,
+  "evaluation_rows": 3258,
+  "excluded_evaluation_rows": 0,
+  "augmentation_labels": "inherited assumptions, not newly annotated gold; may introduce semantic ambiguity",
+  "runtime_warning": "CUDA attention backward may be nondeterministic; fixed seed does not guarantee cross-device bitwise equality",
+  "private_execution_log_sha256": "0d2c2ff805317e1d9e419bbc176d1b1a946ee4a7e905e29c579fc86a48f8cfc6",
+  "upstream_pretraining_evaluation_exposure": "unknown",
+  "default_S1_service_changed": false,
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "private_assets": "raw corpora, token windows, base/updated parameters, optimizer and RNG states, full logs"
+}

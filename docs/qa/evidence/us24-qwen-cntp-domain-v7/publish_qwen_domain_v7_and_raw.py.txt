@@ -1,0 +1,80 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+
+
+def sha(path):
+    with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+
+
+def publish(private,public,sources,extras,epochs):
+    public.mkdir(exist_ok=False);entries=[]
+    def copy(path,name):
+        raw=path.read_bytes();data=raw.replace(b'\r\n',b'\n');assert len(data)<5*1024*1024
+        target=public/name;target.parent.mkdir(parents=True,exist_ok=True)
+        with target.open('xb') as f:f.write(data)
+        entries.append(dict(file=name,private_path=path.relative_to(LAB).as_posix(),
+            private_sha256=hashlib.sha256(raw).hexdigest(),public_lf_sha256=hashlib.sha256(data).hexdigest()))
+    def write(value,name):
+        data=(''.join(json.dumps(r,ensure_ascii=False,separators=(',',':'))+'\n' for r in value)).encode()
+        assert len(data)<5*1024*1024
+        with (public/name).open('xb') as f:f.write(data)
+        entries.append(dict(file=name,public_lf_sha256=hashlib.sha256(data).hexdigest()))
+    for path,name in extras:copy(path,name)
+    for name in sources:copy(LAB/name,name+'.txt')
+    errors=0
+    for epoch in epochs:
+        directory=private/f'epoch-{epoch}' if epoch else private
+        predictions=list(map(json.loads,(directory/'predictions.jsonl').read_text(encoding='utf-8').splitlines()))
+        assert len(predictions)==len({r['id'] for r in predictions})==3258
+        assert all(not any(k in r for k in ['text','pinyin','input_ids','windows']) for r in predictions)
+        errors+=sum(bool(r.get('error')) for r in predictions)
+        for name in ['predictions.jsonl','report.json','thresholds.csv','threshold-grid-gate-audit.json']:
+            copy(directory/name,('epoch-'+str(epoch)+'-' if epoch else '')+name)
+    if epochs!=[0]:
+        index=json.loads((LAB/'qwen-cntp-domain-v7-inputs/index.json').read_text(encoding='utf-8'))
+        assert len(index)==18956 and all(not any(k in r for k in ['text','pinyin','input_ids']) for r in index)
+        for start in range(0,len(index),3500):write(index[start:start+3500],f'input-index-{start//3500+1:02d}.jsonl')
+        frozen=json.loads((private/'frozen.json').read_text(encoding='utf-8'))
+        for name,value in frozen['code_sha256'].items():
+            assert hashlib.sha256((LAB/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest()==value
+        snapshot=LAB/'app-v3_9-r3-before-3_10'
+        for name,value in frozen['dataset_policy']['current_evaluation_policy']['current_engine_sha256'].items():
+            path=snapshot/Path(name).relative_to('services/algo')
+            assert hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()==value
+        copy(snapshot/'source-manifest.json','frozen-input-engine-source-manifest.json')
+        for path in sorted((snapshot/'app').rglob('*.py')):
+            copy(path,'frozen-input-engine/'+path.relative_to(snapshot).as_posix()+'.txt')
+        partials=[]
+        for directory in sorted(private.glob('partial-*')):
+            item=json.loads((directory/'progress.json').read_text(encoding='utf-8'))
+            assert item['accuracy_status']=='NOT_RUN' and not item['evaluation_run']
+            item['files']={p.name:dict(bytes=p.stat().st_size,sha256=sha(p)) for p in directory.iterdir() if p.suffix!='.json'}
+            partials.append(item)
+        write(partials,'partial-state-index.jsonl')
+    manifest=dict(scope='completed supervised development experiment, not independent campus acceptance',files=entries,
+        epochs=epochs,rows_per_evaluation=3258,excluded_evaluation_rows=0,inference_errors=errors,
+        source_engine='executed frozen3.9 input engine; exact snapshot and SHA retained; current3.10 qualification separate',
+        COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False,
+        upstream_pretraining_evaluation_exposure='unknown',
+        private_assets='raw corpus, generated text, token windows, base and updated parameters, optimizer/RNG states and full logs')
+    with (public/'manifest.json').open('x',encoding='utf-8',newline='\n') as f:json.dump(manifest,f,ensure_ascii=False,indent=2)
+    print(json.dumps(dict(directory=public.name,files=len(entries)+1,epochs=epochs,inference_errors=errors)),flush=True)
+
+
+summary=json.loads((LAB/'qwen-cntp-domain-v7/summary.json').read_text(encoding='utf-8'))
+assert len(summary['epochs'])==2 and all(r['training_windows_seen']==15967 and r['evaluation_rows']==3258 for r in summary['epochs'])
+publish(LAB/'qwen-cntp-domain-v7',ROOT/'docs/qa/evidence/us24-qwen-cntp-domain-v7',
+    ['train_qwen_cntp_domain_v7.py','train_qwen_sequence_v6.py','train_qwen_sequence_v5d.py',
+     'qwen_sequence_model_v6.py','qwen_sequence_model_v5.py','qwen_sequence_encoding_v5.py',
+     'prepare_qwen_cntp_domain_v7.py','phonetic_recheck_metrics.py','audit_threshold_grid.py',Path(__file__).name],
+    [(LAB/'qwen-cntp-domain-v7'/name,name) for name in ['frozen.json','summary.json','training-window-order.json']]+
+    [(LAB/'qwen-cntp-domain-v7-inputs/policy.json','input-policy.json'),
+     (LAB/'qwen-cntp-domain-v7-preflight-16.json','preflight-16.json')],[1,2])
+publish(LAB/'qwen-raw-probe-v1',ROOT/'docs/qa/evidence/us24-qwen-raw-probe-v1',
+    ['prepare_qwen_raw_probe_v1.py','evaluate_qwen_raw_probe_v1.py','qwen_sequence_model_v6.py',
+     'train_qwen_sequence_v5d.py','phonetic_recheck_metrics.py','audit_threshold_grid.py'],
+    [(LAB/'qwen-raw-probe-v1/frozen.json','frozen.json'),
+     (LAB/'qwen-raw-probe-v1-inputs/input-audit.json','input-audit.json')],[0])

@@ -1,0 +1,83 @@
+{
+  "scope": "Verified GitHub CI metadata for documentation head; source engine unchanged",
+  "head": "db6acb98b4b7ed0e186726c5054dd0eb537245b9",
+  "run_id": 45503673873,
+  "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45503673873",
+  "jobs": [
+    {
+      "name": "guard",
+      "id": 138833445436,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "changes",
+      "id": 138833445899,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "w1-poc",
+      "id": 138833445951,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "stack / Deploy and verify temporary test environment",
+      "id": 138833446069,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "admin-web",
+      "id": 138833584187,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "api-server",
+      "id": 138833584251,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "algo",
+      "id": 138833584254,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "miniprogram",
+      "id": 138833584356,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "W3 delivery evidence",
+      "id": 138836259870,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "quality",
+      "id": 138836379037,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "algorithm": {
+    "python_passed": 653,
+    "python_skipped": 0,
+    "coverage_percent": 98.14,
+    "ruff": "PASS"
+  },
+  "built_gateway_314": {
+    "tp": 122,
+    "fp": 0,
+    "fn": 0,
+    "tn": 192
+  },
+  "model_accuracy_acceptance": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING"
+}

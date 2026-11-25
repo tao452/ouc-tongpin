@@ -1,0 +1,77 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+old=ROOT/'services/algo/app/data/moderation-v3_9-candidate.json'
+records=json.loads(old.read_text(encoding='utf-8'))
+assert hashlib.sha256(old.read_bytes()).hexdigest()=='93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b'
+additions={
+ '傻逼':['砂比参数','砂比试验','水砂比','沙比是音译词','沙比是虚构人物名'],
+ '鸡巴':['几把椅子','几把钥匙','几把雨伞','几把扫帚','几把扇子','几把尺子','几把剪刀','几把吉他','几把游戏',
+       '击靶训练','击靶练习','击靶比赛','击靶水平','击靶成绩','击靶计分',
+       'G8峰会','G8会议','G8项目','G8接口','G8节点','G8寄存器',
+       '鸡把玉米吃完了','鸡把饲料吃完了','鸡把米啄干净了','吉巴罗舞蹈','吉巴罗的配乐'],
+ '放屁':['最近总是放屁','放屁是正常生理现象','饭后老是放屁']}
+pinyin_allow=['sha bi can shu','sha bi shi yan']
+levels={r['word']:r['level'] for r in records}
+attacks={'傻逼':'你是傻逼','鸡巴':'你就是鸡巴','放屁':'你在放屁'}
+cases=[]
+
+
+def case(identifier,text,word,category):
+    level=levels[word] if word else None
+    cases.append(dict(id=identifier,text=text,expected_word=word,expected_level=level,blocked=level=='HIGH',
+        expected_hits=[] if word is None else [dict(word=word,level=level)],
+        category=category,kind='proposed_literal_context_policy'))
+
+
+for number,entry in enumerate(records,1):
+    word=entry['word']
+    if word not in additions:continue
+    entry.setdefault('allow_phrases',[]).extend(additions[word])
+    assert len(entry['allow_phrases'])<=50
+    for i,phrase in enumerate(additions[word],1):
+        prefix=f'P310-{number:03d}-{i:02d}'
+        normal='课程讨论'+phrase+'。'
+        case(prefix+'-normal',normal,None,'normal_phrase')
+        case(prefix+'-addressed','同学请核对'+phrase+'。',None,'addressed_normal_phrase')
+        case(prefix+'-outside-before',attacks[word]+'。'+normal,word,'same_word_outside_before')
+        case(prefix+'-outside-after',normal+attacks[word]+'。',word,'same_word_outside_after')
+        case(prefix+'-other-threat',normal+'我要弄死你。','弄死你','other_rule_outside')
+        variants=[v for v in [word,*entry.get('aliases',[])] if v.casefold() in phrase.casefold()]
+        variant=max(variants,key=len)
+        left=phrase.casefold().index(variant.casefold());right=left+len(variant)
+        split=right if right<len(phrase) else left
+        assert 0<split<len(phrase)
+        broken=phrase[:split]+'。'+phrase[split:]
+        case(prefix+'-clause-boundary',broken,word,'literal_clause_scope_guard')
+        if 'G8' in phrase:
+            full=''.join(chr(ord(c)+0xfee0) if c.isascii() and c.isalnum() else c for c in phrase)
+            case(prefix+'-fullwidth',full,None,'fullwidth_normal_phrase')
+            case(prefix+'-lowercase',phrase.lower(),None,'casefold_normal_phrase')
+    if word=='傻逼':entry.setdefault('pinyin_allow_phrases',[]).extend(pinyin_allow)
+for i,phrase in enumerate(pinyin_allow,1):
+    variants=[phrase,phrase.upper(),''.join(chr(ord(c)+0xfee0) if c.isascii() and c.isalnum() else c for c in phrase),phrase.replace(' ','.')]
+    for j,value in enumerate(variants,1):case(f'P310-PY-{i:02d}-N{j}',value,None,'pinyin_normal_phrase')
+    case(f'P310-PY-{i:02d}-before','shabi。'+phrase,'傻逼','pinyin_outside_before')
+    case(f'P310-PY-{i:02d}-after',phrase+'。shabi','傻逼','pinyin_outside_after')
+    parts=phrase.split();case(f'P310-PY-{i:02d}-boundary',' '.join(parts[:2])+'，'+' '.join(parts[2:]),'傻逼','pinyin_clause_scope_guard')
+for i,text in enumerate(['shuffle bitmap Redis SQL','g8_handler(node)','g8counter','class ShabiDemo:',
+    'sha bitmap algorithm','sha biologist parser','sha','sha b','zhe ji ba yi zi','ji ba yao shi',
+    'chong qing yin hang','Python Java HTTP'],1):case(f'P310-NORMAL-{i:02d}',text,None,'ordinary_language_identifier')
+for i,text in enumerate(['举报：“傻逼”，请处理','网络暴力讨论：“傻逼”属于攻击性言论',
+    '不要对同学说“傻逼”','我想去死，请陪我聊聊','我是不是个废物，想找人聊聊'],1):case(f'P310-CONTEXT-{i:02d}',text,None,'finite_quote_help_context')
+assert len(records)==132 and len({r['id'] for r in cases})==len(cases)
+dictionary=ROOT/'services/algo/app/data/moderation-v3_10-candidate.json'
+dataset=ROOT/'docs/qa/data/us24-development.v3_10.jsonl'
+with dictionary.open('x',encoding='utf-8',newline='\n') as f:json.dump(records,f,ensure_ascii=False,indent=2);f.write('\n')
+with dataset.open('x',encoding='utf-8',newline='\n') as f:
+    for row in cases:f.write(json.dumps(row,ensure_ascii=False)+'\n')
+policy=dict(scope='proposed per-entry exact normal phrases; no global whitelist or new canonical word/severity change',
+    previous_dictionary_sha256=hashlib.sha256(old.read_bytes()).hexdigest(),dictionary_sha256=hashlib.sha256(dictionary.read_bytes()).hexdigest(),
+    additions=additions,pinyin_additions={'傻逼':pinyin_allow},normal_phrase_additions=sum(map(len,additions.values())),
+    development_cases=len(cases),label_scope='literal matching proposals; not broad semantic gold or M1 approval',
+    M1_review='PENDING',production_acceptance=False)
+with (LAB/'precise-phrases-v3_10-policy.json').open('x',encoding='utf-8') as f:json.dump(policy,f,ensure_ascii=False,indent=2)
+print(json.dumps({k:v for k,v in policy.items() if k not in ['additions','pinyin_additions']}))

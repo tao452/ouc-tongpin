@@ -1,0 +1,38 @@
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124';QA=ROOT/'docs/qa'
+report=json.loads((LAB/'qwen-sequence-v6/epoch-1/report.json').read_text(encoding='utf-8'))
+assert report['evaluation_rows']==3258 and report['training_windows_seen']==42643
+assert (QA/'evidence/us24-qwen-sequence-v6/manifest.json').is_file()
+gate=any(v['best_fpr_eligible'] and v['best_fpr_eligible']['development_gate_met'] for v in report['metrics'].values())
+grid=json.loads((LAB/'qwen-sequence-v6/epoch-1/threshold-grid-gate-audit.json').read_text(encoding='utf-8'))
+assert not grid['development_gate_met'] or gate, 'A passing grid point needs its full results added before this report is generated'
+paragraphs=['\n\n## 第六组：单字谐音增强与末两层完整实测\n',
+ '保留35293条原训练文本和3563条已有全拼视图，按固定哈希选3517条，仅在整句无调读音完全一致时增加单字谐音视图3515条（正1795、负1720）。两条只跳过新增视图，原文继续训练。新增视图与历史COLD test归一化重合0条，训练输入原有14组标签冲突继续保留，新增视图未增加冲突组。继承标签属于训练假设，不能作为新的人工标注。\n',
+ '从第五组完整权重继续，冻结前26层及其LoRA，训练最后2个完整解码层、最终归一化和分类头，共100792832个参数。层和归一化学习率5e-6、分类头1e-4、5%预热，microbatch16、累积2步，固定1轮。16个最长窗口的前后向及一次Adam更新峰值5798669312字节，低于物理显存92%；预检权重丢弃后重新载入旧checkpoint开始正式训练。\n',
+ f"实际42371条训练、42643窗口全部执行一次；3258条评估的ID、标签、全部token窗口及来源与当前3.9封存缓存逐项相同。训练{report['training_seconds']:.2f}秒、推理{report['inference_seconds']:.2f}秒，训练损失{report['training_loss']:.6f}，峰值已分配显存{report['peak_cuda_bytes']}字节。损失和显存只记录执行过程。\n",
+ '|配置/阈值|开发组|TP|FP|FN|TN|Recall|Precision|FPR|推理错误|\n|---|---|---:|---:|---:|---:|---:|---:|---:|---:|\n']
+names={'toxicn_dev':'ToxiCN开发','PCR':'PCR','controls':'正常257','context_stress':'新语境102'}
+notes=[]
+def percent(v):return '—' if v is None else f'{v*100:.2f}%'
+for mode,v in report['metrics'].items():
+    label='字面或模型' if mode=='literal_or_model' else '模型'
+    for title,key in [('默认','at_0_5'),('四组误报约束选点','best_fpr_eligible')]:
+        point=v[key]
+        if point is None:
+            notes.append(f'\n{label}没有符合四组误报约束的网格选点。\n')
+            continue
+        for cohort,m in point['cohorts'].items():
+            c=m['confusion_matrix']
+            paragraphs.append(f"|{label}/{title} {point['threshold']:.3f}|{names[cohort]}|{c['tp']}|{c['fp']}|{c['fn']}|{c['tn']}|{percent(m['recall'])}|{percent(m['precision'])}|{percent(m['false_positive_rate'])}|{m['inference_errors']}|\n")
+paragraphs.extend(notes)
+paragraphs.append('\n预定开发门槛'+('通过，下一步先冻结唯一配置再执行预留外部对照。' if gate else '仍未通过，保留全部失败并继续调整，预留COLD dev继续封存。')+
+ '全量分数、默认结果、999阈值曲线、各类别矩阵、窗口顺序和实际源码见[完整证据](evidence/us24-qwen-sequence-v6/manifest.json)。输入复用与新增部分见[逐项对照](evidence/us24-qwen-sequence-v6/input-derivation-audit.json)。本组仍为开发结果，分类分数不提供S1等级，M1逐条审核及M3独立复现为PENDING。\n')
+p=QA/'US24-拼音语义分类训练与复测报告.md'
+text=p.read_text(encoding='utf-8');assert '## 第六组：单字谐音增强与末两层完整实测' not in text
+lines=text.splitlines()
+assert lines[2].startswith('ChineseBERT各组')
+lines[2]='ChineseBERT及Qwen监督分类、当前3.9同输入复核和固定组合均已完成实际开发预测。各配置的完整矩阵与阈值见下表，'+('预定开发门槛已通过，外部对照仍待执行。' if gate else '广义95%目标仍未通过，继续离线调整。')+'分类分数不产生S1等级。'
+p.write_text('\n'.join(lines)+'\n'+''.join(paragraphs),encoding='utf-8',newline='\n')
+print(json.dumps(dict(evaluation_rows=3258,development_gate=bool(gate))))

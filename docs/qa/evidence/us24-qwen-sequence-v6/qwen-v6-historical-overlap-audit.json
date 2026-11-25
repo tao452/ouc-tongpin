@@ -1,0 +1,14 @@
+{
+  "scope": "post-build overlap audit against already-used historical COLD test; no reserved dev access",
+  "historical_source_sha256": "b06d31481f0d558b6dc8140408938abe8dba8083cd9976b4ba8f5c837fbe78ed",
+  "historical_rows": 5323,
+  "selected": 3517,
+  "accepted": 3515,
+  "skipped_augmentation_only": 2,
+  "reasons": {
+    "no_eligible_common_hanzi": 1,
+    "candidate_validation_failed": 1
+  },
+  "new_training_overlap_ids": [],
+  "COLD_dev_fetched": false
+}

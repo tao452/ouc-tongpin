@@ -1,0 +1,59 @@
+import hashlib
+import json
+import sys
+from collections import Counter,defaultdict
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_recall import load_external
+from app.services.normalization import canonicalize
+
+source=LAB/'cntp-parent-audit-v1'
+manifest=json.loads((source/'source-manifest.json').read_text(encoding='utf-8'))
+for entry in manifest['files']:
+    assert hashlib.sha256((source/entry['file']).read_bytes()).hexdigest()==entry['sha256']
+index=json.loads((LAB/'qwen-homophone-v6-inputs/index.json').read_text(encoding='utf-8'))['rows']
+originals={r['id']:r for r in index if r['cohort']=='training' and not r.get('augmentation') and r['id'].startswith('ToxiCN-')}
+assert len(originals)==9612
+native=load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))
+lookup=defaultdict(list)
+sha=lambda value:hashlib.sha256(value.encode()).hexdigest()
+for row in native:
+    lookup[sha(canonicalize(row['text']))].append(row)
+positive=json.loads((source/'toxic_base.json').read_text(encoding='utf-8'))
+negative=json.loads((source/'non_toxic_base.json').read_text(encoding='utf-8'))
+changed=json.loads((source/'homo_toxi_transform.json').read_text(encoding='utf-8'))['results']
+assert len(positive)==len(changed)==2533 and len(negative)==2696
+parents={r['sentence_id']:r for r in positive}
+assert len(parents)==2533 and len({r['sentence_id'] for r in changed})==2533
+records=[]
+for kind,rows in [('positive_homophone',changed),('negative_parent',negative)]:
+    for row in rows:
+        parent=row['original_text'];label=int(row['is_toxic']);normalized=canonicalize(parent)
+        digest=sha(normalized);matches=lookup.get(digest,[])
+        if kind=='positive_homophone':
+            assert parent==parents[row['sentence_id']]['original_text'] and label==1
+            variant=canonicalize(row['perturbed_text'])
+        else:
+            assert label==0
+            variant=None
+        active=[r for r in matches if r['id'] in originals]
+        reason='eligible_training_parent'
+        if not matches:reason='parent_not_found_in_native_ToxiCN'
+        elif any(int(r['offensive'])!=label for r in matches):reason='parent_label_conflict'
+        elif not active:reason='parent_outside_training_partition'
+        elif kind=='positive_homophone' and not (variant and len(variant)<=2000):reason='invalid_new_view_only'
+        elif kind=='positive_homophone' and variant==normalized:reason='unchanged_new_view_only'
+        records.append(dict(kind=kind,upstream_sentence_id=row['sentence_id'],label=label,
+            source_text_sha256=sha(parent),parent_normalized_sha256=digest,
+            parent_native_ids=[r['id'] for r in matches],training_parent_ids=sorted(r['id'] for r in active),
+            new_view_sha256=None if variant is None else sha(variant),decision=reason,
+            eligible=reason=='eligible_training_parent'))
+counts={kind:dict(Counter(r['decision'] for r in records if r['kind']==kind)) for kind in ['positive_homophone','negative_parent']}
+value=dict(scope='training-parent qualification, not model evaluation; no native evaluation row removed',
+    source_manifest_sha256=hashlib.sha256((source/'source-manifest.json').read_bytes()).hexdigest(),
+    training_input_index_sha256=hashlib.sha256((LAB/'qwen-homophone-v6-inputs/index.json').read_bytes()).hexdigest(),
+    counts=counts,records=records,COLD_dev_fetched=False,accuracy='NOT_RUN',production_acceptance=False)
+with (source/'training-parent-audit.json').open('x',encoding='utf-8') as f:json.dump(value,f,ensure_ascii=False,indent=2)
+print(json.dumps(counts),flush=True)

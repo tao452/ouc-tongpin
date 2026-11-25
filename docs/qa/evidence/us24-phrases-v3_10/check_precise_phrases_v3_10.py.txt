@@ -1,0 +1,45 @@
+import argparse
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import assess,development
+from evaluate_dataset import HttpModerationService
+from app.services.moderation import ModerationService
+
+parser=argparse.ArgumentParser();parser.add_argument('--base-url');parser.add_argument('--output',type=Path,required=True)
+parser.add_argument('--legacy',action='store_true');args=parser.parse_args()
+old_file=ROOT/'services/algo/app/data/moderation-v3_9-candidate.json'
+new_file=ROOT/'services/algo/app/data/moderation-v3_10-candidate.json'
+dataset=ROOT/'docs/qa/data/us24-development.v3_10.jsonl'
+old=ModerationService(old_file);compiled=ModerationService(new_file)
+new=HttpModerationService(args.base_url,compiled.dictionary_sha256) if args.base_url else compiled
+rows=development(dataset)
+report=dict(scope='247 paired literal context proposals; not new broad semantic evaluation',
+    dictionary_before_sha256=old.dictionary_sha256,dictionary_after_sha256=compiled.dictionary_sha256,
+    dataset_sha256=hashlib.sha256(dataset.read_bytes()).hexdigest(),
+    source_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+    mode='http' if args.base_url else 'function',before=assess(rows,old),after=assess(rows,new),cases=[],
+    M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+for row in rows:
+    a=old.check(row['text']).model_dump();b=new.check(row['text']).model_dump()
+    assert b['hits']==row['expected_hits'] and b['passed']==(not row['blocked']),row['id']
+    report['cases'].append(dict(id=row['id'],request={'text':row['text']},before=a,after=b,
+        expected_hits=row['expected_hits']))
+if args.legacy:
+    changed=[];count=0;sources=[]
+    for path in sorted((ROOT/'docs/qa/data').glob('us24-development.*.jsonl')):
+        if path==dataset:continue
+        items=development(path)
+        sources.append(dict(file=path.relative_to(ROOT).as_posix(),rows=len(items),sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
+        for row in items:
+            a=old.check(row['text']).model_dump();b=compiled.check(row['text']).model_dump();count+=1
+            if a!=b:changed.append(dict(id=row['id'],dataset=path.name,before=a,after=b))
+    report['legacy']=dict(count=count,sources=sources,changed=changed)
+    assert count==4887 and not changed
+with args.output.open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(mode=report['mode'],count=247,before=report['before']['any_level']['confusion_matrix'],
+    after=report['after']['any_level']['confusion_matrix'],legacy=report.get('legacy',{}).get('count'))))

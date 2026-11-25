@@ -1,0 +1,13 @@
+{
+  "created_at_utc": "2026-11-24T23:05:57.029528+00:00",
+  "repo": "thomasyyyoung/ToxiBenchCN",
+  "revision": "b1e6922487785aec59841bfb909bf40326174373",
+  "paper": "https://arxiv.org/html/2505.24341v1",
+  "parent_provenance": "paper4.1: baseToxi_CN,2533toxic2696non-toxic; no COLD derivative stated",
+  "scope": "parent mapping qualification only; not training or fresh independent evaluation",
+  "admission": "accept for later training only after explicit parent maps into existing training partition; retain ALL existing evaluation rows",
+  "redistribution": "raw corpora remain private; preserve parent ToxiCN CC BY-NC-ND4.0 and repository license fingerprints",
+  "COLD_dev_fetched": false,
+  "accuracy": "NOT_RUN",
+  "production_acceptance": false
+}

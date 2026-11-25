@@ -1,0 +1,13 @@
+{
+  "scope": "exact in-memory comparison of all metadata and token windows; no raw/token redistribution",
+  "training_exact": 38856,
+  "evaluation_exact": 3258,
+  "added_training": 3515,
+  "all_original_training_retained": true,
+  "all_evaluation_retained": true,
+  "previous_features_sha256": "b08a29bc194de30bdda961c68fdcbe617690a315b6c991a988eb03ae95aee151",
+  "current_evaluation_features_sha256": "6a1b2040cff91d108f87594575c77b01cc6cff1dfe54f3dce43b31ca283bf361",
+  "current_features_sha256": "dd5f8062c875563da87dd7979ce6de16dafe408c1ee4310c8ed67cd416983f6c",
+  "previous_index_reference": "../us24-qwen-sequence-v5d/input-index-*.json",
+  "current_context_reference": "../us24-qwen-sequence-v5d/current-context39-qualification.json"
+}

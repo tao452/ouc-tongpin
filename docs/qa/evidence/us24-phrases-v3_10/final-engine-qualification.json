@@ -1,0 +1,9 @@
+{
+  "scope": "final optimized source after full functional and real-time-budget tests",
+  "source_sha256": "1faf6cb2f154aa849501dbd54422e58d9feef3ff72b3dea679b33d70dcbf6ced",
+  "matching_budget_seconds": 0.05,
+  "maximum_input_characters": 2000,
+  "maximum_lookahead_tokens": 64,
+  "guard": "all tokens visited; no input truncation; 503 on exhausted budget",
+  "GC": "enabled; thresholds unchanged; no user-text cache across requests"
+}

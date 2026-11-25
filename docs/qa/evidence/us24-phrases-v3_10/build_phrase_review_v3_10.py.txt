@@ -1,0 +1,59 @@
+import csv
+import hashlib
+import json
+from collections import Counter
+from pathlib import Path
+
+ROOT=Path.cwd();QA=ROOT/'docs/qa';LAB=ROOT/'qa-private/us24-recall-20261124'
+source=QA/'US24-v3_9-完整审核清单.csv'
+with source.open(encoding='utf-8-sig',newline='') as f:
+    reader=csv.DictReader(f);fields=reader.fieldnames;rows=list(reader)
+dictionary=ROOT/'services/algo/app/data/moderation-v3_10-candidate.json'
+entries=json.loads(dictionary.read_text(encoding='utf-8'))
+assert len(rows)==len(entries)==132
+decisions=['include','agree_level','agree_aliases','agree_pinyin','needs_exemption','m1_comments']
+normal={
+ '傻逼':'材料试验参数、音译词与虚构人物名说明、完整材料词组拼音',
+ '鸡巴':'量词加具体物品、击靶训练、G8项目和接口、动物把字句、作品配乐',
+ '放屁':'正常生理现象及日常咨询表述'}
+for i,(row,entry) in enumerate(zip(rows,entries,strict=True),1):
+    assert row['word']==entry['word'] and row['suggested_level']==entry['level']
+    assert row['m1_status']=='PENDING' and all(not row[k] for k in decisions)
+    row['allow_phrases']=' / '.join(entry.get('allow_phrases',[]))
+    row['pinyin_allow_phrases']=' / '.join(entry.get('pinyin_allow_phrases',[]))
+    row['technical_self_check']='FUNCTIONAL_PASS; PERFORMANCE_RECORDED'
+    if row['word'] in normal:
+        row['normal_context']+='；本次补充：'+normal[row['word']]
+        row['false_positive_risk']+='；精确豁免只覆盖登记词组及本次出现位置；未登记同义表达和含混语境仍需逐项审核'
+        row['rationale']+='；修正明确正常词组的别名误报，保留句外同词和其他攻击的识别'
+        row['test_ids']+=f';P310-{i:03d}-*'
+    if i==1:row['test_ids']+=';P310-PY-*'
+    if i==15:row['test_ids']+=';P310-*-other-threat'
+output=QA/'US24-v3_10-完整审核清单.csv'
+with output.open('x',encoding='utf-8',newline='') as f:
+    writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');writer.writeheader();writer.writerows(rows)
+sha=hashlib.sha256(dictionary.read_bytes()).hexdigest()
+text=['# US24 v3.10 词库逐条审核表\n',
+ '共132条：原5条、PR83新增41条、v2新增24条、v3新增50条、v3.5新增12条。标准词、等级、别名和整词读音保持原建议；本次为US24-001/075/076增加34个精确正常短语及2个拼音正常短语。\n',
+ f'词库SHA256：`{sha}`。建议HIGH47、MEDIUM80、LOW5；HIGH阻断，MEDIUM/LOW放行。全部业务状态PENDING，每条六个决定栏留空，默认仍为原5条。\n',
+ '豁免限于对应词条、同一分句中的登记词组和具体出现位置。词组前后出现同词攻击或其他攻击继续匹配。新增短语与247条开发样本、历史输出对照和性能实测见[复测报告](US24-v3_10-正常短语与误报复测.md)，结构化字段见[完整CSV](US24-v3_10-完整审核清单.csv)。\n',
+ '广义召回仍未达到95%，各组模型和外部历史结果见[训练报告](US24-拼音语义分类训练与复测报告.md)。词条、等级、别名、拼音与豁免均待M1逐项确认，M3独立复现待安排。\n',
+ '原[3.9审核版本](US24-v3_9-M1逐条审核表.md)及更早版本保留作对照。精确词组无法覆盖所有同义和反讽表达，以下正常语境与风险建议供逐项批注。\n']
+for row in rows:
+    def value(name):return row[name] or '无'
+    text.extend([f"\n## {row['candidate_id']} · {row['word']}\n",
+        f"来源：{row['origin']}；类别：{row['category']}；等级建议：{row['suggested_level']}；状态：PENDING。\n",
+        f"别名：{value('variants')}。定向别名：{value('targeted_aliases')}。标准词需定向：{row['target_required']}。\n",
+        f"拼音：{row['pinyin']}；整词读音：{value('context_pronunciation')}；数字声调路径：{value('context_numeric_tones')}；完整拼写别名：{value('pinyin_aliases')}；汉字同音：{row['hanzi_homophone']}。\n",
+        f"精确正常短语：{value('allow_phrases')}；拼音正常短语：{value('pinyin_allow_phrases')}。\n"])
+    if row['unicode_variant_ids']:text.append(f"Unicode变体编号：{row['unicode_variant_ids']}；码点：{row['unicode_codepoints']}。\n")
+    text.extend([f"收录理由：{row['rationale']}。\n",f"正常语境：{row['normal_context']}。误报风险：{row['false_positive_risk']}。\n",
+        f"对应测试：{row['test_ids']}。\n\n",'- 是否收录：____\n','- 是否同意等级：____\n',
+        '- 是否同意别名：____\n','- 是否同意拼音规则：____\n','- 是否需要豁免：____\n','- 修改意见：____\n'])
+with (QA/'US24-v3_10-M1逐条审核表.md').open('x',encoding='utf-8',newline='\n') as f:f.write('\n'.join(text))
+audit=dict(candidate_count=132,suggested_levels=dict(Counter(r['level'] for r in entries)),
+    origins=dict(Counter(r['origin'] for r in rows)),M1_pending=132,decision_blanks=sum(not r[k] for r in rows for k in decisions),
+    dictionary_sha256=sha,canonical_and_level_changes=0,aliases_and_reading_changes=0,production_acceptance=False)
+assert audit['decision_blanks']==792
+with (LAB/'phrases-v3_10-review-structure.json').open('x',encoding='utf-8') as f:json.dump(audit,f,ensure_ascii=False,indent=2)
+print(json.dumps(audit,ensure_ascii=False))
