@@ -4,7 +4,7 @@ import pytest
 
 from app.services.moderation import STARTER_DICTIONARY, ModerationService
 from scripts.evaluate_candidate import sha
-from scripts.evaluate_lexical import DATASET, DICTIONARY, PLAN, audit, main, run
+from scripts.evaluate_lexical import DATASET, DICTIONARY, PLAN, audit, git_lf_sha, main, run
 
 
 def test_lexical_fixture_and_scope_probes_have_separate_accounting(tmp_path):
@@ -127,3 +127,14 @@ def test_cli_rejects_remote_services_and_evidence_overwrite(tmp_path):
     assert main(["--output", str(output)]) == 2
     assert output.read_text(encoding="utf-8") == "preserved"
     assert sha(DATASET)
+
+
+def test_rollback_content_hash_accepts_line_endings_but_rejects_changed_values(tmp_path):
+    unix, windows, altered = (tmp_path / name for name in ["lf.json", "crlf.json", "changed.json"])
+    original = '[\n  {"word":"傻逼","level":"HIGH"}\n]\n'.encode()
+    unix.write_bytes(original)
+    windows.write_bytes(original.replace(b"\n", b"\r\n"))
+    altered.write_bytes(original.replace(b"HIGH", b"LOW"))
+    assert sha(unix) != sha(windows)
+    assert git_lf_sha(unix) == git_lf_sha(windows)
+    assert git_lf_sha(unix) != git_lf_sha(altered)

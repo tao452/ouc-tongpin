@@ -6409,5 +6409,31 @@
   "fixture_sha256": "3e1f1c8f1880cb59dbcded0d5e50b819965e230f27c25ef948cc8a9ace86e896",
   "fixture_rows": 1038,
   "scope_probe_rows": 9,
-  "development_labels": "作者合成的登记词面映射；不是广义语义金标；整句能力边界单列，不计正常真阴性"
+  "development_labels": "作者合成的登记词面映射；不是广义语义金标；整句能力边界单列，不计正常真阴性",
+  "old_files_git_lf_sha256": {
+    "moderation-v1.json": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+    "moderation-v1.manifest.json": "f5fa670b65fb8048865717b1d471f4b95511402775658d7052aec10fb46b02d5",
+    "moderation-v2-candidate.json": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd",
+    "moderation-v2-candidate.manifest.json": "3db347b4e114f166c86bacad2c63c3c1670442b1d755091a398b1679f1994353",
+    "moderation-v3-candidate.json": "301da843f88be51759a968772275668c7f7337ab54ab9ed2e022c650e3e16858",
+    "moderation-v3-candidate.manifest.json": "2ec8638d34b7350093eac989e5785d7a24999629c03c26aa21fa0b61601c1ab2",
+    "moderation-v3_1-candidate.json": "6d716075bea275a65cb7bc73477c2f9a3d902ad8ba73cfe0d0c22002fc7586b3",
+    "moderation-v3_1-candidate.manifest.json": "3c6302c50dce96a428af5d7740404ebcbdc008b189deff412f2e69cbb1123167",
+    "moderation-v3_10-candidate.json": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+    "moderation-v3_11-candidate.json": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+    "moderation-v3_12-candidate.json": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890",
+    "moderation-v3_13-candidate.json": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+    "moderation-v3_2-candidate.json": "cad53ea922b3630a7aedc3bef7024f1050d90100ab955ef0da5bd03a13487f53",
+    "moderation-v3_2-candidate.manifest.json": "ee60ae167b8297211264d47f7b9a1b885e132a0b304a634df6f41d06d6f3ba73",
+    "moderation-v3_3-candidate.json": "916b7d409268a53494129951124b033b0658e7aceb7b6bedccd7f8a84bb7de75",
+    "moderation-v3_3-candidate.manifest.json": "9117d98a96139290d6b5c62267297468c2db6c9c4bb5ded10258e815c54e0447",
+    "moderation-v3_4-candidate.json": "e6f94bbcfc16f83564433d3e748a0cf81d9677882b67041baa85672b19e88d56",
+    "moderation-v3_5-candidate.json": "debcb5c905580ac5b2d0eef86cdd74834cc8ef111f013b07456c15faaf904d5e",
+    "moderation-v3_8-candidate.json": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+    "moderation-v3_8-candidate.manifest.json": "501a54269bd1e2c5973a87d305517252aff864b5637521a7abc5a602cef9d40d",
+    "moderation-v3_9-candidate.json": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+    "moderation-v3_9-candidate.manifest.json": "48ab85154b688f521cf6d6f741423e21cf8cc8d3df5153888b114c35b624f670",
+    "words.json": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d"
+  },
+  "rollback_hash_policy": "原始工作区字节SHA单独保留；跨平台核对使用Git LF字节SHA，旧文件不重写"
 }

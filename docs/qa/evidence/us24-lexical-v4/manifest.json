@@ -34,6 +34,11 @@
       "sha256": "8496a60178cc99a7851c8bbc063eb7492b3e6e60dcd5b089647d57f76677c2be"
     },
     {
+      "file": "line-ending-fix.json",
+      "bytes": 1250,
+      "sha256": "85c9e2629943389f7c9ed7da907a2b49869bdeb8b92ba9f6b13816c093543e11"
+    },
+    {
       "file": "literal-before-after.json",
       "bytes": 1409,
       "sha256": "5d81882e2ad6b3b851cec7718fe7d463c7f11ef472439dbdc77b7f7fddeb6044"
@@ -49,23 +54,26 @@
       "sha256": "d2807bdd06879c9f99e8ad16327bc5499f37b728fa47c8abea26b20c6c444700"
     },
     {
-      "file": "quality-summary.json",
-      "bytes": 1021,
-      "sha256": "2d96b96e1db973e31727ec99ca1d24bf492b6e81da90fa76463fe209158bb81f"
-    },
-    {
       "file": "privacy-review.json",
       "bytes": 11285,
       "sha256": "ff74ef59989a354529ef3a7a0cdf3da880524c440b4d10d00f812779cbab7731"
+    },
+    {
+      "file": "quality-summary.json",
+      "bytes": 1460,
+      "sha256": "879483b2f7e9d78298c450a3fc33a6addeb35c9baeb383a7a06754a7f6a4f87e"
     }
   ],
   "source_code": {
-    "services/algo/scripts/evaluate_lexical.py": "077b982949fef6e9862ee27f30ac06a341e774686b7966dbd9b47289fd9baf6c",
+    "services/algo/scripts/evaluate_lexical.py": "431632257f08e97c48cc91c602b1dc83f8278a2947e76fce6939ab0bb5e3ecbf",
     "services/algo/app/services/targeted_matching.py": "b06e30af399aa99915adb9a6c7d228590055b0935adf27dd3de15940154bda21",
-    "services/algo/tests/test_lexical_candidate.py": "7905e8ed049f1f2d6453fa539bd5db41478b95bbe6b775aa07be9cdc8b972a26"
+    "services/algo/tests/test_lexical_candidate.py": "9abdbdf9274464747bf027647960ddfb8de9ab37738d57079c18a5bb0f389052"
   },
   "independent_evaluation": "NOT_RUN",
   "M1_review": "PENDING",
   "M3_reproduction": "PENDING",
-  "production_acceptance": false
+  "production_acceptance": false,
+  "initial_evaluation_commit": "3a3f86478cc64c3ac25f01ea6ec82bf43580391e",
+  "current_plan_sha256": "37d83f1c00ca5e0581eb17e33b6bf68a9b4a0cb84535d3e3d871c8af65f84f5d",
+  "followup": "跨平台旧文件清单校验修正；词库、样本及匹配行为未变"
 }

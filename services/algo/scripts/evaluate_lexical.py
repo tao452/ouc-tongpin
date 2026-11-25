@@ -21,6 +21,11 @@ DATASET = ROOT / "docs/qa/data/us24-development.lexical-v4.jsonl"
 PLAN = ROOT / "docs/qa/data/us24-lexical-v4-plan.json"
 
 
+def git_lf_sha(path):
+    """按Git的LF字节核对旧文件内容；原始工作区字节SHA另外保留。"""
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
 def audit(dictionary=DICTIONARY, plan_path=PLAN):
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     entries = json.loads(dictionary.read_text(encoding="utf-8"))
@@ -35,8 +40,10 @@ def audit(dictionary=DICTIONARY, plan_path=PLAN):
     old_map = {f"US24-{i:03}": row for i, row in enumerate(old, 1)}
     if len(old) != 132 or sha(old_path) != plan["source_dictionary_sha256"]:
         raise ValueError("Historical reference changed")
-    for name, digest in plan["old_files_sha256"].items():
-        if Path(name).name != name or sha(DICTIONARY.parent / name) != digest:
+    if set(plan["old_files_sha256"]) != set(plan["old_files_git_lf_sha256"]):
+        raise ValueError("Historical byte and Git-content inventories differ")
+    for name, digest in plan["old_files_git_lf_sha256"].items():
+        if Path(name).name != name or git_lf_sha(DICTIONARY.parent / name) != digest:
             raise ValueError("Historical rollback artifact changed")
     decisions = ["include", "agree_level", "agree_aliases", "agree_pinyin",
                  "needs_exemption", "m1_comments"]
