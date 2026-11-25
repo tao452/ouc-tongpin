@@ -1,0 +1,54 @@
+{
+  "repo": "weiweishi/roc-bert-base-zh",
+  "revision": "0348c672af2fc2aea383cd1275e43398e7a1ebd1",
+  "metadata_assets": [
+    {
+      "file": "config.json",
+      "bytes": 1070,
+      "sha256": "8e27676e5340a801a9e9a8503fca5d9ec0070cca07ad5555a747232e30079485",
+      "git_blob": "8c1fc7dd96ca79155e93813c9433e46d37eccc8b"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "bytes": 125,
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "git_blob": "a8b3208c2884c4efb86e49300fdd3dc877220cdf"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 412,
+      "sha256": "741610a7422466d1a9d83e290e2fcc32b67d97f656d107702b8cf6798140d5b1",
+      "git_blob": "40d2a779bbff14057fb4f03feec1133186aae877"
+    },
+    {
+      "file": "vocab.txt",
+      "bytes": 170844,
+      "sha256": "52bb388710662af0417b35f9c3db73e46ee0d5baf16848b22e64040eb9de3464",
+      "git_blob": "b6f886dfa7151b32a6e6b735499c7d5629197ae4"
+    },
+    {
+      "file": "word_pronunciation.json",
+      "bytes": 904066,
+      "sha256": "191473e812d59f25d6231b7863158077ff8bb83355fac6772ebd35c7a3d9a8f3",
+      "git_blob": "d77753641ee6d281a345ea066ccd7da36d0c0d51"
+    },
+    {
+      "file": "word_shape.json",
+      "bytes": 662282,
+      "sha256": "aab97d76dda69947f251144abf4bef9cfdfe1911bab8c223a0b2b54614403b46",
+      "git_blob": "2cb595b7e226a21d0217a89d78992c463b6fb6c1"
+    }
+  ],
+  "weight_license": "not declared in HF model card",
+  "pretrained_code": "https://github.com/sww9370/RoCBert",
+  "code_license": "Apache-2.0",
+  "scope": "private research preparation; no weight redistribution or production integration",
+  "state": "ALL_SELECTED_ASSETS_VERIFIED",
+  "weights": {
+    "file": "pytorch_model.bin",
+    "bytes": 471594271,
+    "sha256": "f551ab7624f3bff6f023cc0263a3e93e82c044a1736ffd89845b50772c64e567",
+    "loading_policy": "torch weights_only=True; trust_remote_code=False; local_files_only=True"
+  },
+  "raw_source_metadata_sha256": "9a27bcddee36ed7a9bab77aac54d9d2bb44f3d583ece5c8dce4a765581663dd7"
+}

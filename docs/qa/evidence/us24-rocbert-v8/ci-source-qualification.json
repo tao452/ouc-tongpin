@@ -1,0 +1,102 @@
+{
+  "scope": "actual CI for v3.10 source commit, not broad semantic acceptance",
+  "head": "ab9716f7f8ea502eddb044f0356fff501169a15d",
+  "run_id": 45519800780,
+  "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45519800780",
+  "jobs": [
+    {
+      "name": "changes",
+      "id": 138888502370,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "stack / Deploy and verify temporary test environment",
+      "id": 138888502658,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "guard",
+      "id": 138888502711,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "w1-poc",
+      "id": 138888502791,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "algo",
+      "id": 138888610428,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "api-server",
+      "id": 138888610450,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "miniprogram",
+      "id": 138888610498,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "admin-web",
+      "id": 138888610503,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "W3 delivery evidence",
+      "id": 138890798964,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "quality",
+      "id": 138890885155,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "linux_python": {
+    "passed": 663,
+    "skipped": 0,
+    "coverage_percent": 98.25
+  },
+  "java": {
+    "passed": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "ruff": "PASS",
+  "miniprogram": "PASS",
+  "admin_web": "PASS",
+  "five_service_Docker": "PASS",
+  "phrase_function_and_gateway": {
+    "count": 247,
+    "any": {
+      "tp": 142,
+      "fp": 0,
+      "fn": 0,
+      "tn": 105
+    },
+    "high": {
+      "tp": 55,
+      "fp": 0,
+      "fn": 0,
+      "tn": 192
+    },
+    "gateway_artifact_id": 14979224516
+  },
+  "production_acceptance": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING"
+}

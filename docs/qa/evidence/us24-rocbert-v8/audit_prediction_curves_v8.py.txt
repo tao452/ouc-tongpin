@@ -1,0 +1,97 @@
+"""Recompute each confusion matrix from all saved predictions, independently of training metrics."""
+import argparse
+import csv
+import hashlib
+import json
+import math
+from collections import Counter, defaultdict
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+EXPECTED = {'toxicn_dev': (1292, 1107), 'PCR': (250, 250),
+            'controls': (0, 257), 'context_stress': (12, 90)}
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def main(directory):
+    directory = directory.resolve()
+    assert directory.is_relative_to(LAB.resolve())
+    index_path = LAB / 'rocbert-v8-inputs/index.json'
+    index = json.loads(index_path.read_text(encoding='utf-8'))
+    frozen = json.loads((directory.parent / 'frozen.json').read_text(encoding='utf-8'))
+    assert sha(index_path) == frozen['index_sha256']
+    expected = {r['id']: r for r in index['rows'] if r['cohort'] != 'training'}
+    predictions_path = directory / 'predictions.jsonl'
+    rows = [json.loads(line) for line in predictions_path.read_text(encoding='utf-8').splitlines()]
+    assert len(rows) == len(expected) == len({r['id'] for r in rows}) == 3258
+    assert {r['id'] for r in rows} == expected.keys()
+    groups = defaultdict(list)
+    for row in rows:
+        original = expected[row['id']]
+        for key in ['label', 'cohort', 'category', 'literal_any', 'transformed_sha256']:
+            assert row[key] == original[key], (row['id'], key)
+        assert row['label'] in {0, 1} and isinstance(row['literal_any'], bool)
+        assert row.get('error') or math.isfinite(row['score']) and 0 <= row['score'] <= 1
+        groups[row['cohort']].append(row)
+    assert groups.keys() == EXPECTED.keys()
+    for key, (positive, negative) in EXPECTED.items():
+        assert Counter(r['label'] for r in groups[key]) == Counter({1: positive, 0: negative})
+    curve_path = directory / 'thresholds.csv'
+    with curve_path.open(encoding='utf-8', newline='') as handle:
+        curves = list(csv.DictReader(handle))
+    assert len(curves) == 7992
+    observed = set()
+    point_groups = defaultdict(dict)
+    for curve in curves:
+        mode, threshold, cohort = curve['mode'], float(curve['threshold']), curve['cohort']
+        assert mode in {'model', 'literal_or_model'} and cohort in EXPECTED
+        number = round(threshold * 1000)
+        assert 1 <= number <= 999 and abs(number / 1000 - threshold) < 1e-12
+        identity = (mode, number, cohort)
+        assert identity not in observed
+        observed.add(identity)
+        actual = dict(tp=0, fp=0, fn=0, tn=0, errors=0)
+        for row in groups[cohort]:
+            prediction = bool(row.get('score', 0) >= threshold or
+                              mode == 'literal_or_model' and row['literal_any'])
+            if row.get('error'):
+                prediction = not row['label']
+                actual['errors'] += 1
+            actual[('t' if prediction == bool(row['label']) else 'f') +
+                   ('p' if prediction else 'n')] += 1
+        assert actual == {key: int(curve[key]) for key in actual}, identity
+        point_groups[(mode, number)][cohort] = actual
+    passing = []
+    for (mode, number), cohorts in sorted(point_groups.items()):
+        assert cohorts.keys() == EXPECTED.keys()
+        fp_ok = all(c['fp'] * 50 < c['fp'] + c['tn'] and c['errors'] == 0
+                    for c in cohorts.values())
+        recall_ok = all(c['tp'] * 100 >= 95 * (c['tp'] + c['fn'])
+                        for key, c in cohorts.items() if key != 'controls')
+        if fp_ok and recall_ok:
+            passing.append(dict(mode=mode, threshold=number / 1000, cohorts=cohorts))
+    audit = dict(scope='independent stdlib recomputation from all3258 saved predictions and frozen input index',
+                 predictions_sha256=sha(predictions_path), thresholds_sha256=sha(curve_path),
+                 index_sha256=sha(index_path), checked_prediction_rows=3258,
+                 checked_group_matrices=7992, checked_operating_points=1998,
+                 excluded_evaluation_rows=0, inference_errors=sum(bool(r.get('error')) for r in rows),
+                 passing_operating_points=passing, development_gate_met=bool(passing),
+                 fpr_policy='FP*50 < negatives in each group',
+                 recall_policy='TP*100 >=95*positives in each positive group',
+                 code_sha256=sha(Path(__file__)), COLD_dev_fetched=False,
+                 production_acceptance=False)
+    with (directory / 'prediction-curve-recomputation.json').open('x', encoding='utf-8') as handle:
+        json.dump(audit, handle, indent=2)
+    print(json.dumps({k: audit[k] for k in ['checked_group_matrices', 'inference_errors',
+                                           'development_gate_met']}))
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('directory', type=Path)
+    main(parser.parse_args().directory)

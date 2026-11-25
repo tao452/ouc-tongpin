@@ -1,0 +1,18 @@
+{
+  "scope": "independent stdlib recomputation from all3258 saved predictions and frozen input index",
+  "predictions_sha256": "a9138f037af72dd8374688abc7fcfc6249e2221b366529bcb6b33feecb257588",
+  "thresholds_sha256": "8415b84db0407d04f7b881b4c6ba78ff8c1f4f0cfbe69fad7e82588a4ecbaa6b",
+  "index_sha256": "cdfe87c0efaf48a14d69fc058ee5137f9d1d68bd6b6de65bf7d35114676d1286",
+  "checked_prediction_rows": 3258,
+  "checked_group_matrices": 7992,
+  "checked_operating_points": 1998,
+  "excluded_evaluation_rows": 0,
+  "inference_errors": 0,
+  "passing_operating_points": [],
+  "development_gate_met": false,
+  "fpr_policy": "FP*50 < negatives in each group",
+  "recall_policy": "TP*100 >=95*positives in each positive group",
+  "code_sha256": "8d8d0d21e67a572e765cf899428de2f1cbbb79a8d2617634573a2caed48d00f9",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}
