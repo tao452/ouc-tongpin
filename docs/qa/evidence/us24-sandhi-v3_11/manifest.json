@@ -112,6 +112,32 @@
     {
       "file": "qualify_sandhi_public_v3_11.py.txt",
       "public_lf_sha256": "307063a553eb339a2181626f795c83a26a5909538d9b7196f5f9c54e2fbd1c43"
+    },
+    {
+      "file": "all-candidate-technical-summary.json",
+      "public_lf_sha256": "83edb2da1a51e87171b3e1200d572d2369cb8e6e579ab2cc0ca118e2d934addb"
+    },
+    {
+      "file": "audit_every_candidate_mapping_v3_11.py.txt",
+      "public_lf_sha256": "769e72d1423ae215facdc4d84f98b1571efe8eeba5105d5cef6086a270509995"
+    },
+    {
+      "file": "publish_candidate_technical_audit_v3_11.py.txt",
+      "public_lf_sha256": "6a687e73690569504901f13f7c29f4f2c43cae8bda7d977cc692b36d49c9ab7b"
+    },
+    {
+      "file": "ci-4964696-qualified.json",
+      "public_lf_sha256": "3f9b6f35ee821507f20d18650394a85cf2f2a09e48737ff3a18f9597cf2ec19f",
+      "before_final_newline_normalization_sha256": "1a62a166d5ca6afd3918165cb5540779bec536fb251b2a9660e377d7f35131bf",
+      "normalization": "single final newline; CI results unchanged"
+    },
+    {
+      "file": "cold-dev-blind-v4.protocol.json",
+      "public_lf_sha256": "e15bd6b74e093f4aa1acea8ae6c920d2535b28fb80372327082d3a039a736c6d"
+    },
+    {
+      "file": "cold-dev-blind-v4.protocol.md",
+      "public_lf_sha256": "d1ed58c8364ec4291f60ca14b1b5eed88d9a53ff1b835ece3b8962ec5b81b996"
     }
   ],
   "dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
@@ -162,5 +188,13 @@
       "final_public_sha256": "08b2d31a5664d5d38205fdaa3abb127a86cfe690363f0fa9bf036a2316d082b0",
       "change": "local userhome prefix only; test outcomes unchanged"
     }
-  ]
+  ],
+  "technical_mapping_checks": 1263,
+  "CI": {
+    "head": "4964696c9003443db0141d29f0649aaebdec123d",
+    "run_id": 45555354173,
+    "all10success": true,
+    "python668": true,
+    "java144": true
+  }
 }

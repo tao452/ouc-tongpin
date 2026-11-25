@@ -1,0 +1,1202 @@
+{
+  "scope": "all132 registered configuration mappings, precise exceptions, deduplication and S1 decisions; not broad recall",
+  "rules": 132,
+  "checks": 1263,
+  "failures": [],
+  "dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+  "full_private_audit_sha256": "904fa3fb58bec8d4010ca71b17c413724f13731459b54a89fe2353356abda38f",
+  "rules_detail": [
+    {
+      "candidate_id": "US24-001",
+      "word": "傻逼",
+      "suggested_level": "HIGH",
+      "checks": 60,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-002",
+      "word": "操你妈",
+      "suggested_level": "HIGH",
+      "checks": 33,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-003",
+      "word": "去死",
+      "suggested_level": "HIGH",
+      "checks": 20,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-004",
+      "word": "滚你妈",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-005",
+      "word": "日你妈",
+      "suggested_level": "HIGH",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-006",
+      "word": "你妈死了",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-007",
+      "word": "死全家",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-008",
+      "word": "祝你全家死光",
+      "suggested_level": "HIGH",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-009",
+      "word": "狗娘养的",
+      "suggested_level": "HIGH",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-010",
+      "word": "狗杂种",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-011",
+      "word": "你这个杂种",
+      "suggested_level": "HIGH",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-012",
+      "word": "你个畜生",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-014",
+      "word": "杀了你",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-015",
+      "word": "弄死你",
+      "suggested_level": "HIGH",
+      "checks": 16,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-016",
+      "word": "捅死你",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-017",
+      "word": "打死你",
+      "suggested_level": "HIGH",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-018",
+      "word": "你不配活着",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-019",
+      "word": "见你一次打你一次",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-020",
+      "word": "贱逼",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-021",
+      "word": "吃屎去",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-022",
+      "word": "你个婊子",
+      "suggested_level": "HIGH",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-023",
+      "word": "废物",
+      "suggested_level": "MEDIUM",
+      "checks": 23,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-024",
+      "word": "白痴",
+      "suggested_level": "MEDIUM",
+      "checks": 7,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-025",
+      "word": "脑残",
+      "suggested_level": "MEDIUM",
+      "checks": 16,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-026",
+      "word": "弱智",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-027",
+      "word": "蠢货",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-028",
+      "word": "蠢蛋",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-029",
+      "word": "笨蛋",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-030",
+      "word": "混蛋",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-031",
+      "word": "王八蛋",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-032",
+      "word": "人渣",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-033",
+      "word": "败类",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-034",
+      "word": "无耻",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-035",
+      "word": "滚蛋",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-036",
+      "word": "闭嘴",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-037",
+      "word": "他妈的",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-038",
+      "word": "妈的",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-039",
+      "word": "不要脸",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-040",
+      "word": "没教养",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-041",
+      "word": "蠢材",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-042",
+      "word": "垃圾",
+      "suggested_level": "LOW",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-043",
+      "word": "差劲",
+      "suggested_level": "LOW",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-044",
+      "word": "烂透",
+      "suggested_level": "LOW",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-045",
+      "word": "破玩意",
+      "suggested_level": "LOW",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-046",
+      "word": "扯淡",
+      "suggested_level": "LOW",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-047",
+      "word": "你真恶心",
+      "suggested_level": "MEDIUM",
+      "checks": 22,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-048",
+      "word": "你个蠢猪",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-049",
+      "word": "你是个饭桶",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-050",
+      "word": "你个窝囊废",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-051",
+      "word": "你个小瘪三",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "suggested_level": "MEDIUM",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-053",
+      "word": "你个臭不要脸的",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-054",
+      "word": "你个狗东西",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-056",
+      "word": "打断你的腿",
+      "suggested_level": "HIGH",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-057",
+      "word": "砍死你",
+      "suggested_level": "HIGH",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-058",
+      "word": "掐死你",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-059",
+      "word": "堵你宿舍门口打你",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-060",
+      "word": "让你横着出去",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-061",
+      "word": "我要重伤你",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-062",
+      "word": "放学弄死你",
+      "suggested_level": "HIGH",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-063",
+      "word": "天天跟踪你",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-064",
+      "word": "一直骚扰你",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-065",
+      "word": "不加我就曝光你",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-066",
+      "word": "把你住址挂网上",
+      "suggested_level": "HIGH",
+      "checks": 4,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-067",
+      "word": "你一无是处",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-068",
+      "word": "全班都讨厌你",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-069",
+      "word": "你就是个笑话",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-070",
+      "word": "你不配待在这个学校",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-071",
+      "word": "去你妈的",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-072",
+      "word": "妈了个逼",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-073",
+      "word": "你妈逼",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-074",
+      "word": "狗屁",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-075",
+      "word": "放屁",
+      "suggested_level": "MEDIUM",
+      "checks": 11,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-076",
+      "word": "鸡巴",
+      "suggested_level": "MEDIUM",
+      "checks": 45,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-077",
+      "word": "你个脑瘫",
+      "suggested_level": "MEDIUM",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-078",
+      "word": "你个智障",
+      "suggested_level": "MEDIUM",
+      "checks": 24,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-079",
+      "word": "你个神经病",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-080",
+      "word": "你是个傻子",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-081",
+      "word": "你个二逼",
+      "suggested_level": "MEDIUM",
+      "checks": 18,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-082",
+      "word": "你个二货",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-083",
+      "word": "你就是一坨屎",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-084",
+      "word": "你脑子进水了",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-085",
+      "word": "你没脑子",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-086",
+      "word": "你没有爹妈",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-087",
+      "word": "你是个祸害",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-088",
+      "word": "你不配发言",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-089",
+      "word": "你活着浪费空气",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-090",
+      "word": "你死了没人心疼",
+      "suggested_level": "HIGH",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-091",
+      "word": "你怎么还不去死",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-092",
+      "word": "我要一枪崩了你",
+      "suggested_level": "HIGH",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-093",
+      "word": "我要扇你",
+      "suggested_level": "HIGH",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-094",
+      "word": "我要堵你",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-095",
+      "word": "把你照片挂网上",
+      "suggested_level": "HIGH",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-096",
+      "word": "我要人肉你",
+      "suggested_level": "HIGH",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-097",
+      "word": "你真下贱",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-098",
+      "word": "你真丑",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-099",
+      "word": "你就是个小丑",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-100",
+      "word": "滚出去",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-101",
+      "word": "你个菜逼",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-102",
+      "word": "你个屌丝",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-103",
+      "word": "你是狗",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-104",
+      "word": "你是猪",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-105",
+      "word": "没点逼数",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-106",
+      "word": "放你妈的屁",
+      "suggested_level": "HIGH",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-107",
+      "word": "狗屎",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-108",
+      "word": "你就是个骗子",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-109",
+      "word": "穷鬼",
+      "suggested_level": "MEDIUM",
+      "checks": 4,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "suggested_level": "MEDIUM",
+      "checks": 12,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-112",
+      "word": "没人要你",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-113",
+      "word": "黑鬼",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-114",
+      "word": "支那猪",
+      "suggested_level": "HIGH",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-115",
+      "word": "死基佬",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-116",
+      "word": "死娘炮",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-117",
+      "word": "婊子",
+      "suggested_level": "MEDIUM",
+      "checks": 6,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-118",
+      "word": "荡妇",
+      "suggested_level": "MEDIUM",
+      "checks": 2,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-119",
+      "word": "母狗",
+      "suggested_level": "MEDIUM",
+      "checks": 4,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-120",
+      "word": "公狗",
+      "suggested_level": "MEDIUM",
+      "checks": 4,
+      "finite_phoneme_paths": 0,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-121",
+      "word": "你个蠢逼",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-122",
+      "word": "你个憨批",
+      "suggested_level": "MEDIUM",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-123",
+      "word": "你个贱货",
+      "suggested_level": "MEDIUM",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-124",
+      "word": "你个贱种",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-125",
+      "word": "你个狗崽子",
+      "suggested_level": "MEDIUM",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-126",
+      "word": "你个穷逼",
+      "suggested_level": "MEDIUM",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-127",
+      "word": "你个丑逼",
+      "suggested_level": "MEDIUM",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "suggested_level": "HIGH",
+      "checks": 14,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-130",
+      "word": "骚扰到你退学",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-131",
+      "word": "不答应就一直缠着你",
+      "suggested_level": "MEDIUM",
+      "checks": 10,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-132",
+      "word": "堵到你不敢出门",
+      "suggested_level": "MEDIUM",
+      "checks": 8,
+      "finite_phoneme_paths": 1,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    }
+  ],
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "COLD_dev_fetched": false
+}

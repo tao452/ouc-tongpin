@@ -1,0 +1,120 @@
+{
+  "head": "4964696c9003443db0141d29f0649aaebdec123d",
+  "run_id": 45555354173,
+  "all_jobs_success": true,
+  "jobs": [
+    {
+      "id": 139005972543,
+      "name": "changes",
+      "conclusion": "success"
+    },
+    {
+      "id": 139005972747,
+      "name": "stack / Deploy and verify temporary test environment",
+      "conclusion": "success"
+    },
+    {
+      "id": 139005972785,
+      "name": "guard",
+      "conclusion": "success"
+    },
+    {
+      "id": 139005973015,
+      "name": "w1-poc",
+      "conclusion": "success"
+    },
+    {
+      "id": 139006093450,
+      "name": "algo",
+      "conclusion": "success"
+    },
+    {
+      "id": 139006093454,
+      "name": "api-server",
+      "conclusion": "success"
+    },
+    {
+      "id": 139006093499,
+      "name": "admin-web",
+      "conclusion": "success"
+    },
+    {
+      "id": 139006093510,
+      "name": "miniprogram",
+      "conclusion": "success"
+    },
+    {
+      "id": 139007868933,
+      "name": "W3 delivery evidence",
+      "conclusion": "success"
+    },
+    {
+      "id": 139007958016,
+      "name": "quality",
+      "conclusion": "success"
+    }
+  ],
+  "python": {
+    "passed": 668,
+    "skipped": 0,
+    "coverage_percent": 98.25,
+    "ruff": "All checks passed!"
+  },
+  "java": {
+    "tests": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "sandhi_docker_http": {
+    "count": 84,
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "tn": 73
+      },
+      "offensive_samples": 11,
+      "nonoffensive_samples": 73,
+      "recall": 1,
+      "precision": 1,
+      "false_positive_rate": 0,
+      "recall_wilson95": [
+        0.7411670330319684,
+        1
+      ],
+      "false_positive_rate_wilson95": [
+        0,
+        0.0499920079557311
+      ],
+      "thresholds_met_on_supplied_rows": true
+    },
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 36,
+        "fp": 0,
+        "fn": 0,
+        "tn": 48
+      },
+      "offensive_samples": 36,
+      "nonoffensive_samples": 48,
+      "recall": 1,
+      "precision": 1,
+      "false_positive_rate": 0,
+      "recall_wilson95": [
+        0.9035813714055363,
+        1
+      ],
+      "false_positive_rate_wilson95": [
+        6.938893903907228e-18,
+        0.07410012966611748
+      ],
+      "thresholds_met_on_supplied_rows": true
+    }
+  },
+  "sandhi_artifact_id": 14995882140,
+  "source": "actual decoded algo, api-server and stack job logs; no raw credentials stored",
+  "release_created": false,
+  "production_acceptance": false
+}

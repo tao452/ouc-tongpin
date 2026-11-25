@@ -1,0 +1,29 @@
+{
+  "dataset": "COLD official development split",
+  "protocol_version": "us24-blind-v4",
+  "state_at_protocol_creation": "SEALED_NOT_FETCHED",
+  "repository": "thu-coai/COLDataset",
+  "revision": "a0c55a945497ab58e94aef491180e1cf88ffb864",
+  "path": "COLDataset/dev.csv",
+  "url": "https://raw.githubusercontent.com/thu-coai/COLDataset/a0c55a945497ab58e94aef491180e1cf88ffb864/COLDataset/dev.csv",
+  "git_blob_sha1": "f4a588bea6d7b6c260d328179c7b765f9003a346",
+  "expected_bytes": 1016319,
+  "sha256": null,
+  "row_count": null,
+  "source_qualification": "Git tree metadata only; CSV blob and raw content not fetched",
+  "license": "Apache-2.0 per pinned repository license qualification",
+  "unseal_preconditions": [
+    "one global candidate passes all retained development recall/FPR/error gates",
+    "unique fitted weights, dictionary, code, prompt, preprocessing, mode and threshold frozen and committed",
+    "freeze commit pushed and current source hashes match"
+  ],
+  "primary_evaluation": "all native rows, original labels, no score-based row removal",
+  "overlap_policy": "retain every native row; report canonical-text overlaps with previously used training/development/history and the complete unseen-text subgroup separately at the same frozen threshold",
+  "independent_technical_gate": "all-row and unseen-text subgroup Recall>=95%, FPR<2%, errors0; each must contain both native classes",
+  "failed_test_policy": "preserve first frozen outcome and every difficult row; subsequent changes make this data development history and require a fresh holdout",
+  "raw_text_publication": false,
+  "model_pretraining_exposure": "unknown",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}
