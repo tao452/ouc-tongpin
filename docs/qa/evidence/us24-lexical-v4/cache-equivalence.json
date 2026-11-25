@@ -1,0 +1,8 @@
+{
+  "rows": 13549,
+  "changed_outputs": [],
+  "errors": [],
+  "dictionary_sha256": "3294ab6039e74df504964edcf20c917824a5ba91aba8d99d8bcfad486e11956a",
+  "baseline_code_sha256": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d",
+  "cache_policy": "仅请求内相同的16字前缀复用判断；不改变定向语法、读音和50ms预算"
+}

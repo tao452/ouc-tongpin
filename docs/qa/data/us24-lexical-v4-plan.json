@@ -1,0 +1,6413 @@
+{
+  "version": "4.0.0-lexical-rc.1",
+  "scope": "lexical rules and registered variants; no sentence enumeration",
+  "dictionary_sha256": "3294ab6039e74df504964edcf20c917824a5ba91aba8d99d8bcfad486e11956a",
+  "source_dictionary": "moderation-v3_13-candidate.json",
+  "source_dictionary_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+  "source_dictionary_count": 132,
+  "entry_count": 80,
+  "levels": {
+    "HIGH": 19,
+    "MEDIUM": 56,
+    "LOW": 5
+  },
+  "newly_proposed_words": 8,
+  "old_dispositions": [
+    {
+      "source_id": "US24-001",
+      "word": "傻逼",
+      "origin": "原5条基线",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-001"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-002",
+      "word": "操你妈",
+      "origin": "原5条基线",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-002"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-003",
+      "word": "去死",
+      "origin": "原5条基线",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-003"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-004",
+      "word": "滚你妈",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-004"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-005",
+      "word": "日你妈",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-005"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-006",
+      "word": "你妈死了",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-048"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-007",
+      "word": "死全家",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-006"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-008",
+      "word": "祝你全家死光",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-009",
+      "word": "狗娘养的",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-007"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-010",
+      "word": "狗杂种",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-008"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-011",
+      "word": "你这个杂种",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-049"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-012",
+      "word": "你个畜生",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-050"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-013",
+      "word": "你是畜生",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-050"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-014",
+      "word": "杀了你",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-015",
+      "word": "弄死你",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-016",
+      "word": "捅死你",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-017",
+      "word": "打死你",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-018",
+      "word": "你不配活着",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-019",
+      "word": "见你一次打你一次",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-020",
+      "word": "贱逼",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-009"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-021",
+      "word": "吃屎去",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-022",
+      "word": "你个婊子",
+      "origin": "PR #83新增41条",
+      "old_level": "HIGH",
+      "proposed_action": "MERGE_TO_EXISTING_WORD",
+      "target_ids": [
+        "LEX4-046"
+      ],
+      "reason": "整句中已有词的覆盖保留，取消整句专属等级；不提升现有标准词等级，需M1确认",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-023",
+      "word": "废物",
+      "origin": "原5条基线",
+      "old_level": "MEDIUM",
+      "proposed_action": "SPLIT_WORDS",
+      "target_ids": [
+        "LEX4-010",
+        "LEX4-051"
+      ],
+      "reason": "清理冗余句式别名；普通短语/同义词不混作无条件别名",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-024",
+      "word": "白痴",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-011"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-025",
+      "word": "脑残",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-012"
+      ],
+      "reason": "清理冗余句式别名；普通短语/同义词不混作无条件别名",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-026",
+      "word": "弱智",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_MEDICAL",
+      "target_ids": [],
+      "reason": "医学/诊断名称不作为普通辱骂词全局禁用，原句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-027",
+      "word": "蠢货",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-013"
+      ],
+      "reason": "清理冗余句式别名；普通短语/同义词不混作无条件别名",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-028",
+      "word": "蠢蛋",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-014"
+      ],
+      "reason": "清理冗余句式别名；普通短语/同义词不混作无条件别名",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-029",
+      "word": "笨蛋",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-015"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-030",
+      "word": "混蛋",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-016"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-031",
+      "word": "王八蛋",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-017"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-032",
+      "word": "人渣",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-018"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-033",
+      "word": "败类",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-019"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-034",
+      "word": "无耻",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-020"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-035",
+      "word": "滚蛋",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-021"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-036",
+      "word": "闭嘴",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-022"
+      ],
+      "reason": "清理冗余句式别名；普通短语/同义词不混作无条件别名",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-037",
+      "word": "他妈的",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-023"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-038",
+      "word": "妈的",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-024"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-039",
+      "word": "不要脸",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-025"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-040",
+      "word": "没教养",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-026"
+      ],
+      "reason": "清理冗余句式别名；普通短语/同义词不混作无条件别名",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-041",
+      "word": "蠢材",
+      "origin": "PR #83新增41条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-027"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-042",
+      "word": "垃圾",
+      "origin": "原5条基线",
+      "old_level": "LOW",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-028"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-043",
+      "word": "差劲",
+      "origin": "PR #83新增41条",
+      "old_level": "LOW",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-029"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-044",
+      "word": "烂透",
+      "origin": "PR #83新增41条",
+      "old_level": "LOW",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-030"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-045",
+      "word": "破玩意",
+      "origin": "PR #83新增41条",
+      "old_level": "LOW",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-031"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-046",
+      "word": "扯淡",
+      "origin": "PR #83新增41条",
+      "old_level": "LOW",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-032"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-047",
+      "word": "你真恶心",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-048",
+      "word": "你个蠢猪",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-052"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-049",
+      "word": "你是个饭桶",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-053"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-050",
+      "word": "你个窝囊废",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-054"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-051",
+      "word": "你个小瘪三",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-055"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-052",
+      "word": "你这个贱人",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-056"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-053",
+      "word": "你个臭不要脸的",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "MERGE_TO_EXISTING_WORD",
+      "target_ids": [
+        "LEX4-025"
+      ],
+      "reason": "整句中已有词的覆盖保留，取消整句专属等级；不提升现有标准词等级，需M1确认",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-054",
+      "word": "你个狗东西",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-057"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-055",
+      "word": "我要揍你",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-056",
+      "word": "打断你的腿",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-057",
+      "word": "砍死你",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-058",
+      "word": "掐死你",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-059",
+      "word": "堵你宿舍门口打你",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-060",
+      "word": "让你横着出去",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-061",
+      "word": "我要重伤你",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-062",
+      "word": "放学弄死你",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-063",
+      "word": "天天跟踪你",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-064",
+      "word": "一直骚扰你",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-065",
+      "word": "不加我就曝光你",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-066",
+      "word": "把你住址挂网上",
+      "origin": "v2新增24条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-067",
+      "word": "你一无是处",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-068",
+      "word": "全班都讨厌你",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-069",
+      "word": "你就是个笑话",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-070",
+      "word": "你不配待在这个学校",
+      "origin": "v2新增24条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-071",
+      "word": "去你妈的",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-033"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-072",
+      "word": "妈了个逼",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-034"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-073",
+      "word": "你妈逼",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-035"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-074",
+      "word": "狗屁",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-036"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-075",
+      "word": "放屁",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-037"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-076",
+      "word": "鸡巴",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-038"
+      ],
+      "reason": "清理冗余句式别名；普通短语/同义词不混作无条件别名",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-077",
+      "word": "你个脑瘫",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_MEDICAL",
+      "target_ids": [],
+      "reason": "医学/诊断名称不作为普通辱骂词全局禁用，原句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-078",
+      "word": "你个智障",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_MEDICAL",
+      "target_ids": [],
+      "reason": "医学/诊断名称不作为普通辱骂词全局禁用，原句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-079",
+      "word": "你个神经病",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_MEDICAL",
+      "target_ids": [],
+      "reason": "医学/诊断名称不作为普通辱骂词全局禁用，原句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-080",
+      "word": "你是个傻子",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-058"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-081",
+      "word": "你个二逼",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-059"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-082",
+      "word": "你个二货",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-060"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-083",
+      "word": "你就是一坨屎",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-084",
+      "word": "你脑子进水了",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-085",
+      "word": "你没脑子",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-086",
+      "word": "你没有爹妈",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-087",
+      "word": "你是个祸害",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-088",
+      "word": "你不配发言",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-089",
+      "word": "你活着浪费空气",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-090",
+      "word": "你死了没人心疼",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-091",
+      "word": "你怎么还不去死",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "MERGE_TO_EXISTING_WORD",
+      "target_ids": [
+        "LEX4-003"
+      ],
+      "reason": "整句中已有词的覆盖保留，取消整句专属等级；不提升现有标准词等级，需M1确认",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-092",
+      "word": "我要一枪崩了你",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-093",
+      "word": "我要扇你",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-094",
+      "word": "我要堵你",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-095",
+      "word": "把你照片挂网上",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-096",
+      "word": "我要人肉你",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-097",
+      "word": "你真下贱",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "SPLIT_WORDS",
+      "target_ids": [
+        "LEX4-061",
+        "LEX4-062"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-098",
+      "word": "你真丑",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-099",
+      "word": "你就是个小丑",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-100",
+      "word": "滚出去",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-101",
+      "word": "你个菜逼",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-063"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-102",
+      "word": "你个屌丝",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-064"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-103",
+      "word": "你是狗",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_ANIMAL",
+      "target_ids": [],
+      "reason": "普通动物词不作单独禁用词，原定向句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-104",
+      "word": "你是猪",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_ANIMAL",
+      "target_ids": [],
+      "reason": "普通动物词不作单独禁用词，原定向句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-105",
+      "word": "没点逼数",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-065"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-106",
+      "word": "放你妈的屁",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-039"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-107",
+      "word": "狗屎",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-040"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-108",
+      "word": "你就是个骗子",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-109",
+      "word": "穷鬼",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-041"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-110",
+      "word": "你不配上大学",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-112",
+      "word": "没人要你",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_CONTEXTUAL",
+      "target_ids": [],
+      "reason": "普通评价、事实或社会语境依赖句意，本版不提取词根禁用",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-113",
+      "word": "黑鬼",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-042"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-114",
+      "word": "支那猪",
+      "origin": "v3新增50条",
+      "old_level": "HIGH",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-043"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-115",
+      "word": "死基佬",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-044"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-116",
+      "word": "死娘炮",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-045"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-117",
+      "word": "婊子",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-046"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-118",
+      "word": "荡妇",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "RETAIN_WORD",
+      "target_ids": [
+        "LEX4-047"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-119",
+      "word": "母狗",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_ANIMAL",
+      "target_ids": [],
+      "reason": "普通动物词不作单独禁用词，原定向句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-120",
+      "word": "公狗",
+      "origin": "v3新增50条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_ANIMAL",
+      "target_ids": [],
+      "reason": "普通动物词不作单独禁用词，原定向句规则留在3.13对照",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-121",
+      "word": "你个蠢逼",
+      "origin": "v3.5新增候选12条",
+      "old_level": "HIGH",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-066"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-122",
+      "word": "你个憨批",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-067"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-123",
+      "word": "你个贱货",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-068"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-124",
+      "word": "你个贱种",
+      "origin": "v3.5新增候选12条",
+      "old_level": "HIGH",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-069"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-125",
+      "word": "你个狗崽子",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-070"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-126",
+      "word": "你个穷逼",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-071"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-127",
+      "word": "你个丑逼",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "EXTRACT_WORD",
+      "target_ids": [
+        "LEX4-072"
+      ],
+      "reason": "保留稳定词或提取稳定词，不排列主语、代词和修饰语",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-128",
+      "word": "泼你硫酸",
+      "origin": "v3.5新增候选12条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-129",
+      "word": "捅你一刀",
+      "origin": "v3.5新增候选12条",
+      "old_level": "HIGH",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-130",
+      "word": "骚扰到你退学",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-131",
+      "word": "不答应就一直缠着你",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    },
+    {
+      "source_id": "US24-132",
+      "word": "堵到你不敢出门",
+      "origin": "v3.5新增候选12条",
+      "old_level": "MEDIUM",
+      "proposed_action": "DEFER_SENTENCE",
+      "target_ids": [],
+      "reason": "威胁/骚扰/诅咒整句留在3.13对照，本版不枚举句子，不提取动作或单字",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": ""
+    }
+  ],
+  "entries": [
+    {
+      "candidate_id": "LEX4-001",
+      "word": "傻逼",
+      "origin": "原5条基线",
+      "source_ids": [
+        "US24-001"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；含希腊/西里尔字母的编程标识符及引用说明；本次补充：材料试验参数、音译词与虚构人物名说明、完整材料词组拼音；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；混写字符串可能是正常名称，仅识别登记整串并检查标识符边界；精确豁免只覆盖登记词组及本次出现位置；未登记同义表达和含混语境仍需逐项审核；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "傻必",
+        "煞笔",
+        "沙比",
+        "傻比",
+        "傻b",
+        "傻屄",
+        "傻批",
+        "啥比",
+        "傻杯",
+        "傻币",
+        "沙币",
+        "沙笔",
+        "砂比",
+        "傻笔",
+        "煞比",
+        "鲨臂",
+        "傻13",
+        "shаbi",
+        "sһabi",
+        "ѕhаbі"
+      ],
+      "targeted_aliases": [
+        "sb",
+        "s13"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "sha bi"
+      ],
+      "pinyin_keys": [
+        "sha3bi1",
+        "shab1",
+        "shabi",
+        "shabi1",
+        "shabii"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])sha3?[^\\w]{0,8}bi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "砂比参数",
+        "砂比试验",
+        "水砂比",
+        "沙比是音译词",
+        "沙比是虚构人物名"
+      ],
+      "pinyin_allow_phrases": [
+        "sha bi can shu",
+        "sha bi shi yan"
+      ],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0001",
+        "LEX4-DEV-0002",
+        "LEX4-DEV-0003",
+        "LEX4-DEV-0004",
+        "LEX4-DEV-0005",
+        "LEX4-DEV-0006",
+        "LEX4-DEV-0007",
+        "LEX4-DEV-0008",
+        "LEX4-DEV-0009",
+        "LEX4-DEV-0010",
+        "LEX4-DEV-0011",
+        "LEX4-DEV-0012",
+        "LEX4-DEV-0013",
+        "LEX4-DEV-0014",
+        "LEX4-DEV-0015",
+        "LEX4-DEV-0016",
+        "LEX4-DEV-0017",
+        "LEX4-DEV-0018",
+        "LEX4-DEV-0019",
+        "LEX4-DEV-0020",
+        "LEX4-DEV-0021",
+        "LEX4-DEV-0022",
+        "LEX4-DEV-0023",
+        "LEX4-DEV-0024",
+        "LEX4-DEV-0025",
+        "LEX4-DEV-0026",
+        "LEX4-DEV-0027",
+        "LEX4-DEV-0028",
+        "LEX4-DEV-0029",
+        "LEX4-DEV-0030",
+        "LEX4-DEV-0031",
+        "LEX4-DEV-0032",
+        "LEX4-DEV-0978",
+        "LEX4-DEV-0993",
+        "LEX4-DEV-0996",
+        "LEX4-DEV-0999",
+        "LEX4-DEV-1002",
+        "LEX4-DEV-1005",
+        "LEX4-DEV-1008",
+        "LEX4-DEV-1011",
+        "LEX4-DEV-1014",
+        "LEX4-DEV-1017",
+        "LEX4-DEV-1020",
+        "LEX4-DEV-1023",
+        "LEX4-DEV-1026",
+        "LEX4-DEV-1029",
+        "LEX4-DEV-1032",
+        "LEX4-DEV-1035",
+        "LEX4-DEV-1038"
+      ],
+      "unicode_variants": [
+        "shаbi",
+        "sһabi",
+        "ѕhаbі"
+      ]
+    },
+    {
+      "candidate_id": "LEX4-002",
+      "word": "操你妈",
+      "origin": "原5条基线",
+      "source_ids": [
+        "US24-002"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；首轮误报按词条和出现位置补充精确正常词组，原990条预期不变",
+      "normal_context": "校园正常交流、完整英语标识符；含希腊/西里尔字母的编程标识符及引用说明；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；混写字符串可能是正常名称，仅识别登记整串并检查标识符边界；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行；书名、店名、羊驼俗称或2B型号等其他未登记语境仍可能存在歧义，不能宣称完整语义理解",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "艹你妈",
+        "肏你妈",
+        "草你妈",
+        "操尼玛",
+        "抄你码",
+        "草泥马",
+        "肏你麻",
+        "操妮玛",
+        "操n妈",
+        "caоnima",
+        "cаonima",
+        "саоnіma"
+      ],
+      "targeted_aliases": [
+        "cnm"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "cao ni ma"
+      ],
+      "pinyin_keys": [
+        "ca0nima",
+        "cao1ni3ma1",
+        "caonima"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])cao1?[^\\w]{0,8}ni3?[^\\w]{0,8}ma1?(?![a-z0-9_])",
+        "(?<![a-z0-9_])cao4?[^\\w]{0,8}ni3?[^\\w]{0,8}ma1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "草泥马是羊驼",
+        "草泥马这种动物",
+        "羊驼又称草泥马",
+        "草泥马玩偶",
+        "我在抄你码",
+        "抄你码学习"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0041",
+        "LEX4-DEV-0042",
+        "LEX4-DEV-0043",
+        "LEX4-DEV-0044",
+        "LEX4-DEV-0045",
+        "LEX4-DEV-0046",
+        "LEX4-DEV-0047",
+        "LEX4-DEV-0048",
+        "LEX4-DEV-0049",
+        "LEX4-DEV-0050",
+        "LEX4-DEV-0051",
+        "LEX4-DEV-0052",
+        "LEX4-DEV-0053",
+        "LEX4-DEV-0054",
+        "LEX4-DEV-0055",
+        "LEX4-DEV-0056",
+        "LEX4-DEV-0057",
+        "LEX4-DEV-0058",
+        "LEX4-DEV-0059",
+        "LEX4-DEV-0060",
+        "LEX4-DEV-0061",
+        "LEX4-DEV-0062",
+        "LEX4-DEV-0063",
+        "LEX4-DEV-0992",
+        "LEX4-DEV-0995",
+        "LEX4-DEV-0998",
+        "LEX4-DEV-1001",
+        "LEX4-DEV-1004",
+        "LEX4-DEV-1007"
+      ],
+      "unicode_variants": [
+        "caоnima",
+        "cаonima",
+        "саоnіma"
+      ]
+    },
+    {
+      "candidate_id": "LEX4-003",
+      "word": "去死",
+      "origin": "原5条基线",
+      "source_ids": [
+        "US24-003"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "去亖",
+        "去4"
+      ],
+      "targeted_aliases": [
+        "q4",
+        "去s"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "qu si"
+      ],
+      "pinyin_keys": [
+        "qu4si3",
+        "qusi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])qu4?[^\\w]{0,8}si3?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "去死海",
+        "去死记硬背",
+        "去死胡同"
+      ],
+      "pinyin_allow_phrases": [
+        "qu si kao",
+        "qu si hai",
+        "qu si ji ying bei"
+      ],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0070",
+        "LEX4-DEV-0071",
+        "LEX4-DEV-0072",
+        "LEX4-DEV-0073",
+        "LEX4-DEV-0074",
+        "LEX4-DEV-0075",
+        "LEX4-DEV-0076",
+        "LEX4-DEV-0077",
+        "LEX4-DEV-0078",
+        "LEX4-DEV-0079",
+        "LEX4-DEV-0080",
+        "LEX4-DEV-0081",
+        "LEX4-DEV-0082",
+        "LEX4-DEV-0083"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-004",
+      "word": "滚你妈",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-004"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "举报：“滚你妈”请处理；含希腊/西里尔字母的编程标识符及引用说明；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；混写字符串可能是正常名称，仅识别登记整串并检查标识符边界；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "滚尼玛",
+        "gυnnima",
+        "gunnіma",
+        "gυnnіma"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gun ni ma"
+      ],
+      "pinyin_keys": [
+        "gun3ni3ma1",
+        "gunnima"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gun3?[^\\w]{0,8}ni3?[^\\w]{0,8}ma1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0092",
+        "LEX4-DEV-0093",
+        "LEX4-DEV-0094",
+        "LEX4-DEV-0095",
+        "LEX4-DEV-0096",
+        "LEX4-DEV-0097",
+        "LEX4-DEV-0098",
+        "LEX4-DEV-0099",
+        "LEX4-DEV-0100",
+        "LEX4-DEV-0101",
+        "LEX4-DEV-0102",
+        "LEX4-DEV-0103",
+        "LEX4-DEV-0104",
+        "LEX4-DEV-0105"
+      ],
+      "unicode_variants": [
+        "gυnnima",
+        "gunnіma",
+        "gυnnіma"
+      ]
+    },
+    {
+      "candidate_id": "LEX4-005",
+      "word": "日你妈",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-005"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "日泥马",
+        "日尼玛",
+        "日你m"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "ri ni ma"
+      ],
+      "pinyin_keys": [
+        "ri4ni3ma1",
+        "rinima"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])ri4?[^\\w]{0,8}ni3?[^\\w]{0,8}ma1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0110",
+        "LEX4-DEV-0111",
+        "LEX4-DEV-0112",
+        "LEX4-DEV-0113",
+        "LEX4-DEV-0114",
+        "LEX4-DEV-0115",
+        "LEX4-DEV-0116",
+        "LEX4-DEV-0117",
+        "LEX4-DEV-0118",
+        "LEX4-DEV-0119",
+        "LEX4-DEV-0120",
+        "LEX4-DEV-0121",
+        "LEX4-DEV-0122"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-006",
+      "word": "死全家",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-007"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "死全加",
+        "死全夹"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "si quan jia"
+      ],
+      "pinyin_keys": [
+        "si3quan2jia1",
+        "siquanjia"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])si3?[^\\w]{0,8}quan2?[^\\w]{0,8}jia1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0127",
+        "LEX4-DEV-0128",
+        "LEX4-DEV-0129",
+        "LEX4-DEV-0130",
+        "LEX4-DEV-0131",
+        "LEX4-DEV-0132",
+        "LEX4-DEV-0133",
+        "LEX4-DEV-0134",
+        "LEX4-DEV-0135",
+        "LEX4-DEV-0136",
+        "LEX4-DEV-0137",
+        "LEX4-DEV-0138"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-007",
+      "word": "狗娘养的",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-009"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "狗粮养的"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gou niang yang de"
+      ],
+      "pinyin_keys": [
+        "gou3niang2yang3de5",
+        "gouniangyangde"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gou3?[^\\w]{0,8}niang2?[^\\w]{0,8}yang3?[^\\w]{0,8}de5?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0143",
+        "LEX4-DEV-0144",
+        "LEX4-DEV-0145",
+        "LEX4-DEV-0146",
+        "LEX4-DEV-0147",
+        "LEX4-DEV-0148",
+        "LEX4-DEV-0149",
+        "LEX4-DEV-0150",
+        "LEX4-DEV-0151",
+        "LEX4-DEV-0152",
+        "LEX4-DEV-0153"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-008",
+      "word": "狗杂种",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-010"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gou za zhong"
+      ],
+      "pinyin_keys": [
+        "gou3za2zhong3",
+        "gouzazhong"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gou3?[^\\w]{0,8}za2?[^\\w]{0,8}zhong3?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0158",
+        "LEX4-DEV-0159",
+        "LEX4-DEV-0160",
+        "LEX4-DEV-0161",
+        "LEX4-DEV-0162",
+        "LEX4-DEV-0163",
+        "LEX4-DEV-0164",
+        "LEX4-DEV-0165",
+        "LEX4-DEV-0166",
+        "LEX4-DEV-0167"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-009",
+      "word": "贱逼",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-020"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "贱b",
+        "贱比",
+        "贱批",
+        "贱13"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "jian bi"
+      ],
+      "pinyin_keys": [
+        "jian4bi1",
+        "jianbi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])jian4?[^\\w]{0,8}bi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0172",
+        "LEX4-DEV-0173",
+        "LEX4-DEV-0174",
+        "LEX4-DEV-0175",
+        "LEX4-DEV-0176",
+        "LEX4-DEV-0177",
+        "LEX4-DEV-0178",
+        "LEX4-DEV-0179",
+        "LEX4-DEV-0180",
+        "LEX4-DEV-0181",
+        "LEX4-DEV-0182",
+        "LEX4-DEV-0183",
+        "LEX4-DEV-0184",
+        "LEX4-DEV-0185"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-010",
+      "word": "废物",
+      "origin": "原5条基线",
+      "source_ids": [
+        "US24-023"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "沸物",
+        "肺5",
+        "废5",
+        "费物"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "fei wu"
+      ],
+      "pinyin_keys": [
+        "fei4wu4",
+        "feiwu"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])fei4?[^\\w]{0,8}wu4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "废物利用",
+        "废物处理",
+        "废物回收",
+        "废物管理",
+        "我是不是废物想求助"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0190",
+        "LEX4-DEV-0191",
+        "LEX4-DEV-0192",
+        "LEX4-DEV-0193",
+        "LEX4-DEV-0194",
+        "LEX4-DEV-0195",
+        "LEX4-DEV-0196",
+        "LEX4-DEV-0197",
+        "LEX4-DEV-0198",
+        "LEX4-DEV-0199",
+        "LEX4-DEV-0200",
+        "LEX4-DEV-0201",
+        "LEX4-DEV-0202",
+        "LEX4-DEV-0203"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-011",
+      "word": "白痴",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-024"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；首轮误报按词条和出现位置补充精确正常词组，原990条预期不变",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行；书名、店名、羊驼俗称或2B型号等其他未登记语境仍可能存在歧义，不能宣称完整语义理解",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "bai chi"
+      ],
+      "pinyin_keys": [
+        "bai2chi1",
+        "baichi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])bai2?[^\\w]{0,8}chi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "白痴小说",
+        "白痴一书"
+      ],
+      "pinyin_allow_phrases": [
+        "bai chi yi dun fan"
+      ],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0208",
+        "LEX4-DEV-0209",
+        "LEX4-DEV-0210",
+        "LEX4-DEV-0211",
+        "LEX4-DEV-0212",
+        "LEX4-DEV-0213",
+        "LEX4-DEV-0214",
+        "LEX4-DEV-0215",
+        "LEX4-DEV-0216",
+        "LEX4-DEV-0217",
+        "LEX4-DEV-1010",
+        "LEX4-DEV-1013"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-012",
+      "word": "脑残",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-025"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "闹惨",
+        "naocan",
+        "naoc"
+      ],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0222",
+        "LEX4-DEV-0223",
+        "LEX4-DEV-0224",
+        "LEX4-DEV-0225",
+        "LEX4-DEV-0226",
+        "LEX4-DEV-0227"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-013",
+      "word": "蠢货",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-027"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "chun huo"
+      ],
+      "pinyin_keys": [
+        "chun3huo4",
+        "chunhuo"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])chun3?[^\\w]{0,8}huo4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0234",
+        "LEX4-DEV-0235",
+        "LEX4-DEV-0236",
+        "LEX4-DEV-0237",
+        "LEX4-DEV-0238",
+        "LEX4-DEV-0239",
+        "LEX4-DEV-0240",
+        "LEX4-DEV-0241",
+        "LEX4-DEV-0242",
+        "LEX4-DEV-0243"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-014",
+      "word": "蠢蛋",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-028"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0248",
+        "LEX4-DEV-0249",
+        "LEX4-DEV-0250"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-015",
+      "word": "笨蛋",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-029"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“笨蛋”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0253",
+        "LEX4-DEV-0254",
+        "LEX4-DEV-0255"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-016",
+      "word": "混蛋",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-030"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "浑蛋"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "hun dan"
+      ],
+      "pinyin_keys": [
+        "hun4dan4",
+        "hundan"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])hun4?[^\\w]{0,8}dan4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0258",
+        "LEX4-DEV-0259",
+        "LEX4-DEV-0260",
+        "LEX4-DEV-0261",
+        "LEX4-DEV-0262",
+        "LEX4-DEV-0263",
+        "LEX4-DEV-0264",
+        "LEX4-DEV-0265",
+        "LEX4-DEV-0266",
+        "LEX4-DEV-0267",
+        "LEX4-DEV-0268"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-017",
+      "word": "王八蛋",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-031"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "wang ba dan"
+      ],
+      "pinyin_keys": [
+        "wang2ba1dan4",
+        "wangbadan"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])wang2?[^\\w]{0,8}ba1?[^\\w]{0,8}dan4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0273",
+        "LEX4-DEV-0274",
+        "LEX4-DEV-0275",
+        "LEX4-DEV-0276",
+        "LEX4-DEV-0277",
+        "LEX4-DEV-0278",
+        "LEX4-DEV-0279",
+        "LEX4-DEV-0280",
+        "LEX4-DEV-0281",
+        "LEX4-DEV-0282"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-018",
+      "word": "人渣",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-032"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "人扎"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "ren zha"
+      ],
+      "pinyin_keys": [
+        "ren2zha1",
+        "renzha"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])ren2?[^\\w]{0,8}zha1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": true,
+      "test_ids": [
+        "LEX4-DEV-0287",
+        "LEX4-DEV-0288",
+        "LEX4-DEV-0289",
+        "LEX4-DEV-0290",
+        "LEX4-DEV-0291",
+        "LEX4-DEV-0292",
+        "LEX4-DEV-0293",
+        "LEX4-DEV-0294",
+        "LEX4-DEV-0295",
+        "LEX4-DEV-0296",
+        "LEX4-DEV-0297"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-019",
+      "word": "败类",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-033"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“败类”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0302",
+        "LEX4-DEV-0303",
+        "LEX4-DEV-0304"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-020",
+      "word": "无耻",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-034"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“无耻”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0307",
+        "LEX4-DEV-0308",
+        "LEX4-DEV-0309"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-021",
+      "word": "滚蛋",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-035"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“滚蛋”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0312",
+        "LEX4-DEV-0313",
+        "LEX4-DEV-0314"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-022",
+      "word": "闭嘴",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-036"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0317",
+        "LEX4-DEV-0318",
+        "LEX4-DEV-0319"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-023",
+      "word": "他妈的",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-037"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“他妈的”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "tmd"
+      ],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0322",
+        "LEX4-DEV-0323",
+        "LEX4-DEV-0324",
+        "LEX4-DEV-0325"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-024",
+      "word": "妈的",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-038"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“妈的”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0330",
+        "LEX4-DEV-0331",
+        "LEX4-DEV-0332"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-025",
+      "word": "不要脸",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-039"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "不要碧莲",
+        "不要碧连"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0335",
+        "LEX4-DEV-0336",
+        "LEX4-DEV-0337",
+        "LEX4-DEV-0338",
+        "LEX4-DEV-0339"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-026",
+      "word": "没教养",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-040"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0342",
+        "LEX4-DEV-0343",
+        "LEX4-DEV-0344"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-027",
+      "word": "蠢材",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-041"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“蠢材”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0347",
+        "LEX4-DEV-0348",
+        "LEX4-DEV-0349"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-028",
+      "word": "垃圾",
+      "origin": "原5条基线",
+      "source_ids": [
+        "US24-042"
+      ],
+      "source_levels": [
+        "LOW"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "LOW",
+      "category": "一般负面信号",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "校园正常交流、完整英语标识符；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "同音和缩写歧义；定向别名只在有限目标语法内匹配；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [
+        "垃圾分类",
+        "垃圾回收",
+        "垃圾处理",
+        "垃圾桶"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0352",
+        "LEX4-DEV-0353",
+        "LEX4-DEV-0354"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-029",
+      "word": "差劲",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-043"
+      ],
+      "source_levels": [
+        "LOW"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "LOW",
+      "category": "一般负面信号",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“差劲”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0357",
+        "LEX4-DEV-0358",
+        "LEX4-DEV-0359"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-030",
+      "word": "烂透",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-044"
+      ],
+      "source_levels": [
+        "LOW"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "LOW",
+      "category": "一般负面信号",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“烂透”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0362",
+        "LEX4-DEV-0363",
+        "LEX4-DEV-0364"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-031",
+      "word": "破玩意",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-045"
+      ],
+      "source_levels": [
+        "LOW"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "LOW",
+      "category": "一般负面信号",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“破玩意”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0367",
+        "LEX4-DEV-0368",
+        "LEX4-DEV-0369"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-032",
+      "word": "扯淡",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-046"
+      ],
+      "source_levels": [
+        "LOW"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "LOW",
+      "category": "一般负面信号",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "举报：“扯淡”请处理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、讨论、自嘲；字面规则无法判断所有语义；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0372",
+        "LEX4-DEV-0373",
+        "LEX4-DEV-0374"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-033",
+      "word": "去你妈的",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-071"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "去你m的",
+        "qnmd"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "qu ni ma de"
+      ],
+      "pinyin_keys": [
+        "qu4ni3ma1de5",
+        "qunimade"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])qu4?[^\\w]{0,8}ni3?[^\\w]{0,8}ma1?[^\\w]{0,8}de5?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0377",
+        "LEX4-DEV-0378",
+        "LEX4-DEV-0379",
+        "LEX4-DEV-0380",
+        "LEX4-DEV-0381",
+        "LEX4-DEV-0382",
+        "LEX4-DEV-0383",
+        "LEX4-DEV-0384",
+        "LEX4-DEV-0385",
+        "LEX4-DEV-0386",
+        "LEX4-DEV-0387",
+        "LEX4-DEV-0388"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-034",
+      "word": "妈了个逼",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-072"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；首轮误报按词条和出现位置补充精确正常词组，原990条预期不变；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "讨论麻辣口味；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "地名、食物近音可能冲突；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行；书名、店名、羊驼俗称或2B型号等其他未登记语境仍可能存在歧义，不能宣称完整语义理解",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "mlgb",
+        "麻了个逼",
+        "麻了隔壁",
+        "麻辣隔壁"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [
+        "麻辣隔壁是一家店名"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0393",
+        "LEX4-DEV-0394",
+        "LEX4-DEV-0395",
+        "LEX4-DEV-0396",
+        "LEX4-DEV-0397",
+        "LEX4-DEV-0398",
+        "LEX4-DEV-0399",
+        "LEX4-DEV-1016"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-035",
+      "word": "你妈逼",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-073"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "正常亲属交流；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "拼音同音必须定向；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "泥马碧",
+        "尼玛币"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0402",
+        "LEX4-DEV-0403",
+        "LEX4-DEV-0404",
+        "LEX4-DEV-0405",
+        "LEX4-DEV-0406"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-036",
+      "word": "狗屁",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-074"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "讨论粗俗词语；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "情绪宣泄和引述；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "狗霹",
+        "笱霹"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0409",
+        "LEX4-DEV-0410",
+        "LEX4-DEV-0411",
+        "LEX4-DEV-0412",
+        "LEX4-DEV-0413"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-037",
+      "word": "放屁",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-075"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "人体消化排气；本次补充：正常生理现象及日常咨询表述；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "生理讨论；保留放行；精确豁免只覆盖登记词组及本次出现位置；未登记同义表达和含混语境仍需逐项审核；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "放p",
+        "放霹",
+        "芳痞"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [
+        "最近总是放屁",
+        "放屁是正常生理现象",
+        "饭后老是放屁"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0416",
+        "LEX4-DEV-0417",
+        "LEX4-DEV-0418",
+        "LEX4-DEV-0419",
+        "LEX4-DEV-0420",
+        "LEX4-DEV-0421"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-038",
+      "word": "鸡巴",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-076"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "鸡把米吃了；本次补充：量词加具体物品、击靶训练、G8项目和接口、动物把字句、作品配乐；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "正常语法切分、医学语境；精确豁免只覆盖登记词组及本次出现位置；未登记同义表达和含混语境仍需逐项审核；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "鸡把",
+        "吉巴",
+        "g8"
+      ],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [
+        "鸡把米吃完了",
+        "G8峰会",
+        "G8会议",
+        "G8项目",
+        "G8接口",
+        "G8节点",
+        "G8寄存器",
+        "鸡把玉米吃完了",
+        "鸡把饲料吃完了",
+        "鸡把米啄干净了",
+        "吉巴罗舞蹈",
+        "吉巴罗的配乐"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0424",
+        "LEX4-DEV-0425",
+        "LEX4-DEV-0426",
+        "LEX4-DEV-0427",
+        "LEX4-DEV-0428",
+        "LEX4-DEV-0429"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-039",
+      "word": "放你妈的屁",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-106"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "固定粗口",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "funny mud pee"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "fang ni ma de pi"
+      ],
+      "pinyin_keys": [
+        "fang4ni3ma1de5pi4",
+        "fangnimadepi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])fang4?[^\\w]{0,8}ni3?[^\\w]{0,8}ma1?[^\\w]{0,8}de5?[^\\w]{0,8}pi4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0434",
+        "LEX4-DEV-0435",
+        "LEX4-DEV-0436",
+        "LEX4-DEV-0437",
+        "LEX4-DEV-0438",
+        "LEX4-DEV-0439",
+        "LEX4-DEV-0440",
+        "LEX4-DEV-0441",
+        "LEX4-DEV-0442",
+        "LEX4-DEV-0443",
+        "LEX4-DEV-0444"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-040",
+      "word": "狗屎",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-107"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "宠物排泄物清理；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "正常宠物讨论；放行；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "勾史",
+        "狗史"
+      ],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0449",
+        "LEX4-DEV-0450",
+        "LEX4-DEV-0451",
+        "LEX4-DEV-0452",
+        "LEX4-DEV-0453"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-041",
+      "word": "穷鬼",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-109"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "助学金申请；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "自嘲与讨论；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "穷狗"
+      ],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0456",
+        "LEX4-DEV-0457",
+        "LEX4-DEV-0458",
+        "LEX4-DEV-0459"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-042",
+      "word": "黑鬼",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-113"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "身份群体侮辱",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "讨论如何反对种族歧视；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用、反歧视讨论；待人工审核；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0462",
+        "LEX4-DEV-0463",
+        "LEX4-DEV-0464"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-043",
+      "word": "支那猪",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-114"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "HIGH",
+      "category": "身份群体侮辱",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "讨论歧视词历史；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引用和科普需局部豁免；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0467",
+        "LEX4-DEV-0468",
+        "LEX4-DEV-0469"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-044",
+      "word": "死基佬",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-115"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "身份群体侮辱",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "正常性取向交流；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "不收录身份属性本身；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0472",
+        "LEX4-DEV-0473",
+        "LEX4-DEV-0474"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-045",
+      "word": "死娘炮",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-116"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "身份群体侮辱",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "正常性别表达讨论；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "不按性别属性自动命中；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0477",
+        "LEX4-DEV-0478",
+        "LEX4-DEV-0479"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-046",
+      "word": "婊子",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-117"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "身份群体侮辱",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "语言科普讨论；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "引述和文学作品；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "婊砸",
+        "表砸"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0482",
+        "LEX4-DEV-0483",
+        "LEX4-DEV-0484",
+        "LEX4-DEV-0485",
+        "LEX4-DEV-0486"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-047",
+      "word": "荡妇",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-118"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "RETAIN_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "身份群体侮辱",
+      "rationale": "保留稳定词或固定粗口；删除包含标准词的冗余整句别名，不扩充整句排列；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "反对荡妇羞辱；完整登记词在“请不要说…伤害同学”和“语言科普：…是攻击表达”引号模板中的引用",
+      "false_positive_risk": "反歧视正常讨论；待人工审核；新模板只豁免完整登记引文的对应位置；引号外攻击继续识别；自由措辞和危机语义尚未覆盖；词面命中不等于语义攻击，MEDIUM/LOW继续放行",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0489",
+        "LEX4-DEV-0490",
+        "LEX4-DEV-0491"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-048",
+      "word": "nmsl",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-006"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。仅保留既有固定网络缩写，不排列中文诅咒句，保留英文标识符边界。；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0494",
+        "LEX4-DEV-0495",
+        "LEX4-DEV-0496",
+        "LEX4-DEV-0497"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-049",
+      "word": "杂种",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-011"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。农业正常词组按位置豁免；不把“咋种”或普通拼音直接作别名。；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [
+        "杂种水稻",
+        "杂种优势",
+        "杂种后代"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0502",
+        "LEX4-DEV-0503",
+        "LEX4-DEV-0504"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-050",
+      "word": "畜生",
+      "origin": "PR #83新增41条",
+      "source_ids": [
+        "US24-012",
+        "US24-013"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。不把出生/出省/初生/楚胜或chu sheng作无条件变体。；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "畜牲"
+      ],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [
+        "畜生道"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0507",
+        "LEX4-DEV-0508",
+        "LEX4-DEV-0509",
+        "LEX4-DEV-0510"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-051",
+      "word": "废柴",
+      "origin": "原5条基线",
+      "source_ids": [
+        "US24-023"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。原句别名中提取；与“废物”分别编号，不混作拼写别名。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "fei chai"
+      ],
+      "pinyin_keys": [
+        "fei4chai2",
+        "feichai"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])fei4?[^\\w]{0,8}chai2?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0513",
+        "LEX4-DEV-0514",
+        "LEX4-DEV-0515",
+        "LEX4-DEV-0516",
+        "LEX4-DEV-0517",
+        "LEX4-DEV-0518",
+        "LEX4-DEV-0519",
+        "LEX4-DEV-0520",
+        "LEX4-DEV-0521",
+        "LEX4-DEV-0522"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-052",
+      "word": "蠢猪",
+      "origin": "v2新增24条",
+      "source_ids": [
+        "US24-048"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "chun zhu"
+      ],
+      "pinyin_keys": [
+        "chun3zhu1",
+        "chunzhu"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])chun3?[^\\w]{0,8}zhu1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0527",
+        "LEX4-DEV-0528",
+        "LEX4-DEV-0529",
+        "LEX4-DEV-0530",
+        "LEX4-DEV-0531",
+        "LEX4-DEV-0532",
+        "LEX4-DEV-0533",
+        "LEX4-DEV-0534",
+        "LEX4-DEV-0535",
+        "LEX4-DEV-0536"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-053",
+      "word": "饭桶",
+      "origin": "v2新增24条",
+      "source_ids": [
+        "US24-049"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。有实物含义，需要现有定向前缀；纯拼音不自动推断攻击对象。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": true,
+      "pinyin_readings": [
+        "fan tong"
+      ],
+      "pinyin_keys": [
+        "fan4tong3",
+        "fantong"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])fan4?[^\\w]{0,8}tong3?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "饭桶容量",
+        "饭桶尺寸",
+        "饭桶材质"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0541",
+        "LEX4-DEV-0542",
+        "LEX4-DEV-0543",
+        "LEX4-DEV-0544",
+        "LEX4-DEV-0545",
+        "LEX4-DEV-0546",
+        "LEX4-DEV-0547",
+        "LEX4-DEV-0548",
+        "LEX4-DEV-0549",
+        "LEX4-DEV-0550"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-054",
+      "word": "窝囊废",
+      "origin": "v2新增24条",
+      "source_ids": [
+        "US24-050"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "wo nang fei"
+      ],
+      "pinyin_keys": [
+        "wo1nang1fei4",
+        "wonangfei"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])wo1?[^\\w]{0,8}nang1?[^\\w]{0,8}fei4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0555",
+        "LEX4-DEV-0556",
+        "LEX4-DEV-0557",
+        "LEX4-DEV-0558",
+        "LEX4-DEV-0559",
+        "LEX4-DEV-0560",
+        "LEX4-DEV-0561",
+        "LEX4-DEV-0562",
+        "LEX4-DEV-0563",
+        "LEX4-DEV-0564"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-055",
+      "word": "瘪三",
+      "origin": "v2新增24条",
+      "source_ids": [
+        "US24-051"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "bie san"
+      ],
+      "pinyin_keys": [
+        "bie1san1",
+        "biesan"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])bie1?[^\\w]{0,8}san1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0569",
+        "LEX4-DEV-0570",
+        "LEX4-DEV-0571",
+        "LEX4-DEV-0572",
+        "LEX4-DEV-0573",
+        "LEX4-DEV-0574",
+        "LEX4-DEV-0575",
+        "LEX4-DEV-0576",
+        "LEX4-DEV-0577",
+        "LEX4-DEV-0578"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-056",
+      "word": "贱人",
+      "origin": "v2新增24条",
+      "source_ids": [
+        "US24-052"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。不把正常姓名“健人/建人”注册为无条件变体。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "jian ren"
+      ],
+      "pinyin_keys": [
+        "jian4ren2",
+        "jianren"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])jian4?[^\\w]{0,8}ren2?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0583",
+        "LEX4-DEV-0584",
+        "LEX4-DEV-0585",
+        "LEX4-DEV-0586",
+        "LEX4-DEV-0587",
+        "LEX4-DEV-0588",
+        "LEX4-DEV-0589",
+        "LEX4-DEV-0590",
+        "LEX4-DEV-0591",
+        "LEX4-DEV-0592",
+        "LEX4-DEV-0980"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-057",
+      "word": "狗东西",
+      "origin": "v2新增24条",
+      "source_ids": [
+        "US24-054"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [
+        "狗冬西"
+      ],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gou dong xi"
+      ],
+      "pinyin_keys": [
+        "gou3dong1xi1",
+        "goudongxi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gou3?[^\\w]{0,8}dong1?[^\\w]{0,8}xi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0597",
+        "LEX4-DEV-0598",
+        "LEX4-DEV-0599",
+        "LEX4-DEV-0600",
+        "LEX4-DEV-0601",
+        "LEX4-DEV-0602",
+        "LEX4-DEV-0603",
+        "LEX4-DEV-0604",
+        "LEX4-DEV-0605",
+        "LEX4-DEV-0606",
+        "LEX4-DEV-0607"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-058",
+      "word": "傻子",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-080"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。保留品牌和实义正常用法，需定向前缀。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": true,
+      "pinyin_readings": [
+        "sha zi"
+      ],
+      "pinyin_keys": [
+        "sha3zi5",
+        "shazi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])sha3?[^\\w]{0,8}zi5?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "傻子瓜子"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0612",
+        "LEX4-DEV-0613",
+        "LEX4-DEV-0614",
+        "LEX4-DEV-0615",
+        "LEX4-DEV-0616",
+        "LEX4-DEV-0617",
+        "LEX4-DEV-0618",
+        "LEX4-DEV-0619",
+        "LEX4-DEV-0620",
+        "LEX4-DEV-0621"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-059",
+      "word": "二逼",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-081"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。2B铅笔/型号不作全局匹配，er bi与英文缩写含混，暂不启用拼音。；首轮误报按词条和出现位置补充精确正常词组，原990条预期不变；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称；书名、店名、羊驼俗称或2B型号等其他未登记语境仍可能存在歧义，不能宣称完整语义理解",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "二笔",
+        "二比",
+        "2b"
+      ],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [
+        "2B铅笔",
+        "2B自动铅笔",
+        "2B型号",
+        "二比一",
+        "二比二",
+        "二比零",
+        "二比三"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0626",
+        "LEX4-DEV-0627",
+        "LEX4-DEV-0628",
+        "LEX4-DEV-0629",
+        "LEX4-DEV-0630",
+        "LEX4-DEV-0631",
+        "LEX4-DEV-0981",
+        "LEX4-DEV-1019",
+        "LEX4-DEV-1022",
+        "LEX4-DEV-1025",
+        "LEX4-DEV-1028",
+        "LEX4-DEV-1031",
+        "LEX4-DEV-1034",
+        "LEX4-DEV-1037"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-060",
+      "word": "二货",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-082"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "2货",
+        "2h"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "er huo"
+      ],
+      "pinyin_keys": [
+        "er4huo4",
+        "erhuo"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])er4?[^\\w]{0,8}huo4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0636",
+        "LEX4-DEV-0637",
+        "LEX4-DEV-0638",
+        "LEX4-DEV-0639",
+        "LEX4-DEV-0640",
+        "LEX4-DEV-0641",
+        "LEX4-DEV-0642",
+        "LEX4-DEV-0643",
+        "LEX4-DEV-0644",
+        "LEX4-DEV-0645",
+        "LEX4-DEV-0646",
+        "LEX4-DEV-0647"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-061",
+      "word": "下贱",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-097"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "xia jian"
+      ],
+      "pinyin_keys": [
+        "xia4jian4",
+        "xiajian"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])xia4?[^\\w]{0,8}jian4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0654",
+        "LEX4-DEV-0655",
+        "LEX4-DEV-0656",
+        "LEX4-DEV-0657",
+        "LEX4-DEV-0658",
+        "LEX4-DEV-0659",
+        "LEX4-DEV-0660",
+        "LEX4-DEV-0661",
+        "LEX4-DEV-0662",
+        "LEX4-DEV-0663"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-062",
+      "word": "犯贱",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-097"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。从原同义别名拆出；避免与普通拼音“反间”混淆。；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "贩剑"
+      ],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0668",
+        "LEX4-DEV-0669",
+        "LEX4-DEV-0670",
+        "LEX4-DEV-0671"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-063",
+      "word": "菜逼",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-101"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "菜b"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "cai bi"
+      ],
+      "pinyin_keys": [
+        "cai4bi1",
+        "caibi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])cai4?[^\\w]{0,8}bi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0674",
+        "LEX4-DEV-0675",
+        "LEX4-DEV-0676",
+        "LEX4-DEV-0677",
+        "LEX4-DEV-0678",
+        "LEX4-DEV-0679",
+        "LEX4-DEV-0680",
+        "LEX4-DEV-0681",
+        "LEX4-DEV-0682",
+        "LEX4-DEV-0683",
+        "LEX4-DEV-0684"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-064",
+      "word": "屌丝",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-102"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。删除Dior品牌混写别名，避免伤及普通商品讨论。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "diao si"
+      ],
+      "pinyin_keys": [
+        "diao3si1",
+        "diaosi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])diao3?[^\\w]{0,8}si1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0691",
+        "LEX4-DEV-0692",
+        "LEX4-DEV-0693",
+        "LEX4-DEV-0694",
+        "LEX4-DEV-0695",
+        "LEX4-DEV-0696",
+        "LEX4-DEV-0697",
+        "LEX4-DEV-0698",
+        "LEX4-DEV-0699",
+        "LEX4-DEV-0700"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-065",
+      "word": "逼数",
+      "origin": "v3新增50条",
+      "source_ids": [
+        "US24-105"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。不把普通金融“币数”或程序变量b数作无条件别名。；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0705",
+        "LEX4-DEV-0706",
+        "LEX4-DEV-0707"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-066",
+      "word": "蠢逼",
+      "origin": "v3.5新增候选12条",
+      "source_ids": [
+        "US24-121"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [
+        "蠢b"
+      ],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "chun bi"
+      ],
+      "pinyin_keys": [
+        "chun3bi1",
+        "chunbi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])chun3?[^\\w]{0,8}bi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0710",
+        "LEX4-DEV-0711",
+        "LEX4-DEV-0712",
+        "LEX4-DEV-0713",
+        "LEX4-DEV-0714",
+        "LEX4-DEV-0715",
+        "LEX4-DEV-0716",
+        "LEX4-DEV-0717",
+        "LEX4-DEV-0718",
+        "LEX4-DEV-0719",
+        "LEX4-DEV-0720",
+        "LEX4-DEV-0979"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-067",
+      "word": "憨批",
+      "origin": "v3.5新增候选12条",
+      "source_ids": [
+        "US24-122"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "han pi"
+      ],
+      "pinyin_keys": [
+        "han1pi1",
+        "hanpi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])han1?[^\\w]{0,8}pi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0727",
+        "LEX4-DEV-0728",
+        "LEX4-DEV-0729",
+        "LEX4-DEV-0730",
+        "LEX4-DEV-0731",
+        "LEX4-DEV-0732",
+        "LEX4-DEV-0733",
+        "LEX4-DEV-0734",
+        "LEX4-DEV-0735",
+        "LEX4-DEV-0736"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-068",
+      "word": "贱货",
+      "origin": "v3.5新增候选12条",
+      "source_ids": [
+        "US24-123"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "jian huo"
+      ],
+      "pinyin_keys": [
+        "jian4huo4",
+        "jianhuo"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])jian4?[^\\w]{0,8}huo4?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0741",
+        "LEX4-DEV-0742",
+        "LEX4-DEV-0743",
+        "LEX4-DEV-0744",
+        "LEX4-DEV-0745",
+        "LEX4-DEV-0746",
+        "LEX4-DEV-0747",
+        "LEX4-DEV-0748",
+        "LEX4-DEV-0749",
+        "LEX4-DEV-0750"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-069",
+      "word": "贱种",
+      "origin": "v3.5新增候选12条",
+      "source_ids": [
+        "US24-124"
+      ],
+      "source_levels": [
+        "HIGH"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "HIGH",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。保留汉字词，不把姓名/普通拼音jian zhong作全局匹配。；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0755",
+        "LEX4-DEV-0756",
+        "LEX4-DEV-0757"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-070",
+      "word": "狗崽子",
+      "origin": "v3.5新增候选12条",
+      "source_ids": [
+        "US24-125"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。动物实义存在，需定向前缀。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gou zai zi"
+      ],
+      "pinyin_keys": [
+        "gou3zai3zi5",
+        "gouzaizi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gou3?[^\\w]{0,8}zai3?[^\\w]{0,8}zi5?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [
+        "狗崽子出生",
+        "狗崽子几个月"
+      ],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0760",
+        "LEX4-DEV-0761",
+        "LEX4-DEV-0762",
+        "LEX4-DEV-0763",
+        "LEX4-DEV-0764",
+        "LEX4-DEV-0765",
+        "LEX4-DEV-0766",
+        "LEX4-DEV-0767",
+        "LEX4-DEV-0768",
+        "LEX4-DEV-0769"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-071",
+      "word": "穷逼",
+      "origin": "v3.5新增候选12条",
+      "source_ids": [
+        "US24-126"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "qiong bi"
+      ],
+      "pinyin_keys": [
+        "qiong2bi1",
+        "qiongbi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])qiong2?[^\\w]{0,8}bi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0774",
+        "LEX4-DEV-0775",
+        "LEX4-DEV-0776",
+        "LEX4-DEV-0777",
+        "LEX4-DEV-0778",
+        "LEX4-DEV-0779",
+        "LEX4-DEV-0780",
+        "LEX4-DEV-0781",
+        "LEX4-DEV-0782",
+        "LEX4-DEV-0783"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-072",
+      "word": "丑逼",
+      "origin": "v3.5新增候选12条",
+      "source_ids": [
+        "US24-127"
+      ],
+      "source_levels": [
+        "MEDIUM"
+      ],
+      "action": "EXTRACT_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "将已有词组中的稳定词单独登记，沿用来源等级建议。",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "提取词根扩大了匹配范围，需M1确认；不提取普通动作、疾病或身份名称",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "chou bi"
+      ],
+      "pinyin_keys": [
+        "chou3bi1",
+        "choubi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])chou3?[^\\w]{0,8}bi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0788",
+        "LEX4-DEV-0789",
+        "LEX4-DEV-0790",
+        "LEX4-DEV-0791",
+        "LEX4-DEV-0792",
+        "LEX4-DEV-0793",
+        "LEX4-DEV-0794",
+        "LEX4-DEV-0795",
+        "LEX4-DEV-0796",
+        "LEX4-DEV-0797"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-073",
+      "word": "狗日的",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "固定粗口",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gou ri de"
+      ],
+      "pinyin_keys": [
+        "gou3ri4de5",
+        "gouride"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gou3?[^\\w]{0,8}ri4?[^\\w]{0,8}de5?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0802",
+        "LEX4-DEV-0803",
+        "LEX4-DEV-0804",
+        "LEX4-DEV-0805",
+        "LEX4-DEV-0806",
+        "LEX4-DEV-0807",
+        "LEX4-DEV-0808",
+        "LEX4-DEV-0809",
+        "LEX4-DEV-0810",
+        "LEX4-DEV-0811"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-074",
+      "word": "龟孙子",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gui sun zi"
+      ],
+      "pinyin_keys": [
+        "gui1sun1zi5",
+        "guisunzi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gui1?[^\\w]{0,8}sun1?[^\\w]{0,8}zi5?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0816",
+        "LEX4-DEV-0817",
+        "LEX4-DEV-0818",
+        "LEX4-DEV-0819",
+        "LEX4-DEV-0820",
+        "LEX4-DEV-0821",
+        "LEX4-DEV-0822",
+        "LEX4-DEV-0823",
+        "LEX4-DEV-0824",
+        "LEX4-DEV-0825"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-075",
+      "word": "王八羔子",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "wang ba gao zi"
+      ],
+      "pinyin_keys": [
+        "wang2ba1gao1zi3",
+        "wangbagaozi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])wang2?[^\\w]{0,8}ba1?[^\\w]{0,8}gao1?[^\\w]{0,8}zi3?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0830",
+        "LEX4-DEV-0831",
+        "LEX4-DEV-0832",
+        "LEX4-DEV-0833",
+        "LEX4-DEV-0834",
+        "LEX4-DEV-0835",
+        "LEX4-DEV-0836",
+        "LEX4-DEV-0837",
+        "LEX4-DEV-0838",
+        "LEX4-DEV-0839"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-076",
+      "word": "狗逼",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gou bi"
+      ],
+      "pinyin_keys": [
+        "gou3bi1",
+        "goubi"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gou3?[^\\w]{0,8}bi1?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0844",
+        "LEX4-DEV-0845",
+        "LEX4-DEV-0846",
+        "LEX4-DEV-0847",
+        "LEX4-DEV-0848",
+        "LEX4-DEV-0849",
+        "LEX4-DEV-0850",
+        "LEX4-DEV-0851",
+        "LEX4-DEV-0852",
+        "LEX4-DEV-0853"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-077",
+      "word": "蠢驴",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0858",
+        "LEX4-DEV-0859",
+        "LEX4-DEV-0860"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-078",
+      "word": "孬种",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0863",
+        "LEX4-DEV-0864",
+        "LEX4-DEV-0865"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-079",
+      "word": "怂包",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行；本版不自动把此词转为拼音匹配，避免普通拼音及缩写误报",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": false,
+      "pinyin": false,
+      "pinyin_readings": [],
+      "pinyin_keys": [],
+      "numeric_tone_paths": [],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0868",
+        "LEX4-DEV-0869",
+        "LEX4-DEV-0870"
+      ],
+      "unicode_variants": []
+    },
+    {
+      "candidate_id": "LEX4-080",
+      "word": "狗贼",
+      "origin": "本次新增稳定词",
+      "source_ids": [],
+      "source_levels": [],
+      "action": "NEW_WORD",
+      "suggested_level": "MEDIUM",
+      "category": "人身侮辱词",
+      "rationale": "补充稳定侮辱词，MEDIUM仅为建议；按当前S1口径放行",
+      "normal_context": "引用、语言讨论、自责或玩笑可能含该词；只保护已登记的局部语境，不作全局白名单",
+      "false_positive_risk": "地域口语、玩笑和作品角色名有歧义；不启用任意单字或全局汉字同音替换",
+      "m1_status": "PENDING",
+      "include": "",
+      "agree_level": "",
+      "agree_aliases": "",
+      "agree_pinyin": "",
+      "needs_exemption": "",
+      "m1_comments": "",
+      "variants": [],
+      "targeted_aliases": [],
+      "target_required": true,
+      "pinyin": true,
+      "pinyin_readings": [
+        "gou zei"
+      ],
+      "pinyin_keys": [
+        "gou3zei2",
+        "gouzei"
+      ],
+      "numeric_tone_paths": [
+        "(?<![a-z0-9_])gou3?[^\\w]{0,8}zei2?(?![a-z0-9_])"
+      ],
+      "allow_phrases": [],
+      "pinyin_allow_phrases": [],
+      "hanzi_homophone": false,
+      "test_ids": [
+        "LEX4-DEV-0873",
+        "LEX4-DEV-0874",
+        "LEX4-DEV-0875",
+        "LEX4-DEV-0876",
+        "LEX4-DEV-0877",
+        "LEX4-DEV-0878",
+        "LEX4-DEV-0879",
+        "LEX4-DEV-0880",
+        "LEX4-DEV-0881",
+        "LEX4-DEV-0882"
+      ],
+      "unicode_variants": []
+    }
+  ],
+  "old_files_sha256": {
+    "moderation-v1.json": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+    "moderation-v1.manifest.json": "f5fa670b65fb8048865717b1d471f4b95511402775658d7052aec10fb46b02d5",
+    "moderation-v2-candidate.json": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd",
+    "moderation-v2-candidate.manifest.json": "3db347b4e114f166c86bacad2c63c3c1670442b1d755091a398b1679f1994353",
+    "moderation-v3-candidate.json": "301da843f88be51759a968772275668c7f7337ab54ab9ed2e022c650e3e16858",
+    "moderation-v3-candidate.manifest.json": "2ec8638d34b7350093eac989e5785d7a24999629c03c26aa21fa0b61601c1ab2",
+    "moderation-v3_1-candidate.json": "6d716075bea275a65cb7bc73477c2f9a3d902ad8ba73cfe0d0c22002fc7586b3",
+    "moderation-v3_1-candidate.manifest.json": "3c6302c50dce96a428af5d7740404ebcbdc008b189deff412f2e69cbb1123167",
+    "moderation-v3_10-candidate.json": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+    "moderation-v3_11-candidate.json": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+    "moderation-v3_12-candidate.json": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890",
+    "moderation-v3_13-candidate.json": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+    "moderation-v3_2-candidate.json": "cad53ea922b3630a7aedc3bef7024f1050d90100ab955ef0da5bd03a13487f53",
+    "moderation-v3_2-candidate.manifest.json": "ee60ae167b8297211264d47f7b9a1b885e132a0b304a634df6f41d06d6f3ba73",
+    "moderation-v3_3-candidate.json": "916b7d409268a53494129951124b033b0658e7aceb7b6bedccd7f8a84bb7de75",
+    "moderation-v3_3-candidate.manifest.json": "9117d98a96139290d6b5c62267297468c2db6c9c4bb5ded10258e815c54e0447",
+    "moderation-v3_4-candidate.json": "e6f94bbcfc16f83564433d3e748a0cf81d9677882b67041baa85672b19e88d56",
+    "moderation-v3_5-candidate.json": "debcb5c905580ac5b2d0eef86cdd74834cc8ef111f013b07456c15faaf904d5e",
+    "moderation-v3_8-candidate.json": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+    "moderation-v3_8-candidate.manifest.json": "fd1a195b80e7c0950bc4d6e379a8501e7f08f5fbb80cba5c2e8e73582fc1a96d",
+    "moderation-v3_9-candidate.json": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+    "moderation-v3_9-candidate.manifest.json": "48ab85154b688f521cf6d6f741423e21cf8cc8d3df5153888b114c35b624f670",
+    "words.json": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d"
+  },
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "independent_evaluation": "NOT_RUN",
+  "default_dictionary": "words.json",
+  "existing_policy": "HIGH blocks; MEDIUM/LOW allow",
+  "semantic_recall_target_status": "UNMET, unchanged",
+  "maximum_pronunciation_paths": 8,
+  "maximum_keys_per_word": 16,
+  "match_budget_ms": 50,
+  "fixture_sha256": "3e1f1c8f1880cb59dbcded0d5e50b819965e230f27c25ef948cc8a9ace86e896",
+  "fixture_rows": 1038,
+  "scope_probe_rows": 9,
+  "development_labels": "作者合成的登记词面映射；不是广义语义金标；整句能力边界单列，不计正常真阴性"
+}

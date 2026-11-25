@@ -1,0 +1,71 @@
+{
+  "scope": "词面开发复测与历史语料诊断；非新独立验收",
+  "dictionary_sha256": "3294ab6039e74df504964edcf20c917824a5ba91aba8d99d8bcfad486e11956a",
+  "fixture_sha256": "3e1f1c8f1880cb59dbcded0d5e50b819965e230f27c25ef948cc8a9ace86e896",
+  "files": [
+    {
+      "file": "cache-equivalence.json",
+      "bytes": 358,
+      "sha256": "b7f56961fd7c4980ae039422980c558186c9ae51585ac60d65a20533ed56bff9"
+    },
+    {
+      "file": "function.json",
+      "bytes": 356708,
+      "sha256": "4b38f004bb4117691660a727732b6629235b35a768399f8af3485bb0c1b1b1f0"
+    },
+    {
+      "file": "historical-function.json",
+      "bytes": 18177,
+      "sha256": "9f1edc6b8071dd6c8057e4f5274ac37c01c128ab3f12209aedf91ec7fc36dbbb"
+    },
+    {
+      "file": "http.json",
+      "bytes": 356704,
+      "sha256": "2ac898a98ebc6776ac77f95bfa94ea9d6405215890bc5c17897f3388ec1b8706"
+    },
+    {
+      "file": "initial-performance.json",
+      "bytes": 3012,
+      "sha256": "6dca748bb7e21e28724fb2358c3c98a2a421451f844fc02f16ce7e3b9a74ffa4"
+    },
+    {
+      "file": "initial-seven-false-positives.json",
+      "bytes": 3685,
+      "sha256": "8496a60178cc99a7851c8bbc063eb7492b3e6e60dcd5b089647d57f76677c2be"
+    },
+    {
+      "file": "literal-before-after.json",
+      "bytes": 1409,
+      "sha256": "5d81882e2ad6b3b851cec7718fe7d463c7f11ef472439dbdc77b7f7fddeb6044"
+    },
+    {
+      "file": "normal-context-fix.json",
+      "bytes": 885,
+      "sha256": "fdf6c8c20efa903fb20619833f621855179b6ccf8016d5d0b88d533271c8d553"
+    },
+    {
+      "file": "performance-final.json",
+      "bytes": 1974,
+      "sha256": "d2807bdd06879c9f99e8ad16327bc5499f37b728fa47c8abea26b20c6c444700"
+    },
+    {
+      "file": "quality-summary.json",
+      "bytes": 1021,
+      "sha256": "2d96b96e1db973e31727ec99ca1d24bf492b6e81da90fa76463fe209158bb81f"
+    },
+    {
+      "file": "privacy-review.json",
+      "bytes": 11285,
+      "sha256": "ff74ef59989a354529ef3a7a0cdf3da880524c440b4d10d00f812779cbab7731"
+    }
+  ],
+  "source_code": {
+    "services/algo/scripts/evaluate_lexical.py": "077b982949fef6e9862ee27f30ac06a341e774686b7966dbd9b47289fd9baf6c",
+    "services/algo/app/services/targeted_matching.py": "b06e30af399aa99915adb9a6c7d228590055b0935adf27dd3de15940154bda21",
+    "services/algo/tests/test_lexical_candidate.py": "7905e8ed049f1f2d6453fa539bd5db41478b95bbe6b775aa07be9cdc8b972a26"
+  },
+  "independent_evaluation": "NOT_RUN",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

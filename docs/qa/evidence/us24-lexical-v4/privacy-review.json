@@ -1,0 +1,413 @@
+{
+  "scope": "本次提交27项文本文件；无新增截图、原始SQL/HTTP日志或外部评论原文",
+  "regex_candidates": 50,
+  "reviewed_false_positives": {
+    "metric_decimal_not_personal_number": 42,
+    "computed_sha256_not_personal_number": 8
+  },
+  "unresolved": 0,
+  "findings": [
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 57,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 79,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 319,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 445,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 464,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 816,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 856,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 875,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 2466,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 9444,
+      "rules": [
+        "phone"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 10346,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/function.json",
+      "line": 12050,
+      "rules": [
+        "phone"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 29,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 51,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 70,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 138,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 261,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 283,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 337,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 339,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 365,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 366,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 385,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 430,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 431,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 447,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 452,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 466,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 492,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 506,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 510,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 511,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 551,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/historical-function.json",
+      "line": 553,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 57,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 79,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 319,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 445,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 464,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 816,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 856,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 875,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 2466,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 9444,
+      "rules": [
+        "phone"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 10346,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/http.json",
+      "line": 12050,
+      "rules": [
+        "phone"
+      ],
+      "classification": "computed_sha256_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/literal-before-after.json",
+      "line": 17,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/literal-before-after.json",
+      "line": 23,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/literal-before-after.json",
+      "line": 24,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    },
+    {
+      "file": "docs/qa/evidence/us24-lexical-v4/literal-before-after.json",
+      "line": 45,
+      "rules": [
+        "identity_number"
+      ],
+      "classification": "metric_decimal_not_personal_number"
+    }
+  ],
+  "manual_content_review": "候选词、审核表及开发文本为项目词条和作者合成用例；原始测试日志保留私有，只发布汇总和摘要；未发现姓名、学号、手机号或明文凭证",
+  "limitations": "正则扫描不能代替完整隐私审计；保留实际候选命中及核查理由"
+}

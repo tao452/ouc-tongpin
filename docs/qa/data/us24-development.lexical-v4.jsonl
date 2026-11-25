@@ -1,0 +1,1038 @@
+{"id": "LEX4-DEV-0001", "text": "傻逼", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0002", "text": "他就是傻逼", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0003", "text": "傻·逼", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0004", "text": "傻必", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0005", "text": "煞笔", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0006", "text": "沙比", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0007", "text": "傻比", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0008", "text": "傻b", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0009", "text": "傻屄", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0010", "text": "傻批", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0011", "text": "啥比", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0012", "text": "傻杯", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0013", "text": "傻币", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0014", "text": "沙币", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0015", "text": "沙笔", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0016", "text": "砂比", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0017", "text": "傻笔", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0018", "text": "煞比", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0019", "text": "鲨臂", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0020", "text": "傻13", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0021", "text": "shаbi", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0022", "text": "sһabi", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0023", "text": "ѕhаbі", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0024", "text": "你这个sb", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "targeted_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0025", "text": "你这个s13", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "targeted_alias", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0026", "text": "shabi", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0027", "text": "sha bi", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0028", "text": "sha.bi", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0029", "text": "SHABI", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0030", "text": "ｓｈａｂｉ", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0031", "text": "sha3 bi1", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0032", "text": "shǎbī", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-001", "note": ""}
+{"id": "LEX4-DEV-0033", "text": "prefixshabisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0034", "text": "shab", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0035", "text": "prefixsbsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0036", "text": "sb_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0037", "text": "prefixs13suffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0038", "text": "s13_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0039", "text": "举报：“傻逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0040", "text": "语言科普：“傻逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0041", "text": "操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0042", "text": "他就是操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0043", "text": "操·你·妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0044", "text": "艹你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0045", "text": "肏你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0046", "text": "草你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0047", "text": "操尼玛", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0048", "text": "抄你码", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0049", "text": "草泥马", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0050", "text": "肏你麻", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0051", "text": "操妮玛", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0052", "text": "操n妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0053", "text": "caоnima", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0054", "text": "cаonima", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0055", "text": "саоnіma", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0056", "text": "你这个cnm", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "targeted_alias", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0057", "text": "caonima", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0058", "text": "cao ni ma", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0059", "text": "cao.ni.ma", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0060", "text": "CAONIMA", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0061", "text": "ｃａｏｎｉｍａ", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0062", "text": "cao1 ni3 ma1", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0063", "text": "cāonǐmā", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-002", "note": ""}
+{"id": "LEX4-DEV-0064", "text": "prefixcaonimasuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0065", "text": "caonim", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0066", "text": "prefixcnmsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0067", "text": "cnm_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0068", "text": "举报：“操你妈”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0069", "text": "语言科普：“操你妈”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0070", "text": "去死", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0071", "text": "他就是去死", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0072", "text": "去·死", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0073", "text": "去亖", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0074", "text": "去4", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0075", "text": "你这个q4", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "targeted_alias", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0076", "text": "你这个去s", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "targeted_alias", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0077", "text": "qusi", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0078", "text": "qu si", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0079", "text": "qu.si", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0080", "text": "QUSI", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0081", "text": "ｑｕｓｉ", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0082", "text": "qu4 si3", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0083", "text": "qùsǐ", "expected_word": "去死", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-003", "note": ""}
+{"id": "LEX4-DEV-0084", "text": "prefixqusisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0085", "text": "qus", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0086", "text": "prefixq4suffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0087", "text": "q4_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0088", "text": "prefix去ssuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0089", "text": "去s_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0090", "text": "举报：“去死”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0091", "text": "语言科普：“去死”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0092", "text": "滚你妈", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0093", "text": "他就是滚你妈", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0094", "text": "滚·你·妈", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0095", "text": "滚尼玛", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0096", "text": "gυnnima", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0097", "text": "gunnіma", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0098", "text": "gυnnіma", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0099", "text": "gunnima", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0100", "text": "gun ni ma", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0101", "text": "gun.ni.ma", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0102", "text": "GUNNIMA", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0103", "text": "ｇｕｎｎｉｍａ", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0104", "text": "gun3 ni3 ma1", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0105", "text": "gǔnnǐmā", "expected_word": "滚你妈", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-004", "note": ""}
+{"id": "LEX4-DEV-0106", "text": "prefixgunnimasuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0107", "text": "gunnim", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0108", "text": "举报：“滚你妈”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0109", "text": "语言科普：“滚你妈”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0110", "text": "日你妈", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0111", "text": "他就是日你妈", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0112", "text": "日·你·妈", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0113", "text": "日泥马", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0114", "text": "日尼玛", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0115", "text": "日你m", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0116", "text": "rinima", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0117", "text": "ri ni ma", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0118", "text": "ri.ni.ma", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0119", "text": "RINIMA", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0120", "text": "ｒｉｎｉｍａ", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0121", "text": "ri4 ni3 ma1", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0122", "text": "rìnǐmā", "expected_word": "日你妈", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-005", "note": ""}
+{"id": "LEX4-DEV-0123", "text": "prefixrinimasuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0124", "text": "rinim", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0125", "text": "举报：“日你妈”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0126", "text": "语言科普：“日你妈”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0127", "text": "死全家", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0128", "text": "他就是死全家", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0129", "text": "死·全·家", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0130", "text": "死全加", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0131", "text": "死全夹", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0132", "text": "siquanjia", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0133", "text": "si quan jia", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0134", "text": "si.quan.jia", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0135", "text": "SIQUANJIA", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0136", "text": "ｓｉｑｕａｎｊｉａ", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0137", "text": "si3 quan2 jia1", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0138", "text": "sǐquánjiā", "expected_word": "死全家", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-006", "note": ""}
+{"id": "LEX4-DEV-0139", "text": "prefixsiquanjiasuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0140", "text": "siquanji", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0141", "text": "举报：“死全家”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0142", "text": "语言科普：“死全家”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0143", "text": "狗娘养的", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0144", "text": "他就是狗娘养的", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0145", "text": "狗·娘·养·的", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0146", "text": "狗粮养的", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0147", "text": "gouniangyangde", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0148", "text": "gou niang yang de", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0149", "text": "gou.niang.yang.de", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0150", "text": "GOUNIANGYANGDE", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0151", "text": "ｇｏｕｎｉａｎｇｙａｎｇｄｅ", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0152", "text": "gou3 niang2 yang3 de5", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0153", "text": "gǒuniángyǎngde", "expected_word": "狗娘养的", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-007", "note": ""}
+{"id": "LEX4-DEV-0154", "text": "prefixgouniangyangdesuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0155", "text": "gouniangyangd", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0156", "text": "举报：“狗娘养的”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0157", "text": "语言科普：“狗娘养的”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0158", "text": "狗杂种", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0159", "text": "他就是狗杂种", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0160", "text": "狗·杂·种", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0161", "text": "gouzazhong", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0162", "text": "gou za zhong", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0163", "text": "gou.za.zhong", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0164", "text": "GOUZAZHONG", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0165", "text": "ｇｏｕｚａｚｈｏｎｇ", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0166", "text": "gou3 za2 zhong3", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0167", "text": "gǒuzázhǒng", "expected_word": "狗杂种", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-008", "note": ""}
+{"id": "LEX4-DEV-0168", "text": "prefixgouzazhongsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0169", "text": "gouzazhon", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0170", "text": "举报：“狗杂种”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0171", "text": "语言科普：“狗杂种”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0172", "text": "贱逼", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0173", "text": "他就是贱逼", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0174", "text": "贱·逼", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0175", "text": "贱b", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0176", "text": "贱比", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0177", "text": "贱批", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0178", "text": "贱13", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0179", "text": "jianbi", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0180", "text": "jian bi", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0181", "text": "jian.bi", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0182", "text": "JIANBI", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0183", "text": "ｊｉａｎｂｉ", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0184", "text": "jian4 bi1", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0185", "text": "jiànbī", "expected_word": "贱逼", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-009", "note": ""}
+{"id": "LEX4-DEV-0186", "text": "prefixjianbisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0187", "text": "jianb", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0188", "text": "举报：“贱逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0189", "text": "语言科普：“贱逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0190", "text": "废物", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0191", "text": "他就是废物", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0192", "text": "废·物", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0193", "text": "你这个沸物", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0194", "text": "你这个肺5", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0195", "text": "你这个废5", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0196", "text": "你这个费物", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0197", "text": "feiwu", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0198", "text": "fei wu", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0199", "text": "fei.wu", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0200", "text": "FEIWU", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0201", "text": "ｆｅｉｗｕ", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0202", "text": "fei4 wu4", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0203", "text": "fèiwù", "expected_word": "废物", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-010", "note": ""}
+{"id": "LEX4-DEV-0204", "text": "prefixfeiwusuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0205", "text": "feiw", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0206", "text": "举报：“废物”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0207", "text": "语言科普：“废物”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0208", "text": "白痴", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0209", "text": "他就是白痴", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0210", "text": "白·痴", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0211", "text": "baichi", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0212", "text": "bai chi", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0213", "text": "bai.chi", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0214", "text": "BAICHI", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0215", "text": "ｂａｉｃｈｉ", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0216", "text": "bai2 chi1", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0217", "text": "báichī", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-011", "note": ""}
+{"id": "LEX4-DEV-0218", "text": "prefixbaichisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0219", "text": "baich", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0220", "text": "举报：“白痴”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0221", "text": "语言科普：“白痴”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0222", "text": "脑残", "expected_word": "脑残", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-012", "note": ""}
+{"id": "LEX4-DEV-0223", "text": "他就是脑残", "expected_word": "脑残", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-012", "note": ""}
+{"id": "LEX4-DEV-0224", "text": "脑·残", "expected_word": "脑残", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-012", "note": ""}
+{"id": "LEX4-DEV-0225", "text": "你这个闹惨", "expected_word": "脑残", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-012", "note": ""}
+{"id": "LEX4-DEV-0226", "text": "你这个naocan", "expected_word": "脑残", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-012", "note": ""}
+{"id": "LEX4-DEV-0227", "text": "你这个naoc", "expected_word": "脑残", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-012", "note": ""}
+{"id": "LEX4-DEV-0228", "text": "prefixnaocansuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0229", "text": "naocan_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0230", "text": "prefixnaocsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0231", "text": "naoc_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0232", "text": "举报：“脑残”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0233", "text": "语言科普：“脑残”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0234", "text": "蠢货", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0235", "text": "他就是蠢货", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0236", "text": "蠢·货", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0237", "text": "chunhuo", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0238", "text": "chun huo", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0239", "text": "chun.huo", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0240", "text": "CHUNHUO", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0241", "text": "ｃｈｕｎｈｕｏ", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0242", "text": "chun3 huo4", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0243", "text": "chǔnhuò", "expected_word": "蠢货", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-013", "note": ""}
+{"id": "LEX4-DEV-0244", "text": "prefixchunhuosuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0245", "text": "chunhu", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0246", "text": "举报：“蠢货”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0247", "text": "语言科普：“蠢货”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0248", "text": "蠢蛋", "expected_word": "蠢蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-014", "note": ""}
+{"id": "LEX4-DEV-0249", "text": "他就是蠢蛋", "expected_word": "蠢蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-014", "note": ""}
+{"id": "LEX4-DEV-0250", "text": "蠢·蛋", "expected_word": "蠢蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-014", "note": ""}
+{"id": "LEX4-DEV-0251", "text": "举报：“蠢蛋”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0252", "text": "语言科普：“蠢蛋”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0253", "text": "笨蛋", "expected_word": "笨蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-015", "note": ""}
+{"id": "LEX4-DEV-0254", "text": "他就是笨蛋", "expected_word": "笨蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-015", "note": ""}
+{"id": "LEX4-DEV-0255", "text": "笨·蛋", "expected_word": "笨蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-015", "note": ""}
+{"id": "LEX4-DEV-0256", "text": "举报：“笨蛋”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0257", "text": "语言科普：“笨蛋”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0258", "text": "混蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0259", "text": "他就是混蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0260", "text": "混·蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0261", "text": "你这个浑蛋", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0262", "text": "hundan", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0263", "text": "hun dan", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0264", "text": "hun.dan", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0265", "text": "HUNDAN", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0266", "text": "ｈｕｎｄａｎ", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0267", "text": "hun4 dan4", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0268", "text": "hùndàn", "expected_word": "混蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-016", "note": ""}
+{"id": "LEX4-DEV-0269", "text": "prefixhundansuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0270", "text": "hunda", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0271", "text": "举报：“混蛋”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0272", "text": "语言科普：“混蛋”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0273", "text": "王八蛋", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0274", "text": "他就是王八蛋", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0275", "text": "王·八·蛋", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0276", "text": "wangbadan", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0277", "text": "wang ba dan", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0278", "text": "wang.ba.dan", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0279", "text": "WANGBADAN", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0280", "text": "ｗａｎｇｂａｄａｎ", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0281", "text": "wang2 ba1 dan4", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0282", "text": "wángbādàn", "expected_word": "王八蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-017", "note": ""}
+{"id": "LEX4-DEV-0283", "text": "prefixwangbadansuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0284", "text": "wangbada", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0285", "text": "举报：“王八蛋”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0286", "text": "语言科普：“王八蛋”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0287", "text": "人渣", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0288", "text": "他就是人渣", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0289", "text": "人·渣", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0290", "text": "你这个人扎", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0291", "text": "renzha", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0292", "text": "ren zha", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0293", "text": "ren.zha", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0294", "text": "RENZHA", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0295", "text": "ｒｅｎｚｈａ", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0296", "text": "ren2 zha1", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0297", "text": "rénzhā", "expected_word": "人渣", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-018", "note": ""}
+{"id": "LEX4-DEV-0298", "text": "prefixrenzhasuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0299", "text": "renzh", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0300", "text": "举报：“人渣”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0301", "text": "语言科普：“人渣”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0302", "text": "败类", "expected_word": "败类", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-019", "note": ""}
+{"id": "LEX4-DEV-0303", "text": "他就是败类", "expected_word": "败类", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-019", "note": ""}
+{"id": "LEX4-DEV-0304", "text": "败·类", "expected_word": "败类", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-019", "note": ""}
+{"id": "LEX4-DEV-0305", "text": "举报：“败类”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0306", "text": "语言科普：“败类”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0307", "text": "无耻", "expected_word": "无耻", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-020", "note": ""}
+{"id": "LEX4-DEV-0308", "text": "他就是无耻", "expected_word": "无耻", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-020", "note": ""}
+{"id": "LEX4-DEV-0309", "text": "无·耻", "expected_word": "无耻", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-020", "note": ""}
+{"id": "LEX4-DEV-0310", "text": "举报：“无耻”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0311", "text": "语言科普：“无耻”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0312", "text": "滚蛋", "expected_word": "滚蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-021", "note": ""}
+{"id": "LEX4-DEV-0313", "text": "他就是滚蛋", "expected_word": "滚蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-021", "note": ""}
+{"id": "LEX4-DEV-0314", "text": "滚·蛋", "expected_word": "滚蛋", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-021", "note": ""}
+{"id": "LEX4-DEV-0315", "text": "举报：“滚蛋”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0316", "text": "语言科普：“滚蛋”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0317", "text": "闭嘴", "expected_word": "闭嘴", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-022", "note": ""}
+{"id": "LEX4-DEV-0318", "text": "他就是闭嘴", "expected_word": "闭嘴", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-022", "note": ""}
+{"id": "LEX4-DEV-0319", "text": "闭·嘴", "expected_word": "闭嘴", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-022", "note": ""}
+{"id": "LEX4-DEV-0320", "text": "举报：“闭嘴”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0321", "text": "语言科普：“闭嘴”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0322", "text": "他妈的", "expected_word": "他妈的", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-023", "note": ""}
+{"id": "LEX4-DEV-0323", "text": "他就是他妈的", "expected_word": "他妈的", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-023", "note": ""}
+{"id": "LEX4-DEV-0324", "text": "他·妈·的", "expected_word": "他妈的", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-023", "note": ""}
+{"id": "LEX4-DEV-0325", "text": "你这个tmd", "expected_word": "他妈的", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-023", "note": ""}
+{"id": "LEX4-DEV-0326", "text": "prefixtmdsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0327", "text": "tmd_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0328", "text": "举报：“他妈的”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0329", "text": "语言科普：“他妈的”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0330", "text": "妈的", "expected_word": "妈的", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-024", "note": ""}
+{"id": "LEX4-DEV-0331", "text": "他就是妈的", "expected_word": "妈的", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-024", "note": ""}
+{"id": "LEX4-DEV-0332", "text": "妈·的", "expected_word": "妈的", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-024", "note": ""}
+{"id": "LEX4-DEV-0333", "text": "举报：“妈的”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0334", "text": "语言科普：“妈的”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0335", "text": "不要脸", "expected_word": "不要脸", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-025", "note": ""}
+{"id": "LEX4-DEV-0336", "text": "他就是不要脸", "expected_word": "不要脸", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-025", "note": ""}
+{"id": "LEX4-DEV-0337", "text": "不·要·脸", "expected_word": "不要脸", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-025", "note": ""}
+{"id": "LEX4-DEV-0338", "text": "不要碧莲", "expected_word": "不要脸", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-025", "note": ""}
+{"id": "LEX4-DEV-0339", "text": "不要碧连", "expected_word": "不要脸", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-025", "note": ""}
+{"id": "LEX4-DEV-0340", "text": "举报：“不要脸”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0341", "text": "语言科普：“不要脸”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0342", "text": "没教养", "expected_word": "没教养", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-026", "note": ""}
+{"id": "LEX4-DEV-0343", "text": "他就是没教养", "expected_word": "没教养", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-026", "note": ""}
+{"id": "LEX4-DEV-0344", "text": "没·教·养", "expected_word": "没教养", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-026", "note": ""}
+{"id": "LEX4-DEV-0345", "text": "举报：“没教养”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0346", "text": "语言科普：“没教养”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0347", "text": "蠢材", "expected_word": "蠢材", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-027", "note": ""}
+{"id": "LEX4-DEV-0348", "text": "他就是蠢材", "expected_word": "蠢材", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-027", "note": ""}
+{"id": "LEX4-DEV-0349", "text": "蠢·材", "expected_word": "蠢材", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-027", "note": ""}
+{"id": "LEX4-DEV-0350", "text": "举报：“蠢材”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0351", "text": "语言科普：“蠢材”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0352", "text": "垃圾", "expected_word": "垃圾", "expected_level": "LOW", "blocked": false, "kind": "canonical", "category": "LEX4-028", "note": ""}
+{"id": "LEX4-DEV-0353", "text": "他就是垃圾", "expected_word": "垃圾", "expected_level": "LOW", "blocked": false, "kind": "changed_subject", "category": "LEX4-028", "note": ""}
+{"id": "LEX4-DEV-0354", "text": "垃·圾", "expected_word": "垃圾", "expected_level": "LOW", "blocked": false, "kind": "symbol_variant", "category": "LEX4-028", "note": ""}
+{"id": "LEX4-DEV-0355", "text": "举报：“垃圾”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0356", "text": "语言科普：“垃圾”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0357", "text": "差劲", "expected_word": "差劲", "expected_level": "LOW", "blocked": false, "kind": "canonical", "category": "LEX4-029", "note": ""}
+{"id": "LEX4-DEV-0358", "text": "他就是差劲", "expected_word": "差劲", "expected_level": "LOW", "blocked": false, "kind": "changed_subject", "category": "LEX4-029", "note": ""}
+{"id": "LEX4-DEV-0359", "text": "差·劲", "expected_word": "差劲", "expected_level": "LOW", "blocked": false, "kind": "symbol_variant", "category": "LEX4-029", "note": ""}
+{"id": "LEX4-DEV-0360", "text": "举报：“差劲”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0361", "text": "语言科普：“差劲”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0362", "text": "烂透", "expected_word": "烂透", "expected_level": "LOW", "blocked": false, "kind": "canonical", "category": "LEX4-030", "note": ""}
+{"id": "LEX4-DEV-0363", "text": "他就是烂透", "expected_word": "烂透", "expected_level": "LOW", "blocked": false, "kind": "changed_subject", "category": "LEX4-030", "note": ""}
+{"id": "LEX4-DEV-0364", "text": "烂·透", "expected_word": "烂透", "expected_level": "LOW", "blocked": false, "kind": "symbol_variant", "category": "LEX4-030", "note": ""}
+{"id": "LEX4-DEV-0365", "text": "举报：“烂透”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0366", "text": "语言科普：“烂透”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0367", "text": "破玩意", "expected_word": "破玩意", "expected_level": "LOW", "blocked": false, "kind": "canonical", "category": "LEX4-031", "note": ""}
+{"id": "LEX4-DEV-0368", "text": "他就是破玩意", "expected_word": "破玩意", "expected_level": "LOW", "blocked": false, "kind": "changed_subject", "category": "LEX4-031", "note": ""}
+{"id": "LEX4-DEV-0369", "text": "破·玩·意", "expected_word": "破玩意", "expected_level": "LOW", "blocked": false, "kind": "symbol_variant", "category": "LEX4-031", "note": ""}
+{"id": "LEX4-DEV-0370", "text": "举报：“破玩意”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0371", "text": "语言科普：“破玩意”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0372", "text": "扯淡", "expected_word": "扯淡", "expected_level": "LOW", "blocked": false, "kind": "canonical", "category": "LEX4-032", "note": ""}
+{"id": "LEX4-DEV-0373", "text": "他就是扯淡", "expected_word": "扯淡", "expected_level": "LOW", "blocked": false, "kind": "changed_subject", "category": "LEX4-032", "note": ""}
+{"id": "LEX4-DEV-0374", "text": "扯·淡", "expected_word": "扯淡", "expected_level": "LOW", "blocked": false, "kind": "symbol_variant", "category": "LEX4-032", "note": ""}
+{"id": "LEX4-DEV-0375", "text": "举报：“扯淡”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0376", "text": "语言科普：“扯淡”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0377", "text": "去你妈的", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0378", "text": "他就是去你妈的", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0379", "text": "去·你·妈·的", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0380", "text": "去你m的", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0381", "text": "qnmd", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0382", "text": "qunimade", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0383", "text": "qu ni ma de", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0384", "text": "qu.ni.ma.de", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0385", "text": "QUNIMADE", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0386", "text": "ｑｕｎｉｍａｄｅ", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0387", "text": "qu4 ni3 ma1 de5", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0388", "text": "qùnǐmāde", "expected_word": "去你妈的", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-033", "note": ""}
+{"id": "LEX4-DEV-0389", "text": "prefixqunimadesuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0390", "text": "qunimad", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0391", "text": "举报：“去你妈的”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0392", "text": "语言科普：“去你妈的”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0393", "text": "妈了个逼", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-034", "note": ""}
+{"id": "LEX4-DEV-0394", "text": "他就是妈了个逼", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-034", "note": ""}
+{"id": "LEX4-DEV-0395", "text": "妈·了·个·逼", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-034", "note": ""}
+{"id": "LEX4-DEV-0396", "text": "mlgb", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-034", "note": ""}
+{"id": "LEX4-DEV-0397", "text": "麻了个逼", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-034", "note": ""}
+{"id": "LEX4-DEV-0398", "text": "麻了隔壁", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-034", "note": ""}
+{"id": "LEX4-DEV-0399", "text": "麻辣隔壁", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-034", "note": ""}
+{"id": "LEX4-DEV-0400", "text": "举报：“妈了个逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0401", "text": "语言科普：“妈了个逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0402", "text": "你妈逼", "expected_word": "你妈逼", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-035", "note": ""}
+{"id": "LEX4-DEV-0403", "text": "他就是你妈逼", "expected_word": "你妈逼", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-035", "note": ""}
+{"id": "LEX4-DEV-0404", "text": "你·妈·逼", "expected_word": "你妈逼", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-035", "note": ""}
+{"id": "LEX4-DEV-0405", "text": "泥马碧", "expected_word": "你妈逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-035", "note": ""}
+{"id": "LEX4-DEV-0406", "text": "尼玛币", "expected_word": "你妈逼", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-035", "note": ""}
+{"id": "LEX4-DEV-0407", "text": "举报：“你妈逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0408", "text": "语言科普：“你妈逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0409", "text": "狗屁", "expected_word": "狗屁", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-036", "note": ""}
+{"id": "LEX4-DEV-0410", "text": "他就是狗屁", "expected_word": "狗屁", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-036", "note": ""}
+{"id": "LEX4-DEV-0411", "text": "狗·屁", "expected_word": "狗屁", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-036", "note": ""}
+{"id": "LEX4-DEV-0412", "text": "狗霹", "expected_word": "狗屁", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-036", "note": ""}
+{"id": "LEX4-DEV-0413", "text": "笱霹", "expected_word": "狗屁", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-036", "note": ""}
+{"id": "LEX4-DEV-0414", "text": "举报：“狗屁”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0415", "text": "语言科普：“狗屁”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0416", "text": "放屁", "expected_word": "放屁", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-037", "note": ""}
+{"id": "LEX4-DEV-0417", "text": "他就是放屁", "expected_word": "放屁", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-037", "note": ""}
+{"id": "LEX4-DEV-0418", "text": "放·屁", "expected_word": "放屁", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-037", "note": ""}
+{"id": "LEX4-DEV-0419", "text": "放p", "expected_word": "放屁", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-037", "note": ""}
+{"id": "LEX4-DEV-0420", "text": "放霹", "expected_word": "放屁", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-037", "note": ""}
+{"id": "LEX4-DEV-0421", "text": "芳痞", "expected_word": "放屁", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-037", "note": ""}
+{"id": "LEX4-DEV-0422", "text": "举报：“放屁”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0423", "text": "语言科普：“放屁”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0424", "text": "鸡巴", "expected_word": "鸡巴", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-038", "note": ""}
+{"id": "LEX4-DEV-0425", "text": "他就是鸡巴", "expected_word": "鸡巴", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-038", "note": ""}
+{"id": "LEX4-DEV-0426", "text": "鸡·巴", "expected_word": "鸡巴", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-038", "note": ""}
+{"id": "LEX4-DEV-0427", "text": "你这个鸡把", "expected_word": "鸡巴", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-038", "note": ""}
+{"id": "LEX4-DEV-0428", "text": "你这个吉巴", "expected_word": "鸡巴", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-038", "note": ""}
+{"id": "LEX4-DEV-0429", "text": "你这个g8", "expected_word": "鸡巴", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-038", "note": ""}
+{"id": "LEX4-DEV-0430", "text": "prefixg8suffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0431", "text": "g8_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0432", "text": "举报：“鸡巴”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0433", "text": "语言科普：“鸡巴”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0434", "text": "放你妈的屁", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0435", "text": "他就是放你妈的屁", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0436", "text": "放·你·妈·的·屁", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0437", "text": "funny mud pee", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0438", "text": "fangnimadepi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0439", "text": "fang ni ma de pi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0440", "text": "fang.ni.ma.de.pi", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0441", "text": "FANGNIMADEPI", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0442", "text": "ｆａｎｇｎｉｍａｄｅｐｉ", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0443", "text": "fang4 ni3 ma1 de5 pi4", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0444", "text": "fàngnǐmādepì", "expected_word": "放你妈的屁", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-039", "note": ""}
+{"id": "LEX4-DEV-0445", "text": "prefixfangnimadepisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0446", "text": "fangnimadep", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0447", "text": "举报：“放你妈的屁”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0448", "text": "语言科普：“放你妈的屁”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0449", "text": "你这个狗屎", "expected_word": "狗屎", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-040", "note": ""}
+{"id": "LEX4-DEV-0450", "text": "他就是狗屎", "expected_word": "狗屎", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-040", "note": ""}
+{"id": "LEX4-DEV-0451", "text": "你这个狗·屎", "expected_word": "狗屎", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-040", "note": ""}
+{"id": "LEX4-DEV-0452", "text": "你这个勾史", "expected_word": "狗屎", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-040", "note": ""}
+{"id": "LEX4-DEV-0453", "text": "你这个狗史", "expected_word": "狗屎", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-040", "note": ""}
+{"id": "LEX4-DEV-0454", "text": "举报：“你这个狗屎”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0455", "text": "语言科普：“你这个狗屎”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0456", "text": "你这个穷鬼", "expected_word": "穷鬼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-041", "note": ""}
+{"id": "LEX4-DEV-0457", "text": "他就是穷鬼", "expected_word": "穷鬼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-041", "note": ""}
+{"id": "LEX4-DEV-0458", "text": "你这个穷·鬼", "expected_word": "穷鬼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-041", "note": ""}
+{"id": "LEX4-DEV-0459", "text": "你这个穷狗", "expected_word": "穷鬼", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-041", "note": ""}
+{"id": "LEX4-DEV-0460", "text": "举报：“你这个穷鬼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0461", "text": "语言科普：“你这个穷鬼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0462", "text": "黑鬼", "expected_word": "黑鬼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-042", "note": ""}
+{"id": "LEX4-DEV-0463", "text": "他就是黑鬼", "expected_word": "黑鬼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-042", "note": ""}
+{"id": "LEX4-DEV-0464", "text": "黑·鬼", "expected_word": "黑鬼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-042", "note": ""}
+{"id": "LEX4-DEV-0465", "text": "举报：“黑鬼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0466", "text": "语言科普：“黑鬼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0467", "text": "支那猪", "expected_word": "支那猪", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-043", "note": ""}
+{"id": "LEX4-DEV-0468", "text": "他就是支那猪", "expected_word": "支那猪", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-043", "note": ""}
+{"id": "LEX4-DEV-0469", "text": "支·那·猪", "expected_word": "支那猪", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-043", "note": ""}
+{"id": "LEX4-DEV-0470", "text": "举报：“支那猪”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0471", "text": "语言科普：“支那猪”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0472", "text": "死基佬", "expected_word": "死基佬", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-044", "note": ""}
+{"id": "LEX4-DEV-0473", "text": "他就是死基佬", "expected_word": "死基佬", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-044", "note": ""}
+{"id": "LEX4-DEV-0474", "text": "死·基·佬", "expected_word": "死基佬", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-044", "note": ""}
+{"id": "LEX4-DEV-0475", "text": "举报：“死基佬”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0476", "text": "语言科普：“死基佬”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0477", "text": "死娘炮", "expected_word": "死娘炮", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-045", "note": ""}
+{"id": "LEX4-DEV-0478", "text": "他就是死娘炮", "expected_word": "死娘炮", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-045", "note": ""}
+{"id": "LEX4-DEV-0479", "text": "死·娘·炮", "expected_word": "死娘炮", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-045", "note": ""}
+{"id": "LEX4-DEV-0480", "text": "举报：“死娘炮”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0481", "text": "语言科普：“死娘炮”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0482", "text": "婊子", "expected_word": "婊子", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-046", "note": ""}
+{"id": "LEX4-DEV-0483", "text": "他就是婊子", "expected_word": "婊子", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-046", "note": ""}
+{"id": "LEX4-DEV-0484", "text": "婊·子", "expected_word": "婊子", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-046", "note": ""}
+{"id": "LEX4-DEV-0485", "text": "婊砸", "expected_word": "婊子", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-046", "note": ""}
+{"id": "LEX4-DEV-0486", "text": "表砸", "expected_word": "婊子", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-046", "note": ""}
+{"id": "LEX4-DEV-0487", "text": "举报：“婊子”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0488", "text": "语言科普：“婊子”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0489", "text": "你这个荡妇", "expected_word": "荡妇", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-047", "note": ""}
+{"id": "LEX4-DEV-0490", "text": "他就是荡妇", "expected_word": "荡妇", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-047", "note": ""}
+{"id": "LEX4-DEV-0491", "text": "你这个荡·妇", "expected_word": "荡妇", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-047", "note": ""}
+{"id": "LEX4-DEV-0492", "text": "举报：“你这个荡妇”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0493", "text": "语言科普：“你这个荡妇”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0494", "text": "nmsl", "expected_word": "nmsl", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-048", "note": ""}
+{"id": "LEX4-DEV-0495", "text": "他就是nmsl", "expected_word": "nmsl", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-048", "note": ""}
+{"id": "LEX4-DEV-0496", "text": "n·m·s·l", "expected_word": "nmsl", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-048", "note": ""}
+{"id": "LEX4-DEV-0497", "text": "ｎｍｓｌ", "expected_word": "nmsl", "expected_level": "HIGH", "blocked": true, "kind": "fullwidth", "category": "LEX4-048", "note": ""}
+{"id": "LEX4-DEV-0498", "text": "prefixnmslsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0499", "text": "nmsl_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0500", "text": "举报：“nmsl”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0501", "text": "语言科普：“nmsl”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0502", "text": "你这个杂种", "expected_word": "杂种", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-049", "note": ""}
+{"id": "LEX4-DEV-0503", "text": "他就是杂种", "expected_word": "杂种", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-049", "note": ""}
+{"id": "LEX4-DEV-0504", "text": "你这个杂·种", "expected_word": "杂种", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-049", "note": ""}
+{"id": "LEX4-DEV-0505", "text": "举报：“你这个杂种”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0506", "text": "语言科普：“你这个杂种”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0507", "text": "你这个畜生", "expected_word": "畜生", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-050", "note": ""}
+{"id": "LEX4-DEV-0508", "text": "他就是畜生", "expected_word": "畜生", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-050", "note": ""}
+{"id": "LEX4-DEV-0509", "text": "你这个畜·生", "expected_word": "畜生", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-050", "note": ""}
+{"id": "LEX4-DEV-0510", "text": "你这个畜牲", "expected_word": "畜生", "expected_level": "HIGH", "blocked": true, "kind": "explicit_alias", "category": "LEX4-050", "note": ""}
+{"id": "LEX4-DEV-0511", "text": "举报：“你这个畜生”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0512", "text": "语言科普：“你这个畜生”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0513", "text": "废柴", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0514", "text": "他就是废柴", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0515", "text": "废·柴", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0516", "text": "feichai", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0517", "text": "fei chai", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0518", "text": "fei.chai", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0519", "text": "FEICHAI", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0520", "text": "ｆｅｉｃｈａｉ", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0521", "text": "fei4 chai2", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0522", "text": "fèichái", "expected_word": "废柴", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-051", "note": ""}
+{"id": "LEX4-DEV-0523", "text": "prefixfeichaisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0524", "text": "feicha", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0525", "text": "举报：“废柴”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0526", "text": "语言科普：“废柴”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0527", "text": "蠢猪", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0528", "text": "他就是蠢猪", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0529", "text": "蠢·猪", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0530", "text": "chunzhu", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0531", "text": "chun zhu", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0532", "text": "chun.zhu", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0533", "text": "CHUNZHU", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0534", "text": "ｃｈｕｎｚｈｕ", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0535", "text": "chun3 zhu1", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0536", "text": "chǔnzhū", "expected_word": "蠢猪", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-052", "note": ""}
+{"id": "LEX4-DEV-0537", "text": "prefixchunzhusuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0538", "text": "chunzh", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0539", "text": "举报：“蠢猪”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0540", "text": "语言科普：“蠢猪”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0541", "text": "你这个饭桶", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0542", "text": "他就是饭桶", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0543", "text": "你这个饭·桶", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0544", "text": "你这个fantong", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0545", "text": "你这个fan tong", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0546", "text": "你这个fan.tong", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0547", "text": "你这个FANTONG", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0548", "text": "你这个ｆａｎｔｏｎｇ", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0549", "text": "你这个fan4 tong3", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0550", "text": "你这个fàntǒng", "expected_word": "饭桶", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-053", "note": ""}
+{"id": "LEX4-DEV-0551", "text": "prefixfantongsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0552", "text": "fanton", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0553", "text": "举报：“你这个饭桶”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0554", "text": "语言科普：“你这个饭桶”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0555", "text": "窝囊废", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0556", "text": "他就是窝囊废", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0557", "text": "窝·囊·废", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0558", "text": "wonangfei", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0559", "text": "wo nang fei", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0560", "text": "wo.nang.fei", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0561", "text": "WONANGFEI", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0562", "text": "ｗｏｎａｎｇｆｅｉ", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0563", "text": "wo1 nang1 fei4", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0564", "text": "wōnāngfèi", "expected_word": "窝囊废", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-054", "note": ""}
+{"id": "LEX4-DEV-0565", "text": "prefixwonangfeisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0566", "text": "wonangfe", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0567", "text": "举报：“窝囊废”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0568", "text": "语言科普：“窝囊废”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0569", "text": "瘪三", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0570", "text": "他就是瘪三", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0571", "text": "瘪·三", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0572", "text": "biesan", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0573", "text": "bie san", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0574", "text": "bie.san", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0575", "text": "BIESAN", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0576", "text": "ｂｉｅｓａｎ", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0577", "text": "bie1 san1", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0578", "text": "biēsān", "expected_word": "瘪三", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-055", "note": ""}
+{"id": "LEX4-DEV-0579", "text": "prefixbiesansuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0580", "text": "biesa", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0581", "text": "举报：“瘪三”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0582", "text": "语言科普：“瘪三”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0583", "text": "贱人", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0584", "text": "他就是贱人", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0585", "text": "贱·人", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0586", "text": "jianren", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0587", "text": "jian ren", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0588", "text": "jian.ren", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0589", "text": "JIANREN", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0590", "text": "ｊｉａｎｒｅｎ", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0591", "text": "jian4 ren2", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0592", "text": "jiànrén", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-056", "note": ""}
+{"id": "LEX4-DEV-0593", "text": "prefixjianrensuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0594", "text": "jianre", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0595", "text": "举报：“贱人”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0596", "text": "语言科普：“贱人”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0597", "text": "狗东西", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0598", "text": "他就是狗东西", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0599", "text": "狗·东·西", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0600", "text": "狗冬西", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "explicit_alias", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0601", "text": "goudongxi", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0602", "text": "gou dong xi", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0603", "text": "gou.dong.xi", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0604", "text": "GOUDONGXI", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0605", "text": "ｇｏｕｄｏｎｇｘｉ", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0606", "text": "gou3 dong1 xi1", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0607", "text": "gǒudōngxī", "expected_word": "狗东西", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-057", "note": ""}
+{"id": "LEX4-DEV-0608", "text": "prefixgoudongxisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0609", "text": "goudongx", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0610", "text": "举报：“狗东西”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0611", "text": "语言科普：“狗东西”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0612", "text": "你这个傻子", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0613", "text": "他就是傻子", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0614", "text": "你这个傻·子", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0615", "text": "你这个shazi", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0616", "text": "你这个sha zi", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0617", "text": "你这个sha.zi", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0618", "text": "你这个SHAZI", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0619", "text": "你这个ｓｈａｚｉ", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0620", "text": "你这个sha3 zi5", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0621", "text": "你这个shǎzi", "expected_word": "傻子", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-058", "note": ""}
+{"id": "LEX4-DEV-0622", "text": "prefixshazisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0623", "text": "shaz", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0624", "text": "举报：“你这个傻子”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0625", "text": "语言科普：“你这个傻子”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0626", "text": "二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-059", "note": ""}
+{"id": "LEX4-DEV-0627", "text": "他就是二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-059", "note": ""}
+{"id": "LEX4-DEV-0628", "text": "二·逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-059", "note": ""}
+{"id": "LEX4-DEV-0629", "text": "你这个二笔", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-059", "note": ""}
+{"id": "LEX4-DEV-0630", "text": "你这个二比", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-059", "note": ""}
+{"id": "LEX4-DEV-0631", "text": "你这个2b", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-059", "note": ""}
+{"id": "LEX4-DEV-0632", "text": "prefix2bsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0633", "text": "2b_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0634", "text": "举报：“二逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0635", "text": "语言科普：“二逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0636", "text": "二货", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0637", "text": "他就是二货", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0638", "text": "二·货", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0639", "text": "你这个2货", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0640", "text": "你这个2h", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0641", "text": "erhuo", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0642", "text": "er huo", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0643", "text": "er.huo", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0644", "text": "ERHUO", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0645", "text": "ｅｒｈｕｏ", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0646", "text": "er4 huo4", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0647", "text": "èrhuò", "expected_word": "二货", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-060", "note": ""}
+{"id": "LEX4-DEV-0648", "text": "prefixerhuosuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0649", "text": "erhu", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0650", "text": "prefix2hsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0651", "text": "2h_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0652", "text": "举报：“二货”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0653", "text": "语言科普：“二货”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0654", "text": "下贱", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0655", "text": "他就是下贱", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0656", "text": "下·贱", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0657", "text": "xiajian", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0658", "text": "xia jian", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0659", "text": "xia.jian", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0660", "text": "XIAJIAN", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0661", "text": "ｘｉａｊｉａｎ", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0662", "text": "xia4 jian4", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0663", "text": "xiàjiàn", "expected_word": "下贱", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-061", "note": ""}
+{"id": "LEX4-DEV-0664", "text": "prefixxiajiansuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0665", "text": "xiajia", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0666", "text": "举报：“下贱”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0667", "text": "语言科普：“下贱”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0668", "text": "犯贱", "expected_word": "犯贱", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-062", "note": ""}
+{"id": "LEX4-DEV-0669", "text": "他就是犯贱", "expected_word": "犯贱", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-062", "note": ""}
+{"id": "LEX4-DEV-0670", "text": "犯·贱", "expected_word": "犯贱", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-062", "note": ""}
+{"id": "LEX4-DEV-0671", "text": "你这个贩剑", "expected_word": "犯贱", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-062", "note": ""}
+{"id": "LEX4-DEV-0672", "text": "举报：“犯贱”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0673", "text": "语言科普：“犯贱”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0674", "text": "菜逼", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0675", "text": "他就是菜逼", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0676", "text": "菜·逼", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0677", "text": "你这个菜b", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "targeted_alias", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0678", "text": "caibi", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0679", "text": "cai bi", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0680", "text": "cai.bi", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0681", "text": "CAIBI", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0682", "text": "ｃａｉｂｉ", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0683", "text": "cai4 bi1", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0684", "text": "càibī", "expected_word": "菜逼", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-063", "note": ""}
+{"id": "LEX4-DEV-0685", "text": "prefixcaibisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0686", "text": "caib", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0687", "text": "prefix菜bsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0688", "text": "菜b_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0689", "text": "举报：“菜逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0690", "text": "语言科普：“菜逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0691", "text": "屌丝", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0692", "text": "他就是屌丝", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0693", "text": "屌·丝", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0694", "text": "diaosi", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0695", "text": "diao si", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0696", "text": "diao.si", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0697", "text": "DIAOSI", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0698", "text": "ｄｉａｏｓｉ", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0699", "text": "diao3 si1", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0700", "text": "diǎosī", "expected_word": "屌丝", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-064", "note": ""}
+{"id": "LEX4-DEV-0701", "text": "prefixdiaosisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0702", "text": "diaos", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0703", "text": "举报：“屌丝”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0704", "text": "语言科普：“屌丝”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0705", "text": "逼数", "expected_word": "逼数", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-065", "note": ""}
+{"id": "LEX4-DEV-0706", "text": "他就是逼数", "expected_word": "逼数", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-065", "note": ""}
+{"id": "LEX4-DEV-0707", "text": "逼·数", "expected_word": "逼数", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-065", "note": ""}
+{"id": "LEX4-DEV-0708", "text": "举报：“逼数”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0709", "text": "语言科普：“逼数”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0710", "text": "蠢逼", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0711", "text": "他就是蠢逼", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0712", "text": "蠢·逼", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0713", "text": "你这个蠢b", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "targeted_alias", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0714", "text": "chunbi", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0715", "text": "chun bi", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0716", "text": "chun.bi", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0717", "text": "CHUNBI", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0718", "text": "ｃｈｕｎｂｉ", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "pinyin", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0719", "text": "chun3 bi1", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "numeric_tones", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0720", "text": "chǔnbī", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "tone_marks", "category": "LEX4-066", "note": ""}
+{"id": "LEX4-DEV-0721", "text": "prefixchunbisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0722", "text": "chunb", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0723", "text": "prefix蠢bsuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0724", "text": "蠢b_variable", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "programming", "note": ""}
+{"id": "LEX4-DEV-0725", "text": "举报：“蠢逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0726", "text": "语言科普：“蠢逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0727", "text": "憨批", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0728", "text": "他就是憨批", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0729", "text": "憨·批", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0730", "text": "hanpi", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0731", "text": "han pi", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0732", "text": "han.pi", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0733", "text": "HANPI", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0734", "text": "ｈａｎｐｉ", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0735", "text": "han1 pi1", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0736", "text": "hānpī", "expected_word": "憨批", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-067", "note": ""}
+{"id": "LEX4-DEV-0737", "text": "prefixhanpisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0738", "text": "hanp", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0739", "text": "举报：“憨批”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0740", "text": "语言科普：“憨批”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0741", "text": "贱货", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0742", "text": "他就是贱货", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0743", "text": "贱·货", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0744", "text": "jianhuo", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0745", "text": "jian huo", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0746", "text": "jian.huo", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0747", "text": "JIANHUO", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0748", "text": "ｊｉａｎｈｕｏ", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0749", "text": "jian4 huo4", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0750", "text": "jiànhuò", "expected_word": "贱货", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-068", "note": ""}
+{"id": "LEX4-DEV-0751", "text": "prefixjianhuosuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0752", "text": "jianhu", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0753", "text": "举报：“贱货”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0754", "text": "语言科普：“贱货”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0755", "text": "贱种", "expected_word": "贱种", "expected_level": "HIGH", "blocked": true, "kind": "canonical", "category": "LEX4-069", "note": ""}
+{"id": "LEX4-DEV-0756", "text": "他就是贱种", "expected_word": "贱种", "expected_level": "HIGH", "blocked": true, "kind": "changed_subject", "category": "LEX4-069", "note": ""}
+{"id": "LEX4-DEV-0757", "text": "贱·种", "expected_word": "贱种", "expected_level": "HIGH", "blocked": true, "kind": "symbol_variant", "category": "LEX4-069", "note": ""}
+{"id": "LEX4-DEV-0758", "text": "举报：“贱种”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0759", "text": "语言科普：“贱种”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0760", "text": "你这个狗崽子", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0761", "text": "他就是狗崽子", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0762", "text": "你这个狗·崽·子", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0763", "text": "你这个gouzaizi", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0764", "text": "你这个gou zai zi", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0765", "text": "你这个gou.zai.zi", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0766", "text": "你这个GOUZAIZI", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0767", "text": "你这个ｇｏｕｚａｉｚｉ", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0768", "text": "你这个gou3 zai3 zi5", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0769", "text": "你这个gǒuzǎizi", "expected_word": "狗崽子", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-070", "note": ""}
+{"id": "LEX4-DEV-0770", "text": "prefixgouzaizisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0771", "text": "gouzaiz", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0772", "text": "举报：“你这个狗崽子”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0773", "text": "语言科普：“你这个狗崽子”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0774", "text": "穷逼", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0775", "text": "他就是穷逼", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0776", "text": "穷·逼", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0777", "text": "qiongbi", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0778", "text": "qiong bi", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0779", "text": "qiong.bi", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0780", "text": "QIONGBI", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0781", "text": "ｑｉｏｎｇｂｉ", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0782", "text": "qiong2 bi1", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0783", "text": "qióngbī", "expected_word": "穷逼", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-071", "note": ""}
+{"id": "LEX4-DEV-0784", "text": "prefixqiongbisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0785", "text": "qiongb", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0786", "text": "举报：“穷逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0787", "text": "语言科普：“穷逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0788", "text": "丑逼", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0789", "text": "他就是丑逼", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0790", "text": "丑·逼", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0791", "text": "choubi", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0792", "text": "chou bi", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0793", "text": "chou.bi", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0794", "text": "CHOUBI", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0795", "text": "ｃｈｏｕｂｉ", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0796", "text": "chou3 bi1", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0797", "text": "chǒubī", "expected_word": "丑逼", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-072", "note": ""}
+{"id": "LEX4-DEV-0798", "text": "prefixchoubisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0799", "text": "choub", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0800", "text": "举报：“丑逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0801", "text": "语言科普：“丑逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0802", "text": "狗日的", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0803", "text": "他就是狗日的", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0804", "text": "狗·日·的", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0805", "text": "gouride", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0806", "text": "gou ri de", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0807", "text": "gou.ri.de", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0808", "text": "GOURIDE", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0809", "text": "ｇｏｕｒｉｄｅ", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0810", "text": "gou3 ri4 de5", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0811", "text": "gǒurìde", "expected_word": "狗日的", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-073", "note": ""}
+{"id": "LEX4-DEV-0812", "text": "prefixgouridesuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0813", "text": "gourid", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0814", "text": "举报：“狗日的”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0815", "text": "语言科普：“狗日的”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0816", "text": "龟孙子", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0817", "text": "他就是龟孙子", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0818", "text": "龟·孙·子", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0819", "text": "guisunzi", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0820", "text": "gui sun zi", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0821", "text": "gui.sun.zi", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0822", "text": "GUISUNZI", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0823", "text": "ｇｕｉｓｕｎｚｉ", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0824", "text": "gui1 sun1 zi5", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0825", "text": "guīsūnzi", "expected_word": "龟孙子", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-074", "note": ""}
+{"id": "LEX4-DEV-0826", "text": "prefixguisunzisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0827", "text": "guisunz", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0828", "text": "举报：“龟孙子”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0829", "text": "语言科普：“龟孙子”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0830", "text": "王八羔子", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0831", "text": "他就是王八羔子", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0832", "text": "王·八·羔·子", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0833", "text": "wangbagaozi", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0834", "text": "wang ba gao zi", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0835", "text": "wang.ba.gao.zi", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0836", "text": "WANGBAGAOZI", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0837", "text": "ｗａｎｇｂａｇａｏｚｉ", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0838", "text": "wang2 ba1 gao1 zi3", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0839", "text": "wángbāgāozǐ", "expected_word": "王八羔子", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-075", "note": ""}
+{"id": "LEX4-DEV-0840", "text": "prefixwangbagaozisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0841", "text": "wangbagaoz", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0842", "text": "举报：“王八羔子”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0843", "text": "语言科普：“王八羔子”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0844", "text": "狗逼", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0845", "text": "他就是狗逼", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0846", "text": "狗·逼", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0847", "text": "goubi", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0848", "text": "gou bi", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0849", "text": "gou.bi", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0850", "text": "GOUBI", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0851", "text": "ｇｏｕｂｉ", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0852", "text": "gou3 bi1", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0853", "text": "gǒubī", "expected_word": "狗逼", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-076", "note": ""}
+{"id": "LEX4-DEV-0854", "text": "prefixgoubisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0855", "text": "goub", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0856", "text": "举报：“狗逼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0857", "text": "语言科普：“狗逼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0858", "text": "你这个蠢驴", "expected_word": "蠢驴", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-077", "note": ""}
+{"id": "LEX4-DEV-0859", "text": "他就是蠢驴", "expected_word": "蠢驴", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-077", "note": ""}
+{"id": "LEX4-DEV-0860", "text": "你这个蠢·驴", "expected_word": "蠢驴", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-077", "note": ""}
+{"id": "LEX4-DEV-0861", "text": "举报：“你这个蠢驴”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0862", "text": "语言科普：“你这个蠢驴”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0863", "text": "孬种", "expected_word": "孬种", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-078", "note": ""}
+{"id": "LEX4-DEV-0864", "text": "他就是孬种", "expected_word": "孬种", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-078", "note": ""}
+{"id": "LEX4-DEV-0865", "text": "孬·种", "expected_word": "孬种", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-078", "note": ""}
+{"id": "LEX4-DEV-0866", "text": "举报：“孬种”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0867", "text": "语言科普：“孬种”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0868", "text": "怂包", "expected_word": "怂包", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-079", "note": ""}
+{"id": "LEX4-DEV-0869", "text": "他就是怂包", "expected_word": "怂包", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-079", "note": ""}
+{"id": "LEX4-DEV-0870", "text": "怂·包", "expected_word": "怂包", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-079", "note": ""}
+{"id": "LEX4-DEV-0871", "text": "举报：“怂包”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0872", "text": "语言科普：“怂包”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0873", "text": "你这个狗贼", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "canonical", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0874", "text": "他就是狗贼", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "changed_subject", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0875", "text": "你这个狗·贼", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "symbol_variant", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0876", "text": "你这个gouzei", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0877", "text": "你这个gou zei", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0878", "text": "你这个gou.zei", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0879", "text": "你这个GOUZEI", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0880", "text": "你这个ｇｏｕｚｅｉ", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "pinyin", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0881", "text": "你这个gou3 zei2", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "numeric_tones", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0882", "text": "你这个gǒuzéi", "expected_word": "狗贼", "expected_level": "MEDIUM", "blocked": false, "kind": "tone_marks", "category": "LEX4-080", "note": ""}
+{"id": "LEX4-DEV-0883", "text": "prefixgouzeisuffix", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "english_boundary", "category": "english", "note": ""}
+{"id": "LEX4-DEV-0884", "text": "gouze", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "incomplete_pinyin", "category": "ordinary_pinyin", "note": ""}
+{"id": "LEX4-DEV-0885", "text": "举报：“你这个狗贼”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "reporting", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0886", "text": "语言科普：“你这个狗贼”是侮辱性表达", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "education", "category": "normal_context", "note": ""}
+{"id": "LEX4-DEV-0887", "text": "今天去图书馆复习", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0888", "text": "明天一起跑步吗", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0889", "text": "小程序打卡成功", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0890", "text": "请在这里打断点调试", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0891", "text": "杀菌消毒已完成", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0892", "text": "杀毒软件更新", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0893", "text": "这段代码存在死循环", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0894", "text": "断网以后重试", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0895", "text": "这位同学腿部骨折正在康复", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0896", "text": "患者受到重伤后及时就医", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0897", "text": "我感觉恶心想吐", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0898", "text": "这是小丑演员的演出", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0899", "text": "这个方案一无是处，需要重写", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0900", "text": "脑瘫康复训练", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0901", "text": "智障人士需要平等支持", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0902", "text": "神经病学课程", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0903", "text": "弱智儿童的教育支持", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0904", "text": "精神疾病就诊流程", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0905", "text": "动物园里有猪和狗", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0906", "text": "母狗正在照顾幼犬", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0907", "text": "公狗完成绝育手术", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0908", "text": "这窝狗崽子需要兽医", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0909", "text": "杂种水稻研究", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0910", "text": "杂种优势的应用", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0911", "text": "你这杂种水稻长势很好", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0912", "text": "这里讲解畜生道的概念", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0913", "text": "这个饭桶容量是十升", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0914", "text": "你这饭桶容量多大", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0915", "text": "傻子瓜子是商品名称", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0916", "text": "你这2B铅笔很好用", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0917", "text": "这支2B自动铅笔需要换芯", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0918", "text": "第二笔交易已经完成", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0919", "text": "你这二比一的比分记错了", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0920", "text": "你这几把钥匙放在桌上", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0921", "text": "比赛击靶成绩很好", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0922", "text": "你这Dior丝巾颜色不错", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0923", "text": "草泥马是羊驼的网络称呼", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0924", "text": "我在抄你码，稍后一起调试", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0925", "text": "麻辣隔壁是一家店名", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0926", "text": "我在读白痴小说", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0927", "text": "阅读白痴一书的笔记", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0928", "text": "去死海旅游", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0929", "text": "不要去死记硬背", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0930", "text": "垃圾分类要做好", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0931", "text": "学习废物利用", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0932", "text": "废物处理流程", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0933", "text": "这次不要去死胡同", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0934", "text": "ming tian qu kao shi", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0935", "text": "jin tian tian qi hen hao", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0936", "text": "wo yao da ka", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0937", "text": "sha jun xiao du", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0938", "text": "chun lv shi yan se", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0939", "text": "fan jian ji mou", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0940", "text": "nao zhong xiang le", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0941", "text": "gong gou he mu gou", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0942", "text": "qu si hai lv you", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0943", "text": "bai chi yi dun fan", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0944", "text": "sha bi can shu", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0945", "text": "ER BI SDK API HTTP JSON SQL", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0946", "text": "assignment", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0947", "text": "classroom", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0948", "text": "callback", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0949", "text": "exception", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0950", "text": "namespace", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0951", "text": "database", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0952", "text": "JavaScript", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0953", "text": "dictionary", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0954", "text": "substring", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0955", "text": "subclass", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0956", "text": "assertion", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0957", "text": "constructor", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0958", "text": "asyncio", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0959", "text": "redis", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0960", "text": "mysql", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0961", "text": "webpack", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0962", "text": "typescript", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0963", "text": "Map<String, Integer>", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0964", "text": "const sb = 1;", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0965", "text": "let cnm_client = 1;", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0966", "text": "tmd_config = {}", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0967", "text": "nmsl_client()", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0968", "text": "2B is a pencil grade", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0969", "text": "g8_config = 2", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0970", "text": "sb_filter = False", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0971", "text": "我想去死，请帮帮我", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0972", "text": "我是不是废物，请帮帮我", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0973", "text": "我是不是傻逼，想找人聊聊", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0974", "text": "我是不是饭桶，想找人聊聊", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0975", "text": "不要对同学说“傻逼”", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0976", "text": "举报：“你这个杂种”，请处理", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0977", "text": "这只动物是畜生，需找兽医", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "ordinary_and_context", "note": ""}
+{"id": "LEX4-DEV-0978", "text": "举报：“傻逼”，请处理。傻逼", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "outside_quote_attack", "category": "scope_control", "note": ""}
+{"id": "LEX4-DEV-0979", "text": "语言科普：“蠢逼”是侮辱性表达。你就是蠢逼", "expected_word": "蠢逼", "expected_level": "HIGH", "blocked": true, "kind": "outside_quote_attack", "category": "scope_control", "note": ""}
+{"id": "LEX4-DEV-0980", "text": "举报：“贱人”，请处理。贱人", "expected_word": "贱人", "expected_level": "MEDIUM", "blocked": false, "kind": "outside_quote_attack", "category": "scope_control", "note": ""}
+{"id": "LEX4-DEV-0981", "text": "你这个2B铅笔很好用，你这个2B", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "outside_quote_attack", "category": "scope_control", "note": ""}
+{"id": "LEX4-DEV-0982", "text": "我要打断你的腿", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0983", "text": "我要打断他的腿", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0984", "text": "我要把你的两条腿都打断", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0985", "text": "你一无是处", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0986", "text": "你根本就一无是处", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0987", "text": "放学后在校门口等着，我带人收拾你", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0988", "text": "不加我就曝光你", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0989", "text": "一直骚扰到你退学", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0990", "text": "你活该被全班孤立", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "scope_gap", "category": "sentence_semantics_not_lexical", "note": "Scope probe only: potentially offensive text without registered lexical token; never count as benign TN or semantic success"}
+{"id": "LEX4-DEV-0991", "text": "草泥马是羊驼", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0992", "text": "草泥马是羊驼，你这个操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0993", "text": "傻逼，草泥马是羊驼", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0994", "text": "草泥马这种动物", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0995", "text": "草泥马这种动物，你这个操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0996", "text": "傻逼，草泥马这种动物", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0997", "text": "羊驼又称草泥马", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0998", "text": "羊驼又称草泥马，你这个操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-0999", "text": "傻逼，羊驼又称草泥马", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1000", "text": "草泥马玩偶", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1001", "text": "草泥马玩偶，你这个操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1002", "text": "傻逼，草泥马玩偶", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1003", "text": "我在抄你码", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1004", "text": "我在抄你码，你这个操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1005", "text": "傻逼，我在抄你码", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1006", "text": "抄你码学习", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1007", "text": "抄你码学习，你这个操你妈", "expected_word": "操你妈", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1008", "text": "傻逼，抄你码学习", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1009", "text": "白痴小说", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1010", "text": "白痴小说，你这个白痴", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1011", "text": "傻逼，白痴小说", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1012", "text": "白痴一书", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1013", "text": "白痴一书，你这个白痴", "expected_word": "白痴", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1014", "text": "傻逼，白痴一书", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1015", "text": "麻辣隔壁是一家店名", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1016", "text": "麻辣隔壁是一家店名，你这个妈了个逼", "expected_word": "妈了个逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1017", "text": "傻逼，麻辣隔壁是一家店名", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1018", "text": "2B铅笔", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1019", "text": "2B铅笔，你这个二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1020", "text": "傻逼，2B铅笔", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1021", "text": "2B自动铅笔", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1022", "text": "2B自动铅笔，你这个二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1023", "text": "傻逼，2B自动铅笔", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1024", "text": "2B型号", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1025", "text": "2B型号，你这个二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1026", "text": "傻逼，2B型号", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1027", "text": "二比一", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1028", "text": "二比一，你这个二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1029", "text": "傻逼，二比一", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1030", "text": "二比二", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1031", "text": "二比二，你这个二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1032", "text": "傻逼，二比二", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1033", "text": "二比零", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1034", "text": "二比零，你这个二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1035", "text": "傻逼，二比零", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1036", "text": "二比三", "expected_word": "", "expected_level": "NONE", "blocked": false, "kind": "normal_negative", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1037", "text": "二比三，你这个二逼", "expected_word": "二逼", "expected_level": "MEDIUM", "blocked": false, "kind": "normal_phrase_outside_same_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}
+{"id": "LEX4-DEV-1038", "text": "傻逼，二比三", "expected_word": "傻逼", "expected_level": "HIGH", "blocked": true, "kind": "normal_phrase_outside_other_word", "category": "normal_phrase_scope", "note": "Only this word and this occurrence are exempt; no global whitelist"}

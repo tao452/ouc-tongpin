@@ -1,4 +1,4 @@
-"""Bounded, explicit target grammar; deliberately not general intent inference."""
+"""按有界的明确前缀判断攻击对象，不推断一般语义意图。"""
 
 import re
 import unicodedata
@@ -26,13 +26,13 @@ def _identifier_letter(ch):
         return ch.isalnum()
     if "\u3400" <= ch <= "\u9fff" or unicodedata.category(ch)[0] not in {"L", "N"}:
         return False
-    # Chinese text may adjoin a pinyin token, including extension ideographs.
+    # 中文及扩展汉字可以紧邻拼音词，不视为英文标识符的一部分。
     return not unicodedata.name(ch, "").startswith(
         ("CJK UNIFIED IDEOGRAPH", "CJK COMPATIBILITY IDEOGRAPH"))
 
 
 def latin_boundary(text, left, right, variant):
-    """Latin and registered visual aliases preserve Unicode identifier boundaries."""
+    """拉丁字母及已登记的视觉别名保留Unicode标识符边界。"""
     return (not (_identifier_letter(variant[0]) and left
                  and (text[left - 1] == "_" or _identifier_letter(text[left - 1])))
             and not (_identifier_letter(variant[-1]) and right < len(text)
@@ -40,21 +40,24 @@ def latin_boundary(text, left, right, variant):
 
 
 def homophone_spans(text, trie, check_budget):
-    """One contextual reading per Hanzi; no heteronym products or fuzzy edits.
+    """每字只取一个上下文读音，不做多音字笛卡尔积或模糊编辑。
 
-    Each run has one syllable per character. Traversal is bounded by the compiled
-    phrase trie (at most 16 syllables); punctuation never joins separate runs.
+    每段汉字保持一字一音节，遍历由编译后的词语树限定在最多16音节；不跨标点拼接。
     """
-    reading_cache = {}  # Request-local: no user text is retained between requests.
+    reading_cache = {}  # 读音缓存仅在本次请求内有效，不跨请求保留用户文本。
+    target_cache = {}  # 仅在本次请求内复用相同的定向前缀，避免重复执行正则判断。
     for run in _HANZI.finditer(text):
         check_budget()
         for start in range(len(run.group())):
             if start % 16 == 0:
                 check_budget()
             left = run.start() + start
-            if not has_target(text, left):
+            prefix = text[max(0, left - TARGET_WINDOW):left]
+            if prefix not in target_cache:
+                target_cache[prefix] = has_target(prefix, len(prefix))
+            if not target_cache[prefix]:
                 continue
-            # Only read the bounded candidate window, rather than a 2000-Hanzi run.
+            # 只读取有长度上限的候选窗口，避免对整段2000字反复取音。
             window = run.group()[start:start + 16]
             if window not in reading_cache:
                 reading_cache[window] = pinyin(window, style=Style.NORMAL, heteronym=False)
