@@ -1,0 +1,32 @@
+import hashlib
+import importlib.metadata
+import json
+from pathlib import Path
+
+from pypinyin import Style,lazy_pinyin
+from app.services.moderation import ModerationService
+from app.services.pronunciation import numeric_tone_prefixed_patterns
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_10-candidate.json'
+entries=json.loads(path.read_text(encoding='utf-8'))
+service=ModerationService(path)
+records=[]
+for index,entry in enumerate(entries,1):
+    if not (entry.get('pinyin') and entry.get('pinyin_tone_numbers') and any(c in entry['word'] for c in '一不')):
+        continue
+    reading=' '.join(lazy_pinyin(entry['word'],style=Style.TONE3,neutral_tone_with_five=True,tone_sandhi=True))
+    patterns=numeric_tone_prefixed_patterns(entry['word'],entry.get('pinyin_readings',[]),entry.get('pinyin_tone_readings',[]))
+    if any(pattern.fullmatch(reading) for _,pattern in patterns):
+        continue
+    result=service.check(reading)
+    records.append(dict(candidate_id=f'US24-{index:03d}',word=entry['word'],suggested_level=entry['level'],
+        proposed_whole_phrase_tone_path=reading,source='pypinyin lazy_pinyin tone_sandhi=True, one contextual path, not heteronym product',
+        current_target_hit=any(hit.word==entry['word'] for hit in result.hits),current=result.model_dump(),
+        M1_status='PENDING',integrated=False))
+value=dict(scope='read-only existing word pronunciation gap audit; no new dictionary or production approval',
+    original_rules=132,proposals=records,proposed_paths=len(records),pypinyin=importlib.metadata.version('pypinyin'),
+    dictionary_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),COLD_dev_fetched=False,production_acceptance=False)
+with (LAB/'existing-sandhi-gap-audit-v1.json').open('x',encoding='utf-8') as handle:
+    json.dump(value,handle,ensure_ascii=False,indent=2)
+print(json.dumps(value,ensure_ascii=False),flush=True)

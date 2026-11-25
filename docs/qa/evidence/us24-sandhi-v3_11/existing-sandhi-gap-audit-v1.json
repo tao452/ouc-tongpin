@@ -1,0 +1,86 @@
+{
+  "scope": "read-only existing word pronunciation gap audit; no new dictionary or production approval",
+  "original_rules": 132,
+  "proposals": [
+    {
+      "candidate_id": "US24-018",
+      "word": "你不配活着",
+      "suggested_level": "HIGH",
+      "proposed_whole_phrase_tone_path": "ni3 bu2 pei4 huo2 zhe5",
+      "source": "pypinyin lazy_pinyin tone_sandhi=True, one contextual path, not heteronym product",
+      "current_target_hit": false,
+      "current": {
+        "passed": true,
+        "normalized": "ni3bu2pei4huo2zhe5",
+        "hits": []
+      },
+      "M1_status": "PENDING",
+      "integrated": false
+    },
+    {
+      "candidate_id": "US24-067",
+      "word": "你一无是处",
+      "suggested_level": "MEDIUM",
+      "proposed_whole_phrase_tone_path": "ni3 yi4 wu2 shi4 chu4",
+      "source": "pypinyin lazy_pinyin tone_sandhi=True, one contextual path, not heteronym product",
+      "current_target_hit": false,
+      "current": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4chu4",
+        "hits": []
+      },
+      "M1_status": "PENDING",
+      "integrated": false
+    },
+    {
+      "candidate_id": "US24-070",
+      "word": "你不配待在这个学校",
+      "suggested_level": "MEDIUM",
+      "proposed_whole_phrase_tone_path": "ni3 bu2 pei4 dai4 zai4 zhe4 ge5 xue2 xiao4",
+      "source": "pypinyin lazy_pinyin tone_sandhi=True, one contextual path, not heteronym product",
+      "current_target_hit": false,
+      "current": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai4zai4zhe4ge5xue2xiao4",
+        "hits": []
+      },
+      "M1_status": "PENDING",
+      "integrated": false
+    },
+    {
+      "candidate_id": "US24-088",
+      "word": "你不配发言",
+      "suggested_level": "MEDIUM",
+      "proposed_whole_phrase_tone_path": "ni3 bu2 pei4 fa1 yan2",
+      "source": "pypinyin lazy_pinyin tone_sandhi=True, one contextual path, not heteronym product",
+      "current_target_hit": false,
+      "current": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1yan2",
+        "hits": []
+      },
+      "M1_status": "PENDING",
+      "integrated": false
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "suggested_level": "MEDIUM",
+      "proposed_whole_phrase_tone_path": "ni3 bu2 pei4 shang4 da4 xue2",
+      "source": "pypinyin lazy_pinyin tone_sandhi=True, one contextual path, not heteronym product",
+      "current_target_hit": false,
+      "current": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4xue2",
+        "hits": []
+      },
+      "M1_status": "PENDING",
+      "integrated": false
+    }
+  ],
+  "proposed_paths": 5,
+  "pypinyin": "0.55.0",
+  "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

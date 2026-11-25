@@ -1,0 +1,84 @@
+"""Finite, explicit candidate pronunciation revision; no production activation."""
+import copy
+import hashlib
+import json
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+old_path = ROOT / 'services/algo/app/data/moderation-v3_10-candidate.json'
+old_entries = json.loads(old_path.read_text(encoding='utf-8'))
+entries = copy.deepcopy(old_entries)
+paths = {
+    '你不配活着': ['ni3 bu2 pei4 huo2 zhe5'],
+    '你一无是处': ['ni3 yi4 wu2 shi4 chu4'],
+    '你不配待在这个学校': [
+        'ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4',
+        'ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4'],
+    '你不配发言': ['ni3 bu2 pei4 fa1 yan2'],
+    '你不配上大学': ['ni3 bu2 pei4 shang4 da4 xue2'],
+}
+for entry in entries:
+    if entry['word'] in paths:
+        readings = entry.setdefault('pinyin_tone_readings', [])
+        for reading in paths[entry['word']]:
+            assert reading not in readings
+            readings.append(reading)
+proposal = LAB / 'moderation-v3_11-proposal.json'
+with proposal.open('x', encoding='utf-8', newline='\n') as handle:
+    json.dump(entries, handle, ensure_ascii=False, indent=2)
+    handle.write('\n')
+before = ModerationService(old_path)
+after = ModerationService(proposal)
+cases = []
+for word, readings in paths.items():
+    for index, reading in enumerate(readings):
+        identifier = f'S311-{next(i for i,e in enumerate(entries,1) if e["word"]==word):03d}-{index}'
+        forms = {
+            'spaced': reading,
+            'continuous': reading.replace(' ', ''),
+            'punctuated': reading.replace(' ', '-'),
+            'uppercase': reading.upper(),
+            'fullwidth': ''.join(chr(ord(c)+0xFEE0) if '!' <= c <= '~' else c for c in reading),
+        }
+        for name, text in forms.items():
+            cases.append(dict(id=identifier+'-'+name, text=text, target=word, expected_hit=True))
+        for name, text in {
+            'identifier-prefix': 'prefix_'+reading.replace(' ', ''),
+            'identifier-suffix': reading.replace(' ', '')+'_suffix',
+            'incomplete': ' '.join(reading.split()[:-1]),
+            'wrong-tone': reading.replace('ni3', 'ni1', 1),
+            'report': '举报：“'+reading+'”请处理',
+            'anti-bullying': '请不要说“'+reading+'”伤害同学',
+            'language': '语言科普：“'+reading+'”是攻击表达',
+        }.items():
+            cases.append(dict(id=identifier+'-'+name,text=text,target=word,expected_hit=False))
+        cases.append(dict(id=identifier+'-outside-attack',text='举报：“'+reading+'”请处理。操你妈',
+                          target='操你妈',expected_hit=True))
+for index,text in enumerate([
+    '普通话作业 bu2 pei4 与 yi4 wu2 的变调规则',
+    'ni3 hao3，wo3 xiang3 dai1 zai4 tu2 shu1 guan3',
+    'TypeScript unicode codepoint buffer async await',
+    '我想待在图书馆复习，你不陪我也没关系。',
+    '同学受到网暴，正在寻求心理帮助。',
+    '我不想活了，希望有人陪我。',
+],1):
+    cases.append(dict(id=f'S311-N-{index:03d}',text=text,target='',expected_hit=False))
+results=[]
+for case in cases:
+    a=before.check(case['text']).model_dump()
+    b=after.check(case['text']).model_dump()
+    actual=any(hit['word']==case['target'] for hit in b['hits']) if case['target'] else bool(b['hits'])
+    results.append(dict(**case,before=a,after=b,actual_target_hit=actual,
+                        expected_result_met=actual==case['expected_hit']))
+report=dict(scope='synthetic development probes; all cases retained including failures',
+            canonical_rules=len(entries),changed_rules=5,added_whole_phrase_tone_paths=6,
+            dictionary_before_sha256=hashlib.sha256(old_path.read_bytes()).hexdigest(),
+            dictionary_proposal_sha256=hashlib.sha256(proposal.read_bytes()).hexdigest(),
+            cases=results,failures=[r['id'] for r in results if not r['expected_result_met']],
+            M1_review='PENDING',production_acceptance=False,COLD_dev_fetched=False)
+with (LAB/'sandhi-revision-v3_11-probe.json').open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(cases=len(results),failures=report['failures']),ensure_ascii=False),flush=True)

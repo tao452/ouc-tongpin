@@ -1,0 +1,53 @@
+{
+  "candidate_count": 132,
+  "new_canonical_rules": 0,
+  "changed_pronunciation_rules": [
+    {
+      "candidate_id": "US24-018",
+      "word": "你不配活着",
+      "added_paths": [
+        "ni3 bu2 pei4 huo2 zhe5"
+      ]
+    },
+    {
+      "candidate_id": "US24-067",
+      "word": "你一无是处",
+      "added_paths": [
+        "ni3 yi4 wu2 shi4 chu4"
+      ]
+    },
+    {
+      "candidate_id": "US24-070",
+      "word": "你不配待在这个学校",
+      "added_paths": [
+        "ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4",
+        "ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4"
+      ]
+    },
+    {
+      "candidate_id": "US24-088",
+      "word": "你不配发言",
+      "added_paths": [
+        "ni3 bu2 pei4 fa1 yan2"
+      ]
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "added_paths": [
+        "ni3 bu2 pei4 shang4 da4 xue2"
+      ]
+    }
+  ],
+  "added_whole_phrase_tone_paths": 6,
+  "suggested_levels": {
+    "HIGH": 47,
+    "MEDIUM": 80,
+    "LOW": 5
+  },
+  "M1_pending": 132,
+  "decision_blanks": 792,
+  "M3_reproduction": "PENDING",
+  "dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+  "production_acceptance": false
+}

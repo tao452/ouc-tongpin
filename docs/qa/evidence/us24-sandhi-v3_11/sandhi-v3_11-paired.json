@@ -1,0 +1,185 @@
+{
+  "scope": "development literal rules; not independent broad semantic evaluation",
+  "rows": 5218,
+  "original_development_rows": 5134,
+  "new_development_rows": 84,
+  "original_output_changes": [],
+  "before": {
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 30,
+        "tn": 48
+      },
+      "recall": 0.16666666666666666,
+      "precision": 1.0,
+      "fpr": 0.0
+    },
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 5,
+        "tn": 73
+      },
+      "recall": 0.5454545454545454,
+      "precision": 1.0,
+      "fpr": 0.0
+    }
+  },
+  "after": {
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 36,
+        "fp": 0,
+        "fn": 0,
+        "tn": 48
+      },
+      "recall": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0
+    },
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "tn": 73
+      },
+      "recall": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0
+    }
+  },
+  "by_category": {
+    "context_scope": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      }
+    },
+    "pinyin_sandhi": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 30,
+          "fp": 0,
+          "fn": 0,
+          "tn": 30
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "tn": 55
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0
+      }
+    },
+    "precise_context": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 18
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 18
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      }
+    }
+  },
+  "errors": 0,
+  "fresh_mapping_failure_ids": [],
+  "max_after_ms": 1.5659999917261302,
+  "datasets": [
+    {
+      "file": "us24-development.v2.jsonl",
+      "sha256": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06"
+    },
+    {
+      "file": "us24-development.v3.jsonl",
+      "sha256": "33d33a05200ceed80d87da759dd9cfa66c1b91729b5e67b84db5fdfde7a36831"
+    },
+    {
+      "file": "us24-development.v3_10.jsonl",
+      "sha256": "4ea86df33f8d21829268289dae94cbf31626b5849ef539f85d5609c61346acd5"
+    },
+    {
+      "file": "us24-development.v3_11.jsonl",
+      "sha256": "41700456c3525857b1f050a15ebdd1412ce0e0a6168591838739d9d4d6f9d7c2"
+    },
+    {
+      "file": "us24-development.v3_2.jsonl",
+      "sha256": "b734b3f25a38644ea919083285de4ad54dd74ac1dd859d16205eead4937ff6d3"
+    },
+    {
+      "file": "us24-development.v3_3.jsonl",
+      "sha256": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773"
+    },
+    {
+      "file": "us24-development.v3_4.jsonl",
+      "sha256": "3bc4cc797af07df988dd3a63dc78210db78352cb4b54ee13bd5e96876b3da8eb"
+    },
+    {
+      "file": "us24-development.v3_5.jsonl",
+      "sha256": "ddeaa645573f71b88d636f95881f5ba6b65b1c3bbddf99d2cff5e273a7f27855"
+    },
+    {
+      "file": "us24-development.v3_7.jsonl",
+      "sha256": "325a5b9bddfd1f2528123712cd7116391fa54be097d20c216089ef64b6a1455b"
+    },
+    {
+      "file": "us24-development.v3_8.jsonl",
+      "sha256": "61d1eb6b862a322281365bb0df157e8664bfb0be8b396385a63f13e350d902bc"
+    },
+    {
+      "file": "us24-development.v3_9.jsonl",
+      "sha256": "3f51535e28c9a830464ebc6493c456ebcdf5ffe8bff1fc8817b4e415941f6a10"
+    }
+  ],
+  "before_predictions_sha256": "a4d291fe63034bdc9ac658c695d69dab03472619c7eb84e7db7fbc847310702b",
+  "after_predictions_sha256": "aa8bc6db468f799b5c5c84d676011d743c0aa8eacadfab64a7ebe365eeb7597d",
+  "source_sha256": "c40abfb6eefb5b95ddd7b0c78f09aaf45983af6a66688680bc555533ade1f96f",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "COLD_dev_fetched": false
+}

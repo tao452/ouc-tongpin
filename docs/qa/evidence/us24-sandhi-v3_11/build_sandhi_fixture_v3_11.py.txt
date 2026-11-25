@@ -1,0 +1,44 @@
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+probe=json.loads((LAB/'sandhi-revision-v3_11-probe.json').read_text(encoding='utf-8'))
+entries=json.loads((ROOT/'services/algo/app/data/moderation-v3_11-candidate.json').read_text(encoding='utf-8'))
+levels={e['word']:e['level'] for e in entries}
+rows=[]
+for case in probe['cases']:
+    word=case['target'] if case['expected_hit'] else ''
+    level=levels[word] if word else ''
+    category=('precise_context' if any(x in case['id'] for x in ['report','bullying','language'])
+              else 'context_scope' if 'outside' in case['id'] else 'pinyin_sandhi')
+    rows.append(dict(id=case['id'],text=case['text'],blocked=level=='HIGH',
+        expected_word=word,expected_level=level,
+        expected_hits=[dict(word=word,level=level)] if word else [],category=category,
+        kind='synthetic_development',label_source='expected mappings fixed before context revision; all84 original probes retained'))
+fixture=ROOT/'docs/qa/data/us24-development.v3_11.jsonl'
+with fixture.open('x',encoding='utf-8',newline='\n') as handle:
+    for row in rows:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+baseline=LAB/'baseline-v3_10/app'
+assert not baseline.exists()
+shutil.copytree(LAB/'app-before-v3_11',baseline)
+policy=dict(scope='finite pronunciation and exact quote template development',canonical_rules=132,
+    new_canonical_rules=0,changed_pronunciation_rules=5,added_whole_phrase_tone_paths=6,
+    precise_context_changes=['请不要说“完整登记攻击词”伤害同学','语言科普：“完整登记攻击词”是攻击表达'],
+    original_probe_rows=84,original_probe_failures=probe['failures'],original_probe_retained=True,
+    sources=[dict(url='https://www.gsjtxy.edu.cn/jcjxb/content/169/t2024210-169-17094.html',
+                  use='whole-phrase 一 before non-fourth becomes fourth; 不 before fourth becomes second'),
+             dict(url='https://dict.concised.moe.edu.tw/dictView.jsp?ID=7469&la=0&powerMode=0',
+                  use='待 meaning stay is dai1; explicitly mapped only to US24-070')],
+    legacy_default_tone_path='pypinyin generated US24-070 dai4 retained as historical tolerated spelling; added dai1 paths separately; no global pronunciation dictionary override',
+    fixture_sha256=hashlib.sha256(fixture.read_bytes()).hexdigest(),
+    before_dictionary_sha256=probe['dictionary_before_sha256'],
+    after_dictionary_sha256=hashlib.sha256((ROOT/'services/algo/app/data/moderation-v3_11-candidate.json').read_bytes()).hexdigest(),
+    reading_cap=8,syllable_cap=16,latin_boundary_required=True,match_budget_ms=50,
+    semantic_training='current C4 experiment remains frozen3.10 inputs; not attributed to3.11 without equivalence check',
+    COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (LAB/'sandhi-v3_11-policy.json').open('x',encoding='utf-8') as handle:
+    json.dump(policy,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=len(rows),positives=sum(bool(r['expected_hits']) for r in rows),
+                      old_probe_failures=len(probe['failures']))))
