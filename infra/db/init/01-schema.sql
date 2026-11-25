@@ -110,3 +110,33 @@ CREATE TABLE IF NOT EXISTS `buddy_demand` (
   KEY `idx_need_user` (`user_id`),
   KEY `idx_need_status_created` (`status`, `created_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 组队空间表（W6 / US-17）
+-- 邀请码 7 天有效；撤销后 invite_code 置 NULL，与“码不存在”同义。
+CREATE TABLE IF NOT EXISTS `team` (
+  `id`                BIGINT       NOT NULL AUTO_INCREMENT,
+  `name`              VARCHAR(32)  NOT NULL,
+  `notice`            VARCHAR(200) DEFAULT NULL,
+  `owner_user_id`     BIGINT       NOT NULL,
+  `invite_code`       VARCHAR(16)  DEFAULT NULL,
+  `invite_expires_at` DATETIME     DEFAULT NULL,
+  `created_at`        DATETIME     DEFAULT NULL,
+  `updated_at`        DATETIME     DEFAULT NULL,
+  `deleted`           INT          NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `idx_team_owner` (`owner_user_id`),
+  UNIQUE KEY `uk_team_invite_code` (`invite_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 组队成员表（一人一队：user 维度由业务层约束，team_id+user_id 唯一防重）
+CREATE TABLE IF NOT EXISTS `team_member` (
+  `id`         BIGINT      NOT NULL AUTO_INCREMENT,
+  `team_id`    BIGINT      NOT NULL,
+  `user_id`    BIGINT      NOT NULL,
+  `role`       VARCHAR(16) NOT NULL DEFAULT 'MEMBER',
+  `joined_at`  DATETIME    DEFAULT NULL,
+  `deleted`    INT         NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_team_member` (`team_id`, `user_id`),
+  KEY `idx_team_member_user` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
