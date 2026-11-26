@@ -20,10 +20,24 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id`         BIGINT       NOT NULL AUTO_INCREMENT,
   `nickname`   VARCHAR(64)  DEFAULT NULL,
   `avatar`     VARCHAR(512) DEFAULT NULL,
+  `bio`        VARCHAR(100) DEFAULT NULL,
   `created_at` DATETIME     DEFAULT NULL,
   `updated_at` DATETIME     DEFAULT NULL,
   `deleted`    INT          NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 用户兴趣/技能标签（US-35 PUT /api/user/profile；JSON 数组拆行，按类型 + 值去重）
+CREATE TABLE IF NOT EXISTS `user_tag` (
+  `id`         BIGINT       NOT NULL AUTO_INCREMENT,
+  `user_id`    BIGINT       NOT NULL,
+  `tag_type`   VARCHAR(16)  NOT NULL,
+  `tag_name`   VARCHAR(24)  NOT NULL,
+  `created_at` DATETIME     DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_user_tag` (`user_id`, `tag_type`, `tag_name`),
+  KEY `idx_user_tag_user` (`user_id`),
+  CONSTRAINT `fk_user_tag_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 认证/绑定表（微信 openid、学号、手机号）
