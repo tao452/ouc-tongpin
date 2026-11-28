@@ -84,12 +84,9 @@ function request(options = {}) {
     sendRequest()
   })
     .catch((err) => {
-      console.error('[请求错误]', err)
-
-      wx.showToast({
-        title: err.message || '请求失败，请稍后重试',
-        icon: 'none'
-      })
+      if (options.showError !== false) {
+        wx.showToast({ title: err.message || '请求失败，请稍后重试', icon: 'none' })
+      }
 
       throw err
     })

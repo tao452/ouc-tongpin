@@ -1,4 +1,5 @@
 const {request} = require('../../../utils/request')
+const { codePointCount } = require('../../../utils/codepoints')
 
 Page({
   data: {
@@ -19,6 +20,7 @@ Page({
     skillTags: [],
     tagInput: '',
     remark: '',
+    remarkCount: 0,
 
     submitting: false
   },
@@ -147,7 +149,8 @@ Page({
   // 输入补充说明
   onRemarkInput(e) {
     this.setData({
-      remark: e.detail.value
+      remark: e.detail.value,
+      remarkCount: codePointCount(e.detail.value)
     })
   },
 
@@ -184,6 +187,15 @@ Page({
       return false
     }
 
+    if (!Number.isFinite(location.lat) || !Number.isFinite(location.lng) ||
+        location.lat < -90 || location.lat > 90 || location.lng < -180 || location.lng > 180) {
+      wx.showToast({ title: '地点坐标超出有效范围', icon: 'none' })
+      return false
+    }
+    if (codePointCount(this.data.remark) > 200) {
+      wx.showToast({ title: '补充说明最多200个字符', icon: 'none' })
+      return false
+    }
     return true
   },
 
@@ -211,7 +223,7 @@ Page({
       time: new Date(`${date}T${time}:00`).toISOString(),
       location,
       skillTags,
-      remark: remark.trim()
+      remark
     }
 
     this.setData({
@@ -219,10 +231,11 @@ Page({
     })
 
     try {
-      const res = await request({
+      await request({
         url: '/api/match/needs',
         method: 'POST',
-        data: requestData
+        data: requestData,
+        showError: false
       })
 
       wx.showToast({
@@ -230,13 +243,11 @@ Page({
         icon: 'success'
       })
 
-      console.log('需求发布结果：', res)
 
       setTimeout(() => {
         wx.navigateBack()
       }, 1200)
     } catch (err) {
-      console.error('需求发布失败：', err)
 
       wx.showToast({
         title: '发布失败，请稍后重试',
