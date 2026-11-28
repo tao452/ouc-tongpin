@@ -1,0 +1,20 @@
+{
+  "scope": "post-run current3.9 qualification and publication source",
+  "files": [
+    {
+      "file": "current-context39-qualification.json",
+      "bytes": 1463,
+      "sha256": "8145c339eb3643382bfd4db8713bc598a0ec9c36f4504b393f027cad5d9f3254"
+    },
+    {
+      "file": "document_qwen_sequence_v5d.py.txt",
+      "bytes": 6502,
+      "sha256": "9d726d8e8d56d59071a0702f8f52ac55e6603933e90bc02a7c77909dbef3df19"
+    },
+    {
+      "file": "publish_qwen_sequence_v5d.py.txt",
+      "bytes": 4802,
+      "sha256": "9dd99bf337816c88a2a1b02a4c11af0f9e36f59f8cfb1d7c4493d4002005b348"
+    }
+  ]
+}

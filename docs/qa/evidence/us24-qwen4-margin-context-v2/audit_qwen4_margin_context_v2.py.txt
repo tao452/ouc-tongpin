@@ -1,0 +1,82 @@
+import hashlib
+import json
+import math
+from collections import Counter
+from pathlib import Path
+
+LAB=Path.cwd()/'qa-private/us24-recall-20261124'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle,'sha256').hexdigest()
+
+
+def main():
+    root=LAB/'qwen4-margin-context-v2'
+    frozen=json.loads((root/'frozen.json').read_text(encoding='utf-8'))
+    complete=json.loads((root/'evaluation-complete.json').read_text(encoding='utf-8'))
+    index_path=LAB/'qwen4-margin-context-v2-inputs/index.json'
+    assert sha(index_path)==frozen['index_sha256']
+    for name,expected in frozen['code_sha256'].items():
+        assert hashlib.sha256((LAB/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest()==expected
+    entries=json.loads(index_path.read_text(encoding='utf-8'))['rows']
+    assert len(entries)==3258
+    assert sum(r['context_input_changed'] for r in entries)==189
+    baseline={r['id']:r for r in map(json.loads,(LAB/'qwen4-label-v1/predictions.jsonl').read_text(encoding='utf-8').splitlines())}
+    predictions={}
+    saturation=Counter()
+    errors={}
+    for view in ['full','context-spaces']:
+        path=root/view/'predictions.jsonl'
+        assert sha(path)==complete['views'][view]['predictions_sha256']
+        rows=[json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()]
+        assert len(rows)==len({r['id'] for r in rows})==3258
+        count=0
+        for row,entry in zip(rows,entries,strict=True):
+            for key in ['id','label','cohort','category','literal_any','source_text_sha256',
+                        'transformed_sha256','context_transformed_sha256','context_input_changed','context_protected_ranges']:
+                assert row[key]==entry[key]
+            for key in ['label','cohort','category','literal_any','source_text_sha256']:
+                assert row[key]==baseline[row['id']][key]
+            expected=entry['context_windows'] if view=='context-spaces' and entry['context_input_changed'] else entry['windows']
+            assert row['input_windows']==expected
+            if row.get('error'):
+                count+=1
+                continue
+            assert row['windows_scored']==expected==len(row['window_diagnostics'])
+            for window in row['window_diagnostics']:
+                margin=window['positive_logit']-window['negative_logit']
+                assert margin==window['margin'] and math.isfinite(margin)
+                score=.5+math.atan(margin)/math.pi
+                assert score==window['score'] and 0<score<1
+                assert window['native_top_token'] in frozen['labels']
+                assert (margin>0)==(window['native_top_token']==frozen['labels'][1])
+                if view=='full' and window['conditional_softmax_float32']==1:
+                    saturation[row['cohort']+':'+str(row['label'])]+=1
+            assert row['score']==max(w['score'] for w in row['window_diagnostics'])
+        errors[view]=count
+        assert count==complete['views'][view]['error_rows']
+        predictions[view]=rows
+    unchanged=0
+    for original,context,entry in zip(predictions['full'],predictions['context-spaces'],entries,strict=True):
+        if not entry['context_input_changed']:
+            for key in ['score','window_diagnostics','input_windows','windows_scored','error']:
+                assert original.get(key)==context.get(key)
+            unchanged+=1
+    assert unchanged==3069
+    assert complete['full_windows_attempted']==3258
+    assert complete['additional_context_windows_attempted']==189
+    value=dict(scope='all3258 native rows, both views, explicit logit precision and exact unchanged-input reuse audit',
+        rows_per_view=3258,views=2,original_inference_windows=3258,additional_context_inference_windows=189,
+        exact_unchanged_inputs_reused_in_context=3069,excluded_rows=0,error_rows=errors,
+        full_float32_saturated_one_windows_by_cohort_label=dict(saturation),
+        frozen_sha256=sha(root/'frozen.json'),input_index_sha256=sha(index_path),
+        code_sha256=sha(Path(__file__)),COLD_dev_fetched=False,production_acceptance=False)
+    with (root/'precision-context-audit.json').open('x',encoding='utf-8') as handle:
+        json.dump(value,handle,ensure_ascii=False,indent=2)
+    print(json.dumps(value),flush=True)
+
+
+if __name__=='__main__':
+    main()

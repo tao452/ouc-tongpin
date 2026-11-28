@@ -1,0 +1,46 @@
+import hashlib
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+
+LAB = Path.cwd() / 'qa-private/us24-recall-20261124'
+model = (LAB / 'qwen_sequence_model_v5.py').read_text(encoding='utf-8')
+old = "    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant': False})\n    model.enable_input_require_grads()"
+assert model.count(old) == 1
+model = model.replace(old, '    model.gradient_checkpointing_disable()')
+with (LAB / 'qwen_sequence_model_v5b.py').open('x', encoding='utf-8', newline='\n') as handle:
+    handle.write(model)
+trainer = (LAB / 'train_qwen_sequence_v5.py').read_text(encoding='utf-8')
+changes = {
+    'from qwen_sequence_model_v5 import': 'from qwen_sequence_model_v5b import',
+    "LAB / 'qwen_sequence_model_v5.py'": "LAB / 'qwen_sequence_model_v5b.py'",
+    "'qwen-sequence-v5-preflight.json'": "'qwen-sequence-v5b-preflight.json'",
+    "output = LAB / 'qwen-sequence-v5'": "output = LAB / 'qwen-sequence-v5b'",
+    'reverse=True)[:8]': 'reverse=True)[:4]',
+    'logits.shape == (8, 2)': 'logits.shape == (4, 2)',
+    '# Exercise the eight longest training windows; no optimizer or weight update.': '# Exercise the four longest training windows; no optimizer or weight update.',
+    'pool[i:i + 8] for i in range(0, len(pool), 8)': 'pool[i:i + 4] for i in range(0, len(pool), 4)',
+    'steps = math.ceil(len(batches) / 4)': 'steps = math.ceil(len(batches) / 8)',
+    'group_start = ((step - 1) // 4) * 4': 'group_start = ((step - 1) // 8) * 8',
+    'batches[group_start:group_start + 4]': 'batches[group_start:group_start + 8]',
+    'step % 4 == 0': 'step % 8 == 0',
+    'math.ceil(step / 4) / warmup': 'math.ceil(step / 8) / warmup',
+    'production_acceptance=False)\n    torch.cuda.reset_peak_memory_stats()': "production_acceptance=False, resource_amendment=dict(micro_batch_size=4,accumulate_steps=8,activation_checkpointing=False,effective_batch=32,reason='early8x4 checkpointed throughput projects beyond120minute budget; all39107 windows retained'))\n    torch.cuda.reset_peak_memory_stats()",
+}
+for before, after in changes.items():
+    assert before in trainer, before
+    trainer = trainer.replace(before, after)
+with (LAB / 'train_qwen_sequence_v5b.py').open('x', encoding='utf-8', newline='\n') as handle:
+    handle.write(trainer)
+files = ['train_qwen_sequence_v5.py', 'qwen_sequence_model_v5.py',
+         'train-qwen-sequence-v5.log', 'qwen-sequence-v5-preflight.json', 'qwen-sequence-v5/frozen.json']
+audit = dict(created_at_utc=datetime.now(UTC).isoformat(), original_run='v5', replacement_run='v5b',
+    original_outcome='resource restart before epoch completion; no evaluation; NOT_RUN accuracy',
+    original_files={name: hashlib.sha256((LAB / name).read_bytes()).hexdigest() for name in files},
+    reason='first75/4889 batches124.1s; projected epoch134.8min exceeds120min budget',
+    changes='microbatch4 accumulation8; no activation checkpointing; worst4x512 forward/backward must fit before restart',
+    training_rows=38856, training_windows=39107, evaluation_rows=3258, excluded_evaluation_rows=0,
+    learning_rate_or_loss_or_labels_changed=False, production_acceptance=False)
+with (LAB / 'qwen-sequence-v5-resource-restart.json').open('x', encoding='utf-8') as handle:
+    json.dump(audit, handle, ensure_ascii=False, indent=2)
+print('Prepared bounded resource contrast; original sources and partial run retained')

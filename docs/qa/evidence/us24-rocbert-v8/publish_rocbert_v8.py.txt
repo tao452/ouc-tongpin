@@ -1,0 +1,128 @@
+"""Publish reproducibility metadata and hash-only scores; leave all corpora and weights private."""
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+PRIVATE = LAB / 'rocbert-v8'
+PUBLIC = ROOT / 'docs/qa/evidence/us24-rocbert-v8'
+SOURCE_COMMIT = 'ab9716f7f8ea502eddb044f0356fff501169a15d'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def main():
+    summary = json.loads((PRIVATE / 'summary.json').read_text(encoding='utf-8'))
+    assert len(summary['epochs']) == 3
+    frozen = json.loads((PRIVATE / 'frozen.json').read_text(encoding='utf-8'))
+    assert frozen == summary['frozen']
+    assert frozen['training_rows'] == 15698 and frozen['training_windows_per_epoch'] == 15727
+    assert frozen['evaluation_rows'] == 3258 and frozen['excluded_evaluation_rows'] == 0
+    assert frozen['trainable_parameters'] == 117268994 and frozen['epochs'] == 3
+    for name, value in frozen['code_sha256'].items():
+        assert hashlib.sha256((LAB / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == value
+    policy = frozen['dataset_policy']
+    for name, value in policy['code_sha256'].items():
+        assert hashlib.sha256((LAB / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == value
+    for name, value in policy['evaluation_policy']['current_engine_sha256'].items():
+        data = subprocess.check_output(['git', 'show', SOURCE_COMMIT + ':' + name])
+        assert hashlib.sha256(data.replace(b'\r\n', b'\n')).hexdigest() == value
+    assert sha(LAB / 'rocbert-v8-inputs/features.pt') == frozen['features_sha256']
+    assert sha(LAB / 'rocbert-v8-inputs/index.json') == frozen['index_sha256']
+    input_index = json.loads((LAB / 'rocbert-v8-inputs/index.json').read_text(encoding='utf-8'))
+    assert input_index['policy'] == policy
+    index = input_index['rows']
+    assert len(index) == len({r['id'] for r in index}) == 18956
+    forbidden = {'text', 'pinyin', 'input_ids', 'input_pronunciation_ids', 'input_shape_ids'}
+    assert all(not forbidden.intersection(r) for r in index)
+    assert all(isinstance(r['windows'], int) for r in index)
+    PUBLIC.mkdir(exist_ok=False)
+    entries = []
+
+    def write(data, name, original=None):
+        assert len(data) < 5 * 1024 * 1024
+        target = PUBLIC / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open('xb') as handle:
+            handle.write(data)
+        entry = dict(file=name, public_lf_sha256=hashlib.sha256(data).hexdigest())
+        if original:
+            entry.update(private_path=original.relative_to(LAB).as_posix(), private_sha256=sha(original))
+        entries.append(entry)
+
+    def copy(path, name):
+        write(path.read_bytes().replace(b'\r\n', b'\n'), name, path)
+
+    def jsonl(rows, name):
+        write(''.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) + '\n'
+                      for r in rows).encode('utf-8'), name)
+
+    for name in ['summary.json', 'frozen.json', 'training-window-order.json']:
+        copy(PRIVATE / name, name)
+    for name in ['train_rocbert_v8.py', 'prepare_rocbert_v8.py', 'rocbert_encoding_v8.py',
+                 'phonetic_recheck_metrics.py', 'audit_threshold_grid.py',
+                 'audit_prediction_curves_v8.py', Path(__file__).name]:
+        copy(LAB / name, name + '.txt')
+    for path, name in [(LAB / 'rocbert-v8-inputs/policy.json', 'input-policy.json'),
+                       (LAB / 'rocbert-v8-inputs/mapping-qualification.json', 'mapping-qualification.json'),
+                       (LAB / 'rocbert-v8-preflight-8.json', 'preflight-8.json'),
+                       (LAB / 'rocbert-base.manifest.json', 'base-assets-manifest.json'),
+                       (LAB / 'rocbert-source-metadata.json', 'base-source-metadata.json'),
+                       (LAB / 'rocbert-modelcard.md', 'base-modelcard.md'),
+                       (LAB / 'ci-ab9716f-qualified.json', 'ci-source-qualification.json')]:
+        copy(path, name)
+    for start in range(0, len(index), 3000):
+        jsonl(index[start:start + 3000], f'input-index-{start // 3000 + 1:02d}.jsonl')
+    errors = 0
+    gate_epochs = []
+    for epoch, result in enumerate(summary['epochs'], 1):
+        directory = PRIVATE / f'epoch-{epoch}'
+        assert result['epoch'] == epoch and result['training_windows_seen'] == 15727
+        assert result['evaluation_rows'] == 3258 and result['excluded_evaluation_rows'] == 0
+        assert sha(directory / 'model.safetensors') == result['weights_sha256']
+        rows = [json.loads(line) for line in (directory / 'predictions.jsonl').read_text(encoding='utf-8').splitlines()]
+        assert len(rows) == len({r['id'] for r in rows}) == 3258
+        assert all(not forbidden.intersection(r) and 'windows' not in r for r in rows)
+        errors += sum(bool(r.get('error')) for r in rows)
+        integer = json.loads((directory / 'threshold-grid-gate-audit.json').read_text(encoding='utf-8'))
+        recomputed = json.loads((directory / 'prediction-curve-recomputation.json').read_text(encoding='utf-8'))
+        assert integer['development_gate_met'] == recomputed['development_gate_met']
+        assert integer['passing_operating_points'] == recomputed['passing_operating_points']
+        if integer['development_gate_met']:
+            gate_epochs.append(epoch)
+        for name in ['predictions.jsonl', 'report.json', 'thresholds.csv',
+                     'threshold-grid-gate-audit.json', 'prediction-curve-recomputation.json']:
+            copy(directory / name, f'epoch-{epoch}-' + name)
+    partials = []
+    for directory in sorted(PRIVATE.glob('partial-*')):
+        record = json.loads((directory / 'progress.json').read_text(encoding='utf-8'))
+        assert record['accuracy_status'] == 'NOT_RUN' and not record['evaluation_run']
+        record['files'] = {p.name: dict(bytes=p.stat().st_size, sha256=sha(p))
+                           for p in directory.iterdir() if p.suffix != '.json'}
+        partials.append(record)
+    jsonl(partials, 'partial-state-index.jsonl')
+    manifest = dict(scope='complete three-epoch supervised development; not independent acceptance',
+                    files=entries, source_engine_commit=SOURCE_COMMIT,
+                    evaluation_rows_per_epoch=3258, actual_prediction_rows=9774,
+                    excluded_evaluation_rows=0, inference_errors=errors,
+                    epochs_passing_development_gate=gate_epochs,
+                    dictionary='moderation-v3_10-candidate.json',
+                    dictionary_sha256='4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722',
+                    private_assets='all corpus text, generated views, token windows, weights and optimizer/RNG states',
+                    base_weights_license='undeclared in model card; no weight redistribution',
+                    upstream_pretraining_evaluation_exposure='unknown', COLD_dev_fetched=False,
+                    M1_review='PENDING', M3_reproduction='PENDING', production_acceptance=False)
+    with (PUBLIC / 'manifest.json').open('x', encoding='utf-8', newline='\n') as handle:
+        json.dump(manifest, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(directory=PUBLIC.name, files=len(entries) + 1,
+                          predictions=9774, inference_errors=errors,
+                          passing_development_epochs=gate_epochs)))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,1717 @@
+{
+  "scope": "actual loopback HTTP candidate3.11; synthetic literal development only",
+  "cases": [
+    {
+      "id": "S311-018-0-spaced",
+      "request": {
+        "text": "ni3 bu2 pei4 huo2 zhe5"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "ni3bu2pei4huo2zhe5",
+        "hits": [
+          {
+            "word": "你不配活着",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配活着",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-continuous",
+      "request": {
+        "text": "ni3bu2pei4huo2zhe5"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "ni3bu2pei4huo2zhe5",
+        "hits": [
+          {
+            "word": "你不配活着",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配活着",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-punctuated",
+      "request": {
+        "text": "ni3-bu2-pei4-huo2-zhe5"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "ni3bu2pei4huo2zhe5",
+        "hits": [
+          {
+            "word": "你不配活着",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配活着",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-uppercase",
+      "request": {
+        "text": "NI3 BU2 PEI4 HUO2 ZHE5"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "ni3bu2pei4huo2zhe5",
+        "hits": [
+          {
+            "word": "你不配活着",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配活着",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-fullwidth",
+      "request": {
+        "text": "ｎｉ３ ｂｕ２ ｐｅｉ４ ｈｕｏ２ ｚｈｅ５"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "ni3bu2pei4huo2zhe5",
+        "hits": [
+          {
+            "word": "你不配活着",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配活着",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-identifier-prefix",
+      "request": {
+        "text": "prefix_ni3bu2pei4huo2zhe5"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "prefixni3bu2pei4huo2zhe5",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-identifier-suffix",
+      "request": {
+        "text": "ni3bu2pei4huo2zhe5_suffix"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4huo2zhe5suffix",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-incomplete",
+      "request": {
+        "text": "ni3 bu2 pei4 huo2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4huo2",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-wrong-tone",
+      "request": {
+        "text": "ni1 bu2 pei4 huo2 zhe5"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni1bu2pei4huo2zhe5",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-report",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 huo2 zhe5”请处理"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "举报ni3bu2pei4huo2zhe5请处理",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-anti-bullying",
+      "request": {
+        "text": "请不要说“ni3 bu2 pei4 huo2 zhe5”伤害同学"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "请不要说ni3bu2pei4huo2zhe5伤害同学",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-language",
+      "request": {
+        "text": "语言科普：“ni3 bu2 pei4 huo2 zhe5”是攻击表达"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "语言科普ni3bu2pei4huo2zhe5是攻击表达",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-018-0-outside-attack",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 huo2 zhe5”请处理。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "举报ni3bu2pei4huo2zhe5请处理操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-spaced",
+      "request": {
+        "text": "ni3 yi4 wu2 shi4 chu4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4chu4",
+        "hits": [
+          {
+            "word": "你一无是处",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你一无是处",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-continuous",
+      "request": {
+        "text": "ni3yi4wu2shi4chu4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4chu4",
+        "hits": [
+          {
+            "word": "你一无是处",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你一无是处",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-punctuated",
+      "request": {
+        "text": "ni3-yi4-wu2-shi4-chu4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4chu4",
+        "hits": [
+          {
+            "word": "你一无是处",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你一无是处",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-uppercase",
+      "request": {
+        "text": "NI3 YI4 WU2 SHI4 CHU4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4chu4",
+        "hits": [
+          {
+            "word": "你一无是处",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你一无是处",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-fullwidth",
+      "request": {
+        "text": "ｎｉ３ ｙｉ４ ｗｕ２ ｓｈｉ４ ｃｈｕ４"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4chu4",
+        "hits": [
+          {
+            "word": "你一无是处",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你一无是处",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-identifier-prefix",
+      "request": {
+        "text": "prefix_ni3yi4wu2shi4chu4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "prefixni3yi4wu2shi4chu4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-identifier-suffix",
+      "request": {
+        "text": "ni3yi4wu2shi4chu4_suffix"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4chu4suffix",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-incomplete",
+      "request": {
+        "text": "ni3 yi4 wu2 shi4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3yi4wu2shi4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-wrong-tone",
+      "request": {
+        "text": "ni1 yi4 wu2 shi4 chu4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni1yi4wu2shi4chu4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-report",
+      "request": {
+        "text": "举报：“ni3 yi4 wu2 shi4 chu4”请处理"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "举报ni3yi4wu2shi4chu4请处理",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-anti-bullying",
+      "request": {
+        "text": "请不要说“ni3 yi4 wu2 shi4 chu4”伤害同学"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "请不要说ni3yi4wu2shi4chu4伤害同学",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-language",
+      "request": {
+        "text": "语言科普：“ni3 yi4 wu2 shi4 chu4”是攻击表达"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "语言科普ni3yi4wu2shi4chu4是攻击表达",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-067-0-outside-attack",
+      "request": {
+        "text": "举报：“ni3 yi4 wu2 shi4 chu4”请处理。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "举报ni3yi4wu2shi4chu4请处理操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-spaced",
+      "request": {
+        "text": "ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-continuous",
+      "request": {
+        "text": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-punctuated",
+      "request": {
+        "text": "ni3-bu4-pei4-dai1-zai4-zhe4-ge5-xue2-xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-uppercase",
+      "request": {
+        "text": "NI3 BU4 PEI4 DAI1 ZAI4 ZHE4 GE5 XUE2 XIAO4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-fullwidth",
+      "request": {
+        "text": "ｎｉ３ ｂｕ４ ｐｅｉ４ ｄａｉ１ ｚａｉ４ ｚｈｅ４ ｇｅ５ ｘｕｅ２ ｘｉａｏ４"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-identifier-prefix",
+      "request": {
+        "text": "prefix_ni3bu4pei4dai1zai4zhe4ge5xue2xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "prefixni3bu4pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-identifier-suffix",
+      "request": {
+        "text": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4_suffix"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu4pei4dai1zai4zhe4ge5xue2xiao4suffix",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-incomplete",
+      "request": {
+        "text": "ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu4pei4dai1zai4zhe4ge5xue2",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-wrong-tone",
+      "request": {
+        "text": "ni1 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni1bu4pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-report",
+      "request": {
+        "text": "举报：“ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”请处理"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "举报ni3bu4pei4dai1zai4zhe4ge5xue2xiao4请处理",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-anti-bullying",
+      "request": {
+        "text": "请不要说“ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”伤害同学"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "请不要说ni3bu4pei4dai1zai4zhe4ge5xue2xiao4伤害同学",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-language",
+      "request": {
+        "text": "语言科普：“ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”是攻击表达"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "语言科普ni3bu4pei4dai1zai4zhe4ge5xue2xiao4是攻击表达",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-0-outside-attack",
+      "request": {
+        "text": "举报：“ni3 bu4 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”请处理。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "举报ni3bu4pei4dai1zai4zhe4ge5xue2xiao4请处理操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-spaced",
+      "request": {
+        "text": "ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-continuous",
+      "request": {
+        "text": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-punctuated",
+      "request": {
+        "text": "ni3-bu2-pei4-dai1-zai4-zhe4-ge5-xue2-xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-uppercase",
+      "request": {
+        "text": "NI3 BU2 PEI4 DAI1 ZAI4 ZHE4 GE5 XUE2 XIAO4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-fullwidth",
+      "request": {
+        "text": "ｎｉ３ ｂｕ２ ｐｅｉ４ ｄａｉ１ ｚａｉ４ ｚｈｅ４ ｇｅ５ ｘｕｅ２ ｘｉａｏ４"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": [
+          {
+            "word": "你不配待在这个学校",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配待在这个学校",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-identifier-prefix",
+      "request": {
+        "text": "prefix_ni3bu2pei4dai1zai4zhe4ge5xue2xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "prefixni3bu2pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-identifier-suffix",
+      "request": {
+        "text": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4_suffix"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai1zai4zhe4ge5xue2xiao4suffix",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-incomplete",
+      "request": {
+        "text": "ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4dai1zai4zhe4ge5xue2",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-wrong-tone",
+      "request": {
+        "text": "ni1 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni1bu2pei4dai1zai4zhe4ge5xue2xiao4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-report",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”请处理"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "举报ni3bu2pei4dai1zai4zhe4ge5xue2xiao4请处理",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-anti-bullying",
+      "request": {
+        "text": "请不要说“ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”伤害同学"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "请不要说ni3bu2pei4dai1zai4zhe4ge5xue2xiao4伤害同学",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-language",
+      "request": {
+        "text": "语言科普：“ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”是攻击表达"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "语言科普ni3bu2pei4dai1zai4zhe4ge5xue2xiao4是攻击表达",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-070-1-outside-attack",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 dai1 zai4 zhe4 ge5 xue2 xiao4”请处理。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "举报ni3bu2pei4dai1zai4zhe4ge5xue2xiao4请处理操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-spaced",
+      "request": {
+        "text": "ni3 bu2 pei4 fa1 yan2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1yan2",
+        "hits": [
+          {
+            "word": "你不配发言",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配发言",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-continuous",
+      "request": {
+        "text": "ni3bu2pei4fa1yan2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1yan2",
+        "hits": [
+          {
+            "word": "你不配发言",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配发言",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-punctuated",
+      "request": {
+        "text": "ni3-bu2-pei4-fa1-yan2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1yan2",
+        "hits": [
+          {
+            "word": "你不配发言",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配发言",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-uppercase",
+      "request": {
+        "text": "NI3 BU2 PEI4 FA1 YAN2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1yan2",
+        "hits": [
+          {
+            "word": "你不配发言",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配发言",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-fullwidth",
+      "request": {
+        "text": "ｎｉ３ ｂｕ２ ｐｅｉ４ ｆａ１ ｙａｎ２"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1yan2",
+        "hits": [
+          {
+            "word": "你不配发言",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配发言",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-identifier-prefix",
+      "request": {
+        "text": "prefix_ni3bu2pei4fa1yan2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "prefixni3bu2pei4fa1yan2",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-identifier-suffix",
+      "request": {
+        "text": "ni3bu2pei4fa1yan2_suffix"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1yan2suffix",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-incomplete",
+      "request": {
+        "text": "ni3 bu2 pei4 fa1"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4fa1",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-wrong-tone",
+      "request": {
+        "text": "ni1 bu2 pei4 fa1 yan2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni1bu2pei4fa1yan2",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-report",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 fa1 yan2”请处理"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "举报ni3bu2pei4fa1yan2请处理",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-anti-bullying",
+      "request": {
+        "text": "请不要说“ni3 bu2 pei4 fa1 yan2”伤害同学"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "请不要说ni3bu2pei4fa1yan2伤害同学",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-language",
+      "request": {
+        "text": "语言科普：“ni3 bu2 pei4 fa1 yan2”是攻击表达"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "语言科普ni3bu2pei4fa1yan2是攻击表达",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-088-0-outside-attack",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 fa1 yan2”请处理。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "举报ni3bu2pei4fa1yan2请处理操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-spaced",
+      "request": {
+        "text": "ni3 bu2 pei4 shang4 da4 xue2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4xue2",
+        "hits": [
+          {
+            "word": "你不配上大学",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配上大学",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-continuous",
+      "request": {
+        "text": "ni3bu2pei4shang4da4xue2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4xue2",
+        "hits": [
+          {
+            "word": "你不配上大学",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配上大学",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-punctuated",
+      "request": {
+        "text": "ni3-bu2-pei4-shang4-da4-xue2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4xue2",
+        "hits": [
+          {
+            "word": "你不配上大学",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配上大学",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-uppercase",
+      "request": {
+        "text": "NI3 BU2 PEI4 SHANG4 DA4 XUE2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4xue2",
+        "hits": [
+          {
+            "word": "你不配上大学",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配上大学",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-fullwidth",
+      "request": {
+        "text": "ｎｉ３ ｂｕ２ ｐｅｉ４ ｓｈａｎｇ４ ｄａ４ ｘｕｅ２"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4xue2",
+        "hits": [
+          {
+            "word": "你不配上大学",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你不配上大学",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-identifier-prefix",
+      "request": {
+        "text": "prefix_ni3bu2pei4shang4da4xue2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "prefixni3bu2pei4shang4da4xue2",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-identifier-suffix",
+      "request": {
+        "text": "ni3bu2pei4shang4da4xue2_suffix"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4xue2suffix",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-incomplete",
+      "request": {
+        "text": "ni3 bu2 pei4 shang4 da4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3bu2pei4shang4da4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-wrong-tone",
+      "request": {
+        "text": "ni1 bu2 pei4 shang4 da4 xue2"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni1bu2pei4shang4da4xue2",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-report",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 shang4 da4 xue2”请处理"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "举报ni3bu2pei4shang4da4xue2请处理",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-anti-bullying",
+      "request": {
+        "text": "请不要说“ni3 bu2 pei4 shang4 da4 xue2”伤害同学"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "请不要说ni3bu2pei4shang4da4xue2伤害同学",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-language",
+      "request": {
+        "text": "语言科普：“ni3 bu2 pei4 shang4 da4 xue2”是攻击表达"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "语言科普ni3bu2pei4shang4da4xue2是攻击表达",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-110-0-outside-attack",
+      "request": {
+        "text": "举报：“ni3 bu2 pei4 shang4 da4 xue2”请处理。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": false,
+        "normalized": "举报ni3bu2pei4shang4da4xue2请处理操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "S311-N-001",
+      "request": {
+        "text": "普通话作业 bu2 pei4 与 yi4 wu2 的变调规则"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "普通话作业bu2pei4与yi4wu2的变调规则",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-N-002",
+      "request": {
+        "text": "ni3 hao3，wo3 xiang3 dai1 zai4 tu2 shu1 guan3"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "ni3hao3wo3xiang3dai1zai4tu2shu1guan3",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-N-003",
+      "request": {
+        "text": "TypeScript unicode codepoint buffer async await"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "typescriptunicodecodepointbufferasyncawait",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-N-004",
+      "request": {
+        "text": "我想待在图书馆复习，你不陪我也没关系。"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "我想待在图书馆复习你不陪我也没关系",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-N-005",
+      "request": {
+        "text": "同学受到网暴，正在寻求心理帮助。"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "同学受到网暴正在寻求心理帮助",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "S311-N-006",
+      "request": {
+        "text": "我不想活了，希望有人陪我。"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "response": {
+        "passed": true,
+        "normalized": "我不想活了希望有人陪我",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    }
+  ],
+  "rows": 84,
+  "failed_ids": [],
+  "dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+  "source_sha256": "46550c92ddccdb9edd81cb1a8410f2615c399bd3eee5d5c03c2fcbfc8783d79a",
+  "production_acceptance": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "COLD_dev_fetched": false
+}

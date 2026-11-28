@@ -1,0 +1,8 @@
+{
+  "scope": "performance environment observation; not concurrency acceptance",
+  "GPU_training_active": true,
+  "other_QA_checks_overlapped_first_types": true,
+  "serial_function_calls": 1600,
+  "timeout_limit_ms": 50,
+  "performance_source_sha256": "6007bd78765ca1e4d12882e500c0cf789030dec07af4fd9b07d62e520bfc814e"
+}

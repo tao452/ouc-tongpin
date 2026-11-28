@@ -1,0 +1,38 @@
+{
+  "python": {
+    "tests": 702,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 4,
+    "passed": 698,
+    "combined_coverage_percent": 98.38150289017341
+  },
+  "java": {
+    "tests": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "ruff": "PASS",
+  "actionlint": "PASS",
+  "docker_full_integration": "本次提交由GitHub Actions stack执行，结果及完整HTTP证据见PR Checks与artifact",
+  "local_docker": "Docker守护进程当前未运行，未将本地Docker标成通过",
+  "runtime": {
+    "fastapi": "0.162.0",
+    "pypinyin": "0.55.0",
+    "pytest": "9.2.0",
+    "ruff": "0.17.3"
+  },
+  "private_log_hashes": {
+    "python-final.txt": "f5d6d10af69c2fab6e8374a0b41d1ee17ad6f3555e93385e2591fffaec7f39f1",
+    "python-final-junit.xml": "9267625c8738729ec1d4bee9221308ab30eb956f0299e637abf00f03635ad6e0",
+    "coverage-final.xml": "e95a6fb358e59c67f458ceec8573f5e704d18a06eab035b7c81d2f8d733dee6b",
+    "java.txt": "e2d92acf143e01ff01d8c6fc79bc0f2c5bcf34a0c6127507a0bde77682e8c750"
+  },
+  "line_ending_fix": "原始SHA保留，跨平台严格核对Git LF字节SHA；首轮CI失败记录见line-ending-fix.json",
+  "latest_python_log_hashes": {
+    "python-eol.txt": "4b30554333e8b8489b462c4aab6f41a13e9bc7b49984e307c37c96dd050e6f5f",
+    "python-eol-junit.xml": "bacf825f121e3beaa97f0d90f61729daabff634c594a1e5266d98cd8be602452",
+    "coverage-eol.xml": "d86e52d5823bc09bd2858406abce051a06e82c8168ca21118f0d2fc47d0104f8"
+  }
+}

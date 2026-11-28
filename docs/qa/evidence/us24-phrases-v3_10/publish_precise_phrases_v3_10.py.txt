@@ -1,0 +1,79 @@
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124';QA=ROOT/'docs/qa'
+PUBLIC=QA/'evidence/us24-phrases-v3_10';PUBLIC.mkdir(exist_ok=False);entries=[]
+
+
+def copy(path,name):
+    raw=path.read_bytes();data=raw.replace(b'\r\n',b'\n');assert len(data)<5*1024*1024
+    target=PUBLIC/name;target.parent.mkdir(parents=True,exist_ok=True)
+    with target.open('xb') as f:f.write(data)
+    entries.append(dict(file=name,private_path=path.relative_to(LAB).as_posix(),
+        private_sha256=hashlib.sha256(raw).hexdigest(),public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+
+def write(value,name):
+    data=(json.dumps(value,ensure_ascii=False,indent=2)+'\n').encode()
+    with (PUBLIC/name).open('xb') as f:f.write(data)
+    entries.append(dict(file=name,public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+
+for filename in ['precise-phrases-v3_10-policy.json','phrases-v3_10-paired-r2.json',
+    'phrases-v3_10-http-optimized.json','phrases-v3_10-review-structure.json',
+    'precise-phrases-v3_10-performance.json','precise-phrases-v3_10-performance-r2.json',
+    'precise-phrases-v3_10-performance-r3.json','ci-db6-qualified.json']:
+    copy(LAB/filename,filename)
+for filename in ['build_precise_phrases_v3_10.py','check_precise_phrases_v3_10.py',
+    'build_phrase_review_v3_10.py','benchmark_precise_phrases_v3_10.py',
+    'benchmark_precise_phrases_v3_10_r2.py','benchmark_precise_phrases_v3_10_r3.py',
+    'evaluate_historical_v3_10_http.py','qualify_qwen_inputs_v3_10.py',Path(__file__).name]:
+    copy(LAB/filename,filename+'.txt')
+copy(LAB/'moderation-v3_10-index-r1.py.txt','engine-first-index.py.txt')
+copy(LAB/'app-v3_9-r3-before-3_10/app/services/moderation.py','engine-before-optimization.py.txt')
+copy(LAB/'qwen-inputs-context3_10/input-audit.json','current-model-input-equivalence.json')
+for filename in ['summary.json','predictions.jsonl']:
+    copy(LAB/'historical-v3_10-http'/filename,'historical-http-'+filename)
+tests=[]
+for name in ['pytest-v3_10.log','pytest-v3_10-r2.log','pytest-v3_10-r3.log']:
+    source=LAB/name;raw=source.read_bytes();text=raw.decode('utf-8').replace('\r\n','\n')
+    for prefix in [str(ROOT),str(ROOT).replace('/','\\'),str(ROOT.parent),str(ROOT.parent).replace('/','\\')]:text=text.replace(prefix,'<workspace>')
+    target='tests-'+name.replace('.log','.txt');data=text.encode()
+    with (PUBLIC/target).open('xb') as f:f.write(data)
+    entries.append(dict(file=target,private_sha256=hashlib.sha256(raw).hexdigest(),public_lf_sha256=hashlib.sha256(data).hexdigest()))
+    tests.append(dict(file=target,original_log_retained=True))
+rollback=[]
+for name,commit in [('words.json','31120a3559a9e829896d3c50a6441ff660055ea7'),
+ ('moderation-v1.json','31120a3559a9e829896d3c50a6441ff660055ea7'),
+ ('moderation-v3_8-candidate.json','31120a3559a9e829896d3c50a6441ff660055ea7'),
+ ('moderation-v3_9-candidate.json','db6acb98b4b7ed0e186726c5054dd0eb537245b9')]:
+    path=ROOT/'services/algo/app/data'/name
+    old=subprocess.check_output(['git','show',commit+':services/algo/app/data/'+name])
+    assert old==path.read_bytes(),name
+    rollback.append(dict(file=name,source_commit=commit,sha256=hashlib.sha256(old).hexdigest(),byte_identical=True))
+write(dict(scope='explicit old dictionary rollback files; exact Git bytes',files=rollback),'rollback-audit.json')
+current=ROOT/'services/algo/app/services/moderation.py'
+write(dict(scope='final optimized source after full functional and real-time-budget tests',
+    source_sha256=hashlib.sha256(current.read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+    matching_budget_seconds=.05,maximum_input_characters=2000,maximum_lookahead_tokens=64,
+    guard='all tokens visited; no input truncation; 503 on exhausted budget',
+    GC='enabled; thresholds unchanged; no user-text cache across requests'),
+    'final-engine-qualification.json')
+performance=json.loads((LAB/'precise-phrases-v3_10-performance-r3.json').read_text(encoding='utf-8'))
+assert sum(v['iterations'] for v in performance['measurements'].values())==3500
+assert not any(v['timeouts'] for v in performance['measurements'].values())
+qualification=json.loads((LAB/'qwen-inputs-context3_10/input-audit.json').read_text(encoding='utf-8'))['policy']
+assert not qualification['transformed_changes'] and not qualification['literal_changes']
+manifest=dict(scope='candidate3.10 literal context development; historical broad diagnostics kept separate',
+    files=entries,dictionary_sha256='4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722',
+    fixture_rows=247,previous_development_rows=4887,previous_output_changes=0,
+    canonical_rules=132,new_canonical_rules=0,new_exact_normal_phrases=34,new_pinyin_normal_phrases=2,
+    M1_pending=132,decision_blanks=792,previous_failed_test_and_performance_logs_retained=tests,
+    performance='final3500calls0timeouts; previous two3400 runs each1GCtimeout retained',
+    full_python='final659PASS4SKIP98.25%; first1FAIL649PASS4SKIP; intermediate657PASS4SKIP retained',
+    current_model_3258_input_and_literal_changes=0,COLD_dev_fetched=False,
+    M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (PUBLIC/'manifest.json').open('x',encoding='utf-8',newline='\n') as f:json.dump(manifest,f,ensure_ascii=False,indent=2)
+print(json.dumps(dict(public_files=len(entries)+1,rollback_files=len(rollback),performance_calls=3500)))

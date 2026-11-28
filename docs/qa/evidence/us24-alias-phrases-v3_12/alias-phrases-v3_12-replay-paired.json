@@ -1,0 +1,333 @@
+{
+  "scope": "development literal rules; not independent broad semantic evaluation",
+  "rows": 6366,
+  "original_development_rows": 5218,
+  "new_development_rows": 1148,
+  "original_output_changes": [],
+  "before": {
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 89,
+        "fp": 0,
+        "fn": 384,
+        "tn": 675
+      },
+      "recall": 0.18816067653276955,
+      "precision": 1.0,
+      "fpr": 0.0
+    },
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 77,
+        "fp": 0,
+        "fn": 204,
+        "tn": 867
+      },
+      "recall": 0.27402135231316727,
+      "precision": 1.0,
+      "fpr": 0.0
+    }
+  },
+  "after": {
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 473,
+        "fp": 0,
+        "fn": 0,
+        "tn": 675
+      },
+      "recall": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0
+    },
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 281,
+        "fp": 0,
+        "fn": 0,
+        "tn": 867
+      },
+      "recall": 1.0,
+      "precision": 1.0,
+      "fpr": 0.0
+    }
+  },
+  "by_category": {
+    "alias_hanzi_regression": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 27,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "tn": 12
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0
+      }
+    },
+    "alias_phonetic_mapping": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 310,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 160,
+          "fp": 0,
+          "fn": 0,
+          "tn": 150
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0
+      }
+    },
+    "benign_campus_help": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 8
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 8
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      }
+    },
+    "context_scope": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 62,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 62,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      }
+    },
+    "deduplication": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 62,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 32,
+          "fp": 0,
+          "fn": 0,
+          "tn": 30
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": 0.0
+      }
+    },
+    "denial_reversal": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0
+        },
+        "recall": 1.0,
+        "precision": 1.0,
+        "fpr": null
+      }
+    },
+    "denial_scope": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 12
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 12
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      }
+    },
+    "phonetic_boundary": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 407
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 407
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      }
+    },
+    "precise_context": {
+      "any_level": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 248
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      },
+      "high_blocking": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 248
+        },
+        "recall": null,
+        "precision": null,
+        "fpr": 0.0
+      }
+    }
+  },
+  "errors": 0,
+  "fresh_mapping_failure_ids": [],
+  "max_after_ms": 2.302099994267337,
+  "datasets": [
+    {
+      "file": "us24-development.v2.jsonl",
+      "sha256": "3f3b6cd43fc2f575bc1c067006855c316144a900b629c3efeeb116dcd2844b06"
+    },
+    {
+      "file": "us24-development.v3.jsonl",
+      "sha256": "33d33a05200ceed80d87da759dd9cfa66c1b91729b5e67b84db5fdfde7a36831"
+    },
+    {
+      "file": "us24-development.v3_10.jsonl",
+      "sha256": "4ea86df33f8d21829268289dae94cbf31626b5849ef539f85d5609c61346acd5"
+    },
+    {
+      "file": "us24-development.v3_11.jsonl",
+      "sha256": "41700456c3525857b1f050a15ebdd1412ce0e0a6168591838739d9d4d6f9d7c2"
+    },
+    {
+      "file": "us24-development.v3_12.jsonl",
+      "sha256": "243369d85488381794bd9d0c9bbf2bc2bb7dd26aa366cd0c71889323e7dda873"
+    },
+    {
+      "file": "us24-development.v3_2.jsonl",
+      "sha256": "b734b3f25a38644ea919083285de4ad54dd74ac1dd859d16205eead4937ff6d3"
+    },
+    {
+      "file": "us24-development.v3_3.jsonl",
+      "sha256": "eab0f3ef5db8d76718210ff9704dd5d071664c922f14c0532c5ea59a5ac16773"
+    },
+    {
+      "file": "us24-development.v3_4.jsonl",
+      "sha256": "3bc4cc797af07df988dd3a63dc78210db78352cb4b54ee13bd5e96876b3da8eb"
+    },
+    {
+      "file": "us24-development.v3_5.jsonl",
+      "sha256": "ddeaa645573f71b88d636f95881f5ba6b65b1c3bbddf99d2cff5e273a7f27855"
+    },
+    {
+      "file": "us24-development.v3_7.jsonl",
+      "sha256": "325a5b9bddfd1f2528123712cd7116391fa54be097d20c216089ef64b6a1455b"
+    },
+    {
+      "file": "us24-development.v3_8.jsonl",
+      "sha256": "61d1eb6b862a322281365bb0df157e8664bfb0be8b396385a63f13e350d902bc"
+    },
+    {
+      "file": "us24-development.v3_9.jsonl",
+      "sha256": "3f51535e28c9a830464ebc6493c456ebcdf5ffe8bff1fc8817b4e415941f6a10"
+    }
+  ],
+  "before_predictions_sha256": "cc73144f83d1452d4ec8f3be6edc42396fdfa0aab404afe1ec85d94ac1e971cb",
+  "after_predictions_sha256": "e707e7cb61e3a295fde4010347a176a5b60163534bd33b1190e96544b2fdd258",
+  "source_sha256": "5305605f4f07fb4b5c58891ae1289de2d424779ff3b601033b234ace716911f8",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "COLD_dev_fetched": false
+}

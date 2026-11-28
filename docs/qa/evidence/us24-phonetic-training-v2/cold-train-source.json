@@ -1,0 +1,18 @@
+{
+  "name": "COLD official training split",
+  "scope": "training only; not new independent evaluation",
+  "revision": "a0c55a945497ab58e94aef491180e1cf88ffb864",
+  "url": "https://raw.githubusercontent.com/thu-coai/COLDataset/a0c55a945497ab58e94aef491180e1cf88ffb864/COLDataset/train.csv",
+  "git_blob": "b32987e4829d29942741f2d24bc5d1bb1243f5f0",
+  "bytes": 4131002,
+  "sha256": "16ca7955bdcaf90f5d8ac39e51eb3eda15320caa1e730ed45cb5e8ca8cd0d5e8",
+  "rows": 25726,
+  "positive": 12723,
+  "negative": 13003,
+  "max_characters": 192,
+  "over_2000": 0,
+  "blank": 0,
+  "license": "Apache-2.0",
+  "raw_text_published": false,
+  "dev_file_read": false
+}

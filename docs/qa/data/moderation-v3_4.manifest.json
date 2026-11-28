@@ -1,0 +1,1161 @@
+{
+  "version": "3.4.0-candidate",
+  "entries": 120,
+  "new_entries": 0,
+  "changed_pinyin_entries": 35,
+  "pinyin_entries": 74,
+  "dictionary_sha256": "e6f94bbcfc16f83564433d3e748a0cf81d9677882b67041baa85672b19e88d56",
+  "samples": 890,
+  "sample_sha256": "3bc4cc797af07df988dd3a63dc78210db78352cb4b54ee13bd5e96876b3da8eb",
+  "deferred_pinyin": [
+    "你妈死了",
+    "你没有爹妈",
+    "天天跟踪你",
+    "我要堵你",
+    "把你住址挂网上",
+    "把你照片挂网上",
+    "没人要你"
+  ],
+  "changes": [
+    {
+      "candidate_id": "US24-008",
+      "word": "祝你全家死光",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "zhu",
+        "ni",
+        "quan",
+        "jia",
+        "si",
+        "guang"
+      ],
+      "tone_numbers": [
+        "zhu4",
+        "ni3",
+        "quan2",
+        "jia1",
+        "si3",
+        "guang1"
+      ],
+      "test_ids": [
+        "FULL-008-0",
+        "FULL-008-1",
+        "FULL-008-2",
+        "FULL-008-3",
+        "FULL-008-4",
+        "FULL-008-5",
+        "FULL-008-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-011",
+      "word": "你这个杂种",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "ni",
+        "zhe",
+        "ge",
+        "za",
+        "zhong"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "zhe4",
+        "ge5",
+        "za2",
+        "zhong3"
+      ],
+      "test_ids": [
+        "FULL-011-0",
+        "FULL-011-1",
+        "FULL-011-2",
+        "FULL-011-3",
+        "FULL-011-4",
+        "FULL-011-5",
+        "FULL-011-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-012",
+      "word": "你个畜生",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "ni",
+        "ge",
+        "chu",
+        "sheng"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "chu4",
+        "sheng5"
+      ],
+      "test_ids": [
+        "FULL-012-0",
+        "FULL-012-1",
+        "FULL-012-2",
+        "FULL-012-3",
+        "FULL-012-4",
+        "FULL-012-5",
+        "FULL-012-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "ni",
+        "shi",
+        "chu",
+        "sheng"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "shi4",
+        "chu4",
+        "sheng5"
+      ],
+      "test_ids": [
+        "FULL-013-0",
+        "FULL-013-1",
+        "FULL-013-2",
+        "FULL-013-3",
+        "FULL-013-4",
+        "FULL-013-5",
+        "FULL-013-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-022",
+      "word": "你个婊子",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "ni",
+        "ge",
+        "biao",
+        "zi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "biao3",
+        "zi5"
+      ],
+      "test_ids": [
+        "FULL-022-0",
+        "FULL-022-1",
+        "FULL-022-2",
+        "FULL-022-3",
+        "FULL-022-4",
+        "FULL-022-5",
+        "FULL-022-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-049",
+      "word": "你是个饭桶",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "shi",
+        "ge",
+        "fan",
+        "tong"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "shi4",
+        "ge4",
+        "fan4",
+        "tong3"
+      ],
+      "test_ids": [
+        "FULL-049-0",
+        "FULL-049-1",
+        "FULL-049-2",
+        "FULL-049-3",
+        "FULL-049-4",
+        "FULL-049-5",
+        "FULL-049-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-053",
+      "word": "你个臭不要脸的",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "chou",
+        "bu",
+        "yao",
+        "lian",
+        "de"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "chou4",
+        "bu2",
+        "yao4",
+        "lian3",
+        "de5"
+      ],
+      "test_ids": [
+        "FULL-053-0",
+        "FULL-053-1",
+        "FULL-053-2",
+        "FULL-053-3",
+        "FULL-053-4",
+        "FULL-053-5",
+        "FULL-053-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-068",
+      "word": "全班都讨厌你",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "quan",
+        "ban",
+        "dou",
+        "tao",
+        "yan",
+        "ni"
+      ],
+      "tone_numbers": [
+        "quan2",
+        "ban1",
+        "dou1",
+        "tao3",
+        "yan4",
+        "ni3"
+      ],
+      "test_ids": [
+        "FULL-068-0",
+        "FULL-068-1",
+        "FULL-068-2",
+        "FULL-068-3",
+        "FULL-068-4",
+        "FULL-068-5",
+        "FULL-068-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-070",
+      "word": "你不配待在这个学校",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "bu",
+        "pei",
+        "dai",
+        "zai",
+        "zhe",
+        "ge",
+        "xue",
+        "xiao"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "bu4",
+        "pei4",
+        "dai4",
+        "zai4",
+        "zhe4",
+        "ge5",
+        "xue2",
+        "xiao4"
+      ],
+      "test_ids": [
+        "FULL-070-0",
+        "FULL-070-1",
+        "FULL-070-2",
+        "FULL-070-3",
+        "FULL-070-4",
+        "FULL-070-5",
+        "FULL-070-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-071",
+      "word": "去你妈的",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "qu",
+        "ni",
+        "ma",
+        "de"
+      ],
+      "tone_numbers": [
+        "qu4",
+        "ni3",
+        "ma1",
+        "de5"
+      ],
+      "test_ids": [
+        "FULL-071-0",
+        "FULL-071-1",
+        "FULL-071-2",
+        "FULL-071-3",
+        "FULL-071-4",
+        "FULL-071-5",
+        "FULL-071-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-077",
+      "word": "你个脑瘫",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "nao",
+        "tan"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "nao3",
+        "tan1"
+      ],
+      "test_ids": [
+        "FULL-077-0",
+        "FULL-077-1",
+        "FULL-077-2",
+        "FULL-077-3",
+        "FULL-077-4",
+        "FULL-077-5",
+        "FULL-077-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-078",
+      "word": "你个智障",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "zhi",
+        "zhang"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "zhi4",
+        "zhang4"
+      ],
+      "test_ids": [
+        "FULL-078-0",
+        "FULL-078-1",
+        "FULL-078-2",
+        "FULL-078-3",
+        "FULL-078-4",
+        "FULL-078-5",
+        "FULL-078-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-079",
+      "word": "你个神经病",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "shen",
+        "jing",
+        "bing"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "shen2",
+        "jing1",
+        "bing4"
+      ],
+      "test_ids": [
+        "FULL-079-0",
+        "FULL-079-1",
+        "FULL-079-2",
+        "FULL-079-3",
+        "FULL-079-4",
+        "FULL-079-5",
+        "FULL-079-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-080",
+      "word": "你是个傻子",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "shi",
+        "ge",
+        "sha",
+        "zi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "shi4",
+        "ge4",
+        "sha3",
+        "zi5"
+      ],
+      "test_ids": [
+        "FULL-080-0",
+        "FULL-080-1",
+        "FULL-080-2",
+        "FULL-080-3",
+        "FULL-080-4",
+        "FULL-080-5",
+        "FULL-080-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-081",
+      "word": "你个二逼",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "er",
+        "bi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "er4",
+        "bi1"
+      ],
+      "test_ids": [
+        "FULL-081-0",
+        "FULL-081-1",
+        "FULL-081-2",
+        "FULL-081-3",
+        "FULL-081-4",
+        "FULL-081-5",
+        "FULL-081-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-082",
+      "word": "你个二货",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "er",
+        "huo"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "er4",
+        "huo4"
+      ],
+      "test_ids": [
+        "FULL-082-0",
+        "FULL-082-1",
+        "FULL-082-2",
+        "FULL-082-3",
+        "FULL-082-4",
+        "FULL-082-5",
+        "FULL-082-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-083",
+      "word": "你就是一坨屎",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "jiu",
+        "shi",
+        "yi",
+        "tuo",
+        "shi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "jiu4",
+        "shi4",
+        "yi1",
+        "tuo2",
+        "shi3"
+      ],
+      "test_ids": [
+        "FULL-083-0",
+        "FULL-083-1",
+        "FULL-083-2",
+        "FULL-083-3",
+        "FULL-083-4",
+        "FULL-083-5",
+        "FULL-083-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-084",
+      "word": "你脑子进水了",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "nao",
+        "zi",
+        "jin",
+        "shui",
+        "le"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "nao3",
+        "zi5",
+        "jin4",
+        "shui3",
+        "le5"
+      ],
+      "test_ids": [
+        "FULL-084-0",
+        "FULL-084-1",
+        "FULL-084-2",
+        "FULL-084-3",
+        "FULL-084-4",
+        "FULL-084-5",
+        "FULL-084-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-085",
+      "word": "你没脑子",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "mei",
+        "nao",
+        "zi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "mei2",
+        "nao3",
+        "zi5"
+      ],
+      "test_ids": [
+        "FULL-085-0",
+        "FULL-085-1",
+        "FULL-085-2",
+        "FULL-085-3",
+        "FULL-085-4",
+        "FULL-085-5",
+        "FULL-085-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-087",
+      "word": "你是个祸害",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "shi",
+        "ge",
+        "huo",
+        "hai"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "shi4",
+        "ge4",
+        "huo4",
+        "hai4"
+      ],
+      "test_ids": [
+        "FULL-087-0",
+        "FULL-087-1",
+        "FULL-087-2",
+        "FULL-087-3",
+        "FULL-087-4",
+        "FULL-087-5",
+        "FULL-087-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-088",
+      "word": "你不配发言",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "bu",
+        "pei",
+        "fa",
+        "yan"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "bu4",
+        "pei4",
+        "fa1",
+        "yan2"
+      ],
+      "test_ids": [
+        "FULL-088-0",
+        "FULL-088-1",
+        "FULL-088-2",
+        "FULL-088-3",
+        "FULL-088-4",
+        "FULL-088-5",
+        "FULL-088-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-089",
+      "word": "你活着浪费空气",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "huo",
+        "zhe",
+        "lang",
+        "fei",
+        "kong",
+        "qi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "huo2",
+        "zhe5",
+        "lang4",
+        "fei4",
+        "kong1",
+        "qi4"
+      ],
+      "test_ids": [
+        "FULL-089-0",
+        "FULL-089-1",
+        "FULL-089-2",
+        "FULL-089-3",
+        "FULL-089-4",
+        "FULL-089-5",
+        "FULL-089-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-090",
+      "word": "你死了没人心疼",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "ni",
+        "si",
+        "le",
+        "mei",
+        "ren",
+        "xin",
+        "teng"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "si3",
+        "le5",
+        "mei2",
+        "ren2",
+        "xin1",
+        "teng2"
+      ],
+      "test_ids": [
+        "FULL-090-0",
+        "FULL-090-1",
+        "FULL-090-2",
+        "FULL-090-3",
+        "FULL-090-4",
+        "FULL-090-5",
+        "FULL-090-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-091",
+      "word": "你怎么还不去死",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "ni",
+        "zen",
+        "me",
+        "hai",
+        "bu",
+        "qu",
+        "si"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "zen3",
+        "me5",
+        "hai2",
+        "bu4",
+        "qu4",
+        "si3"
+      ],
+      "test_ids": [
+        "FULL-091-0",
+        "FULL-091-1",
+        "FULL-091-2",
+        "FULL-091-3",
+        "FULL-091-4",
+        "FULL-091-5",
+        "FULL-091-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-092",
+      "word": "我要一枪崩了你",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "wo",
+        "yao",
+        "yi",
+        "qiang",
+        "beng",
+        "le",
+        "ni"
+      ],
+      "tone_numbers": [
+        "wo3",
+        "yao4",
+        "yi1",
+        "qiang1",
+        "beng1",
+        "le5",
+        "ni3"
+      ],
+      "test_ids": [
+        "FULL-092-0",
+        "FULL-092-1",
+        "FULL-092-2",
+        "FULL-092-3",
+        "FULL-092-4",
+        "FULL-092-5",
+        "FULL-092-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-093",
+      "word": "我要扇你",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "wo",
+        "yao",
+        "shan",
+        "ni"
+      ],
+      "tone_numbers": [
+        "wo3",
+        "yao4",
+        "shan4",
+        "ni3"
+      ],
+      "test_ids": [
+        "FULL-093-0",
+        "FULL-093-1",
+        "FULL-093-2",
+        "FULL-093-3",
+        "FULL-093-4",
+        "FULL-093-5",
+        "FULL-093-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-096",
+      "word": "我要人肉你",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "wo",
+        "yao",
+        "ren",
+        "rou",
+        "ni"
+      ],
+      "tone_numbers": [
+        "wo3",
+        "yao4",
+        "ren2",
+        "rou4",
+        "ni3"
+      ],
+      "test_ids": [
+        "FULL-096-0",
+        "FULL-096-1",
+        "FULL-096-2",
+        "FULL-096-3",
+        "FULL-096-4",
+        "FULL-096-5",
+        "FULL-096-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-097",
+      "word": "你真下贱",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "zhen",
+        "xia",
+        "jian"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "zhen1",
+        "xia4",
+        "jian4"
+      ],
+      "test_ids": [
+        "FULL-097-0",
+        "FULL-097-1",
+        "FULL-097-2",
+        "FULL-097-3",
+        "FULL-097-4",
+        "FULL-097-5",
+        "FULL-097-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-099",
+      "word": "你就是个小丑",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "jiu",
+        "shi",
+        "ge",
+        "xiao",
+        "chou"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "jiu4",
+        "shi4",
+        "ge4",
+        "xiao3",
+        "chou3"
+      ],
+      "test_ids": [
+        "FULL-099-0",
+        "FULL-099-1",
+        "FULL-099-2",
+        "FULL-099-3",
+        "FULL-099-4",
+        "FULL-099-5",
+        "FULL-099-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-101",
+      "word": "你个菜逼",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "cai",
+        "bi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "cai4",
+        "bi1"
+      ],
+      "test_ids": [
+        "FULL-101-0",
+        "FULL-101-1",
+        "FULL-101-2",
+        "FULL-101-3",
+        "FULL-101-4",
+        "FULL-101-5",
+        "FULL-101-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-102",
+      "word": "你个屌丝",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "ge",
+        "diao",
+        "si"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "ge4",
+        "diao3",
+        "si1"
+      ],
+      "test_ids": [
+        "FULL-102-0",
+        "FULL-102-1",
+        "FULL-102-2",
+        "FULL-102-3",
+        "FULL-102-4",
+        "FULL-102-5",
+        "FULL-102-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-106",
+      "word": "放你妈的屁",
+      "suggested_level": "HIGH",
+      "syllables": [
+        "fang",
+        "ni",
+        "ma",
+        "de",
+        "pi"
+      ],
+      "tone_numbers": [
+        "fang4",
+        "ni3",
+        "ma1",
+        "de5",
+        "pi4"
+      ],
+      "test_ids": [
+        "FULL-106-0",
+        "FULL-106-1",
+        "FULL-106-2",
+        "FULL-106-3",
+        "FULL-106-4",
+        "FULL-106-5",
+        "FULL-106-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-108",
+      "word": "你就是个骗子",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "jiu",
+        "shi",
+        "ge",
+        "pian",
+        "zi"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "jiu4",
+        "shi4",
+        "ge4",
+        "pian4",
+        "zi5"
+      ],
+      "test_ids": [
+        "FULL-108-0",
+        "FULL-108-1",
+        "FULL-108-2",
+        "FULL-108-3",
+        "FULL-108-4",
+        "FULL-108-5",
+        "FULL-108-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "ni",
+        "bu",
+        "pei",
+        "shang",
+        "da",
+        "xue"
+      ],
+      "tone_numbers": [
+        "ni3",
+        "bu4",
+        "pei4",
+        "shang4",
+        "da4",
+        "xue2"
+      ],
+      "test_ids": [
+        "FULL-110-0",
+        "FULL-110-1",
+        "FULL-110-2",
+        "FULL-110-3",
+        "FULL-110-4",
+        "FULL-110-5",
+        "FULL-110-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "suggested_level": "MEDIUM",
+      "syllables": [
+        "quan",
+        "qin",
+        "dou",
+        "xian",
+        "qi",
+        "ni"
+      ],
+      "tone_numbers": [
+        "quan2",
+        "qin3",
+        "dou1",
+        "xian2",
+        "qi4",
+        "ni3"
+      ],
+      "test_ids": [
+        "FULL-111-0",
+        "FULL-111-1",
+        "FULL-111-2",
+        "FULL-111-3",
+        "FULL-111-4",
+        "FULL-111-5",
+        "FULL-111-6"
+      ],
+      "rationale": "只增加含明确目标的整句读音，不单独匹配疾病或身份名词；等级沿用原建议",
+      "risk": "未经引号标明的转述、反问及亲密玩笑仍可能误报，等待M1语境审核",
+      "normal_context": "普通汉语拼音、英文标识符、医学说明；举报豁免只保护引用片段",
+      "m1_status": "PENDING"
+    }
+  ],
+  "m1_review": "PENDING",
+  "production_acceptance": false
+}

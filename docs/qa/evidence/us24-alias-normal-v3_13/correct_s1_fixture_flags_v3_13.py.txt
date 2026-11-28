@@ -1,0 +1,40 @@
+"""Correct only derived S1 flags inconsistent with unchanged dictionary levels."""
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development
+
+fixture=ROOT/'docs/qa/data/us24-development.v3_13.jsonl';original=fixture.read_bytes()
+initial=LAB/'us24-development.v3_13.initial-invalid-s1-flags.jsonl'
+with initial.open('xb') as handle:handle.write(original)
+try:development(initial)
+except ValueError as error:assert str(error)=='Invalid development labels'
+else:raise AssertionError('Initial S1 field mismatch was not caught independently')
+levels={e['word']:e['level'] for e in json.loads((ROOT/'services/algo/app/data/moderation-v3_12-candidate.json').read_text(encoding='utf-8'))}
+rows=[json.loads(line) for line in original.decode('utf-8').splitlines()]
+changes=[]
+for row in rows:
+    for hit in row['expected_hits']:assert levels[hit['word']]==hit['level']
+    expected=row['expected_level']=='HIGH'
+    assert expected==any(h['level']=='HIGH' for h in row['expected_hits'])
+    if row['blocked']!=expected:
+        assert row['expected_level']=='MEDIUM' and expected is False
+        changes.append(dict(id=row['id'],before=row['blocked'],after=expected,suggested_level='MEDIUM'))
+        row['blocked']=expected
+assert len(changes)==2
+with fixture.open('w',encoding='utf-8',newline='\n') as handle:
+    for row in rows:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+assert len(development(fixture))==149
+report=dict(reason='fixture completion accidentally treated MEDIUM as blocking; restore confirmed HIGH-only S1 rule without changing any entry level or semantic any-hit label',
+    changes=changes,initial_fixture_sha256=hashlib.sha256(original).hexdigest(),
+    final_fixture_sha256=hashlib.sha256(fixture.read_bytes()).hexdigest(),
+    rows=149,removed_rows=0,existing_development_labels_changed=0,new_any_level_labels_changed=0,
+    new_derived_high_blocking_flags_corrected=2,initial_contract_validation='REJECTED_INVALID_DEVELOPMENT_LABELS',
+    final_contract_validation='PASS',M1_review='PENDING',production_acceptance=False)
+with (LAB/'alias-normal-v3_13-s1-flag-correction.json').open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=149,derived_S1_flags_corrected=2,entry_levels_changed=0,any_level_labels_changed=0)))

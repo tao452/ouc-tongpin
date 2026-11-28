@@ -1,0 +1,63 @@
+import csv
+import hashlib
+import importlib.util
+import json
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+old_file=LAB/'engine-v3_9-first/normalization.py'
+spec=importlib.util.spec_from_file_location('pinned_normalization_before_runs',old_file)
+old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old)
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development,pcr
+from evaluate_recall import load_external
+from app.services import normalization as new
+
+sources=[]
+for name,path,manifest in [('ToxiCN',LAB/'toxcn.csv',ROOT/'docs/qa/data/external/toxicn-v3.sealed.json'),
+                          ('PCR',ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',ROOT/'docs/qa/data/external/pcr-test.v1.json')]:
+    metadata=json.loads(manifest.read_text(encoding='utf-8'))
+    if name=='PCR':
+        rows,excluded=pcr(path,metadata);assert not excluded
+    else:rows=load_external(path,metadata)
+    sources.append((name,path,[(r['id'],r['text']) for r in rows]))
+for name,path,expected in [('COLD_train',LAB/'cold-official-train.csv',25726),
+                           ('COLD_historical_test',LAB/'cold-test.csv',5323)]:
+    with path.open(encoding='utf-8-sig',newline='') as handle:
+        rows=[(f'{name}-{i}',row['TEXT']) for i,row in enumerate(csv.DictReader(handle),1)]
+    assert len(rows)==expected
+    sources.append((name,path,rows))
+for version in ['v2','v3','v3_3','v3_4','v3_5','v3_7','v3_8','v3_9']:
+    path=ROOT/f'docs/qa/data/us24-development.{version}.jsonl'
+    sources.append((version,path,[(r['id'],r['text']) for r in development(path)]))
+path=ROOT/'docs/qa/data/us24-context-stress.v1.jsonl'
+sources.append(('context_stress',path,[(r['id'],r['text']) for r in map(json.loads,path.read_text(encoding='utf-8').splitlines())]))
+rules=sum(len(words) for _,_,words in new._converter.dict_cache.values())
+assert rules==4390
+assert all(new._HANZI_RUN.fullmatch(k) and all(new._HANZI_RUN.fullmatch(v) for v in values.split())
+           for _,_,words in new._converter.dict_cache.values() for k,values in words.items())
+reports=[];total=0;all_mismatches=[]
+for name,path,rows in sources:
+    digest=hashlib.sha256();mismatches=[]
+    for identifier,text in rows:
+        a,b=old.canonicalize(text),new.canonicalize(text)
+        ah,bh=[hashlib.sha256(v.encode()).hexdigest() for v in [a,b]]
+        digest.update((identifier+'\0'+ah+'\0'+bh+'\n').encode())
+        if a!=b:mismatches.append(dict(id=identifier,source_sha256=hashlib.sha256(text.encode()).hexdigest(),old_sha256=ah,new_sha256=bh))
+    total+=len(rows);all_mismatches.extend(mismatches)
+    reports.append(dict(source=name,rows=len(rows),source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+        mismatches=mismatches,all_output_pairs_sha256=digest.hexdigest()))
+    print(name,len(rows),'mismatches',len(mismatches),flush=True)
+report=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='normalization equivalence only; no semantic accuracy or new independent test',
+    rows=total,mismatch_count=len(all_mismatches),sources=reports,validated_t2s_rules=rules,
+    old_normalizer_sha256=hashlib.sha256(old_file.read_bytes()).hexdigest(),
+    current_normalizer_sha256=hashlib.sha256(Path(new.__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+    code_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+    old_unit_authoring_corrections='NFKC colon stays ASCII; installed t2s preserves 著 in 干著急, both confirmed against pinned old code; corpus labels unchanged',
+    GC_settings_modified=False,COLD_dev_fetched=False,production_acceptance=False)
+output=ROOT/'docs/qa/evidence/us24-recall-20261124/unicode-v3_9-normalization-equivalence.json'
+with output.open('x',encoding='utf-8',newline='\n') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=total,mismatches=len(all_mismatches),rules=rules)),flush=True)
+raise SystemExit(bool(all_mismatches))

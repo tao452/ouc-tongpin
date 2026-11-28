@@ -1,0 +1,17 @@
+{
+  "scope": "parent qualification assertion before any training; accuracy NOT_RUN",
+  "failure": "upstream sentence_id did not consistently identify same original text across files",
+  "diagnostic": {
+    "rows": 2533,
+    "raw_match_by_id": 2532,
+    "normalized_match_by_id": 2532,
+    "normalized_match_any_base": 2532,
+    "labels": [
+      "True"
+    ],
+    "original_base_unique": 2533
+  },
+  "failed_source_sha256": "f0066498f3bfc93e019061f36345c6edf3f86141cd3114401f9c5d0c98784e4f",
+  "correction": "require full normalized original-text hash membership in BOTH base and native training partition; do not infer linkage from array order/ID",
+  "COLD_dev_fetched": false
+}

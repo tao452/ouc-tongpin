@@ -1,0 +1,933 @@
+{
+  "scope": "all132 registered configuration mappings, precise exceptions, deduplication and S1 decisions; not broad recall",
+  "rules": 132,
+  "checks": 1325,
+  "failures": [],
+  "full_private_sha256": "05b3b65af78d45f8aec64a9704a3ad20142583c4ff8b5cd0315f6ccd46d5437c",
+  "rules_detail": [
+    {
+      "candidate_id": "US24-001",
+      "word": "傻逼",
+      "checks": 60,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-002",
+      "word": "操你妈",
+      "checks": 33,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-003",
+      "word": "去死",
+      "checks": 20,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-004",
+      "word": "滚你妈",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-005",
+      "word": "日你妈",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-006",
+      "word": "你妈死了",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-007",
+      "word": "死全家",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-008",
+      "word": "祝你全家死光",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-009",
+      "word": "狗娘养的",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-010",
+      "word": "狗杂种",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-011",
+      "word": "你这个杂种",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-012",
+      "word": "你个畜生",
+      "checks": 16,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "checks": 16,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-014",
+      "word": "杀了你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-015",
+      "word": "弄死你",
+      "checks": 16,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-016",
+      "word": "捅死你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-017",
+      "word": "打死你",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-018",
+      "word": "你不配活着",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-019",
+      "word": "见你一次打你一次",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-020",
+      "word": "贱逼",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-021",
+      "word": "吃屎去",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-022",
+      "word": "你个婊子",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-023",
+      "word": "废物",
+      "checks": 23,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-024",
+      "word": "白痴",
+      "checks": 7,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-025",
+      "word": "脑残",
+      "checks": 16,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-026",
+      "word": "弱智",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-027",
+      "word": "蠢货",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-028",
+      "word": "蠢蛋",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-029",
+      "word": "笨蛋",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-030",
+      "word": "混蛋",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-031",
+      "word": "王八蛋",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-032",
+      "word": "人渣",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-033",
+      "word": "败类",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-034",
+      "word": "无耻",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-035",
+      "word": "滚蛋",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-036",
+      "word": "闭嘴",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-037",
+      "word": "他妈的",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-038",
+      "word": "妈的",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-039",
+      "word": "不要脸",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-040",
+      "word": "没教养",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-041",
+      "word": "蠢材",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-042",
+      "word": "垃圾",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-043",
+      "word": "差劲",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-044",
+      "word": "烂透",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-045",
+      "word": "破玩意",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-046",
+      "word": "扯淡",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-047",
+      "word": "你真恶心",
+      "checks": 22,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-048",
+      "word": "你个蠢猪",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-049",
+      "word": "你是个饭桶",
+      "checks": 11,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-050",
+      "word": "你个窝囊废",
+      "checks": 13,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-051",
+      "word": "你个小瘪三",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "checks": 19,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-053",
+      "word": "你个臭不要脸的",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-054",
+      "word": "你个狗东西",
+      "checks": 15,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "checks": 22,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-056",
+      "word": "打断你的腿",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-057",
+      "word": "砍死你",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-058",
+      "word": "掐死你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-059",
+      "word": "堵你宿舍门口打你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-060",
+      "word": "让你横着出去",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-061",
+      "word": "我要重伤你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-062",
+      "word": "放学弄死你",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-063",
+      "word": "天天跟踪你",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-064",
+      "word": "一直骚扰你",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-065",
+      "word": "不加我就曝光你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-066",
+      "word": "把你住址挂网上",
+      "checks": 4,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-067",
+      "word": "你一无是处",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-068",
+      "word": "全班都讨厌你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-069",
+      "word": "你就是个笑话",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-070",
+      "word": "你不配待在这个学校",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-071",
+      "word": "去你妈的",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-072",
+      "word": "妈了个逼",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-073",
+      "word": "你妈逼",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-074",
+      "word": "狗屁",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-075",
+      "word": "放屁",
+      "checks": 11,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-076",
+      "word": "鸡巴",
+      "checks": 45,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-077",
+      "word": "你个脑瘫",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-078",
+      "word": "你个智障",
+      "checks": 24,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-079",
+      "word": "你个神经病",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-080",
+      "word": "你是个傻子",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-081",
+      "word": "你个二逼",
+      "checks": 18,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-082",
+      "word": "你个二货",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-083",
+      "word": "你就是一坨屎",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-084",
+      "word": "你脑子进水了",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-085",
+      "word": "你没脑子",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-086",
+      "word": "你没有爹妈",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-087",
+      "word": "你是个祸害",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-088",
+      "word": "你不配发言",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-089",
+      "word": "你活着浪费空气",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-090",
+      "word": "你死了没人心疼",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-091",
+      "word": "你怎么还不去死",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-092",
+      "word": "我要一枪崩了你",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-093",
+      "word": "我要扇你",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-094",
+      "word": "我要堵你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-095",
+      "word": "把你照片挂网上",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-096",
+      "word": "我要人肉你",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-097",
+      "word": "你真下贱",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-098",
+      "word": "你真丑",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-099",
+      "word": "你就是个小丑",
+      "checks": 10,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-100",
+      "word": "滚出去",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-101",
+      "word": "你个菜逼",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-102",
+      "word": "你个屌丝",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-103",
+      "word": "你是狗",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-104",
+      "word": "你是猪",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-105",
+      "word": "没点逼数",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-106",
+      "word": "放你妈的屁",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-107",
+      "word": "狗屎",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-108",
+      "word": "你就是个骗子",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-109",
+      "word": "穷鬼",
+      "checks": 4,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "checks": 18,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-112",
+      "word": "没人要你",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-113",
+      "word": "黑鬼",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-114",
+      "word": "支那猪",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-115",
+      "word": "死基佬",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-116",
+      "word": "死娘炮",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-117",
+      "word": "婊子",
+      "checks": 6,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-118",
+      "word": "荡妇",
+      "checks": 2,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-119",
+      "word": "母狗",
+      "checks": 4,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-120",
+      "word": "公狗",
+      "checks": 4,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-121",
+      "word": "你个蠢逼",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-122",
+      "word": "你个憨批",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-123",
+      "word": "你个贱货",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-124",
+      "word": "你个贱种",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-125",
+      "word": "你个狗崽子",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-126",
+      "word": "你个穷逼",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-127",
+      "word": "你个丑逼",
+      "checks": 14,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "checks": 20,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "checks": 20,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-130",
+      "word": "骚扰到你退学",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-131",
+      "word": "不答应就一直缠着你",
+      "checks": 12,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-132",
+      "word": "堵到你不敢出门",
+      "checks": 8,
+      "technical_result": "PASS",
+      "M1_status": "PENDING"
+    }
+  ]
+}

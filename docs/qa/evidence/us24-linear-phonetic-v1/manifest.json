@@ -1,0 +1,49 @@
+{
+  "scope": "linear development experiment; every prediction retained; no independent acceptance",
+  "evaluation_rows_per_checkpoint": 3258,
+  "excluded_evaluation_rows": 0,
+  "gradient_training_on_evaluation": false,
+  "raw_text_published": false,
+  "model_or_vocabulary_published": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "files": [
+    {
+      "file": "frozen.json",
+      "public_lf_sha256": "ac555ee8257201cdda7359d91a2929a259355dc9b35792e63070deb0e87c3ac4",
+      "bytes": 17474,
+      "private_sha256": "9fb97c17f4809e82c031613732dc4c4767c13fe511a505cce95bebacebf47741"
+    },
+    {
+      "file": "report.json",
+      "public_lf_sha256": "c565237fa736934a9d27ed08e992426215fbefbc183c411bbe5192e1d789c27a",
+      "bytes": 31357,
+      "private_sha256": "7d0752540e57a361c714ba298ad57867f384e1c526745c968a1000cf77e2f61e"
+    },
+    {
+      "file": "predictions.jsonl",
+      "public_lf_sha256": "2de559ffd2f26ae6d2d0ad223f474e72b1e1584a6d89ce32264b27d7b13e40d7",
+      "bytes": 1290678,
+      "private_sha256": "ab3af7bf0d018067495e6c65a3b6fd56b6ed9c0ccfdf8f0c7f4bc4fcf8838efa"
+    },
+    {
+      "file": "thresholds.csv",
+      "public_lf_sha256": "9cc19c621f535cbb9e0f56fb14ca4fe5ca965a590ae0737e400d77f4ce6716ac",
+      "bytes": 608176,
+      "private_sha256": "9cc19c621f535cbb9e0f56fb14ca4fe5ca965a590ae0737e400d77f4ce6716ac"
+    },
+    {
+      "file": "train_linear_phonetic_v1.py.txt",
+      "public_lf_sha256": "8906fbc34391f2db2f1b9fcd68e6f3d1b8d9402894c9b4562c1f05dcbf250668",
+      "bytes": 6954,
+      "private_sha256": "8906fbc34391f2db2f1b9fcd68e6f3d1b8d9402894c9b4562c1f05dcbf250668"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "bytes": 3045,
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    }
+  ]
+}

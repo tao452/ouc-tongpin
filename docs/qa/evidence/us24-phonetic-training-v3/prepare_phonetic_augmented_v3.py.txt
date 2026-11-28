@@ -1,0 +1,65 @@
+import csv
+import hashlib
+import json
+import sys
+from collections import Counter
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+from pypinyin import Style, pinyin
+
+from phonetic_encoding import PhoneticEncoder
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from app.services.normalization import canonicalize
+from evaluate_recall import load_external, source_sha
+
+sha=lambda b:hashlib.sha256(b).hexdigest()
+torch.set_num_threads(2)
+features=LAB/'phonetic-training-v2.features.pt'
+prepared=torch.load(features,map_location='cpu',weights_only=True)
+base_policy=prepared['policy'];records=prepared['records']
+for name,digest in base_policy['engine_sha256'].items():assert source_sha(ROOT/name)==digest
+toxic=load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))
+raw={row['id']:row['text'] for row in toxic}
+with (LAB/'cold-official-train.csv').open(encoding='utf-8-sig',newline='') as handle:
+    for number,row in enumerate(csv.DictReader(handle),1):raw[f'COLD-TRAIN-{number:05d}']=row['TEXT']
+encoder=PhoneticEncoder(LAB/'chinesebert-model');augmented=[];skipped=[]
+for number,row in enumerate(records,1):
+    if row['cohort']!='training':continue
+    source=raw[row['id']];assert sha(source.encode())==row['source_text_sha256']
+    selected=int.from_bytes(hashlib.sha256(b'us24-latin-v3\0'+row['normalized_sha256'].encode()).digest()[:8],'big')%10==0
+    if not selected:continue
+    text=' '.join(part[0] for part in pinyin(canonicalize(source),style=Style.NORMAL,heteronym=False)).lower()
+    if len(text)>2000:
+        skipped.append(dict(source_id=row['id'],reason='augmented_text_exceeds2000; original_training_row_retained',length=len(text)))
+        continue
+    if text==canonicalize(source):
+        skipped.append(dict(source_id=row['id'],reason='unchanged_transform; original_training_row_retained',length=len(text)))
+        continue
+    augmented.append(dict(row,id=row['id']+'-PY',source_id=row['id'],
+        training_source=row['training_source']+'_pinyin_augmentation',
+        augmentation='context-first toneless whole-comment pinyin; source label unchanged',
+        transformed_sha256=sha(text.encode()),windows=encoder.encode(text)))
+    if len(augmented)%500==0:print(f'Prepared {len(augmented)} Latin pinyin augmentations',flush=True)
+assert len(records)==38551 and len({row['id'] for row in [*records,*augmented]})==len(records)+len(augmented)
+policy=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='development training augmentation; no new independent evaluation',
+    base_features_sha256=sha(features.read_bytes()),base_policy=base_policy,
+    original_training_rows_retained=35293,evaluation_rows_retained=3258,excluded_evaluation_rows=0,
+    augmentation_counts=dict(Counter(row['training_source'] for row in augmented)),
+    augmentation_labels=dict(Counter(str(row['label']) for row in augmented)),
+    augmentation_selection='label-independent normalized source SHA256 salt us24-latin-v3, first8bytes mod10==0',
+    character_modality_dropout='during training only; independent25% of tokens with nonzero contextual pinyin -> UNK character/glyph; pinyin and attention retained',
+    epochs=1,learning_rate=5e-6,batch_size=8,accumulate_steps=4,seed=20261124,
+    warm_start='best constrained minimum PCR/ToxiCN development recall checkpoint of mixed-v2; deterministic predeclared ranking',
+    evaluation_policy='all3258 identical IDs,labels,text transformation,windows and literal flags from mixed-v2; no augmentation at evaluation',
+    augmentation_risk='tone removal may introduce ambiguity; native source labels retained; all negative controls and original evaluation kept',
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'phonetic_encoding.py']},
+    engine_sha256=base_policy['engine_sha256'],COLD_dev_fetched=False,production_acceptance=False)
+with (LAB/'phonetic-training-v3.policy.json').open('x',encoding='utf-8') as handle:json.dump(policy,handle,ensure_ascii=False,indent=2)
+with (LAB/'phonetic-training-v3.features.pt').open('xb') as handle:torch.save(dict(policy=policy,records=[*records,*augmented]),handle)
+with (LAB/'phonetic-training-v3.augmentation-index.json').open('x',encoding='utf-8') as handle:
+    json.dump(dict(policy=policy,rows=[{**{k:v for k,v in row.items() if k!='windows'},'windows':len(row['windows'])} for row in augmented],skipped_augmentations=skipped),handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(augmented_rows=len(augmented),skipped_augmentations=len(skipped),originals_retained=35293,evaluation_retained=3258)),flush=True)

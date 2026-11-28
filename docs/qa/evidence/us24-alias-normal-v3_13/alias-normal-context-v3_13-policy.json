@@ -1,0 +1,106 @@
+{
+  "scope": "word and occurrence-scoped exact normal phrases, after real normal homophone probes",
+  "canonical_rules": 132,
+  "new_rules": 0,
+  "changed_entries": 8,
+  "new_hanzi_normal_phrases": 7,
+  "new_pinyin_normal_phrases": 17,
+  "suggestions": [
+    {
+      "candidate_id": "US24-011",
+      "word": "你这个杂种",
+      "hanzi": [
+        "你这杂种水稻",
+        "你这个杂种水稻"
+      ],
+      "pinyin": [
+        "ni zhe za zhong shui dao",
+        "ni zhe ge za zhong shui dao"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-012",
+      "word": "你个畜生",
+      "hanzi": [],
+      "pinyin": [
+        "ni zhe chu sheng ri qi"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "hanzi": [],
+      "pinyin": [
+        "ni jiu shi chu sheng ti xing yi xia"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-022",
+      "word": "你个婊子",
+      "hanzi": [],
+      "pinyin": [
+        "ni zhe biao zi hao tai xiao"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-054",
+      "word": "你个狗东西",
+      "hanzi": [],
+      "pinyin": [
+        "ni zhe gou dong xi de gong ju"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "hanzi": [
+        "我要打你的电话",
+        "我要打你电话",
+        "再说我就打你电话",
+        "再说我就打你的电话",
+        "我就动手打你发来的代码"
+      ],
+      "pinyin": [
+        "wo yao da ni de dian hua",
+        "wo yao da ni dian hua",
+        "zai shuo wo jiu da ni dian hua",
+        "zai shuo wo jiu da ni de dian hua",
+        "zai shuo wo jiu da ni zhe dao ti",
+        "wo yao da ni wu mo xing",
+        "wo jiu dong shou da ni fa lai de dai ma"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-056",
+      "word": "打断你的腿",
+      "hanzi": [],
+      "pinyin": [
+        "da duan ni tui li guo cheng"
+      ],
+      "M1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "hanzi": [],
+      "pinyin": [
+        "gei ni yi dao cai",
+        "gei ni yi dao ti",
+        "gei ni yi dao shu xue ti"
+      ],
+      "M1_status": "PENDING"
+    }
+  ],
+  "before_dictionary_sha256": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890",
+  "dictionary_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "COLD_dev_fetched": false
+}

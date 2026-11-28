@@ -1,0 +1,50 @@
+{
+  "scope": "finite pronunciation and exact quote template development",
+  "canonical_rules": 132,
+  "new_canonical_rules": 0,
+  "changed_pronunciation_rules": 5,
+  "added_whole_phrase_tone_paths": 6,
+  "precise_context_changes": [
+    "请不要说“完整登记攻击词”伤害同学",
+    "语言科普：“完整登记攻击词”是攻击表达"
+  ],
+  "original_probe_rows": 84,
+  "original_probe_failures": [
+    "S311-018-0-anti-bullying",
+    "S311-018-0-language",
+    "S311-067-0-anti-bullying",
+    "S311-067-0-language",
+    "S311-070-0-anti-bullying",
+    "S311-070-0-language",
+    "S311-070-1-anti-bullying",
+    "S311-070-1-language",
+    "S311-088-0-anti-bullying",
+    "S311-088-0-language",
+    "S311-110-0-anti-bullying",
+    "S311-110-0-language"
+  ],
+  "original_probe_retained": true,
+  "sources": [
+    {
+      "url": "https://www.gsjtxy.edu.cn/jcjxb/content/169/t2024210-169-17094.html",
+      "use": "whole-phrase 一 before non-fourth becomes fourth; 不 before fourth becomes second"
+    },
+    {
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=7469&la=0&powerMode=0",
+      "use": "待 meaning stay is dai1; explicitly mapped only to US24-070"
+    }
+  ],
+  "legacy_default_tone_path": "pypinyin generated US24-070 dai4 retained as historical tolerated spelling; added dai1 paths separately; no global pronunciation dictionary override",
+  "fixture_sha256": "41700456c3525857b1f050a15ebdd1412ce0e0a6168591838739d9d4d6f9d7c2",
+  "before_dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "after_dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+  "reading_cap": 8,
+  "syllable_cap": 16,
+  "latin_boundary_required": true,
+  "match_budget_ms": 50,
+  "semantic_training": "current C4 experiment remains frozen3.10 inputs; not attributed to3.11 without equivalence check",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

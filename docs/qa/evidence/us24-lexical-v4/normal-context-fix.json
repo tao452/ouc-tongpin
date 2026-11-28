@@ -1,0 +1,35 @@
+{
+  "before_sha256": "516f89e795fbf4bd3192bc05729e167d9928800230ef84ade2dee271dece2ef8",
+  "after_sha256": "3294ab6039e74df504964edcf20c917824a5ba91aba8d99d8bcfad486e11956a",
+  "changes": {
+    "操你妈": [
+      "草泥马是羊驼",
+      "草泥马这种动物",
+      "羊驼又称草泥马",
+      "草泥马玩偶",
+      "我在抄你码",
+      "抄你码学习"
+    ],
+    "白痴": [
+      "白痴小说",
+      "白痴一书"
+    ],
+    "妈了个逼": [
+      "麻辣隔壁是一家店名"
+    ],
+    "二逼": [
+      "2B铅笔",
+      "2B自动铅笔",
+      "2B型号",
+      "二比一",
+      "二比二",
+      "二比零",
+      "二比三"
+    ]
+  },
+  "first_probe_failures": 7,
+  "initial_rows_retained": 990,
+  "initial_expected_labels_changed": 0,
+  "final_rows": 1038,
+  "fixture_sha256": "3e1f1c8f1880cb59dbcded0d5e50b819965e230f27c25ef948cc8a9ace86e896"
+}

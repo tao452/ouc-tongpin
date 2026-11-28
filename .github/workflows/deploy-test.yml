@@ -46,6 +46,19 @@ jobs:
       - name: Collect sanitized database initialization diagnostics
         if: failure()
         run: python scripts/qa/collect_mysql_initialization.py
+      - uses: actions/cache@v4
+        with:
+          path: qa-private/cold-test.csv
+          key: cold-pinned-${{ hashFiles('docs/qa/data/external/cold-test.v1.json') }}
+      - name: Verify deployed dictionary identity and historical external HTTP diagnostic
+        continue-on-error: true
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-v1.yml up -d --wait --wait-timeout 60 algo
+          python scripts/qa/fetch_cold_test.py --output qa-private/cold-test.csv
+          python services/algo/scripts/evaluate_external.py qa-private/cold-test.csv --base-url http://127.0.0.1:8080 --output qa-private/us24-external-http.json
+      - name: Restore starter dictionary after historical diagnostic
+        if: ${{ !cancelled() && steps.deployed.outcome == 'success' }}
+        run: docker compose --env-file .env -f infra/docker-compose.yml up -d --wait --wait-timeout 60 algo
       - name: Upload test environment evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -61,6 +74,167 @@ jobs:
             qa-private/w3-load.json
             qa-private/us25-security.json
             qa-private/mysql-initialization.json
+            qa-private/us24-external-http.json
+          if-no-files-found: warn
+      - name: Verify opt-in candidate dictionary through the built gateway
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-review.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_candidate.py docs/qa/data/us24-development.v2.jsonl --base-url http://127.0.0.1:8080 --output qa-private/us24-candidate-http.json
+      - name: Upload candidate HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-candidate-http-evidence
+          path: qa-private/us24-candidate-http.json
+          if-no-files-found: warn
+      - name: Verify v3 recall candidate through the built gateway
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-recall.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_recall.py docs/qa/data/us24-development.v3.jsonl --base-url http://127.0.0.1:8080 --output qa-private/us24-v3-http.json
+      - name: Upload v3 HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3-http-evidence
+          path: qa-private/us24-v3-http.json
+          if-no-files-found: warn
+      - name: Verify v3.1 local context exemptions through the built gateway
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-context.yml up -d --wait --wait-timeout 60 algo
+          python scripts/qa/verify_context_candidate.py --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_1-http.json
+      - name: Upload v3.1 context HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_1-context-http-evidence
+          path: qa-private/us24-v3_1-http.json
+          if-no-files-found: warn
+      - name: Verify bounded numeric tones and context through the built gateway
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-pronunciation.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_3.jsonl --dictionary services/algo/app/data/moderation-v3_3-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_3-http.json
+          python scripts/qa/verify_context_candidate.py --dictionary services/algo/app/data/moderation-v3_3-candidate.json --cases docs/qa/data/us24-self-help.v3.json --base-url http://127.0.0.1:8080 --output qa-private/us24-final-context-http.json
+      - name: Upload numeric tone HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_3-numeric-tone-http-evidence
+          path: |
+            qa-private/us24-v3_3-http.json
+            qa-private/us24-final-context-http.json
+          if-no-files-found: warn
+      - name: Verify complete target phrase pinyin through the built gateway
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-full-pinyin.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_4.jsonl --dictionary services/algo/app/data/moderation-v3_4-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_4-http.json
+          python scripts/qa/verify_context_candidate.py --dictionary services/algo/app/data/moderation-v3_4-candidate.json --cases docs/qa/data/us24-self-help.v3.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_4-context-http.json
+      - name: Upload complete phrase pinyin HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_4-full-pinyin-http-evidence
+          path: |
+            qa-private/us24-v3_4-http.json
+            qa-private/us24-v3_4-context-http.json
+          if-no-files-found: warn
+      - name: Verify targeted insult threat and harassment candidates
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-targeted.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_5.jsonl --dictionary services/algo/app/data/moderation-v3_5-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_5-http.json
+          python scripts/qa/verify_context_candidate.py --dictionary services/algo/app/data/moderation-v3_5-candidate.json --cases docs/qa/data/us24-self-help.v3.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_5-context-http.json
+          python scripts/qa/verify_context_stress.py --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_6-context-stress-http.json
+          python scripts/qa/verify_context_candidate.py --dictionary services/algo/app/data/moderation-v3_5-candidate.json --cases docs/qa/data/us24-quote-boundaries.v1.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_6-quote-boundaries-http.json
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_7.jsonl --dictionary services/algo/app/data/moderation-v3_5-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_7-http.json
+          python scripts/qa/verify_context_candidate.py --dictionary services/algo/app/data/moderation-v3_5-candidate.json --cases docs/qa/data/us24-long-pinyin-toneless.v1.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_7-toneless-http.json
+      - name: Upload targeted candidate HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_5-targeted-http-evidence
+          path: |
+            qa-private/us24-v3_5-http.json
+            qa-private/us24-v3_5-context-http.json
+            qa-private/us24-v3_6-context-stress-http.json
+            qa-private/us24-v3_6-quote-boundaries-http.json
+            qa-private/us24-v3_7-http.json
+            qa-private/us24-v3_7-toneless-http.json
+          if-no-files-found: warn
+      - name: Verify mapped Hanzi and volunteer contexts
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-volunteer.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_8.jsonl --dictionary services/algo/app/data/moderation-v3_8-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_8-http.json
+      - name: Upload volunteer candidate HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_8-volunteer-http-evidence
+          path: qa-private/us24-v3_8-http.json
+          if-no-files-found: warn
+      - name: Verify explicit Unicode aliases and identifier boundaries
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-unicode.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_9.jsonl --dictionary services/algo/app/data/moderation-v3_9-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_9-http.json
+      - name: Upload Unicode candidate HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_9-unicode-http-evidence
+          path: qa-private/us24-v3_9-http.json
+          if-no-files-found: warn
+      - name: Verify scoped normal phrases and outside attacks
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-phrases.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_10.jsonl --dictionary services/algo/app/data/moderation-v3_10-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_10-http.json
+      - name: Upload normal-phrase candidate HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_10-phrase-http-evidence
+          path: qa-private/us24-v3_10-http.json
+          if-no-files-found: warn
+      - name: Verify explicit sandhi readings and precise quote scope
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-sandhi.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_11.jsonl --dictionary services/algo/app/data/moderation-v3_11-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_11-http.json
+      - name: Upload sandhi candidate HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_11-sandhi-http-evidence
+          path: qa-private/us24-v3_11-http.json
+          if-no-files-found: warn
+      - name: Verify bounded alias phrase pinyin and denial scope
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-alias-phrases.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_12.jsonl --dictionary services/algo/app/data/moderation-v3_12-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_12-http.json
+      - name: Upload alias phrase HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_12-alias-phrase-http-evidence
+          path: qa-private/us24-v3_12-http.json
+          if-no-files-found: warn
+      - name: Verify normal homophone phrases and outside attacks
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-alias-normal.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_variant.py docs/qa/data/us24-development.v3_13.jsonl --dictionary services/algo/app/data/moderation-v3_13-candidate.json --base-url http://127.0.0.1:8080 --output qa-private/us24-v3_13-http.json
+      - name: Upload normal homophone HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-v3_13-alias-normal-http-evidence
+          path: qa-private/us24-v3_13-http.json
+          if-no-files-found: warn
+      - name: Verify lexical candidates and separate sentence scope probes
+        run: |
+          docker compose --env-file .env -f infra/docker-compose.yml -f infra/docker-compose.us24-lexical.yml up -d --wait --wait-timeout 60 algo
+          python services/algo/scripts/evaluate_lexical.py --base-url http://127.0.0.1:8080 --output qa-private/us24-lexical-v4-http.json
+      - name: Upload lexical candidate HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us24-lexical-v4-http-evidence
+          path: qa-private/us24-lexical-v4-http.json
           if-no-files-found: warn
       - name: Show service state on failure
         if: failure()

@@ -1,0 +1,90 @@
+import hashlib
+import importlib.metadata
+import json
+import math
+import random
+import time
+from datetime import UTC, datetime
+from pathlib import Path
+
+import numpy as np
+import torch
+from safetensors.torch import load_file, save_file
+
+from phonetic_recheck_metrics import summarize
+from train_phonetic import batches, create_model, inputs, predict
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+source_sha=lambda path:hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+
+
+def main():
+    assert torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    torch.set_num_threads(4);random.seed(20261124);np.random.seed(20261124)
+    torch.manual_seed(20261124);torch.cuda.manual_seed_all(20261124)
+    torch.backends.cudnn.deterministic=True;torch.backends.cudnn.benchmark=False
+    torch.use_deterministic_algorithms(True,warn_only=True)
+    features=LAB/'phonetic-training-v2.features.pt'
+    prepared=torch.load(features,map_location='cpu',weights_only=True)
+    policy=prepared['policy'];records=prepared['records']
+    for name,digest in policy['engine_sha256'].items():assert source_sha(ROOT/name)==digest
+    training=[(window,row['label']) for row in records if row['cohort']=='training' for window in row['windows']]
+    evaluation=[row for row in records if row['cohort']!='training']
+    assert len(evaluation)==3258 and sum(policy['training_counts'].values())+3258==len(records)
+    output=LAB/'phonetic-training-v2';output.mkdir(exist_ok=False)
+    checkpoint=LAB/'phonetic-training-v1/epoch-3/model.safetensors'
+    assert sha(checkpoint)==policy['warm_start_sha256']
+    frozen=dict(dataset_policy=policy,features_sha256=sha(features),
+        code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'train_phonetic.py',LAB/'phonetic_recheck_metrics.py',LAB/'phonetic_encoding.py']},
+        native_code_sha256={p.name:source_sha(p) for p in (LAB/'chinesebert-code/chinesebert_runtime').glob('*.py')},
+        pretrained_assets_sha256=sha(LAB/'chinesebert-model.manifest.json'),
+        optimizer='fresh AdamW; previous optimizer state not reused',weight_decay=.01,
+        gradient_clip=1.,precision='bfloat16',learning_rate_schedule='constant',
+        selection='maximize min(PCR recall,ToxiCN development recall) subject to all4 FPR<2%,zero errors; all3 positive cohorts recall>=95% required',
+        training_rows=sum(policy['training_counts'].values()),training_windows=len(training),evaluation_rows=len(evaluation),
+        runtime=dict(torch=torch.__version__,cuda=torch.version.cuda,device=torch.cuda.get_device_name(0),
+                     packages={p:importlib.metadata.version(p) for p in ['transformers','tokenizers','pypinyin','safetensors']}),
+        production_acceptance=False)
+    with (output/'frozen.json').open('x',encoding='utf-8') as handle:json.dump(frozen,handle,ensure_ascii=False,indent=2)
+    model=create_model();state=load_file(str(checkpoint),device='cpu');model.load_state_dict(state,strict=True);del state
+    optimizer=torch.optim.AdamW([p for p in model.parameters() if p.requires_grad],lr=1e-5,weight_decay=.01)
+    deadline=time.monotonic()+90*60
+    torch.cuda.reset_peak_memory_stats();all_results=[]
+    for epoch in range(1,3):
+        directory=output/f'epoch-{epoch}';directory.mkdir(exist_ok=False)
+        model.train();optimizer.zero_grad(set_to_none=True);loss_sum=0;seen=0;began=time.perf_counter()
+        batch_count=math.ceil(len(training)/8)
+        for step,batch in enumerate(batches(training,8,True),1):
+            if time.monotonic()>deadline:raise TimeoutError('Mixed-domain experiment exceeded90-minute budget')
+            with torch.autocast('cuda',dtype=torch.bfloat16):
+                labels=torch.tensor([label for _,label in batch],device='cuda',dtype=torch.long)
+                loss=model(**inputs([window for window,_ in batch]),labels=labels).loss
+            if not torch.isfinite(loss):raise RuntimeError('Training loss is not finite')
+            loss_sum+=float(loss.detach())*len(batch);seen+=len(batch)
+            accumulation=min(4,batch_count-((step-1)//4)*4)
+            (loss/accumulation).backward()
+            if step%4==0 or step==batch_count:
+                torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad],1.)
+                optimizer.step();optimizer.zero_grad(set_to_none=True)
+            if step%100==0:print(f'epoch={epoch} batch={step}/{batch_count} loss={loss_sum/seen:.5f}',flush=True)
+        train_seconds=time.perf_counter()-began
+        weights=directory/'model.safetensors'
+        save_file({k:v.detach().cpu().contiguous() for k,v in model.state_dict().items()},str(weights))
+        model.config.to_json_file(str(directory/'config.json'))
+        predictions,inference_seconds=predict(model,evaluation)
+        with (directory/'predictions.jsonl').open('x',encoding='utf-8') as handle:
+            for row in predictions:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+        result=dict(epoch=epoch,executed_at_utc=datetime.now(UTC).isoformat(),weights_sha256=sha(weights),
+            training_loss=loss_sum/seen,training_seconds=train_seconds,inference_seconds=inference_seconds,
+            peak_cuda_bytes=torch.cuda.max_memory_allocated(),evaluation_rows=len(predictions),excluded_evaluation_rows=0,
+            metrics=summarize(predictions,directory/'thresholds.csv'),production_acceptance=False)
+        with (directory/'report.json').open('x',encoding='utf-8') as handle:json.dump(result,handle,ensure_ascii=False,indent=2)
+        all_results.append(result)
+        point=result['metrics']['literal_or_model']['best_fpr_eligible']
+        print(json.dumps(dict(epoch=epoch,training_loss=result['training_loss'],best=point)),flush=True)
+    with (output/'summary.json').open('x',encoding='utf-8') as handle:json.dump(dict(frozen=frozen,epochs=all_results),handle,ensure_ascii=False,indent=2)
+    return 0 if any(p and p['development_gate_met'] for r in all_results for m in r['metrics'].values() for p in [m['best_fpr_eligible']]) else 1
+
+
+if __name__=='__main__':raise SystemExit(main())

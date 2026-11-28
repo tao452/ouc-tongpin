@@ -1,0 +1,72 @@
+import hashlib
+import json
+from collections import Counter
+from datetime import UTC,datetime
+from pathlib import Path
+
+import torch
+from transformers import AutoTokenizer
+
+from rocbert_encoding_v8 import RobustEncoder
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+source_sha=lambda path:hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+torch.set_num_threads(2)
+assets=json.loads((LAB/'rocbert-base.manifest.json').read_text(encoding='utf-8'))
+assert assets['state']=='ALL_SELECTED_ASSETS_VERIFIED'
+for entry in assets['metadata_assets']:assert sha(LAB/'rocbert-base'/entry['file'])==entry['sha256']
+assert sha(LAB/'rocbert-base/pytorch_model.bin')==assets['weights']['sha256']
+old_path=LAB/'qwen-cntp-domain-v7-inputs/features.pt'
+previous=torch.load(old_path,map_location='cpu',weights_only=True)
+current=torch.load(LAB/'qwen-inputs-context3_10/features.pt',map_location='cpu',weights_only=True)
+evaluation={r['id']:r for r in current['records']}
+records=previous['records'];assert len(records)==18956
+decoder=AutoTokenizer.from_pretrained(str(LAB/'qwen3-1_7b-tokenizer'),local_files_only=True,trust_remote_code=False)
+encoder=RobustEncoder(LAB/'rocbert-base')
+output=LAB/'rocbert-v8-inputs';output.mkdir(exist_ok=False)
+ready=[];index=[];mapping_probes=[]
+for text in ['重庆银行今天营业','重新检查重量','音乐课让我快乐','他还钱以后还没回家','弄堂里有人弄坏了椅子']:
+    windows,audit=encoder.encode(text);mapping_probes.append(dict(text=text,audit=audit,
+        tokens=encoder.fast.convert_ids_to_tokens(windows[0]['input_ids']),
+        pronunciation_ids=windows[0]['input_pronunciation_ids']))
+with (output/'mapping-qualification.json').open('x',encoding='utf-8') as f:
+    json.dump(dict(mapping=encoder.mapping_audit,synthetic_probes=mapping_probes),f,ensure_ascii=False,indent=2)
+for number,row in enumerate(records,1):
+    length=max(w['char_span'][1] for w in row['windows']);chars=[None]*length
+    for window in row['windows']:
+        rendered=decoder.decode(window['input_ids'],skip_special_tokens=False,clean_up_tokenization_spaces=False)
+        marker='<|im_start|>user\n';left=rendered.index(marker)+len(marker);right=rendered.index('<|im_end|>',left)
+        value=json.loads(rendered[left:right])['text'];a,b=window['char_span'];assert len(value)==b-a
+        for offset,char in enumerate(value,a):
+            assert chars[offset] is None or chars[offset]==char
+            chars[offset]=char
+    assert all(c is not None for c in chars)
+    text=''.join(chars);assert hashlib.sha256(text.encode()).hexdigest()==row['transformed_sha256'],row['id']
+    metadata={k:v for k,v in row.items() if k!='windows'}
+    if row['cohort']!='training':
+        checked=evaluation[row['id']]
+        assert checked['transformed_sha256']==row['transformed_sha256'] and checked['label']==row['label']
+        metadata['literal_any']=checked['literal_any']
+    windows,audit=encoder.encode(text)
+    item={**metadata,'windows':windows};ready.append(item)
+    index.append({**metadata,'windows':len(windows),'window_lengths':[len(w['input_ids']) for w in windows],**audit})
+    if number%1000==0:print(f'Prepared robust phonetic encoder {number}/18956',flush=True)
+assert len(ready)==18956 and len({r['id'] for r in ready})==18956
+policy=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='robustencoder development; all native labels/rows retained',
+    base_assets=assets,previous_features_sha256=sha(old_path),
+    current_3_10_evaluation_features_sha256=sha(LAB/'qwen-inputs-context3_10/features.pt'),
+    evaluation_policy=current['policy'],training_rows=15698,evaluation_rows=3258,excluded_evaluation_rows=0,
+    text_recovery='decode private cachedQwen chatJSON and stitch all overlapping character spans; exact transformed SHA required',
+    model_input='same canonical training text and sealed current3.10 finite context evaluation; no labels/IDs in input',
+    phonetics='one whole-text contextual reading; unique pretrained phoneme ID references only; fallbackofficial where ambiguous',
+    maximum_tokens=512,body_tokens=510,token_overlap=128,window_policy='all WordPiece body tokens covered; maximum window score',
+    mapping_sha256=encoder.mapping_audit['mapping_sha256'],
+    contextual_pronunciation_changes=sum(r['contextual_pronunciation_changes'] for r in index),
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'rocbert_encoding_v8.py']},
+    cohorts=dict(Counter(r['cohort'] for r in ready)),COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (output/'features.pt').open('xb') as f:torch.save(dict(policy=policy,records=ready),f)
+with (output/'index.json').open('x',encoding='utf-8') as f:json.dump(dict(policy=policy,rows=index),f,ensure_ascii=False,indent=2)
+with (output/'policy.json').open('x',encoding='utf-8') as f:json.dump(policy,f,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=len(ready),training_windows=sum(len(r['windows']) for r in ready if r['cohort']=='training'),evaluation_rows=3258,
+    qualified_sounds=len(encoder.sound_ids),contextual_pronunciation_changes=policy['contextual_pronunciation_changes'])),flush=True)

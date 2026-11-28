@@ -1,0 +1,62 @@
+"""Configuration audit for every registered mapping; never a broad semantic benchmark."""
+import json
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+from app.services.pronunciation import numeric_tone_patterns,phrase_readings
+from pypinyin import Style,pinyin
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_12-candidate.json'
+entries=json.loads(path.read_text(encoding='utf-8'));service=ModerationService(path)
+results=[];failures=[];total=0
+for index,entry in enumerate(entries,1):
+    word=entry['word'];cases=[]
+    for name,variants in [('canonical',[word]),('alias',entry.get('aliases',[])),('targeted_alias',entry.get('targeted_aliases',[]))]:
+        for number,value in enumerate(variants):
+            cases.append(dict(id=f'{name}-{number}',text='你就是'+value,expected_target_hit=True))
+            cases.append(dict(id=f'{name}-{number}-report',text='举报：“'+value+'”请处理',expected_target_hit=False))
+    reading_count=0
+    if entry.get('pinyin'):
+        readings=phrase_readings(word,entry.get('pinyin_readings',[]));reading_count=len(readings)
+        for number,parts in enumerate(readings):
+            for name,value in [('spaced',' '.join(parts)),('continuous',''.join(parts))]:
+                cases.append(dict(id=f'pinyin-{number}-{name}',text='你就是'+value,expected_target_hit=True))
+        for number,value in enumerate(entry.get('pinyin_aliases',[])):
+            cases.append(dict(id=f'pinyin-alias-{number}',text='你就是'+value,expected_target_hit=True))
+        if entry.get('pinyin_tone_numbers'):
+            patterns=numeric_tone_patterns(word,entry.get('pinyin_readings',[]),entry.get('pinyin_tone_readings',[]))
+            assert len(patterns)<=8
+            primary=' '.join(s[0] for s in pinyin(word,style=Style.TONE3,neutral_tone_with_five=True))
+            tones=[primary,*entry.get('pinyin_tone_readings',[])]
+            for number,value in enumerate(dict.fromkeys(tones)):
+                for name,text in [('spaced',value),('continuous',value.replace(' ',''))]:
+                    cases.append(dict(id=f'tone-{number}-{name}',text='你就是'+text,expected_target_hit=True))
+    for number,form in enumerate(entry.get('pinyin_phrases',[])):
+        phonemes=phrase_readings(form['phrase'],form.get('readings',[]))
+        for path_index,parts in enumerate(phonemes):
+            cases.append(dict(id=f'alias-phrase-{number}-{path_index}',text='你就是'+' '.join(parts),expected_target_hit=True))
+        primary=' '.join(v[0] for v in pinyin(form['phrase'],style=Style.TONE3,neutral_tone_with_five=True))
+        for path_index,value in enumerate([primary,*form.get('tone_readings',[])]):
+            cases.append(dict(id=f'alias-tone-{number}-{path_index}',text='你就是'+value,expected_target_hit=True))
+    for name,phrases in [('normal',entry.get('allow_phrases',[])),('pinyin-normal',entry.get('pinyin_allow_phrases',[]))]:
+        for number,value in enumerate(phrases):cases.append(dict(id=f'{name}-{number}',text=value,expected_target_hit=False))
+    seen=[]
+    for case in cases:
+        failure=None;response=None
+        try:response=service.check(case['text']).model_dump()
+        except Exception as error:failure=type(error).__name__
+        matches=[hit for hit in response['hits'] if hit['word']==word] if response else []
+        okay=(failure is None and bool(matches)==case['expected_target_hit']
+              and (not matches or len(matches)==1 and matches[0]['level']==entry['level'])
+              and response['passed']==(not any(hit['level']=='HIGH' for hit in response['hits'])))
+        seen.append(dict(**case,response=response,error=failure,expected_result_met=okay))
+        if not okay:failures.append(dict(candidate_id=f'US24-{index:03d}',case_id=case['id']))
+    total+=len(seen)
+    results.append(dict(candidate_id=f'US24-{index:03d}',word=word,level_suggestion=entry['level'],
+                        readings=reading_count,cases=seen,M1_status='PENDING'))
+report=dict(scope='all132 registered configuration mappings, precise exceptions, deduplication and S1 decisions; not broad recall',
+    dictionary_sha256=service.dictionary_sha256,rules=len(results),checks=total,failures=failures,rules_detail=results,
+    COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (LAB/'all-candidate-mappings-v3_12.json').open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rules=len(results),checks=total,failures=failures),ensure_ascii=False),flush=True)

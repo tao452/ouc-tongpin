@@ -1,0 +1,31 @@
+{
+  "version": "4.0.0-lexical-rc.1",
+  "dictionary_sha256": "3294ab6039e74df504964edcf20c917824a5ba91aba8d99d8bcfad486e11956a",
+  "source_dictionary": "moderation-v3_13-candidate.json",
+  "source_dictionary_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+  "entry_count": 80,
+  "levels": {
+    "HIGH": 19,
+    "MEDIUM": 56,
+    "LOW": 5
+  },
+  "newly_proposed_words": 8,
+  "fixture_sha256": "3e1f1c8f1880cb59dbcded0d5e50b819965e230f27c25ef948cc8a9ace86e896",
+  "fixture_rows": 1038,
+  "scope_probe_rows": 9,
+  "development_labels": "作者合成的登记词面映射；不是广义语义金标；整句能力边界单列，不计正常真阴性",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "independent_evaluation": "NOT_RUN",
+  "default_dictionary": "words.json",
+  "existing_policy": "HIGH blocks; MEDIUM/LOW allow",
+  "semantic_recall_target_status": "UNMET, unchanged",
+  "plan": "docs/qa/data/us24-lexical-v4-plan.json",
+  "categories": {
+    "人身侮辱词": 59,
+    "固定粗口": 10,
+    "一般负面信号": 5,
+    "身份群体侮辱": 6
+  }
+}

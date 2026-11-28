@@ -1,0 +1,60 @@
+{
+  "created_at_utc": "2026-11-25T02:12:11.148333+00:00",
+  "dataset_policy": {
+    "created_at_utc": "2026-11-25T02:07:58.501904+00:00",
+    "scope": "same weights/labels and finite ranges; censor-symbol versus ASCII-space input ablation",
+    "original_features_sha256": "55a4e91f00ff6fa4fd388aa97e7f443c98dbbd8a7fd130ffb1287e3e7e7b2673",
+    "original_evaluation_rows": 3258,
+    "excluded_rows": 0,
+    "replacement": "only characters within existing precise context_spans become spaces; all outside text and boundaries retained",
+    "no_global_whitelist": true,
+    "no_forced_normal_decisions": true,
+    "changed_rows_by_cohort": {
+      "toxicn_dev": 0,
+      "PCR": 0,
+      "controls": 166,
+      "context_stress": 23
+    },
+    "protected_ranges_by_cohort": {
+      "toxicn_dev": 0,
+      "PCR": 0,
+      "controls": 168,
+      "context_stress": 24
+    },
+    "code_sha256": {
+      "prepare_context_space_ablation_v1.py": "9c9c59a8dfcf21d813fedc586400b4e35f5d57aabdc96d5b72f0350c2c10a9cc",
+      "rocbert_encoding_v9.py": "8bd07d54aeb0b7c0fcafa46a949c9afebba266ab0930275cef79a102ec929a1b",
+      "rocbert_encoding_v8.py": "7f3cc1201903cece7fb3a82f8ce90f67e4834c7dc90780aea3dff15c4b1bff1e"
+    },
+    "S1_source_sha256": {
+      "services/algo/app/services/moderation.py": "1faf6cb2f154aa849501dbd54422e58d9feef3ff72b3dea679b33d70dcbf6ced",
+      "services/algo/app/services/moderation_context.py": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2",
+      "services/algo/app/services/normalization.py": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80",
+      "services/algo/app/services/pronunciation.py": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+      "services/algo/app/services/targeted_matching.py": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d",
+      "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "services/algo/app/models/dictionary.py": "d7e8d021e7915353b6a0eef87ffc505daa4aee5312356117086edb3f9386e474"
+    },
+    "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+    "COLD_dev_fetched": false,
+    "M1_review": "PENDING",
+    "production_acceptance": false
+  },
+  "features_sha256": "70dd1989bea09b64ee6af3bfdc66d848a41268d5ec29157fd314e7ab8c495fc5",
+  "index_sha256": "79341743f7fab8c6af89a3afa7cb624752d50a36db7b5747fe36edda26e0fa05",
+  "weights_sha256": "5dce1f9650213b06f05bb6f1d2e58449794f9d18b38507b3b2cc4093d34408d7",
+  "gradient_updates": 0,
+  "source_sha256": {
+    "evaluate_context_space_ablation_v1.py": "7c87da195b67b37259b79dc9db97cc5b51e74e1058393b39c13b88b79ad30c31",
+    "train_rocbert_v8.py": "e4de9e92ba09cb8d6ba1f91ca49df50a30fe439e074b28503bdb65aca4b613fd",
+    "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+  },
+  "changed_input_rows": 189,
+  "evaluation_rows": 3258,
+  "excluded_rows": 0,
+  "fp32_parameters": true,
+  "BF16_inference": true,
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

@@ -1,0 +1,19 @@
+import hashlib
+import json
+from pathlib import Path
+
+LAB=Path.cwd()/'qa-private/us24-recall-20261124'
+paths=[LAB/'historical-v3_10-http/predictions.jsonl',LAB/'historical-v3_12-http/predictions.jsonl']
+old,new=([json.loads(s) for s in path.read_text(encoding='utf-8').splitlines()] for path in paths)
+assert len(old)==len(new)==12511
+changes=[]
+for a,b in zip(old,new,strict=True):
+    for key in ['id','cohort','label','category','source_text_sha256']:assert a[key]==b[key]
+    if any(a.get(key)!=b.get(key) for key in ['high_blocking','any_level','hits','error']):
+        changes.append(dict(id=b['id'],before=a,after=b))
+report=dict(scope='same12511 historical external rows, original labels and sources; fresh HTTP rerun, not independent evaluation',
+    rows=12511,changed_outputs=changes,old_predictions_sha256=hashlib.sha256(paths[0].read_bytes()).hexdigest(),
+    new_predictions_sha256=hashlib.sha256(paths[1].read_bytes()).hexdigest(),
+    source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),COLD_dev_fetched=False,production_acceptance=False)
+with (LAB/'historical-v3_12-http/comparison.json').open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=12511,changed_outputs=len(changes))))

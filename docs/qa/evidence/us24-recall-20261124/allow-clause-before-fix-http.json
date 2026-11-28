@@ -1,0 +1,29 @@
+{
+  "scope": "synthetic development",
+  "cases": [
+    {
+      "request": {
+        "text": "你去死，海边是好地方"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你去死海边是好地方",
+        "hits": []
+      },
+      "expected_passed": false,
+      "status": "FAIL"
+    },
+    {
+      "request": {
+        "text": "ni qu si, hai bian deng ni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "niqusihaibiandengni",
+        "hits": []
+      },
+      "expected_passed": false,
+      "status": "FAIL"
+    }
+  ]
+}

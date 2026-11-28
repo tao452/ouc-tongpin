@@ -1,0 +1,102 @@
+import json
+from pathlib import Path
+
+from publish_qwen4_label_v1 import sha,percent,table
+
+ROOT=Path.cwd()
+LAB=ROOT/'qa-private/us24-recall-20261124'
+QA=ROOT/'docs/qa'
+PRIVATE=LAB/'qwen4-margin-context-v2'
+PUBLIC=QA/'evidence/us24-qwen4-margin-context-v2'
+
+
+def main():
+    completed=json.loads((PRIVATE/'evaluation-complete.json').read_text(encoding='utf-8'))
+    checked=json.loads((PRIVATE/'precision-context-audit.json').read_text(encoding='utf-8'))
+    assert checked['rows_per_view']==3258 and checked['excluded_rows']==0
+    reports={view:json.loads((PRIVATE/view/'report.json').read_text(encoding='utf-8')) for view in ['full','context-spaces']}
+    exacts={view:json.loads((PRIVATE/view/'exact-score-sweep-v2/report.json').read_text(encoding='utf-8')) for view in reports}
+    assert all(r['previous_grid_matrices_recomputed']==7992 for r in exacts.values())
+    PUBLIC.mkdir(exist_ok=False)
+    files=[]
+
+    def copy(path,name):
+        data=path.read_bytes().replace(b'\r\n',b'\n')
+        assert len(data)<5*1024*1024
+        assert all(line==line.rstrip(b' \t') for line in data.split(b'\n'))
+        with (PUBLIC/name).open('xb') as handle:
+            handle.write(data)
+        files.append(dict(file=name,private_path=path.relative_to(LAB).as_posix(),
+                          private_sha256=sha(path),public_lf_sha256=__import__('hashlib').sha256(data).hexdigest()))
+
+    for name in ['frozen.json','evaluation-complete.json','precision-context-audit.json']:
+        copy(PRIVATE/name,name)
+    for view in reports:
+        for name in ['report.json','predictions.jsonl','thresholds.csv','threshold-grid-gate-audit.json','recall-cost-audit.json']:
+            copy(PRIVATE/view/name,view+'-'+name)
+        copy(PRIVATE/view/'exact-score-sweep-v2/report.json',view+'-exact-score-report.json')
+    for name in ['policy.json','index.json']:
+        copy(LAB/'qwen4-margin-context-v2-inputs'/name,'input-'+name)
+    for name in ['prepare_qwen4_margin_context_v2.py','evaluate_qwen4_margin_context_v2.py',
+                 'audit_qwen4_margin_context_v2.py','audit_recall_cost_v2.py',Path(__file__).name]:
+        copy(LAB/name,name+'.txt')
+    curves=[]
+    for view in reports:
+        for mode in ['model','literal_or_model']:
+            path=PRIVATE/view/'exact-score-sweep-v2'/f'{mode}.csv'
+            curves.append(dict(view=view,file=mode+'.csv',bytes=path.stat().st_size,sha256=sha(path)))
+    passed=any(r['development_gate_met'] for r in exacts.values())
+    manifest=dict(scope='fixed4B exact logit margin and finite-context comparison; reused development only',
+        files=files,rows_per_view=3258,views=2,excluded_rows=0,gradient_updates=0,
+        actual_full_inference_windows=3258,actual_additional_context_inference_windows=189,
+        exact_unchanged_input_scores_reused=3069,exact_curves_private=curves,
+        score_policy='0.5+atan(positive_logit-negative_logit)/pi; monotonic confidence, not a calibrated probability',
+        development_gate_met=passed,COLD_dev_fetched=False,
+        M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+    with (PUBLIC/'manifest.json').open('x',encoding='utf-8',newline='\n') as handle:
+        json.dump(manifest,handle,ensure_ascii=False,indent=2)
+    names={'toxicn_dev':'ToxiCN开发2399','PCR':'PCR500','controls':'正常257','context_stress':'语境102'}
+    lines=['# US24 4B模型分数精度与精确语境复测\n',
+        '上一项原始输入在正常257条中产生178次误报，其中107个负样本的Float32条件softmax恰好为1。原始结果完整保留，本次固定相同权重和提示，分别验证分数精度与既有有限语境处理。\n',
+        '## 修改与校验\n',
+        '- 记录两个标签的原始logit、差值、Float32条件softmax、Float64 sigmoid及原生最高分token。阈值扫描使用`0.5+atan(logit差值)/π`，它与差值单调对应且避免概率接近1时丢失排序，0.5边界仍对应两个标签等分。该分数不是概率。\n',
+        '- 完整原文3258条沿用原token输入和批次顺序，全部重新推理。另对既有3.10精确语境范围内字符替换为空格，166条正常语境和23条压力输入单独推理；范围外内容保留，未增加全局白名单或强制正常结果。既有方框连串归并沿用之前输入处理。\n',
+        '- 3069条两种输入完全相同的样本在同一次执行中复用完整输入分数；两张结果表各保留全部3258个原ID、原标签和字面标记。PCR和ToxiCN输入未改变。\n',
+        f"- 实际完整输入推理{completed['full_windows_attempted']}窗，语境补充推理{completed['additional_context_windows_attempted']}窗，总耗时{completed['full_inference_seconds']+completed['context_inference_seconds']:.2f}秒。两个结果各错误{reports['full']['rows_with_errors']}、{reports['context-spaces']['rows_with_errors']}条，排除0条。相同原始输入的Float32重放最大分数差为{completed['raw_float32_replay_max_difference']!r}。\n",
+        '## 默认0.5阈值的模型结果\n']
+    for view,title in [('full','完整原文'),('context-spaces','精确语境空格')]:
+        lines += ['### '+title+'\n',*table(reports[view]['metrics']['model']['at_0_5'],names),'']
+    lines += ['## 四组各自FPR低于2%的选点\n',
+        '固定目标仍为所有正样本组Recall≥95%，四组各自FPR<2%，错误0。下表使用“字面规则或模型”，每项只有一个全局阈值；模型单独判断及全部类别分组保留在完整报告中。\n']
+    for view,title in [('full','完整原文'),('context-spaces','精确语境空格')]:
+        point=exacts[view]['results']['literal_or_model']['best_fpr_eligible']
+        lines.append('### '+title+'\n')
+        if point is None:
+            lines.append('没有满足四组误报和错误限制的阈值。\n')
+        else:
+            lines += [f"同一阈值`{point['threshold']!r}`。\n",*table(point,names)]
+        lines.append(f"\n实际分数边界通过整体门槛的点数：{len(exacts[view]['passing_points'])}。\n")
+    lines.append('## 95%召回对应的误报\n')
+    for view,title in [('full','完整原文'),('context-spaces','精确语境空格')]:
+        costs=json.loads((PRIVATE/view/'recall-cost-audit.json').read_text(encoding='utf-8'))
+        point=costs['results']['literal_or_model']
+        lines.append('### '+title+'\n')
+        if point is not None:
+            lines += [f"同一阈值`{point['threshold']!r}`。\n",*table(point,names)]
+        else:
+            lines.append('未找到所有正样本组召回同时达标且零错误的阈值。\n')
+    outcome='开发门槛通过，后续需要冻结方案并进行封存独立样本验收。' if passed else '两种输入均未通过整体门槛。分数精度修正和正常语境改善不等于广义召回已经达标，继续进行有训练来源和物理预检的适配训练。'
+    lines += ['\n## 结论\n',outcome+'\n',
+        '999阈值网格、每种输入7992个矩阵、全部实际分数边界、原生标签格式、logit映射和输入复用均独立复核。完整分数与源码见[证据索引](evidence/us24-qwen4-margin-context-v2/manifest.json)。原始语料、token窗和模型权重保持私有，封存COLD分区未读取。\n',
+        '本项为重复开发对照，未接入S1业务，也不表示W9危机理解完成。默认原5条、HIGH阻断及MEDIUM/LOW放行沿用，132条M1逐条审核和M3复现仍待完成。\n']
+    with (QA/'US24-4B分数精度与语境复测.md').open('x',encoding='utf-8',newline='\n') as handle:
+        handle.write('\n'.join(lines))
+    target=QA/'US24-拼音语义分类训练与复测报告.md'
+    previous=target.read_text(encoding='utf-8')
+    assert '## 4B分数精度与语境复测' not in previous
+    target.write_text(previous+'\n\n## 4B分数精度与语境复测\n\n保留两个原始logit并修正Float32饱和排序；完整3258条与189条精确语境变化补充推理。'+outcome+'详见[本次复测](US24-4B分数精度与语境复测.md)。\n',encoding='utf-8',newline='\n')
+    print(json.dumps(dict(public_files=len(files)+1,rows_per_view=3258,development_gate_met=passed)),flush=True)
+
+
+if __name__=='__main__':
+    main()

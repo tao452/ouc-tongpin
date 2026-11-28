@@ -1,0 +1,62 @@
+F.............................................................
+ERROR: Coverage failure: total of 75 is less than fail-under=90
+                                                                         [100%]
+================================== FAILURES ===================================
+__________ test_explicit_sandhi_paths_and_normal_context_regressions __________
+
+service = <app.services.moderation.ModerationService object at 0x0000025480A08080>
+
+    def test_explicit_sandhi_paths_and_normal_context_regressions(service):
+        path = ROOT / "docs/qa/data/us24-development.v3_11.jsonl"
+>       for line in path.read_text(encoding="utf-8").splitlines():
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_sandhi_context.py:18:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+<userhome>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/18199/桌面/软件工程/ouc-tongpin-us24-m1/docs/qa/data/us24-development.v3_11.jsonl')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\18199\\桌面\\软件工程\\ouc-tongpin-us24-m1\\docs\\qa\\data\\us24-development.v3_11.jsonl'
+
+<userhome>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: FileNotFoundError
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.12.14-final-0 _______________
+
+Name                                 Stmts   Miss Branch BrPart  Cover   Missing
+--------------------------------------------------------------------------------
+app\__init__.py                          0      0      0      0   100%
+app\body_limit.py                       35     35     16      0     0%   1-45
+app\main.py                             15     15      0      0     0%   1-23
+app\models\__init__.py                   0      0      0      0   100%
+app\models\dictionary.py                51      9     20      9    75%   28, 35, 42, 44, 46, 48, 52, 54, 62
+app\models\moderation.py                18      3      2      0    75%   13-15
+app\routers\__init__.py                  0      0      0      0   100%
+app\routers\moderation.py               14     14      0      0     0%   1-18
+app\services\__init__.py                 0      0      0      0   100%
+app\services\moderation.py             244     43    122     14    81%   46-54, 60-62, 92, 100, 132, 155, 160, 165, 172->174, 177-181, 211-218, 221-222, 237, 254, 288, 315-317, 331-336
+app\services\moderation_context.py      56      3     24      2    91%   56, 105-106
+app\services\normalization.py           25      1      8      1    94%   30
+app\services\pronunciation.py           55      6     30      8    84%   15, 21, 26, 27->18, 30, 50->45, 80, 82
+app\services\targeted_matching.py       42      2     22      2    94%   30, 63
+--------------------------------------------------------------------------------
+TOTAL                                  555    131    244     36    75%
+Coverage XML written to file coverage.xml
+FAIL Required test coverage of 90% not reached. Total coverage: 75.09%
+=========================== short test summary info ===========================
+FAILED tests/test_sandhi_context.py::test_explicit_sandhi_paths_and_normal_context_regressions
+1 failed, 61 passed in 1.88s

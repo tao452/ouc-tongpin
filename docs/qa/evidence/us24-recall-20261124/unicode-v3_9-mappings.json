@@ -1,0 +1,239 @@
+[
+  {
+    "variant_id": "UC-001-A1",
+    "candidate_id": "US24-001",
+    "word": "傻逼",
+    "literal_alias": "shаbi",
+    "unicode_codepoints": [
+      "U+0073",
+      "U+0068",
+      "U+0430",
+      "U+0062",
+      "U+0069"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-001-A2",
+    "candidate_id": "US24-001",
+    "word": "傻逼",
+    "literal_alias": "sһabi",
+    "unicode_codepoints": [
+      "U+0073",
+      "U+04BB",
+      "U+0061",
+      "U+0062",
+      "U+0069"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-001-A3",
+    "candidate_id": "US24-001",
+    "word": "傻逼",
+    "literal_alias": "ѕhаbі",
+    "unicode_codepoints": [
+      "U+0455",
+      "U+0068",
+      "U+0430",
+      "U+0062",
+      "U+0456"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-002-A1",
+    "candidate_id": "US24-002",
+    "word": "操你妈",
+    "literal_alias": "caоnima",
+    "unicode_codepoints": [
+      "U+0063",
+      "U+0061",
+      "U+043E",
+      "U+006E",
+      "U+0069",
+      "U+006D",
+      "U+0061"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-002-A2",
+    "candidate_id": "US24-002",
+    "word": "操你妈",
+    "literal_alias": "cаonima",
+    "unicode_codepoints": [
+      "U+0063",
+      "U+0430",
+      "U+006F",
+      "U+006E",
+      "U+0069",
+      "U+006D",
+      "U+0061"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-002-A3",
+    "candidate_id": "US24-002",
+    "word": "操你妈",
+    "literal_alias": "саоnіma",
+    "unicode_codepoints": [
+      "U+0441",
+      "U+0430",
+      "U+043E",
+      "U+006E",
+      "U+0456",
+      "U+006D",
+      "U+0061"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-004-A1",
+    "candidate_id": "US24-004",
+    "word": "滚你妈",
+    "literal_alias": "gυnnima",
+    "unicode_codepoints": [
+      "U+0067",
+      "U+03C5",
+      "U+006E",
+      "U+006E",
+      "U+0069",
+      "U+006D",
+      "U+0061"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-004-A2",
+    "candidate_id": "US24-004",
+    "word": "滚你妈",
+    "literal_alias": "gunnіma",
+    "unicode_codepoints": [
+      "U+0067",
+      "U+0075",
+      "U+006E",
+      "U+006E",
+      "U+0456",
+      "U+006D",
+      "U+0061"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-004-A3",
+    "candidate_id": "US24-004",
+    "word": "滚你妈",
+    "literal_alias": "gυnnіma",
+    "unicode_codepoints": [
+      "U+0067",
+      "U+03C5",
+      "U+006E",
+      "U+006E",
+      "U+0456",
+      "U+006D",
+      "U+0061"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-015-A1",
+    "candidate_id": "US24-015",
+    "word": "弄死你",
+    "literal_alias": "nоngsini",
+    "unicode_codepoints": [
+      "U+006E",
+      "U+043E",
+      "U+006E",
+      "U+0067",
+      "U+0073",
+      "U+0069",
+      "U+006E",
+      "U+0069"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-015-A2",
+    "candidate_id": "US24-015",
+    "word": "弄死你",
+    "literal_alias": "nongѕini",
+    "unicode_codepoints": [
+      "U+006E",
+      "U+006F",
+      "U+006E",
+      "U+0067",
+      "U+0455",
+      "U+0069",
+      "U+006E",
+      "U+0069"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  },
+  {
+    "variant_id": "UC-015-A3",
+    "candidate_id": "US24-015",
+    "word": "弄死你",
+    "literal_alias": "nongsіni",
+    "unicode_codepoints": [
+      "U+006E",
+      "U+006F",
+      "U+006E",
+      "U+0067",
+      "U+0073",
+      "U+0456",
+      "U+006E",
+      "U+0069"
+    ],
+    "category": "explicit visual pinyin alias",
+    "suggested_level": "HIGH",
+    "M1_review": "PENDING",
+    "normal_context": "mixed-script identifiers, literal language discussion, reporting and self-help",
+    "risk": "mixed-script text can be legitimate; complete registered alias and Unicode identifier boundaries only"
+  }
+]

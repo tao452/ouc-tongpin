@@ -1,0 +1,574 @@
+{
+  "policy": {
+    "model": "Qwen/Qwen3Guard-Gen-0.6B",
+    "revision": "fada3b2f655b89601929198343c94cd2f64d93cc",
+    "weights_sha256": "4f3ce47ebd968cddb67de08d8764f8ede7c410a7d1fb9e08145a4c7a2f2e5c0f",
+    "backend": "ollama",
+    "device": "ollama-auto-gpu",
+    "precision": "f16-gguf-llamacpp-b6500",
+    "threads": 4,
+    "seed": 20261124,
+    "max_input_tokens": 4096,
+    "max_new_tokens": 64,
+    "do_sample": false,
+    "positive_policy": [
+      "Unsafe",
+      "Unsafe-or-Controversial"
+    ],
+    "modes": [
+      "raw",
+      "pinyin-gloss",
+      "context-pinyin-gloss"
+    ],
+    "offense_categories": [
+      "Unethical Acts",
+      "Violent"
+    ],
+    "crisis_signal_policy": "retain native Suicide & Self-Harm category separately; never map it to ordinary insult or S1 HIGH",
+    "source": "PCR500 historical development plus all original v2/v3 negative controls",
+    "production_enabled": false,
+    "production_acceptance": false,
+    "prompt": "official author user-only chat_template; pinyin mode appends line 拼音: plus phrase-first lazy_pinyin; no instructions from source text executed",
+    "code_sha256": "99f40fd728cd25b0cbffcf8073fb479a52bc693639dcfff5e055a4d5a39b452e",
+    "ollama_model": {
+      "name": "ouc-us24-guard-20261124:f16",
+      "digest": "6bea3bb170de26232cf15b394a18c8deff4646bf3f3815c1376a1b13cdf675c4",
+      "size": 1509347460,
+      "details": {
+        "parent_model": "qwen-guard-f16.gguf",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "751.63M",
+        "quantization_level": "F16",
+        "context_length": 32768,
+        "embedding_length": 1024,
+        "runner": "llamacpp"
+      }
+    }
+  },
+  "rows_per_mode": 757,
+  "unique_calls": 2046,
+  "total_predictions": 2271,
+  "elapsed_seconds": 232.76740449999943,
+  "metrics": {
+    "raw-PCR-unsafe": {
+      "confusion_matrix": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 249,
+        "tn": 248
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.004,
+      "precision": 0.3333333333333333,
+      "false_positive_rate": 0.008,
+      "recall_wilson95": [
+        0.0007064475340650966,
+        0.02230578556541592
+      ],
+      "false_positive_rate_wilson95": [
+        0.0021966371203094217,
+        0.02869452958320804
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "raw-PCR-offense-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 250,
+        "tn": 249
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.0,
+      "precision": 0.0,
+      "false_positive_rate": 0.004,
+      "recall_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "false_positive_rate_wilson95": [
+        0.0007064475340650966,
+        0.02230578556541592
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "raw-PCR-loose": {
+      "confusion_matrix": {
+        "tp": 44,
+        "fp": 19,
+        "fn": 206,
+        "tn": 231
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.176,
+      "precision": 0.6984126984126984,
+      "false_positive_rate": 0.076,
+      "recall_wilson95": [
+        0.13379976146744743,
+        0.22800661660560062
+      ],
+      "false_positive_rate_wilson95": [
+        0.04919164066173632,
+        0.11564139731040066
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "raw-PCR-offense-loose": {
+      "confusion_matrix": {
+        "tp": 25,
+        "fp": 4,
+        "fn": 225,
+        "tn": 246
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.1,
+      "precision": 0.8620689655172413,
+      "false_positive_rate": 0.016,
+      "recall_wilson95": [
+        0.06865492898829106,
+        0.14345171060806458
+      ],
+      "false_positive_rate_wilson95": [
+        0.006239224570471175,
+        0.04040980934111918
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "raw-controls-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 17,
+        "fn": 0,
+        "tn": 240
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.06614785992217899,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.041706178803003396,
+        0.10336837718123854
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "raw-controls-offense-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 0,
+        "tn": 249
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.0311284046692607,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.015855994046279496,
+        0.06021112699498646
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "raw-controls-loose": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 152,
+        "fn": 0,
+        "tn": 105
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.5914396887159533,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.5304233572555009,
+        0.6497627228733808
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "raw-controls-offense-loose": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 95,
+        "fn": 0,
+        "tn": 162
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.36964980544747084,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.3129585083513428,
+        0.4301804838053577
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-PCR-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 250,
+        "tn": 250
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.0,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "false_positive_rate_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-PCR-offense-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 250,
+        "tn": 250
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.0,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "false_positive_rate_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-PCR-loose": {
+      "confusion_matrix": {
+        "tp": 8,
+        "fp": 4,
+        "fn": 242,
+        "tn": 246
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.032,
+      "precision": 0.6666666666666666,
+      "false_positive_rate": 0.016,
+      "recall_wilson95": [
+        0.01630236549364963,
+        0.06186240283408649
+      ],
+      "false_positive_rate_wilson95": [
+        0.006239224570471175,
+        0.04040980934111918
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-PCR-offense-loose": {
+      "confusion_matrix": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 248,
+        "tn": 250
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.008,
+      "precision": 1.0,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        0.0021966371203094217,
+        0.02869452958320804
+      ],
+      "false_positive_rate_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-controls-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 5,
+        "fn": 0,
+        "tn": 252
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.019455252918287938,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.008338048936670658,
+        0.044726593790269956
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-controls-offense-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 0,
+        "tn": 255
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.007782101167315175,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.00213673352769031,
+        0.02792543088492497
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-controls-loose": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 72,
+        "fn": 0,
+        "tn": 185
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.2801556420233463,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.22879946439064183,
+        0.33798719402289773
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "pinyin-gloss-controls-offense-loose": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 36,
+        "fn": 0,
+        "tn": 221
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.14007782101167315,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.1029276148809136,
+        0.18782930376072204
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-PCR-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 250,
+        "tn": 250
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.0,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "false_positive_rate_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-PCR-offense-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 250,
+        "tn": 250
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.0,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "false_positive_rate_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-PCR-loose": {
+      "confusion_matrix": {
+        "tp": 7,
+        "fp": 4,
+        "fn": 243,
+        "tn": 246
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.028,
+      "precision": 0.6363636363636364,
+      "false_positive_rate": 0.016,
+      "recall_wilson95": [
+        0.013628058600839217,
+        0.05665777612286046
+      ],
+      "false_positive_rate_wilson95": [
+        0.006239224570471175,
+        0.04040980934111918
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-PCR-offense-loose": {
+      "confusion_matrix": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 247,
+        "tn": 250
+      },
+      "offensive_samples": 250,
+      "nonoffensive_samples": 250,
+      "recall": 0.012,
+      "precision": 1.0,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": [
+        0.0040893198805342975,
+        0.0346807804270196
+      ],
+      "false_positive_rate_wilson95": [
+        8.673617379884035e-19,
+        0.015133299495444574
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-controls-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "tn": 256
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.0038910505836575876,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.000687196508130386,
+        0.02170747513304312
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-controls-offense-unsafe": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 257
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.014727178869731728
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-controls-loose": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 0,
+        "tn": 254
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": 0.0,
+      "false_positive_rate": 0.011673151750972763,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0.003977718469482005,
+        0.033751938714575054
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    },
+    "context-pinyin-gloss-controls-offense-loose": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 257
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 257,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.014727178869731728
+      ],
+      "broad_benchmark_thresholds_met": false,
+      "unknown_rows": 0
+    }
+  }
+}

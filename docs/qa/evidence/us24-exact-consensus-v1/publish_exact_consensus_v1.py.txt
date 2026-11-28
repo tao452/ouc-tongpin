@@ -1,0 +1,90 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+PUBLIC = ROOT / 'docs/qa/evidence/us24-exact-consensus-v1'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def main():
+    base = LAB / 'rocbert-complement-consensus-v1'
+    summary = json.loads((base / 'summary.json').read_text(encoding='utf-8'))
+    methods = ['arithmetic_mean', 'geometric_mean', 'minimum', 'maximum']
+    assert set(summary['methods']) == set(methods)
+    PUBLIC.mkdir(exist_ok=False)
+    entries = []
+
+    def write(data, name, source=None):
+        assert len(data) < 5 * 1024 * 1024
+        with (PUBLIC / name).open('xb') as handle:
+            handle.write(data)
+        record = dict(file=name, public_lf_sha256=hashlib.sha256(data).hexdigest())
+        if source:
+            record.update(private_path=source.relative_to(LAB).as_posix(), private_sha256=sha(source))
+        entries.append(record)
+
+    def copy(source, name):
+        data = source.read_bytes().replace(b'\r\n', b'\n')
+        assert all(line == line.rstrip(b' \t') for line in data.split(b'\n'))
+        write(data, name, source)
+
+    for name in ['frozen.json', 'summary.json']:
+        copy(base / name, 'consensus-' + name)
+    for name in ['evaluate_rocbert_complement_consensus_v1.py', 'audit_exact_operating_points_v1.py',
+                 'audit_exact_operating_points_v2.py', 'phonetic_recheck_metrics.py', Path(__file__).name]:
+        copy(LAB / name, name + '.txt')
+    copy(LAB / 'ci-5574647-qualified.json', 'ci-source-qualification.json')
+    common = [json.loads(line) for line in (base / 'arithmetic_mean/predictions.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert len(common) == len({r['id'] for r in common}) == 3258
+    projection_fields = ['id', 'label', 'cohort', 'category', 'source_text_sha256', 'literal_any', 'member_scores', 'error']
+    projected = [{key: row[key] for key in projection_fields if key in row} for row in common]
+    write(''.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) + '\n' for r in projected).encode(),
+          'aligned-member-scores.jsonl')
+    full_files = []
+    sweeps = []
+    targets = [(f'rocbert-epoch-{epoch}', LAB / f'rocbert-v8/epoch-{epoch}') for epoch in [1, 2, 3]]
+    targets.extend((f'consensus-{method}', base / method) for method in methods)
+    for name, directory in targets:
+        sweep = directory / 'exact-score-sweep-v2'
+        report = json.loads((sweep / 'report.json').read_text(encoding='utf-8'))
+        assert report['previous_grid_matrices_recomputed'] == 7992 and report['original_rows'] == 3258
+        assert report['excluded_rows'] == 0
+        assert sha(directory / 'predictions.jsonl') == report['source_predictions_sha256']
+        copy(sweep / 'report.json', name + '-exact-report.json')
+        sweeps.append(dict(configuration=name, thresholds_per_mode=report['thresholds_per_mode'],
+                           development_gate_met=report['development_gate_met']))
+        if name.startswith('consensus-'):
+            copy(directory / 'report.json', name + '-fixed-grid-report.json')
+            copy(directory / 'thresholds.csv', name + '-fixed-grid-thresholds.csv')
+        else:
+            copy(directory / 'exact-score-sweep-v1/report.json', name + '-first-precision-check.json')
+        for filename in ['model.csv', 'literal_or_model.csv']:
+            source = sweep / filename
+            full_files.append(dict(configuration=name, file=filename, private_path=source.relative_to(LAB).as_posix(),
+                                   bytes=source.stat().st_size, sha256=sha(source),
+                                   reproduction='deterministic exact-score auditor and complete published source scores'))
+    write((json.dumps(full_files, ensure_ascii=False, indent=2) + '\n').encode(), 'private-full-curve-index.json')
+    manifest = dict(scope='post-hoc score precision and fixed uniform model combination development, not independent acceptance',
+                    files=entries, configurations=sweeps, original_comments_per_configuration=3258,
+                    original_grid_matrices_recomputed=55944, excluded_evaluation_rows=0,
+                    three_member_score_rows=3258, combination_policy='uniform arithmetic/geometric/min/max on all rows',
+                    member_selection='completed development-selected checkpoints; selection bias retained in scope',
+                    full_curve_policy='all exact CSV files retained private with bytes/SHA; complete score rows and generator public',
+                    source_newline_policy='original private data SHA and public LF SHA are separate',
+                    upstream_score_evidence=['../us24-rocbert-v8/manifest.json', '../us24-context39-consensus-v2/manifest.json',
+                                             '../us24-qwen-cntp-domain-v7/manifest.json'],
+                    COLD_dev_fetched=False, M1_review='PENDING', M3_reproduction='PENDING', production_acceptance=False)
+    with (PUBLIC / 'manifest.json').open('x', encoding='utf-8', newline='\n') as handle:
+        json.dump(manifest, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(files=len(entries)+1, configurations=7, matrices_recomputed=55944,
+                          passing_configurations=[r['configuration'] for r in sweeps if r['development_gate_met']])))
+
+
+if __name__ == '__main__':
+    main()

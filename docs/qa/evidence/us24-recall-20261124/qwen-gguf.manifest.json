@@ -1,0 +1,10 @@
+{
+  "source_revision": "fada3b2f655b89601929198343c94cd2f64d93cc",
+  "source_sha256": "4f3ce47ebd968cddb67de08d8764f8ede7c410a7d1fb9e08145a4c7a2f2e5c0f",
+  "converter_repository": "https://github.com/ggml-org/llama.cpp",
+  "converter_commit": "a7a98e0fffed794396b3fbad4dcdbbc184963645",
+  "output_type": "F16",
+  "output_bytes": 1509347328,
+  "output_sha256": "2ac101ec0e9785df999b81bf12be53d2528b5d4f4a18b4ec1f18bb311827c09c",
+  "remote_code_execution": false
+}

@@ -1,0 +1,56 @@
+import hashlib
+import json
+import sys
+from collections import Counter
+from datetime import UTC,datetime
+from pathlib import Path
+
+import torch
+
+from qwen_sequence_encoding_v5 import SequenceEncoder
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development,pcr
+from evaluate_recall import load_external,source_sha
+from app.services.normalization import canonicalize
+
+torch.set_num_threads(2)
+features=LAB/'qwen-sequence-v5-context39/features.pt'
+prepared=torch.load(features,map_location='cpu',weights_only=True)
+for name,value in prepared['policy']['current_engine_sha256'].items():assert source_sha(ROOT/name)==value
+rows=prepared['records'];assert len(rows)==3258
+raw={r['id']:r['text'] for r in load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))}
+pcr_rows,excluded=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+assert not excluded;raw.update({r['id']:r['text'] for r in pcr_rows})
+for version in ['v2','v3']:
+    for r in development(ROOT/f'docs/qa/data/us24-development.{version}.jsonl'):
+        if not r['expected_word']:raw[version+'-'+r['id']]=r['text']
+for r in map(json.loads,(ROOT/'docs/qa/data/us24-context-stress.v1.jsonl').read_text(encoding='utf-8').splitlines()):raw[r['id']]=r['text']
+output=LAB/'qwen-raw-probe-v1-inputs';output.mkdir(exist_ok=False)
+encoder=SequenceEncoder(LAB/'qwen3-1_7b-tokenizer');ready=[];changes=[]
+for number,row in enumerate(rows,1):
+    text=raw[row['id']]
+    assert hashlib.sha256(text.encode()).hexdigest()==row['source_text_sha256']
+    value=canonicalize(text);digest=hashlib.sha256(value.encode()).hexdigest()
+    item=dict(row)
+    item['masked_transform_sha256']=row['transformed_sha256']
+    item['transformed_sha256']=digest
+    if digest!=row['transformed_sha256']:
+        item['windows']=encoder.encode(value)
+        changes.append(dict(id=row['id'],cohort=row['cohort'],label=row['label']))
+    ready.append(item)
+    if number%500==0:print(f'Raw-input development probe prepared {number}/3258',flush=True)
+policy=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='same-weight input ablation; development only; no gradient updates',
+    hypothesis='measure information loss and normal-context errors when whole canonical text remains visible',
+    treatment='all rows uniformly use canonical original plus contextual pinyin; no context mask; same template/windows',
+    baseline_features_sha256=hashlib.sha256(features.read_bytes()).hexdigest(),
+    engine_policy=prepared['policy'],literal_flag_policy='unchanged sealed current3.9 flags; not new live availability',
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'qwen_sequence_encoding_v5.py']},
+    evaluation_rows=3258,excluded_evaluation_rows=0,transform_changes=changes,
+    changes_by_cohort_label=dict(Counter(r['cohort']+':'+str(r['label']) for r in changes)),
+    COLD_dev_fetched=False,M1_review='PENDING',production_acceptance=False)
+with (output/'features.pt').open('xb') as f:torch.save(dict(policy=policy,records=ready),f)
+with (output/'input-audit.json').open('x',encoding='utf-8') as f:
+    json.dump(dict(policy=policy,rows=[{k:v for k,v in r.items() if k!='windows'} for r in ready]),f,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=3258,transform_changes=len(changes),by_cohort_label=policy['changes_by_cohort_label'])),flush=True)

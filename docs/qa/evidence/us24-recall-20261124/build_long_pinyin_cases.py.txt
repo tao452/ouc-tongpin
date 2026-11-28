@@ -1,0 +1,36 @@
+import hashlib
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+
+from pypinyin import Style, pinyin
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_5-candidate.json'
+records=json.loads(path.read_text(encoding='utf-8'));cases=[]
+quotes=[('“','”'),('「','」'),('"','"'),("'","'"),('‘','’')]
+for number,row in enumerate(records,1):
+    if not row.get('pinyin') or not row.get('pinyin_tone_numbers'):continue
+    attack='........'.join(part[0] for part in pinyin(row['word'],style=Style.TONE3,neutral_tone_with_five=True))
+    if row.get('target_required'):attack='你就是'+attack
+    prefix=f'LONGPY-{number:03d}'
+    def case(identifier,text,kind,positive):
+        cases.append(dict(id=identifier,text=text,expected_word=row['word'] if positive else '',
+            expected_level=row['level'] if positive else '',kind=kind,
+            category='numeric_tone' if positive else 'normal_report',blocked=positive and row['level']=='HIGH'))
+    case(prefix+'-direct',attack,'registered_numeric_tone',True)
+    for index,(left,right) in enumerate(quotes,1):
+        report=f'举报：{left}{attack}{right}请处理'
+        case(prefix+f'-report-{index}',report,'local_report',False)
+        case(prefix+f'-continued-{index}',report+'。'+attack,'continued_attack',True)
+assert len(cases)==946 and len({r['id'] for r in cases})==946
+data=''.join(json.dumps(row,ensure_ascii=False)+'\n' for row in cases).encode()
+out=ROOT/'docs/qa/data/us24-development.v3_7.jsonl'
+with out.open('xb') as handle:handle.write(data)
+manifest=dict(created_at_utc=datetime.now(UTC).isoformat(),source='M6 synthetic finite registered-path development',
+    scope='literal rule mapping and quotation behavior; not broad semantic acceptance',rows=946,positive=516,normal_report=430,
+    dictionary_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),sha256=hashlib.sha256(data).hexdigest(),
+    variants='all86 numeric-tone-enabled canonical context paths;8dots between syllables;5quote pairs',
+    M1_review='PENDING',independent_acceptance=False,gradient_training=False)
+with out.with_suffix('.manifest.json').open('x',encoding='utf-8') as handle:json.dump(manifest,handle,ensure_ascii=False,indent=2)
+print(json.dumps(manifest))

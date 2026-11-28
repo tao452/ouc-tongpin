@@ -1,0 +1,359 @@
+{
+  "scope": "Exact staged Git blobs; synthetic requests/responses and hash-only model predictions",
+  "files": 70,
+  "unresolved_findings": [],
+  "phone_like_substrings_inside_hashes": 296,
+  "raw_corpus_or_model_hints_included": false,
+  "checked_files": [
+    {
+      "file": ".github/workflows/deploy-test.yml",
+      "bytes": 9910,
+      "sha256": "01b4a43bba26e06ec2d8d02beea9578e91dcba1c8ac905580523bac5ff28d680"
+    },
+    {
+      "file": "docs/qa/US24-v3_5-M1逐条审核表.md",
+      "bytes": 123290,
+      "sha256": "92d476468ededca88f6c74d7d62d5f1b53ad4f206492f0ba3016b529544fedf3"
+    },
+    {
+      "file": "docs/qa/US24-v3_6-语境修正与复测报告.md",
+      "bytes": 3141,
+      "sha256": "b3564c7665ca12f31d75c1c53b28cdaaebbc4b92e39d49963c51f1af50c0f5d9"
+    },
+    {
+      "file": "docs/qa/US24-拼音语义分类开发方案.md",
+      "bytes": 3831,
+      "sha256": "4959d4aa9fdb22528649b23a083625b723190d4d42cf405c0ade37b467a04bc9"
+    },
+    {
+      "file": "docs/qa/US24-拼音语义分类训练与复测报告.md",
+      "bytes": 4381,
+      "sha256": "4d8066e58d25b384f32615629025e32371123cf5741aa775ba107550c1115575"
+    },
+    {
+      "file": "docs/qa/US24-词库版本变更记录.md",
+      "bytes": 6049,
+      "sha256": "59ee90d62feef84fed63aa74bd5e32a43e7117746d83fdb667c62f73f8865721"
+    },
+    {
+      "file": "docs/qa/data/us24-context-stress.v1.jsonl",
+      "bytes": 11100,
+      "sha256": "b02219741c0c08017a979042dd78e79b802f2595cb1393e16241f7180cd5e284"
+    },
+    {
+      "file": "docs/qa/data/us24-context-stress.v1.manifest.json",
+      "bytes": 687,
+      "sha256": "c8ebf47052f21992d04712bcf7d58651d71f3d7b7e634949bb6ad4b46545033f"
+    },
+    {
+      "file": "docs/qa/data/us24-quote-boundaries.v1.json",
+      "bytes": 1959,
+      "sha256": "17149bb197d83c5e5aa2ffd8cffc2a063df246bd5dcbf4ca15b90e4e9804c28f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-1-predictions.jsonl",
+      "bytes": 1290995,
+      "sha256": "16b77323388a827666da87cfbcff2d527a1b7645796eb19c918d979882b4ecfd"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-1-report.json",
+      "bytes": 31493,
+      "sha256": "7be128597e9493350e97a8dba158441b7c45a777350debb2d159ce8c4ff3c41a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-1-thresholds.csv",
+      "bytes": 627386,
+      "sha256": "86398d878272edad6e5ed4ceeb1f8830a6eaa1eb2a05ef435db5d647aa71e2a4"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-2-predictions.jsonl",
+      "bytes": 1291184,
+      "sha256": "7c481b2b62a551bbabb3bf2f9b88b6346f4a4cd1ca916b81999c68448d03fdca"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-2-report.json",
+      "bytes": 31391,
+      "sha256": "1e74fc96a4a532d4ac85f89692a107e76a14fbcb608d738d2cc6e958fdd498d9"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-2-thresholds.csv",
+      "bytes": 632867,
+      "sha256": "809c168a9a85ef9c0d228f76565af917eabce73abb1fb7db79f27f7f7d8074ea"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-3-predictions.jsonl",
+      "bytes": 1292134,
+      "sha256": "35f0cc4ba1961985df4b42ba86a3f3595d71545179cc5debda1c12cbf4879220"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-3-report.json",
+      "bytes": 31414,
+      "sha256": "3468d212497024f12f316876c75bf5d88959420794a960beb2de8bc918abc8ae"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/epoch-3-thresholds.csv",
+      "bytes": 641670,
+      "sha256": "6ffa82e1b41ee20ec57ded37e37d6084796c2f9ba72303118d737fb846584f99"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/manifest.json",
+      "bytes": 4002,
+      "sha256": "ad80b24fd76e159b5d12b768fa5b486429825fd5ea1ad1788e16f3391585fe3a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/phonetic_recheck_metrics.py.txt",
+      "bytes": 3045,
+      "sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/policy.json",
+      "bytes": 1544,
+      "sha256": "74b96a6590d7ae2fa4d8da58d1257f1f4f5294a6a5f1aa4952fd88c0f6427941"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/recheck_phonetic.py.txt",
+      "bytes": 5256,
+      "sha256": "ba84b42d702332e985562d659240330e43f01baa9bb38356d30d0cbe3d0d52a1"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-recheck-v1/summary.json",
+      "bytes": 108828,
+      "sha256": "f9cf26190267a58feb0bf51db116728c173e55a6a6ef4b1dbfa0707536d85ca5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-1-predictions.jsonl",
+      "bytes": 1249273,
+      "sha256": "cce398ae0e656822f311568767004377bd42cafd636b38c1d76a65879b2ac830"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-1-report.json",
+      "bytes": 20819,
+      "sha256": "262db32af0e686c533a65151356051767bb69f97ea2a80310bbae88cd69d0098"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-1-thresholds.csv",
+      "bytes": 453990,
+      "sha256": "446b59e797ff3115ed16880e4b92330d3456ea7f5ead14cc78eac3d37f04d7ee"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-2-predictions.jsonl",
+      "bytes": 1249447,
+      "sha256": "466c5836012546ed6e8dca2d9b12b5e99831735d7fe4b97c3124c21402330338"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-2-report.json",
+      "bytes": 20717,
+      "sha256": "fd73f6f0cb0090187036bf4e881ad04414c3463ea1cb20a1463069c0faaf7f73"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-2-thresholds.csv",
+      "bytes": 461560,
+      "sha256": "84536b185a122296b8757bafa35e59dab4b367be359a157225d48512fd3c81cd"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-3-predictions.jsonl",
+      "bytes": 1250341,
+      "sha256": "1cd2d69635d719157ee0c5462c8295b3a2a193be6178213fc6cee6537011e916"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-3-report.json",
+      "bytes": 20747,
+      "sha256": "a71153820f5dc8ac128e9e41de9ce03d8b883da05563584f89470ea11d2eb27e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/epoch-3-thresholds.csv",
+      "bytes": 468099,
+      "sha256": "998ef78b5fe3f432f20664a863dc81fc0ad463b08c1e8984bd95522f5f30aa82"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/frozen.json",
+      "bytes": 19475,
+      "sha256": "3dcfd8e376d53a62dca6a0cabb734bac25aaf3f111ea6e151a87fbb5a85f02b2"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/manifest.json",
+      "bytes": 5923,
+      "sha256": "a1f2d4014d15e68c9f1f7eeaab4abb4fd5350bf5b98906e170b2d4d94e30ba86"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/phonetic_encoding.py.txt",
+      "bytes": 2485,
+      "sha256": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/phonetic_training_metrics.py.txt",
+      "bytes": 2985,
+      "sha256": "4c8a320e678cb93652b7edef0a53de777c1849450275b6eb757667a4b3471b7b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/prepare_phonetic_training.py.txt",
+      "bytes": 4616,
+      "sha256": "f448969a8066c4aedf35f36a7caf4b062e7b6ef8879cd9a61a9785ff8a22ca65"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/pretrained-assets.json",
+      "bytes": 2394,
+      "sha256": "11c0159053f3196e82f0492958911aaafb6d803196ab88ee7106b1dda9e4e74e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/primary-code-git-blobs.json",
+      "bytes": 577,
+      "sha256": "b7ced99561a942742334297f2985d1eced330e077afb3c1258f9798fedb3ad1f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/split-PCR.jsonl",
+      "bytes": 187239,
+      "sha256": "7f7d99bdd5a8672b61d3f4b25e82050a178dc7e175ae5874a364c898aed74f05"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/split-controls.jsonl",
+      "bytes": 103249,
+      "sha256": "dc725716b1353c62db904e3d33b75cea8349c859611afafac93a4e611aa186ca"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/split-toxicn_dev.jsonl",
+      "bytes": 925922,
+      "sha256": "7662757c858820f4277e4d8ef2d6fbdb6b78717571e68c9f5cfead6c62dc21e6"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/split-training.jsonl",
+      "bytes": 3690742,
+      "sha256": "4fce4e1586c4bcdbf48e25bfee4583aa6a0c1c420e42ef851555de939b76e61f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/summary.json",
+      "bytes": 92572,
+      "sha256": "36cab50c04a3da65a79cd291c41ded6bfc0b338dc55f17a277b1550dd542ff7a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phonetic-training-v1/train_phonetic.py.txt",
+      "bytes": 9189,
+      "sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/benchmark_quotes_v3_6.py.txt",
+      "bytes": 2511,
+      "sha256": "2853c63ce455ef19aa5074f644cbd5c177f3d8e047c0bcf67a8d86e4e5c74241"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/chinesebert-v1-input-freeze.json",
+      "bytes": 1394,
+      "sha256": "9ddaa228c62245725bef451c8b57314984eba5ae5405d55fd48972732a44c3bd"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/ci-v3_5-d8a243e.json",
+      "bytes": 555,
+      "sha256": "49bb5750000e2b71cd996c97978b03dcd7933b8f7d2764318a6db048a3b1a117"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/context-stress-after-quotes-function.json",
+      "bytes": 34358,
+      "sha256": "1dd54e2b67daa69b51cbd44e845de65ed85772477f0e6a242a2758b73d5fd615"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/context-stress-after-quotes-http.json",
+      "bytes": 34354,
+      "sha256": "581215636ce87871958ca5b582c06d0c617d62b3cb8adba5e66994af4a7d8ea8"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/context-stress-before-quotes-v3_5.json",
+      "bytes": 36717,
+      "sha256": "46aebb17b74fa47dd6a14f697bcd9005db35b515b74cf002d90e874519f82755"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/local-quality-v3_6.json",
+      "bytes": 1613,
+      "sha256": "c868ba03f9aa16adb03d59d78187ac830bedc3ec8baa55d5d773239628180850"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quote-boundaries-v3_6-http.json",
+      "bytes": 4437,
+      "sha256": "c5bb6150d7196a6a8c8912773344215615bb65377477ba707d1471dfa72238fe"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-PCR-historical.json",
+      "bytes": 9032,
+      "sha256": "d9540eaf9bb81c657a5eff5789a09bee7913f6b507ebf5d1b35d1da23e33c715"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-ToxiCN-historical.json",
+      "bytes": 9164,
+      "sha256": "d10a99d31cc6706e464ccb530aad762fe4720d99b194436ce27fb992d6baa12f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-performance.json",
+      "bytes": 44252,
+      "sha256": "063609ff866898122ed152bb80682bb4cbbe45a4d92705128b50f52285be7a70"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v2-function.json",
+      "bytes": 28827,
+      "sha256": "f56fd4de66f0ba2897025e45c16fd0abc4da1f4ba1a9c253e53a2dee83dd0328"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v2-http.json",
+      "bytes": 28821,
+      "sha256": "4ec9d6c5f3b9f56a33668aab408a0907c11c8516914f9e826a03070aa895393b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3-function.json",
+      "bytes": 24232,
+      "sha256": "ccd8d9dbe8b3e59894107c006700fa86d7765b5f30a047271a3a8b6fdbb09c16"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3-http.json",
+      "bytes": 24225,
+      "sha256": "fb3b8e1533282f930e2e8c43c037b908ccc1c99f52b74676ca721953019e41b9"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3_3-function.json",
+      "bytes": 9738,
+      "sha256": "a93e20480891edced2adfa9dfc656b8be9c8b1074e91536b6782cb6420b9e718"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3_3-http.json",
+      "bytes": 9732,
+      "sha256": "dfd4e79e38e15d64df150d5c4bc69652dd2b7cb7a422c2e38938aca2e6d61461"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3_4-function.json",
+      "bytes": 10662,
+      "sha256": "ec2ffc3a3aa485392a218d6840df976080ef764be4775ea5faf0bf439ccc4211"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3_4-http.json",
+      "bytes": 10656,
+      "sha256": "c60ab852f0a076d3b57e91cefac02b8727337e44b94b97fb4e054885fb973669"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3_5-function.json",
+      "bytes": 19377,
+      "sha256": "b8aa884d8e75db6f84a1bffa3176b9fc2c8fc71b4605a6b0d10ca0362a01743d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-v3_5-http.json",
+      "bytes": 19374,
+      "sha256": "7c98453a91bba30bda612a9974ecc0c608d5b53743fa7a654c09c12ae5a4a5ad"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/verify_quotes_v3_6.py.txt",
+      "bytes": 1480,
+      "sha256": "c74951ad46f57ddf2f287d5a9bd9c389aac8fbf4e0b8af04e9922795357af66d"
+    },
+    {
+      "file": "scripts/qa/verify_context_stress.py",
+      "bytes": 4188,
+      "sha256": "d9529c8451a3f9ee59fbc62e1f2cc7253ffb27d08b40bf3392d68729bb10adee"
+    },
+    {
+      "file": "services/algo/app/services/moderation_context.py",
+      "bytes": 3437,
+      "sha256": "491ccc3f4419773ffbb30da49095de774179a4176c41a97d6a25509f299edf28"
+    },
+    {
+      "file": "services/algo/tests/test_context_stress.py",
+      "bytes": 1227,
+      "sha256": "271addb10b9e97a198bc7a39729af0859eb0ebf921c02c714b4232121dd556aa"
+    }
+  ]
+}

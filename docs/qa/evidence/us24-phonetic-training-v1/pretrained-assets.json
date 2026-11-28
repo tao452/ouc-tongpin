@@ -1,0 +1,58 @@
+{
+  "model": "ShannonAI/ChineseBERT-base",
+  "revision": "aa8b6fa9c3427f77b0911b07ab35f2b1b8bf248b",
+  "files": {
+    "README.md": {
+      "bytes": 1574,
+      "sha256": "ec0c21fd13cbdfd78d52da7b43f48d5ac31ed773ac477ccd42823321b0b8545b",
+      "upstream_git_blob": "984b353600ffc996bf147b27822634f338efb28c"
+    },
+    "config.json": {
+      "bytes": 687,
+      "sha256": "c014e9694a4a9bf2ffdade6a16466c6220bcb0989bf23123ce759aed27fdded8",
+      "upstream_git_blob": "e7712c52898227644d326061c2d3a98a4e52c18b"
+    },
+    "config/STFANGSO.TTF24.npy": {
+      "bytes": 107071616,
+      "sha256": "09e11244c473c9272b6e9d2b81aaead7d3adbeb9c4c6fde5c5fe495401ceb065",
+      "upstream_git_blob": "00ba7b3995d4b35823538f79ef1fb96860b8868b"
+    },
+    "config/STXINGKA.TTF24.npy": {
+      "bytes": 107071616,
+      "sha256": "531e568202ceff79cc621775050b36c1c627463fc535fa3231a76c904b886bfd",
+      "upstream_git_blob": "9c3fe7527c752070576c3a2afb2463b4af7f10f9"
+    },
+    "config/id2pinyin.json": {
+      "bytes": 1150405,
+      "sha256": "afc9f9a823da838c2c4bf31c05c37d6a3f7977785d3e3c5bd9ddde4154745f4a",
+      "upstream_git_blob": "d09ef691cdbaccb723bb1a4accaf83d04b91bf97"
+    },
+    "config/pinyin2tensor.json": {
+      "bytes": 50573,
+      "sha256": "38083adb20dd4d21f39e3cd8f048f5237e39e0dc35e482229854b8bba3419d52",
+      "upstream_git_blob": "23b4b8b31ae84a79dd09c2ee9341af385fbd0405"
+    },
+    "config/pinyin_map.json": {
+      "bytes": 466,
+      "sha256": "4e2181bd903d58c876b12f1942ba535b8a329ecc93d916ed946a5132e9aaab4e",
+      "upstream_git_blob": "fbda4dd460f0acedec177cac87d144f5b9c59e3b"
+    },
+    "config/\u65b9\u6b63\u53e4\u96b6\u7e41\u4f53.ttf24.npy": {
+      "bytes": 107071616,
+      "sha256": "9b354344e73ed5afc3d9a922d9cef2fc6f53bfff17a5876b3ffb74e74df02b4f",
+      "upstream_git_blob": "884ea0b50f81e512228168f35a50afe5c3d7e0c7"
+    },
+    "pytorch_model.bin": {
+      "bytes": 591904556,
+      "sha256": "ef723c532668d328523cd663ea5eefec1c2eaf8e118458f086bc357115e0aad9",
+      "upstream_git_blob": "b300f7d3e7097398ee4395c05d8f8a82a321a9bd"
+    },
+    "vocab.txt": {
+      "bytes": 117890,
+      "sha256": "8de924e32def1a85879c4e153d4ebee505d96702c477db4b712698971f7b3698",
+      "upstream_git_blob": "883ddc392970e0aac55c7444ae4e6a8d27b3e9ec"
+    }
+  },
+  "verified": true,
+  "inference": "private phonetic classifier research; weights_only=True; no S1 level mapping"
+}

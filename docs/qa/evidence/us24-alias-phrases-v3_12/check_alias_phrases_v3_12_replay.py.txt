@@ -1,0 +1,84 @@
+import argparse
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import time
+from collections import Counter
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+parser=argparse.ArgumentParser();parser.add_argument('--worker',choices=['before','after']);args=parser.parse_args()
+
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def measurements(rows):
+    result={}
+    for mode in ['any_level','high_blocking']:
+        matrix=dict(tp=0,fp=0,fn=0,tn=0)
+        for row in rows:
+            gold=bool(row['expected_hits']) if mode=='any_level' else row['blocked']
+            if row['error']:
+                predicted=not gold
+            else:
+                predicted=bool(row['response']['hits']) if mode=='any_level' else not row['response']['passed']
+            matrix['tp' if predicted and gold else 'fp' if predicted else 'fn' if gold else 'tn']+=1
+        tp,fp,fn,tn=(matrix[k] for k in ['tp','fp','fn','tn'])
+        result[mode]=dict(confusion_matrix=matrix,recall=tp/(tp+fn) if tp+fn else None,
+            precision=tp/(tp+fp) if tp+fp else None,fpr=fp/(fp+tn) if fp+tn else None)
+    return result
+
+if args.worker:
+    import app.services.moderation as module
+    baseline=LAB/'baseline-v3_11'
+    expected=baseline if args.worker=='before' else ROOT/'services/algo'
+    assert Path(module.__file__).resolve().is_relative_to(expected.resolve())
+    dictionary=(baseline/'app/data/moderation-v3_11-candidate.json' if args.worker=='before'
+                else ROOT/'services/algo/app/data/moderation-v3_12-candidate.json')
+    service=module.ModerationService(dictionary)
+    out=LAB/f'alias-phrases-v3_12-replay-{args.worker}.jsonl'
+    count=0;errors=0
+    with out.open('x',encoding='utf-8',newline='\n') as handle:
+        for path in [ROOT/'docs/qa/data'/s['file'] for s in json.loads((LAB/'alias-phrases-v3_12-paired.json').read_text(encoding='utf-8'))['datasets']]:
+            assert sha(path)==next(s['sha256'] for s in json.loads((LAB/'alias-phrases-v3_12-paired.json').read_text(encoding='utf-8'))['datasets'] if s['file']==path.name)
+            for line in path.read_text(encoding='utf-8').splitlines():
+                row=json.loads(line);began=time.perf_counter();failure=None;response=None
+                try:response=service.check(row['text']).model_dump()
+                except Exception as error:failure=type(error).__name__;errors+=1
+                value=dict(dataset=path.name,id=row['id'],source_text_sha256=hashlib.sha256(row['text'].encode()).hexdigest(),
+                    category=row['category'],blocked=row['blocked'],expected_hits=row.get('expected_hits',
+                        [dict(word=row['expected_word'],level=row['expected_level'])] if row['expected_word'] else []),
+                    response=response,error=failure,elapsed_ms=(time.perf_counter()-began)*1000)
+                handle.write(json.dumps(value,ensure_ascii=False)+'\n');count+=1
+    print(json.dumps(dict(variant=args.worker,rows=count,errors=errors,dictionary_sha256=service.dictionary_sha256)),flush=True)
+    raise SystemExit(int(errors>0))
+
+for variant,base in [('before',LAB/'baseline-v3_11'),('after',ROOT/'services/algo')]:
+    env=dict(os.environ);env['PYTHONPATH']=str(base)
+    subprocess.run([sys.executable,'-X','utf8',str(Path(__file__)), '--worker',variant],env=env,check=True)
+old=[json.loads(s) for s in (LAB/'alias-phrases-v3_12-replay-before.jsonl').read_text(encoding='utf-8').splitlines()]
+new=[json.loads(s) for s in (LAB/'alias-phrases-v3_12-replay-after.jsonl').read_text(encoding='utf-8').splitlines()]
+assert len(old)==len(new)==6366
+changes=[];fresh=[];failure_ids=[]
+for a,b in zip(old,new,strict=True):
+    for key in ['dataset','id','source_text_sha256','blocked','expected_hits']:assert a[key]==b[key]
+    if a['dataset']=='us24-development.v3_12.jsonl':
+        fresh.append(b)
+        if b['error'] or b['response']['hits']!=b['expected_hits'] or b['response']['passed']==b['blocked']:
+            failure_ids.append(b['id'])
+    elif a['response']!=b['response'] or a['error']!=b['error']:
+        changes.append(dict(dataset=b['dataset'],id=b['id'],before=a['response'],after=b['response'],error=b['error']))
+previous=[r for r in old if r['dataset']=='us24-development.v3_12.jsonl']
+report=dict(scope='development literal rules; not independent broad semantic evaluation',rows=len(new),
+    original_development_rows=5218,new_development_rows=1148,original_output_changes=changes,
+    before=measurements(previous),after=measurements(fresh),
+    by_category={k:measurements([r for r in fresh if r['category']==k]) for k in sorted({r['category'] for r in fresh})},
+    errors=sum(bool(r['error']) for r in new),fresh_mapping_failure_ids=failure_ids,
+    max_after_ms=max(r['elapsed_ms'] for r in new),
+    datasets=json.loads((LAB/'alias-phrases-v3_12-paired.json').read_text(encoding='utf-8'))['datasets'],
+    before_predictions_sha256=sha(LAB/'alias-phrases-v3_12-replay-before.jsonl'),after_predictions_sha256=sha(LAB/'alias-phrases-v3_12-replay-after.jsonl'),
+    source_sha256=sha(Path(__file__)),M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False,COLD_dev_fetched=False)
+with (LAB/'alias-phrases-v3_12-replay-paired.json').open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps({k:report[k] for k in ['rows','original_output_changes','before','after','errors','fresh_mapping_failure_ids']},ensure_ascii=False),flush=True)
+raise SystemExit(int(bool(failure_ids) or report['errors']>0 or bool(changes)))

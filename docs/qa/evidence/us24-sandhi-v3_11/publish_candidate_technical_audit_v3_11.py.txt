@@ -1,0 +1,43 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124';QA=ROOT/'docs/qa'
+audit=json.loads((LAB/'all-candidate-mappings-v3_11.json').read_text(encoding='utf-8'))
+assert audit['rules']==132 and audit['checks']==1263 and not audit['failures']
+ci=json.loads((LAB/'ci-4964696-qualified.json').read_text(encoding='utf-8'))
+assert ci['all_jobs_success'] and len(ci['jobs'])==10
+projected=dict(scope=audit['scope'],rules=132,checks=1263,failures=[],
+    dictionary_sha256=audit['dictionary_sha256'],
+    full_private_audit_sha256=hashlib.sha256((LAB/'all-candidate-mappings-v3_11.json').read_bytes()).hexdigest(),
+    rules_detail=[dict(candidate_id=r['candidate_id'],word=r['word'],suggested_level=r['level_suggestion'],
+                       checks=len(r['cases']),finite_phoneme_paths=r['readings'],
+                       technical_result='PASS',M1_status='PENDING') for r in audit['rules_detail']],
+    M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False,COLD_dev_fetched=False)
+public=QA/'evidence/us24-sandhi-v3_11';manifest_path=public/'manifest.json'
+manifest=json.loads(manifest_path.read_text(encoding='utf-8'))
+
+def publish(data,name):
+    assert len(data)<5*1024*1024
+    with (public/name).open('xb') as handle:handle.write(data)
+    manifest['files'].append(dict(file=name,public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+publish((json.dumps(projected,ensure_ascii=False,indent=2)+'\n').encode(),'all-candidate-technical-summary.json')
+for name in ['audit_every_candidate_mapping_v3_11.py',Path(__file__).name]:
+    publish((LAB/name).read_bytes().replace(b'\r\n',b'\n'),name+'.txt')
+publish((LAB/'ci-4964696-qualified.json').read_bytes().replace(b'\r\n',b'\n'),'ci-4964696-qualified.json')
+for name in ['cold-dev-blind-v4.protocol.json','cold-dev-blind-v4.protocol.md']:
+    publish((LAB/name).read_bytes().replace(b'\r\n',b'\n'),name)
+manifest['technical_mapping_checks']=1263
+manifest['CI']=dict(head=ci['head'],run_id=ci['run_id'],all10success=True,python668=True,java144=True)
+manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+text=['# US24 v3.11 逐项技术核对\n',
+    '132条候选共1263个登记检查通过，范围包括标准词、别名、定向别名、整词拼音、显式数字声调、举报引用、精确正常短语、重复命中去重及S1决定一致性。这是配置与行为核对，不是广义语义召回测试，也不代替M1业务决定。\n',
+    '检查中标准词和别名加有限“你就是”目标前缀，正常语境检查按对应标准词的命中判断。完整检查源代码和逐条摘要见[证据](evidence/us24-sandhi-v3_11/all-candidate-technical-summary.json)，完整原始开发记录保留于qa-private，SHA256列入摘要。M1仍132条PENDING、792个决定空白，M3复现待安排。\n',
+    '提交4964696完整CI十项通过：Python668 PASS、覆盖率98.25%，Ruff、Java144条、小程序、管理端和五服务Docker；网关84条任意等级TP36/FP0/FN0/TN48，HIGH为11/0/0/73。[CI记录](https://github.com/tao452/ouc-tongpin/actions/runs/45555354173)及[核对摘要](evidence/us24-sandhi-v3_11/ci-4964696-qualified.json)。\n',
+    '新独立样本仍未获取，预案仅使用Git树元数据；[封存预案](evidence/us24-sandhi-v3_11/cold-dev-blind-v4.protocol.md)列出开发门槛、唯一配置冻结、首次获取和重合文本分组口径。广义门槛仍未通过，独立评估状态NOT_RUN。\n',
+    '|编号|标准词|登记检查数|技术核对|M1业务审核|\n|---|---|---:|---|---|']
+for row in projected['rules_detail']:
+    text.append(f"|{row['candidate_id']}|{row['word']}|{row['checks']}|PASS|PENDING|")
+with (QA/'US24-v3_11-逐项技术核对.md').open('x',encoding='utf-8',newline='\n') as handle:handle.write('\n'.join(text)+'\n')
+print(json.dumps(dict(rules=132,technical_checks=1263,manifest_files=len(manifest['files']),M1_pending=132)))

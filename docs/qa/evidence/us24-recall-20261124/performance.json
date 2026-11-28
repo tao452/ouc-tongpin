@@ -1,0 +1,37 @@
+{
+  "campus_2000": {
+    "characters": 2000,
+    "iterations": 100,
+    "timeouts": 0,
+    "p95_ms": 7.329199999730918,
+    "max_ms": 9.736299999531184
+  },
+  "homophone_2000": {
+    "characters": 1999,
+    "iterations": 100,
+    "timeouts": 0,
+    "p95_ms": 6.12360000013723,
+    "max_ms": 9.40190000073926
+  },
+  "repeated_targets": {
+    "characters": 2000,
+    "iterations": 100,
+    "timeouts": 0,
+    "p95_ms": 7.73990000016056,
+    "max_ms": 10.351999999329564
+  },
+  "latin_identifiers": {
+    "characters": 2000,
+    "iterations": 100,
+    "timeouts": 0,
+    "p95_ms": 3.9269999997486593,
+    "max_ms": 5.641900000227906
+  },
+  "quotation": {
+    "characters": 2000,
+    "iterations": 100,
+    "timeouts": 0,
+    "p95_ms": 9.701400000267313,
+    "max_ms": 10.972099999889906
+  }
+}

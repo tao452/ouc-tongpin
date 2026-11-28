@@ -1,0 +1,1005 @@
+{
+  "scope": "read-only probe of declared Hanzi aliases; no automatic alias-to-pinyin expansion",
+  "checked_aliases": 137,
+  "gaps": [
+    {
+      "candidate_id": "US24-001",
+      "word": "傻逼",
+      "alias": "傻批",
+      "generated_phrase_reading": "sha pi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是shapi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-001",
+      "word": "傻逼",
+      "alias": "傻杯",
+      "generated_phrase_reading": "sha bei",
+      "current": {
+        "passed": true,
+        "normalized": "你就是shabei",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-002",
+      "word": "操你妈",
+      "alias": "抄你码",
+      "generated_phrase_reading": "chao ni ma",
+      "current": {
+        "passed": true,
+        "normalized": "你就是chaonima",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-008",
+      "word": "祝你全家死光",
+      "alias": "咒你全家死光",
+      "generated_phrase_reading": "zhou ni quan jia si guang",
+      "current": {
+        "passed": true,
+        "normalized": "你就是zhouniquanjiasiguang",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-009",
+      "word": "狗娘养的",
+      "alias": "狗粮养的",
+      "generated_phrase_reading": "gou liang yang de",
+      "current": {
+        "passed": true,
+        "normalized": "你就是gouliangyangde",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-011",
+      "word": "你这个杂种",
+      "alias": "你这杂种",
+      "generated_phrase_reading": "ni zhe za zhong",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhezazhong",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-011",
+      "word": "你这个杂种",
+      "alias": "你这咋种",
+      "generated_phrase_reading": "ni zhe za zhong",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhezazhong",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-012",
+      "word": "你个畜生",
+      "alias": "你这畜生",
+      "generated_phrase_reading": "ni zhe chu sheng",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhechusheng",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "alias": "你就是畜生",
+      "generated_phrase_reading": "ni jiu shi chu sheng",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nijiushichusheng",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "alias": "你这出省",
+      "generated_phrase_reading": "ni zhe chu sheng",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhechusheng",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-013",
+      "word": "你是畜生",
+      "alias": "你就是楚胜",
+      "generated_phrase_reading": "ni jiu shi chu sheng",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nijiushichusheng",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-018",
+      "word": "你不配活着",
+      "alias": "你不配活著",
+      "generated_phrase_reading": "ni bu pei huo zhu",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nibupeihuozhu",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-020",
+      "word": "贱逼",
+      "alias": "贱批",
+      "generated_phrase_reading": "jian pi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是jianpi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-022",
+      "word": "你个婊子",
+      "alias": "你这婊子",
+      "generated_phrase_reading": "ni zhe biao zi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhebiaozi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-022",
+      "word": "你个婊子",
+      "alias": "你这表子",
+      "generated_phrase_reading": "ni zhe biao zi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhebiaozi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-023",
+      "word": "废物",
+      "alias": "你真是废柴",
+      "generated_phrase_reading": "ni zhen shi fei chai",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhenshifeichai",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-023",
+      "word": "废物",
+      "alias": "你就是废柴",
+      "generated_phrase_reading": "ni jiu shi fei chai",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nijiushifeichai",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-048",
+      "word": "你个蠢猪",
+      "alias": "你这蠢猪",
+      "generated_phrase_reading": "ni zhe chun zhu",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhechunzhu",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-049",
+      "word": "你是个饭桶",
+      "alias": "你就是个饭桶",
+      "generated_phrase_reading": "ni jiu shi ge fan tong",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nijiushigefantong",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-050",
+      "word": "你个窝囊废",
+      "alias": "你这窝囊废",
+      "generated_phrase_reading": "ni zhe wo nang fei",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhewonangfei",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "alias": "你这贱人",
+      "generated_phrase_reading": "ni zhe jian ren",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhejianren",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "alias": "你个贱人",
+      "generated_phrase_reading": "ni ge jian ren",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nigejianren",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "alias": "你个健人",
+      "generated_phrase_reading": "ni ge jian ren",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nigejianren",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-052",
+      "word": "你这个贱人",
+      "alias": "你个建人",
+      "generated_phrase_reading": "ni ge jian ren",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nigejianren",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-054",
+      "word": "你个狗东西",
+      "alias": "你这狗东西",
+      "generated_phrase_reading": "ni zhe gou dong xi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegoudongxi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-054",
+      "word": "你个狗东西",
+      "alias": "你这狗冬西",
+      "generated_phrase_reading": "ni zhe gou dong xi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegoudongxi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "我要打你",
+      "generated_phrase_reading": "wo yao da ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是woyaodani",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "我就动手打你",
+      "generated_phrase_reading": "wo jiu dong shou da ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是wojiudongshoudani",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "再说我就打你",
+      "generated_phrase_reading": "zai shuo wo jiu da ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是zaishuowojiudani",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-055",
+      "word": "我要揍你",
+      "alias": "再哔哔我就动手了",
+      "generated_phrase_reading": "zai bi bi wo jiu dong shou le",
+      "current": {
+        "passed": true,
+        "normalized": "你就是zaibibiwojiudongshoule",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-056",
+      "word": "打断你的腿",
+      "alias": "打断你腿",
+      "generated_phrase_reading": "da duan ni tui",
+      "current": {
+        "passed": true,
+        "normalized": "你就是daduannitui",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-064",
+      "word": "一直骚扰你",
+      "alias": "不停骚扰你",
+      "generated_phrase_reading": "bu ting sao rao ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是butingsaoraoni",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-077",
+      "word": "你个脑瘫",
+      "alias": "你这脑瘫",
+      "generated_phrase_reading": "ni zhe nao tan",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhenaotan",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-077",
+      "word": "你个脑瘫",
+      "alias": "你这脑摊",
+      "generated_phrase_reading": "ni zhe nao tan",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhenaotan",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-078",
+      "word": "你个智障",
+      "alias": "你这智障",
+      "generated_phrase_reading": "ni zhe zhi zhang",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhezhizhang",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-079",
+      "word": "你个神经病",
+      "alias": "你这神经病",
+      "generated_phrase_reading": "ni zhe shen jing bing",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizheshenjingbing",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-080",
+      "word": "你是个傻子",
+      "alias": "你就是个傻子",
+      "generated_phrase_reading": "ni jiu shi ge sha zi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nijiushigeshazi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-081",
+      "word": "你个二逼",
+      "alias": "你这二笔",
+      "generated_phrase_reading": "ni zhe er bi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizheerbi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-084",
+      "word": "你脑子进水了",
+      "alias": "你脑袋进水了",
+      "generated_phrase_reading": "ni nao dai jin shui le",
+      "current": {
+        "passed": true,
+        "normalized": "你就是ninaodaijinshuile",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-084",
+      "word": "你脑子进水了",
+      "alias": "你脑子被门夹了",
+      "generated_phrase_reading": "ni nao zi bei men jia le",
+      "current": {
+        "passed": true,
+        "normalized": "你就是ninaozibeimenjiale",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-084",
+      "word": "你脑子进水了",
+      "alias": "你恼子是被门甲了",
+      "generated_phrase_reading": "ni nao zi shi bei men jia le",
+      "current": {
+        "passed": true,
+        "normalized": "你就是ninaozishibeimenjiale",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-087",
+      "word": "你是个祸害",
+      "alias": "你就是个祸害",
+      "generated_phrase_reading": "ni jiu shi ge huo hai",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nijiushigehuohai",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-088",
+      "word": "你不配发言",
+      "alias": "你也配发言",
+      "generated_phrase_reading": "ni ye pei fa yan",
+      "current": {
+        "passed": true,
+        "normalized": "你就是niyepeifayan",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-088",
+      "word": "你不配发言",
+      "alias": "你也配说话",
+      "generated_phrase_reading": "ni ye pei shuo hua",
+      "current": {
+        "passed": true,
+        "normalized": "你就是niyepeishuohua",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-089",
+      "word": "你活着浪费空气",
+      "alias": "你浪费氧气",
+      "generated_phrase_reading": "ni lang fei yang qi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nilangfeiyangqi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-090",
+      "word": "你死了没人心疼",
+      "alias": "你死了都没人记得",
+      "generated_phrase_reading": "ni si le dou mei ren ji de",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nisiledoumeirenjide",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-092",
+      "word": "我要一枪崩了你",
+      "alias": "我一枪崩了你",
+      "generated_phrase_reading": "wo yi qiang beng le ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是woyiqiangbengleni",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-092",
+      "word": "我要一枪崩了你",
+      "alias": "老子一枪崩了你",
+      "generated_phrase_reading": "lao zi yi qiang beng le ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是laoziyiqiangbengleni",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-093",
+      "word": "我要扇你",
+      "alias": "别逼我扇你",
+      "generated_phrase_reading": "bie bi wo shan ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是biebiwoshanni",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-093",
+      "word": "我要扇你",
+      "alias": "别逼我珊你",
+      "generated_phrase_reading": "bie bi wo shan ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是biebiwoshanni",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-096",
+      "word": "我要人肉你",
+      "alias": "人肉你全家",
+      "generated_phrase_reading": "ren rou ni quan jia",
+      "current": {
+        "passed": true,
+        "normalized": "你就是renrouniquanjia",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-097",
+      "word": "你真下贱",
+      "alias": "你真贩剑",
+      "generated_phrase_reading": "ni zhen fan jian",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhenfanjian",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-097",
+      "word": "你真下贱",
+      "alias": "你真犯贱",
+      "generated_phrase_reading": "ni zhen fan jian",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhenfanjian",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-099",
+      "word": "你就是个小丑",
+      "alias": "你跳得像个小丑",
+      "generated_phrase_reading": "ni tiao de xiang ge xiao chou",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nitiaodexianggexiaochou",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-099",
+      "word": "你就是个小丑",
+      "alias": "你像个十一",
+      "generated_phrase_reading": "ni xiang ge shi yi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nixianggeshiyi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-102",
+      "word": "你个屌丝",
+      "alias": "你这屌丝",
+      "generated_phrase_reading": "ni zhe diao si",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhediaosi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-108",
+      "word": "你就是个骗子",
+      "alias": "你个死骗子",
+      "generated_phrase_reading": "ni ge si pian zi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nigesipianzi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "alias": "你不配读大学",
+      "generated_phrase_reading": "ni bu pei du da xue",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nibupeidudaxue",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-110",
+      "word": "你不配上大学",
+      "alias": "你不配当大学生",
+      "generated_phrase_reading": "ni bu pei dang da xue sheng",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nibupeidangdaxuesheng",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "alias": "全宿舍都嫌弃你",
+      "generated_phrase_reading": "quan su she dou xian qi ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是quansushedouxianqini",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-111",
+      "word": "全寝都嫌弃你",
+      "alias": "全班都嫌弃你",
+      "generated_phrase_reading": "quan ban dou xian qi ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是quanbandouxianqini",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-121",
+      "word": "你个蠢逼",
+      "alias": "你这个蠢逼",
+      "generated_phrase_reading": "ni zhe ge chun bi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegechunbi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-121",
+      "word": "你个蠢逼",
+      "alias": "你这蠢逼",
+      "generated_phrase_reading": "ni zhe chun bi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhechunbi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-122",
+      "word": "你个憨批",
+      "alias": "你这个憨批",
+      "generated_phrase_reading": "ni zhe ge han pi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegehanpi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-122",
+      "word": "你个憨批",
+      "alias": "你这憨批",
+      "generated_phrase_reading": "ni zhe han pi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhehanpi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-123",
+      "word": "你个贱货",
+      "alias": "你这个贱货",
+      "generated_phrase_reading": "ni zhe ge jian huo",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegejianhuo",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-123",
+      "word": "你个贱货",
+      "alias": "你这贱货",
+      "generated_phrase_reading": "ni zhe jian huo",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhejianhuo",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-124",
+      "word": "你个贱种",
+      "alias": "你这个贱种",
+      "generated_phrase_reading": "ni zhe ge jian zhong",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegejianzhong",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-124",
+      "word": "你个贱种",
+      "alias": "你这贱种",
+      "generated_phrase_reading": "ni zhe jian zhong",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhejianzhong",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-125",
+      "word": "你个狗崽子",
+      "alias": "你这个狗崽子",
+      "generated_phrase_reading": "ni zhe ge gou zai zi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegegouzaizi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-125",
+      "word": "你个狗崽子",
+      "alias": "你这狗崽子",
+      "generated_phrase_reading": "ni zhe gou zai zi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegouzaizi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-126",
+      "word": "你个穷逼",
+      "alias": "你这个穷逼",
+      "generated_phrase_reading": "ni zhe ge qiong bi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegeqiongbi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-126",
+      "word": "你个穷逼",
+      "alias": "你这穷逼",
+      "generated_phrase_reading": "ni zhe qiong bi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizheqiongbi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-127",
+      "word": "你个丑逼",
+      "alias": "你这个丑逼",
+      "generated_phrase_reading": "ni zhe ge chou bi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhegechoubi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-127",
+      "word": "你个丑逼",
+      "alias": "你这丑逼",
+      "generated_phrase_reading": "ni zhe chou bi",
+      "current": {
+        "passed": true,
+        "normalized": "你就是nizhechoubi",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "alias": "往你脸上泼硫酸",
+      "generated_phrase_reading": "wang ni lian shang po liu suan",
+      "current": {
+        "passed": true,
+        "normalized": "你就是wangnilianshangpoliusuan",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "alias": "给你泼硫酸",
+      "generated_phrase_reading": "gei ni po liu suan",
+      "current": {
+        "passed": true,
+        "normalized": "你就是geinipoliusuan",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "alias": "泼他硫酸",
+      "generated_phrase_reading": "po ta liu suan",
+      "current": {
+        "passed": true,
+        "normalized": "你就是potaliusuan",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-128",
+      "word": "泼你硫酸",
+      "alias": "泼她硫酸",
+      "generated_phrase_reading": "po ta liu suan",
+      "current": {
+        "passed": true,
+        "normalized": "你就是potaliusuan",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "alias": "捅他一刀",
+      "generated_phrase_reading": "tong ta yi dao",
+      "current": {
+        "passed": true,
+        "normalized": "你就是tongtayidao",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "alias": "捅她一刀",
+      "generated_phrase_reading": "tong ta yi dao",
+      "current": {
+        "passed": true,
+        "normalized": "你就是tongtayidao",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-129",
+      "word": "捅你一刀",
+      "alias": "给你一刀",
+      "generated_phrase_reading": "gei ni yi dao",
+      "current": {
+        "passed": true,
+        "normalized": "你就是geiniyidao",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    },
+    {
+      "candidate_id": "US24-131",
+      "word": "不答应就一直缠着你",
+      "alias": "不答应我就一直缠着你",
+      "generated_phrase_reading": "bu da ying wo jiu yi zhi chan zhe ni",
+      "current": {
+        "passed": true,
+        "normalized": "你就是budayingwojiuyizhichanzheni",
+        "hits": []
+      },
+      "requires_context_reading_review": true
+    }
+  ],
+  "dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

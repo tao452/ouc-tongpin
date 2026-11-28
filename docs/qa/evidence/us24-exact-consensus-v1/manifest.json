@@ -1,0 +1,223 @@
+{
+  "scope": "post-hoc score precision and fixed uniform model combination development, not independent acceptance",
+  "files": [
+    {
+      "file": "consensus-frozen.json",
+      "public_lf_sha256": "b1b12cfb8e1b541124adc272f6cb6a10ccc9cc80fa014d5b7fdde13d41e9ec12",
+      "private_path": "rocbert-complement-consensus-v1/frozen.json",
+      "private_sha256": "006536dbcb8aad7bb3b9b3dc7a5fad5aa760b91ef16ac22965f4f8cc45a9f3b0"
+    },
+    {
+      "file": "consensus-summary.json",
+      "public_lf_sha256": "09db2ad2b39a9d7c29df85cc5dffb254a588e5b522b7f0fdfaefd999435cf02e",
+      "private_path": "rocbert-complement-consensus-v1/summary.json",
+      "private_sha256": "04c9c44f110a9c103a80a32b9a208c9ad64c4ef527cd4c0bb3f86f74bd8dfef4"
+    },
+    {
+      "file": "evaluate_rocbert_complement_consensus_v1.py.txt",
+      "public_lf_sha256": "9caa51f5c9d91f4181106c0b86207c19bf009fa11c6ad66bdc77f49712fc4348",
+      "private_path": "evaluate_rocbert_complement_consensus_v1.py",
+      "private_sha256": "9caa51f5c9d91f4181106c0b86207c19bf009fa11c6ad66bdc77f49712fc4348"
+    },
+    {
+      "file": "audit_exact_operating_points_v1.py.txt",
+      "public_lf_sha256": "da356498d9112b583f665efbb02b21732af947f1f6c0fa3343b0c1034f886bbd",
+      "private_path": "audit_exact_operating_points_v1.py",
+      "private_sha256": "da356498d9112b583f665efbb02b21732af947f1f6c0fa3343b0c1034f886bbd"
+    },
+    {
+      "file": "audit_exact_operating_points_v2.py.txt",
+      "public_lf_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925",
+      "private_path": "audit_exact_operating_points_v2.py",
+      "private_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "publish_exact_consensus_v1.py.txt",
+      "public_lf_sha256": "3e3ec22515d083c32412f9037db64ea693d9b9527726d9ac45370abe0de35221",
+      "private_path": "publish_exact_consensus_v1.py",
+      "private_sha256": "3e3ec22515d083c32412f9037db64ea693d9b9527726d9ac45370abe0de35221"
+    },
+    {
+      "file": "ci-source-qualification.json",
+      "public_lf_sha256": "6b9236b9587a66b12cf820890132064aad96f50b9b7a7c6f37e65128f50225d8",
+      "private_path": "ci-5574647-qualified.json",
+      "private_sha256": "6b9236b9587a66b12cf820890132064aad96f50b9b7a7c6f37e65128f50225d8"
+    },
+    {
+      "file": "aligned-member-scores.jsonl",
+      "public_lf_sha256": "c35bfb4614bb435441f38fff85a9bded8c57d3572f61e7c787b93dd10ae29acb"
+    },
+    {
+      "file": "rocbert-epoch-1-exact-report.json",
+      "public_lf_sha256": "25bda18c8da9b390b44f46db563f223aaab19a8b580689af410b964bcf7c8219",
+      "private_path": "rocbert-v8/epoch-1/exact-score-sweep-v2/report.json",
+      "private_sha256": "03173e2b58aca55d9f4da6a7a543ca80c52dc69249ea2ab1924319e0a009e018"
+    },
+    {
+      "file": "rocbert-epoch-1-first-precision-check.json",
+      "public_lf_sha256": "ad7117bcfe4e8072dbcc1600d4ee96614e1055f7ea5443103cd67c9b04eab95a",
+      "private_path": "rocbert-v8/epoch-1/exact-score-sweep-v1/report.json",
+      "private_sha256": "dca8366043a87704f844a76a5d3e61d8e338a4c199be5d59118b7ef5036303dc"
+    },
+    {
+      "file": "rocbert-epoch-2-exact-report.json",
+      "public_lf_sha256": "e96fbbdc2b9442079d933475e14d08b2c551379d6228f52169ecdf779e534dde",
+      "private_path": "rocbert-v8/epoch-2/exact-score-sweep-v2/report.json",
+      "private_sha256": "785ba2244f7bd5164dead61221e75fa19a119e60e5d6dd4fba7c40d17ae99ead"
+    },
+    {
+      "file": "rocbert-epoch-2-first-precision-check.json",
+      "public_lf_sha256": "1f4107bcc0c382b8e76fa3309a7e3f6d88b04210339007cd79c2ca631f0f45ec",
+      "private_path": "rocbert-v8/epoch-2/exact-score-sweep-v1/report.json",
+      "private_sha256": "281c42f04cb85e5fcc18878f02c18c53543593582c8fc2d8e2560cf10b75dcb4"
+    },
+    {
+      "file": "rocbert-epoch-3-exact-report.json",
+      "public_lf_sha256": "48ffd1d25c7a9c7335e9bf39a248eca4c7681aa59eeec2105561cc609f53e870",
+      "private_path": "rocbert-v8/epoch-3/exact-score-sweep-v2/report.json",
+      "private_sha256": "484abfcd7c5b0d1fd81e44d747294ea663431a3885b03f38cd417fc74b650fd5"
+    },
+    {
+      "file": "rocbert-epoch-3-first-precision-check.json",
+      "public_lf_sha256": "d0ecb776704d657ebc2de1e8d8cf7017b6ec69ddfcfc2d008bc83662c7e50f98",
+      "private_path": "rocbert-v8/epoch-3/exact-score-sweep-v1/report.json",
+      "private_sha256": "3248d416b5896e99150ba57de8fb00a43f16c02540997b80aeb8777b74bfa43d"
+    },
+    {
+      "file": "consensus-arithmetic_mean-exact-report.json",
+      "public_lf_sha256": "85267a3ecba339d332a0450b2e5807172925709a57b9f68caf8f26fb4ee97b65",
+      "private_path": "rocbert-complement-consensus-v1/arithmetic_mean/exact-score-sweep-v2/report.json",
+      "private_sha256": "2dd35d4eb419b44e024dd757f329d2f52255d360e7e50db4c1bb5797c7418511"
+    },
+    {
+      "file": "consensus-arithmetic_mean-fixed-grid-report.json",
+      "public_lf_sha256": "1ffc60298200ae0a884ae3bd046e9b6a9a579c2c14af5bdee207b98ca1a68022",
+      "private_path": "rocbert-complement-consensus-v1/arithmetic_mean/report.json",
+      "private_sha256": "f55053e9bdd1aec9d41e6462639c71dc293daa555b96b4e65deac262d625affc"
+    },
+    {
+      "file": "consensus-arithmetic_mean-fixed-grid-thresholds.csv",
+      "public_lf_sha256": "22b2ffba30bd225885b7a3d52a57b10f28c8b0ae5da7e31beb6853178428b5d1",
+      "private_path": "rocbert-complement-consensus-v1/arithmetic_mean/thresholds.csv",
+      "private_sha256": "22b2ffba30bd225885b7a3d52a57b10f28c8b0ae5da7e31beb6853178428b5d1"
+    },
+    {
+      "file": "consensus-geometric_mean-exact-report.json",
+      "public_lf_sha256": "30eaf391c01743d8d0048188c7d9554c2eaa0b66fbd2f0c7eee08456935349f9",
+      "private_path": "rocbert-complement-consensus-v1/geometric_mean/exact-score-sweep-v2/report.json",
+      "private_sha256": "2e6b5b7ebae36beed90959073c697f5c7194705d7adaab965c1929e35dd21b7e"
+    },
+    {
+      "file": "consensus-geometric_mean-fixed-grid-report.json",
+      "public_lf_sha256": "88e771040a433dcb54b5573abe44a2246a1a96c0dcd33b8e081e3cbbabf130e7",
+      "private_path": "rocbert-complement-consensus-v1/geometric_mean/report.json",
+      "private_sha256": "cb0b26fc2e71d680bf4e85be6c61591622f34f21ea0c3962e0ee8b70855734c5"
+    },
+    {
+      "file": "consensus-geometric_mean-fixed-grid-thresholds.csv",
+      "public_lf_sha256": "6dc5737e3889ede16d258739d44928009e4b0f30dd7c62fdb84c503500eb2b4b",
+      "private_path": "rocbert-complement-consensus-v1/geometric_mean/thresholds.csv",
+      "private_sha256": "6dc5737e3889ede16d258739d44928009e4b0f30dd7c62fdb84c503500eb2b4b"
+    },
+    {
+      "file": "consensus-minimum-exact-report.json",
+      "public_lf_sha256": "6c42cdfe39a17b9c05b4b27aeaddae6ebf34ba19eaf9ffb50cdd5d9efccd7713",
+      "private_path": "rocbert-complement-consensus-v1/minimum/exact-score-sweep-v2/report.json",
+      "private_sha256": "fff0d873fdb018869887cb7ad8b6fe558b2fcfc91174bcfa14737adaddfff368"
+    },
+    {
+      "file": "consensus-minimum-fixed-grid-report.json",
+      "public_lf_sha256": "5ecf52ffab1b262ede3fac0009fcee85c6a3f94e197356f029ae675b9dae4549",
+      "private_path": "rocbert-complement-consensus-v1/minimum/report.json",
+      "private_sha256": "6d8032952990b940d007522ba178fb527e0ffc704867a8b99c1d59ec687be0d2"
+    },
+    {
+      "file": "consensus-minimum-fixed-grid-thresholds.csv",
+      "public_lf_sha256": "e853269096934b7fe9cc6c95bf644745e034c55b466e8bf61dd1233c3103e573",
+      "private_path": "rocbert-complement-consensus-v1/minimum/thresholds.csv",
+      "private_sha256": "e853269096934b7fe9cc6c95bf644745e034c55b466e8bf61dd1233c3103e573"
+    },
+    {
+      "file": "consensus-maximum-exact-report.json",
+      "public_lf_sha256": "5b9d0e4a1205bb5f5fb6dbd1cca706cb07c35848f5a2a4cc0639c1a10f4b7e27",
+      "private_path": "rocbert-complement-consensus-v1/maximum/exact-score-sweep-v2/report.json",
+      "private_sha256": "51e2050de3f37adb45a782d9c917f5451273839a11d10ce1872a0cd46b74c051"
+    },
+    {
+      "file": "consensus-maximum-fixed-grid-report.json",
+      "public_lf_sha256": "4da7a86c52e7ad8a394259ab5a973f7509773c8d60634f94eb502628625106a7",
+      "private_path": "rocbert-complement-consensus-v1/maximum/report.json",
+      "private_sha256": "3e74725954fa5a68727b8441c4535189fba4dd8b2772241fbcdcf2f807bf82c4"
+    },
+    {
+      "file": "consensus-maximum-fixed-grid-thresholds.csv",
+      "public_lf_sha256": "6fc2790def6902003aa161653645d1f046aedd047eef1e0d7de78a662c0fb06b",
+      "private_path": "rocbert-complement-consensus-v1/maximum/thresholds.csv",
+      "private_sha256": "6fc2790def6902003aa161653645d1f046aedd047eef1e0d7de78a662c0fb06b"
+    },
+    {
+      "file": "private-full-curve-index.json",
+      "public_lf_sha256": "f669e5134d13f1b6e6360376d3ffa64a1e673e2aa43c03d18d25d93cb79f0d5b"
+    }
+  ],
+  "configurations": [
+    {
+      "configuration": "rocbert-epoch-1",
+      "thresholds_per_mode": 4719,
+      "development_gate_met": false
+    },
+    {
+      "configuration": "rocbert-epoch-2",
+      "thresholds_per_mode": 4249,
+      "development_gate_met": false
+    },
+    {
+      "configuration": "rocbert-epoch-3",
+      "thresholds_per_mode": 3697,
+      "development_gate_met": false
+    },
+    {
+      "configuration": "consensus-arithmetic_mean",
+      "thresholds_per_mode": 7191,
+      "development_gate_met": false
+    },
+    {
+      "configuration": "consensus-geometric_mean",
+      "thresholds_per_mode": 7191,
+      "development_gate_met": false
+    },
+    {
+      "configuration": "consensus-minimum",
+      "thresholds_per_mode": 4001,
+      "development_gate_met": false
+    },
+    {
+      "configuration": "consensus-maximum",
+      "thresholds_per_mode": 4434,
+      "development_gate_met": false
+    }
+  ],
+  "original_comments_per_configuration": 3258,
+  "original_grid_matrices_recomputed": 55944,
+  "excluded_evaluation_rows": 0,
+  "three_member_score_rows": 3258,
+  "combination_policy": "uniform arithmetic/geometric/min/max on all rows",
+  "member_selection": "completed development-selected checkpoints; selection bias retained in scope",
+  "full_curve_policy": "all exact CSV files retained private with bytes/SHA; complete score rows and generator public",
+  "source_newline_policy": "original private data SHA and public LF SHA are separate",
+  "upstream_score_evidence": [
+    "../us24-rocbert-v8/manifest.json",
+    "../us24-context39-consensus-v2/manifest.json",
+    "../us24-qwen-cntp-domain-v7/manifest.json"
+  ],
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

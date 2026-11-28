@@ -1,0 +1,5021 @@
+{
+  "scope": "technical_self_check_only",
+  "dictionary_sha256": "debcb5c905580ac5b2d0eef86cdd74834cc8ef111f013b07456c15faaf904d5e",
+  "code_sha256": "ac691307b491af5add55a6531b32520255aad5b8a4fcd95eaa60056d759660cf",
+  "entry_count": 132,
+  "origins": {
+    "baseline5": 5,
+    "pr83_additions41": 41,
+    "v2_additions24": 24,
+    "v3_additions50": 50,
+    "current_additions": 12
+  },
+  "findings": [],
+  "technical_pass_count": 132,
+  "entries": [
+    {
+      "candidate_id": "US24-001",
+      "origin": "baseline5",
+      "word": "傻逼",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "傻逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻必",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "煞笔",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "沙比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻b",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻屄",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻批",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "啥比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻杯",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻币",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "沙币",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "沙笔",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "砂比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻笔",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "煞比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "鲨臂",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "傻13",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "sb",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "s13",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "sha",
+          "bi"
+        ]
+      ],
+      "pinyin_keys": [
+        "sha3bi1",
+        "shab1",
+        "shabi",
+        "shabi1",
+        "shabii"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-002",
+      "origin": "baseline5",
+      "word": "操你妈",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "操你妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "艹你妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "肏你妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "草你妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "操尼玛",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "抄你码",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "草泥马",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "肏你麻",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "操妮玛",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "操n妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "cao",
+          "ni",
+          "ma"
+        ]
+      ],
+      "pinyin_keys": [
+        "ca0nima",
+        "cao1ni3ma1",
+        "caonima"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-003",
+      "origin": "baseline5",
+      "word": "去死",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "去死",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "去亖",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "去4",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "q4",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "去s",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "qu",
+          "si"
+        ]
+      ],
+      "pinyin_keys": [
+        "qu4si3",
+        "qusi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-004",
+      "origin": "pr83_additions41",
+      "word": "滚你妈",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "滚你妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "滚尼玛",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "gun",
+          "ni",
+          "ma"
+        ]
+      ],
+      "pinyin_keys": [
+        "gun3ni3ma1",
+        "gunnima"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-005",
+      "origin": "pr83_additions41",
+      "word": "日你妈",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "日你妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "日泥马",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "日尼玛",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "日你m",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ri",
+          "ni",
+          "ma"
+        ]
+      ],
+      "pinyin_keys": [
+        "ri4ni3ma1",
+        "rinima"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-006",
+      "origin": "pr83_additions41",
+      "word": "你妈死了",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你妈死了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你马死了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "nmsl",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你玛死了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你妈4了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-007",
+      "origin": "pr83_additions41",
+      "word": "死全家",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "死全家",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "死全加",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "死全夹",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "si",
+          "quan",
+          "jia"
+        ]
+      ],
+      "pinyin_keys": [
+        "si3quan2jia1",
+        "siquanjia"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-008",
+      "origin": "pr83_additions41",
+      "word": "祝你全家死光",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "祝你全家死光",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "咒你全家死光",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "zhu",
+          "ni",
+          "quan",
+          "jia",
+          "si",
+          "guang"
+        ]
+      ],
+      "pinyin_keys": [
+        "zhu4ni3quan2jia1si3guang1",
+        "zhuniquanjiasiguang"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-009",
+      "origin": "pr83_additions41",
+      "word": "狗娘养的",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "狗娘养的",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "狗粮养的",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "gou",
+          "niang",
+          "yang",
+          "de"
+        ]
+      ],
+      "pinyin_keys": [
+        "gou3niang2yang3de5",
+        "gouniangyangde"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-010",
+      "origin": "pr83_additions41",
+      "word": "狗杂种",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "狗杂种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "gou",
+          "za",
+          "zhong"
+        ]
+      ],
+      "pinyin_keys": [
+        "gou3za2zhong3",
+        "gouzazhong"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-011",
+      "origin": "pr83_additions41",
+      "word": "你这个杂种",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你这个杂种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这杂种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个咋种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这咋种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "zhe",
+          "ge",
+          "za",
+          "zhong"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3zhe4ge5za2zhong3",
+        "nizhegezazhong"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-012",
+      "origin": "pr83_additions41",
+      "word": "你个畜生",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你个畜生",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这畜生",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个出省",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个楚胜",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个初生",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "chu",
+          "sheng"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4chu4sheng5",
+        "nigechusheng"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-013",
+      "origin": "pr83_additions41",
+      "word": "你是畜生",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你是畜生",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是畜生",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你是畜牲",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这出省",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是楚胜",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "shi",
+          "chu",
+          "sheng"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3shi4chu4sheng5",
+        "nishichusheng"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-014",
+      "origin": "pr83_additions41",
+      "word": "杀了你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "杀了你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "sha",
+          "le",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "sha1le5ni3",
+        "shaleni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-015",
+      "origin": "pr83_additions41",
+      "word": "弄死你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "弄死你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "弄亖你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "弄4你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "nong",
+          "si",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "nong4si3ni3",
+        "nongsini"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-016",
+      "origin": "pr83_additions41",
+      "word": "捅死你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "捅死你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "tong",
+          "si",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "tong3si3ni3",
+        "tongsini"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-017",
+      "origin": "pr83_additions41",
+      "word": "打死你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "打死你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-018",
+      "origin": "pr83_additions41",
+      "word": "你不配活着",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你不配活着",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你不配活著",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "bu",
+          "pei",
+          "huo",
+          "zhe"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3bu4pei4huo2zhe5",
+        "nibupeihuozhe"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-019",
+      "origin": "pr83_additions41",
+      "word": "见你一次打你一次",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "见你一次打你一次",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "jian",
+          "ni",
+          "yi",
+          "ci",
+          "da",
+          "ni",
+          "yi",
+          "ci"
+        ]
+      ],
+      "pinyin_keys": [
+        "jian4ni3yi1ci4da3ni3yi1ci4",
+        "jianniyicidaniyici"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-020",
+      "origin": "pr83_additions41",
+      "word": "贱逼",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "贱逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "贱b",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "贱比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "贱批",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "贱13",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "jian",
+          "bi"
+        ]
+      ],
+      "pinyin_keys": [
+        "jian4bi1",
+        "jianbi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-021",
+      "origin": "pr83_additions41",
+      "word": "吃屎去",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "吃屎去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "吃石去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "吃史去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "chi",
+          "shi",
+          "qu"
+        ]
+      ],
+      "pinyin_keys": [
+        "chi1shi3qu4",
+        "chishiqu"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-022",
+      "origin": "pr83_additions41",
+      "word": "你个婊子",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你个婊子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这婊子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个表子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这表子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "biao",
+          "zi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4biao3zi5",
+        "nigebiaozi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-023",
+      "origin": "baseline5",
+      "word": "废物",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "废物",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真是废柴",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是废柴",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "沸物",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "肺5",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "废5",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "费物",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "fei",
+          "wu"
+        ]
+      ],
+      "pinyin_keys": [
+        "fei4wu4",
+        "feiwu"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-024",
+      "origin": "pr83_additions41",
+      "word": "白痴",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "白痴",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "bai",
+          "chi"
+        ]
+      ],
+      "pinyin_keys": [
+        "bai2chi1",
+        "baichi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-025",
+      "origin": "pr83_additions41",
+      "word": "脑残",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "脑残",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个脑残",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这脑残",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个闹惨",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个naocan",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "闹惨",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "naocan",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "naoc",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-026",
+      "origin": "pr83_additions41",
+      "word": "弱智",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "弱智",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-027",
+      "origin": "pr83_additions41",
+      "word": "蠢货",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "蠢货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个蠢货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个蠢货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个淳货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "chun",
+          "huo"
+        ]
+      ],
+      "pinyin_keys": [
+        "chun3huo4",
+        "chunhuo"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-028",
+      "origin": "pr83_additions41",
+      "word": "蠢蛋",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "蠢蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个蠢蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个蠢蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-029",
+      "origin": "pr83_additions41",
+      "word": "笨蛋",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "笨蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-030",
+      "origin": "pr83_additions41",
+      "word": "混蛋",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "混蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "浑蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "hun",
+          "dan"
+        ]
+      ],
+      "pinyin_keys": [
+        "hun4dan4",
+        "hundan"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-031",
+      "origin": "pr83_additions41",
+      "word": "王八蛋",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "王八蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "wang",
+          "ba",
+          "dan"
+        ]
+      ],
+      "pinyin_keys": [
+        "wang2ba1dan4",
+        "wangbadan"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-032",
+      "origin": "pr83_additions41",
+      "word": "人渣",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "人渣",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "人扎",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ren",
+          "zha"
+        ]
+      ],
+      "pinyin_keys": [
+        "ren2zha1",
+        "renzha"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-033",
+      "origin": "pr83_additions41",
+      "word": "败类",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "败类",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-034",
+      "origin": "pr83_additions41",
+      "word": "无耻",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "无耻",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-035",
+      "origin": "pr83_additions41",
+      "word": "滚蛋",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "滚蛋",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-036",
+      "origin": "pr83_additions41",
+      "word": "闭嘴",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "闭嘴",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "闭嘴别叫",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "碧嘴别叫",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "别bb了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-037",
+      "origin": "pr83_additions41",
+      "word": "他妈的",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "他妈的",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-038",
+      "origin": "pr83_additions41",
+      "word": "妈的",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "妈的",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-039",
+      "origin": "pr83_additions41",
+      "word": "不要脸",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "不要脸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "不要碧莲",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "不要碧连",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-040",
+      "origin": "pr83_additions41",
+      "word": "没教养",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "没教养",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没教养",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没窖养",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没窖养就算了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-041",
+      "origin": "pr83_additions41",
+      "word": "蠢材",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "蠢材",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-042",
+      "origin": "baseline5",
+      "word": "垃圾",
+      "level": "LOW",
+      "checks": [
+        {
+          "variant": "垃圾",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-043",
+      "origin": "pr83_additions41",
+      "word": "差劲",
+      "level": "LOW",
+      "checks": [
+        {
+          "variant": "差劲",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-044",
+      "origin": "pr83_additions41",
+      "word": "烂透",
+      "level": "LOW",
+      "checks": [
+        {
+          "variant": "烂透",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-045",
+      "origin": "pr83_additions41",
+      "word": "破玩意",
+      "level": "LOW",
+      "checks": [
+        {
+          "variant": "破玩意",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-046",
+      "origin": "pr83_additions41",
+      "word": "扯淡",
+      "level": "LOW",
+      "checks": [
+        {
+          "variant": "扯淡",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-047",
+      "origin": "v2_additions24",
+      "word": "你真恶心",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你真恶心",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真额心",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真饿心",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真exing",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真exs",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "额心",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "饿心",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "exing",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "exs",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "zhen",
+          "e",
+          "xin"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3zhen1e3xin1",
+        "nizhenexin"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-048",
+      "origin": "v2_additions24",
+      "word": "你个蠢猪",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个蠢猪",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这蠢猪",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "chun",
+          "zhu"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4chun3zhu1",
+        "nigechunzhu"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-049",
+      "origin": "v2_additions24",
+      "word": "你是个饭桶",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你是个饭桶",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是个饭桶",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "shi",
+          "ge",
+          "fan",
+          "tong"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3shi4ge4fan4tong3",
+        "nishigefantong"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-050",
+      "origin": "v2_additions24",
+      "word": "你个窝囊废",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个窝囊废",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这窝囊废",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个5囊废",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "wo",
+          "nang",
+          "fei"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4wo1nang1fei4",
+        "nigewonangfei"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-051",
+      "origin": "v2_additions24",
+      "word": "你个小瘪三",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个小瘪三",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "xiao",
+          "bie",
+          "san"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4xiao3bie1san1",
+        "nigexiaobiesan"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-052",
+      "origin": "v2_additions24",
+      "word": "你这个贱人",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你这个贱人",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这贱人",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个贱人",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个健人",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个建人",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "zhe",
+          "ge",
+          "jian",
+          "ren"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3zhe4ge5jian4ren2",
+        "nizhegejianren"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-053",
+      "origin": "v2_additions24",
+      "word": "你个臭不要脸的",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个臭不要脸的",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "chou",
+          "bu",
+          "yao",
+          "lian",
+          "de"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4chou4bu2yao4lian3de5",
+        "nigechoubuyaoliande"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-054",
+      "origin": "v2_additions24",
+      "word": "你个狗东西",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个狗东西",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这狗东西",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个狗冬西",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这狗冬西",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "gou",
+          "dong",
+          "xi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4gou3dong1xi1",
+        "nigegoudongxi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-055",
+      "origin": "v2_additions24",
+      "word": "我要揍你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "我要揍你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "我要打你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "我就动手打你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "再说我就打你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "再哔哔我就动手了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "wo",
+          "yao",
+          "zou",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "wo3yao4zou4ni3",
+        "woyaozouni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-056",
+      "origin": "v2_additions24",
+      "word": "打断你的腿",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "打断你的腿",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "打断你腿",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "da",
+          "duan",
+          "ni",
+          "de",
+          "tui"
+        ]
+      ],
+      "pinyin_keys": [
+        "da3duan4ni3de5tui3",
+        "daduannidetui"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-057",
+      "origin": "v2_additions24",
+      "word": "砍死你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "砍死你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "砍亖你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "kan",
+          "si",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "kan3si3ni3",
+        "kansini"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-058",
+      "origin": "v2_additions24",
+      "word": "掐死你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "掐死你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "qia",
+          "si",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "qia1si3ni3",
+        "qiasini"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-059",
+      "origin": "v2_additions24",
+      "word": "堵你宿舍门口打你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "堵你宿舍门口打你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "du",
+          "ni",
+          "su",
+          "she",
+          "men",
+          "kou",
+          "da",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "du3ni3su4she4men2kou3da3ni3",
+        "dunisushemenkoudani"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-060",
+      "origin": "v2_additions24",
+      "word": "让你横着出去",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "让你横着出去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "rang",
+          "ni",
+          "heng",
+          "zhe",
+          "chu",
+          "qu"
+        ]
+      ],
+      "pinyin_keys": [
+        "rang4ni3heng2zhe5chu1qu4",
+        "rangnihengzhechuqu"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-061",
+      "origin": "v2_additions24",
+      "word": "我要重伤你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "我要重伤你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "wo",
+          "yao",
+          "zhong",
+          "shang",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "wo3yao4zhong4shang1ni3",
+        "woyaozhongshangni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-062",
+      "origin": "v2_additions24",
+      "word": "放学弄死你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "放学弄死你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "放学弄亖你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "fang",
+          "xue",
+          "nong",
+          "si",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "fang4xue2nong4si3ni3",
+        "fangxuenongsini"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-063",
+      "origin": "v2_additions24",
+      "word": "天天跟踪你",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "天天跟踪你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-064",
+      "origin": "v2_additions24",
+      "word": "一直骚扰你",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "一直骚扰你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "不停骚扰你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "yi",
+          "zhi",
+          "sao",
+          "rao",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "yi4zhi2sao1rao3ni3",
+        "yizhisaoraoni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-065",
+      "origin": "v2_additions24",
+      "word": "不加我就曝光你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "不加我就曝光你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "bu",
+          "jia",
+          "wo",
+          "jiu",
+          "bao",
+          "guang",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "bu4jia1wo3jiu4bao4guang1ni3",
+        "bujiawojiubaoguangni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-066",
+      "origin": "v2_additions24",
+      "word": "把你住址挂网上",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "把你住址挂网上",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "把你住址挂到网上",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-067",
+      "origin": "v2_additions24",
+      "word": "你一无是处",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你一无是处",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "yi",
+          "wu",
+          "shi",
+          "chu"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3yi1wu2shi4chu4",
+        "niyiwushichu"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-068",
+      "origin": "v2_additions24",
+      "word": "全班都讨厌你",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "全班都讨厌你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "quan",
+          "ban",
+          "dou",
+          "tao",
+          "yan",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "quan2ban1dou1tao3yan4ni3",
+        "quanbandoutaoyanni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-069",
+      "origin": "v2_additions24",
+      "word": "你就是个笑话",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你就是个笑话",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "jiu",
+          "shi",
+          "ge",
+          "xiao",
+          "hua"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3jiu4shi4ge4xiao4hua4",
+        "nijiushigexiaohua"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-070",
+      "origin": "v2_additions24",
+      "word": "你不配待在这个学校",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你不配待在这个学校",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "bu",
+          "pei",
+          "dai",
+          "zai",
+          "zhe",
+          "ge",
+          "xue",
+          "xiao"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3bu4pei4dai4zai4zhe4ge5xue2xiao4",
+        "nibupeidaizaizhegexuexiao"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-071",
+      "origin": "v3_additions50",
+      "word": "去你妈的",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "去你妈的",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "去你m的",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "qnmd",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "qu",
+          "ni",
+          "ma",
+          "de"
+        ]
+      ],
+      "pinyin_keys": [
+        "qu4ni3ma1de5",
+        "qunimade"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-072",
+      "origin": "v3_additions50",
+      "word": "妈了个逼",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "妈了个逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "mlgb",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "麻了个逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "麻了隔壁",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "麻辣隔壁",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-073",
+      "origin": "v3_additions50",
+      "word": "你妈逼",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你妈逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "泥马碧",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "尼玛币",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-074",
+      "origin": "v3_additions50",
+      "word": "狗屁",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "狗屁",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "狗霹",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "笱霹",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-075",
+      "origin": "v3_additions50",
+      "word": "放屁",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "放屁",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "放p",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "放霹",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "芳痞",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-076",
+      "origin": "v3_additions50",
+      "word": "鸡巴",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "鸡巴",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "几把",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "吉巴",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "鸡把",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "击靶",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "g8",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "瞎鸡巴说",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "夏姬八说",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "瞎吉巴乱说",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-077",
+      "origin": "v3_additions50",
+      "word": "你个脑瘫",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个脑瘫",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这脑瘫",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "nao",
+          "tan"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4nao3tan1",
+        "nigenaotan"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-078",
+      "origin": "v3_additions50",
+      "word": "你个智障",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个智障",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这智障",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个智涨",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个制杖",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "智障",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "智涨",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "制杖",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "zhi",
+          "zhang"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4zhi4zhang4",
+        "nigezhizhang"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-079",
+      "origin": "v3_additions50",
+      "word": "你个神经病",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个神经病",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这神经病",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个sjb",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "sjb",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "shen",
+          "jing",
+          "bing"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4shen2jing1bing4",
+        "nigeshenjingbing"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-080",
+      "origin": "v3_additions50",
+      "word": "你是个傻子",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你是个傻子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是个傻子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你是个3子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "shi",
+          "ge",
+          "sha",
+          "zi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3shi4ge4sha3zi5",
+        "nishigeshazi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-081",
+      "origin": "v3_additions50",
+      "word": "你个二逼",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个二逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这二笔",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个二比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个2b",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "二笔",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "二比",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "2b",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "er",
+          "bi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4er4bi1",
+        "nigeerbi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-082",
+      "origin": "v3_additions50",
+      "word": "你个二货",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个二货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这2货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个2h",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "er",
+          "huo"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4er4huo4",
+        "nigeerhuo"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-083",
+      "origin": "v3_additions50",
+      "word": "你就是一坨屎",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你就是一坨屎",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是一坨shi",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是一坨10",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真是一坨10",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "jiu",
+          "shi",
+          "yi",
+          "tuo",
+          "shi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3jiu4shi4yi1tuo2shi3",
+        "nijiushiyituoshi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-084",
+      "origin": "v3_additions50",
+      "word": "你脑子进水了",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你脑子进水了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你脑袋进水了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你脑子被门夹了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你恼子是被门甲了",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "nao",
+          "zi",
+          "jin",
+          "shui",
+          "le"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3nao3zi5jin4shui3le5",
+        "ninaozijinshuile"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-085",
+      "origin": "v3_additions50",
+      "word": "你没脑子",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你没脑子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没恼子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没恼紫",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "mei",
+          "nao",
+          "zi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3mei2nao3zi5",
+        "nimeinaozi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-086",
+      "origin": "v3_additions50",
+      "word": "你没有爹妈",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你没有爹妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没爹没妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没跌没码",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没爹",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你没妈",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-087",
+      "origin": "v3_additions50",
+      "word": "你是个祸害",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你是个祸害",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是个祸害",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "shi",
+          "ge",
+          "huo",
+          "hai"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3shi4ge4huo4hai4",
+        "nishigehuohai"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-088",
+      "origin": "v3_additions50",
+      "word": "你不配发言",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你不配发言",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你也配发言",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你也配说话",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "bu",
+          "pei",
+          "fa",
+          "yan"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3bu4pei4fa1yan2",
+        "nibupeifayan"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-089",
+      "origin": "v3_additions50",
+      "word": "你活着浪费空气",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你活着浪费空气",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你浪费氧气",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你浪废氧7",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "huo",
+          "zhe",
+          "lang",
+          "fei",
+          "kong",
+          "qi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3huo2zhe5lang4fei4kong1qi4",
+        "nihuozhelangfeikongqi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-090",
+      "origin": "v3_additions50",
+      "word": "你死了没人心疼",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你死了没人心疼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你4了都没人心疼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你死了都没人记得",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你4了都没人记得",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "si",
+          "le",
+          "mei",
+          "ren",
+          "xin",
+          "teng"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3si3le5mei2ren2xin1teng2",
+        "nisilemeirenxinteng"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-091",
+      "origin": "v3_additions50",
+      "word": "你怎么还不去死",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你怎么还不去死",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你怎么还不去4",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你怎么还不去亖",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "zen",
+          "me",
+          "hai",
+          "bu",
+          "qu",
+          "si"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3zen3me5hai2bu4qu4si3",
+        "nizenmehaibuqusi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-092",
+      "origin": "v3_additions50",
+      "word": "我要一枪崩了你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "我要一枪崩了你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "我一枪崩了你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "老子一枪崩了你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "老紫想一腔蹦了ni",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "wo",
+          "yao",
+          "yi",
+          "qiang",
+          "beng",
+          "le",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "wo3yao4yi1qiang1beng1le5ni3",
+        "woyaoyiqiangbengleni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-093",
+      "origin": "v3_additions50",
+      "word": "我要扇你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "我要扇你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "别逼我扇你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "别逼我珊你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "wo",
+          "yao",
+          "shan",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "wo3yao4shan4ni3",
+        "woyaoshanni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-094",
+      "origin": "v3_additions50",
+      "word": "我要堵你",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "我要堵你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "下课堵你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "放学堵你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-095",
+      "origin": "v3_additions50",
+      "word": "把你照片挂网上",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "把你照片挂网上",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "把你照片挂到网上",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "不加我就发你照片",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-096",
+      "origin": "v3_additions50",
+      "word": "我要人肉你",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "我要人肉你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "人肉你全家",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "wo",
+          "yao",
+          "ren",
+          "rou",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "wo3yao4ren2rou4ni3",
+        "woyaorenrouni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-097",
+      "origin": "v3_additions50",
+      "word": "你真下贱",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你真下贱",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真贩剑",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你真犯贱",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "zhen",
+          "xia",
+          "jian"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3zhen1xia4jian4",
+        "nizhenxiajian"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-098",
+      "origin": "v3_additions50",
+      "word": "你真丑",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你真丑",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你丑得让人想吐",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你丑得人见人yue",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-099",
+      "origin": "v3_additions50",
+      "word": "你就是个小丑",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你就是个小丑",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你跳得像个小丑",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你像个十一",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "jiu",
+          "shi",
+          "ge",
+          "xiao",
+          "chou"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3jiu4shi4ge4xiao3chou3",
+        "nijiushigexiaochou"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-100",
+      "origin": "v3_additions50",
+      "word": "滚出去",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "滚出去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "棍出去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "滚回去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "棍回去",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-101",
+      "origin": "v3_additions50",
+      "word": "你个菜逼",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个菜逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这菜b",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个菜b",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "菜b",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "cai",
+          "bi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4cai4bi1",
+        "nigecaibi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-102",
+      "origin": "v3_additions50",
+      "word": "你个屌丝",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个屌丝",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个dior丝",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这屌丝",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "dior丝",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "diao",
+          "si"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4diao3si1",
+        "nigediaosi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-103",
+      "origin": "v3_additions50",
+      "word": "你是狗",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你是狗",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是狗",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这条狗",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这条钩",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-104",
+      "origin": "v3_additions50",
+      "word": "你是猪",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你是猪",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你就是猪",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这头猪",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个春竹",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-105",
+      "origin": "v3_additions50",
+      "word": "没点逼数",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "没点逼数",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "没点b数",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "没点币数",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-106",
+      "origin": "v3_additions50",
+      "word": "放你妈的屁",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "放你妈的屁",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "funny mud pee",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "fang",
+          "ni",
+          "ma",
+          "de",
+          "pi"
+        ]
+      ],
+      "pinyin_keys": [
+        "fang4ni3ma1de5pi4",
+        "fangnimadepi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-107",
+      "origin": "v3_additions50",
+      "word": "狗屎",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "狗屎",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "勾史",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "狗史",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-108",
+      "origin": "v3_additions50",
+      "word": "你就是个骗子",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你就是个骗子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你个死骗子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "jiu",
+          "shi",
+          "ge",
+          "pian",
+          "zi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3jiu4shi4ge4pian4zi5",
+        "nijiushigepianzi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-109",
+      "origin": "v3_additions50",
+      "word": "穷鬼",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "穷鬼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "穷狗",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-110",
+      "origin": "v3_additions50",
+      "word": "你不配上大学",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你不配上大学",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你不配读大学",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你不配当大学生",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "bu",
+          "pei",
+          "shang",
+          "da",
+          "xue"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3bu4pei4shang4da4xue2",
+        "nibupeishangdaxue"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-111",
+      "origin": "v3_additions50",
+      "word": "全寝都嫌弃你",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "全寝都嫌弃你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "全宿舍都嫌弃你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "全班都嫌弃你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "quan",
+          "qin",
+          "dou",
+          "xian",
+          "qi",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "quan2qin3dou1xian2qi4ni3",
+        "quanqindouxianqini"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-112",
+      "origin": "v3_additions50",
+      "word": "没人要你",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "没人要你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "没人会要你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "没人真在乎你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-113",
+      "origin": "v3_additions50",
+      "word": "黑鬼",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "黑鬼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-114",
+      "origin": "v3_additions50",
+      "word": "支那猪",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "支那猪",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-115",
+      "origin": "v3_additions50",
+      "word": "死基佬",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "死基佬",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-116",
+      "origin": "v3_additions50",
+      "word": "死娘炮",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "死娘炮",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-117",
+      "origin": "v3_additions50",
+      "word": "婊子",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "婊子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "婊砸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "表砸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-118",
+      "origin": "v3_additions50",
+      "word": "荡妇",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "荡妇",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-119",
+      "origin": "v3_additions50",
+      "word": "母狗",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "母狗",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-120",
+      "origin": "v3_additions50",
+      "word": "公狗",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "公狗",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [],
+      "pinyin_keys": [],
+      "numeric_tones": false,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-121",
+      "origin": "current_additions",
+      "word": "你个蠢逼",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你个蠢逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个蠢逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这蠢逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "蠢逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "chun",
+          "bi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4chun3bi1",
+        "nigechunbi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-122",
+      "origin": "current_additions",
+      "word": "你个憨批",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个憨批",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个憨批",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这憨批",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "憨批",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "han",
+          "pi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4han1pi1",
+        "nigehanpi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-123",
+      "origin": "current_additions",
+      "word": "你个贱货",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个贱货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个贱货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这贱货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "贱货",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "jian",
+          "huo"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4jian4huo4",
+        "nigejianhuo"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-124",
+      "origin": "current_additions",
+      "word": "你个贱种",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "你个贱种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个贱种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这贱种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "贱种",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "jian",
+          "zhong"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4jian4zhong3",
+        "nigejianzhong"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-125",
+      "origin": "current_additions",
+      "word": "你个狗崽子",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个狗崽子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个狗崽子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这狗崽子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "狗崽子",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "gou",
+          "zai",
+          "zi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4gou3zai3zi5",
+        "nigegouzaizi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-126",
+      "origin": "current_additions",
+      "word": "你个穷逼",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个穷逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个穷逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这穷逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "穷逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "qiong",
+          "bi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4qiong2bi1",
+        "nigeqiongbi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-127",
+      "origin": "current_additions",
+      "word": "你个丑逼",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "你个丑逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这个丑逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "你这丑逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "丑逼",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "ni",
+          "ge",
+          "chou",
+          "bi"
+        ]
+      ],
+      "pinyin_keys": [
+        "ni3ge4chou3bi1",
+        "nigechoubi"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-128",
+      "origin": "current_additions",
+      "word": "泼你硫酸",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "泼你硫酸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "往你脸上泼硫酸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "给你泼硫酸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "泼他硫酸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "泼她硫酸",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "po",
+          "ni",
+          "liu",
+          "suan"
+        ]
+      ],
+      "pinyin_keys": [
+        "po1ni3liu2suan1",
+        "poniliusuan"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-129",
+      "origin": "current_additions",
+      "word": "捅你一刀",
+      "level": "HIGH",
+      "checks": [
+        {
+          "variant": "捅你一刀",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "捅他一刀",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "捅她一刀",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "给你一刀",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "tong",
+          "ni",
+          "yi",
+          "dao"
+        ]
+      ],
+      "pinyin_keys": [
+        "tong3ni3yi1dao1",
+        "tongniyidao"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-130",
+      "origin": "current_additions",
+      "word": "骚扰到你退学",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "骚扰到你退学",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "一直骚扰到你退学",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "sao",
+          "rao",
+          "dao",
+          "ni",
+          "tui",
+          "xue"
+        ]
+      ],
+      "pinyin_keys": [
+        "sao1rao3dao4ni3tui4xue2",
+        "saoraodaonituixue"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-131",
+      "origin": "current_additions",
+      "word": "不答应就一直缠着你",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "不答应就一直缠着你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "不答应我就一直缠着你",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "bu",
+          "da",
+          "ying",
+          "jiu",
+          "yi",
+          "zhi",
+          "chan",
+          "zhe",
+          "ni"
+        ]
+      ],
+      "pinyin_keys": [
+        "bu4da1ying4jiu4yi4zhi2chan2zhe5ni3",
+        "budayingjiuyizhichanzheni"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    },
+    {
+      "candidate_id": "US24-132",
+      "origin": "current_additions",
+      "word": "堵到你不敢出门",
+      "level": "MEDIUM",
+      "checks": [
+        {
+          "variant": "堵到你不敢出门",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        },
+        {
+          "variant": "天天堵到你不敢出门",
+          "positive": true,
+          "quotation": true,
+          "continued_attack": true
+        }
+      ],
+      "phrase_readings": [
+        [
+          "du",
+          "dao",
+          "ni",
+          "bu",
+          "gan",
+          "chu",
+          "men"
+        ]
+      ],
+      "pinyin_keys": [
+        "du3dao4ni3bu4gan3chu1men2",
+        "dudaonibuganchumen"
+      ],
+      "numeric_tones": true,
+      "technical_pass": true,
+      "m1_status": "PENDING"
+    }
+  ],
+  "business_approval": false,
+  "production_acceptance": false
+}

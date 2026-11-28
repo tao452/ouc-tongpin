@@ -1,0 +1,275 @@
+{
+  "scope": "completed supervised development experiment, not independent campus acceptance",
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_path": "qwen-cntp-domain-v7/frozen.json",
+      "private_sha256": "c6cbfdee78cf7999218513d8e5df021df4629f757c771120fe6687ef36a3bf17",
+      "public_lf_sha256": "49eeb5ce656e8f573708a5dd5d91196bb13c9a0d260943abec4f7201f8cc114b"
+    },
+    {
+      "file": "summary.json",
+      "private_path": "qwen-cntp-domain-v7/summary.json",
+      "private_sha256": "72fe131589f0ef5239d9ceb6203f0188a5a6af1ba75b85fab006c401525b1633",
+      "public_lf_sha256": "f56349e10bf58a27f50fcd18d3a3786695bc3de6cda20d5c5cbab943171579e7"
+    },
+    {
+      "file": "training-window-order.json",
+      "private_path": "qwen-cntp-domain-v7/training-window-order.json",
+      "private_sha256": "1022c41d68c92876aea69cc89f1ccb5f50097d9430b3c7eb44043eafbe65696d",
+      "public_lf_sha256": "1022c41d68c92876aea69cc89f1ccb5f50097d9430b3c7eb44043eafbe65696d"
+    },
+    {
+      "file": "input-policy.json",
+      "private_path": "qwen-cntp-domain-v7-inputs/policy.json",
+      "private_sha256": "dec8b41d2ef232ce6238ba9f32ebbb673bd0aab22bdd3851ad29a8007ae9d308",
+      "public_lf_sha256": "121c13e421d99a38516536d4c37d781df05e3ae388c6e2d34b99e8ccf305abf5"
+    },
+    {
+      "file": "preflight-16.json",
+      "private_path": "qwen-cntp-domain-v7-preflight-16.json",
+      "private_sha256": "04c8af31bbf84e3708d0013e7db7f1ba23aa786dd62216e7ebe6a31847be43ee",
+      "public_lf_sha256": "43f49c89c7de993eb0407a22adb9633a7a97f04c92635d71f99d672ddf50c17c"
+    },
+    {
+      "file": "train_qwen_cntp_domain_v7.py.txt",
+      "private_path": "train_qwen_cntp_domain_v7.py",
+      "private_sha256": "4fd85b3628253e59abbd8f6a4c8446748d6fc3eca36b52a58b756c026ad8da87",
+      "public_lf_sha256": "4fd85b3628253e59abbd8f6a4c8446748d6fc3eca36b52a58b756c026ad8da87"
+    },
+    {
+      "file": "train_qwen_sequence_v6.py.txt",
+      "private_path": "train_qwen_sequence_v6.py",
+      "private_sha256": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d",
+      "public_lf_sha256": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d"
+    },
+    {
+      "file": "train_qwen_sequence_v5d.py.txt",
+      "private_path": "train_qwen_sequence_v5d.py",
+      "private_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "public_lf_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39"
+    },
+    {
+      "file": "qwen_sequence_model_v6.py.txt",
+      "private_path": "qwen_sequence_model_v6.py",
+      "private_sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "public_lf_sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088"
+    },
+    {
+      "file": "qwen_sequence_model_v5.py.txt",
+      "private_path": "qwen_sequence_model_v5.py",
+      "private_sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "public_lf_sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476"
+    },
+    {
+      "file": "qwen_sequence_encoding_v5.py.txt",
+      "private_path": "qwen_sequence_encoding_v5.py",
+      "private_sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482",
+      "public_lf_sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482"
+    },
+    {
+      "file": "prepare_qwen_cntp_domain_v7.py.txt",
+      "private_path": "prepare_qwen_cntp_domain_v7.py",
+      "private_sha256": "1d8cf0df89f84997f684ac3f379bfd899f2979b547dc00db351538e65f68689a",
+      "public_lf_sha256": "1d8cf0df89f84997f684ac3f379bfd899f2979b547dc00db351538e65f68689a"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "audit_threshold_grid.py.txt",
+      "private_path": "audit_threshold_grid.py",
+      "private_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5",
+      "public_lf_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5"
+    },
+    {
+      "file": "publish_qwen_domain_v7_and_raw.py.txt",
+      "private_path": "publish_qwen_domain_v7_and_raw.py",
+      "private_sha256": "3fc87e9b65a146e72c9a7481842969b0618262323a31f26ea1cc9ce41202b33e",
+      "public_lf_sha256": "3fc87e9b65a146e72c9a7481842969b0618262323a31f26ea1cc9ce41202b33e"
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "private_path": "qwen-cntp-domain-v7/epoch-1/predictions.jsonl",
+      "private_sha256": "68a768180d36f291abbb5079afc415953f29637aabbb623e8933fae687817411",
+      "public_lf_sha256": "719147bfd1e1267b0b823b9372dd25e19e9acb736b429b218a7d4fdbe9122546"
+    },
+    {
+      "file": "epoch-1-report.json",
+      "private_path": "qwen-cntp-domain-v7/epoch-1/report.json",
+      "private_sha256": "d36517d27160c5705b87fb46976324ede48c074941c4792fe907536e07415871",
+      "public_lf_sha256": "8d002d13b04b637ef18454df805dae068ec8842bdd07abbe7d06184e1ca3f4ea"
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "private_path": "qwen-cntp-domain-v7/epoch-1/thresholds.csv",
+      "private_sha256": "29a5c1f841396d62d8f343749b1394a3ca78348b49048a2e89a8596edf56bb06",
+      "public_lf_sha256": "29a5c1f841396d62d8f343749b1394a3ca78348b49048a2e89a8596edf56bb06"
+    },
+    {
+      "file": "epoch-1-threshold-grid-gate-audit.json",
+      "private_path": "qwen-cntp-domain-v7/epoch-1/threshold-grid-gate-audit.json",
+      "private_sha256": "f6dd47d25ecae3b7bcb111126454dbb96220f80dc66a1c8c948d298ad3a4c6d4",
+      "public_lf_sha256": "2d934de6183b7d64ad36a649113359a02040a3382294297308f3f11ab5cb42fd"
+    },
+    {
+      "file": "epoch-2-predictions.jsonl",
+      "private_path": "qwen-cntp-domain-v7/epoch-2/predictions.jsonl",
+      "private_sha256": "38ec524fcfbdf1de2e42b0ef018f3795e173fd3a35df874907acfff93791ea84",
+      "public_lf_sha256": "241635f164de697780cd71da2c06a260844efd54b21cf1efc26a04f5c6afd98e"
+    },
+    {
+      "file": "epoch-2-report.json",
+      "private_path": "qwen-cntp-domain-v7/epoch-2/report.json",
+      "private_sha256": "37f22d087fec5f9e867e9c8fd22f8fb94a963a870a2aac2781a8d90eb7118b20",
+      "public_lf_sha256": "496e86dd4266115fbc6fbea400e75fbd966ae16db73d366ae74b084e79e00e63"
+    },
+    {
+      "file": "epoch-2-thresholds.csv",
+      "private_path": "qwen-cntp-domain-v7/epoch-2/thresholds.csv",
+      "private_sha256": "37e3a73c7487cefa1e967dc674e85de224ae825073ea85b3ef6cb75d2c682891",
+      "public_lf_sha256": "37e3a73c7487cefa1e967dc674e85de224ae825073ea85b3ef6cb75d2c682891"
+    },
+    {
+      "file": "epoch-2-threshold-grid-gate-audit.json",
+      "private_path": "qwen-cntp-domain-v7/epoch-2/threshold-grid-gate-audit.json",
+      "private_sha256": "6adda3a2a32db3d8cee36c35ebc1ba8859f69708d18bbae1b933b9289c4ec17b",
+      "public_lf_sha256": "1953a8b61b1de8245cc8b238534565ea8f50a3bdbf1fd2d26634dbe6c3e58eb6"
+    },
+    {
+      "file": "input-index-01.jsonl",
+      "public_lf_sha256": "0aa3f7307c97e8544d26b429b2278cddfe355f8b47f2c2d530544b28a7e82a2b"
+    },
+    {
+      "file": "input-index-02.jsonl",
+      "public_lf_sha256": "5803bc09b1e13abb426266021d544230af1d3026ff749cd9a528f2deddc79ff7"
+    },
+    {
+      "file": "input-index-03.jsonl",
+      "public_lf_sha256": "bdaff24c59031cea540294a608d698721e89892e75cc26c6cba185680c88dcfe"
+    },
+    {
+      "file": "input-index-04.jsonl",
+      "public_lf_sha256": "4846d3cc7963d8a4bd536ea354b6da827dc8589b896a63d1a66d208f8193000f"
+    },
+    {
+      "file": "input-index-05.jsonl",
+      "public_lf_sha256": "50411ec0ef14f15e6aea1be5a0f2056585b4aa6dd665701f92226f271ed2a01e"
+    },
+    {
+      "file": "input-index-06.jsonl",
+      "public_lf_sha256": "deff49e76dc16ba19c1f2c97e4a9ea422d299ee5f421ef9eade3b681ad3bcb7a"
+    },
+    {
+      "file": "frozen-input-engine-source-manifest.json",
+      "private_path": "app-v3_9-r3-before-3_10/source-manifest.json",
+      "private_sha256": "8984f97bc6b3c22d9359a96bdc5bf5bd347a2d41d7010062821ab987f9499c67",
+      "public_lf_sha256": "ded0617275acac7cac35752c3d7ec1c6fa76fa56d7972337874709a4f87e08a7"
+    },
+    {
+      "file": "frozen-input-engine/app/__init__.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/__init__.py",
+      "private_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "frozen-input-engine/app/body_limit.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/body_limit.py",
+      "private_sha256": "01ab33cc1566a1be182c21cdcfc1695e9f3ec79c429ef7ca11c6e5c3e05deb49",
+      "public_lf_sha256": "01ab33cc1566a1be182c21cdcfc1695e9f3ec79c429ef7ca11c6e5c3e05deb49"
+    },
+    {
+      "file": "frozen-input-engine/app/main.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/main.py",
+      "private_sha256": "44ffe9676dd11c1c0ebda4b968daf273c6038080cd0af65e540f42e685a37206",
+      "public_lf_sha256": "44ffe9676dd11c1c0ebda4b968daf273c6038080cd0af65e540f42e685a37206"
+    },
+    {
+      "file": "frozen-input-engine/app/models/__init__.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/models/__init__.py",
+      "private_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "frozen-input-engine/app/models/dictionary.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/models/dictionary.py",
+      "private_sha256": "d7e8d021e7915353b6a0eef87ffc505daa4aee5312356117086edb3f9386e474",
+      "public_lf_sha256": "d7e8d021e7915353b6a0eef87ffc505daa4aee5312356117086edb3f9386e474"
+    },
+    {
+      "file": "frozen-input-engine/app/models/moderation.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/models/moderation.py",
+      "private_sha256": "16d3e81d5cb4b436f00899aca73827878b7ff6a4d464314d1aebc3a9798a0c69",
+      "public_lf_sha256": "16d3e81d5cb4b436f00899aca73827878b7ff6a4d464314d1aebc3a9798a0c69"
+    },
+    {
+      "file": "frozen-input-engine/app/routers/__init__.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/routers/__init__.py",
+      "private_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "frozen-input-engine/app/routers/moderation.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/routers/moderation.py",
+      "private_sha256": "bf70859c025241fcafa58326059da4aefeaf11d5218e633951e317c26d4e91e1",
+      "public_lf_sha256": "bf70859c025241fcafa58326059da4aefeaf11d5218e633951e317c26d4e91e1"
+    },
+    {
+      "file": "frozen-input-engine/app/services/__init__.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/services/__init__.py",
+      "private_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "frozen-input-engine/app/services/moderation.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/services/moderation.py",
+      "private_sha256": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745",
+      "public_lf_sha256": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745"
+    },
+    {
+      "file": "frozen-input-engine/app/services/moderation_context.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/services/moderation_context.py",
+      "private_sha256": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2",
+      "public_lf_sha256": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2"
+    },
+    {
+      "file": "frozen-input-engine/app/services/normalization.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/services/normalization.py",
+      "private_sha256": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80",
+      "public_lf_sha256": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80"
+    },
+    {
+      "file": "frozen-input-engine/app/services/pronunciation.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/services/pronunciation.py",
+      "private_sha256": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+      "public_lf_sha256": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6"
+    },
+    {
+      "file": "frozen-input-engine/app/services/targeted_matching.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/services/targeted_matching.py",
+      "private_sha256": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d",
+      "public_lf_sha256": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d"
+    },
+    {
+      "file": "partial-state-index.jsonl",
+      "public_lf_sha256": "27a2de2bb65ed60b4c3e08e9708aebed71894d04f5295b432a9c56208fbf756c"
+    }
+  ],
+  "epochs": [
+    1,
+    2
+  ],
+  "rows_per_evaluation": 3258,
+  "excluded_evaluation_rows": 0,
+  "inference_errors": 0,
+  "source_engine": "executed frozen3.9 input engine; exact snapshot and SHA retained; current3.10 qualification separate",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "upstream_pretraining_evaluation_exposure": "unknown",
+  "private_assets": "raw corpus, generated text, token windows, base and updated parameters, optimizer/RNG states and full logs"
+}

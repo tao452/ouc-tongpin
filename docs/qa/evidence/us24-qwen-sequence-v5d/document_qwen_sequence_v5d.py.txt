@@ -1,0 +1,74 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124';QA=ROOT/'docs/qa'
+PRIVATE=LAB/'qwen-sequence-v5d';PUBLIC=QA/'evidence/us24-qwen-sequence-v5d'
+summary=json.loads((PRIVATE/'summary.json').read_text(encoding='utf-8'))
+assert (PUBLIC/'manifest.json').is_file()
+result=summary['epochs'][0]
+assert result['training_windows_seen']==39107 and result['evaluation_rows']==3258
+predictions=[json.loads(line) for line in (PRIVATE/'epoch-1/predictions.jsonl').read_text(encoding='utf-8').splitlines()]
+current=json.loads((LAB/'qwen-sequence-v5-context39/input-audit.json').read_text(encoding='utf-8'))
+assert len(predictions)==len(current['rows'])==3258
+lookup={r['id']:r for r in current['rows']}
+for row in predictions:
+    match=lookup[row['id']]
+    for field in ['label','cohort','category','source_text_sha256','transformed_sha256','literal_any']:
+        assert row[field]==match[field],(row['id'],field)
+qualification=dict(scope='same3258 development predictions valid for unchanged current3.9 inputs; no new independent test',
+    model_adapters_sha256=result['weights_sha256'],evaluation_rows=3258,source_or_label_changes=0,
+    transformed_changes=0,literal_changes=0,current_dictionary_sha256=current['policy']['dictionary_sha256'],
+    current_engine_sha256=current['policy']['current_engine_sha256'],
+    input_audit_sha256=hashlib.sha256((LAB/'qwen-sequence-v5-context39/input-audit.json').read_bytes()).hexdigest(),
+    M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (PUBLIC/'current-context39-qualification.json').open('x',encoding='utf-8',newline='\n') as handle:
+    json.dump(qualification,handle,ensure_ascii=False,indent=2)
+points=[m['best_fpr_eligible'] for m in result['metrics'].values()]
+passed=any(p and p['development_gate_met'] for p in points)
+text='''
+
+## Qwen3-1.7B监督分类完整实测
+
+固定官方revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`，全部Git/LFS资产校验后加载。实际训练为冻结BF16底座、q/v rank8 LoRA与二分类头，共1609728个训练参数；microbatch16、累积2步、有效batch32，学习率1e-4、5%线性预热、1轮、seed20261124。输入保留原文和一条上下文无调拼音，最多512token、32字符重叠，所有窗口保留，以最大窗口分数合成评论。
+
+训练38856条、39107窗口全部完成一次，3258条开发评估全部保留。训练缓存采用3.8有限语境；随后与当前3.9逐行比较，同3258条标签、源文本、转换哈希及字面标记均一致。初始资源尝试未完成轮次，准确率NOT_RUN；它们的原源码、日志摘要、显存检查及重启理由单列，不计入本轮效果。
+
+'''
+text+=f'实际训练{result["training_seconds"]:.2f}秒、完整推理{result["inference_seconds"]:.2f}秒，平均训练损失{result["training_loss"]:.6f}，峰值已分配CUDA显存{result["peak_cuda_bytes"]}字节。损失只记录训练过程，不用于验收。\n\n'
+text+='|配置/阈值|开发组|TP|FP|FN|TN|Recall|Precision|FPR|推理错误|\n|---|---|---:|---:|---:|---:|---:|---:|---:|---:|\n'
+for mode,label in [('model','模型'),('literal_or_model','字面或模型')]:
+    for key,title in [('at_0_5','默认'),('best_fpr_eligible','四组误报约束选点')]:
+        point=result['metrics'][mode][key]
+        if point is None:continue
+        for cohort,name in [('toxicn_dev','ToxiCN开发'),('PCR','PCR'),('controls','正常257'),('context_stress','新语境102')]:
+            m=point['cohorts'][cohort];c=m['confusion_matrix']
+            recall=f'{m["recall"]:.2%}' if c['tp']+c['fn'] else '—'
+            precision=f'{m["precision"]:.2%}' if c['tp']+c['fp'] else '—'
+            text+=f'|{label}/{title} {point["threshold"]:.3f}|{name}|{c["tp"]}|{c["fp"]}|{c["fn"]}|{c["tn"]}|{recall}|{precision}|{m["false_positive_rate"]:.2%}|{m["inference_errors"]}|\n'
+for mode,label in [('model','模型'),('literal_or_model','字面或模型')]:
+    if result['metrics'][mode]['best_fpr_eligible'] is None:
+        text+=f'\n{label}在固定999个阈值中未找到四组FPR分别<2%且错误0的选点。\n'
+text+='\n'
+text+=('该组通过预定开发门槛，下一步冻结唯一配置后首次执行预留外部样本；正式校园验收仍待M3。' if passed else
+       '该组未通过预定开发门槛，继续保留失败并调整，COLD dev仍未获取。')
+text+='''逐行分数、0.5及999阈值曲线、各类别矩阵、分组索引和实际源码见[完整执行证据](evidence/us24-qwen-sequence-v5d/manifest.json)，当前3.9输入等价关系见[逐项确认](evidence/us24-qwen-sequence-v5d/current-context39-qualification.json)。
+
+这些是反复使用资料上的开发结果。原始数据、权重、优化器和token缓存留在qa-private；基础模型对公开评估资料的预训练暴露情况未知。CUDA注意力后向有非确定性警告，固定seed不保证跨设备逐位相同。该分类分数不提供S1等级，不接入默认服务，也不代表完整危机理解。M1逐条审核和M3独立复现仍为PENDING。
+'''
+p=QA/'US24-拼音语义分类训练与复测报告.md';body=p.read_text(encoding='utf-8')
+assert '## Qwen3-1.7B监督分类完整实测' not in body
+body=body.replace('尚无该组的召回结果。','完整结果见下节。')
+body=body.replace('首轮3个ChineseBERT checkpoint已完成实际训练及全部预测。','ChineseBERT各组及Qwen3监督分类已完成实际训练和全部开发预测。')
+best_pcr=max([.268]+[p['cohorts']['PCR']['recall'] for p in points if p])
+best_toxi=max([381/1292]+[p['cohorts']['toxicn_dev']['recall'] for p in points if p])
+parts=body.split('\n\n',2)
+assert len(parts)==3
+state='新配置通过预定开发门槛，独立验收待执行。' if passed else '广义95%目标仍未通过，继续离线调整。'
+parts[1]=f'ChineseBERT各组及Qwen3监督分类已完成实际训练和全部开发预测。本报告已完成配置的受控误报选点中，PCR最高{best_pcr:.2%}、ToxiCN开发最高{best_toxi:.2%}。{state}分类分数不产生S1等级。'
+body='\n\n'.join(parts)
+p.write_text(body+text,encoding='utf-8',newline='\n')
+for filename in ['publish_qwen_sequence_v5d.py','document_qwen_sequence_v5d.py']:
+    data=(LAB/filename).read_bytes().replace(b'\r\n',b'\n')
+    with (PUBLIC/(filename+'.txt')).open('xb') as handle:handle.write(data)
+print(json.dumps(dict(evaluation_rows=3258,gate_met=passed,current_context39_equivalent=True)))

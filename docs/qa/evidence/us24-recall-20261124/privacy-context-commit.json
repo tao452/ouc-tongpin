@@ -1,0 +1,189 @@
+{
+  "scope": "Exact Git index blobs, new context and two-stage evidence",
+  "files": 36,
+  "unresolved_findings": [],
+  "phone_like_substrings_inside_hashes": 2,
+  "external_source_text": "Not included; raw corpus and model-derived hints remain in qa-private",
+  "checked_files": [
+    {
+      "file": ".github/workflows/deploy-test.yml",
+      "sha256": "ea0a16d5921a99b219d13a89ef268dcbf32fff0563bf413e809bfcddaec8f09a",
+      "bytes": 7280
+    },
+    {
+      "file": "docs/qa/US24-v3_3-M1逐条审核表.md",
+      "sha256": "6119f37835bb8903223ec4574c0ebefa583a287e9770971de9d82174e244531f",
+      "bytes": 137798
+    },
+    {
+      "file": "docs/qa/US24-v3_3-测试与评估报告.md",
+      "sha256": "a4fff4ca52ad9863b0e72e9fd04bc43e0025f67f0702b4c689b625dd6fe9509d",
+      "bytes": 8232
+    },
+    {
+      "file": "docs/qa/US24-求助与豁免边界审核补充.md",
+      "sha256": "44ca4e0a621a2133ea235fa5491762d8c479c2182350d6e6616e1d41057c7487",
+      "bytes": 2727
+    },
+    {
+      "file": "docs/qa/data/comment-classifier.v3.prompt.json",
+      "sha256": "f2c194ce989dfbd936cb9c70b554f500f24b1611e499d3c88a6e74dfeabe32f3",
+      "bytes": 3827
+    },
+    {
+      "file": "docs/qa/data/phonetic-reconstruction.v1.prompt.json",
+      "sha256": "ddb43c31ed42a42ab58caf090a437c0f19955bc4b7e9cea361f9bb47b91d26f6",
+      "bytes": 2484
+    },
+    {
+      "file": "docs/qa/data/us24-self-help.v1.json",
+      "sha256": "1ae8c342649a9864c79d116419b7c46043c45a3f65e51d5aac0a152d56e23138",
+      "bytes": 2365
+    },
+    {
+      "file": "docs/qa/data/us24-self-help.v2.json",
+      "sha256": "529d4843356f5a004bdbad911cece9342c3d4cbe95d46085b33cc8c328ab3a2c",
+      "bytes": 2961
+    },
+    {
+      "file": "docs/qa/data/us24-self-help.v3.json",
+      "sha256": "30b06974661d4e70d00eb34202f7d7f12997871b498f4664b2f9c56199cfffe0",
+      "bytes": 5661
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/allow-clause-before-fix-http.json",
+      "sha256": "7b5c45a74dd8ccb1bb37d1064547d0dfebb8b2f23eefbb27a81d4284ee1e571c",
+      "bytes": 583
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/benchmark_final_context.py.txt",
+      "sha256": "0fae8aebba82a9762a4a3df09af28a9e0a2a897908ac6313bb128deab5fdf71b",
+      "bytes": 1972
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-contract-http.json",
+      "sha256": "4155efb4c0dd212732301c3408df72b08e599f94956ae7c98d997150461cd906",
+      "bytes": 8983
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-performance.json",
+      "sha256": "600b79bf25a7880d2d83951cecd74c645fd81134ab48b419009ddda1abe0f2ee",
+      "bytes": 22125
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-toxicn-historical.json",
+      "sha256": "7fdceb96364a55e58102c312aafaf0a5bba813c5c589269e15cb5ef2e0c07ece",
+      "bytes": 9162
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-v2-function.json",
+      "sha256": "7aae88fff54200663221337f88a92ce8505be7c920e58d7618470d033de05c25",
+      "bytes": 28826
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-v2-http.json",
+      "sha256": "3e1b1a554848dd4630ee7abb147904912f9ceb390166f83c58097b34ec5f1ac1",
+      "bytes": 28820
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-v3-function.json",
+      "sha256": "255809b7bac367998a3a08cd49904023babef506e0f1603cc1fda2567b2a9eb3",
+      "bytes": 24232
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-v3-http.json",
+      "sha256": "60bfb6dd733e4d3511eed7ec197f84225374683b2366c6675fc6793bdaabbc01",
+      "bytes": 24226
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-v3_3-function.json",
+      "sha256": "68c62d760d110a5891a04769da940cbd147aefc681d2ca62001ea39cf176bb21",
+      "bytes": 9738
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-v3_3-http.json",
+      "sha256": "2dd2f1035e5da58e1daf5502a9b3ef4650b2c156c433b859756fe11cf3a326f5",
+      "bytes": 9732
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/final-context-verification.json",
+      "sha256": "f6a4bfcd9cedbc01e20f379bbb9af71c31f04ba10432bcb658301a1684675c5e",
+      "bytes": 622
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/phonetic-format-equivalence.json",
+      "sha256": "b8af5ba1613f8764df7e4258ce4455f4c303654835fece7ff6199ca101e63772",
+      "bytes": 369
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/phonetic-v1-development.json",
+      "sha256": "3e040380671aaa1ed6b644245d01fb164877280a60f4cb4da5bdd9578a28c8eb",
+      "bytes": 555106
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/phonetic-v1-executed-source.py.txt",
+      "sha256": "adc6701ac9db46f45be4bdae0a43897a78cd9dc2db4393b28e17ef091345be49",
+      "bytes": 10244
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/phonetic-v1-policy-before-prediction.json",
+      "sha256": "b58291002b765f6d0f074d0f2ac1fa5b79685d800cee5fb569b1431343ee687a",
+      "bytes": 3524
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/self-context-after-fix-http.json",
+      "sha256": "ccd8610b9fe5421e022888203db5673662d286b9bbc5a32aea4385ad573ec920",
+      "bytes": 9658
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/self-help-before-fix-http.json",
+      "sha256": "ca79d3251616069ea189e4df36fa4a09062271fa0454a65cf68aab0b451fb3af",
+      "bytes": 5777
+    },
+    {
+      "file": "scripts/qa/verify_context_candidate.py",
+      "sha256": "b567cbe025a3d0359b4dc44bbc11dc5ac2bb8dc41933fe6fc4ca079df17a484f",
+      "bytes": 3962
+    },
+    {
+      "file": "services/algo/app/services/moderation.py",
+      "sha256": "2d68d87f0e83de3721fd9091899917e364372e2d78397f780d8360f645b92ad6",
+      "bytes": 14051
+    },
+    {
+      "file": "services/algo/app/services/moderation_context.py",
+      "sha256": "7f419f636e0446d8b8f43d7e7a1e240a49f2b0db2821592655abe1462e97557b",
+      "bytes": 3191
+    },
+    {
+      "file": "services/algo/scripts/evaluate_comment_model.py",
+      "sha256": "5b3573c637deda4d4e9595f831692e1a6e672d8550dbfe4591c51f859467b385",
+      "bytes": 15056
+    },
+    {
+      "file": "services/algo/scripts/evaluate_phonetic_model.py",
+      "sha256": "ad0b3adfb87a0396021464e3e84d6e072667957994bca61c87fd560bb5030661",
+      "bytes": 10300
+    },
+    {
+      "file": "services/algo/tests/test_allow_clause_boundary.py",
+      "sha256": "7d0acd692cdb97b9ee88624f01512fb6f2177e6dc803dae88c451a8714ac6563",
+      "bytes": 1619
+    },
+    {
+      "file": "services/algo/tests/test_evaluate_recall.py",
+      "sha256": "3bcf0accae6d52bc11947cded6450729b4e530447f7da711e6898b8256d2cde5",
+      "bytes": 4454
+    },
+    {
+      "file": "services/algo/tests/test_phonetic_model.py",
+      "sha256": "5704e97296dc072e0dd5f2e21fbeaa2cf28e8f01c391738cf993473b1ad89bfa",
+      "bytes": 1447
+    },
+    {
+      "file": "services/algo/tests/test_self_help_context.py",
+      "sha256": "c79c6ef956a853c79950aba28190c3c026dfe5c504f220f69637f4af91974fd5",
+      "bytes": 655
+    }
+  ]
+}

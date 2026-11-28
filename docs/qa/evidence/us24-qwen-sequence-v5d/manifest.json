@@ -1,0 +1,291 @@
+{
+  "scope": "supervised Qwen3 LoRA development evaluation, not independent campus acceptance",
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_path": "qwen-sequence-v5d/frozen.json",
+      "private_bytes": 17433,
+      "private_sha256": "664ef70a58296913c9f76085bdba6cf5d8ec0ce5deb30f7dd1db5caee9e81154",
+      "public_lf_sha256": "c95c8816d090f9752516ac7de3462f17ce32190cc7af6fe2952444c09813c35c"
+    },
+    {
+      "file": "summary.json",
+      "private_path": "qwen-sequence-v5d/summary.json",
+      "private_bytes": 54880,
+      "private_sha256": "a60ca50eda6fd48e2e9da151c020f6c56b8afbec367d4aec6e033259867a29f1",
+      "public_lf_sha256": "b1650a8b56a2178a1f49b0bc4de2d3962c43b2872dc7b875046556f8ac8cb676"
+    },
+    {
+      "file": "training-window-order.json",
+      "private_path": "qwen-sequence-v5d/training-window-order.json",
+      "private_bytes": 267529,
+      "private_sha256": "f035821a24f1a1c5bb3e0c4b64cf52e115f56dd83e20d512295e62a07fd4ec61",
+      "public_lf_sha256": "f035821a24f1a1c5bb3e0c4b64cf52e115f56dd83e20d512295e62a07fd4ec61"
+    },
+    {
+      "file": "epoch-1-report.json",
+      "private_path": "qwen-sequence-v5d/epoch-1/report.json",
+      "private_bytes": 32374,
+      "private_sha256": "fb1ef716e82bb3f97147d2a26c99862534db14579ec94810af88b9bd6ad4f930",
+      "public_lf_sha256": "c2c594861d82d29102a4b5b66dcd1f0c3128b085bbaa61b44f6d08bb26e6892a"
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "private_path": "qwen-sequence-v5d/epoch-1/predictions.jsonl",
+      "private_bytes": 1610650,
+      "private_sha256": "8b5b59b242a1e62c91f214433e1509061f07317740c6699c1b16fcf414f3f197",
+      "public_lf_sha256": "7670d4e1b33de2e5b503b1408e9d3d0c3a2de681fcbbc1098cbd5544107cebc5"
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "private_path": "qwen-sequence-v5d/epoch-1/thresholds.csv",
+      "private_bytes": 620216,
+      "private_sha256": "ad570f50b230278b9424dd1112d7cdf7bd5bcde597e2f8c7181f7055bcda7429",
+      "public_lf_sha256": "ad570f50b230278b9424dd1112d7cdf7bd5bcde597e2f8c7181f7055bcda7429"
+    },
+    {
+      "file": "train_qwen_sequence_v5d.py.txt",
+      "private_path": "train_qwen_sequence_v5d.py",
+      "private_bytes": 11994,
+      "private_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "public_lf_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39"
+    },
+    {
+      "file": "qwen_sequence_model_v5.py.txt",
+      "private_path": "qwen_sequence_model_v5.py",
+      "private_bytes": 3921,
+      "private_sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "public_lf_sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476"
+    },
+    {
+      "file": "qwen_sequence_encoding_v5.py.txt",
+      "private_path": "qwen_sequence_encoding_v5.py",
+      "private_bytes": 2781,
+      "private_sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482",
+      "public_lf_sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482"
+    },
+    {
+      "file": "prepare_qwen_sequence_v5.py.txt",
+      "private_path": "prepare_qwen_sequence_v5.py",
+      "private_bytes": 5872,
+      "private_sha256": "8e60ff8fb8302da35e6ad1d9cff14ad29ab0c1875e31c74ebaa2bf555908d8ec",
+      "public_lf_sha256": "8e60ff8fb8302da35e6ad1d9cff14ad29ab0c1875e31c74ebaa2bf555908d8ec"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_bytes": 3045,
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "prepare_sequence_resource_v5b.py.txt",
+      "private_path": "prepare_sequence_resource_v5b.py",
+      "private_bytes": 3415,
+      "private_sha256": "294d7fdd49d38c24ec5c0d27dcd372192356548bb8be4b682f8c685a56644af5",
+      "public_lf_sha256": "294d7fdd49d38c24ec5c0d27dcd372192356548bb8be4b682f8c685a56644af5"
+    },
+    {
+      "file": "prepare_sequence_resource_v5c.py.txt",
+      "private_path": "prepare_sequence_resource_v5c.py",
+      "private_bytes": 5565,
+      "private_sha256": "f3a1d7964af2a31e9e6956ee3d692751bf2bffa3a338348ab1e0ebb39625b083",
+      "public_lf_sha256": "f3a1d7964af2a31e9e6956ee3d692751bf2bffa3a338348ab1e0ebb39625b083"
+    },
+    {
+      "file": "prepare_sequence_resource_v5d.py.txt",
+      "private_path": "prepare_sequence_resource_v5d.py",
+      "private_bytes": 4436,
+      "private_sha256": "62f7d179282ad9f13c9a6a441dc07386bb35c5b341a476dbd6c61dc3ad983f5e",
+      "public_lf_sha256": "62f7d179282ad9f13c9a6a441dc07386bb35c5b341a476dbd6c61dc3ad983f5e"
+    },
+    {
+      "file": "qwen3-1_7b-range-base.manifest.json",
+      "private_path": "qwen3-1_7b-range-base.manifest.json",
+      "private_bytes": 3641,
+      "private_sha256": "8749131fba8439fdaaeafbb04c95675f65645c2e3a6501cbedc0e878067a613d",
+      "public_lf_sha256": "e46537b8a0a0975f42cba823e319120c1619108b0da5311c96295c382bb2edfe"
+    },
+    {
+      "file": "qwen3-1_7b-tokenizer.manifest.json",
+      "private_path": "qwen3-1_7b-tokenizer.manifest.json",
+      "private_bytes": 811,
+      "private_sha256": "acad83c25c2a377967dd109309c0d2059f9aa8f3d9d3aca75aeaacbcfb32c611",
+      "public_lf_sha256": "28a1959f4aad2903ee3e46edf8c9cfdd43a5ca4ea7b61bdabe5578586ee9721d"
+    },
+    {
+      "file": "qwen-sequence-v5-resource-restart.json",
+      "private_path": "qwen-sequence-v5-resource-restart.json",
+      "private_bytes": 1183,
+      "private_sha256": "03139f67904297dd70d06ca52346a1c4a25ed6b45350a6e93baf6ac590905b9c",
+      "public_lf_sha256": "d9c3ecf24ee3c1155c723178e2b38e25549127caf8220d77ed425b1acbf63ada"
+    },
+    {
+      "file": "qwen-sequence-v5b-resource-restart.json",
+      "private_path": "qwen-sequence-v5b-resource-restart.json",
+      "private_bytes": 953,
+      "private_sha256": "7a34a4ca0043fa6c164500cf8f818d531141c6218bc5cc4e94358d0cf81015fe",
+      "public_lf_sha256": "419b7a5f95834b9dd1db713020acba5c6dc2c4c66c5ef180ee1eb71be32def89"
+    },
+    {
+      "file": "qwen-sequence-v5c-resource-restart.json",
+      "private_path": "qwen-sequence-v5c-resource-restart.json",
+      "private_bytes": 1049,
+      "private_sha256": "80004b7de5bf8ca9d8d7919a541fc53938031f2f64af6bb2d6faeecaf1337b47",
+      "public_lf_sha256": "c37583e111858194c6fc2d636bcf236b62946202f762e1b2314586affbcae47c"
+    },
+    {
+      "file": "qwen-sequence-v5d-preflight.json",
+      "private_path": "qwen-sequence-v5d-preflight.json",
+      "private_bytes": 17452,
+      "private_sha256": "4ef121ab6f1d47f502254f790ebda53b636e4fcfe23b34fea7f5ea1e5c484af3",
+      "public_lf_sha256": "f09c47153c6085e1c044a20725a4788583fa6ec6fe76edd8ed16db9261b0ceed"
+    },
+    {
+      "file": "train_qwen_sequence_v5.py.txt",
+      "private_path": "train_qwen_sequence_v5.py",
+      "private_bytes": 10629,
+      "private_sha256": "9721289040882fd203758188aa2ff724837ddd6ed552a840501f043ec26abf6b",
+      "public_lf_sha256": "9721289040882fd203758188aa2ff724837ddd6ed552a840501f043ec26abf6b"
+    },
+    {
+      "file": "qwen-sequence-v5-preflight.json",
+      "private_path": "qwen-sequence-v5-preflight.json",
+      "private_bytes": 17063,
+      "private_sha256": "89a6d4ce656caa5ff5bb7b1c8d597cc06de1290d5410716ea0375ffbaa8ffa3d",
+      "public_lf_sha256": "7c82a5f798ab993555dd76d39b4c9b1ed790c1449c3526edbbe69a9ee7b1983b"
+    },
+    {
+      "file": "train_qwen_sequence_v5b.py.txt",
+      "private_path": "train_qwen_sequence_v5b.py",
+      "private_bytes": 10849,
+      "private_sha256": "587e3a2811c8e6d75ff2c70b57092c4d030271d737a4df4c67073e135f707b23",
+      "public_lf_sha256": "587e3a2811c8e6d75ff2c70b57092c4d030271d737a4df4c67073e135f707b23"
+    },
+    {
+      "file": "qwen-sequence-v5b-preflight.json",
+      "private_path": "qwen-sequence-v5b-preflight.json",
+      "private_bytes": 17332,
+      "private_sha256": "89d62841b723bae8d20315e3d201465896c9c6bc92f84ac5f28ab528dc2c860d",
+      "public_lf_sha256": "a7b17973f55fbcab6e8a7c76b25c72e5b07035e4efb153a089eb9fc1b8e7e870"
+    },
+    {
+      "file": "qwen_sequence_model_v5b.py.txt",
+      "private_path": "qwen_sequence_model_v5b.py",
+      "private_bytes": 3829,
+      "private_sha256": "0657d40a798440e34c65ad60811700d6221d6374bdd68cca694e76fb2f1af266",
+      "public_lf_sha256": "0657d40a798440e34c65ad60811700d6221d6374bdd68cca694e76fb2f1af266"
+    },
+    {
+      "file": "train_qwen_sequence_v5c.py.txt",
+      "private_path": "train_qwen_sequence_v5c.py",
+      "private_bytes": 11732,
+      "private_sha256": "4735af299ce27907692e1f128840302d26d7f0142c35692f6c8c8090567372dd",
+      "public_lf_sha256": "4735af299ce27907692e1f128840302d26d7f0142c35692f6c8c8090567372dd"
+    },
+    {
+      "file": "qwen-sequence-v5c-preflight.json",
+      "private_path": "qwen-sequence-v5c-preflight.json",
+      "private_bytes": 17823,
+      "private_sha256": "25e4cb44d4d0a28e34b8ecf5a3acf909e97376a3ea5fc1ed6cb8931f8530d9d7",
+      "public_lf_sha256": "bf918e44eb64fc65c11491f90d0367ade7c278ec667307cf11625dca8a4cf35d"
+    },
+    {
+      "file": "qwen_sequence_model_v5c.py.txt",
+      "private_path": "qwen_sequence_model_v5c.py",
+      "private_bytes": 4255,
+      "private_sha256": "f0bea1a726dab1233c378697bd95d0acf65fa68699ddfa47a784be911daf0dfd",
+      "public_lf_sha256": "f0bea1a726dab1233c378697bd95d0acf65fa68699ddfa47a784be911daf0dfd"
+    },
+    {
+      "file": "input-policy.json",
+      "bytes": 3369,
+      "public_lf_sha256": "6ed82cc539ce448141bbde7e490338b422acabb75bc3ff8a195676a68381673c"
+    },
+    {
+      "file": "input-index-01.json",
+      "bytes": 2089447,
+      "public_lf_sha256": "f56cc3774beae54f37c2ad1224dfc4b8e909cabd0117bab8ef400c88de073279"
+    },
+    {
+      "file": "input-index-02.json",
+      "bytes": 2089597,
+      "public_lf_sha256": "473d4237a562dbd9977259c463d81be797766a52a7d3f631573f641f0094134c"
+    },
+    {
+      "file": "input-index-03.json",
+      "bytes": 2108231,
+      "public_lf_sha256": "3ed90b5a26f50e4b86a70609bfad93f179e8b77da4697c6f3e823fcaa39105c7"
+    },
+    {
+      "file": "input-index-04.json",
+      "bytes": 2163402,
+      "public_lf_sha256": "448d43e0b9133251b23700775beb27c8a90690b3f7be0ace07c05a36cc01796b"
+    },
+    {
+      "file": "input-index-05.json",
+      "bytes": 2163376,
+      "public_lf_sha256": "4eed123dcfae418328a05bfbc64be7c4ce47d306f00df3cb11ce22cd31f0eeca"
+    },
+    {
+      "file": "input-index-06.json",
+      "bytes": 2163378,
+      "public_lf_sha256": "f3b5d83a002bac9e6dc6fb3eadf32ac73d805497157ffd06379aa6d395a8e47a"
+    },
+    {
+      "file": "input-index-07.json",
+      "bytes": 2163328,
+      "public_lf_sha256": "0891390da80be3c59fc9b7ac3448c5bece629f54c833222ac1f50b4946d0c131"
+    },
+    {
+      "file": "input-index-08.json",
+      "bytes": 2163407,
+      "public_lf_sha256": "bb2a859c17a87b38e75c7a67e591113765f018342b6ec3cb84579f8db0d8eef5"
+    },
+    {
+      "file": "input-index-09.json",
+      "bytes": 2163292,
+      "public_lf_sha256": "bfb4fcc93efc296e9c1f6f6de285b3d44a59cfddf477df2b0ae4048d64187e45"
+    },
+    {
+      "file": "input-index-10.json",
+      "bytes": 2163346,
+      "public_lf_sha256": "973ed2b3d3125ca631753365278f1a1a485f989226ba8fdf1e50d5e1abfc3e9a"
+    },
+    {
+      "file": "input-index-11.json",
+      "bytes": 1994879,
+      "public_lf_sha256": "ac16c43b9df63655f57dae3f968d1640b530a94ff6f95f5b43d20b246379f227"
+    },
+    {
+      "file": "input-index-12.json",
+      "bytes": 2658411,
+      "public_lf_sha256": "82352f7e411cd7dbe2249165b4f56d47da3d99f24afe4d09a818e92bc36f0b90"
+    },
+    {
+      "file": "input-index-13.json",
+      "bytes": 87691,
+      "public_lf_sha256": "94f2f844dee62542359f37b0acbdcdd9da03479344539ba25539ac9487bc11dd"
+    },
+    {
+      "file": "partial-state-index.json",
+      "bytes": 4367,
+      "public_lf_sha256": "daec3e390922e026cf61c690a16c307e8115787b11bb19d0f59ebba8a63bb03f"
+    }
+  ],
+  "training_rows": 38856,
+  "training_windows": 39107,
+  "evaluation_rows": 3258,
+  "evaluation_transformation_changes": 189,
+  "original_labels_and_hard_samples_retained": true,
+  "excluded_evaluation_rows": 0,
+  "prior_resource_attempts": "v5/v5b/v5c incomplete; accuracy NOT_RUN; original private logs and sources retained",
+  "runtime_warning": "CUDA memory-efficient attention backward may be nondeterministic; fixed seed is not a bitwise guarantee",
+  "default_S1_service_changed": false,
+  "upstream_pretraining_evaluation_exposure": "unknown",
+  "private_assets": "raw text, token features, base weights, trained adapters, optimizer/RNG states and full logs",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

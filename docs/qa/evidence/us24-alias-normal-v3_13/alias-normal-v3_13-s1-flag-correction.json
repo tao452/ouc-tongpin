@@ -1,0 +1,28 @@
+{
+  "reason": "fixture completion accidentally treated MEDIUM as blocking; restore confirmed HIGH-only S1 rule without changing any entry level or semantic any-hit label",
+  "changes": [
+    {
+      "id": "AP313-N-012-same-before",
+      "before": true,
+      "after": false,
+      "suggested_level": "MEDIUM"
+    },
+    {
+      "id": "AP313-N-012-same-after",
+      "before": true,
+      "after": false,
+      "suggested_level": "MEDIUM"
+    }
+  ],
+  "initial_fixture_sha256": "545a163fe37f74abf3626a5e9a2588325e520772cf5773f8452b8e30bc65c046",
+  "final_fixture_sha256": "ad53c03c599f091716023836549b6562d48a9b826b7f517e40991fa717f061d7",
+  "rows": 149,
+  "removed_rows": 0,
+  "existing_development_labels_changed": 0,
+  "new_any_level_labels_changed": 0,
+  "new_derived_high_blocking_flags_corrected": 2,
+  "initial_contract_validation": "REJECTED_INVALID_DEVELOPMENT_LABELS",
+  "final_contract_validation": "PASS",
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

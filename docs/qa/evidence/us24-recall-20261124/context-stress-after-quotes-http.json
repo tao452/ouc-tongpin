@@ -1,0 +1,1467 @@
+{
+  "scope": "additional_synthetic_literal_hit_development",
+  "dictionary_sha256": "debcb5c905580ac5b2d0eef86cdd74834cc8ef111f013b07456c15faaf904d5e",
+  "source_sha256": "b02219741c0c08017a979042dd78e79b802f2595cb1393e16241f7180cd5e284",
+  "mode": "http",
+  "engine_sha256": {
+    "services/algo/app/services/moderation.py": "c4ae0e2e0692d6c2f84a9ae46086afbeddc7b38e000bdbfaeb56293ad9cde4c7",
+    "services/algo/app/services/moderation_context.py": "491ccc3f4419773ffbb30da49095de774179a4176c41a97d6a25509f299edf28",
+    "services/algo/app/services/normalization.py": "2c120c3b6197904c67942bb066e6b39754fdbd3da46ece8b929973f206a3d83c",
+    "services/algo/app/services/pronunciation.py": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+    "services/algo/app/services/targeted_matching.py": "9a8127e83b993c6722b8da3db95fefcc8acae09af0324cf0d6a8651fd8cdea90",
+    "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "count": 102,
+  "passed": 102,
+  "failed": 0,
+  "any_level": {
+    "confusion_matrix": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 90
+    },
+    "offensive_samples": 12,
+    "nonoffensive_samples": 90,
+    "recall": 1.0,
+    "precision": 1.0,
+    "false_positive_rate": 0.0,
+    "recall_wilson95": [
+      0.7575059933447592,
+      1
+    ],
+    "false_positive_rate_wilson95": [
+      0,
+      0.04093562556432678
+    ],
+    "thresholds_met_on_supplied_rows": true
+  },
+  "by_category": {
+    "identity": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 15
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 15,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.20388330103584862
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "science": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 15
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 15,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.20388330103584862
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "self_help": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 15
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 15,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.20388330103584862
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "normal_latin": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 10
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 10,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.2775327998628892
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "campus": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 15
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 15,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.20388330103584862
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "report": {
+      "confusion_matrix": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 20
+      },
+      "offensive_samples": 0,
+      "nonoffensive_samples": 20,
+      "recall": null,
+      "precision": null,
+      "false_positive_rate": 0.0,
+      "recall_wilson95": null,
+      "false_positive_rate_wilson95": [
+        0,
+        0.16112515805281938
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "explicit_attack": {
+      "confusion_matrix": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0
+      },
+      "offensive_samples": 12,
+      "nonoffensive_samples": 0,
+      "recall": 1.0,
+      "precision": 1.0,
+      "false_positive_rate": null,
+      "recall_wilson95": [
+        0.7575059933447592,
+        1
+      ],
+      "false_positive_rate_wilson95": null,
+      "thresholds_met_on_supplied_rows": false
+    }
+  },
+  "cases": [
+    {
+      "id": "CONTEXT-N-001",
+      "request": {
+        "text": "女生和男生都欢迎报名跑步活动"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "女生和男生都欢迎报名跑步活动",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-002",
+      "request": {
+        "text": "我们应该尊重同性恋同学"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我们应该尊重同性恋同学",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-003",
+      "request": {
+        "text": "校园里每个人都享有平等的表达权利"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "校园里每个人都享有平等的表达权利",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-004",
+      "request": {
+        "text": "贫困同学可以申请助学金"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "贫困同学可以申请助学金",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-005",
+      "request": {
+        "text": "外地同学刚到校园需要适应生活"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "外地同学刚到校园需要适应生活",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-006",
+      "request": {
+        "text": "不应该因为地域或性别给同学贴标签"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "不应该因为地域或性别给同学贴标签",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-007",
+      "request": {
+        "text": "女权与性别平等是可以认真讨论的话题"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "女权与性别平等是可以认真讨论的话题",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-008",
+      "request": {
+        "text": "男生也可以学习护理专业"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "男生也可以学习护理专业",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-009",
+      "request": {
+        "text": "女生也可以参加计算机竞赛"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "女生也可以参加计算机竞赛",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-010",
+      "request": {
+        "text": "班里有跨性别同学，大家应该尊重彼此"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "班里有跨性别同学大家应该尊重彼此",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-011",
+      "request": {
+        "text": "我是一名同性恋学生，希望找到支持我的朋友"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是一名同性恋学生希望找到支持我的朋友",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-012",
+      "request": {
+        "text": "讨论社会现象时需要避免地域歧视"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "讨论社会现象时需要避免地域歧视",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-013",
+      "request": {
+        "text": "这节课介绍残疾人权益保护"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "这节课介绍残疾人权益保护",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-014",
+      "request": {
+        "text": "支持少数群体获得平等机会"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "支持少数群体获得平等机会",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-015",
+      "request": {
+        "text": "女拳击手训练很辛苦"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "女拳击手训练很辛苦",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-016",
+      "request": {
+        "text": "黑猩猩是今天生物课的观察主题"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "黑猩猩是今天生物课的观察主题",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-017",
+      "request": {
+        "text": "动物园里的黑猩猩正在进食"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "动物园里的黑猩猩正在进食",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-018",
+      "request": {
+        "text": "实验课观察蝇蛆的生长过程"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "实验课观察蝇蛆的生长过程",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-019",
+      "request": {
+        "text": "这篇资料介绍蛆的生态作用"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "这篇资料介绍蛆的生态作用",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-020",
+      "request": {
+        "text": "养殖资料讨论母猪产后护理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "养殖资料讨论母猪产后护理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-021",
+      "request": {
+        "text": "老师在讲母猪养殖的卫生要求"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "老师在讲母猪养殖的卫生要求",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-022",
+      "request": {
+        "text": "这窝狗崽子需要按时喂养"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "这窝狗崽子需要按时喂养",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-023",
+      "request": {
+        "text": "公狗绝育之后需要注意伤口护理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "公狗绝育之后需要注意伤口护理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-024",
+      "request": {
+        "text": "母狗生产后需要安静的环境"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "母狗生产后需要安静的环境",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-025",
+      "request": {
+        "text": "校园公交车的乘车指南放在门口"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "校园公交车的乘车指南放在门口",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-026",
+      "request": {
+        "text": "志愿者参加垃圾分类宣传"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "志愿者参加垃圾分类宣传",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-027",
+      "request": {
+        "text": "脑瘫康复服务需要大家支持"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "脑瘫康复服务需要大家支持",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-028",
+      "request": {
+        "text": "有人在图书馆查阅神经病学教材"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "有人在图书馆查阅神经病学教材",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-029",
+      "request": {
+        "text": "课程讨论智力障碍服务的无障碍设计"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "课程讨论智力障碍服务的无障碍设计",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-030",
+      "request": {
+        "text": "生物课在显微镜下观察细胞"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "生物课在显微镜下观察细胞",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-031",
+      "request": {
+        "text": "我想去死，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想去死请帮帮我",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-032",
+      "request": {
+        "text": "我不想去死，请陪我聊聊"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不想去死请陪我聊聊",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-033",
+      "request": {
+        "text": "我现在想去死，但我想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我现在想去死但我想求助",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-034",
+      "request": {
+        "text": "我是不是废物，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是废物想求助",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-035",
+      "request": {
+        "text": "我是个傻逼，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是个傻逼请帮帮我",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-036",
+      "request": {
+        "text": "我觉得自己是蠢逼，想找人聊聊"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我觉得自己是蠢逼想找人聊聊",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-037",
+      "request": {
+        "text": "我是不是贱种，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是贱种想求助",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-038",
+      "request": {
+        "text": "我觉得自己很丑，最近很焦虑，想聊一聊"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我觉得自己很丑最近很焦虑想聊一聊",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-039",
+      "request": {
+        "text": "家里经济困难，担心交不起学费，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "家里经济困难担心交不起学费想求助",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-040",
+      "request": {
+        "text": "我抑郁了，不知道该向谁倾诉"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我抑郁了不知道该向谁倾诉",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-041",
+      "request": {
+        "text": "我害怕有人堵在宿舍门口，希望获得帮助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我害怕有人堵在宿舍门口希望获得帮助",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-042",
+      "request": {
+        "text": "同学对我说了难听的话，想找辅导员帮忙"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "同学对我说了难听的话想找辅导员帮忙",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-043",
+      "request": {
+        "text": "我想去心理咨询室了解预约方式"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想去心理咨询室了解预约方式",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-044",
+      "request": {
+        "text": "我是不是不够好，希望有人陪我聊聊"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是不够好希望有人陪我聊聊",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-045",
+      "request": {
+        "text": "我最近压力很大，想找一个可以倾诉的人"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我最近压力很大想找一个可以倾诉的人",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-046",
+      "request": {
+        "text": "python namespace unicode codepoint buffer"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "pythonnamespaceunicodecodepointbuffer",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-047",
+      "request": {
+        "text": "USB sbatch sha256 nmsl_func"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "usbsbatchsha256nmslfunc",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-048",
+      "request": {
+        "text": "classification abstraction exception traceback"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "classificationabstractionexceptiontraceback",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-049",
+      "request": {
+        "text": "ni hao tong xue zao shang hao"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nihaotongxuezaoshanghao",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-050",
+      "request": {
+        "text": "yin hang chong qing xing zou"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "yinhangchongqingxingzou",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-051",
+      "request": {
+        "text": "ni zai tu shu guan fu xi ma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nizaitushuguanfuxima",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-052",
+      "request": {
+        "text": "function get_user_profile returns null"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "functiongetuserprofilereturnsnull",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-053",
+      "request": {
+        "text": "github pull_request review comment"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "githubpullrequestreviewcomment",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-054",
+      "request": {
+        "text": "sha3 binary namespace not_a_sensitive_word"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sha3binarynamespacenotasensitiveword",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-055",
+      "request": {
+        "text": "zhong wen pin yin ke yi bang zhu du yin"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "zhongwenpinyinkeyibangzhuduyin",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-056",
+      "request": {
+        "text": "晚上去图书馆复习，结束后一起吃饭"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "晚上去图书馆复习结束后一起吃饭",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-057",
+      "request": {
+        "text": "有没有同学想一起跑步"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "有没有同学想一起跑步",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-058",
+      "request": {
+        "text": "想找一起学习高等数学的学伴"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "想找一起学习高等数学的学伴",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-059",
+      "request": {
+        "text": "转让一本用过的英语教材"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "转让一本用过的英语教材",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-060",
+      "request": {
+        "text": "社团正在准备招新海报"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "社团正在准备招新海报",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-061",
+      "request": {
+        "text": "实验室安全培训需要提前学习"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "实验室安全培训需要提前学习",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-062",
+      "request": {
+        "text": "请教一下数据结构这道题"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "请教一下数据结构这道题",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-063",
+      "request": {
+        "text": "想报名运动会志愿者"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "想报名运动会志愿者",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-064",
+      "request": {
+        "text": "向同学表达好感后也要尊重拒绝"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "向同学表达好感后也要尊重拒绝",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-065",
+      "request": {
+        "text": "作业晚交了，准备找老师说明情况"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "作业晚交了准备找老师说明情况",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-066",
+      "request": {
+        "text": "想和室友商量一下卫生安排"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "想和室友商量一下卫生安排",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-067",
+      "request": {
+        "text": "捡到一支笔，已交给值班老师"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "捡到一支笔已交给值班老师",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-068",
+      "request": {
+        "text": "周末想在校园拍几张风景照"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "周末想在校园拍几张风景照",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-069",
+      "request": {
+        "text": "班里转发了心理健康讲座的介绍"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "班里转发了心理健康讲座的介绍",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-070",
+      "request": {
+        "text": "出门前想问同学是否需要带伞"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "出门前想问同学是否需要带伞",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-071",
+      "request": {
+        "text": "举报：“杀了你”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报杀了你请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-072",
+      "request": {
+        "text": "举报：“泼你硫酸”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报泼你硫酸请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-073",
+      "request": {
+        "text": "举报：“你个贱货”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报你个贱货请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-074",
+      "request": {
+        "text": "举报：「杀了你」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报杀了你请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-075",
+      "request": {
+        "text": "举报：「泼你硫酸」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报泼你硫酸请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-076",
+      "request": {
+        "text": "举报：「你个贱货」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报你个贱货请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-077",
+      "request": {
+        "text": "举报：\"杀了你\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报杀了你请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-078",
+      "request": {
+        "text": "举报：\"泼你硫酸\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报泼你硫酸请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-079",
+      "request": {
+        "text": "举报：\"你个贱货\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报你个贱货请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-080",
+      "request": {
+        "text": "举报：'杀了你'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报杀了你请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-081",
+      "request": {
+        "text": "举报：'泼你硫酸'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报泼你硫酸请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-082",
+      "request": {
+        "text": "举报：'你个贱货'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报你个贱货请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-083",
+      "request": {
+        "text": "举报：‘杀了你’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报杀了你请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-084",
+      "request": {
+        "text": "举报：‘泼你硫酸’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报泼你硫酸请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-085",
+      "request": {
+        "text": "举报：‘你个贱货’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报你个贱货请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-086",
+      "request": {
+        "text": "不要对同学说“傻逼”"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "不要对同学说傻逼",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-087",
+      "request": {
+        "text": "网络暴力讨论：“你不配活着”属于攻击性言论"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "网络暴力讨论你不配活着属于攻击性言论",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-088",
+      "request": {
+        "text": "语言科普：“蠢逼”是侮辱性表达"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "语言科普蠢逼是侮辱性表达",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-089",
+      "request": {
+        "text": "讨论校园霸凌时需要保护举报人"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "讨论校园霸凌时需要保护举报人",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-N-090",
+      "request": {
+        "text": "讨论一个词的含义时应该给出具体语境"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "讨论一个词的含义时应该给出具体语境",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-001",
+      "request": {
+        "text": "我要杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我要杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-002",
+      "request": {
+        "text": "弄死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-003",
+      "request": {
+        "text": "捅死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "捅死你",
+        "hits": [
+          {
+            "word": "捅死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-004",
+      "request": {
+        "text": "打死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "打死你",
+        "hits": [
+          {
+            "word": "打死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-005",
+      "request": {
+        "text": "砍死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "砍死你",
+        "hits": [
+          {
+            "word": "砍死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-006",
+      "request": {
+        "text": "掐死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "掐死你",
+        "hits": [
+          {
+            "word": "掐死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-007",
+      "request": {
+        "text": "你给我去死"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你给我去死",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-008",
+      "request": {
+        "text": "你不配活着"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你不配活着",
+        "hits": [
+          {
+            "word": "你不配活着",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-009",
+      "request": {
+        "text": "打断你的腿"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "打断你的腿",
+        "hits": [
+          {
+            "word": "打断你的腿",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-010",
+      "request": {
+        "text": "放学弄死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "放学弄死你",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          },
+          {
+            "word": "放学弄死你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-011",
+      "request": {
+        "text": "你个蠢逼"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你个蠢逼",
+        "hits": [
+          {
+            "word": "你个蠢逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-P-012",
+      "request": {
+        "text": "泼你硫酸"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "泼你硫酸",
+        "hits": [
+          {
+            "word": "泼你硫酸",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    }
+  ],
+  "counted_in_original120": false,
+  "independent_acceptance": false,
+  "business_approval": "PENDING"
+}

@@ -1,0 +1,26 @@
+{
+  "reason": "correct missing nested MEDIUM canonical mapping using verified unchanged3.11 behavior; HIGH binary gold and every row retained",
+  "case_id": "AP312-005-hanzi",
+  "before": [
+    {
+      "word": "你个婊子",
+      "level": "HIGH"
+    }
+  ],
+  "after": [
+    {
+      "word": "你个婊子",
+      "level": "HIGH"
+    },
+    {
+      "word": "婊子",
+      "level": "MEDIUM"
+    }
+  ],
+  "rows": 1148,
+  "binary_gold_changes": 0,
+  "removed_rows": 0,
+  "initial_fixture_sha256": "30728f1d50e261eb84591c63d3d7b6cce95689f3c46177715bb3975d0ee754d7",
+  "corrected_fixture_sha256": "243369d85488381794bd9d0c9bbf2bc2bb7dd26aa366cd0c71889323e7dda873",
+  "original_fixture_retained": true
+}

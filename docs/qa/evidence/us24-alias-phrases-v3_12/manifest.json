@@ -1,0 +1,306 @@
+{
+  "scope": "explicit alias phrase pinyin development; broad recall remains below target",
+  "files": [
+    {
+      "file": "alias-pinyin-gaps-v3_11.json",
+      "public_lf_sha256": "96ff873046faf53f0d371f2fbeb0160776308f547f2889f83e53d004b4286fd3",
+      "private_sha256": "112f237882d7413e4161b5ce9897310705b0470ad6c7f81767cb87b4dd4bc6b3",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-policy.json",
+      "public_lf_sha256": "cedb6baf27362b32f24ee0d4638321c7d897d21aee548d91711343530ca2a774",
+      "private_sha256": "8875439c88065fe12090ba5e3206418874fd0c00e0682decdfa984228d9c5bd5",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-policy-r2.json",
+      "public_lf_sha256": "78f97686be5b16fcccb097e327551a8147372f05d81c50ddd2cda34b7b51b244",
+      "private_sha256": "a3bd9aeb80f24b532c0396e5b14cd94e967357e5ee9af7393f067c117c062fb1",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-first-probe.json",
+      "public_lf_sha256": "fe46544be2469599996090755eb844621cfeab9b0e535c3e420773dff12ec498",
+      "private_sha256": "bcbb89fcfd00c7ecb0159013da09a23ed7d14145c0b156ceac7aea1e3da99a6e",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-second-probe.json",
+      "public_lf_sha256": "07eb0bc81e4e4f3b24dcb2007d698a09661cdf38c19aca356d29d2da4f983b68",
+      "private_sha256": "d4b54f038ab4739eb774a3fe3aade5e6e80c687fd97a7f1c8395210f1ac3a0b0",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-fixture-baseline-overlap.json",
+      "public_lf_sha256": "312d7bc0b8dff860224db1434dbef4276c86b68d8fccc84ac9401eaf9d179174",
+      "private_sha256": "68fbad722cfba1898446ddbe55e723781a714fb3adb96ff96a4799f611065751",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-fixture-overlap-correction-v3_12.json",
+      "public_lf_sha256": "c148aaebe662c82050558ae591cd66c234fb51b3de094b826e6559ba109dd05f",
+      "private_sha256": "67d7054ab71be3901d4ddd5fdb39fda17293823c81bf18afa0d875ae6e45cc27",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-paired.json",
+      "public_lf_sha256": "b72267afaf7ed8d0dd20fba28acf1b21d527762261db8ef8e40b8d7bf164827b",
+      "private_sha256": "b172fb018c86efe9c405a3542ade6f77969415bc5b16d31f3150fd34b2e8f737",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-http.json",
+      "public_lf_sha256": "42f42a2b794f981348b145d0c5ad15af8e7686822d8b0106b93c8fccc8a1b2da",
+      "private_sha256": "e4f8f645daaaecfe83b032a48dc2eecdfd9f939fafa5b0815a4847009f812ce8",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-performance.json",
+      "public_lf_sha256": "4f582bf83ad41880ef9daeeccf77fce7ed7374fa6c45333d19e0b3cb5353c872",
+      "private_sha256": "c5d0dd724eb83d857003c4fbd0c384db76125314f500fef68b2166619d5de013",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-model-input-equivalence.json",
+      "public_lf_sha256": "87f6cb697d9b8278f8155c4e38d9e60f19280184d608002dab7b2c8edcd41ef9",
+      "private_sha256": "8259907f9121e293e8bd7c8fe4b4243d50bb0ac030862cfaa5321b3a49c069e7",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "alias-phrases-v3_12-review-and-bounds.json",
+      "public_lf_sha256": "7a90ccf93d359b5b17b0c47d13e4e5ebb4a73cd5de2a77476e15889d3c98764b",
+      "private_sha256": "ff42f867e907dfc6be46272fbc7846a088a15676a6b1daf1603d13537de55ef8",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "pytest-v3_12-r1.txt",
+      "public_lf_sha256": "d6aa46cab3a56e88e8697a8775a1b0dc958446e81f1e4aa0a483ba5e60ffbc52",
+      "private_sha256": "affa010df47bdfc991324c4365fd39c646aa26a60151c6b54e5f057ad0d651d1",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "ruff-v3_12-initial.txt",
+      "public_lf_sha256": "01a79a3f9fc08a36e52a2a46d4da9618673498a832515239b869320406baf401",
+      "private_sha256": "b0964e0eb0c86b525dafc7ec5498448c45f5d9b624fe828fbe830047f3f3b550",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "ruff-v3_12-r2.txt",
+      "public_lf_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "private_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "before-all6366-output-projection.jsonl",
+      "public_lf_sha256": "3e7daf0b4b395aec1fb5432fc0a065829d38dedb35dd99ee23c4610ead1cd174",
+      "full_private_sha256": "728d4280cbc22ea8a8cd975be7ebdd45f1dbb837368b8ef2d7c9069d2883649b",
+      "projection": "only normalized text omitted; all IDs, gold mappings, sourceSHA, decisions, hits, errors and timing retained"
+    },
+    {
+      "file": "after-all6366-output-projection.jsonl",
+      "public_lf_sha256": "50b0d0e0c400a67bc59acfdd82ce5c9537258b162524604835d3bc8a1dfa3c02",
+      "full_private_sha256": "3af813d333f9a728207ef612ebece03c336f8f6db801a0bab9a28081eea07c49",
+      "projection": "only normalized text omitted; all IDs, gold mappings, sourceSHA, decisions, hits, errors and timing retained"
+    },
+    {
+      "file": "historical-http-summary.json",
+      "public_lf_sha256": "5aed8b3fa5125acf97c11a6ec9a0946df218bef807e78d56108ac69df822f906",
+      "private_sha256": "b7e84e90e2c4deb15e50e4f7225463b926208240a9c8cfa0d63e1faa2f8bfbc1",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "historical-http-predictions.jsonl",
+      "public_lf_sha256": "8d4278111342787020faf0a98a7a2a17969d659b685a38f692c4deb1fea9e9c6",
+      "private_sha256": "bb663388f6c6a890cfce4a63bfe3b5a7e6ac68c0220edb0c0aa4b4b42fb91b04",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "historical-http-comparison.json",
+      "public_lf_sha256": "943a573de905a9efc2ea0ba663c1722e6adca9147ecfef7ae95b1dbe6493ee36",
+      "private_sha256": "ecdfe996ae956af41ed36e443880bfb087d1cbdb1a8b294b4279406c2b433b74",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "all-candidate-technical-summary.json",
+      "public_lf_sha256": "816c86f6e1d83afade9477567ad618738483dc1b7b9f06fd261afbba6b498dbe"
+    },
+    {
+      "file": "audit_alias_pinyin_gaps_v3_11.py.txt",
+      "public_lf_sha256": "301478e88b5a99d2943fe52757c0cb0035bbdddf751666b1a065a80104e71cb6",
+      "private_sha256": "301478e88b5a99d2943fe52757c0cb0035bbdddf751666b1a065a80104e71cb6",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "build_alias_phrases_v3_12.py.txt",
+      "public_lf_sha256": "67bfb295e860b249df18fcafeec18e65ca230da7b23677fbf108d9f73e77a0ee",
+      "private_sha256": "67bfb295e860b249df18fcafeec18e65ca230da7b23677fbf108d9f73e77a0ee",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "refine_alias_tones_v3_12_r2.py.txt",
+      "public_lf_sha256": "72c86a5f5b60b9d49657cd1bc69472424d6a99ebc9a3caedd81b43a76a3e2395",
+      "private_sha256": "72c86a5f5b60b9d49657cd1bc69472424d6a99ebc9a3caedd81b43a76a3e2395",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "build_alias_fixture_v3_12.py.txt",
+      "public_lf_sha256": "48c1ca75acfc785bb755aad82aef5b49855873ae62ec65dda1867d864e9dc2f8",
+      "private_sha256": "48c1ca75acfc785bb755aad82aef5b49855873ae62ec65dda1867d864e9dc2f8",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "correct_alias_fixture_overlap_v3_12.py.txt",
+      "public_lf_sha256": "098b940ff3f8eb3f766d4987d413dfb950b19dd0aa19cf43ac194560c9c87edc",
+      "private_sha256": "098b940ff3f8eb3f766d4987d413dfb950b19dd0aa19cf43ac194560c9c87edc",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "probe_alias_fixture_v3_12.py.txt",
+      "public_lf_sha256": "70d603cc9b20072c11f79eb8520ad24d9240a6d862eb542b513da196cc4082b7",
+      "private_sha256": "70d603cc9b20072c11f79eb8520ad24d9240a6d862eb542b513da196cc4082b7",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "check_alias_phrases_v3_12.py.txt",
+      "public_lf_sha256": "adf7afb54c0b8529d7aadfd240676695ec1a40226a0be548463a2ac7284a9b3a",
+      "private_sha256": "adf7afb54c0b8529d7aadfd240676695ec1a40226a0be548463a2ac7284a9b3a",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "qualify_alias_model_inputs_v3_12.py.txt",
+      "public_lf_sha256": "a9d369a0daf4a1653c4dfd87593791d9753f75cc491f87f7da60740766cb8a6c",
+      "private_sha256": "a9d369a0daf4a1653c4dfd87593791d9753f75cc491f87f7da60740766cb8a6c",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "check_alias_http_v3_12.py.txt",
+      "public_lf_sha256": "ab43286309eaa85ceaea6c37041f9478b94176fd4f5c344b548763e27333c8a9",
+      "private_sha256": "ab43286309eaa85ceaea6c37041f9478b94176fd4f5c344b548763e27333c8a9",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "benchmark_alias_phrases_v3_12.py.txt",
+      "public_lf_sha256": "29630a344ad6caca88352f222829d0356e835d1dc1cc904df221664915b202ac",
+      "private_sha256": "29630a344ad6caca88352f222829d0356e835d1dc1cc904df221664915b202ac",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "build_alias_review_v3_12.py.txt",
+      "public_lf_sha256": "17d0134a363d31fb142d4b27c870f8482e476e954ebcec6fa7369239a851eae1",
+      "private_sha256": "17d0134a363d31fb142d4b27c870f8482e476e954ebcec6fa7369239a851eae1",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "audit_every_candidate_mapping_v3_12.py.txt",
+      "public_lf_sha256": "ecd61c036bf5f0819a37851ac223f7aa338fdd941f360500382788150b96318c",
+      "private_sha256": "ecd61c036bf5f0819a37851ac223f7aa338fdd941f360500382788150b96318c",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "evaluate_historical_v3_12_http.py.txt",
+      "public_lf_sha256": "6a80009818634fb237a9e14e2a104ddd6a5674687290e8ef4f23a8d6ce3cf4f8",
+      "private_sha256": "6a80009818634fb237a9e14e2a104ddd6a5674687290e8ef4f23a8d6ce3cf4f8",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "compare_historical_aliases_v3_12.py.txt",
+      "public_lf_sha256": "feb16505aafea206a693f87283be763c99a3a188155f4669b853319ed19e60df",
+      "private_sha256": "feb16505aafea206a693f87283be763c99a3a188155f4669b853319ed19e60df",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "publish_alias_phrases_v3_12.py.txt",
+      "public_lf_sha256": "8ddff6355f5b015acb666a0c577b9e44f55820523247b4e84af137cf2706511e",
+      "private_sha256": "8ddff6355f5b015acb666a0c577b9e44f55820523247b4e84af137cf2706511e",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "development-initial-before-nested-mapping-correction.jsonl",
+      "public_lf_sha256": "30728f1d50e261eb84591c63d3d7b6cce95689f3c46177715bb3975d0ee754d7",
+      "private_sha256": "30728f1d50e261eb84591c63d3d7b6cce95689f3c46177715bb3975d0ee754d7",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "dictionary-initial-before-six-extra-tone-paths.json",
+      "public_lf_sha256": "7c944e7bf9e274a84e8634a2be49eb3f5df7cd14a4d307c9c2fccfadc9b1c2c3",
+      "private_sha256": "7c944e7bf9e274a84e8634a2be49eb3f5df7cd14a4d307c9c2fccfadc9b1c2c3",
+      "normalization": "local paths, LF and terminal whitespace only; numeric outcomes unchanged"
+    },
+    {
+      "file": "check_alias_phrases_v3_12_replay.py.txt",
+      "private_sha256": "5305605f4f07fb4b5c58891ae1289de2d424779ff3b601033b234ace716911f8",
+      "public_lf_sha256": "5305605f4f07fb4b5c58891ae1289de2d424779ff3b601033b234ace716911f8"
+    },
+    {
+      "file": "alias-phrases-v3_12-replay-paired.json",
+      "private_sha256": "8eda322109f40a8c09d230863f6b1e95872a01a0b8cbae8c4e99d03fbc769360",
+      "public_lf_sha256": "06e61244f56b58267c73dbfac792a96e5b24d2e95ef19e6df20b33c7aa1d169e"
+    },
+    {
+      "file": "check-alias-phrases-v3_12-replay.txt",
+      "private_sha256": "b7669d61221f5d4ee91b8b069e34c14c1e3302ce594b4b61c16eafbec7673707",
+      "public_lf_sha256": "f7fc4b9117e03891b14896ae3de9ad7b0b18e720cba87b183ecda30846d4ced1"
+    }
+  ],
+  "dictionary_sha256": "d7d46e2fbe979d57e871acaed3fead408298404b0b2ab5817e94c24d1ec85890",
+  "rules": 132,
+  "new_canonical_rules": 0,
+  "changed_entries": 18,
+  "explicit_alias_phrases": 27,
+  "development_rows": 1148,
+  "prior_development_rows": 5218,
+  "prior_output_changes": 0,
+  "initial_probe_failures": 2,
+  "corrected_implementation_false_positives": 1,
+  "corrected_nested_mapping_expectations": 1,
+  "binary_gold_changes": 0,
+  "removed_rows": 0,
+  "rollback_files": [
+    {
+      "file": "words.json",
+      "source_commit": "cd5f64c0238fadfedec9516e5b2380e178e0f084",
+      "sha256": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v1.json",
+      "source_commit": "cd5f64c0238fadfedec9516e5b2380e178e0f084",
+      "sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_8-candidate.json",
+      "source_commit": "cd5f64c0238fadfedec9516e5b2380e178e0f084",
+      "sha256": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_9-candidate.json",
+      "source_commit": "cd5f64c0238fadfedec9516e5b2380e178e0f084",
+      "sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_10-candidate.json",
+      "source_commit": "cd5f64c0238fadfedec9516e5b2380e178e0f084",
+      "sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_11-candidate.json",
+      "source_commit": "cd5f64c0238fadfedec9516e5b2380e178e0f084",
+      "sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+      "byte_identical": true
+    }
+  ],
+  "M1_review": "PENDING",
+  "M1_pending": 132,
+  "parent_decision_blanks": 792,
+  "variant_M1_pending": 27,
+  "variant_decision_blanks": 162,
+  "M3_reproduction": "PENDING",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false,
+  "reproduction": "use check_alias_phrases_v3_12_replay.py with the original explicit file list and hashes; original pre3.13 source retained"
+}

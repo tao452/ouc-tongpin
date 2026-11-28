@@ -1,0 +1,4555 @@
+{
+  "scope": "development literal mapping; no independent semantic acceptance",
+  "source_sha256": "3f51535e28c9a830464ebc6493c456ebcdf5ffe8bff1fc8817b4e415941f6a10",
+  "dictionary_sha256": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+  "server_engine": "31120a3 pinned3.8",
+  "code_sha256": {
+    "app/services/moderation.py": "c4ae0e2e0692d6c2f84a9ae46086afbeddc7b38e000bdbfaeb56293ad9cde4c7",
+    "app/services/moderation_context.py": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2",
+    "app/services/normalization.py": "2c120c3b6197904c67942bb066e6b39754fdbd3da46ece8b929973f206a3d83c",
+    "app/services/pronunciation.py": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+    "app/services/targeted_matching.py": "9a8127e83b993c6722b8da3db95fefcc8acae09af0324cf0d6a8651fd8cdea90",
+    "app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/models/dictionary.py": "d7e8d021e7915353b6a0eef87ffc505daa4aee5312356117086edb3f9386e474"
+  },
+  "mode": "http",
+  "candidate": {
+    "count": 314,
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 8,
+        "fp": 32,
+        "fn": 114,
+        "tn": 160
+      },
+      "offensive_samples": 122,
+      "nonoffensive_samples": 192,
+      "recall": 0.06557377049180328,
+      "precision": 0.2,
+      "false_positive_rate": 0.16666666666666666,
+      "recall_wilson95": [
+        0.03359886877221732,
+        0.12407141736905616
+      ],
+      "false_positive_rate_wilson95": [
+        0.12060204229124492,
+        0.22580805508659113
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 8,
+        "fp": 32,
+        "fn": 114,
+        "tn": 160
+      },
+      "offensive_samples": 122,
+      "nonoffensive_samples": 192,
+      "recall": 0.06557377049180328,
+      "precision": 0.2,
+      "false_positive_rate": 0.16666666666666666,
+      "recall_wilson95": [
+        0.03359886877221732,
+        0.12407141736905616
+      ],
+      "false_positive_rate_wilson95": [
+        0.12060204229124492,
+        0.22580805508659113
+      ],
+      "thresholds_met_on_supplied_rows": false
+    },
+    "by_category": {
+      "mapped_unicode_alias": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 48,
+            "tn": 0
+          },
+          "offensive_samples": 48,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            6.938893903907228e-18,
+            0.07410012966611748
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 48,
+            "tn": 0
+          },
+          "offensive_samples": 48,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            6.938893903907228e-18,
+            0.07410012966611748
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "normal_context": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 72
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 72,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.05065117259645781
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 72
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 72,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.05065117259645781
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "outside_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 60,
+            "tn": 0
+          },
+          "offensive_samples": 60,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0,
+            0.06017185214208986
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 60,
+            "tn": 0
+          },
+          "offensive_samples": 60,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0,
+            0.06017185214208986
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "unicode_identifier_or_incomplete": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 32,
+            "fn": 0,
+            "tn": 88
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 120,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.26666666666666666,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.19568455046725244,
+            0.352124393861476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 32,
+            "fn": 0,
+            "tn": 88
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 120,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.26666666666666666,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.19568455046725244,
+            0.352124393861476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "denial_reversal_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "other_directed_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "hanzi_neighbor_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 8,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 8,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.6755924351161198,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 8,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 8,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.6755924351161198,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      }
+    },
+    "by_kind": {
+      "mapped_unicode_alias": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 48,
+            "tn": 0
+          },
+          "offensive_samples": 48,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            6.938893903907228e-18,
+            0.07410012966611748
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 48,
+            "tn": 0
+          },
+          "offensive_samples": 48,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            6.938893903907228e-18,
+            0.07410012966611748
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "normal_context": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 72
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 72,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.05065117259645781
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 72
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 72,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": 0.0,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0,
+            0.05065117259645781
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "outside_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 60,
+            "tn": 0
+          },
+          "offensive_samples": 60,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0,
+            0.06017185214208986
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 60,
+            "tn": 0
+          },
+          "offensive_samples": 60,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0,
+            0.06017185214208986
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "unicode_identifier_or_incomplete": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 32,
+            "fn": 0,
+            "tn": 88
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 120,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.26666666666666666,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.19568455046725244,
+            0.352124393861476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 32,
+            "fn": 0,
+            "tn": 88
+          },
+          "offensive_samples": 0,
+          "nonoffensive_samples": 120,
+          "recall": null,
+          "precision": 0.0,
+          "false_positive_rate": 0.26666666666666666,
+          "recall_wilson95": null,
+          "false_positive_rate_wilson95": [
+            0.19568455046725244,
+            0.352124393861476
+          ],
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "denial_reversal_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "other_directed_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0
+          },
+          "offensive_samples": 3,
+          "nonoffensive_samples": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      },
+      "hanzi_neighbor_attack": {
+        "high_blocking": {
+          "confusion_matrix": {
+            "tp": 8,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 8,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.6755924351161198,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        },
+        "any_level": {
+          "confusion_matrix": {
+            "tp": 8,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0
+          },
+          "offensive_samples": 8,
+          "nonoffensive_samples": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": null,
+          "recall_wilson95": [
+            0.6755924351161198,
+            1
+          ],
+          "false_positive_rate_wilson95": null,
+          "thresholds_met_on_supplied_rows": false
+        }
+      }
+    },
+    "hit_levels": {
+      "HIGH": 40
+    },
+    "decision_failure_ids": [
+      "UC-001-A1-direct",
+      "UC-001-A1-uppercase",
+      "UC-001-A1-separated",
+      "UC-001-A1-fullwidth",
+      "UC-001-A1-continued-1",
+      "UC-001-A1-continued-2",
+      "UC-001-A1-continued-3",
+      "UC-001-A1-continued-4",
+      "UC-001-A1-continued-5",
+      "UC-001-A2-direct",
+      "UC-001-A2-uppercase",
+      "UC-001-A2-separated",
+      "UC-001-A2-fullwidth",
+      "UC-001-A2-continued-1",
+      "UC-001-A2-continued-2",
+      "UC-001-A2-continued-3",
+      "UC-001-A2-continued-4",
+      "UC-001-A2-continued-5",
+      "UC-001-A3-direct",
+      "UC-001-A3-uppercase",
+      "UC-001-A3-separated",
+      "UC-001-A3-fullwidth",
+      "UC-001-A3-continued-1",
+      "UC-001-A3-continued-2",
+      "UC-001-A3-continued-3",
+      "UC-001-A3-continued-4",
+      "UC-001-A3-continued-5",
+      "UC-002-A1-direct",
+      "UC-002-A1-uppercase",
+      "UC-002-A1-separated",
+      "UC-002-A1-fullwidth",
+      "UC-002-A1-continued-1",
+      "UC-002-A1-continued-2",
+      "UC-002-A1-continued-3",
+      "UC-002-A1-continued-4",
+      "UC-002-A1-continued-5",
+      "UC-002-A2-direct",
+      "UC-002-A2-uppercase",
+      "UC-002-A2-separated",
+      "UC-002-A2-fullwidth",
+      "UC-002-A2-continued-1",
+      "UC-002-A2-continued-2",
+      "UC-002-A2-continued-3",
+      "UC-002-A2-continued-4",
+      "UC-002-A2-continued-5",
+      "UC-002-A3-direct",
+      "UC-002-A3-uppercase",
+      "UC-002-A3-separated",
+      "UC-002-A3-fullwidth",
+      "UC-002-A3-continued-1",
+      "UC-002-A3-continued-2",
+      "UC-002-A3-continued-3",
+      "UC-002-A3-continued-4",
+      "UC-002-A3-continued-5",
+      "UC-004-A1-direct",
+      "UC-004-A1-uppercase",
+      "UC-004-A1-separated",
+      "UC-004-A1-fullwidth",
+      "UC-004-A1-continued-1",
+      "UC-004-A1-continued-2",
+      "UC-004-A1-continued-3",
+      "UC-004-A1-continued-4",
+      "UC-004-A1-continued-5",
+      "UC-004-A2-direct",
+      "UC-004-A2-uppercase",
+      "UC-004-A2-separated",
+      "UC-004-A2-fullwidth",
+      "UC-004-A2-continued-1",
+      "UC-004-A2-continued-2",
+      "UC-004-A2-continued-3",
+      "UC-004-A2-continued-4",
+      "UC-004-A2-continued-5",
+      "UC-004-A3-direct",
+      "UC-004-A3-uppercase",
+      "UC-004-A3-separated",
+      "UC-004-A3-fullwidth",
+      "UC-004-A3-continued-1",
+      "UC-004-A3-continued-2",
+      "UC-004-A3-continued-3",
+      "UC-004-A3-continued-4",
+      "UC-004-A3-continued-5",
+      "UC-015-A1-direct",
+      "UC-015-A1-uppercase",
+      "UC-015-A1-separated",
+      "UC-015-A1-fullwidth",
+      "UC-015-A1-continued-1",
+      "UC-015-A1-continued-2",
+      "UC-015-A1-continued-3",
+      "UC-015-A1-continued-4",
+      "UC-015-A1-continued-5",
+      "UC-015-A1-denial-reversal",
+      "UC-015-A1-other-directed-help",
+      "UC-015-A2-direct",
+      "UC-015-A2-uppercase",
+      "UC-015-A2-separated",
+      "UC-015-A2-fullwidth",
+      "UC-015-A2-continued-1",
+      "UC-015-A2-continued-2",
+      "UC-015-A2-continued-3",
+      "UC-015-A2-continued-4",
+      "UC-015-A2-continued-5",
+      "UC-015-A2-denial-reversal",
+      "UC-015-A2-other-directed-help",
+      "UC-015-A3-direct",
+      "UC-015-A3-uppercase",
+      "UC-015-A3-separated",
+      "UC-015-A3-fullwidth",
+      "UC-015-A3-continued-1",
+      "UC-015-A3-continued-2",
+      "UC-015-A3-continued-3",
+      "UC-015-A3-continued-4",
+      "UC-015-A3-continued-5",
+      "UC-015-A3-denial-reversal",
+      "UC-015-A3-other-directed-help",
+      "UC-BOUND-001-plain-1",
+      "UC-BOUND-001-plain-2",
+      "UC-BOUND-001-plain-3",
+      "UC-BOUND-001-plain-4",
+      "UC-BOUND-001-tone-1",
+      "UC-BOUND-001-tone-2",
+      "UC-BOUND-001-tone-3",
+      "UC-BOUND-001-tone-4",
+      "UC-BOUND-002-plain-1",
+      "UC-BOUND-002-plain-2",
+      "UC-BOUND-002-plain-3",
+      "UC-BOUND-002-plain-4",
+      "UC-BOUND-002-tone-1",
+      "UC-BOUND-002-tone-2",
+      "UC-BOUND-002-tone-3",
+      "UC-BOUND-002-tone-4",
+      "UC-BOUND-004-plain-1",
+      "UC-BOUND-004-plain-2",
+      "UC-BOUND-004-plain-3",
+      "UC-BOUND-004-plain-4",
+      "UC-BOUND-004-tone-1",
+      "UC-BOUND-004-tone-2",
+      "UC-BOUND-004-tone-3",
+      "UC-BOUND-004-tone-4",
+      "UC-BOUND-015-plain-1",
+      "UC-BOUND-015-plain-2",
+      "UC-BOUND-015-plain-3",
+      "UC-BOUND-015-plain-4",
+      "UC-BOUND-015-tone-1",
+      "UC-BOUND-015-tone-2",
+      "UC-BOUND-015-tone-3",
+      "UC-BOUND-015-tone-4"
+    ],
+    "mapping_failure_ids": [
+      "UC-001-A1-direct",
+      "UC-001-A1-uppercase",
+      "UC-001-A1-separated",
+      "UC-001-A1-fullwidth",
+      "UC-001-A1-continued-1",
+      "UC-001-A1-continued-2",
+      "UC-001-A1-continued-3",
+      "UC-001-A1-continued-4",
+      "UC-001-A1-continued-5",
+      "UC-001-A2-direct",
+      "UC-001-A2-uppercase",
+      "UC-001-A2-separated",
+      "UC-001-A2-fullwidth",
+      "UC-001-A2-continued-1",
+      "UC-001-A2-continued-2",
+      "UC-001-A2-continued-3",
+      "UC-001-A2-continued-4",
+      "UC-001-A2-continued-5",
+      "UC-001-A3-direct",
+      "UC-001-A3-uppercase",
+      "UC-001-A3-separated",
+      "UC-001-A3-fullwidth",
+      "UC-001-A3-continued-1",
+      "UC-001-A3-continued-2",
+      "UC-001-A3-continued-3",
+      "UC-001-A3-continued-4",
+      "UC-001-A3-continued-5",
+      "UC-002-A1-direct",
+      "UC-002-A1-uppercase",
+      "UC-002-A1-separated",
+      "UC-002-A1-fullwidth",
+      "UC-002-A1-continued-1",
+      "UC-002-A1-continued-2",
+      "UC-002-A1-continued-3",
+      "UC-002-A1-continued-4",
+      "UC-002-A1-continued-5",
+      "UC-002-A2-direct",
+      "UC-002-A2-uppercase",
+      "UC-002-A2-separated",
+      "UC-002-A2-fullwidth",
+      "UC-002-A2-continued-1",
+      "UC-002-A2-continued-2",
+      "UC-002-A2-continued-3",
+      "UC-002-A2-continued-4",
+      "UC-002-A2-continued-5",
+      "UC-002-A3-direct",
+      "UC-002-A3-uppercase",
+      "UC-002-A3-separated",
+      "UC-002-A3-fullwidth",
+      "UC-002-A3-continued-1",
+      "UC-002-A3-continued-2",
+      "UC-002-A3-continued-3",
+      "UC-002-A3-continued-4",
+      "UC-002-A3-continued-5",
+      "UC-004-A1-direct",
+      "UC-004-A1-uppercase",
+      "UC-004-A1-separated",
+      "UC-004-A1-fullwidth",
+      "UC-004-A1-continued-1",
+      "UC-004-A1-continued-2",
+      "UC-004-A1-continued-3",
+      "UC-004-A1-continued-4",
+      "UC-004-A1-continued-5",
+      "UC-004-A2-direct",
+      "UC-004-A2-uppercase",
+      "UC-004-A2-separated",
+      "UC-004-A2-fullwidth",
+      "UC-004-A2-continued-1",
+      "UC-004-A2-continued-2",
+      "UC-004-A2-continued-3",
+      "UC-004-A2-continued-4",
+      "UC-004-A2-continued-5",
+      "UC-004-A3-direct",
+      "UC-004-A3-uppercase",
+      "UC-004-A3-separated",
+      "UC-004-A3-fullwidth",
+      "UC-004-A3-continued-1",
+      "UC-004-A3-continued-2",
+      "UC-004-A3-continued-3",
+      "UC-004-A3-continued-4",
+      "UC-004-A3-continued-5",
+      "UC-015-A1-direct",
+      "UC-015-A1-uppercase",
+      "UC-015-A1-separated",
+      "UC-015-A1-fullwidth",
+      "UC-015-A1-continued-1",
+      "UC-015-A1-continued-2",
+      "UC-015-A1-continued-3",
+      "UC-015-A1-continued-4",
+      "UC-015-A1-continued-5",
+      "UC-015-A1-denial-reversal",
+      "UC-015-A1-other-directed-help",
+      "UC-015-A2-direct",
+      "UC-015-A2-uppercase",
+      "UC-015-A2-separated",
+      "UC-015-A2-fullwidth",
+      "UC-015-A2-continued-1",
+      "UC-015-A2-continued-2",
+      "UC-015-A2-continued-3",
+      "UC-015-A2-continued-4",
+      "UC-015-A2-continued-5",
+      "UC-015-A2-denial-reversal",
+      "UC-015-A2-other-directed-help",
+      "UC-015-A3-direct",
+      "UC-015-A3-uppercase",
+      "UC-015-A3-separated",
+      "UC-015-A3-fullwidth",
+      "UC-015-A3-continued-1",
+      "UC-015-A3-continued-2",
+      "UC-015-A3-continued-3",
+      "UC-015-A3-continued-4",
+      "UC-015-A3-continued-5",
+      "UC-015-A3-denial-reversal",
+      "UC-015-A3-other-directed-help"
+    ],
+    "p95_ms": 29.380400002992246,
+    "max_ms": 135.88380000146572,
+    "dictionary_sha256": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c"
+  },
+  "cases": [
+    {
+      "id": "UC-001-A1-direct",
+      "request": {
+        "text": "shаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-uppercase",
+      "request": {
+        "text": "SHАBI"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-separated",
+      "request": {
+        "text": "s.h.а.b.i"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-fullwidth",
+      "request": {
+        "text": "ｓｈаｂｉ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-report-1",
+      "request": {
+        "text": "举报：“shаbi”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-continued-1",
+      "request": {
+        "text": "举报：“shаbi”请处理。shаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-report-2",
+      "request": {
+        "text": "举报：「shаbi」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-continued-2",
+      "request": {
+        "text": "举报：「shаbi」请处理。shаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-report-3",
+      "request": {
+        "text": "举报：\"shаbi\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-continued-3",
+      "request": {
+        "text": "举报：\"shаbi\"请处理。shаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-report-4",
+      "request": {
+        "text": "举报：'shаbi'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-continued-4",
+      "request": {
+        "text": "举报：'shаbi'请处理。shаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-report-5",
+      "request": {
+        "text": "举报：‘shаbi’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-continued-5",
+      "request": {
+        "text": "举报：‘shаbi’请处理。shаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报shаbi请处理shаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-identifier-1",
+      "request": {
+        "text": "xshаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xshаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-identifier-2",
+      "request": {
+        "text": "shаbiz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shаbiz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-identifier-3",
+      "request": {
+        "text": "πshаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πshаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-identifier-4",
+      "request": {
+        "text": "shаbiЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shаbiж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-identifier-5",
+      "request": {
+        "text": "shаb"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shаb",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-identifier-6",
+      "request": {
+        "text": "hаbi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "hаbi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A1-self-help",
+      "request": {
+        "text": "我是不是个shаbi，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是个shаbi想求助",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-direct",
+      "request": {
+        "text": "sһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-uppercase",
+      "request": {
+        "text": "SҺABI"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-separated",
+      "request": {
+        "text": "s.һ.a.b.i"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-fullwidth",
+      "request": {
+        "text": "ｓһａｂｉ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-report-1",
+      "request": {
+        "text": "举报：“sһabi”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-continued-1",
+      "request": {
+        "text": "举报：“sһabi”请处理。sһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-report-2",
+      "request": {
+        "text": "举报：「sһabi」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-continued-2",
+      "request": {
+        "text": "举报：「sһabi」请处理。sһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-report-3",
+      "request": {
+        "text": "举报：\"sһabi\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-continued-3",
+      "request": {
+        "text": "举报：\"sһabi\"请处理。sһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-report-4",
+      "request": {
+        "text": "举报：'sһabi'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-continued-4",
+      "request": {
+        "text": "举报：'sһabi'请处理。sһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-report-5",
+      "request": {
+        "text": "举报：‘sһabi’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-continued-5",
+      "request": {
+        "text": "举报：‘sһabi’请处理。sһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报sһabi请处理sһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-identifier-1",
+      "request": {
+        "text": "xsһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xsһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-identifier-2",
+      "request": {
+        "text": "sһabiz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sһabiz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-identifier-3",
+      "request": {
+        "text": "πsһabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πsһabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-identifier-4",
+      "request": {
+        "text": "sһabiЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sһabiж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-identifier-5",
+      "request": {
+        "text": "sһab"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sһab",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-identifier-6",
+      "request": {
+        "text": "һabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "һabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A2-self-help",
+      "request": {
+        "text": "我是不是个sһabi，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是个sһabi想求助",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-direct",
+      "request": {
+        "text": "ѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-uppercase",
+      "request": {
+        "text": "ЅHАBІ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-separated",
+      "request": {
+        "text": "ѕ.h.а.b.і"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-fullwidth",
+      "request": {
+        "text": "ѕｈаｂі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-report-1",
+      "request": {
+        "text": "举报：“ѕhаbі”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-continued-1",
+      "request": {
+        "text": "举报：“ѕhаbі”请处理。ѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-report-2",
+      "request": {
+        "text": "举报：「ѕhаbі」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-continued-2",
+      "request": {
+        "text": "举报：「ѕhаbі」请处理。ѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-report-3",
+      "request": {
+        "text": "举报：\"ѕhаbі\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-continued-3",
+      "request": {
+        "text": "举报：\"ѕhаbі\"请处理。ѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-report-4",
+      "request": {
+        "text": "举报：'ѕhаbі'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-continued-4",
+      "request": {
+        "text": "举报：'ѕhаbі'请处理。ѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-report-5",
+      "request": {
+        "text": "举报：‘ѕhаbі’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-continued-5",
+      "request": {
+        "text": "举报：‘ѕhаbі’请处理。ѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报ѕhаbі请处理ѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-identifier-1",
+      "request": {
+        "text": "xѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-identifier-2",
+      "request": {
+        "text": "ѕhаbіz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ѕhаbіz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-identifier-3",
+      "request": {
+        "text": "πѕhаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πѕhаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-identifier-4",
+      "request": {
+        "text": "ѕhаbіЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ѕhаbіж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-identifier-5",
+      "request": {
+        "text": "ѕhаb"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ѕhаb",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-identifier-6",
+      "request": {
+        "text": "hаbі"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "hаbі",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-001-A3-self-help",
+      "request": {
+        "text": "我是不是个ѕhаbі，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是个ѕhаbі想求助",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-direct",
+      "request": {
+        "text": "caоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-uppercase",
+      "request": {
+        "text": "CAОNIMA"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-separated",
+      "request": {
+        "text": "c.a.о.n.i.m.a"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-fullwidth",
+      "request": {
+        "text": "ｃａоｎｉｍａ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-report-1",
+      "request": {
+        "text": "举报：“caоnima”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-continued-1",
+      "request": {
+        "text": "举报：“caоnima”请处理。caоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-report-2",
+      "request": {
+        "text": "举报：「caоnima」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-continued-2",
+      "request": {
+        "text": "举报：「caоnima」请处理。caоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-report-3",
+      "request": {
+        "text": "举报：\"caоnima\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-continued-3",
+      "request": {
+        "text": "举报：\"caоnima\"请处理。caоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-report-4",
+      "request": {
+        "text": "举报：'caоnima'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-continued-4",
+      "request": {
+        "text": "举报：'caоnima'请处理。caоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-report-5",
+      "request": {
+        "text": "举报：‘caоnima’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-continued-5",
+      "request": {
+        "text": "举报：‘caоnima’请处理。caоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报caоnima请处理caоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-identifier-1",
+      "request": {
+        "text": "xcaоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xcaоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-identifier-2",
+      "request": {
+        "text": "caоnimaz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caоnimaz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-identifier-3",
+      "request": {
+        "text": "πcaоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πcaоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-identifier-4",
+      "request": {
+        "text": "caоnimaЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caоnimaж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-identifier-5",
+      "request": {
+        "text": "caоnim"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caоnim",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A1-identifier-6",
+      "request": {
+        "text": "aоnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "aоnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-direct",
+      "request": {
+        "text": "cаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-uppercase",
+      "request": {
+        "text": "CАONIMA"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-separated",
+      "request": {
+        "text": "c.а.o.n.i.m.a"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-fullwidth",
+      "request": {
+        "text": "ｃаｏｎｉｍａ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-report-1",
+      "request": {
+        "text": "举报：“cаonima”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-continued-1",
+      "request": {
+        "text": "举报：“cаonima”请处理。cаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-report-2",
+      "request": {
+        "text": "举报：「cаonima」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-continued-2",
+      "request": {
+        "text": "举报：「cаonima」请处理。cаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-report-3",
+      "request": {
+        "text": "举报：\"cаonima\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-continued-3",
+      "request": {
+        "text": "举报：\"cаonima\"请处理。cаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-report-4",
+      "request": {
+        "text": "举报：'cаonima'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-continued-4",
+      "request": {
+        "text": "举报：'cаonima'请处理。cаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-report-5",
+      "request": {
+        "text": "举报：‘cаonima’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-continued-5",
+      "request": {
+        "text": "举报：‘cаonima’请处理。cаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报cаonima请处理cаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-identifier-1",
+      "request": {
+        "text": "xcаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xcаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-identifier-2",
+      "request": {
+        "text": "cаonimaz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cаonimaz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-identifier-3",
+      "request": {
+        "text": "πcаonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πcаonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-identifier-4",
+      "request": {
+        "text": "cаonimaЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cаonimaж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-identifier-5",
+      "request": {
+        "text": "cаonim"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cаonim",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A2-identifier-6",
+      "request": {
+        "text": "аonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "аonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-direct",
+      "request": {
+        "text": "саоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-uppercase",
+      "request": {
+        "text": "САОNІMA"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-separated",
+      "request": {
+        "text": "с.а.о.n.і.m.a"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-fullwidth",
+      "request": {
+        "text": "саоｎіｍａ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-report-1",
+      "request": {
+        "text": "举报：“саоnіma”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-continued-1",
+      "request": {
+        "text": "举报：“саоnіma”请处理。саоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-report-2",
+      "request": {
+        "text": "举报：「саоnіma」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-continued-2",
+      "request": {
+        "text": "举报：「саоnіma」请处理。саоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-report-3",
+      "request": {
+        "text": "举报：\"саоnіma\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-continued-3",
+      "request": {
+        "text": "举报：\"саоnіma\"请处理。саоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-report-4",
+      "request": {
+        "text": "举报：'саоnіma'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-continued-4",
+      "request": {
+        "text": "举报：'саоnіma'请处理。саоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-report-5",
+      "request": {
+        "text": "举报：‘саоnіma’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-continued-5",
+      "request": {
+        "text": "举报：‘саоnіma’请处理。саоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报саоnіma请处理саоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-identifier-1",
+      "request": {
+        "text": "xсаоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xсаоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-identifier-2",
+      "request": {
+        "text": "саоnіmaz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "саоnіmaz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-identifier-3",
+      "request": {
+        "text": "πсаоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πсаоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-identifier-4",
+      "request": {
+        "text": "саоnіmaЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "саоnіmaж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-identifier-5",
+      "request": {
+        "text": "саоnіm"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "саоnіm",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-002-A3-identifier-6",
+      "request": {
+        "text": "аоnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "аоnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-direct",
+      "request": {
+        "text": "gυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-uppercase",
+      "request": {
+        "text": "GΥNNIMA"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-separated",
+      "request": {
+        "text": "g.υ.n.n.i.m.a"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-fullwidth",
+      "request": {
+        "text": "ｇυｎｎｉｍａ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-report-1",
+      "request": {
+        "text": "举报：“gυnnima”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-continued-1",
+      "request": {
+        "text": "举报：“gυnnima”请处理。gυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-report-2",
+      "request": {
+        "text": "举报：「gυnnima」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-continued-2",
+      "request": {
+        "text": "举报：「gυnnima」请处理。gυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-report-3",
+      "request": {
+        "text": "举报：\"gυnnima\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-continued-3",
+      "request": {
+        "text": "举报：\"gυnnima\"请处理。gυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-report-4",
+      "request": {
+        "text": "举报：'gυnnima'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-continued-4",
+      "request": {
+        "text": "举报：'gυnnima'请处理。gυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-report-5",
+      "request": {
+        "text": "举报：‘gυnnima’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-continued-5",
+      "request": {
+        "text": "举报：‘gυnnima’请处理。gυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnima请处理gυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-identifier-1",
+      "request": {
+        "text": "xgυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xgυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-identifier-2",
+      "request": {
+        "text": "gυnnimaz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnimaz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-identifier-3",
+      "request": {
+        "text": "πgυnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πgυnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-identifier-4",
+      "request": {
+        "text": "gυnnimaЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnimaж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-identifier-5",
+      "request": {
+        "text": "gυnnim"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnim",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A1-identifier-6",
+      "request": {
+        "text": "υnnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "υnnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-direct",
+      "request": {
+        "text": "gunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-uppercase",
+      "request": {
+        "text": "GUNNІMA"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-separated",
+      "request": {
+        "text": "g.u.n.n.і.m.a"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-fullwidth",
+      "request": {
+        "text": "ｇｕｎｎіｍａ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-report-1",
+      "request": {
+        "text": "举报：“gunnіma”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-continued-1",
+      "request": {
+        "text": "举报：“gunnіma”请处理。gunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-report-2",
+      "request": {
+        "text": "举报：「gunnіma」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-continued-2",
+      "request": {
+        "text": "举报：「gunnіma」请处理。gunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-report-3",
+      "request": {
+        "text": "举报：\"gunnіma\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-continued-3",
+      "request": {
+        "text": "举报：\"gunnіma\"请处理。gunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-report-4",
+      "request": {
+        "text": "举报：'gunnіma'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-continued-4",
+      "request": {
+        "text": "举报：'gunnіma'请处理。gunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-report-5",
+      "request": {
+        "text": "举报：‘gunnіma’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-continued-5",
+      "request": {
+        "text": "举报：‘gunnіma’请处理。gunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gunnіma请处理gunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-identifier-1",
+      "request": {
+        "text": "xgunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xgunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-identifier-2",
+      "request": {
+        "text": "gunnіmaz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnіmaz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-identifier-3",
+      "request": {
+        "text": "πgunnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πgunnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-identifier-4",
+      "request": {
+        "text": "gunnіmaЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnіmaж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-identifier-5",
+      "request": {
+        "text": "gunnіm"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnіm",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A2-identifier-6",
+      "request": {
+        "text": "unnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "unnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-direct",
+      "request": {
+        "text": "gυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-uppercase",
+      "request": {
+        "text": "GΥNNІMA"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-separated",
+      "request": {
+        "text": "g.υ.n.n.і.m.a"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-fullwidth",
+      "request": {
+        "text": "ｇυｎｎіｍａ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-report-1",
+      "request": {
+        "text": "举报：“gυnnіma”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-continued-1",
+      "request": {
+        "text": "举报：“gυnnіma”请处理。gυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-report-2",
+      "request": {
+        "text": "举报：「gυnnіma」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-continued-2",
+      "request": {
+        "text": "举报：「gυnnіma」请处理。gυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-report-3",
+      "request": {
+        "text": "举报：\"gυnnіma\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-continued-3",
+      "request": {
+        "text": "举报：\"gυnnіma\"请处理。gυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-report-4",
+      "request": {
+        "text": "举报：'gυnnіma'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-continued-4",
+      "request": {
+        "text": "举报：'gυnnіma'请处理。gυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-report-5",
+      "request": {
+        "text": "举报：‘gυnnіma’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-continued-5",
+      "request": {
+        "text": "举报：‘gυnnіma’请处理。gυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报gυnnіma请处理gυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-identifier-1",
+      "request": {
+        "text": "xgυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xgυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-identifier-2",
+      "request": {
+        "text": "gυnnіmaz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnіmaz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-identifier-3",
+      "request": {
+        "text": "πgυnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πgυnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-identifier-4",
+      "request": {
+        "text": "gυnnіmaЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnіmaж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-identifier-5",
+      "request": {
+        "text": "gυnnіm"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gυnnіm",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-004-A3-identifier-6",
+      "request": {
+        "text": "υnnіma"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "υnnіma",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-direct",
+      "request": {
+        "text": "nоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-uppercase",
+      "request": {
+        "text": "NОNGSINI"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-separated",
+      "request": {
+        "text": "n.о.n.g.s.i.n.i"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-fullwidth",
+      "request": {
+        "text": "ｎоｎｇｓｉｎｉ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-report-1",
+      "request": {
+        "text": "举报：“nоngsini”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-continued-1",
+      "request": {
+        "text": "举报：“nоngsini”请处理。nоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-report-2",
+      "request": {
+        "text": "举报：「nоngsini」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-continued-2",
+      "request": {
+        "text": "举报：「nоngsini」请处理。nоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-report-3",
+      "request": {
+        "text": "举报：\"nоngsini\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-continued-3",
+      "request": {
+        "text": "举报：\"nоngsini\"请处理。nоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-report-4",
+      "request": {
+        "text": "举报：'nоngsini'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-continued-4",
+      "request": {
+        "text": "举报：'nоngsini'请处理。nоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-report-5",
+      "request": {
+        "text": "举报：‘nоngsini’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-continued-5",
+      "request": {
+        "text": "举报：‘nоngsini’请处理。nоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nоngsini请处理nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-identifier-1",
+      "request": {
+        "text": "xnоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xnоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-identifier-2",
+      "request": {
+        "text": "nоngsiniz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nоngsiniz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-identifier-3",
+      "request": {
+        "text": "πnоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πnоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-identifier-4",
+      "request": {
+        "text": "nоngsiniЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nоngsiniж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-identifier-5",
+      "request": {
+        "text": "nоngsin"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nоngsin",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-identifier-6",
+      "request": {
+        "text": "оngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "оngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-denial",
+      "request": {
+        "text": "我不会nоngsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会nоngsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-denial-reversal",
+      "request": {
+        "text": "我不会nоngsini才怪"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会nоngsini才怪",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A1-other-directed-help",
+      "request": {
+        "text": "我想nоngsini，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想nоngsini请帮帮我",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-direct",
+      "request": {
+        "text": "nongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-uppercase",
+      "request": {
+        "text": "NONGЅINI"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-separated",
+      "request": {
+        "text": "n.o.n.g.ѕ.i.n.i"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-fullwidth",
+      "request": {
+        "text": "ｎｏｎｇѕｉｎｉ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-report-1",
+      "request": {
+        "text": "举报：“nongѕini”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-continued-1",
+      "request": {
+        "text": "举报：“nongѕini”请处理。nongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-report-2",
+      "request": {
+        "text": "举报：「nongѕini」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-continued-2",
+      "request": {
+        "text": "举报：「nongѕini」请处理。nongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-report-3",
+      "request": {
+        "text": "举报：\"nongѕini\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-continued-3",
+      "request": {
+        "text": "举报：\"nongѕini\"请处理。nongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-report-4",
+      "request": {
+        "text": "举报：'nongѕini'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-continued-4",
+      "request": {
+        "text": "举报：'nongѕini'请处理。nongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-report-5",
+      "request": {
+        "text": "举报：‘nongѕini’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-continued-5",
+      "request": {
+        "text": "举报：‘nongѕini’请处理。nongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongѕini请处理nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-identifier-1",
+      "request": {
+        "text": "xnongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xnongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-identifier-2",
+      "request": {
+        "text": "nongѕiniz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongѕiniz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-identifier-3",
+      "request": {
+        "text": "πnongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πnongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-identifier-4",
+      "request": {
+        "text": "nongѕiniЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongѕiniж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-identifier-5",
+      "request": {
+        "text": "nongѕin"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongѕin",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-identifier-6",
+      "request": {
+        "text": "ongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-denial",
+      "request": {
+        "text": "我不会nongѕini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会nongѕini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-denial-reversal",
+      "request": {
+        "text": "我不会nongѕini才怪"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会nongѕini才怪",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A2-other-directed-help",
+      "request": {
+        "text": "我想nongѕini，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想nongѕini请帮帮我",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-direct",
+      "request": {
+        "text": "nongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-uppercase",
+      "request": {
+        "text": "NONGSІNI"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-separated",
+      "request": {
+        "text": "n.o.n.g.s.і.n.i"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-fullwidth",
+      "request": {
+        "text": "ｎｏｎｇｓіｎｉ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-report-1",
+      "request": {
+        "text": "举报：“nongsіni”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-continued-1",
+      "request": {
+        "text": "举报：“nongsіni”请处理。nongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-report-2",
+      "request": {
+        "text": "举报：「nongsіni」请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-continued-2",
+      "request": {
+        "text": "举报：「nongsіni」请处理。nongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-report-3",
+      "request": {
+        "text": "举报：\"nongsіni\"请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-continued-3",
+      "request": {
+        "text": "举报：\"nongsіni\"请处理。nongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-report-4",
+      "request": {
+        "text": "举报：'nongsіni'请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-continued-4",
+      "request": {
+        "text": "举报：'nongsіni'请处理。nongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-report-5",
+      "request": {
+        "text": "举报：‘nongsіni’请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-continued-5",
+      "request": {
+        "text": "举报：‘nongsіni’请处理。nongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报nongsіni请处理nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-identifier-1",
+      "request": {
+        "text": "xnongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "xnongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-identifier-2",
+      "request": {
+        "text": "nongsіniz"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsіniz",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-identifier-3",
+      "request": {
+        "text": "πnongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "πnongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-identifier-4",
+      "request": {
+        "text": "nongsіniЖ"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsіniж",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-identifier-5",
+      "request": {
+        "text": "nongsіn"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsіn",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-identifier-6",
+      "request": {
+        "text": "ongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "ongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-denial",
+      "request": {
+        "text": "我不会nongsіni"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会nongsіni",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-denial-reversal",
+      "request": {
+        "text": "我不会nongsіni才怪"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我不会nongsіni才怪",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-015-A3-other-directed-help",
+      "request": {
+        "text": "我想nongsіni，请帮帮我"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想nongsіni请帮帮我",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-001-plain-1",
+      "request": {
+        "text": "πshabi"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πshabi",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-plain-2",
+      "request": {
+        "text": "shabiπ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "shabiπ",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-plain-3",
+      "request": {
+        "text": "Жshabi"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жshabi",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-plain-4",
+      "request": {
+        "text": "shabiЖ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "shabiж",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-plain-5",
+      "request": {
+        "text": "shabi_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "shabivalue",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-001-plain-6",
+      "request": {
+        "text": "value_shabi"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valueshabi",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-001-plain",
+      "request": {
+        "text": "你说shabi"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说shabi",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-tone-1",
+      "request": {
+        "text": "πsha3bi1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πsha3bi1",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-tone-2",
+      "request": {
+        "text": "sha3bi1π"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "sha3bi1π",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-tone-3",
+      "request": {
+        "text": "Жsha3bi1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жsha3bi1",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-tone-4",
+      "request": {
+        "text": "sha3bi1Ж"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "sha3bi1ж",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-001-tone-5",
+      "request": {
+        "text": "sha3bi1_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "sha3bi1value",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-001-tone-6",
+      "request": {
+        "text": "value_sha3bi1"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valuesha3bi1",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-001-tone",
+      "request": {
+        "text": "你说sha3bi1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说sha3bi1",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-plain-1",
+      "request": {
+        "text": "πcaonima"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πcaonima",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-plain-2",
+      "request": {
+        "text": "caonimaπ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "caonimaπ",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-plain-3",
+      "request": {
+        "text": "Жcaonima"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жcaonima",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-plain-4",
+      "request": {
+        "text": "caonimaЖ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "caonimaж",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-plain-5",
+      "request": {
+        "text": "caonima_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "caonimavalue",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-002-plain-6",
+      "request": {
+        "text": "value_caonima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valuecaonima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-002-plain",
+      "request": {
+        "text": "你说caonima"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说caonima",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-tone-1",
+      "request": {
+        "text": "πcao4ni3ma1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πcao4ni3ma1",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-tone-2",
+      "request": {
+        "text": "cao4ni3ma1π"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "cao4ni3ma1π",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-tone-3",
+      "request": {
+        "text": "Жcao4ni3ma1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жcao4ni3ma1",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-tone-4",
+      "request": {
+        "text": "cao4ni3ma1Ж"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "cao4ni3ma1ж",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-002-tone-5",
+      "request": {
+        "text": "cao4ni3ma1_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "cao4ni3ma1value",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-002-tone-6",
+      "request": {
+        "text": "value_cao4ni3ma1"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valuecao4ni3ma1",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-002-tone",
+      "request": {
+        "text": "你说cao4ni3ma1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说cao4ni3ma1",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-plain-1",
+      "request": {
+        "text": "πgunnima"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πgunnima",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-plain-2",
+      "request": {
+        "text": "gunnimaπ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "gunnimaπ",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-plain-3",
+      "request": {
+        "text": "Жgunnima"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жgunnima",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-plain-4",
+      "request": {
+        "text": "gunnimaЖ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "gunnimaж",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-plain-5",
+      "request": {
+        "text": "gunnima_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gunnimavalue",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-004-plain-6",
+      "request": {
+        "text": "value_gunnima"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valuegunnima",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-004-plain",
+      "request": {
+        "text": "你说gunnima"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说gunnima",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-tone-1",
+      "request": {
+        "text": "πgun3ni3ma1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πgun3ni3ma1",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-tone-2",
+      "request": {
+        "text": "gun3ni3ma1π"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "gun3ni3ma1π",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-tone-3",
+      "request": {
+        "text": "Жgun3ni3ma1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жgun3ni3ma1",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-tone-4",
+      "request": {
+        "text": "gun3ni3ma1Ж"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "gun3ni3ma1ж",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-004-tone-5",
+      "request": {
+        "text": "gun3ni3ma1_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "gun3ni3ma1value",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-004-tone-6",
+      "request": {
+        "text": "value_gun3ni3ma1"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valuegun3ni3ma1",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-004-tone",
+      "request": {
+        "text": "你说gun3ni3ma1"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说gun3ni3ma1",
+        "hits": [
+          {
+            "word": "滚你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-plain-1",
+      "request": {
+        "text": "πnongsini"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πnongsini",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-plain-2",
+      "request": {
+        "text": "nongsiniπ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "nongsiniπ",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-plain-3",
+      "request": {
+        "text": "Жnongsini"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жnongsini",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-plain-4",
+      "request": {
+        "text": "nongsiniЖ"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "nongsiniж",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-plain-5",
+      "request": {
+        "text": "nongsini_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nongsinivalue",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-015-plain-6",
+      "request": {
+        "text": "value_nongsini"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valuenongsini",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-015-plain",
+      "request": {
+        "text": "你说nongsini"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说nongsini",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-tone-1",
+      "request": {
+        "text": "πnong4si3ni3"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "πnong4si3ni3",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-tone-2",
+      "request": {
+        "text": "nong4si3ni3π"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "nong4si3ni3π",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-tone-3",
+      "request": {
+        "text": "Жnong4si3ni3"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "жnong4si3ni3",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-tone-4",
+      "request": {
+        "text": "nong4si3ni3Ж"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "nong4si3ni3ж",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-BOUND-015-tone-5",
+      "request": {
+        "text": "nong4si3ni3_value"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "nong4si3ni3value",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-BOUND-015-tone-6",
+      "request": {
+        "text": "value_nong4si3ni3"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "valuenong4si3ni3",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-HANZI-015-tone",
+      "request": {
+        "text": "你说nong4si3ni3"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "你说nong4si3ni3",
+        "hits": [
+          {
+            "word": "弄死你",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UC-NORMAL-1",
+      "request": {
+        "text": "学习俄语：шаби"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "学习俄语шаби",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-NORMAL-2",
+      "request": {
+        "text": "希腊字母：σαβι"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "希腊字母σαβι",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-NORMAL-3",
+      "request": {
+        "text": "wo zai xue xi python"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "wozaixuexipython",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-NORMAL-4",
+      "request": {
+        "text": "今天去图书馆自习"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "今天去图书馆自习",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-NORMAL-5",
+      "request": {
+        "text": "const alphaπ = 3"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "constalphaπ3",
+        "hits": []
+      }
+    },
+    {
+      "id": "UC-NORMAL-6",
+      "request": {
+        "text": "identifierΔ_count"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "identifierδcount",
+        "hits": []
+      }
+    }
+  ],
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

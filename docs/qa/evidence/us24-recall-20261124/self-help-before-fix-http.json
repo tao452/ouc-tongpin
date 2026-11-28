@@ -1,0 +1,285 @@
+{
+  "commit": "c2552f8243a8874e6280a616319320d99338bacc",
+  "dictionary_sha256": "916b7d409268a53494129951124b033b0658e7aceb7b6bedccd7f8a84bb7de75",
+  "scope": "synthetic development; original120 unchanged",
+  "cases": [
+    {
+      "id": "HELP-001",
+      "request": {
+        "text": "我想去死"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想去死",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "FAIL",
+      "expected": {
+        "passed": true,
+        "hits": []
+      }
+    },
+    {
+      "id": "HELP-002",
+      "request": {
+        "text": "我想 qu si，请帮帮我"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想qusi请帮帮我",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "FAIL",
+      "expected": {
+        "passed": true,
+        "hits": []
+      }
+    },
+    {
+      "id": "HELP-003",
+      "request": {
+        "text": "我想qu4 si3，请帮帮我"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想qu4si3请帮帮我",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "FAIL",
+      "expected": {
+        "passed": true,
+        "hits": []
+      }
+    },
+    {
+      "id": "HELP-004",
+      "request": {
+        "text": "我真的想去死。想找人聊聊"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我真的想去死想找人聊聊",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "FAIL",
+      "expected": {
+        "passed": true,
+        "hits": []
+      }
+    },
+    {
+      "id": "HELP-005",
+      "request": {
+        "text": "我是不是个傻逼，请帮帮我"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我是不是个傻逼请帮帮我",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "FAIL",
+      "expected": {
+        "passed": true,
+        "hits": []
+      }
+    },
+    {
+      "id": "HELP-006",
+      "request": {
+        "text": "我是个废物，想找人聊聊"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是个废物想找人聊聊",
+        "hits": [
+          {
+            "word": "废物",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "status": "FAIL",
+      "expected": {
+        "passed": true,
+        "hits": []
+      }
+    },
+    {
+      "id": "HELP-007",
+      "request": {
+        "text": "我想杀了你，请帮帮我"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想杀了你请帮帮我",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "PASS",
+      "expected": {
+        "passed": false,
+        "hits": [
+          [
+            "杀了你",
+            "HIGH"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "HELP-008",
+      "request": {
+        "text": "我想去死，请帮帮我。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想去死请帮帮我杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "PASS",
+      "expected": {
+        "passed": false,
+        "hits": [
+          [
+            "杀了你",
+            "HIGH"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "HELP-009",
+      "request": {
+        "text": "我想 qu4 si3，请帮帮我。你就是鲨币"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想qu4si3请帮帮我你就是鲨币",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          },
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "FAIL",
+      "expected": {
+        "passed": false,
+        "hits": [
+          [
+            "傻逼",
+            "HIGH"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "HELP-010",
+      "request": {
+        "text": "我是不是个傻逼，请帮帮我。你就是傻逼"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我是不是个傻逼请帮帮我你就是傻逼",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "PASS",
+      "expected": {
+        "passed": false,
+        "hits": [
+          [
+            "傻逼",
+            "HIGH"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "HELP-011",
+      "request": {
+        "text": "我想去死你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想去死你",
+        "hits": [
+          {
+            "word": "去死",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "status": "PASS",
+      "expected": {
+        "passed": false,
+        "hits": [
+          [
+            "去死",
+            "HIGH"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "HELP-012",
+      "request": {
+        "text": "我想去死海旅游"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我想去死海旅游",
+        "hits": []
+      },
+      "status": "PASS",
+      "expected": {
+        "passed": true,
+        "hits": []
+      }
+    }
+  ],
+  "passed": 5,
+  "failed": 7
+}

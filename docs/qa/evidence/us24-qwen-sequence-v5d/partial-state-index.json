@@ -1,0 +1,106 @@
+[
+  {
+    "completed_batches": 1000,
+    "total_batches": 2445,
+    "training_windows_seen": 16000,
+    "loss_sum": 7876.726963043213,
+    "epoch_complete": false,
+    "evaluation_run": false,
+    "accuracy_status": "NOT_RUN",
+    "code_sha256": {
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "qwen_sequence_encoding_v5.py": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "b08a29bc194de30bdda961c68fdcbe617690a315b6c991a988eb03ae95aee151",
+    "files": {
+      "adapters.safetensors": {
+        "bytes": 6450456,
+        "sha256": "83533dc3b4ca3b8660e2e395647b7d159eb3d7c9c2157e438e32c0009c1dd20e"
+      },
+      "optimizer-and-rng.pt": {
+        "bytes": 12977352,
+        "sha256": "0f706fb98bbdb538930e8f85a730d8b1736dd6d823a7bde4ed126c1b37b96ffe"
+      }
+    }
+  },
+  {
+    "completed_batches": 1500,
+    "total_batches": 2445,
+    "training_windows_seen": 24000,
+    "loss_sum": 11248.257249116898,
+    "epoch_complete": false,
+    "evaluation_run": false,
+    "accuracy_status": "NOT_RUN",
+    "code_sha256": {
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "qwen_sequence_encoding_v5.py": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "b08a29bc194de30bdda961c68fdcbe617690a315b6c991a988eb03ae95aee151",
+    "files": {
+      "adapters.safetensors": {
+        "bytes": 6450456,
+        "sha256": "7ad181a4104b068400d58d3d569d962479ff4943f3d34ec73aaafbab6cb6ab04"
+      },
+      "optimizer-and-rng.pt": {
+        "bytes": 12977352,
+        "sha256": "647c67f767600014ace096943b4fb13929cd714b2a3c5b1dae07762d67c1d024"
+      }
+    }
+  },
+  {
+    "completed_batches": 2000,
+    "total_batches": 2445,
+    "training_windows_seen": 31987,
+    "loss_sum": 14283.417926289141,
+    "epoch_complete": false,
+    "evaluation_run": false,
+    "accuracy_status": "NOT_RUN",
+    "code_sha256": {
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "qwen_sequence_encoding_v5.py": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "b08a29bc194de30bdda961c68fdcbe617690a315b6c991a988eb03ae95aee151",
+    "files": {
+      "adapters.safetensors": {
+        "bytes": 6450456,
+        "sha256": "a2026f655a46bfbc37cb053242a11995c09852b25c9561d01f68c98ff2810b31"
+      },
+      "optimizer-and-rng.pt": {
+        "bytes": 12977352,
+        "sha256": "f8fa4047bf7e74b7da99035678c7e02f4bc71ec5fba078963c28436bc581a52d"
+      }
+    }
+  },
+  {
+    "completed_batches": 500,
+    "total_batches": 2445,
+    "training_windows_seen": 8000,
+    "loss_sum": 4328.767932295799,
+    "epoch_complete": false,
+    "evaluation_run": false,
+    "accuracy_status": "NOT_RUN",
+    "code_sha256": {
+      "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "qwen_sequence_model_v5.py": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476",
+      "qwen_sequence_encoding_v5.py": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482",
+      "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    "features_sha256": "b08a29bc194de30bdda961c68fdcbe617690a315b6c991a988eb03ae95aee151",
+    "files": {
+      "adapters.safetensors": {
+        "bytes": 6450456,
+        "sha256": "96c4243d0e0304d14b023fb3e4f29f92cb3c2103f1e6573414449c524fc1e7e9"
+      },
+      "optimizer-and-rng.pt": {
+        "bytes": 12977352,
+        "sha256": "7675ff11f17d87b3ccc67db46f8edf3225de8de57323cd15dda9749ce08755ef"
+      }
+    }
+  }
+]

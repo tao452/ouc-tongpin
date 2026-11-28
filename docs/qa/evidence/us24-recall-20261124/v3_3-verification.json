@@ -1,0 +1,29 @@
+{
+  "python": {
+    "passed": 497,
+    "failed": 0,
+    "skipped": 4,
+    "branch_coverage_percent": 98.06,
+    "command": "python -m pytest -q"
+  },
+  "ruff": {
+    "status": "PASS",
+    "command": "python -m ruff check services/algo scripts/qa/fetch_toxicn.py scripts/qa/verify_context_candidate.py"
+  },
+  "java": {
+    "previous_local_passed": 144,
+    "code_changed": false
+  },
+  "ci": "Pending new commit; previous fe510c8 full stack green",
+  "literal_http": {
+    "datasets": [
+      701,
+      406,
+      530
+    ],
+    "function_http_equal": true
+  },
+  "business_acceptance": false,
+  "m1_review": "PENDING",
+  "model9b": "Development running; no new external sample consumed"
+}

@@ -1,0 +1,65 @@
+"""Measure the false-positive cost of a global >=95% recall point on retained development rows."""
+import argparse
+import csv
+import hashlib
+import itertools
+import json
+from pathlib import Path
+
+LAB=Path.cwd()/'qa-private/us24-recall-20261124'
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def main(directory):
+    directory=directory.resolve()
+    assert directory.is_relative_to(LAB.resolve())
+    rows=[json.loads(line) for line in (directory/'predictions.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert len(rows)==3258
+    outputs={}
+    for mode in ['model','literal_or_model']:
+        best=None
+        path=directory/'exact-score-sweep-v2'/f'{mode}.csv'
+        with path.open(encoding='utf-8',newline='') as handle:
+            for threshold,group in itertools.groupby(csv.DictReader(handle),key=lambda r:float(r['threshold'])):
+                group=list(group)
+                assert len(group)==4
+                cells={r['cohort']:{k:int(r[k]) for k in ['tp','fp','fn','tn','errors']} for r in group}
+                eligible=all(c['errors']==0 and (not c['tp']+c['fn'] or c['tp']*100>=95*(c['tp']+c['fn']))
+                             for c in cells.values())
+                if eligible and (best is None or threshold>best['threshold']):
+                    cohorts={}
+                    for cohort,c in cells.items():
+                        positive,negative=c['tp']+c['fn'],c['fp']+c['tn']
+                        cohorts[cohort]=dict(confusion_matrix={k:c[k] for k in ['tp','fp','fn','tn']},
+                            recall=c['tp']/positive if positive else None,
+                            precision=c['tp']/(c['tp']+c['fp']) if c['tp']+c['fp'] else None,
+                            false_positive_rate=c['fp']/negative,inference_errors=c['errors'])
+                    best=dict(threshold=threshold,cohorts=cohorts,
+                              each_fpr_below_2pct=all(c['fp']*50<c['fp']+c['tn'] for c in cells.values()))
+        if best is not None:
+            for cohort,metric in best['cohorts'].items():
+                direct=dict(tp=0,fp=0,fn=0,tn=0)
+                for row in rows:
+                    if row['cohort']!=cohort:
+                        continue
+                    predicted=bool(row.get('score',0)>=best['threshold'] or mode=='literal_or_model' and row['literal_any'])
+                    if row.get('error'):
+                        predicted=not row['label']
+                    direct[('t' if predicted==bool(row['label']) else 'f')+('p' if predicted else 'n')]+=1
+                assert direct==metric['confusion_matrix']
+        outputs[mode]=best
+    value=dict(scope='highest global threshold satisfying95percent recall in every positive development cohort; all3258 retained',
+        results=outputs,predictions_sha256=sha(directory/'predictions.jsonl'),code_sha256=sha(Path(__file__)),
+        COLD_dev_fetched=False,production_acceptance=False)
+    with (directory/'recall-cost-audit.json').open('x',encoding='utf-8') as handle:
+        json.dump(value,handle,ensure_ascii=False,indent=2)
+    print(json.dumps(value),flush=True)
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('directory',type=Path)
+    main(parser.parse_args().directory)

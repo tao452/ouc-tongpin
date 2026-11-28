@@ -1,0 +1,54 @@
+import hashlib
+import json
+import sys
+from collections import Counter
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import pcr
+from evaluate_dataset import HttpModerationService
+from evaluate_recall import load_external,source_sha
+from external_corpus import metrics,record
+
+dictionary=ROOT/'services/algo/app/data/moderation-v3_13-candidate.json'
+service=HttpModerationService('http://127.0.0.1:19899',hashlib.sha256(dictionary.read_bytes()).hexdigest())
+sources=[('PCR',ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',ROOT/'docs/qa/data/external/pcr-test.v1.json'),
+ ('ToxiCN',LAB/'toxcn.csv',ROOT/'docs/qa/data/external/toxicn-v3.sealed.json')]
+reports=[];predictions=[]
+for name,path,manifest in sources:
+    if name=='PCR':
+        rows,excluded=pcr(path,json.loads(manifest.read_text(encoding='utf-8')));assert not excluded
+    else:rows=load_external(path,json.loads(manifest.read_text(encoding='utf-8')))
+    counts={mode:dict(tp=0,fp=0,fn=0,tn=0) for mode in ['high_blocking','any_level']}
+    groups={};errors=[];levels=Counter()
+    for number,row in enumerate(rows,1):
+        label=bool(row['offensive']);item=dict(id=row['id'],cohort=name,label=int(label),category=row['category'],
+            source_text_sha256=hashlib.sha256(row['text'].encode()).hexdigest())
+        try:
+            result=service.check(row['text']);high=not result.passed;any_hit=bool(result.hits)
+            item.update(high_blocking=high,any_level=any_hit,hits=[h.model_dump() for h in result.hits])
+            levels.update(h.level for h in result.hits)
+        except (TimeoutError,ValueError,OSError) as error:
+            errors.append(dict(id=row['id'],error=type(error).__name__))
+            high=any_hit=not label;item['error']=type(error).__name__
+        for mode,predicted in [('high_blocking',high),('any_level',any_hit)]:
+            record(counts[mode],predicted,label)
+            target=groups.setdefault(row['category'],{}).setdefault(mode,dict(tp=0,fp=0,fn=0,tn=0))
+            record(target,predicted,label)
+        predictions.append(item)
+        if number%1000==0:print(f'Historical HTTP {name} {number}/{len(rows)} errors={len(errors)}',flush=True)
+    reports.append(dict(cohort=name,rows=len(rows),source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+        source_manifest_sha256=hashlib.sha256(manifest.read_bytes()).hexdigest(),
+        metrics={k:metrics(v) for k,v in counts.items()},groups={k:{mode:metrics(c) for mode,c in v.items()} for k,v in groups.items()},
+        hit_levels=dict(levels),errors=errors))
+out=LAB/'historical-v3_13-http';out.mkdir(exist_ok=False)
+summary=dict(scope='already-used historical development corpora; broad labels unchanged; not new independent evaluation',
+    dictionary_sha256=service.expected_hash if hasattr(service,'expected_hash') else hashlib.sha256(dictionary.read_bytes()).hexdigest(),
+    code_sha256={p.relative_to(ROOT).as_posix():source_sha(p) for p in [*(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py',Path(__file__)]},
+    reports=reports,excluded_rows=0,COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (out/'summary.json').open('x',encoding='utf-8') as f:json.dump(summary,f,ensure_ascii=False,indent=2)
+with (out/'predictions.jsonl').open('x',encoding='utf-8') as f:
+    for row in predictions:f.write(json.dumps(row,ensure_ascii=False)+'\n')
+print(json.dumps({r['cohort']:{'any':r['metrics']['any_level']['confusion_matrix'],'errors':len(r['errors'])} for r in reports}),flush=True)
+raise SystemExit(int(any(r['errors'] for r in reports)))

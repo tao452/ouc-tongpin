@@ -1,0 +1,5 @@
+# Opt-in review only; the regular stack keeps words.json (5 rules).
+services:
+  algo:
+    environment:
+      MODERATION_DICTIONARY_PATH: /app/app/data/moderation-v2-candidate.json

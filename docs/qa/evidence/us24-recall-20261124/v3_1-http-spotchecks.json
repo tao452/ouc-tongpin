@@ -1,0 +1,127 @@
+{
+  "scope": "v3_1_synthetic_http_regression",
+  "dictionary_sha256": "6d716075bea275a65cb7bc73477c2f9a3d902ad8ba73cfe0d0c22002fc7586b3",
+  "count": 8,
+  "passed": 8,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "CONTEXT-HTTP-01",
+      "request": {
+        "text": "我觉得自己一无是处，我是不是废物，想求助"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我觉得自己一无是处我是不是废物想求助",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-HTTP-02",
+      "request": {
+        "text": "我是不是废物，想求助。杀了你"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我是不是废物想求助杀了你",
+        "hits": [
+          {
+            "word": "杀了你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-HTTP-03",
+      "request": {
+        "text": "我是不是废物，想求助。你是废物"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "我是不是废物想求助你是废物",
+        "hits": [
+          {
+            "word": "废物",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-HTTP-04",
+      "request": {
+        "text": "我想求助，你就是鲨币"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "我想求助你就是鲨币",
+        "hits": [
+          {
+            "word": "傻逼",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-HTTP-05",
+      "request": {
+        "text": "USB sbatch q4_report nmsl_func"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "usbsbatchq4reportnmslfunc",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-HTTP-06",
+      "request": {
+        "text": "举报：“你妈死了”请处理"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "举报你妈死了请处理",
+        "hits": []
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-HTTP-07",
+      "request": {
+        "text": "举报：“你妈死了”请处理。你妈死了"
+      },
+      "response": {
+        "passed": false,
+        "normalized": "举报你妈死了请处理你妈死了",
+        "hits": [
+          {
+            "word": "你妈死了",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "verified": true
+    },
+    {
+      "id": "CONTEXT-HTTP-08",
+      "request": {
+        "text": "你是废物利用活动的志愿者吗"
+      },
+      "response": {
+        "passed": true,
+        "normalized": "你是废物利用活动的志愿者吗",
+        "hits": []
+      },
+      "verified": true
+    }
+  ],
+  "counted_in_original120": false,
+  "business_approval": "PENDING"
+}

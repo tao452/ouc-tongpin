@@ -1,0 +1,435 @@
+{
+  "scope": "completed one-epoch development and both preregistered evaluation paths",
+  "files": [
+    {
+      "file": "frozen.json",
+      "public_lf_sha256": "c96435bc63796b30f7a714d9517981dd0cce119f88b910f9ef19d46943d23b36",
+      "private_path": "rocbert-v9/frozen.json",
+      "private_sha256": "207b2fafdf31ffc02f9462b1a7d2014737f0d0ef929f91ccd1750540ee637439",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "summary.json",
+      "public_lf_sha256": "7a5a3ba7dbb530d595d33d2d3b3a0a78ab6a6aaebcb1ad3b2bea4409f9b3decc",
+      "private_path": "rocbert-v9/summary.json",
+      "private_sha256": "39a6d8ce8087272344c026f1a3e96928c54a070032ce848f1bbeb8d5f075d730",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "evaluation-complete.json",
+      "public_lf_sha256": "057b6526cbd2a98eb126ca302ce04c9141ff764615a77da0cf5885ffcacb85ed",
+      "private_path": "rocbert-v9/evaluation-complete.json",
+      "private_sha256": "48e1658e83515e82768fe7ffda4ea0a375ac06e181003fe072fe15d8ba8921c8",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "training-window-order.json",
+      "public_lf_sha256": "19d7500f1b43c38145690f44732b25f96d2e35b0608e2d6ea91affdc8f702e86",
+      "private_path": "rocbert-v9/training-window-order.json",
+      "private_sha256": "19d7500f1b43c38145690f44732b25f96d2e35b0608e2d6ea91affdc8f702e86",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "train_rocbert_v9.py.txt",
+      "public_lf_sha256": "ccfecce09ba0dfcd5cfb2ee67c9544d78b2c6cc540ec3e98026c430363a03672",
+      "private_path": "train_rocbert_v9.py",
+      "private_sha256": "ccfecce09ba0dfcd5cfb2ee67c9544d78b2c6cc540ec3e98026c430363a03672",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "train_rocbert_v8.py.txt",
+      "public_lf_sha256": "e4de9e92ba09cb8d6ba1f91ca49df50a30fe439e074b28503bdb65aca4b613fd",
+      "private_path": "train_rocbert_v8.py",
+      "private_sha256": "e4de9e92ba09cb8d6ba1f91ca49df50a30fe439e074b28503bdb65aca4b613fd",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "prepare_rocbert_v9.py.txt",
+      "public_lf_sha256": "fa410f99aec0dd69dc83c664fa7a4e31240a3a45145b1fb164f2b9e36f8f7165",
+      "private_path": "prepare_rocbert_v9.py",
+      "private_sha256": "fa410f99aec0dd69dc83c664fa7a4e31240a3a45145b1fb164f2b9e36f8f7165",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "rocbert_encoding_v9.py.txt",
+      "public_lf_sha256": "8bd07d54aeb0b7c0fcafa46a949c9afebba266ab0930275cef79a102ec929a1b",
+      "private_path": "rocbert_encoding_v9.py",
+      "private_sha256": "8bd07d54aeb0b7c0fcafa46a949c9afebba266ab0930275cef79a102ec929a1b",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "rocbert_encoding_v8.py.txt",
+      "public_lf_sha256": "7f3cc1201903cece7fb3a82f8ce90f67e4834c7dc90780aea3dff15c4b1bff1e",
+      "private_path": "rocbert_encoding_v8.py",
+      "private_sha256": "7f3cc1201903cece7fb3a82f8ce90f67e4834c7dc90780aea3dff15c4b1bff1e",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "rocbert_phonetic_view_v9.py.txt",
+      "public_lf_sha256": "9d0ec40aa92a111cda4217b87a2dfcc898333c2b2f87d8406c3b01cf41e78281",
+      "private_path": "rocbert_phonetic_view_v9.py",
+      "private_sha256": "9d0ec40aa92a111cda4217b87a2dfcc898333c2b2f87d8406c3b01cf41e78281",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "audit_threshold_grid.py.txt",
+      "public_lf_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5",
+      "private_path": "audit_threshold_grid.py",
+      "private_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "audit_prediction_curves_v9.py.txt",
+      "public_lf_sha256": "4229c5f444079a78990304d8156ba5ddc42be52f18ded135b6e127501ab9fbd0",
+      "private_path": "audit_prediction_curves_v9.py",
+      "private_sha256": "4229c5f444079a78990304d8156ba5ddc42be52f18ded135b6e127501ab9fbd0",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "audit_exact_operating_points_v2.py.txt",
+      "public_lf_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925",
+      "private_path": "audit_exact_operating_points_v2.py",
+      "private_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "check_syllable_encoder_v9.py.txt",
+      "public_lf_sha256": "3e214f2d59bc548f10d3d548eb30e9253acf8f0dda33f59a41124843fbf6d255",
+      "private_path": "check_syllable_encoder_v9.py",
+      "private_sha256": "3e214f2d59bc548f10d3d548eb30e9253acf8f0dda33f59a41124843fbf6d255",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "check_phonetic_views_v9.py.txt",
+      "public_lf_sha256": "67edda529eba69d1111f39505a09e26627ecd9165bf1f2abc36285d4fcc23a05",
+      "private_path": "check_phonetic_views_v9.py",
+      "private_sha256": "67edda529eba69d1111f39505a09e26627ecd9165bf1f2abc36285d4fcc23a05",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "check_phonetic_views_v9_r3.py.txt",
+      "public_lf_sha256": "55848ebeab40c2fbf3171b5db0f1d1fb25eca276adcbdb7ee1760024674b38a3",
+      "private_path": "check_phonetic_views_v9_r3.py",
+      "private_sha256": "55848ebeab40c2fbf3171b5db0f1d1fb25eca276adcbdb7ee1760024674b38a3",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "publish_rocbert_v9.py.txt",
+      "public_lf_sha256": "f386842ec91b5519bfd34a3f080cf40ef18ee3951e0e79a28fc86020bb1221b9",
+      "private_path": "publish_rocbert_v9.py",
+      "private_sha256": "f386842ec91b5519bfd34a3f080cf40ef18ee3951e0e79a28fc86020bb1221b9",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "input-policy.json",
+      "public_lf_sha256": "61ee7c8f3f8354c9de82e383b2061d29dd17eb2c37bda2f79bee3d3ef0a42a30",
+      "private_path": "rocbert-v9-inputs/policy.json",
+      "private_sha256": "2f9d5f3bfb3ee948c712436e5e140cd381d2d5cf9c9c301485154ecb220f0bc8",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "training-view-decisions.json",
+      "public_lf_sha256": "a77e236d28db7a3a822851f50f90d19c75d7586ddff7c6405bc2c8164747fecd",
+      "private_path": "rocbert-v9-inputs/training-view-decisions.json",
+      "private_sha256": "b6f7d952993d1f9c360ff8adf48dc6e3d61883a5834782f2af9f5a7d24e0f309",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "preflight-8.json",
+      "public_lf_sha256": "b47380bf6ad928b7f26649a571f22afbf2abc6549f1fabb054b0770962521590",
+      "private_path": "rocbert-v9-preflight-8.json",
+      "private_sha256": "3f038d73381a1c0b63008c2b47cac4f2a6710d7661587686bc3107040b6043b6",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "phonetic-views-qualification-r3.json",
+      "public_lf_sha256": "ffe3297a6a80ca80ab2f067ce7437f4ba8d6743dfc96372535f623ab6cdd14a9",
+      "private_path": "phonetic-views-v9-qualification-r3.json",
+      "private_sha256": "58d39bbcc3ad76c9556f2068db095fd9218d5cecaf9dee04ae9e51c0133f02c6",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "phonetic-views-qualification-r2.json",
+      "public_lf_sha256": "b0054364a3a2de758d6f38e39d72ea5440c84b3da77593dd3e6b6180eac0e0d7",
+      "private_path": "phonetic-views-v9-qualification.json",
+      "private_sha256": "b79c0a93dc3b24b85e19e924cb6bd3cc175e9da3a5f0f3de604801b5859f4fdb",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "phonetic-evaluation-training-overlap.json",
+      "public_lf_sha256": "3858f75ebe6c547b80dfe147ac2339181f4786f28aa4e9a1e25e01014ca1d6b5",
+      "private_path": "v9-phonetic-evaluation-training-overlap.json",
+      "private_sha256": "f16d51dec17b9873956d18f0c2b612430d6c464aa989849d93d4dbbab2fb31cf",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "syllable-qualification.json",
+      "public_lf_sha256": "228bd6d7ff27aa09485780beebf2e371698c9335fba61d75cf2fc8cd4a1a3ba3",
+      "private_path": "syllable-v9-qualification.json",
+      "private_sha256": "4160609b7201e0e2b664e81e62928ddf6a93ca33a6e3234fd6871ba363424b87",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "previous-phonetic-helper-r1.py.txt",
+      "public_lf_sha256": "02b57765129975c72a0c323c28ce8877e41cb6ab69b687a4c637bc5f0f09ef46",
+      "private_path": "rocbert_phonetic_view_v9-r1.py.txt",
+      "private_sha256": "02b57765129975c72a0c323c28ce8877e41cb6ab69b687a4c637bc5f0f09ef46",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "previous-phonetic-helper-r2.py.txt",
+      "public_lf_sha256": "6b19214afd93fafc7186cfc2a457f9d3c7d7a54d3de014d56883f5c778b06a38",
+      "private_path": "rocbert_phonetic_view_v9-r2.py.txt",
+      "private_sha256": "6b19214afd93fafc7186cfc2a457f9d3c7d7a54d3de014d56883f5c778b06a38",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "previous-syllable-check-r1.py.txt",
+      "public_lf_sha256": "c28fa4effe3c3969e757a5a53e516a91aa83d07951e3432095b2acadcc9397aa",
+      "private_path": "check_syllable_encoder_v9-r1.py.txt",
+      "private_sha256": "c28fa4effe3c3969e757a5a53e516a91aa83d07951e3432095b2acadcc9397aa",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "check-phonetic-views-v9-r1.log.txt",
+      "public_lf_sha256": "ed8035b284b2dfd6ca10d3139a1ee99065989d9c01661155732af9c65aeaa1d9",
+      "private_path": "check-phonetic-views-v9-r1.log",
+      "private_sha256": "17b8527168865be5c23a6dfd8ec9dd6bc6dccad6309bc93ad5f742623760dcf0",
+      "public_normalization": "local workspace path redacted; LF and trailing ASCII whitespace trim"
+    },
+    {
+      "file": "check-phonetic-views-v9-r2.log.txt",
+      "public_lf_sha256": "ed4162326971cc34f7e888f4023e5f42ab8a16127c2967f00ff6d19fdf0b4533",
+      "private_path": "check-phonetic-views-v9-r2.log",
+      "private_sha256": "1c22f1c10f4f7a0c5e704e56f6be98ce771bdcaaf8f992b8b9ff333b541be0d5",
+      "public_normalization": "local workspace path redacted; LF and trailing ASCII whitespace trim"
+    },
+    {
+      "file": "check-phonetic-views-v9-r3.log.txt",
+      "public_lf_sha256": "ed4162326971cc34f7e888f4023e5f42ab8a16127c2967f00ff6d19fdf0b4533",
+      "private_path": "check-phonetic-views-v9-r3.log",
+      "private_sha256": "1c22f1c10f4f7a0c5e704e56f6be98ce771bdcaaf8f992b8b9ff333b541be0d5",
+      "public_normalization": "local workspace path redacted; LF and trailing ASCII whitespace trim"
+    },
+    {
+      "file": "check-syllable-encoder-v9-r1.log.txt",
+      "public_lf_sha256": "67f1a952ebdb89240484ab79e0c2af8016af728aa167c70c86558efb24008acd",
+      "private_path": "check-syllable-encoder-v9-r1.log",
+      "private_sha256": "19e037914fee5d4bfbb1297ac8f6eaa33ad8c989d722bc8d41dc4c9c5a8f2fdd",
+      "public_normalization": "local workspace path redacted; LF and trailing ASCII whitespace trim"
+    },
+    {
+      "file": "check-syllable-encoder-v9-r2.log.txt",
+      "public_lf_sha256": "a86fcb1ac3a3cfe90bc4ed930c727c7d467318211bd429a2195e099ba4df9b8a",
+      "private_path": "check-syllable-encoder-v9-r2.log",
+      "private_sha256": "bb82ea821dd89b21cf25ed9d101f254b052ef96ffa92fbec9b13cfc37b242ac4",
+      "public_normalization": "local workspace path redacted; LF and trailing ASCII whitespace trim"
+    },
+    {
+      "file": "input-index-01.jsonl",
+      "public_lf_sha256": "04addcb4acc27f7feb6502dc142e2d29a007383bac3d46127355c99230d50972"
+    },
+    {
+      "file": "input-index-02.jsonl",
+      "public_lf_sha256": "c5ae58a7fa422d3728ca2a9e9f6305f11d0d18784a46150b81665f1814a1b610"
+    },
+    {
+      "file": "input-index-03.jsonl",
+      "public_lf_sha256": "e61ecbd4260aa2f63c3e1c005cbd8f835be79a11e7f356f5aa0678d792a3b879"
+    },
+    {
+      "file": "input-index-04.jsonl",
+      "public_lf_sha256": "4e1e0881a34935a37aeb9bc8864af77b0d60ff942b71640f52cf71fb46addb10"
+    },
+    {
+      "file": "input-index-05.jsonl",
+      "public_lf_sha256": "4df8ceb9bb43982594f8692072477ab063e65cc21c2258c7192d08ca631afa53"
+    },
+    {
+      "file": "input-index-06.jsonl",
+      "public_lf_sha256": "aa97c3ae1a49827fff43d7d81744ca3ffe118df6c8bc2a744f17dc8f1be6cb32"
+    },
+    {
+      "file": "input-index-07.jsonl",
+      "public_lf_sha256": "234f6736c2302d68f28dba57691422234f2aa437202cbd6ec3f30342c850aca7"
+    },
+    {
+      "file": "input-index-08.jsonl",
+      "public_lf_sha256": "85c987785b5f945067a7917fedcabf3090233daa9aedbf7351ac92668caad4b2"
+    },
+    {
+      "file": "input-index-09.jsonl",
+      "public_lf_sha256": "9b5a856ba4858bcb4cefd353def37ecec14b8b8b9749526c1426cc924eb0fab9"
+    },
+    {
+      "file": "input-index-10.jsonl",
+      "public_lf_sha256": "f0a2701664945a6670927f11c64c8f06b7341a2610b039ae643632d72425c803"
+    },
+    {
+      "file": "input-index-11.jsonl",
+      "public_lf_sha256": "7b9c8ee1acfdfc17b488c415f1e2b1e46419713f316240c9f0e190a02c4b441e"
+    },
+    {
+      "file": "input-index-12.jsonl",
+      "public_lf_sha256": "323430d60794884aefa502cf49ae1a7ade3f03d8eb895784e9b3df486a793605"
+    },
+    {
+      "file": "input-index-13.jsonl",
+      "public_lf_sha256": "5a6d1d2f1eb9ffd6eaa21959402e590d71c7ade689ef80c02ed5fc0aab8852dd"
+    },
+    {
+      "file": "input-index-14.jsonl",
+      "public_lf_sha256": "0678a2ced43677fdfc58d3670ca7f2d4141c9ab61cb71e3d5c608b48711fff93"
+    },
+    {
+      "file": "input-index-15.jsonl",
+      "public_lf_sha256": "df72a1f102f8d7f19439c1a1f0d5634562ab16b61630a6fb9cc87dbc9fd1ec81"
+    },
+    {
+      "file": "input-index-16.jsonl",
+      "public_lf_sha256": "e1cb112596bebe2b810d5422f948b52b45fba730101d961c8e4c718eccadd3be"
+    },
+    {
+      "file": "epoch-1-exact-score-report.json",
+      "public_lf_sha256": "e020736698aa028548ee627169aef5ad72895c6c5b88e4ddca3b2c690bb71e60",
+      "private_path": "rocbert-v9/epoch-1/exact-score-sweep-v2/report.json",
+      "private_sha256": "e218893419e10070537ae2ac330c06a7840b5dc3277026e411c9fd761153af23",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "public_lf_sha256": "23faaee58aa2385ba60806772f25666a9957c143c08a3729e1cdea2a3b9f83be",
+      "private_path": "rocbert-v9/epoch-1/predictions.jsonl",
+      "private_sha256": "c44d87422a9a3f27b13a65d7ef3f3c4285aa15f8a19731f1f7fcb4d9cf0561ef",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-report.json",
+      "public_lf_sha256": "d1a438c47b58989746e8f53b3a6f4764368af1aa5853d4a841d920caedf37c2d",
+      "private_path": "rocbert-v9/epoch-1/report.json",
+      "private_sha256": "e6b6cf8624dc519e717f0b634116ad0a9daf7f43abe56dfe2bbff729fa7a1b97",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "public_lf_sha256": "6082e14c46a632aff28d8d1b6868650fddb7588e4c1a3677e061a66babcdc89f",
+      "private_path": "rocbert-v9/epoch-1/thresholds.csv",
+      "private_sha256": "6082e14c46a632aff28d8d1b6868650fddb7588e4c1a3677e061a66babcdc89f",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-threshold-grid-gate-audit.json",
+      "public_lf_sha256": "84d3bfe69699804e4a81e57919108b7bb05f04c512c612d3f0c27d9008195807",
+      "private_path": "rocbert-v9/epoch-1/threshold-grid-gate-audit.json",
+      "private_sha256": "aab7b24d27dc3fe169114ee771cf3279092a455848d41aac02c8f5f56bf2cd03",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-prediction-curve-recomputation.json",
+      "public_lf_sha256": "95bc0925e4b768601f6ba04f33372e4c48a723bb5ebeb40bf58fb95714dbd45f",
+      "private_path": "rocbert-v9/epoch-1/prediction-curve-recomputation.json",
+      "private_sha256": "55dd8169369d9d3e87e1411c494c1351613569cd0e22c21af5bcdd2c99de8a2a",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-phonetic-max-exact-score-report.json",
+      "public_lf_sha256": "47c12dec51dfe900e17e966dd105ffc446721ea936a1881469d64289a305b576",
+      "private_path": "rocbert-v9/epoch-1-phonetic-max/exact-score-sweep-v2/report.json",
+      "private_sha256": "50efb6447f1759fa73e8519931ecbcb6a9831a322823ab2b79f9b9a5e4fef5c6",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-phonetic-max-predictions.jsonl",
+      "public_lf_sha256": "2e589e50e65955f857232cd93396ecd6cc6e485c08c8fff94bb60f1db1b30d3a",
+      "private_path": "rocbert-v9/epoch-1-phonetic-max/predictions.jsonl",
+      "private_sha256": "1ece778752e4091db9ff74568804371e99d7871ccf8cb382ebc86e4e482c7b1a",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-phonetic-max-report.json",
+      "public_lf_sha256": "71c2648877f4d8c991f68457a1462b14d048c9fa022ebcdddcb24ba2fe086434",
+      "private_path": "rocbert-v9/epoch-1-phonetic-max/report.json",
+      "private_sha256": "d79f2e7b550df3239e6e091538f70a99da2e3accafdd1e9e29abfa321edbfc23",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-phonetic-max-thresholds.csv",
+      "public_lf_sha256": "a8ffcdd3a32269b1dd40f09621fdf5f9dae4dbef61f7220fd5915d8b7f51df1a",
+      "private_path": "rocbert-v9/epoch-1-phonetic-max/thresholds.csv",
+      "private_sha256": "a8ffcdd3a32269b1dd40f09621fdf5f9dae4dbef61f7220fd5915d8b7f51df1a",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-phonetic-max-threshold-grid-gate-audit.json",
+      "public_lf_sha256": "52da3051fff01e47b31ae3f472d920ff580f88baa259640500a991ab9b9cead7",
+      "private_path": "rocbert-v9/epoch-1-phonetic-max/threshold-grid-gate-audit.json",
+      "private_sha256": "0683b418a3ec066f2fd8b9756cf8049ccbcc4a6f87609af554fcda4b6e9f079e",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "epoch-1-phonetic-max-prediction-curve-recomputation.json",
+      "public_lf_sha256": "48bf086a394d5589b53e8208e3a78fa7c35cc9782b3b39feea3fe2c7e1623ca0",
+      "private_path": "rocbert-v9/epoch-1-phonetic-max/prediction-curve-recomputation.json",
+      "private_sha256": "e44d032eb31141734ca44377650eb3c31c63c1e5ffdaa4b69bbac2f149336bbb",
+      "public_normalization": "LF plus trailing ASCII whitespace trim; original private SHA retained"
+    },
+    {
+      "file": "partial-state-index.jsonl",
+      "public_lf_sha256": "85291b40d9cfc7ad53ada06c3eeeb7006e19d675106626aeda8ad2fef0cbed72"
+    },
+    {
+      "file": "private-exact-curve-index.json",
+      "public_lf_sha256": "6c518b88d87d4e0e753f683dce99bc2c61157c20d906cb174036e07e2dd11965"
+    }
+  ],
+  "source_engine_commit": "ab9716f7f8ea502eddb044f0356fff501169a15d",
+  "input_index_projection_fields": [
+    "id",
+    "cohort",
+    "label",
+    "category",
+    "source_id",
+    "augmentation",
+    "source_text_sha256",
+    "transformed_sha256",
+    "representation_sha256",
+    "windows",
+    "window_lengths",
+    "latin_syllable_features",
+    "masked_body_tokens"
+  ],
+  "private_full_index_sha256": "ef28c89ac4feef1e0e43ab3ebd0e0e73756c56edd7d70d282326e8efd085c9e1",
+  "input_rows": 54536,
+  "retained_prior_training_rows": 46533,
+  "new_training_phonetic_views": 4745,
+  "training_rows": 51278,
+  "training_windows": 51278,
+  "unique_evaluation_comments": 3258,
+  "evaluated_input_views": 6516,
+  "decision_rows_across_two_reports": 6516,
+  "excluded_evaluation_rows": 0,
+  "inference_errors_across_two_reports": 0,
+  "development_gate_passing_paths": [],
+  "fixed_grid_gate_passing_paths": [],
+  "exact_curve_policy": "full CSV files retained private with SHA/bytes; complete scores and generator public",
+  "parent_epoch": 3,
+  "parent_choice": "fixed last epoch of v8, not its best development epoch",
+  "old_training_label_conflicts_retained": 15,
+  "train_eval_representation_overlaps": 0,
+  "training_vs_alternative_phonetic_evaluation_overlap_rows": 0,
+  "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "base_license": "HF weight license undeclared; author code Apache2 separate; no weights redistributed",
+  "private_assets": "all corpus text, token windows, base/updated parameters, optimizer/RNG state",
+  "upstream_pretraining_evaluation_exposure": "unknown",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

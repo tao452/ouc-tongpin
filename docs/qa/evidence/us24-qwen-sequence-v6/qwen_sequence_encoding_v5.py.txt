@@ -1,0 +1,56 @@
+import json
+import re
+from pathlib import Path
+
+from pypinyin import Style, pinyin
+from transformers import AutoTokenizer
+
+SYSTEM = ('判断文本是否含冒犯表达：辱骂、威胁、骚扰、羞辱贬损或针对群体的敌意。'
+          '区分实际攻击与引用举报、科普、否定攻击、心理求助。结合原文和无调拼音理解。')
+
+
+def safe_json(value):
+    return json.dumps(value,ensure_ascii=False).replace('<|','<\\u007c').replace('|>','\\u007c>')
+
+
+class SequenceEncoder:
+    def __init__(self,path):
+        self.tokenizer=AutoTokenizer.from_pretrained(str(Path(path)),local_files_only=True,trust_remote_code=False)
+        self.tokenizer.padding_side='right'
+        assert self.tokenizer.pad_token_id is not None
+        self.maximum_tokens=512
+
+    def render(self,text,readings):
+        sounds=''.join((' '+reading+' ') if reading!=char else char for char,reading in zip(text,readings,strict=True))
+        sounds=re.sub(r'[ \t]+',' ',sounds).strip()
+        tokens=self.tokenizer.apply_chat_template([
+            dict(role='system',content=SYSTEM),dict(role='user',content=safe_json(dict(text=text,pinyin=sounds)))],
+            tokenize=True,add_generation_prompt=True,enable_thinking=False)
+        assert isinstance(tokens,list) and all(type(token) is int and token>=0 for token in tokens)
+        return tokens
+
+    def encode(self,text):
+        if not isinstance(text,str):raise ValueError('Text required')
+        readings=[parts[0] for parts in pinyin(text,style=Style.NORMAL,heteronym=False,errors=lambda value:list(value))]
+        if len(readings)!=len(text):raise ValueError('Pinyin character offsets differ')
+        if not text:
+            tokens=self.render(text,readings);assert len(tokens)<=self.maximum_tokens
+            return [dict(input_ids=tokens,char_span=[0,0])]
+        cache={};windows=[];covered=set();left=0
+        def encoded(a,b):
+            key=(a,b)
+            if key not in cache:cache[key]=self.render(text[a:b],readings[a:b])
+            return cache[key]
+        while left<len(text):
+            low=left+1;high=min(len(text),left+512);best=low
+            if len(encoded(left,best))>self.maximum_tokens:raise ValueError('One source character exceeds input budget')
+            while low<=high:
+                middle=(low+high)//2
+                if len(encoded(left,middle))<=self.maximum_tokens:best=middle;low=middle+1
+                else:high=middle-1
+            tokens=encoded(left,best);assert len(tokens)<=self.maximum_tokens
+            windows.append(dict(input_ids=tokens,char_span=[left,best]));covered.update(range(left,best))
+            if best==len(text):break
+            left=best-min(32,(best-left)//2)
+        assert covered==set(range(len(text)))
+        return windows

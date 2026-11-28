@@ -1,0 +1,21 @@
+{
+  "candidate_count": 132,
+  "suggested_levels": {
+    "HIGH": 47,
+    "MEDIUM": 80,
+    "LOW": 5
+  },
+  "origins": {
+    "原5条基线": 5,
+    "PR #83新增41条": 41,
+    "v2新增24条": 24,
+    "v3新增50条": 50,
+    "v3.5新增候选12条": 12
+  },
+  "M1_pending": 132,
+  "decision_blanks": 792,
+  "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "canonical_and_level_changes": 0,
+  "aliases_and_reading_changes": 0,
+  "production_acceptance": false
+}

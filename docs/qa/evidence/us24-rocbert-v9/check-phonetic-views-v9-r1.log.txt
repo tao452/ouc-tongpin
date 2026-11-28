@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<workspace>\qa-private\us24-recall-20261124\check_phonetic_views_v9.py", line 15, in <module>
+    phonetics = PhoneticView(LAB / 'rocbert-base', LAB / 'rocbert-v8-inputs/mapping-qualification.json')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>\qa-private\us24-recall-20261124\rocbert_phonetic_view_v9.py", line 15, in __init__
+    assert len(vocab) == len(set(vocab))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

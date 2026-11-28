@@ -1,0 +1,90 @@
+{
+  "scope": "completed supervised development experiment, not independent campus acceptance",
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_path": "qwen-raw-probe-v1/frozen.json",
+      "private_sha256": "566984e4ad3b1d48a4478e8c18a34ee049f93e397fa37b134efeadf9d25d0c4e",
+      "public_lf_sha256": "0fad650e50032a86ac5d5b46e86e2cc79c5f7e525995de012adf163db4d3582d"
+    },
+    {
+      "file": "input-audit.json",
+      "private_path": "qwen-raw-probe-v1-inputs/input-audit.json",
+      "private_sha256": "ed466bc7c366b3b557aab7bf9ac08ac4b8fc1fa6ea7149cf523b9ac616e18348",
+      "public_lf_sha256": "ca9c91e8fe64ca5a9adc5998bd85e3c9208e2eec83ecb33f6989b0d33e44d6aa"
+    },
+    {
+      "file": "prepare_qwen_raw_probe_v1.py.txt",
+      "private_path": "prepare_qwen_raw_probe_v1.py",
+      "private_sha256": "a6f1a356d4ef700733a0d8bcc73ab7e7c9632f850c7ddd4c1f10fbfe71cc0491",
+      "public_lf_sha256": "a6f1a356d4ef700733a0d8bcc73ab7e7c9632f850c7ddd4c1f10fbfe71cc0491"
+    },
+    {
+      "file": "evaluate_qwen_raw_probe_v1.py.txt",
+      "private_path": "evaluate_qwen_raw_probe_v1.py",
+      "private_sha256": "333710f57d76e57c1c7dbb8c9f3225fd1f78f9ee5a680abda388a0176d91d2ec",
+      "public_lf_sha256": "333710f57d76e57c1c7dbb8c9f3225fd1f78f9ee5a680abda388a0176d91d2ec"
+    },
+    {
+      "file": "qwen_sequence_model_v6.py.txt",
+      "private_path": "qwen_sequence_model_v6.py",
+      "private_sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+      "public_lf_sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088"
+    },
+    {
+      "file": "train_qwen_sequence_v5d.py.txt",
+      "private_path": "train_qwen_sequence_v5d.py",
+      "private_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+      "public_lf_sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "audit_threshold_grid.py.txt",
+      "private_path": "audit_threshold_grid.py",
+      "private_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5",
+      "public_lf_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5"
+    },
+    {
+      "file": "predictions.jsonl",
+      "private_path": "qwen-raw-probe-v1/predictions.jsonl",
+      "private_sha256": "13ddd912e997f33bd682b6ae88a2913c1b9e83f3c33754abb790024591cb4bfe",
+      "public_lf_sha256": "b91b44d6ec4752acb1b016f847d23fea8bf32d038690c6ca9595e70d185ff8e0"
+    },
+    {
+      "file": "report.json",
+      "private_path": "qwen-raw-probe-v1/report.json",
+      "private_sha256": "81483aeed193079ed4e9da9abb8e3c9cb066944103e3755a998ff46b7949dc7f",
+      "public_lf_sha256": "1532611c4b2e873fb2faa2aa2743eb2bd8ebabc2d7e210bc97aff27cf10b773d"
+    },
+    {
+      "file": "thresholds.csv",
+      "private_path": "qwen-raw-probe-v1/thresholds.csv",
+      "private_sha256": "9d07c62a9b4c2f51c096e21e5d4b058513353ed6e78c51a9cf516410d8d45b05",
+      "public_lf_sha256": "9d07c62a9b4c2f51c096e21e5d4b058513353ed6e78c51a9cf516410d8d45b05"
+    },
+    {
+      "file": "threshold-grid-gate-audit.json",
+      "private_path": "qwen-raw-probe-v1/threshold-grid-gate-audit.json",
+      "private_sha256": "c7bd51918aa98bef28e2a6e84b1cb80321151e198ae23e102fe017c44b3e13aa",
+      "public_lf_sha256": "ce4f3a7a98650da9f4737a86d464088380e9feff4f8c244a096f460a4ba6a0cd"
+    }
+  ],
+  "epochs": [
+    0
+  ],
+  "rows_per_evaluation": 3258,
+  "excluded_evaluation_rows": 0,
+  "inference_errors": 0,
+  "source_engine": "executed frozen3.9 input engine; exact snapshot and SHA retained; current3.10 qualification separate",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "upstream_pretraining_evaluation_exposure": "unknown",
+  "private_assets": "raw corpus, generated text, token windows, base and updated parameters, optimizer/RNG states and full logs"
+}

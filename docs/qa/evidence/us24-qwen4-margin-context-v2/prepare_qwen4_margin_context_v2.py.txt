@@ -1,0 +1,110 @@
+import hashlib
+import json
+from collections import Counter
+from datetime import UTC,datetime
+from pathlib import Path
+
+import torch
+
+from qwen4_label_encoding_v1 import LabelEncoder
+
+ROOT=Path.cwd()
+LAB=ROOT/'qa-private/us24-recall-20261124'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle,'sha256').hexdigest()
+
+
+def code_sha(path):
+    return hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+
+
+def main():
+    torch.set_num_threads(2)
+    previous_path=LAB/'qwen4-label-v1-inputs/features.pt'
+    previous=torch.load(previous_path,map_location='cpu',weights_only=True)
+    assert sha(previous_path)==json.loads((LAB/'qwen4-inputs-audit-v1.json').read_text(encoding='utf-8'))['features_sha256']
+    context_path=LAB/'rocbert-context-space-v1-inputs/index.json'
+    context={r['id']:r for r in json.loads(context_path.read_text(encoding='utf-8'))['rows']}
+    old_frozen=json.loads((LAB/'rocbert-context-space-v1/frozen.json').read_text(encoding='utf-8'))
+    assert sha(context_path)==old_frozen['index_sha256']
+    encoder=LabelEncoder(LAB/'qwen3-4b-instruct2507')
+    records=[]
+    index=[]
+    changed=Counter()
+    chars=0
+    for row in previous['records']:
+        # V1 retained every character and its original token windows.
+        source_chars=[None]*max(w['char_span'][1] for w in row['windows'])
+        for window in row['windows']:
+            rendered=encoder.tokenizer.decode(window['input_ids'],skip_special_tokens=False,
+                                               clean_up_tokenization_spaces=False)
+            marker='<|im_start|>user\n'
+            start=rendered.index(marker)+len(marker)
+            end=rendered.index('<|im_end|>',start)
+            text=json.loads(rendered[start:end])['text']
+            left,right=window['char_span']
+            assert len(text)==right-left
+            for offset,char in enumerate(text,left):
+                assert source_chars[offset] is None or source_chars[offset]==char
+                source_chars[offset]=char
+        assert all(c is not None for c in source_chars)
+        text=''.join(source_chars)
+        assert hashlib.sha256(text.encode()).hexdigest()==row['transformed_sha256']
+        ranges=context[row['id']]['context_protected_ranges']
+        protected=set()
+        for left,right in ranges:
+            assert 0<=left<right<=len(text)
+            protected.update(range(left,right))
+        transformed=''.join(' ' if i in protected else char for i,char in enumerate(text))
+        # The earlier representation collapsed pre-existing square censor runs; retain it for exact historical input correspondence.
+        import re
+        transformed=re.sub('□+','□',transformed)
+        expected=context[row['id']]
+        assert hashlib.sha256(transformed.encode()).hexdigest()==expected['transformed_sha256']
+        for key in ['label','cohort','category','literal_any','source_text_sha256']:
+            assert row[key]==expected[key]
+        different=transformed!=text
+        alternative=encoder.encode(transformed) if different else []
+        metadata={k:v for k,v in row.items() if k!='windows'}
+        metadata.update(context_transformed_sha256=expected['transformed_sha256'],
+                        context_protected_ranges=ranges,context_input_changed=different)
+        records.append({**metadata,'windows':row['windows'],'context_windows':alternative})
+        index.append({**metadata,'windows':len(row['windows']),
+                      'window_lengths':[len(w['input_ids']) for w in row['windows']],
+                      'context_windows':len(alternative),
+                      'context_window_lengths':[len(w['input_ids']) for w in alternative]})
+        changed[row['cohort']]+=different
+        chars+=len(protected)
+    assert len(records)==3258
+    assert changed['PCR']==changed['toxicn_dev']==0
+    output=LAB/'qwen4-margin-context-v2-inputs'
+    output.mkdir(exist_ok=False)
+    policy=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='precision and finite-context development; same fixed4Bweights and3258rows',
+        previous_features_sha256=sha(previous_path),previous_policy=previous['policy'],
+        prior_context_index_sha256=sha(context_path),
+        source_recovery='all V1 JSON character windows stitched; exact canonical textSHA verified',
+        context_policy='only existing finite3.10 protected ranges become spaces; no forced labels or new whitelists',
+        full_input_policy='identical token windows to V1; same batch sorting and padding',
+        scoring='store raw positive-minus-negative logit margin; monotonic0.5+atan(margin)/pi for stable full-range threshold sweep; not probability',
+        extra_diagnostics='originalFloat32conditionalsoftmax, Float64sigmoid and both rawlabel logits retained',
+        context_input_changed=dict(changed),protected_characters=chars,
+        total_rows=3258,full_windows=sum(len(r['windows']) for r in records),
+        additional_context_windows=sum(len(r['context_windows']) for r in records),
+        identical_context_reuse='only exact unchanged input rows reuse the same-run full score',
+        gradient_updates=0,excluded_rows=0,
+        code_sha256={p.name:code_sha(p) for p in [Path(__file__),LAB/'qwen4_label_encoding_v1.py']},
+        dictionary_sha256=previous['policy']['dictionary_sha256'],
+        COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+    with (output/'features.pt').open('xb') as handle:
+        torch.save(dict(policy=policy,records=records),handle)
+    for name,value in [('policy.json',policy),('index.json',dict(policy=policy,rows=index))]:
+        with (output/name).open('x',encoding='utf-8') as handle:
+            json.dump(value,handle,ensure_ascii=False,indent=2)
+    print(json.dumps({k:policy[k] for k in ['total_rows','full_windows','additional_context_windows','context_input_changed']}),flush=True)
+
+
+if __name__=='__main__':
+    main()

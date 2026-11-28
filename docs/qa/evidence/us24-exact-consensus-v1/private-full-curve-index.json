@@ -1,0 +1,114 @@
+[
+  {
+    "configuration": "rocbert-epoch-1",
+    "file": "model.csv",
+    "private_path": "rocbert-v8/epoch-1/exact-score-sweep-v2/model.csv",
+    "bytes": 1476866,
+    "sha256": "89d122511728eae06f6437fbe9a637ea253c290489dcd5b771f756afe94e1270",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "rocbert-epoch-1",
+    "file": "literal_or_model.csv",
+    "private_path": "rocbert-v8/epoch-1/exact-score-sweep-v2/literal_or_model.csv",
+    "bytes": 1436702,
+    "sha256": "4de0d9dba9eb874e6299937ab4b1b7b1b7010d07b50a0fc353c3553542d45575",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "rocbert-epoch-2",
+    "file": "model.csv",
+    "private_path": "rocbert-v8/epoch-2/exact-score-sweep-v2/model.csv",
+    "bytes": 1343332,
+    "sha256": "8c806a8022d4fb5417b291263219ee3416a17277a2b93ea43f844982269ad04d",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "rocbert-epoch-2",
+    "file": "literal_or_model.csv",
+    "private_path": "rocbert-v8/epoch-2/exact-score-sweep-v2/literal_or_model.csv",
+    "bytes": 1299074,
+    "sha256": "ac986c789a0c880989b3f04807e51c8da995898587a0b51a34e49f4ee12657d3",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "rocbert-epoch-3",
+    "file": "model.csv",
+    "private_path": "rocbert-v8/epoch-3/exact-score-sweep-v2/model.csv",
+    "bytes": 1152131,
+    "sha256": "60d8173f9c928320b180bc2a99b332f741e13bd6454151276d098921fbeefd75",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "rocbert-epoch-3",
+    "file": "literal_or_model.csv",
+    "private_path": "rocbert-v8/epoch-3/exact-score-sweep-v2/literal_or_model.csv",
+    "bytes": 1127933,
+    "sha256": "7f580e588a8b318159db341102ba0a0dfdd7f1b15e16d7dc3d80fc8c68dc6467",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-arithmetic_mean",
+    "file": "model.csv",
+    "private_path": "rocbert-complement-consensus-v1/arithmetic_mean/exact-score-sweep-v2/model.csv",
+    "bytes": 2238030,
+    "sha256": "1d66409f969705039d4bf017acc9c7bdddcbf64727b2b260ada0fe9123999cf8",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-arithmetic_mean",
+    "file": "literal_or_model.csv",
+    "private_path": "rocbert-complement-consensus-v1/arithmetic_mean/exact-score-sweep-v2/literal_or_model.csv",
+    "bytes": 2205944,
+    "sha256": "ef44d5221bfca484d1673e898152848669733c7b86a2bcc7030181c32f1783e7",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-geometric_mean",
+    "file": "model.csv",
+    "private_path": "rocbert-complement-consensus-v1/geometric_mean/exact-score-sweep-v2/model.csv",
+    "bytes": 2229353,
+    "sha256": "5433062683d503ec6d1ad7ac7dbdbafdf85ae9e801871b215020ed608fdbea46",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-geometric_mean",
+    "file": "literal_or_model.csv",
+    "private_path": "rocbert-complement-consensus-v1/geometric_mean/exact-score-sweep-v2/literal_or_model.csv",
+    "bytes": 2200641,
+    "sha256": "ba3cb0a43570791dd10f955c0e99b14416472936ae4103edd26ccfc0bfbbd0e3",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-minimum",
+    "file": "model.csv",
+    "private_path": "rocbert-complement-consensus-v1/minimum/exact-score-sweep-v2/model.csv",
+    "bytes": 1193321,
+    "sha256": "16f14534b52ebcd31d47cbf67f9ac8dcf51396e9e9f307ace36ccd69fb5451f9",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-minimum",
+    "file": "literal_or_model.csv",
+    "private_path": "rocbert-complement-consensus-v1/minimum/exact-score-sweep-v2/literal_or_model.csv",
+    "bytes": 1183968,
+    "sha256": "181c2412a89468ab23d5a701d62e0b6fbeccda5375d507c5f7b5dfb1b4726b1a",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-maximum",
+    "file": "model.csv",
+    "private_path": "rocbert-complement-consensus-v1/maximum/exact-score-sweep-v2/model.csv",
+    "bytes": 1398722,
+    "sha256": "799cbee4dffa257f836802a877bc272ab7bc2b0c3b7cfa002d360915cbc5b850",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  },
+  {
+    "configuration": "consensus-maximum",
+    "file": "literal_or_model.csv",
+    "private_path": "rocbert-complement-consensus-v1/maximum/exact-score-sweep-v2/literal_or_model.csv",
+    "bytes": 1372099,
+    "sha256": "b0a2476cd2e47472ae83fa8347ff39ddb8acb22ab634b4ed7b56c1b45ce70a4c",
+    "reproduction": "deterministic exact-score auditor and complete published source scores"
+  }
+]

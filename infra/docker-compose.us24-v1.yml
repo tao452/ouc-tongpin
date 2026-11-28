@@ -1,0 +1,5 @@
+# Historical 46-rule diagnostic only; ordinary startup uses words.json (5 rules).
+services:
+  algo:
+    environment:
+      MODERATION_DICTIONARY_PATH: /app/app/data/moderation-v1.json

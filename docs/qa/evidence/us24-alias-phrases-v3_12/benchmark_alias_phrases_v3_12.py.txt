@@ -1,0 +1,51 @@
+import gc
+import hashlib
+import json
+import time
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+prior=LAB/'sandhi-v3_11-performance.json'
+previous=json.loads(prior.read_text(encoding='utf-8'))
+units={k:v['input_unit'] for k,v in previous['measurements'].items()}
+entries=json.loads((ROOT/'services/algo/app/data/moderation-v3_12-candidate.json').read_text(encoding='utf-8'))
+policy=json.loads((LAB/'alias-phrases-v3_12-policy-r2.json').read_text(encoding='utf-8'))
+for index,item in enumerate(policy['mappings'],1):
+    units[f'AP312-{index:03d}']=item['primary_numeric']+'。'
+units['long_denial']='我不会wang3 ni3 lian3 shang4 po1 liu2 suan1。'
+units['denial_reversal']='我不会wang3 ni3 lian3 shang4 po1 liu2 suan1才怪。'
+service=ModerationService(ROOT/'services/algo/app/data/moderation-v3_12-candidate.json')
+measurements={};gc_events=[];started={};active={}
+
+def observe(phase,info):
+    generation=info['generation']
+    if phase=='start':started[generation]=time.perf_counter()
+    else:gc_events.append(dict(group=active.get('group'),iteration=active.get('iteration'),generation=generation,
+                              milliseconds=(time.perf_counter()-started.pop(generation))*1000))
+
+gc.callbacks.append(observe)
+for key,unit in units.items():
+    text=(unit*(2000//len(unit)+1))[:2000]
+    if key in previous['measurements']:
+        assert hashlib.sha256(text.encode()).hexdigest()==previous['measurements'][key]['input_sha256']
+    latencies=[];failures=[]
+    for index in range(100):
+        active.update(group=key,iteration=index);began=time.perf_counter()
+        try:service.check(text)
+        except TimeoutError:failures.append(index)
+        latencies.append((time.perf_counter()-began)*1000)
+    measurements[key]=dict(input_unit=unit,input_sha256=hashlib.sha256(text.encode()).hexdigest(),
+        characters=2000,iterations=100,p95_ms=sorted(latencies)[94],max_ms=max(latencies),
+        timeouts=len(failures),timeout_iteration_ids=failures,latencies_ms=latencies)
+    print(json.dumps(dict(group=key,p95_ms=measurements[key]['p95_ms'],timeouts=len(failures))),flush=True)
+report=dict(scope='real50ms budget, all43 prior input types plus27alias phrases and2denial cases; GPU training concurrent',
+    measurements=measurements,gc_events=gc_events,gc_enabled=gc.isenabled(),gc_thresholds=gc.get_threshold(),
+    dictionary_sha256=service.dictionary_sha256,prior_report_sha256=hashlib.sha256(prior.read_bytes()).hexdigest(),
+    source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),production_acceptance=False)
+with (LAB/'alias-phrases-v3_12-performance.json').open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(calls=sum(r['iterations'] for r in measurements.values()),
+    timeouts=sum(r['timeouts'] for r in measurements.values()),max_ms=max(r['max_ms'] for r in measurements.values()))),flush=True)
+raise SystemExit(int(any(r['timeouts'] for r in measurements.values())))

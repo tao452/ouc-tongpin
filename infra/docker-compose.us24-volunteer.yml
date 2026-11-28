@@ -1,0 +1,4 @@
+services:
+  algo:
+    environment:
+      MODERATION_DICTIONARY_PATH: /app/app/data/moderation-v3_8-candidate.json

@@ -1,0 +1,27 @@
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, 'services/algo/scripts')
+from evaluate_variant import run
+
+root = Path.cwd()
+public = root / 'docs/qa/evidence/us24-recall-20261124'
+dictionary = root / 'services/algo/app/data/moderation-v3_8-candidate.json'
+for version in ['v2', 'v3', 'v3_3', 'v3_4', 'v3_5', 'v3_7']:
+    dataset = root / f'docs/qa/data/us24-development.{version}.jsonl'
+    a = run(dataset, dictionary, public / f'medical-v3_8-{version}-function.json')
+    b = run(dataset, dictionary, public / f'medical-v3_8-{version}-http.json',
+            'http://127.0.0.1:19891')
+    for field in ['count','high_blocking','any_level','by_category','by_kind',
+                  'mapping_failure_ids','decision_failure_ids','hit_levels']:
+        assert a['candidate'][field] == b['candidate'][field], (version,field)
+    print(version, len(a['candidate']['decision_failure_ids']), 'function_HTTP_identical',flush=True)
+sources = [('PCR', root / 'qa-private/us24-m1/PCR-ToxiCN.json',
+            root / 'qa-private/us24-recall-20261124/pcr-development.manifest.json'),
+           ('ToxiCN', root / 'qa-private/us24-recall-20261124/toxcn.csv',
+            root / 'docs/qa/data/external/toxicn-v3.sealed.json')]
+for name, dataset, manifest in sources:
+    result = run(dataset, dictionary, public / f'medical-v3_8-{name}-historical.json',
+                 historical_manifest=manifest)
+    print(name, result['candidate']['any_level']['confusion_matrix'],flush=True)

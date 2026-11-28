@@ -1,0 +1,102 @@
+"""Experimental syllable features with exact Latin boundaries; no service integration."""
+import re
+
+from rocbert_encoding_v8 import RobustEncoder
+
+SYLLABLE = re.compile(r'(?<![a-z0-9_])([a-z]+)([1-5]?)(?![a-z0-9_])')
+GAP = re.compile(r"(?:\s|[,.'·-]){1,8}\Z")
+IDENTIFIER = set('abcdefghijklmnopqrstuvwxyz0123456789_/@:+-.')
+ENGLISH = set('a an as at be by can do for go he her him his how i if in is it may me my no not of on or our she so the their them these they this to up us we what when where who why will with you your day man men'.split())
+
+
+class SyllableEncoder(RobustEncoder):
+    def latin_edits(self, text):
+        assert len(text) <= 2000
+        groups = []
+        current = []
+        previous_end = None
+        for match in SYLLABLE.finditer(text):
+            sound = match.group(1)
+            qualifies = sound in self.sound_ids and sound not in ENGLISH
+            connected = (previous_end is not None and
+                         GAP.fullmatch(text[previous_end:match.start()]) is not None)
+            if not qualifies or not connected or len(current) == 16:
+                if current:
+                    groups.append(current)
+                current = []
+            if qualifies:
+                current.append((match.start(), match.end(), self.sound_ids[sound]))
+            previous_end = match.end() if qualifies else None
+        if current:
+            groups.append(current)
+        edits = []
+        for group in groups:
+            left, right = group[0][0], group[-1][1]
+            if len(group) < 2:
+                continue
+            if left and text[left - 1] in IDENTIFIER:
+                continue
+            if right < len(text) and text[right] in IDENTIFIER:
+                continue
+            edits.extend(group)
+        assert len(edits) == len({(left, right) for left, right, _ in edits})
+        return edits
+
+    def encode(self, text):
+        original, audit = super().encode(text)
+        edits = self.latin_edits(text)
+        audit.update(latin_syllable_features=len(edits), latin_wordpiece_merges=0)
+        if not edits:
+            return original, audit
+        body = {}
+        for window in original:
+            left, right = window['token_span']
+            for offset, index in enumerate(range(left, right), 1):
+                item = tuple(window[key][offset] for key in
+                             ['input_ids', 'input_shape_ids', 'input_pronunciation_ids'])
+                assert index not in body or body[index] == item
+                body[index] = item
+        assert set(body) == set(range(audit['wordpiece_tokens']))
+        encoded = self.fast(text, add_special_tokens=False, return_offsets_mapping=True,
+                            return_attention_mask=False, return_token_type_ids=False,
+                            truncation=False, verbose=False)
+        assert encoded['input_ids'] == [body[i][0] for i in range(len(body))]
+        offsets = encoded['offset_mapping']
+        output = []
+        cursor = 0
+        unknown = (self.official.unk_token_id, self.shape[self.official.unk_token])
+        for left, right, pronunciation in edits:
+            while cursor < len(body) and offsets[cursor][1] <= left:
+                output.append(body[cursor])
+                cursor += 1
+            assert cursor < len(body) and offsets[cursor][0] == left
+            count = 0
+            while cursor < len(body) and offsets[cursor][0] < right:
+                assert offsets[cursor][0] >= left and offsets[cursor][1] <= right
+                count += 1
+                cursor += 1
+            assert count and offsets[cursor - 1][1] == right
+            output.append((*unknown, pronunciation))
+            audit['latin_wordpiece_merges'] += count - 1
+        output.extend(body[i] for i in range(cursor, len(body)))
+        assert len(output) == audit['wordpiece_tokens'] - audit['latin_wordpiece_merges']
+        windows = []
+        covered = set()
+        for start in range(0, max(1, len(output)), 382):
+            end = min(start + 510, len(output))
+            window = dict(token_span=[start, end])
+            for column, key in enumerate(['input_ids', 'input_shape_ids', 'input_pronunciation_ids']):
+                if column == 0:
+                    prefix, suffix = self.official.cls_token_id, self.official.sep_token_id
+                else:
+                    lookup = self.shape if column == 1 else self.pronunciation
+                    prefix = suffix = lookup[self.official.unk_token]
+                window[key] = [prefix] + [row[column] for row in output[start:end]] + [suffix]
+                assert len(window[key]) <= 512
+            windows.append(window)
+            covered.update(range(start, end))
+            if end == len(output):
+                break
+        assert covered == set(range(len(output)))
+        audit['encoded_body_tokens'] = len(output)
+        return windows, audit

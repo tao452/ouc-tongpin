@@ -1,0 +1,34 @@
+{
+  "version": "3.1.0-rc.1",
+  "status": "PENDING_M1",
+  "dictionary": "moderation-v3_1-candidate.json",
+  "sha256": "6d716075bea275a65cb7bc73477c2f9a3d902ad8ba73cfe0d0c22002fc7586b3",
+  "entry_count": 120,
+  "new_entry_count": 50,
+  "level_counts": {
+    "HIGH": 43,
+    "MEDIUM": 72,
+    "LOW": 5
+  },
+  "origins": {
+    "baseline5": 5,
+    "pr83_additions": 41,
+    "v2_additions": 24,
+    "v3_additions": 50
+  },
+  "default_dictionary": "words.json",
+  "previous70_sha256": "f60881fbd4a0692bcb65e41f6299ce6e77c4a842d05bacfdbdc053e149983fdd",
+  "decision_policy": {
+    "HIGH": "block",
+    "MEDIUM": "allow",
+    "LOW": "allow"
+  },
+  "review_status": "PENDING",
+  "development_sources": [
+    "PCR-ToxiCN500 historical errors",
+    "M6 synthetic development negatives"
+  ],
+  "scope": "Literal+bounded target grammar; not W9/general semantic inference",
+  "previous_v3_sha256": "301da843f88be51759a968772275668c7f7337ab54ab9ed2e022c650e3e16858",
+  "change": "US24-023 exact local self-help phrase exemption; other attacks remain matched"
+}

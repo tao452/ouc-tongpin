@@ -1,0 +1,86 @@
+{
+  "head": "037867484b6b1aac69aea76f923745bd5ea5764c",
+  "run": 45492950766,
+  "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45492950766",
+  "jobs": [
+    {
+      "id": 138795798986,
+      "name": "changes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138795799455,
+      "name": "guard",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138795799550,
+      "name": "w1-poc",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138795799703,
+      "name": "stack / Deploy and verify temporary test environment",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138795919170,
+      "name": "miniprogram",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138795919179,
+      "name": "algo",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138795919365,
+      "name": "admin-web",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138795919432,
+      "name": "api-server",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138798563878,
+      "name": "W3 delivery evidence",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138798760560,
+      "name": "quality",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "linux_python": {
+    "passed": 653,
+    "skipped": 0,
+    "failed": 0,
+    "coverage_percent": 98.14
+  },
+  "ruff": "PASS",
+  "java": "PASS",
+  "full_docker_stack": "PASS",
+  "new_unicode_http": {
+    "count": 314,
+    "tp": 122,
+    "fp": 0,
+    "fn": 0,
+    "tn": 192,
+    "artifact_name": "us24-v3_9-unicode-http-evidence"
+  },
+  "production_acceptance": false,
+  "M1_review": "PENDING"
+}

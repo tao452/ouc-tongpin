@@ -1,0 +1,9 @@
+{
+  "scope": "input preparation failed before model inference",
+  "error": "TimeoutError from repeated literal.check",
+  "accuracy": "NOT_RUN",
+  "excluded_rows": 0,
+  "failed_source_sha256": "229c462b5437fcb09e856b4caf4460616d9a89b570cb2d1382b6d87aa5a78bb9",
+  "log_sha256": "9ec5f406af5082ec81be72187ba52055cad19c65da2970b7b3e983eca6a3d116",
+  "correction": "reuse existing full3258 literal flags after exact current engine and dictionary SHA validation; encode and predict all3258"
+}

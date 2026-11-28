@@ -1,0 +1,109 @@
+import csv
+import hashlib
+import json
+import sys
+from collections import Counter, defaultdict
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+
+from phonetic_encoding import PhoneticEncoder
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+sys.path.insert(0, str(ROOT / 'services/algo/scripts'))
+from app.services.normalization import canonicalize, normalize
+from evaluate_recall import source_sha
+
+sha = lambda data: hashlib.sha256(data).hexdigest()
+torch.set_num_threads(4)
+original = torch.load(LAB / 'phonetic-training-v1.features.pt', map_location='cpu', weights_only=True)
+evaluation = torch.load(LAB / 'phonetic-training-v1-context36/features.pt', map_location='cpu', weights_only=True)
+assert len(evaluation) == 3258
+assert len({r['id'] for r in evaluation}) == 3258
+evaluation_keys = {r['normalized_sha256'] for r in evaluation}
+cold_file = LAB / 'cold-official-train.csv'
+assert sha(cold_file.read_bytes()) == '16ca7955bdcaf90f5d8ac39e51eb3eda15320caa1e730ed45cb5e8ca8cd0d5e8'
+history_file = LAB / 'cold-test.csv'
+assert sha(history_file.read_bytes()) == 'b06d31481f0d558b6dc8140408938abe8dba8083cd9976b4ba8f5c837fbe78ed'
+history = list(csv.DictReader(history_file.open(encoding='utf-8-sig', newline='')))
+assert len(history) == 5323
+history_keys = {sha(normalize(row['TEXT']).encode()) for row in history}
+excluded = []
+training = []
+
+
+def exclusions(item):
+    reasons = []
+    if item['normalized_sha256'] in evaluation_keys:
+        reasons.append('normalized_overlap_with_3258_development_evaluation')
+    if item['normalized_sha256'] in history_keys:
+        reasons.append('normalized_overlap_with_5323_historical_COLD_test')
+    if reasons:
+        excluded.append({k: v for k, v in item.items() if k != 'windows'} | {'reasons': reasons})
+    return reasons
+
+
+for row in original['records']:
+    if row['cohort'] not in {'training', 'training_excluded_overlap'}:
+        continue
+    item = dict(row, training_source='ToxiCN', cohort='training')
+    if not exclusions(item):
+        training.append(item)
+
+encoder = PhoneticEncoder(LAB / 'chinesebert-model')
+cold_rows = list(csv.DictReader(cold_file.open(encoding='utf-8-sig', newline='')))
+assert len(cold_rows) == 25726 and {row['split'] for row in cold_rows} == {'train'}
+for number, row in enumerate(cold_rows, 1):
+    raw = row['TEXT']
+    assert raw.strip() and len(raw) <= 2000 and row['label'] in {'0', '1'}
+    transformed = canonicalize(raw)
+    item = dict(id=f'COLD-TRAIN-{number:05d}', label=int(row['label']), cohort='training',
+                training_source='COLD_official_train', category=row['topic'],
+                source_text_sha256=sha(raw.encode()), normalized_sha256=sha(normalize(raw).encode()),
+                transformed_sha256=sha(transformed.encode()), literal_any=False)
+    if not exclusions(item):
+        item['windows'] = encoder.encode(transformed)
+        training.append(item)
+    if number % 1000 == 0:
+        print(f'Prepared COLD training {number}/{len(cold_rows)}', flush=True)
+
+groups = defaultdict(set)
+for row in training:
+    groups[row['normalized_sha256']].add(row['label'])
+duplicate_groups = sum(n > 1 for n in Counter(r['normalized_sha256'] for r in training).values())
+conflicting_groups = sum(len(labels) > 1 for labels in groups.values())
+assert not ({row['normalized_sha256'] for row in training} & (evaluation_keys | history_keys))
+assert len({row['id'] for row in [*training, *evaluation]}) == len(training) + len(evaluation)
+policy = dict(created_at_utc=datetime.now(UTC).isoformat(),
+    scope='development mixed-domain training; not new independent evaluation',
+    train_sources=dict(ToxiCN=sha((LAB/'toxcn.csv').read_bytes()), COLD_train=sha(cold_file.read_bytes())),
+    previous_features_sha256=sha((LAB/'phonetic-training-v1.features.pt').read_bytes()),
+    evaluation_features_sha256=sha((LAB/'phonetic-training-v1-context36/features.pt').read_bytes()),
+    historical_test_sha256=sha(history_file.read_bytes()), historical_test_role='training-overlap exclusion only; not model selection',
+    seed=20261124, epochs=2, learning_rate=1e-5, batch_size=8, accumulate_steps=4,
+    warm_start='phonetic-training-v1/epoch-3/model.safetensors; best constrained minimum recall of3 development checkpoints',
+    warm_start_sha256=sha((LAB/'phonetic-training-v1/epoch-3/model.safetensors').read_bytes()),
+    training_preprocess='canonical raw text; native labels unchanged; no evaluation gradient or synthetic augmentation',
+    evaluation_preprocess='v3.6 finite context mask; all3258 evaluation IDs/labels/windows retained unchanged',
+    candidate_thresholds=[i/1000 for i in range(1,1000)],
+    training_counts=dict(Counter(row['training_source'] for row in training)),
+    training_labels=dict(Counter(str(row['label']) for row in training)),
+    evaluation_counts=dict(Counter(row['cohort'] for row in evaluation)),
+    training_excluded_overlap=len(excluded), excluded_evaluation_rows=0,
+    duplicate_training_normalized_groups=duplicate_groups,
+    conflicting_training_native_label_groups=conflicting_groups,
+    duplicate_policy='retain all eligible source training rows and native labels; report duplicates and conflicts',
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__), LAB/'phonetic_encoding.py']},
+    engine_sha256={p.relative_to(ROOT).as_posix():source_sha(p) for p in (ROOT/'services/algo/app/services').glob('*.py')},
+    COLD_dev_fetched=False, production_acceptance=False)
+with (LAB/'phonetic-training-v2.policy.json').open('x',encoding='utf-8') as handle:
+    json.dump(policy,handle,ensure_ascii=False,indent=2)
+with (LAB/'phonetic-training-v2.features.pt').open('xb') as handle:
+    torch.save(dict(policy=policy, records=[*training,*evaluation]),handle)
+with (LAB/'phonetic-training-v2.index.json').open('x',encoding='utf-8') as handle:
+    json.dump(dict(policy=policy, rows=[{**{k:v for k,v in row.items() if k!='windows'},
+                  'windows':len(row['windows']), 'window_lengths':[len(w['input_ids']) for w in row['windows']]}
+                 for row in [*training,*evaluation]], training_exclusions=excluded),handle,ensure_ascii=False,indent=2)
+print(json.dumps(policy,ensure_ascii=False),flush=True)

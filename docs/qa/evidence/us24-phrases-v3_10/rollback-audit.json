@@ -1,0 +1,29 @@
+{
+  "scope": "explicit old dictionary rollback files; exact Git bytes",
+  "files": [
+    {
+      "file": "words.json",
+      "source_commit": "31120a3559a9e829896d3c50a6441ff660055ea7",
+      "sha256": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v1.json",
+      "source_commit": "31120a3559a9e829896d3c50a6441ff660055ea7",
+      "sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_8-candidate.json",
+      "source_commit": "31120a3559a9e829896d3c50a6441ff660055ea7",
+      "sha256": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_9-candidate.json",
+      "source_commit": "db6acb98b4b7ed0e186726c5054dd0eb537245b9",
+      "sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+      "byte_identical": true
+    }
+  ]
+}

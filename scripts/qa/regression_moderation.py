@@ -51,7 +51,7 @@ def register(runner, stack):
     runner.run("S1-063", lambda: check("傻*\u200b逼", False, "HIGH"))
     runner.run("S1-064", lambda: check(" ", None, expected=422))
     runner.run("S1-065", lambda: check("好" * 2000, True))
-    runner.run("S1-066", lambda: check("好" * 2001, None, expected=422))
+    runner.run("S1-066", lambda: check("好" * 2001, None, expected=400))
 
     def malformed():
         status, body = client.request(route, raw=b"{")

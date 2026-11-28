@@ -1,0 +1,72 @@
+import gc
+import hashlib
+import json
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, 'services/algo')
+from app.services.moderation import ModerationService
+
+dictionary = Path('services/algo/app/data/moderation-v3_9-candidate.json')
+service = ModerationService(dictionary)
+attack = "wo3........yao4........yi1........qiang1........beng1........le5........ni3"
+units = {
+    "registered_visual_alias": "ѕhаbі ",
+    "visual_identifier": "xѕhаbіz ",
+    "greek_pinyin_identifier": "πshabi ",
+    "greek_numeric_identifier": "nong4si3ni3π ",
+    "registered_visual_report": "举报：‘ѕhаbі’请处理。",
+    "volunteer_phrases": "室友是智障人士服务中心的志愿者。",
+    "new_hanzi_variants": "你个脑摊。",
+    "registered_long_pinyin_report": "举报：'" + attack + "'请处理。",
+    "unknown_long_quote_payload": "举报：'" + attack + " abcdefghijklmnopqrstuvwxyz'请处理。",
+    "ascii_single_quote": "举报：'杀了你'请处理。",
+    "curly_single_quote": "举报：‘泼你硫酸’请处理。",
+    'new_reversal_report': '举报：“我不会泼你硫酸才怪”请处理。',
+    'new_numeric_attack': 'po1 ni3 liu2 suan1 ',
+    'campus': '今天去图书馆复习数学，晚上到食堂吃饭。',
+    'targets': '你就是鲨币，你是sb，你是煞币。',
+    'targeted_quotations': '举报：“你就是鲨币”请处理。',
+    'numeric_quotations': '举报：“你就是sha3 bi1”请处理。',
+    'self_help': '我想去死，请帮帮我。',
+    'whitelist_boundary': '你去死，海边是好地方。',
+    'numeric_near_misses': 'sha1bi sha1 bi ca0 nima sha33bi1 foo_sha3bi1 ',
+    'full_phrase_quotations': '举报：“ni ge nao tan”请处理。',
+    'full_numeric_quotations': '举报：“ni3 ge4 nao3 tan1”请处理。',
+    'long_full_phrase': 'zhu4 ni3 quan2 jia1 si3 guang1 ',
+}
+units=dict(sorted(units.items(),key=lambda item:item[0]!='targeted_quotations'))
+events=[]
+active={}
+started_collections={}
+def track_gc(phase, info):
+    generation=info['generation']
+    if phase=='start':started_collections[generation]=time.perf_counter()
+    else:events.append(dict(group=active.get('group'),iteration=active.get('iteration'),generation=generation,
+        duration_ms=(time.perf_counter()-started_collections.pop(generation))*1000,collected=info['collected']))
+gc.callbacks.append(track_gc)
+measurements = {}
+for key, unit in units.items():
+    text = (unit * (2000 // len(unit) + 1))[:2000]
+    timings, errors = [], []
+    for index in range(100):
+        active.update(group=key,iteration=index)
+        started = time.perf_counter()
+        try:
+            service.check(text)
+        except TimeoutError:
+            errors.append(index)
+        timings.append((time.perf_counter() - started) * 1000)
+    measurements[key] = dict(characters=len(text), input_unit=unit,
+        input_sha256=hashlib.sha256(text.encode()).hexdigest(), iterations=100,
+        p95_ms=sorted(timings)[94], max_ms=max(timings), timeouts=len(errors),
+        timeout_iteration_ids=errors, latencies_ms=timings)
+    print(key, measurements[key]['p95_ms'], len(errors), flush=True)
+output = Path('docs/qa/evidence/us24-recall-20261124/unicode-v3_9-performance-r3-worst-first.json')
+with output.open('x', encoding='utf-8') as handle:
+    json.dump(dict(dictionary_sha256=service.dictionary_sha256,
+        source_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+        scope='allocation/dedup optimization; same2300 inputs and GC observer; GPU training active; GC settings unchanged; no concurrent corpus QA; highest previous p95 group first; all inputs retained',gc_events=events,
+        measurements=measurements), handle, ensure_ascii=False, indent=2)
+raise SystemExit(int(any(r['timeouts'] for r in measurements.values())))

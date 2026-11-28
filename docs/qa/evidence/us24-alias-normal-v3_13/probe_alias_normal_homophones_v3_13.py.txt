@@ -1,0 +1,27 @@
+import hashlib
+import json
+from pathlib import Path
+
+from app.services.moderation import ModerationService
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_12-candidate.json';service=ModerationService(path)
+texts=[
+    '我要打你的电话','我要打你电话','再说我就打你电话','再说我就打你的电话',
+    'ni zhe chu sheng ri qi zen me tian','ni jiu shi chu sheng ti xing yi xia ye hao',
+    'ni zhe za zhong shui dao zhang de hen hao','你这杂种水稻长得很好','你这个杂种水稻长得很好',
+    'ni zhe biao zi hao tai xiao','你这表字号太小','ni zhe gou dong xi de gong ju zen me yong',
+    'wo yao da ni de dian hua','wo yao da ni dian hua','zai shuo wo jiu da ni dian hua',
+    'zai shuo wo jiu da ni de dian hua','zai shuo wo jiu da ni zhe dao ti',
+    'wo yao da ni wu mo xing','da duan ni tui li guo cheng','gei ni yi dao cai',
+    'gei ni yi dao ti','gei ni yi dao shu xue ti','wo jiu dong shou da ni fa lai de dai ma',
+    '我就动手打你发来的代码','ni zhe ge za zhong shui dao zhang de hen hao',
+]
+rows=[dict(id=f'AP313-N-{i:03d}',text=text,expected_offensive=False,response=service.check(text).model_dump()) for i,text in enumerate(texts,1)]
+report=dict(scope='new synthetic normal homophone probes, before any exemption adjustment; not independent evaluation',
+    rows=rows,false_positives=[r['id'] for r in rows if r['response']['hits']],
+    source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),dictionary_sha256=service.dictionary_sha256,
+    M1_review='PENDING',production_acceptance=False,COLD_dev_fetched=False)
+with (LAB/'alias-normal-homophones-v3_13-first-probe.json').open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=len(rows),false_positives=len(report['false_positives'])),ensure_ascii=False),flush=True)

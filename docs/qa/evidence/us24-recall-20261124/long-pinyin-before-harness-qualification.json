@@ -1,0 +1,7 @@
+{
+  "invalid_evidence": "long-pinyin-before-function.json",
+  "sha256": "3718bbdf693dd0ea610f19f817c70832075251818e149bbf11d8d740a1fa51df",
+  "reason": "evaluate_candidate inserted current app root before snapshot module was imported; matrix is not an old-engine result",
+  "disposition": "retained private; not used as before-result",
+  "replacement": "long-pinyin-before-function-pinned.json"
+}

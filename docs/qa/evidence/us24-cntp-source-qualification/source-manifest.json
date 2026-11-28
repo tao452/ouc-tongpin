@@ -1,0 +1,66 @@
+{
+  "policy": {
+    "created_at_utc": "2026-11-24T23:05:57.029528+00:00",
+    "repo": "thomasyyyoung/ToxiBenchCN",
+    "revision": "b1e6922487785aec59841bfb909bf40326174373",
+    "paper": "https://arxiv.org/html/2505.24341v1",
+    "parent_provenance": "paper4.1: baseToxi_CN,2533toxic2696non-toxic; no COLD derivative stated",
+    "scope": "parent mapping qualification only; not training or fresh independent evaluation",
+    "admission": "accept for later training only after explicit parent maps into existing training partition; retain ALL existing evaluation rows",
+    "redistribution": "raw corpora remain private; preserve parent ToxiCN CC BY-NC-ND4.0 and repository license fingerprints",
+    "COLD_dev_fetched": false,
+    "accuracy": "NOT_RUN",
+    "production_acceptance": false
+  },
+  "files": [
+    {
+      "file": "toxic_base.json",
+      "upstream_path": "CNTP_dataset/toxic_base.json",
+      "bytes": 490933,
+      "git_blob_sha1": "861a08bf50a4aebb528fb45c7b68a935786e998e",
+      "sha256": "99071d6d3d8da7be1da2e5c9a5d87ce5f8f238af765beb37960218a74401d074",
+      "root_type": "list",
+      "rows": 2533,
+      "first_row_type": "dict",
+      "field_names": [
+        "sentence_id",
+        "original_text",
+        "is_toxic",
+        "toxic_entity"
+      ]
+    },
+    {
+      "file": "non_toxic_base.json",
+      "upstream_path": "CNTP_dataset/non_toxic_base.json",
+      "bytes": 364607,
+      "git_blob_sha1": "8543b162b5a571e315b5a499ad1ff0cd3722f2d0",
+      "sha256": "9283e4087c8614b4f928e2e8b35f7bf13700c63da0570f2395aba10cd7af15dc",
+      "root_type": "list",
+      "rows": 2696,
+      "first_row_type": "dict",
+      "field_names": [
+        "sentence_id",
+        "original_text",
+        "is_toxic"
+      ]
+    },
+    {
+      "file": "homo_toxi_transform.json",
+      "upstream_path": "CNTP_dataset/perturbed_data/homo_toxi_transform.json",
+      "bytes": 969880,
+      "git_blob_sha1": "5542f148f55ce8434a95b7340ad42d4652999eeb",
+      "sha256": "9db4d3fe71846eefca399c615fd6cc18bbbce111f99de88243cd94bb5c53f623",
+      "root_type": "dict",
+      "rows": 1,
+      "first_row_type": "list"
+    },
+    {
+      "file": "LICENSE",
+      "upstream_path": "LICENSE",
+      "bytes": 1070,
+      "git_blob_sha1": "4b10005c9b8c4f235fcd6c6fcfcf91d327f74ff7",
+      "sha256": "9ed8a1255e8e8b559d64e328aa90ce063a230d03d2b3746ead348e25b36e9dda",
+      "declared_license": "MIT"
+    }
+  ]
+}

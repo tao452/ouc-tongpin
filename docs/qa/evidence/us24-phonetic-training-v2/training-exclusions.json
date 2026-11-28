@@ -1,0 +1,632 @@
+[
+  {
+    "id": "COLD-TRAIN-00607",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "dc688aeea1b9632973adca127c5f84410684c6ea40ca1c99cc8422da55eba725",
+    "normalized_sha256": "8bbf5a153a96a046c4e09ade0e4c1bcc70329142b2682807bf82a9ff8b2e7d63",
+    "transformed_sha256": "1d84b57ff518542eafd30143f096d62f02fb164374207197b6dbfecb8b5da61a",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-00807",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "ea0305943bc9face40b6568c77c789df4e1554815a2242f0b90a57fbecaa896f",
+    "normalized_sha256": "ae30a24c1f5a78d1a48a66ab3d055c889e146d8c5e4a7a60d419707b49dca40d",
+    "transformed_sha256": "cfe92846c5d605cad499c15e6c74328efc468c346f87952df148e8df80081d5a",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-02014",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "a1092e0c01999ad4ff32d30e2f8cee59c9515d68cd918ca05c4ec739e20ce766",
+    "normalized_sha256": "059df608a305bea45756c163a2cae0727731c40ee325de4448a8367762526c99",
+    "transformed_sha256": "f9a3c56b46f8d949a5fa9d5f183e80679cce91b55a9512665fa668cb6406d00d",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-02315",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "gender",
+    "source_text_sha256": "47c2f584fafc70db3ee2d27aefbefd059397e18dea9bb560484ede4216feedaf",
+    "normalized_sha256": "47b02cae389130111d39a380f22c60e03e5a367a004638d9d953a1222cd8689e",
+    "transformed_sha256": "02dc770b63097e8c27832774feca55059afe38647f84aca6ef1ed6168884403b",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-02516",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "ed2939fd89380b42333bcf41a2ace496386fbfa6aec7a86c52313e54601b4a77",
+    "normalized_sha256": "ed2939fd89380b42333bcf41a2ace496386fbfa6aec7a86c52313e54601b4a77",
+    "transformed_sha256": "ed2939fd89380b42333bcf41a2ace496386fbfa6aec7a86c52313e54601b4a77",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-03365",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "b92180c3063077579ae96c4f491a751792362e8ffe85b3f06337b3b0d1b49f0c",
+    "normalized_sha256": "e62238b277571850c0b5e70c301e60c9e20a99f5ba97526877f9af7e51df0e00",
+    "transformed_sha256": "e05486354a2d9541f5cdfe629fd1ab7c8e0ce0575d9e543e55e08165812c5d6a",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-03606",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "8faeb9221688bc1f4bde018101a24fa5fac10c6e8ffc0c9b86ebfa2d91facfa3",
+    "normalized_sha256": "7e55c323b70dc75e898a30a83893c64972fa04b97ffccce568294d0126b5a2eb",
+    "transformed_sha256": "bd5dc9ceeb7cf1dd6fe6d898a1b876384dc2fafe152cb72e8f66400df1116abe",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-04530",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "3855d1fb6663c09f0a0c38d9fc0bc3a6cf70420f4deb3bb8fe18e8b4c090ab8a",
+    "normalized_sha256": "3855d1fb6663c09f0a0c38d9fc0bc3a6cf70420f4deb3bb8fe18e8b4c090ab8a",
+    "transformed_sha256": "3855d1fb6663c09f0a0c38d9fc0bc3a6cf70420f4deb3bb8fe18e8b4c090ab8a",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-05391",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "gender",
+    "source_text_sha256": "75dfac340e9b7c7b107a4b60a1df130e73bcb3642932dd044f5b5ecdae3a1182",
+    "normalized_sha256": "d2a909863c01007034ce9b15adb33222b845c40d10498e47d3a6be6bf36b5abf",
+    "transformed_sha256": "1037c157beb8e2880865f1fa2b84ee383580cbd0d36d05538375038abf46f988",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-05420",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "453d65eb6bad19458006efce92794f5310e5bdb8033cd33a7bf80e04d560b7c1",
+    "normalized_sha256": "aa716969fe9b73d0131dee4be97178467935eccb5f7a3499d1c41b63485f74b0",
+    "transformed_sha256": "453d65eb6bad19458006efce92794f5310e5bdb8033cd33a7bf80e04d560b7c1",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-05821",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "3b7296e05d0049fb6530b74e26ac21a68d950da6185ef7c7e7742b68cadfc4c9",
+    "normalized_sha256": "3b7296e05d0049fb6530b74e26ac21a68d950da6185ef7c7e7742b68cadfc4c9",
+    "transformed_sha256": "3b7296e05d0049fb6530b74e26ac21a68d950da6185ef7c7e7742b68cadfc4c9",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-05876",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "d183f917bab732fe0f812096d98dc321b35bc3b257f62f5c6f66a445b8546574",
+    "normalized_sha256": "1f4db562690436501c541bc58ec11af1a287fde2f2be85b51d2ade5c61557cd0",
+    "transformed_sha256": "09876e79bddbd238efc5fd876cd0abcb0677d2c44b9c752aaadefef9d1b30d7a",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-06054",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "3b61ac85bdbd73d6b4a4b59db75e28e59009ca683f83afd155f5649bbacc834e",
+    "normalized_sha256": "34ddd63cf9a9e6ce5ab86fdad964c49004b0fcb41ff9a967109d6cc8198b6a0f",
+    "transformed_sha256": "4445965a3e7d27361f7a388a610b9104712e8b9c97036862b7d796c93ec90925",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-06178",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "gender",
+    "source_text_sha256": "26de08f1eb53599e80dbbd41d19ace84a2a17126d6a94764bcf1d4d4e3c30dde",
+    "normalized_sha256": "ed704ae284131c2cd47749c5f8661b42fc1c84f8c1cde5b5c6ecc4ed378ac6d3",
+    "transformed_sha256": "26de08f1eb53599e80dbbd41d19ace84a2a17126d6a94764bcf1d4d4e3c30dde",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-06318",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "9adb66b4f4f226a83cf5513ef7d17bc8a8e54c3cda70f8618e2ee9f4ff986c13",
+    "normalized_sha256": "a41bf5b8c37f18a8a2b88585220e1f6198b9aae0cd60306381135a50d59d55c7",
+    "transformed_sha256": "acae7f3792f8524d2f16074241da981d3e722dc8b27c90b66a96e74955c84f61",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-06818",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "cc89f7a22bd2706f0583da400b4392063ad607862c98b605d963398a8c836838",
+    "normalized_sha256": "9897d2f8b77f5fadb8eddb8444045eb03bc55f73a272b9c09ca966e6cae756b5",
+    "transformed_sha256": "3354ae485e2adeabd35c56732e5f90778de468d388d50ef4237b8fb8d37e5e52",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-07140",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "09e953dda290422a9c874c35c60c0dff3a2733ecc218f7cbc4db0ccd197ffe01",
+    "normalized_sha256": "e798eff098248946257e925479683505ce53a69579155cd54a263b74e2a8385b",
+    "transformed_sha256": "5c16098b40941df400e9c473ff536f5211bec16eef5c2c19eb9e863156511aeb",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-07729",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "c5fcfa5c3098bca719cc6221da3a3737e251e2fb707f04085aa3dbb52baf8fb6",
+    "normalized_sha256": "22eee775f0b31e8158fe665dbc0003b709bb34569119281b193822dd8c77c7fe",
+    "transformed_sha256": "edfe6ceb1b314a02caeb291d867f43bfc11ee6b964ec4767d01e0f3fca0b6886",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-08306",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "ee586991d3fb91574d1e80fab348ef4d95da65f08a9c494bdd1367e1e3afacb1",
+    "normalized_sha256": "cfc7786e4bd556155b6f5a76c19afe8fed2b4310088a4b595778a1911b2965d4",
+    "transformed_sha256": "9930aacfcd74a512ee1071283c160cb30a75346a6b6e0a3e9c8b10083f97b5f2",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-08341",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "fa6c65dce9f8082b978ab3e65f22309991dbf488770cb77932b805382a0dfaf2",
+    "normalized_sha256": "454f9f2509fb29a4f2d7d48ffca2405039afb1e608f771909aa37379024c086c",
+    "transformed_sha256": "fa6c65dce9f8082b978ab3e65f22309991dbf488770cb77932b805382a0dfaf2",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-09165",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "c8a34403251ae5435658e396200f993349f64414712292d149fda509ac8b67ab",
+    "normalized_sha256": "aad65fb5385e9dc25ec53b78ac413fce913ddd8ad0007147ab7bb1b1759f214e",
+    "transformed_sha256": "191e14205a277187f8327f1ba6f0d1f7d3818aa4b40bc9f152223fe665d1db85",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-09205",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "gender",
+    "source_text_sha256": "e8041a0fa07612f65b8d270e6117c7e066529c8f328d582aef483ffb88bcbaef",
+    "normalized_sha256": "7642e08841ca947ac1e75b5a3b671924b79c8cbcc41f3bccaf4b43df16f457bd",
+    "transformed_sha256": "252e47a9214ddfbc41bd75148b0c6544f7daf8be97bf237239212df68e87e36c",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-10697",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "bfb82e78591e5858394c850b92994595169f3dd366471504a5420b3ace212160",
+    "normalized_sha256": "45178a7f8f5b7bc015941a5008c96d44e9f60d6fd50e39ae29da62e8ab011504",
+    "transformed_sha256": "e69a3240526822a135d8022d8cab3be9b65ada65953ccfcce9eb33303ebd297c",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-11267",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "b04bfc5c3cdc0ee361fa34c1e3afae45d8f42ac51a4b56620df03b3aaa20c585",
+    "normalized_sha256": "96037be71e4394d230d100b7bf0480e9ad92e59835e9343d72ccf90b2dae6ae2",
+    "transformed_sha256": "dad25e6b7ad8e297220ee93acb3ee5913f7b1da96b716a440ea2095f12db6891",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-12327",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "ea790414d35545f6b3706a3501f21a8165bdf53def9cc2d717781c2d4a07fb60",
+    "normalized_sha256": "2bfa96298fb8948cfb984ffe482728b8be734c2d61cb825e557af0d71928c17b",
+    "transformed_sha256": "c97df15bc9502f9d57c8a517d9ad24ab9678dcccd07597407901a9160cdcb4f9",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-12534",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "6d69faebaa65335d0280098be02dd8f78e263a50afffd06009cf11f3113e19fe",
+    "normalized_sha256": "40c86aa2ab140a00aceb36d6aa20decc9a18596afe5c8070691d0651ab6684a1",
+    "transformed_sha256": "361ea29d8aaaa80f31a528748c4d95584bb35d0914e694ffb34f0d12ca14bb73",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-13553",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "085fae56a3cfa06296724e3eb62fd390edb09d867d531100224114fac3ab5d9c",
+    "normalized_sha256": "79d2bf86e2ee2956a2f60ce691fb7aae4f6f9b29db98c096b961d8a24584d8ee",
+    "transformed_sha256": "d09aa6d08d0ba576a3c62d106952f76ba0ceda3b61f021d4d5e7a97abaf088cf",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-14844",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "d0c781cdb97919b0101b0434ff270a3f2276dbd98d3b06913f7c7969db2f55be",
+    "normalized_sha256": "d0c781cdb97919b0101b0434ff270a3f2276dbd98d3b06913f7c7969db2f55be",
+    "transformed_sha256": "d0c781cdb97919b0101b0434ff270a3f2276dbd98d3b06913f7c7969db2f55be",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-15123",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "d9caf02107f1a1d48ce247bf9eb26e0f6b57fffc8b14fdacbd6561aca823205c",
+    "normalized_sha256": "d974e9efee5119075ddaf735e65dad1db363c7a3c9fdd96b21dd504f7ecd8ce9",
+    "transformed_sha256": "922a56f6f41ef6339822b0ad38353699978401b7be745816f1656776e4cccd27",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-15548",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "3923e918aa5f8fd6431ed2b20bbb717ec9a7374135d57fb8c056b5961133febf",
+    "normalized_sha256": "3fbc49c0492f5efac9378abbaa6638755a8f425f800d27ef1e493bf50bc37680",
+    "transformed_sha256": "691b2b80c9b75f7d0b6370b1c1b7e32a37022d5e28e91cdd595d44fdcffa1d2d",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-15838",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "65277e06201019db1d46adb0ef010b7b14b439b19e953db05cc9e270655bacb8",
+    "normalized_sha256": "c4bbff8dcf69d3cb49411eb162f23e91f8418470531f836a8ff926448e981c05",
+    "transformed_sha256": "410ea1102dc1613c83a4e4c8cd1b45dbd4267f9069d413eae5bba5690e593146",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-16534",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "ceabc2917cc2262261c63d30133c0582e8822353ecb9ee32a7565daa489ccfba",
+    "normalized_sha256": "eba8ecb3d73105578e6e23b01e22bafdd1838e5b610f10258bad9028fe8ee536",
+    "transformed_sha256": "bad73cdf8ad22919a5a7334c137f771cd369ddddf7d373f0a8de6a90eeaa0c5c",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-19307",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "8958cf8610cadda9d35fa4886cd641acfc0ffc0212e758f5d6f59399627f8d33",
+    "normalized_sha256": "ddcb340485d956f8c6dd928bb53905e3af109507b55ede4f029bf30ef93edb2f",
+    "transformed_sha256": "ddec71987d48a6d832d2fb259127143f02350048e3e31aa7d9f6307fc427f30c",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-20664",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "1b6145b53b6e72ed234d7ada177d77dd18e68be8f939c3d0f491e471755966db",
+    "normalized_sha256": "b2d8536f609eeb9312202f62f3873cc59aaa076b902dc298672e39f978b5b513",
+    "transformed_sha256": "506558252ba43e44d322dd3c72206364ec27bd743764b7d97f8bbf6cbeee2814",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-20812",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "d4ed3a4c60bf5b553e1693622cfad2b46d62c90e1b1b11ed043a4952e1ee5008",
+    "normalized_sha256": "299b214aec92ffc874237b41e09cffee31f36934003edf1fc8a4c329b2d7dde0",
+    "transformed_sha256": "dfa2219258968d0256397206bab77cfc471848e91f80a64e1eca446e5d7bcbcd",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-20990",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "5b2957ca605de04fe5a255d87f52740fd2af51dc703677e8340924740fe147ba",
+    "normalized_sha256": "e21d5fb12aa81ffe3a0c5b68e081ce575d0948fd61e225bf881f70384e58b9ba",
+    "transformed_sha256": "6fe8294ae7781eec0fbdb70d97d34a787d53033f4f54cc031cd45f9b7dfbf4d9",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-21060",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "029d4b14d79c1c284e3ea09f299923580c0862d4e501cb72693a5f6c76357ead",
+    "normalized_sha256": "e764282a4d43c11c051238d3f42932c1ab35931afd15fb883bee5fd8c02a7e3e",
+    "transformed_sha256": "02403245442a164eeb8ffab39a6a8b2422668f32d3a314907588a9ae4f8f1d61",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-21212",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "dbefccafa661497d0d7a9b26565eb66c1b0d5d8a7d0ca55231f3c726c85e103b",
+    "normalized_sha256": "7eea5a848a9e63e20175a0d3573b278626cab5954649a6be160beddc459497c7",
+    "transformed_sha256": "b3b92651045201829fd196a2a62ee1df72ea851f1dae40bde779544028b2c5b0",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-21853",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "2db150e106b7886417c2be62efac7e5ebb9afe9df0ad14a0523705956343fc52",
+    "normalized_sha256": "8cb07f92d300cf0ebd3d4a2e925957dcc315a4ef543af27e4a7cb8f952a9dff4",
+    "transformed_sha256": "1fee9fbb6b3d2f034821d8f4b12d06af8464a7c92a2f4d1b581457e14887268b",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-22381",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "gender",
+    "source_text_sha256": "f835bae87b62227f422bbf9b5ba5593ed7ca56b91ea839063c792ee5da8527d2",
+    "normalized_sha256": "f2a5dea4a17c92e8a238810561a8642d3626e67c6a555e614d60f56a047891fa",
+    "transformed_sha256": "c6be216faf19a3d0fe3f041e6bc355e3fce9e5f171a5feef5a405677c2400810",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-22565",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "128f501810b7bc3166bdc120f15569aa2b79c5af85a4e71dac807e6c8dac99ad",
+    "normalized_sha256": "128f501810b7bc3166bdc120f15569aa2b79c5af85a4e71dac807e6c8dac99ad",
+    "transformed_sha256": "128f501810b7bc3166bdc120f15569aa2b79c5af85a4e71dac807e6c8dac99ad",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-23785",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "7f4e4e105d10e7ed1526a257cdede828009b1636b260ad22428dacbb19683b7d",
+    "normalized_sha256": "7ae5b2c1a523d9d998a8ec9985d2fc2a8653c52b5014b5a85952217952568d51",
+    "transformed_sha256": "d66d9fc76bfffb3fb69dc7eeac2bdfd7e34bb33ab7f64e32d8fe9ee4a2189b4d",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24181",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "94049305b59e8f00a6a9b89e6c49c00708401ad6b1732d74937fdf79439a45ab",
+    "normalized_sha256": "4a140e09243b370b2cedf255d20c2239746e6fb369eac426d27fae326c34c6f2",
+    "transformed_sha256": "cffe6c0b23d39bec540774bf189696c03a1bb19a2563dc22ea2dc16c1b446944",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-24740",
+    "label": 0,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "race",
+    "source_text_sha256": "800e6947242bee29df0f917a50685df1f6536b7d90ac0b2b73c4f17592a5bd86",
+    "normalized_sha256": "0dc2dbdde4c29620ac7d401e92705f60449900ac1e5a7c4e12725c8d7ba5c6f6",
+    "transformed_sha256": "d65d26881168558c8df3ea553754f231bd66fc7a6a11edc86e4ded4ef0acf41b",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  },
+  {
+    "id": "COLD-TRAIN-25351",
+    "label": 1,
+    "cohort": "training",
+    "training_source": "COLD_official_train",
+    "category": "region",
+    "source_text_sha256": "81c3b67d82b4570337ffc1e3bd6b2cf150c14cbabf850f5b2195034699efeb12",
+    "normalized_sha256": "3f1296fcfe9d34c26755a5d3d6adaa605706622789ab8e9372a785058b15921d",
+    "transformed_sha256": "36b73eb03c85113f1a8b1b9162a8bfa8ead9dd939eb9fbafebea5ee236cb9342",
+    "literal_any": false,
+    "reasons": [
+      "normalized_overlap_with_5323_historical_COLD_test"
+    ]
+  }
+]

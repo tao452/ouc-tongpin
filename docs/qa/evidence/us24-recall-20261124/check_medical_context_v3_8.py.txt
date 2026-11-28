@@ -1,0 +1,25 @@
+import argparse
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+ROOT=Path.cwd()
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import assess, development
+from evaluate_dataset import HttpModerationService
+from app.services.moderation import ModerationService
+
+parser=argparse.ArgumentParser();parser.add_argument('--dictionary',type=Path,required=True)
+parser.add_argument('--base-url');parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
+sha=lambda p:hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+dataset=ROOT/'docs/qa/data/us24-development.v3_8.jsonl';rows=development(dataset)
+literal=ModerationService(args.dictionary)
+service=HttpModerationService(args.base_url,literal.dictionary_sha256) if args.base_url else literal
+result=assess(rows,service);cases=[]
+for row in rows:cases.append(dict(id=row['id'],request=dict(text=row['text']),response=service.check(row['text']).model_dump()))
+report=dict(scope='development literal mapping and volunteer context',source_sha256=sha(dataset),
+    dictionary_sha256=literal.dictionary_sha256,code_sha256={p.relative_to(ROOT).as_posix():sha(p) for p in [*(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py',Path(__file__)]},
+    mode='http' if args.base_url else 'function',candidate=result,cases=cases,M1_review='PENDING',production_acceptance=False)
+with args.output.open('x',encoding='utf-8') as handle:json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(count=result['count'],any=result['any_level']['confusion_matrix'],mapping_failure_ids=result['mapping_failure_ids'])))

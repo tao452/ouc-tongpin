@@ -1,0 +1,90 @@
+{
+  "scope": "fixed development comparison; no independent acceptance",
+  "evaluation_rows_per_method": 3258,
+  "excluded_evaluation_rows": 0,
+  "raw_text_published": false,
+  "weights_published": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_sha256": "734c615442c9dd6145aa449714448b6d1004deb338a4fbd380d469d65bbb218d",
+      "public_lf_sha256": "3b582dc21c817e5f70ca9c1b306435348959d42cc47d26dfa2544a7a50449804",
+      "bytes": 1393
+    },
+    {
+      "file": "summary.json",
+      "private_sha256": "9c7ead9a6bb0ad61d3e901d4473d95eda666e08d660beec80656d8a4219b7ba3",
+      "public_lf_sha256": "1a4086d9cab23ad82af6b8902e4c38e0f56353628449dd9bcff47eb8dcc58ed9",
+      "bytes": 107768
+    },
+    {
+      "file": "equal_probability_mean-report.json",
+      "private_sha256": "8db7bb47304eecff83461794730e043f4ed99f6868651384df8e5dcaef063548",
+      "public_lf_sha256": "5f18ac5e6cf3749b982e5dcb3cb8631068239006be341399000f573f0f80d8ec",
+      "bytes": 30977
+    },
+    {
+      "file": "equal_probability_mean-predictions.jsonl",
+      "private_sha256": "632b3cdb0957c62c8422d057cbed13026d002ba5e82884ba767a1c42fb1f2a7e",
+      "public_lf_sha256": "a31a6191e1919b464fced91025af6302d7701eaa864cc6a742f4e2a773fa5a14",
+      "bytes": 1291171
+    },
+    {
+      "file": "equal_probability_mean-thresholds.csv",
+      "private_sha256": "bd5136a84d14aaabed0d4d2d6a0b7b0a4d009c36a8f5225c8d6e2fcce2195d68",
+      "public_lf_sha256": "bd5136a84d14aaabed0d4d2d6a0b7b0a4d009c36a8f5225c8d6e2fcce2195d68",
+      "bytes": 608935
+    },
+    {
+      "file": "equal_logit_mean-report.json",
+      "private_sha256": "1be2db86ca7582ec6278eefac7cb2f7e5303f63f1e446871aa5ded9395532619",
+      "public_lf_sha256": "9ed1ddeabebbfffa6c976951ee43a4456f89bec59b049f60d237f4e57f4fbf31",
+      "bytes": 31176
+    },
+    {
+      "file": "equal_logit_mean-predictions.jsonl",
+      "private_sha256": "d4b0961d5709c38e4b05f996e666f9b31dde6fd65d7b3c3fdc2bf645bd0ff4f2",
+      "public_lf_sha256": "b02e8c940fb91eaf9dbd2bfb03af4bff4aeb060829a17c5b1a0f121ee06f63e1",
+      "bytes": 1291723
+    },
+    {
+      "file": "equal_logit_mean-thresholds.csv",
+      "private_sha256": "26411b679c3711b013ed07867d59ebcf9445d22a80174835e4728ab981bbf612",
+      "public_lf_sha256": "26411b679c3711b013ed07867d59ebcf9445d22a80174835e4728ab981bbf612",
+      "bytes": 628912
+    },
+    {
+      "file": "maximum_score_diagnostic-report.json",
+      "private_sha256": "0e220211f3bbeab24d080eb03d4c4818e44dba322bec80d5f37364077df9dee2",
+      "public_lf_sha256": "30812b9ee920d1914609d3ca5c203c7aa059ddf91dd3fc732e65424be68bec4d",
+      "bytes": 31153
+    },
+    {
+      "file": "maximum_score_diagnostic-predictions.jsonl",
+      "private_sha256": "59296788c0879c79ea297188273dc0228d8cf79019d85dbf702aa4427037a081",
+      "public_lf_sha256": "15824972fd61ee66be37e032df21ec27669be4e7a03cb2ddf4f7902901043ba1",
+      "bytes": 1290330
+    },
+    {
+      "file": "maximum_score_diagnostic-thresholds.csv",
+      "private_sha256": "79c343e445c23e9e0ec3702c8f21243e607e5ae0a0134ba83e4af896015fc47f",
+      "public_lf_sha256": "79c343e445c23e9e0ec3702c8f21243e607e5ae0a0134ba83e4af896015fc47f",
+      "bytes": 630857
+    },
+    {
+      "file": "evaluate_phonetic_consensus_v1.py.txt",
+      "private_sha256": "f3013732ab6f1c84c8991e1668413331b59099f13d63c8ce9f789bf5fd4f947e",
+      "public_lf_sha256": "f3013732ab6f1c84c8991e1668413331b59099f13d63c8ce9f789bf5fd4f947e",
+      "bytes": 3949
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "bytes": 3045
+    }
+  ]
+}

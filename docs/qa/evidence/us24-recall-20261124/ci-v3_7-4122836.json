@@ -1,0 +1,106 @@
+{
+  "head": "4122836e14ac225674c4ea3a775495a6b3b3c56e",
+  "run": 45465892877,
+  "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45465892877",
+  "jobs": [
+    {
+      "id": 138700568249,
+      "name": "changes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138700568699,
+      "name": "w1-poc",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138700568761,
+      "name": "guard",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138700568789,
+      "name": "stack / Deploy and verify temporary test environment",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138700680870,
+      "name": "api-server",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138700680995,
+      "name": "admin-web",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138700681020,
+      "name": "algo",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138700681053,
+      "name": "miniprogram",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138703210578,
+      "name": "W3 delivery evidence",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 138703463572,
+      "name": "quality",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "linux_python": {
+    "passed": 619,
+    "skipped": 0,
+    "failed": 0,
+    "coverage_percent": 98.06
+  },
+  "ruff": "PASS",
+  "java": "PASS",
+  "full_docker_stack": "PASS",
+  "new_numeric_report_http": {
+    "count": 946,
+    "tp": 516,
+    "fp": 0,
+    "fn": 0,
+    "tn": 430,
+    "high_tp": 240,
+    "high_fp": 0
+  },
+  "toneless_http": {
+    "count": 11,
+    "passed": 11,
+    "failed": 0
+  },
+  "context_stress_http": {
+    "count": 102,
+    "passed": 102,
+    "failed": 0
+  },
+  "quote_boundaries_http": {
+    "count": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "self_help_http": {
+    "count": 29,
+    "passed": 29,
+    "failed": 0
+  },
+  "production_acceptance": false
+}

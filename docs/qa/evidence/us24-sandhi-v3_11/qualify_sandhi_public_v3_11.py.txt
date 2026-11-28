@@ -1,0 +1,28 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124';PUBLIC=ROOT/'docs/qa/evidence/us24-sandhi-v3_11'
+path=PUBLIC/'manifest.json';manifest=json.loads(path.read_text(encoding='utf-8'))
+changes=[]
+prefixes=[str(Path.home()),str(Path.home()).replace('\\','/'),str(Path.home()).replace('\\','\\\\')]
+for entry in manifest['files']:
+    target=PUBLIC/entry['file'];raw=target.read_bytes();assert hashlib.sha256(raw).hexdigest()==entry['public_lf_sha256']
+    text=raw.decode('utf-8')
+    for prefix in sorted(set(prefixes),key=len,reverse=True):text=text.replace(prefix,'<userhome>')
+    data=text.encode()
+    if data!=raw:
+        changes.append(dict(file=entry['file'],initial_public_sha256=entry['public_lf_sha256'],
+                            final_public_sha256=hashlib.sha256(data).hexdigest(),change='local userhome prefix only; test outcomes unchanged'))
+        target.write_bytes(data);entry['initial_public_lf_sha256']=entry['public_lf_sha256']
+        entry['public_lf_sha256']=hashlib.sha256(data).hexdigest()
+source=Path(__file__).read_bytes().replace(b'\r\n',b'\n')
+name=Path(__file__).name+'.txt'
+with (PUBLIC/name).open('xb') as handle:handle.write(source)
+manifest['files'].append(dict(file=name,public_lf_sha256=hashlib.sha256(source).hexdigest()))
+manifest['log_path_normalization']=changes
+path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+for entry in manifest['files']:assert hashlib.sha256((PUBLIC/entry['file']).read_bytes()).hexdigest()==entry['public_lf_sha256']
+with (LAB/'sandhi-v3_11-public-qualification.json').open('x',encoding='utf-8') as handle:
+    json.dump(dict(manifest_files_verified=len(manifest['files']),normalized_logs=changes,original_logs_retained=True),handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(manifest_files_verified=len(manifest['files']),normalized_logs=len(changes))))

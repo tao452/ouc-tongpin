@@ -1,0 +1,155 @@
+"""Enumerate every distinct >=score decision set; keep the prior fixed-grid evidence unchanged."""
+import argparse
+import bisect
+import csv
+import hashlib
+import json
+import math
+from collections import Counter
+from fractions import Fraction
+from pathlib import Path
+
+LAB = Path.cwd() / 'qa-private/us24-recall-20261124'
+EXPECTED = {'toxicn_dev': (1292, 1107), 'PCR': (250, 250),
+            'controls': (0, 257), 'context_stress': (12, 90)}
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def main(directory):
+    directory = directory.resolve()
+    assert directory.is_relative_to(LAB.resolve())
+    source = directory / 'predictions.jsonl'
+    rows = [json.loads(line) for line in source.read_text(encoding='utf-8').splitlines()]
+    assert len(rows) == len({r['id'] for r in rows}) == 3258
+    reference_path = LAB / 'rocbert-v8-inputs/index.json'
+    reference_frozen = json.loads((LAB / 'rocbert-v8/frozen.json').read_text(encoding='utf-8'))
+    assert sha(reference_path) == reference_frozen['index_sha256']
+    reference = {r['id']: r for r in json.loads(reference_path.read_text(encoding='utf-8'))['rows']
+                 if r['cohort'] != 'training'}
+    assert {r['id'] for r in rows} == reference.keys()
+    for row in rows:
+        for key in ['label', 'cohort', 'category', 'literal_any', 'source_text_sha256']:
+            assert row[key] == reference[row['id']][key], (row['id'], key)
+    groups = {key: [r for r in rows if r['cohort'] == key] for key in EXPECTED}
+    assert sum(map(len, groups.values())) == 3258
+    for key, (positive, negative) in EXPECTED.items():
+        assert Counter(r['label'] for r in groups[key]) == Counter({1: positive, 0: negative})
+    scores = {r['score'] for r in rows if not r.get('error')}
+    assert all(math.isfinite(s) and 0 <= s <= 1 for s in scores)
+    thresholds = {0., 1., *scores}
+    thresholds.update(math.nextafter(s, math.inf) for s in scores if s < 1.)
+    thresholds.update(number / 1000 for number in range(1, 1000))
+    thresholds = sorted(t for t in thresholds if 0 <= t <= 1)
+    with (directory / 'thresholds.csv').open(encoding='utf-8', newline='') as handle:
+        prior_curve = list(csv.DictReader(handle))
+    assert len(prior_curve) == 7992
+    prior = {(r['mode'], float(r['threshold']), r['cohort']):
+             {key: int(r[key]) for key in ['tp', 'fp', 'fn', 'tn', 'errors']} for r in prior_curve}
+    assert len(prior) == 7992
+    checked_prior = set()
+    output = directory / 'exact-score-sweep-v2'
+    output.mkdir(exist_ok=False)
+    all_results = {}
+    gates = []
+    fields = ['threshold', 'cohort', 'tp', 'fp', 'fn', 'tn', 'recall', 'precision', 'fpr', 'errors']
+    for ensemble in [False, True]:
+        mode = 'literal_or_model' if ensemble else 'model'
+        prepared = {}
+        for cohort, group in groups.items():
+            valid = [r for r in group if not r.get('error')]
+            always = [r for r in valid if ensemble and r['literal_any']]
+            scored = [r for r in valid if not (ensemble and r['literal_any'])]
+            prepared[cohort] = dict(positive_scores=sorted(r['score'] for r in scored if r['label']),
+                                    negative_scores=sorted(r['score'] for r in scored if not r['label']),
+                                    always_tp=sum(bool(r['label']) for r in always),
+                                    always_fp=sum(not r['label'] for r in always),
+                                    error_fp=sum(bool(r.get('error')) and not r['label'] for r in group),
+                                    errors=sum(bool(r.get('error')) for r in group))
+        best = None
+        best_rank = None
+        eligible_count = 0
+        passing_count = 0
+        with (output / f'{mode}.csv').open('x', encoding='utf-8', newline='') as handle:
+            writer = csv.DictWriter(handle, fieldnames=fields, lineterminator='\n')
+            writer.writeheader()
+            for threshold in thresholds:
+                cohorts = {}
+                eligible = True
+                recalled = True
+                for cohort, data in prepared.items():
+                    positive, negative = EXPECTED[cohort]
+                    tp = data['always_tp'] + len(data['positive_scores']) - bisect.bisect_left(data['positive_scores'], threshold)
+                    fp = data['always_fp'] + data['error_fp'] + len(data['negative_scores']) - bisect.bisect_left(data['negative_scores'], threshold)
+                    cm = dict(tp=tp, fp=fp, fn=positive - tp, tn=negative - fp)
+                    recall = tp / positive if positive else None
+                    precision = tp / (tp + fp) if tp + fp else None
+                    fpr = fp / negative
+                    value = dict(confusion_matrix=cm, recall=recall, precision=precision,
+                                 false_positive_rate=fpr, inference_errors=data['errors'])
+                    identity = (mode, threshold, cohort)
+                    if identity in prior:
+                        assert {**cm, 'errors': data['errors']} == prior[identity], identity
+                        checked_prior.add(identity)
+                    cohorts[cohort] = value
+                    eligible &= fp * 50 < negative and data['errors'] == 0
+                    recalled &= not positive or tp * 100 >= 95 * positive
+                    writer.writerow(dict(threshold=repr(threshold), cohort=cohort, **cm,
+                                         recall=recall, precision=precision, fpr=fpr, errors=data['errors']))
+                point = dict(threshold=threshold, ensemble=ensemble, cohorts=cohorts,
+                             fpr_eligible=eligible, development_gate_met=bool(eligible and recalled))
+                if eligible:
+                    eligible_count += 1
+                    pcr = cohorts['PCR']['confusion_matrix']
+                    toxic = cohorts['toxicn_dev']['confusion_matrix']
+                    pcr_r, toxic_r = Fraction(pcr['tp'], 250), Fraction(toxic['tp'], 1292)
+                    maximum_fpr = max(Fraction(v['confusion_matrix']['fp'], sum(v['confusion_matrix'][k] for k in ['fp', 'tn']))
+                                      for v in cohorts.values())
+                    rank = (min(pcr_r, toxic_r), pcr_r, toxic_r, -maximum_fpr, threshold)
+                    if best_rank is None or rank > best_rank:
+                        best, best_rank = point, rank
+                if eligible and recalled:
+                    passing_count += 1
+                    gates.append(dict(mode=mode, threshold=threshold, cohorts=cohorts))
+        all_results[mode] = dict(best_fpr_eligible=best, fpr_eligible_decision_points=eligible_count,
+                                 passing_points=passing_count)
+    # Direct row-wise checks at the selected operating point avoid trusting the bisect implementation alone.
+    for result in all_results.values():
+        point = result['best_fpr_eligible']
+        if point is None:
+            continue
+        for cohort, group in groups.items():
+            direct = dict(tp=0, fp=0, fn=0, tn=0)
+            for row in group:
+                predicted = bool(row.get('score', 0) >= point['threshold'] or point['ensemble'] and row['literal_any'])
+                if row.get('error'):
+                    predicted = not row['label']
+                direct[('t' if predicted == bool(row['label']) else 'f') + ('p' if predicted else 'n')] += 1
+            assert direct == point['cohorts'][cohort]['confusion_matrix']
+    assert len(checked_prior) == 7992
+    report = dict(scope='complete-score development sweep and independent recomputation of all prior7992 matrices; reused rows, not independent accuracy',
+                  source_predictions_sha256=sha(source), original_rows=3258, excluded_rows=0,
+                  reference_input_index_sha256=sha(reference_path),
+                  previous_grid_sha256=sha(directory / 'thresholds.csv'),
+                  previous_grid_matrices_recomputed=7992,
+                  unique_finite_scores=len(scores), thresholds_per_mode=len(thresholds),
+                  decision_policy='one global >=threshold; all actual unique scores and nextafter boundaries in[0,1]',
+                  fpr_policy='FP*50 < negatives for each cohort; errors0',
+                  recall_policy='TP*100 >=95*positives for each positive cohort',
+                  results=all_results, passing_points=gates, development_gate_met=bool(gates),
+                  old_grid_reports_modified=False, code_sha256=sha(Path(__file__)),
+                  COLD_dev_fetched=False, M1_review='PENDING', production_acceptance=False)
+    with (output / 'report.json').open('x', encoding='utf-8') as handle:
+        json.dump(report, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(directory=directory.relative_to(LAB).as_posix(),
+                          thresholds_per_mode=len(thresholds), passing_points=len(gates),
+                          selected={k: v['best_fpr_eligible'] for k, v in all_results.items()})), flush=True)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('directory', type=Path)
+    main(parser.parse_args().directory)

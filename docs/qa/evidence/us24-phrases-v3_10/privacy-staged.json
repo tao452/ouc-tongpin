@@ -1,0 +1,724 @@
+{
+  "scope": "Exact staged Git blobs; synthetic requests/responses and hash-only model predictions",
+  "files": 143,
+  "unresolved_findings": [],
+  "phone_like_substrings_inside_hashes": 704,
+  "raw_corpus_or_model_hints_included": false,
+  "checked_files": [
+    {
+      "file": ".github/workflows/ci.yml",
+      "bytes": 11471,
+      "sha256": "a341b9bdbd89894ac1cf5ee7b9355bd0ef8abfbb37267f58b22b36776a8bb661"
+    },
+    {
+      "file": ".github/workflows/deploy-test.yml",
+      "bytes": 12690,
+      "sha256": "539965ff12db8c5047c5d11d70d2c8a9b446a7af76f10c900bb82c5bd1689b7a"
+    },
+    {
+      "file": "docs/qa/US24-M1-词库逐条审核表.md",
+      "bytes": 65906,
+      "sha256": "16fc6ee3a1baf6d25dd04e2598081309a8e4afe87bd8ee4daa30813654888ec4"
+    },
+    {
+      "file": "docs/qa/US24-v3_10-M1逐条审核表.md",
+      "bytes": 129345,
+      "sha256": "8bb47def6c7a0eb4455218723681639902f13eca8567c65d77406708e472e9ba"
+    },
+    {
+      "file": "docs/qa/US24-v3_10-完整审核清单.csv",
+      "bytes": 68143,
+      "sha256": "88b0ff8d20947a4c6749e1801e6cc3006dfbf1ab34db8c6cf84c1cd512fef6ea"
+    },
+    {
+      "file": "docs/qa/US24-v3_10-正常短语与误报复测.md",
+      "bytes": 4912,
+      "sha256": "c57775d6bb697fa7e213f47de7b83f15df41216f5bc58a187073af07e535661d"
+    },
+    {
+      "file": "docs/qa/US24-扩充后测试与评估报告.md",
+      "bytes": 12815,
+      "sha256": "6ddca1f4c94296a296567734600a9ce86e5c4029da87d8e7665a7718859f3f56"
+    },
+    {
+      "file": "docs/qa/US24-拼音语义分类开发方案.md",
+      "bytes": 16099,
+      "sha256": "5f47011b810f61d8172addc27ad903431683cdc305daf2362d1fabe98266b002"
+    },
+    {
+      "file": "docs/qa/US24-拼音语义分类训练与复测报告.md",
+      "bytes": 23691,
+      "sha256": "a74daf1cd766e49e88fafe6224bc6a3f0d8ce19cbe573097e15fdf374adbffa2"
+    },
+    {
+      "file": "docs/qa/US24-词库分类与风险建议.md",
+      "bytes": 5598,
+      "sha256": "c63d7d8854238f503d8664b976a03364a6d2b891e270e082d22621b5130c9d71"
+    },
+    {
+      "file": "docs/qa/US24-词库版本变更记录.md",
+      "bytes": 9296,
+      "sha256": "25629c757e742f48c19ab1aeaaa136a8fe8a482e0672543b41a068ce58731523"
+    },
+    {
+      "file": "docs/qa/data/us24-development.v3_10.jsonl",
+      "bytes": 66749,
+      "sha256": "4ea86df33f8d21829268289dae94cbf31626b5849ef539f85d5609c61346acd5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/acquire_cntp_parent_audit_v1.py.txt",
+      "bytes": 2974,
+      "sha256": "9db1bda2f0f556eb1f34f78cbf8823fb27017056052e0ec95150602c9d702705"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/acquisition-policy.json",
+      "bytes": 756,
+      "sha256": "f77c853e960c451ec49305db094ba42292345aef1f026f57e060b1f39fec04e7"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/audit_cntp_training_parents_v1.py.txt",
+      "bytes": 3733,
+      "sha256": "f0066498f3bfc93e019061f36345c6edf3f86141cd3114401f9c5d0c98784e4f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/audit_cntp_training_parents_v1_r2.py.txt",
+      "bytes": 3956,
+      "sha256": "d9de05a0df2fff09940565372d912157ac68238aa59fce41564043aa98357ab3"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/domain-input-new-view-decisions.json",
+      "bytes": 1214509,
+      "sha256": "cfc990dbe5a6fc03bf07000bf8227bf83282ac1735a8551535d646a97925772b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/domain-input-policy.json",
+      "bytes": 3292,
+      "sha256": "121c13e421d99a38516536d4c37d781df05e3ae388c6e2d34b99e8ccf305abf5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/initial-parent-ID-assumption-failure.json",
+      "bytes": 680,
+      "sha256": "bcaba5568a4068cfeb91fe43b4603dd9a772ff9a0581a1288a39bed6d13e80c5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/manifest.json",
+      "bytes": 4255,
+      "sha256": "7afc1f701b3bcdd450a05b84fe88967e3743c87b978e6316df014ff2162de98a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/prepare_qwen_cntp_domain_v7.py.txt",
+      "bytes": 9000,
+      "sha256": "1d8cf0df89f84997f684ac3f379bfd899f2979b547dc00db351538e65f68689a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/publish_cntp_qualification_v1.py.txt",
+      "bytes": 2196,
+      "sha256": "0c086c7a8750e3d49077628886de5b0098c97c85194a114218c3c87bb5e95c48"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/source-manifest.json",
+      "bytes": 2408,
+      "sha256": "1d6800898d183fa7b1783cb97994024399525a19d615b2401247c408c004c34b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-cntp-source-qualification/training-parent-audit-r2.json",
+      "bytes": 2874551,
+      "sha256": "88d293deba90a14edc16d022281051aa99220e1a1bca0152c232612d07e8c458"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/benchmark_precise_phrases_v3_10.py.txt",
+      "bytes": 2987,
+      "sha256": "c37f1f2c631f759b2ae0a82b80c5189cf0fe906cabded1b1c138318b15ad616c"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/benchmark_precise_phrases_v3_10_r2.py.txt",
+      "bytes": 3269,
+      "sha256": "ded87d80175b0f9f22205821395879b24e968991a8017d4fa2c261709f59f936"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/benchmark_precise_phrases_v3_10_r3.py.txt",
+      "bytes": 3355,
+      "sha256": "6d690e66aa7adc438fe925a6a77e4d926952f3d74e3c1a311ea86a93b925ea73"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/build_phrase_review_v3_10.py.txt",
+      "bytes": 5300,
+      "sha256": "73c91f49c4178c1ac75ac682e9654272259b6604e40a8dbaba6d7219433ce21d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/build_precise_phrases_v3_10.py.txt",
+      "bytes": 5585,
+      "sha256": "9fc0baba247c3bf2ce4d544384e78015456d2822cfbd529952a630ebb268a588"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/check_precise_phrases_v3_10.py.txt",
+      "bytes": 2798,
+      "sha256": "739387ee88004aa460c65d65bf2d5a076d11944b2ec569a26ebe0e595dec5fbd"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/ci-db6-qualified.json",
+      "bytes": 1858,
+      "sha256": "dfd2b7f5b008821d68cbfb7394c0c0df0638c122d57bec9a14120d0a98527a28"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/current-model-input-equivalence.json",
+      "bytes": 1725175,
+      "sha256": "f53297a9f2d12c4c7ac5cb185df68b2d5ce518ec3357fa9a82ebd359195eb87f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/engine-before-optimization.py.txt",
+      "bytes": 15531,
+      "sha256": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/engine-first-index.py.txt",
+      "bytes": 16455,
+      "sha256": "c4f305a5151f70bbcf11cbb8660d5d0456ed85f43cf59c756e861a222d19e406"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/evaluate_historical_v3_10_http.py.txt",
+      "bytes": 3735,
+      "sha256": "54dbe674678d32c9309d6a5073f259836d1ad9b3bd583811b0c2dacc08f539b0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/final-engine-qualification.json",
+      "bytes": 437,
+      "sha256": "788ffba24bcdf50463fad25b1d3a34a60d29c425dbc86f96d6549830da90521e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/historical-http-predictions.jsonl",
+      "bytes": 2733642,
+      "sha256": "8d4278111342787020faf0a98a7a2a17969d659b685a38f692c4deb1fea9e9c6"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/historical-http-summary.json",
+      "bytes": 15144,
+      "sha256": "f8fa303f32170bcbac865651603d7f67fb83c2f9557ec2338df2231524cac995"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/manifest.json",
+      "bytes": 9241,
+      "sha256": "274de70d179091eedd129a67ad1a7642eb3e76ecb6709b38168fd7613a7c03c5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/phrases-v3_10-http-optimized.json",
+      "bytes": 190533,
+      "sha256": "b895110eeff1245ad98354b04fc29909423d171356be68478f16544cc4a2ab4f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/phrases-v3_10-paired-r2.json",
+      "bytes": 190540,
+      "sha256": "f40ab725ffac7feeb15614d0bbc8e948bb96e5d8fcafdd99e1e87ba65521b161"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/phrases-v3_10-review-structure.json",
+      "bytes": 503,
+      "sha256": "a07812c7af33d7a2334bd9f25e5c2d65cc65ec5a3d4ea8141b045aec8bca5d26"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/precise-phrases-v3_10-performance-r2.json",
+      "bytes": 125077,
+      "sha256": "800fee421fe82cf6625ee2654f093107a18abc12e91bf829d3f0400938f0ba48"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/precise-phrases-v3_10-performance-r3.json",
+      "bytes": 113733,
+      "sha256": "32967a8eff9b21d8b6bf456c7c6f83b1f849ef5fd848511d1e5d1ac00db44a01"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/precise-phrases-v3_10-performance.json",
+      "bytes": 140678,
+      "sha256": "b85643630191284f1c4a50997e2c2537de1917ac4f7d4a22ad946a5e224d9387"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/precise-phrases-v3_10-policy.json",
+      "bytes": 1504,
+      "sha256": "a14d39a8089c1e115b5271e50e3c601ed3a6a20c429a26262ac835f135cfbff0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/publish_precise_phrases_v3_10.py.txt",
+      "bytes": 5427,
+      "sha256": "d340a2fb1863d44cbc273b4f167752ce8d7508895784b6136fa7428f9eadafbb"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/qualify_qwen_inputs_v3_10.py.txt",
+      "bytes": 4308,
+      "sha256": "80f0d1f11c5a29916d729f49e8645f6cd944f5c42232c18aaaaa67731b665c8a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/rollback-audit.json",
+      "bytes": 1022,
+      "sha256": "8301832dc05f1eecc1d08f49687b1e6cb5c4cad6e5fd603d715f9c4792c2a7d8"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/tests-pytest-v3_10-r2.txt",
+      "bytes": 2990,
+      "sha256": "2b3a19239fd6ea0f495cd2f2b12791015cc2665eec50b2d27e85fb352b2aeb44"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/tests-pytest-v3_10-r3.txt",
+      "bytes": 2990,
+      "sha256": "39b989471142df322603cb11381e4f692922b619b0f9ba7031a672d5c4927a7d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-phrases-v3_10/tests-pytest-v3_10.txt",
+      "bytes": 4304,
+      "sha256": "923f243e712bfc3caf3381a2aca6737fadfa97bcf1a7dd0dee6cf928a215d4be"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/audit_threshold_grid.py.txt",
+      "bytes": 2276,
+      "sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-1-predictions.jsonl",
+      "bytes": 1606845,
+      "sha256": "719147bfd1e1267b0b823b9372dd25e19e9acb736b429b218a7d4fdbe9122546"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-1-report.json",
+      "bytes": 31235,
+      "sha256": "8d002d13b04b637ef18454df805dae068ec8842bdd07abbe7d06184e1ca3f4ea"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-1-threshold-grid-gate-audit.json",
+      "bytes": 588,
+      "sha256": "2d934de6183b7d64ad36a649113359a02040a3382294297308f3f11ab5cb42fd"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-1-thresholds.csv",
+      "bytes": 617126,
+      "sha256": "29a5c1f841396d62d8f343749b1394a3ca78348b49048a2e89a8596edf56bb06"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-2-predictions.jsonl",
+      "bytes": 1606914,
+      "sha256": "241635f164de697780cd71da2c06a260844efd54b21cf1efc26a04f5c6afd98e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-2-report.json",
+      "bytes": 31568,
+      "sha256": "496e86dd4266115fbc6fbea400e75fbd966ae16db73d366ae74b084e79e00e63"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-2-threshold-grid-gate-audit.json",
+      "bytes": 588,
+      "sha256": "1953a8b61b1de8245cc8b238534565ea8f50a3bdbf1fd2d26634dbe6c3e58eb6"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/epoch-2-thresholds.csv",
+      "bytes": 638502,
+      "sha256": "37e3a73c7487cefa1e967dc674e85de224ae825073ea85b3ef6cb75d2c682891"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine-source-manifest.json",
+      "bytes": 2966,
+      "sha256": "ded0617275acac7cac35752c3d7ec1c6fa76fa56d7972337874709a4f87e08a7"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/__init__.py.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/body_limit.py.txt",
+      "bytes": 1813,
+      "sha256": "01ab33cc1566a1be182c21cdcfc1695e9f3ec79c429ef7ca11c6e5c3e05deb49"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/main.py.txt",
+      "bytes": 867,
+      "sha256": "44ffe9676dd11c1c0ebda4b968daf273c6038080cd0af65e540f42e685a37206"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/models/__init__.py.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/models/dictionary.py.txt",
+      "bytes": 3005,
+      "sha256": "d7e8d021e7915353b6a0eef87ffc505daa4aee5312356117086edb3f9386e474"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/models/moderation.py.txt",
+      "bytes": 615,
+      "sha256": "16d3e81d5cb4b436f00899aca73827878b7ff6a4d464314d1aebc3a9798a0c69"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/routers/__init__.py.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/routers/moderation.py.txt",
+      "bytes": 815,
+      "sha256": "bf70859c025241fcafa58326059da4aefeaf11d5218e633951e317c26d4e91e1"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/services/__init__.py.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/services/moderation.py.txt",
+      "bytes": 15531,
+      "sha256": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/services/moderation_context.py.txt",
+      "bytes": 4701,
+      "sha256": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/services/normalization.py.txt",
+      "bytes": 1465,
+      "sha256": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/services/pronunciation.py.txt",
+      "bytes": 3817,
+      "sha256": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen-input-engine/app/services/targeted_matching.py.txt",
+      "bytes": 2828,
+      "sha256": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/frozen.json",
+      "bytes": 12289,
+      "sha256": "49eeb5ce656e8f573708a5dd5d91196bb13c9a0d260943abec4f7201f8cc114b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/input-index-01.jsonl",
+      "bytes": 1773989,
+      "sha256": "0aa3f7307c97e8544d26b429b2278cddfe355f8b47f2c2d530544b28a7e82a2b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/input-index-02.jsonl",
+      "bytes": 1774069,
+      "sha256": "5803bc09b1e13abb426266021d544230af1d3026ff749cd9a528f2deddc79ff7"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/input-index-03.jsonl",
+      "bytes": 1894076,
+      "sha256": "bdaff24c59031cea540294a608d698721e89892e75cc26c6cba185680c88dcfe"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/input-index-04.jsonl",
+      "bytes": 2074523,
+      "sha256": "4846d3cc7963d8a4bd536ea354b6da827dc8589b896a63d1a66d208f8193000f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/input-index-05.jsonl",
+      "bytes": 1880007,
+      "sha256": "50411ec0ef14f15e6aea1be5a0f2056585b4aa6dd665701f92226f271ed2a01e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/input-index-06.jsonl",
+      "bytes": 700913,
+      "sha256": "deff49e76dc16ba19c1f2c97e4a9ea422d299ee5f421ef9eade3b681ad3bcb7a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/input-policy.json",
+      "bytes": 3292,
+      "sha256": "121c13e421d99a38516536d4c37d781df05e3ae388c6e2d34b99e8ccf305abf5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/manifest.json",
+      "bytes": 13724,
+      "sha256": "daba83eb03705931f3cc1cd6f8aad77dea3a1e9f7d27933fde6369af618e935b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/partial-state-index.jsonl",
+      "bytes": 2972,
+      "sha256": "27a2de2bb65ed60b4c3e08e9708aebed71894d04f5295b432a9c56208fbf756c"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/phonetic_recheck_metrics.py.txt",
+      "bytes": 3045,
+      "sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/preflight-16.json",
+      "bytes": 12347,
+      "sha256": "43f49c89c7de993eb0407a22adb9633a7a97f04c92635d71f99d672ddf50c17c"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/prepare_qwen_cntp_domain_v7.py.txt",
+      "bytes": 9000,
+      "sha256": "1d8cf0df89f84997f684ac3f379bfd899f2979b547dc00db351538e65f68689a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/publish_qwen_domain_v7_and_raw.py.txt",
+      "bytes": 5602,
+      "sha256": "3fc87e9b65a146e72c9a7481842969b0618262323a31f26ea1cc9ce41202b33e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/qwen_sequence_encoding_v5.py.txt",
+      "bytes": 2781,
+      "sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/qwen_sequence_model_v5.py.txt",
+      "bytes": 3921,
+      "sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/qwen_sequence_model_v6.py.txt",
+      "bytes": 1814,
+      "sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/summary.json",
+      "bytes": 84266,
+      "sha256": "f56349e10bf58a27f50fcd18d3a3786695bc3de6cda20d5c5cbab943171579e7"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/train_qwen_cntp_domain_v7.py.txt",
+      "bytes": 10264,
+      "sha256": "4fd85b3628253e59abbd8f6a4c8446748d6fc3eca36b52a58b756c026ad8da87"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/train_qwen_sequence_v5d.py.txt",
+      "bytes": 11994,
+      "sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/train_qwen_sequence_v6.py.txt",
+      "bytes": 10587,
+      "sha256": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-cntp-domain-v7/training-window-order.json",
+      "bytes": 205314,
+      "sha256": "1022c41d68c92876aea69cc89f1ccb5f50097d9430b3c7eb44043eafbe65696d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/audit_threshold_grid.py.txt",
+      "bytes": 2276,
+      "sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/evaluate_qwen_raw_probe_v1.py.txt",
+      "bytes": 2361,
+      "sha256": "333710f57d76e57c1c7dbb8c9f3225fd1f78f9ee5a680abda388a0176d91d2ec"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/frozen.json",
+      "bytes": 22600,
+      "sha256": "0fad650e50032a86ac5d5b46e86e2cc79c5f7e525995de012adf163db4d3582d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/input-audit.json",
+      "bytes": 2074121,
+      "sha256": "ca9c91e8fe64ca5a9adc5998bd85e3c9208e2eec83ecb33f6989b0d33e44d6aa"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/manifest.json",
+      "bytes": 4214,
+      "sha256": "f302c4687730e7ebcf27a855a67089b21033861b93a0f8b29e71b1dfc9acb48d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/phonetic_recheck_metrics.py.txt",
+      "bytes": 3045,
+      "sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/predictions.jsonl",
+      "bytes": 1917080,
+      "sha256": "b91b44d6ec4752acb1b016f847d23fea8bf32d038690c6ca9595e70d185ff8e0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/prepare_qwen_raw_probe_v1.py.txt",
+      "bytes": 3557,
+      "sha256": "a6f1a356d4ef700733a0d8bcc73ab7e7c9632f850c7ddd4c1f10fbfe71cc0491"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/qwen_sequence_model_v6.py.txt",
+      "bytes": 1814,
+      "sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/report.json",
+      "bytes": 31079,
+      "sha256": "1532611c4b2e873fb2faa2aa2743eb2bd8ebabc2d7e210bc97aff27cf10b773d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/threshold-grid-gate-audit.json",
+      "bytes": 588,
+      "sha256": "ce4f3a7a98650da9f4737a86d464088380e9feff4f8c244a096f460a4ba6a0cd"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/thresholds.csv",
+      "bytes": 638459,
+      "sha256": "9d07c62a9b4c2f51c096e21e5d4b058513353ed6e78c51a9cf516410d8d45b05"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-raw-probe-v1/train_qwen_sequence_v5d.py.txt",
+      "bytes": 11994,
+      "sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/added-input-index.jsonl",
+      "bytes": 2208233,
+      "sha256": "406044a310caf92a24b463570d769554e2112cebf43e6c31527c5a14e95821fd"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/audit_threshold_grid.py.txt",
+      "bytes": 2276,
+      "sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/augmentation-index.json",
+      "bytes": 2132456,
+      "sha256": "7d4b1c30ca6a6053b9f497f88ebffcde391b219d930dfda599e198af00052b0b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/ci-db6-qualified.json",
+      "bytes": 1858,
+      "sha256": "dfd2b7f5b008821d68cbfb7394c0c0df0638c122d57bec9a14120d0a98527a28"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/document_qwen_sequence_v6.py.txt",
+      "bytes": 4381,
+      "sha256": "3937be29c5a376ebf889caa1232291c6d278ada44cfb0086f95c73c060d4693f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/epoch-1-predictions.jsonl",
+      "bytes": 1607765,
+      "sha256": "1f4770ed69e1b79d417503bcc52d910f272548bedb9c6de8c88d4fed3148b159"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/epoch-1-report.json",
+      "bytes": 31242,
+      "sha256": "110145bc39d67cb34e6c82dc780e5612496303c15c45e77b4e936e26ee60baaa"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/epoch-1-threshold-grid-gate-audit.json",
+      "bytes": 588,
+      "sha256": "05e3acac38fe0eae9610db7cf1ba3926dd08ca05f436ff4a1cda1463cdfc699b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/epoch-1-thresholds.csv",
+      "bytes": 623109,
+      "sha256": "399f82132aabb978a0db276fc3117b28b02b0b301ca059d851e9329a34fa2091"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/frozen.json",
+      "bytes": 13750,
+      "sha256": "72db005660c71a0ac8bfb4c71e08394aba29145b7590dc4618dc50ffe2075f66"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/input-derivation-audit.json",
+      "bytes": 743,
+      "sha256": "295d2aa063ad375bf568786320283e851b72aaa4a97756ed97d1ceddf0305441"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/manifest.json",
+      "bytes": 8594,
+      "sha256": "d8e75873a19ac84ca036ad27934ab7e67702936c5e2036902597bc771d839354"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/partial-state-index.json",
+      "bytes": 5761,
+      "sha256": "74639a0733f304082722120e5c94ecb489b152e8015c4651364b3194bbda80d0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/phonetic_recheck_metrics.py.txt",
+      "bytes": 3045,
+      "sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/policy.json",
+      "bytes": 3210,
+      "sha256": "816d17a37e2d137fd3cf79778d197a0a29b86ce68e4317f3ea605445f8e2bac0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/preflight-16.json",
+      "bytes": 13808,
+      "sha256": "e2ca86e7fcb7205415ee0c8c15be3eebc899ebc4e8dc8f11ef59bc6005b9b808"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/prepare_qwen_homophone_v6.py.txt",
+      "bytes": 7930,
+      "sha256": "fda4257ac40ebcb51f6ad20b8b03573bb7392d0e61f6645ad935d8100c851e34"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/publish_qwen_sequence_v6.py.txt",
+      "bytes": 7053,
+      "sha256": "6b8b115e234c00e4093549cc57b26649347049569af020ab547abb1af66e356d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/qwen-v6-historical-overlap-audit.json",
+      "bytes": 462,
+      "sha256": "ea6e37e7315fc571a40dcbd33c7c25513d10a0f7cbf8ca47c0cdffeb2f5c4fd4"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/qwen-v6-training-conflict-audit.json",
+      "bytes": 5145,
+      "sha256": "ef1dce14e9e2a0bc459887cd7c6859c1fa2a5b9f655d45ea4f09bc560a3816fc"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/qwen_sequence_encoding_v5.py.txt",
+      "bytes": 2781,
+      "sha256": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/qwen_sequence_model_v5.py.txt",
+      "bytes": 3921,
+      "sha256": "58ddb61f0569ef16f1600ae6a973492e3ac8a31811dd63315a23a68a7dd0c476"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/qwen_sequence_model_v6.py.txt",
+      "bytes": 1814,
+      "sha256": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/summary.json",
+      "bytes": 49908,
+      "sha256": "106434c499dabe747bec38968961c07017c0fec8735dafdee98394d12d5841c3"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/train_qwen_sequence_v5d.py.txt",
+      "bytes": 11994,
+      "sha256": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/train_qwen_sequence_v6.py.txt",
+      "bytes": 10587,
+      "sha256": "5ab68b4847a30fc8f78c40a4c62ddc878759ed2b45f771a2d290a8f534a64c8d"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/training-window-order.json",
+      "bytes": 292723,
+      "sha256": "c98641e0e5a15e83358bd9baf57ff913cb4a01d5053fc346e3f92ba087d12596"
+    },
+    {
+      "file": "docs/qa/evidence/us24-qwen-sequence-v6/v5d-complete-grid-audit.json",
+      "bytes": 588,
+      "sha256": "0608091be5e60d82f3ba785f7f3406b1f4c89b556a2328b536a1aae47beb9ecf"
+    },
+    {
+      "file": "infra/docker-compose.us24-phrases.yml",
+      "bytes": 115,
+      "sha256": "5a52157628bbb9fe5f9a0cc168f0c0eef3cbab020286aa51afa74f2199929c95"
+    },
+    {
+      "file": "services/algo/app/data/moderation-v3_10-candidate.json",
+      "bytes": 25666,
+      "sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722"
+    },
+    {
+      "file": "services/algo/app/services/moderation.py",
+      "bytes": 16652,
+      "sha256": "1faf6cb2f154aa849501dbd54422e58d9feef3ff72b3dea679b33d70dcbf6ced"
+    },
+    {
+      "file": "services/algo/tests/test_precise_normal_phrases.py",
+      "bytes": 1800,
+      "sha256": "fbb4c1d236be6cc169376d24b061b4991ed35a733bcf9532d219234e3cfc58fe"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "scope": "mixed development experiment; every prediction retained; no independent acceptance",
+  "evaluation_rows_per_checkpoint": 3258,
+  "excluded_evaluation_rows": 0,
+  "gradient_training_on_evaluation": false,
+  "raw_text_published": false,
+  "model_or_vocabulary_published": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "files": [
+    {
+      "file": "frozen.json",
+      "public_lf_sha256": "4f65799a55ae0b1c6d1580efe02b4f336177bc79257bf631a423faf579bbe65a",
+      "bytes": 17687,
+      "private_sha256": "b9193266f2fca8a9bc7d54fab48effbe0fe220ca7be2311bc38d328710e1f4cd"
+    },
+    {
+      "file": "summary.json",
+      "public_lf_sha256": "f614fa8aafb8814960aaab636c8d9a6643000eb4224316ac71147a3ec12264cd",
+      "bytes": 91536,
+      "private_sha256": "4f6101df6688a5e71eaf5af831d3f06de7c9066876d5cc24c4a673261026d438"
+    },
+    {
+      "file": "epoch-1-report.json",
+      "public_lf_sha256": "7d4c01b860ba76e5c1d4ab40f8203df2db34d816793ac5dababca79775ce8786",
+      "bytes": 31556,
+      "private_sha256": "b1bcc0bf8c644ee18fee622f04f82b6b3fe108c860f7826aa487333c3b8e3a2a"
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "public_lf_sha256": "9540996497354b9f3f2e1c417dfa9516b2daa760fe5abf96758db41143da9498",
+      "bytes": 1292657,
+      "private_sha256": "2cc15e0b66b92c6aa6185e17088861bfc4d954260cd9850fd02c10cdbbc64779"
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "public_lf_sha256": "43198ad329ad78839d556a6238cfd09485b0f9455c5f0e750f0fe02ce4236a64",
+      "bytes": 642930,
+      "private_sha256": "43198ad329ad78839d556a6238cfd09485b0f9455c5f0e750f0fe02ce4236a64"
+    },
+    {
+      "file": "epoch-2-report.json",
+      "public_lf_sha256": "0ab5dbd02f05b09eabd46c1d87c84c9e8b5dbf2d6a613001bb0cd527f344a347",
+      "bytes": 31431,
+      "private_sha256": "457e4a99f1fabfbfac4f24bec0125507bd4fdb8709f12ce90499755c4ad72c71"
+    },
+    {
+      "file": "epoch-2-predictions.jsonl",
+      "public_lf_sha256": "4d3812739a34b99bca1cd3550b855a785515e3f27e9c69b242fc5ae56a82a624",
+      "bytes": 1292454,
+      "private_sha256": "23fa003e6b2ac67e583a6cd1418269d0fb245d97ee7fb8dab2e2cdfb0b2ac63c"
+    },
+    {
+      "file": "epoch-2-thresholds.csv",
+      "public_lf_sha256": "30e8bc0c6c52d37249bdfc2612c11bd1a966f06868ac7bbeb1d0d76b6306f219",
+      "bytes": 640771,
+      "private_sha256": "30e8bc0c6c52d37249bdfc2612c11bd1a966f06868ac7bbeb1d0d76b6306f219"
+    },
+    {
+      "file": "prepare_phonetic_mixed_v2.py.txt",
+      "public_lf_sha256": "a60b1028c2d53d7c711e82159d3af4f9ec8767616d3f1c913f65b2b967a5ced7",
+      "bytes": 6226,
+      "private_sha256": "a60b1028c2d53d7c711e82159d3af4f9ec8767616d3f1c913f65b2b967a5ced7"
+    },
+    {
+      "file": "train_phonetic_mixed_v2.py.txt",
+      "public_lf_sha256": "4fca94159c00bf10787bdd081a6ea638cdb5002d04f2a7416e88d1a953218b35",
+      "bytes": 6166,
+      "private_sha256": "4fca94159c00bf10787bdd081a6ea638cdb5002d04f2a7416e88d1a953218b35"
+    },
+    {
+      "file": "train_phonetic.py.txt",
+      "public_lf_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668",
+      "bytes": 9189,
+      "private_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668"
+    },
+    {
+      "file": "phonetic_encoding.py.txt",
+      "public_lf_sha256": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d",
+      "bytes": 2485,
+      "private_sha256": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "bytes": 3045,
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "split-PCR-1.jsonl",
+      "public_lf_sha256": "3245bde85e10b37031c746464bcb415369c3157748bc4e9d7efa96aed9ad42ca",
+      "bytes": 196739
+    },
+    {
+      "file": "split-context_stress-1.jsonl",
+      "public_lf_sha256": "af159ad94042f453f0c2a1cb35ff8f999fb8cbf0cf70a84918ea5e73e9e90b6a",
+      "bytes": 42562
+    },
+    {
+      "file": "split-controls-1.jsonl",
+      "public_lf_sha256": "3af2d660d3e45ccce7ae8b9c99abaef56bc6119e351e40ffc426a3a08eed46ac",
+      "bytes": 108132
+    },
+    {
+      "file": "split-toxicn_dev-1.jsonl",
+      "public_lf_sha256": "2427e8ef84d586a392658f8d618d4227ac08a13e748361b9495e6f471962a627",
+      "bytes": 971503
+    },
+    {
+      "file": "split-training-1.jsonl",
+      "public_lf_sha256": "dacff2c4ba6cbcf93ebaed81dab28f25b62aba8a164d74c4f9a59fc8a6eea0ca",
+      "bytes": 2159915
+    },
+    {
+      "file": "split-training-2.jsonl",
+      "public_lf_sha256": "02d08a54a0dd575f1d35e5e5b59f90427d03077845fc635dd307af54063f64b3",
+      "bytes": 2168052
+    },
+    {
+      "file": "split-training-3.jsonl",
+      "public_lf_sha256": "7fa4afaa97485a7810f5d1fc0b955d6ecb91a2b5247f6772cfc038f670514ac1",
+      "bytes": 2266314
+    },
+    {
+      "file": "split-training-4.jsonl",
+      "public_lf_sha256": "ba9bc8c4dbcc33fe9a2adaefe32026374b8465c867bc9b94b93f69368e5095db",
+      "bytes": 2266216
+    },
+    {
+      "file": "split-training-5.jsonl",
+      "public_lf_sha256": "ff137fa6729d5d82df3337dcf7360b164a4ec5e5199488ac1b6500872b73c18c",
+      "bytes": 2266154
+    },
+    {
+      "file": "split-training-6.jsonl",
+      "public_lf_sha256": "26d5050d6dc6f842da83a321af17038d270f871457f59d4e998e1a1b73d2df9e",
+      "bytes": 2266324
+    },
+    {
+      "file": "split-training-7.jsonl",
+      "public_lf_sha256": "06b3230c145272c449811ee2dbc5e61a93cfe1bb647b2f63d599dc1efc450842",
+      "bytes": 2266060
+    },
+    {
+      "file": "split-training-8.jsonl",
+      "public_lf_sha256": "726bfa3f9e4a98f26da93565747cf01da90dfc6187bc7744c1a928897ac79828",
+      "bytes": 132811
+    },
+    {
+      "file": "training-exclusions.json",
+      "public_lf_sha256": "ae8f29b64abc96aef275b31b2ff8fcb369a68e0f983bf7aff346d8d1d67c1e20",
+      "bytes": 24328
+    },
+    {
+      "file": "cold-train-source.json",
+      "public_lf_sha256": "482280149e002844c26d760e74d6312cb87ac88030b5fd05fb78b73a86c3efa9",
+      "bytes": 648,
+      "private_sha256": "a2b0a6c64deaa47ad269c220de8ee417b96d427095c41794aaa2ec3cc535f5f4"
+    }
+  ]
+}

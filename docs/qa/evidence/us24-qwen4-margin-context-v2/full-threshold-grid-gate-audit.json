@@ -1,0 +1,13 @@
+{
+  "scope": "exhaustive exact-integer audit of existing999threshold grid, both modes and all4cohorts",
+  "thresholds_sha256": "95f4f0c570b6f7e411abc81f9a8b3b1f24a97926dcd413da6e0e3815bd3283d3",
+  "operating_points": 1998,
+  "fpr": "FP*50 < negatives for EACH cohort; errors0",
+  "recall": "TP*100 >=95*positives for EACH positive cohort",
+  "passing_operating_points": [],
+  "development_gate_met": false,
+  "excluded_evaluation_rows": 0,
+  "code_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5",
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

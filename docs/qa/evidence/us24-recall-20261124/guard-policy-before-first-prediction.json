@@ -1,0 +1,50 @@
+{
+  "model": "Qwen/Qwen3Guard-Gen-0.6B",
+  "revision": "fada3b2f655b89601929198343c94cd2f64d93cc",
+  "weights_sha256": "4f3ce47ebd968cddb67de08d8764f8ede7c410a7d1fb9e08145a4c7a2f2e5c0f",
+  "backend": "ollama",
+  "device": "ollama-auto-gpu",
+  "precision": "f16-gguf-llamacpp-b6500",
+  "threads": 4,
+  "seed": 20261124,
+  "max_input_tokens": 4096,
+  "max_new_tokens": 64,
+  "do_sample": false,
+  "positive_policy": [
+    "Unsafe",
+    "Unsafe-or-Controversial"
+  ],
+  "modes": [
+    "raw",
+    "pinyin-gloss",
+    "context-pinyin-gloss"
+  ],
+  "offense_categories": [
+    "Unethical Acts",
+    "Violent"
+  ],
+  "crisis_signal_policy": "retain native Suicide & Self-Harm category separately; never map it to ordinary insult or S1 HIGH",
+  "source": "PCR500 historical development plus all original v2/v3 negative controls",
+  "production_enabled": false,
+  "production_acceptance": false,
+  "prompt": "official author user-only chat_template; pinyin mode appends line 拼音: plus phrase-first lazy_pinyin; no instructions from source text executed",
+  "code_sha256": "99f40fd728cd25b0cbffcf8073fb479a52bc693639dcfff5e055a4d5a39b452e",
+  "ollama_model": {
+    "name": "ouc-us24-guard-20261124:f16",
+    "digest": "6bea3bb170de26232cf15b394a18c8deff4646bf3f3815c1376a1b13cdf675c4",
+    "size": 1509347460,
+    "details": {
+      "parent_model": "qwen-guard-f16.gguf",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "751.63M",
+      "quantization_level": "F16",
+      "context_length": 32768,
+      "embedding_length": 1024,
+      "runner": "llamacpp"
+    }
+  }
+}

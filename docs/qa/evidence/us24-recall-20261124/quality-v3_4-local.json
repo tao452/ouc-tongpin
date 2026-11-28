@@ -1,0 +1,23 @@
+{
+  "scope": "local full Python plus Ruff",
+  "python": {
+    "passed": 579,
+    "failed": 0,
+    "skipped": 4,
+    "coverage_percent": 97.98
+  },
+  "ruff": "PASS",
+  "previous_run": {
+    "passed": 573,
+    "failed": 1,
+    "skipped": 4,
+    "failure": "50ms timeout during concurrent model file import; unchanged isolated repeat and later full run passed"
+  },
+  "logs": {
+    "python-setox.log": "831d79c9ddb8c4395a3804b136529a40eecd05d7d358b940ade67731ca17f223",
+    "python-setox-controlled.log": "879454e56d3a4e9bbe0982adf11cde015005e043e6a3eec984a6870e171fcd5f",
+    "python-v3_4-final.log": "116275ac1917a4b4f67a17e36e2772cc14865909e7bcb794441bb0933b1bde0a"
+  },
+  "input_scope": "all Python tests; original120 case statistics unchanged",
+  "production_acceptance": false
+}

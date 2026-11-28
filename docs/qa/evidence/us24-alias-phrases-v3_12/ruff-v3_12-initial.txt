@@ -1,0 +1,12 @@
+E501 Line too long (103 > 100)
+   --> app\services\moderation.py:131:101
+    |
+129 |                     phonemes.update(tuple(path) for path in phrase_readings(phrase, readings))
+130 |                     if record.pinyin_tone_numbers:
+131 |                         for prefix, pattern in numeric_tone_prefixed_patterns(phrase, readings, tones):
+    |                                                                                                     ^^^
+132 |                             tone_paths.setdefault(pattern.pattern, (prefix, pattern))
+133 |                 if (len(phonemes) > MAX_READINGS or len(tone_paths) > MAX_READINGS
+    |
+
+Found 1 error.

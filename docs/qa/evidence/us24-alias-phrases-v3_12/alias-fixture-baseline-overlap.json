@@ -1,0 +1,18 @@
+{
+  "source": "unchanged3.11 snapshot",
+  "response": {
+    "passed": false,
+    "normalized": "你这婊子",
+    "hits": [
+      {
+        "word": "你个婊子",
+        "level": "HIGH"
+      },
+      {
+        "word": "婊子",
+        "level": "MEDIUM"
+      }
+    ]
+  },
+  "reason": "two existing canonical rules overlap; binary gold unchanged"
+}

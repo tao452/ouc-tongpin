@@ -1,0 +1,49 @@
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+PUBLIC = ROOT / 'docs/qa/evidence/us24-recall-20261124'
+sys.path.insert(0, str(ROOT / 'services/algo/scripts'))
+from evaluate_variant import run
+
+fields = ['count','high_blocking','any_level','by_category','by_kind',
+          'mapping_failure_ids','decision_failure_ids','hit_levels']
+for version in ['before','after']:
+    function_name='unicode-v3_9-before-function-pinned.json' if version=='before' else 'unicode-v3_9-after-function.json'
+    function=json.loads((LAB/function_name).read_text(encoding='utf-8'))
+    http=json.loads((LAB/f'unicode-v3_9-{version}-http.json').read_text(encoding='utf-8'))
+    assert function['cases']==http['cases']
+    for field in fields:assert function['candidate'][field]==http['candidate'][field],(version,field)
+    for name in [function_name,f'unicode-v3_9-{version}-http.json']:
+        with (PUBLIC/name).open('xb') as handle:handle.write((LAB/name).read_bytes().replace(b'\r\n',b'\n'))
+dictionary=ROOT/'services/algo/app/data/moderation-v3_9-candidate.json'
+count=0
+for version in ['v2','v3','v3_3','v3_4','v3_5','v3_7','v3_8']:
+    dataset=ROOT/f'docs/qa/data/us24-development.{version}.jsonl'
+    a=run(dataset,dictionary,PUBLIC/f'unicode-v3_9-{version}-function.json')
+    b=run(dataset,dictionary,PUBLIC/f'unicode-v3_9-{version}-http.json','http://127.0.0.1:19892')
+    old=json.loads((PUBLIC/f'medical-v3_8-{version}-function.json').read_text(encoding='utf-8')) if version!='v3_8' else json.loads((PUBLIC/'medical-v3_8-after-function.json').read_text(encoding='utf-8'))
+    for field in fields:
+        assert a['candidate'][field]==b['candidate'][field],(version,field,'HTTP')
+        assert a['candidate'][field]==old['candidate'][field],(version,field,'previous')
+    count+=a['candidate']['count']
+    print(version,'function/HTTP/previous matrices equal',flush=True)
+assert count==4085
+for name,dataset,manifest in [
+    ('PCR',ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',LAB/'pcr-development.manifest.json'),
+    ('ToxiCN',LAB/'toxcn.csv',ROOT/'docs/qa/data/external/toxicn-v3.sealed.json')]:
+    result=run(dataset,dictionary,PUBLIC/f'unicode-v3_9-{name}-historical.json',historical_manifest=manifest)
+    print(name,result['candidate']['any_level']['confusion_matrix'],flush=True)
+qualification=dict(scope='paired development checks only',before_function_HTTP_equal=True,
+    after_function_HTTP_equal=True,previous_rows=4085,all_previous_matrices_unchanged=True,
+    first_baseline_sha256=hashlib.sha256((LAB/'unicode-v3_9-before-function.json').read_bytes()).hexdigest(),
+    pinned_engine_commit='31120a3559a9e829896d3c50a6441ff660055ea7',
+    snapshot_manifest_sha256=hashlib.sha256((LAB/'app-v3_8-snapshot.manifest.json').read_bytes()).hexdigest(),
+    current_model_input_engine='v5d is training on frozen3.8 inputs; new3.9 engine needs separate same-weight recheck',
+    M1_review='PENDING',production_acceptance=False)
+with (PUBLIC/'unicode-v3_9-qualification.json').open('x',encoding='utf-8',newline='\n') as handle:
+    json.dump(qualification,handle,ensure_ascii=False,indent=2)
+print('All4085 previous development rows preserved and verified',flush=True)

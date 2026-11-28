@@ -1,0 +1,93 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+QA = ROOT / 'docs/qa'
+PRIVATE = LAB / 'rocbert-context-space-v1'
+PUBLIC = QA / 'evidence/us24-context-space-v1'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def percent(value):
+    return '—' if value is None else f'{100*value:.2f}%'
+
+
+def main():
+    before = json.loads((LAB / 'rocbert-v9/epoch-1/report.json').read_text(encoding='utf-8'))
+    after = json.loads((PRIVATE / 'report.json').read_text(encoding='utf-8'))
+    exact = json.loads((PRIVATE / 'exact-score-sweep-v2/report.json').read_text(encoding='utf-8'))
+    assert exact['previous_grid_matrices_recomputed'] == 7992 and after['evaluation_rows'] == 3258
+    PUBLIC.mkdir(exist_ok=False)
+    entries = []
+
+    def copy(path, name):
+        data = path.read_bytes().replace(b'\r\n', b'\n')
+        assert len(data) < 5*1024*1024
+        assert all(line == line.rstrip(b' \t') for line in data.split(b'\n'))
+        with (PUBLIC / name).open('xb') as handle:
+            handle.write(data)
+        entries.append(dict(file=name, private_path=path.relative_to(LAB).as_posix(),
+                            private_sha256=sha(path), public_lf_sha256=hashlib.sha256(data).hexdigest()))
+
+    for name in ['frozen.json', 'report.json', 'predictions.jsonl', 'thresholds.csv', 'threshold-grid-gate-audit.json']:
+        copy(PRIVATE / name, name)
+    copy(PRIVATE / 'exact-score-sweep-v2/report.json', 'exact-score-report.json')
+    for name in ['prepare_context_space_ablation_v1.py', 'evaluate_context_space_ablation_v1.py',
+                 'audit_exact_operating_points_v2.py', 'phonetic_recheck_metrics.py', Path(__file__).name]:
+        copy(LAB / name, name + '.txt')
+    for name in ['policy.json', 'index.json']:
+        copy(LAB / 'rocbert-context-space-v1-inputs' / name, 'input-' + name)
+    private_curves = [dict(file=name, bytes=(PRIVATE / 'exact-score-sweep-v2' / name).stat().st_size,
+                           sha256=sha(PRIVATE / 'exact-score-sweep-v2' / name))
+                      for name in ['model.csv', 'literal_or_model.csv']]
+    manifest = dict(scope='same-weight finite-context input ablation; repeated development data',
+                    files=entries, rows=3258, excluded_rows=0, gradient_updates=0,
+                    changed_rows=189, changed_controls=166, changed_context_stress=23,
+                    changed_PCR_inputs=0, changed_ToxiCN_inputs=0, no_forced_normal_labels=True,
+                    baseline_default_controls_FP=158, revised_default_controls_FP=2,
+                    baseline_default_context_FP=13, revised_default_context_FP=6,
+                    unchanged_input_max_score_delta=after['unchanged_input_max_score_delta'],
+                    exact_curves_private=private_curves, development_gate_met=exact['development_gate_met'],
+                    COLD_dev_fetched=False, M1_review='PENDING', M3_reproduction='PENDING', production_acceptance=False)
+    with (PUBLIC / 'manifest.json').open('x', encoding='utf-8', newline='\n') as handle:
+        json.dump(manifest, handle, ensure_ascii=False, indent=2)
+    groups = {'toxicn_dev':'ToxiCN开发', 'PCR':'PCR', 'controls':'正常257', 'context_stress':'语境102'}
+    lines = ['# US24 语境遮盖表示对照\n',
+             '第九组默认阈值在正常语境产生大量误报。本项固定相同训练权重、3258条样本、原标签及字面标记，仅把既有精确语境范围中的遮盖字符“□”换为普通空格，范围外文字完整保留。不增加豁免短语，也不直接强制任何样本为正常。\n',
+             '166条正常语境、23条语境压力输入变化；PCR和ToxiCN输入变化0条。全部样本重新推理。其余3069条逻辑输入相同，动态padding与BF16计算的最大分数差为' + repr(after['unchanged_input_max_score_delta']) + '，矩阵按本次实际分数计算。\n',
+             '## 相同0.5阈值的模型结果\n',
+             '|输入表示|开发组|TP|FP|FN|TN|Recall|Precision|FPR|错误|',
+             '|---|---|---:|---:|---:|---:|---:|---:|---:|---:|']
+    for label, result in [('原遮盖字符', before), ('语境内空格', after)]:
+        for key, m in result['metrics']['model']['at_0_5']['cohorts'].items():
+            c = m['confusion_matrix']
+            lines.append(f"|{label}|{groups[key]}|{c['tp']}|{c['fp']}|{c['fn']}|{c['tn']}|"
+                         f"{percent(m['recall'])}|{percent(m['precision'])}|{percent(m['false_positive_rate'])}|{m['inference_errors']}|")
+    lines += ['\n## 受控误报选点\n',
+              '|开发组|TP|FP|FN|TN|Recall|Precision|FPR|', '|---|---:|---:|---:|---:|---:|---:|---:|']
+    point = exact['results']['literal_or_model']['best_fpr_eligible']
+    for key, m in point['cohorts'].items():
+        c = m['confusion_matrix']
+        lines.append(f"|{groups[key]}|{c['tp']}|{c['fp']}|{c['fn']}|{c['tn']}|"
+                     f"{percent(m['recall'])}|{percent(m['precision'])}|{percent(m['false_positive_rate'])}|")
+    lines += [f"\n完整精度阈值`{point['threshold']!r}`。原网格7992个分组矩阵复算一致，全部实际分数边界中通过整体门槛的点数为{len(exact['passing_points'])}。\n",
+              '正常257条默认误报由158降到2，语境压力误报由13降到6；PCR与ToxiCN默认矩阵保持原结果。受控选点仍为PCR28.80%、ToxiCN开发25.54%，广义召回未通过95%。该结果支持继续检查语境输入表示，未解决整体召回问题。\n',
+              '完整分数、默认及类别分组、999点曲线、全部实际分数复核、输入范围哈希及执行源码见[证据索引](evidence/us24-context-space-v1/manifest.json)。原模型与旧报告保留。该方案仍为离线开发对照，S1默认词库与处理等级沿用，M1逐条审核和M3独立复现待完成；W9危机识别仍待后续实现。\n']
+    with (QA / 'US24-语境遮盖表示复测.md').open('x', encoding='utf-8', newline='\n') as handle:
+        handle.write('\n'.join(lines))
+    main_path = QA / 'US24-拼音语义分类训练与复测报告.md'
+    original = main_path.read_text(encoding='utf-8')
+    assert '## 语境遮盖表示对照' not in original
+    main_path.write_text(original + '\n\n## 语境遮盖表示对照\n\n同一组第九组权重，仅将既有有限语境范围的遮盖字符换成空格，全部3258条复测。正常257条默认误报从158降到2、语境压力从13降到6；PCR/ToxiCN输入及默认矩阵未变，整体95%目标仍未通过。全部分数与范围在[对照报告](US24-语境遮盖表示复测.md)。\n', encoding='utf-8', newline='\n')
+    print(json.dumps(dict(public_files=len(entries)+1, rows=3258, default_controls_FP_before=158,
+                          default_controls_FP_after=2, development_gate_met=False)))
+
+
+if __name__ == '__main__':
+    main()

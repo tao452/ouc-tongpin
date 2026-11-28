@@ -1,0 +1,181 @@
+import hashlib
+import json
+from collections import Counter, defaultdict
+from datetime import UTC, datetime
+from pathlib import Path
+
+import torch
+from transformers import AutoTokenizer
+
+from rocbert_encoding_v9 import SyllableEncoder
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def representation(windows):
+    return hashlib.sha256(json.dumps(windows, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def recover(row, decoder):
+    length = max(w['char_span'][1] for w in row['windows'])
+    chars = [None] * length
+    for window in row['windows']:
+        rendered = decoder.decode(window['input_ids'], skip_special_tokens=False,
+                                  clean_up_tokenization_spaces=False)
+        marker = '<|im_start|>user\n'
+        left = rendered.index(marker) + len(marker)
+        right = rendered.index('<|im_end|>', left)
+        value = json.loads(rendered[left:right])['text']
+        a, b = window['char_span']
+        assert len(value) == b - a
+        for offset, char in enumerate(value, a):
+            assert chars[offset] is None or chars[offset] == char
+            chars[offset] = char
+    assert all(c is not None for c in chars)
+    text = ''.join(chars)
+    assert len(text) <= 2000 and hashlib.sha256(text.encode()).hexdigest() == row['transformed_sha256']
+    return text
+
+
+def main():
+    torch.set_num_threads(2)
+    full_path = LAB / 'qwen-homophone-v6-inputs/features.pt'
+    domain_path = LAB / 'qwen-cntp-domain-v7-inputs/features.pt'
+    v8_path = LAB / 'rocbert-v8-inputs/features.pt'
+    full = torch.load(full_path, map_location='cpu', weights_only=True)
+    domain = torch.load(domain_path, map_location='cpu', weights_only=True)
+    previous = torch.load(v8_path, map_location='cpu', weights_only=True)
+    prior = {r['id']: r for r in previous['records']}
+    training = {r['id']: r for r in full['records'] if r['cohort'] == 'training'}
+    assert len(training) == 42371
+    additions = 0
+    for row in domain['records']:
+        if row['cohort'] != 'training':
+            continue
+        if row['id'] in training:
+            for key in ['label', 'transformed_sha256', 'source_text_sha256']:
+                assert training[row['id']][key] == row[key]
+        else:
+            training[row['id']] = row
+            additions += 1
+    assert additions == 4162 and len(training) == 46533
+    evaluation = [r for r in domain['records'] if r['cohort'] != 'training']
+    assert len(evaluation) == 3258
+    for row in evaluation:
+        assert row['label'] == prior[row['id']]['label']
+        assert row['transformed_sha256'] == prior[row['id']]['transformed_sha256']
+    encoder = SyllableEncoder(LAB / 'rocbert-base')
+    decoder = AutoTokenizer.from_pretrained(str(LAB / 'qwen3-1_7b-tokenizer'),
+                                           local_files_only=True, trust_remote_code=False)
+    output = LAB / 'rocbert-v9-inputs'
+    output.mkdir(exist_ok=False)
+    ready = []
+    index = []
+    view_decisions = []
+    evaluation_representations = set()
+
+    def append(item, audit):
+        windows = item['windows']
+        item['representation_sha256'] = representation(windows)
+        ready.append(item)
+        index.append({**{k: v for k, v in item.items() if k != 'windows'},
+                      'windows': len(windows), 'window_lengths': [len(w['input_ids']) for w in windows], **audit})
+
+    for row in evaluation:
+        text = recover(row, decoder)
+        windows, audit = encoder.encode(text)
+        metadata = {k: v for k, v in prior[row['id']].items() if k != 'windows'}
+        item = {**metadata, 'windows': windows}
+        append(item, audit)
+        evaluation_representations.add(item['representation_sha256'])
+    eval_changes = sum(representation(r['windows']) != representation(prior[r['id']]['windows']) for r in ready)
+    unknown_word = encoder.official.unk_token_id
+    unknown_shape = encoder.shape[encoder.official.unk_token]
+    valid_pronunciations = set(encoder.sound_ids.values())
+    hanzis = {value for token, value in encoder.fast.get_vocab().items()
+              if len(token) == 1 and '\u3400' <= token <= '\u9fff'}
+    selected = 0
+    for number, row in enumerate(training.values(), 1):
+        text = recover(row, decoder)
+        windows, audit = encoder.encode(text)
+        metadata = {k: v for k, v in row.items() if k != 'windows'}
+        item = {**metadata, 'windows': windows}
+        append(item, audit)
+        native_toxicn = row['id'].startswith('ToxiCN-') and not row.get('augmentation')
+        if native_toxicn and int(row['normalized_sha256'][:2], 16) < 128:
+            selected += 1
+            dropped = json.loads(json.dumps(windows))
+            changed = set()
+            for window in dropped:
+                left, _ = window['token_span']
+                for offset in range(1, len(window['input_ids']) - 1):
+                    if (window['input_ids'][offset] in hanzis and
+                            window['input_pronunciation_ids'][offset] in valid_pronunciations):
+                        window['input_ids'][offset] = unknown_word
+                        window['input_shape_ids'][offset] = unknown_shape
+                        changed.add(left + offset - 1)
+            rep = representation(dropped)
+            if not changed:
+                decision = 'no_qualified_Hanzi_tokens'
+            elif rep in evaluation_representations:
+                decision = 'new_view_representation_overlaps_reused_evaluation'
+            else:
+                view = {**metadata, 'id': 'PHON9-' + row['id'], 'source_id': row['id'],
+                        'augmentation': 'word_and_shape_unknown_keep_contextual_pronunciation',
+                        'label_basis': 'training-only inherited parent label; not new human gold',
+                        'masked_body_tokens': len(changed), 'windows': dropped}
+                append(view, dict(feature_view='phonetic_modality', masked_body_tokens=len(changed)))
+                decision = 'added_training_view'
+            view_decisions.append(dict(parent_id=row['id'], parent_label=row['label'], decision=decision,
+                                       masked_body_tokens=len(changed), representation_sha256=rep))
+        if number % 1000 == 0:
+            print(f'Prepared mixed phonetic encoder {number}/46533 originals and prior views', flush=True)
+    assert len({r['id'] for r in ready}) == len(ready)
+    training_rows = [r for r in ready if r['cohort'] == 'training']
+    source_hash = lambda p: hashlib.sha256(p.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+    collision_groups = defaultdict(list)
+    for row in ready:
+        collision_groups[row['representation_sha256']].append(row)
+    mixed = [group for group in collision_groups.values() if len({r['label'] for r in group}) > 1]
+    cross = [group for group in collision_groups.values() if
+             any(r['cohort'] == 'training' for r in group) and any(r['cohort'] != 'training' for r in group)]
+    policy = dict(created_at_utc=datetime.now(UTC).isoformat(),
+                  scope='phonetic modality and full historical training development; no new independent data',
+                  input_features={str(p.relative_to(LAB)): sha(p) for p in [full_path, domain_path, v8_path]},
+                  previous_3_10_policy=previous['policy'], retained_previous_training_rows=46533,
+                  previous_original_training_rows=35293, cntp_additions=4162,
+                  selected_phonetic_training_parents=selected, training_rows=len(training_rows),
+                  training_windows=sum(len(r['windows']) for r in training_rows),
+                  evaluation_rows=3258, excluded_evaluation_rows=0, evaluation_input_changes_from_v8=eval_changes,
+                  current_labels_and_literal_flags='all3258 unchanged',
+                  text_recovery='all cached escaped JSON text spans stitched and transformed SHA verified',
+                  latin_syllables='whole exact qualified syllables, groups2to16, gap1to8, English/common identifier guards; no concatenated segmentation',
+                  phonetic_view='ToxiCN native train parents whose normalized SHA first byte<128; mask all qualified Hanzi word and shape IDs; keep contextual sound; one view/parent',
+                  inherited_view_labels='training assumptions, not human-reviewed semantic gold',
+                  representation_conflicts=[dict(ids=[r['id'] for r in group], labels=[r['label'] for r in group]) for group in mixed],
+                  train_eval_representation_overlap_groups=[dict(ids=[r['id'] for r in group], labels=[r['label'] for r in group]) for group in cross],
+                  original_rows_removed=0, new_view_decisions=dict(Counter(r['decision'] for r in view_decisions)),
+                  code_sha256={p.name: source_hash(p) for p in [Path(__file__), LAB/'rocbert_encoding_v9.py', LAB/'rocbert_encoding_v8.py']},
+                  maximum_source_characters=2000, body_tokens=510, overlap_tokens=128,
+                  window_policy='all tokens covered; maximum window score', cohorts=dict(Counter(r['cohort'] for r in ready)),
+                  COLD_dev_fetched=False, M1_review='PENDING', M3_reproduction='PENDING', production_acceptance=False)
+    with (output/'features.pt').open('xb') as handle:
+        torch.save(dict(policy=policy, records=ready), handle)
+    for name, value in [('index.json', dict(policy=policy, rows=index)), ('policy.json', policy),
+                        ('training-view-decisions.json', view_decisions)]:
+        with (output/name).open('x', encoding='utf-8') as handle:
+            json.dump(value, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(training_rows=policy['training_rows'], training_windows=policy['training_windows'],
+                          evaluation_rows=3258, evaluation_input_changes=eval_changes,
+                          decisions=policy['new_view_decisions'], representation_conflicts=len(mixed),
+                          train_eval_representation_overlap_groups=len(cross))), flush=True)
+
+
+if __name__ == '__main__':
+    main()

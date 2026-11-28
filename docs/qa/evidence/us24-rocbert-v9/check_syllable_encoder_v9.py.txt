@@ -1,0 +1,58 @@
+import hashlib
+import json
+import time
+from pathlib import Path
+
+from app.services.normalization import canonicalize
+from rocbert_encoding_v8 import RobustEncoder
+from rocbert_encoding_v9 import SyllableEncoder
+
+LAB = Path.cwd() / 'qa-private/us24-recall-20261124'
+encoder = SyllableEncoder(LAB / 'rocbert-base')
+baseline = RobustEncoder(LAB / 'rocbert-base')
+negative = ['hello world', 'can you help', 'we can do it', 'you and me', 'day by day',
+    'class assignment', 'classification model', 'cache hit', 'assert isinstance(value, str)',
+    'sha256 checksum', 'sha1 digest', 'ni_ma', 'ni_ma sha_bi', 'x-ni-ma-y',
+    'api.ni.ma.example', 'https://sha.bi', '/tmp/ni/ma', 'D:/data/sha/bi.txt',
+    'foo_shabi_bar', 'prefixshabisuffix', 'sha', 'bi', 'shab', 'shal bi',
+    '重庆银行今天营业', '重新检查重量', '音乐课让我快乐',
+    '他还钱以后还没回家', '普通校园交流，今晚图书馆见。']
+positive = ['ni shi sha bi', 'sha bi', 'qu si', 'ni ma', 'ni3 shi4 sha3 bi1',
+    'SHA BI', 'ＳＨＡ ＢＩ', 'shǎ bī', "sha'bi", 'sha-bi', 'sha.bi',
+    '你这个sha bi，别再来骚扰我', '普通话拼音是 ni shi xue sheng',
+    'ni hao', 'wo xi huan yin yue', 'wo ai python', 'sha bi ' + '普通正文' * 300]
+rows = []
+for number, (kind, text) in enumerate([*map(lambda t: ('unchanged', t), negative),
+                                      *map(lambda t: ('syllable_features', t), positive)], 1):
+    canonical = canonicalize(text)
+    original, _ = baseline.encode(canonical)
+    windows, audit = encoder.encode(canonical)
+    if kind == 'unchanged':
+        assert windows == original and audit['latin_syllable_features'] == 0, text
+    else:
+        assert audit['latin_syllable_features'] >= 2 and windows != original, text
+    assert all(len(w['input_ids']) == len(w['input_pronunciation_ids']) == len(w['input_shape_ids'])
+               and len(w['input_ids']) <= 512 for w in windows)
+    rows.append(dict(id=f'SYL9-{number:03}', kind=kind, synthetic_text=text,
+                     canonical_sha256=hashlib.sha256(canonical.encode()).hexdigest(),
+                     audit=audit, windows=len(windows)))
+parser_times = []
+for number in range(1000):
+    text = ('ni ma ' * 334)[:2000] if number % 2 else ('ordinary_english_word ' * 100)[:2000]
+    began = time.perf_counter()
+    edits = encoder.latin_edits(text)
+    parser_times.append(time.perf_counter() - began)
+    assert len(edits) <= 1000
+output = dict(scope='synthetic feature/representation checks only, not semantic accuracy',
+              first_check='failed because normal pinyin wo ai python was wrongly expected to have no syllable features; original source/log retained; it remains a semantic negative, whose classification is NOT_RUN',
+              cases=rows, checked=len(rows), negatives_unchanged=len(negative),
+              feature_positive_cases=len(positive), parser_2000_char_calls=1000,
+              maximum_parser_seconds=max(parser_times), maximum_syllables_per_group=16,
+              maximum_gap_characters=8, heteronym_combinations=0,
+              full_concatenated_pinyin='not segmented here; literal closed mappings remain separate',
+              semantic_accuracy='NOT_RUN', service_integration=False,
+              M1_review='PENDING', production_acceptance=False)
+with (LAB / 'syllable-v9-qualification.json').open('x', encoding='utf-8') as handle:
+    json.dump(output, handle, ensure_ascii=False, indent=2)
+print(json.dumps({k: output[k] for k in ['checked', 'negatives_unchanged',
+                                         'feature_positive_cases', 'maximum_parser_seconds']}))

@@ -1,0 +1,108 @@
+import hashlib
+import json
+from pathlib import Path
+
+import torch
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+PRIVATE=LAB/'qwen-sequence-v6'
+PUBLIC=ROOT/'docs/qa/evidence/us24-qwen-sequence-v6'
+
+
+def digest(path):
+    with path.open('rb') as handle:return hashlib.file_digest(handle,'sha256').hexdigest()
+
+
+def main():
+    summary=json.loads((PRIVATE/'summary.json').read_text(encoding='utf-8'))
+    assert len(summary['epochs'])==1
+    result=summary['epochs'][0]
+    assert result['training_windows_seen']==42643 and result['evaluation_rows']==3258
+    assert result['excluded_evaluation_rows']==0
+    frozen=summary['frozen']
+    features=LAB/'qwen-homophone-v6-inputs/features.pt'
+    assert digest(features)==frozen['features_sha256']
+    current=torch.load(features,map_location='cpu',weights_only=True)
+    previous=torch.load(LAB/'qwen-sequence-v5-inputs/features.pt',map_location='cpu',weights_only=True)
+    old_train={r['id']:r for r in previous['records'] if r['cohort']=='training'}
+    evaluation=torch.load(LAB/'qwen-sequence-v5-context39/features.pt',map_location='cpu',weights_only=True)
+    old_eval={r['id']:r for r in evaluation['records']}
+    assert len(old_train)==38856 and len(old_eval)==3258
+    additions=[];counts=dict(training_exact=0,evaluation_exact=0,added_training=0)
+    for row in current['records']:
+        if row['id'] in old_train:
+            assert row==old_train[row['id']]
+            counts['training_exact']+=1
+        elif row['id'] in old_eval:
+            assert row==old_eval[row['id']]
+            counts['evaluation_exact']+=1
+        else:
+            assert row['id'].startswith('HOM-V6-') and row['cohort']=='training'
+            source=old_train[row['source_id']]
+            for name in ['label','category','source_text_sha256','normalized_sha256']:
+                assert row[name]==source[name],(row['id'],name)
+            additions.append({**{k:v for k,v in row.items() if k!='windows'},
+                'windows':len(row['windows']),'window_lengths':[len(w['input_ids']) for w in row['windows']]})
+            counts['added_training']+=1
+    assert counts==dict(training_exact=38856,evaluation_exact=3258,added_training=3515)
+    predictions=list(map(json.loads,(PRIVATE/'epoch-1/predictions.jsonl').read_text(encoding='utf-8').splitlines()))
+    assert len(predictions)==len({r['id'] for r in predictions})==3258
+    for row in predictions:
+        assert {k:v for k,v in old_eval[row['id']].items() if k!='windows'}=={
+            k:v for k,v in row.items() if k not in {'score','error'}}
+    for name,value in frozen['code_sha256'].items():
+        assert hashlib.sha256((LAB/name).read_bytes().replace(b'\r\n',b'\n')).hexdigest()==value,name
+    PUBLIC.mkdir(exist_ok=False)
+    entries=[]
+    def copy(source,name):
+        raw=source.read_bytes();data=raw.replace(b'\r\n',b'\n')
+        assert len(data)<5*1024*1024
+        with (PUBLIC/name).open('xb') as handle:handle.write(data)
+        entries.append(dict(file=name,private_path=source.relative_to(LAB).as_posix(),
+            private_sha256=hashlib.sha256(raw).hexdigest(),public_lf_sha256=hashlib.sha256(data).hexdigest()))
+    def write(value,name,jsonl=False):
+        text=''.join(json.dumps(r,ensure_ascii=False,separators=(',',':'))+'\n' for r in value) if jsonl else json.dumps(value,ensure_ascii=False,indent=2)+'\n'
+        data=text.encode();assert len(data)<5*1024*1024
+        with (PUBLIC/name).open('xb') as handle:handle.write(data)
+        entries.append(dict(file=name,public_lf_sha256=hashlib.sha256(data).hexdigest()))
+    for name in ['frozen.json','summary.json','training-window-order.json']:copy(PRIVATE/name,name)
+    for name in ['predictions.jsonl','report.json','thresholds.csv','threshold-grid-gate-audit.json']:copy(PRIVATE/'epoch-1'/name,'epoch-1-'+name)
+    for name in ['policy.json','augmentation-index.json']:copy(features.parent/name,name)
+    for name in ['prepare_qwen_homophone_v6.py','qwen_sequence_model_v6.py','train_qwen_sequence_v6.py',
+                 'qwen_sequence_model_v5.py','qwen_sequence_encoding_v5.py','train_qwen_sequence_v5d.py',
+                 'phonetic_recheck_metrics.py','audit_threshold_grid.py','document_qwen_sequence_v6.py',Path(__file__).name]:copy(LAB/name,name+'.txt')
+    copy(LAB/'qwen-sequence-v6-preflight-16.json','preflight-16.json')
+    copy(LAB/'ci-db6-qualified.json','ci-db6-qualified.json')
+    copy(LAB/'qwen-sequence-v5d/epoch-1/threshold-grid-gate-audit.json','v5d-complete-grid-audit.json')
+    for name in ['qwen-v6-historical-overlap-audit.json','qwen-v6-training-conflict-audit.json']:
+        copy(LAB/name,name)
+    write(additions,'added-input-index.jsonl',True)
+    write(dict(scope='exact in-memory comparison of all metadata and token windows; no raw/token redistribution',
+        **counts,all_original_training_retained=True,all_evaluation_retained=True,
+        previous_features_sha256=digest(LAB/'qwen-sequence-v5-inputs/features.pt'),
+        current_evaluation_features_sha256=digest(LAB/'qwen-sequence-v5-context39/features.pt'),
+        current_features_sha256=digest(features),
+        previous_index_reference='../us24-qwen-sequence-v5d/input-index-*.json',
+        current_context_reference='../us24-qwen-sequence-v5d/current-context39-qualification.json'),
+        'input-derivation-audit.json')
+    partials=[]
+    for directory in sorted(PRIVATE.glob('partial-step-*')):
+        value=json.loads((directory/'progress.json').read_text(encoding='utf-8'))
+        assert value['accuracy_status']=='NOT_RUN' and not value['evaluation_run']
+        value['files']={p.name:dict(bytes=p.stat().st_size,sha256=digest(p)) for p in directory.iterdir() if p.suffix!='.json'}
+        partials.append(value)
+    write(partials,'partial-state-index.json')
+    manifest=dict(scope='current3.9 supervised last-two-layer and training-only homophone development experiment',
+        files=entries,training_rows=42371,training_windows=42643,evaluation_rows=3258,excluded_evaluation_rows=0,
+        augmentation_labels='inherited assumptions, not newly annotated gold; may introduce semantic ambiguity',
+        runtime_warning='CUDA attention backward may be nondeterministic; fixed seed does not guarantee cross-device bitwise equality',
+        private_execution_log_sha256=digest(LAB/'train-qwen-sequence-v6.log'),
+        upstream_pretraining_evaluation_exposure='unknown',
+        default_S1_service_changed=False,COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False,
+        private_assets='raw corpora, token windows, base/updated parameters, optimizer and RNG states, full logs')
+    with (PUBLIC/'manifest.json').open('x',encoding='utf-8',newline='\n') as handle:json.dump(manifest,handle,ensure_ascii=False,indent=2)
+    print(json.dumps(dict(public_files=len(entries)+1,evaluation_rows=3258,
+        gates={name:bool(m['best_fpr_eligible'] and m['best_fpr_eligible']['development_gate_met']) for name,m in result['metrics'].items()})))
+
+
+if __name__=='__main__':main()

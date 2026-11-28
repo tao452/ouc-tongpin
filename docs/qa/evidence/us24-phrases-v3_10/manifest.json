@@ -1,0 +1,198 @@
+{
+  "scope": "candidate3.10 literal context development; historical broad diagnostics kept separate",
+  "files": [
+    {
+      "file": "precise-phrases-v3_10-policy.json",
+      "private_path": "precise-phrases-v3_10-policy.json",
+      "private_sha256": "7b436c7fdb6f7d1164b29afa1170e2b06b3e439a0e10cdd199409938b6521314",
+      "public_lf_sha256": "a14d39a8089c1e115b5271e50e3c601ed3a6a20c429a26262ac835f135cfbff0"
+    },
+    {
+      "file": "phrases-v3_10-paired-r2.json",
+      "private_path": "phrases-v3_10-paired-r2.json",
+      "private_sha256": "703e098e8d73ffa8ea87e6c60b7ebe01997255de19b761094654f1ea6052ca7b",
+      "public_lf_sha256": "f40ab725ffac7feeb15614d0bbc8e948bb96e5d8fcafdd99e1e87ba65521b161"
+    },
+    {
+      "file": "phrases-v3_10-http-optimized.json",
+      "private_path": "phrases-v3_10-http-optimized.json",
+      "private_sha256": "5b8cb1c7ec385cb4721588b3f284f1ddf52b62c92dc2a3609afc5f20052455b5",
+      "public_lf_sha256": "b895110eeff1245ad98354b04fc29909423d171356be68478f16544cc4a2ab4f"
+    },
+    {
+      "file": "phrases-v3_10-review-structure.json",
+      "private_path": "phrases-v3_10-review-structure.json",
+      "private_sha256": "e9054baf4c9b7d65b605a3c0e756046c307d79d494d166b2b0e49824430655ec",
+      "public_lf_sha256": "a07812c7af33d7a2334bd9f25e5c2d65cc65ec5a3d4ea8141b045aec8bca5d26"
+    },
+    {
+      "file": "precise-phrases-v3_10-performance.json",
+      "private_path": "precise-phrases-v3_10-performance.json",
+      "private_sha256": "4d572a2897c63713c7e17dddac71ab89f549655e221b2164aa6348dba702c517",
+      "public_lf_sha256": "b85643630191284f1c4a50997e2c2537de1917ac4f7d4a22ad946a5e224d9387"
+    },
+    {
+      "file": "precise-phrases-v3_10-performance-r2.json",
+      "private_path": "precise-phrases-v3_10-performance-r2.json",
+      "private_sha256": "944b88bafa534b0a7b543e4bd82a0103e835fd9770b762477d149c52bf4faaf9",
+      "public_lf_sha256": "800fee421fe82cf6625ee2654f093107a18abc12e91bf829d3f0400938f0ba48"
+    },
+    {
+      "file": "precise-phrases-v3_10-performance-r3.json",
+      "private_path": "precise-phrases-v3_10-performance-r3.json",
+      "private_sha256": "641d2c58cc13dd583b6363f186815ad4354220eea5caf143078c976001786be6",
+      "public_lf_sha256": "32967a8eff9b21d8b6bf456c7c6f83b1f849ef5fd848511d1e5d1ac00db44a01"
+    },
+    {
+      "file": "ci-db6-qualified.json",
+      "private_path": "ci-db6-qualified.json",
+      "private_sha256": "dfd2b7f5b008821d68cbfb7394c0c0df0638c122d57bec9a14120d0a98527a28",
+      "public_lf_sha256": "dfd2b7f5b008821d68cbfb7394c0c0df0638c122d57bec9a14120d0a98527a28"
+    },
+    {
+      "file": "build_precise_phrases_v3_10.py.txt",
+      "private_path": "build_precise_phrases_v3_10.py",
+      "private_sha256": "9fc0baba247c3bf2ce4d544384e78015456d2822cfbd529952a630ebb268a588",
+      "public_lf_sha256": "9fc0baba247c3bf2ce4d544384e78015456d2822cfbd529952a630ebb268a588"
+    },
+    {
+      "file": "check_precise_phrases_v3_10.py.txt",
+      "private_path": "check_precise_phrases_v3_10.py",
+      "private_sha256": "739387ee88004aa460c65d65bf2d5a076d11944b2ec569a26ebe0e595dec5fbd",
+      "public_lf_sha256": "739387ee88004aa460c65d65bf2d5a076d11944b2ec569a26ebe0e595dec5fbd"
+    },
+    {
+      "file": "build_phrase_review_v3_10.py.txt",
+      "private_path": "build_phrase_review_v3_10.py",
+      "private_sha256": "73c91f49c4178c1ac75ac682e9654272259b6604e40a8dbaba6d7219433ce21d",
+      "public_lf_sha256": "73c91f49c4178c1ac75ac682e9654272259b6604e40a8dbaba6d7219433ce21d"
+    },
+    {
+      "file": "benchmark_precise_phrases_v3_10.py.txt",
+      "private_path": "benchmark_precise_phrases_v3_10.py",
+      "private_sha256": "c37f1f2c631f759b2ae0a82b80c5189cf0fe906cabded1b1c138318b15ad616c",
+      "public_lf_sha256": "c37f1f2c631f759b2ae0a82b80c5189cf0fe906cabded1b1c138318b15ad616c"
+    },
+    {
+      "file": "benchmark_precise_phrases_v3_10_r2.py.txt",
+      "private_path": "benchmark_precise_phrases_v3_10_r2.py",
+      "private_sha256": "9bcfe4222616297b1a6be200167d145f630e9fc0ca05c309cc37181174e117a5",
+      "public_lf_sha256": "ded87d80175b0f9f22205821395879b24e968991a8017d4fa2c261709f59f936"
+    },
+    {
+      "file": "benchmark_precise_phrases_v3_10_r3.py.txt",
+      "private_path": "benchmark_precise_phrases_v3_10_r3.py",
+      "private_sha256": "a32427463ac2875639ea9c60f5ec784e585213d09b48d9f0defe833e5dc63eb8",
+      "public_lf_sha256": "6d690e66aa7adc438fe925a6a77e4d926952f3d74e3c1a311ea86a93b925ea73"
+    },
+    {
+      "file": "evaluate_historical_v3_10_http.py.txt",
+      "private_path": "evaluate_historical_v3_10_http.py",
+      "private_sha256": "54dbe674678d32c9309d6a5073f259836d1ad9b3bd583811b0c2dacc08f539b0",
+      "public_lf_sha256": "54dbe674678d32c9309d6a5073f259836d1ad9b3bd583811b0c2dacc08f539b0"
+    },
+    {
+      "file": "qualify_qwen_inputs_v3_10.py.txt",
+      "private_path": "qualify_qwen_inputs_v3_10.py",
+      "private_sha256": "80f0d1f11c5a29916d729f49e8645f6cd944f5c42232c18aaaaa67731b665c8a",
+      "public_lf_sha256": "80f0d1f11c5a29916d729f49e8645f6cd944f5c42232c18aaaaa67731b665c8a"
+    },
+    {
+      "file": "publish_precise_phrases_v3_10.py.txt",
+      "private_path": "publish_precise_phrases_v3_10.py",
+      "private_sha256": "d340a2fb1863d44cbc273b4f167752ce8d7508895784b6136fa7428f9eadafbb",
+      "public_lf_sha256": "d340a2fb1863d44cbc273b4f167752ce8d7508895784b6136fa7428f9eadafbb"
+    },
+    {
+      "file": "engine-first-index.py.txt",
+      "private_path": "moderation-v3_10-index-r1.py.txt",
+      "private_sha256": "c4f305a5151f70bbcf11cbb8660d5d0456ed85f43cf59c756e861a222d19e406",
+      "public_lf_sha256": "c4f305a5151f70bbcf11cbb8660d5d0456ed85f43cf59c756e861a222d19e406"
+    },
+    {
+      "file": "engine-before-optimization.py.txt",
+      "private_path": "app-v3_9-r3-before-3_10/app/services/moderation.py",
+      "private_sha256": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745",
+      "public_lf_sha256": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745"
+    },
+    {
+      "file": "current-model-input-equivalence.json",
+      "private_path": "qwen-inputs-context3_10/input-audit.json",
+      "private_sha256": "2d86995ce0ccf529d0597876fa8cdb824863e2aafeb57545a25afd0a06f27c17",
+      "public_lf_sha256": "f53297a9f2d12c4c7ac5cb185df68b2d5ce518ec3357fa9a82ebd359195eb87f"
+    },
+    {
+      "file": "historical-http-summary.json",
+      "private_path": "historical-v3_10-http/summary.json",
+      "private_sha256": "6870de4a695d403d5aac3814cd914d9809d71a8b0ff62b380b66ef402d1df82f",
+      "public_lf_sha256": "f8fa303f32170bcbac865651603d7f67fb83c2f9557ec2338df2231524cac995"
+    },
+    {
+      "file": "historical-http-predictions.jsonl",
+      "private_path": "historical-v3_10-http/predictions.jsonl",
+      "private_sha256": "bb663388f6c6a890cfce4a63bfe3b5a7e6ac68c0220edb0c0aa4b4b42fb91b04",
+      "public_lf_sha256": "8d4278111342787020faf0a98a7a2a17969d659b685a38f692c4deb1fea9e9c6"
+    },
+    {
+      "file": "tests-pytest-v3_10.txt",
+      "private_sha256": "3a56ac362a2f70441bf6e269d58212a88287155f86bd482602c5a8f950a3c0f4",
+      "public_lf_sha256": "923f243e712bfc3caf3381a2aca6737fadfa97bcf1a7dd0dee6cf928a215d4be",
+      "initial_public_lf_sha256": "cebb8df00cf0e7922f76959df9a813f5feaa8538ca9d3c34f6e9d20ed2ce3d6a",
+      "normalization": "workspace path redaction and trailing whitespace removal; original private log SHA retained"
+    },
+    {
+      "file": "tests-pytest-v3_10-r2.txt",
+      "private_sha256": "897a098c0a7c8b7405fa529d079b7ce289a5d5aa98a5eeb5dd103142733d3f80",
+      "public_lf_sha256": "2b3a19239fd6ea0f495cd2f2b12791015cc2665eec50b2d27e85fb352b2aeb44"
+    },
+    {
+      "file": "tests-pytest-v3_10-r3.txt",
+      "private_sha256": "f6907a28433203b1e9fbd06f000a2543fd328151d3c0926bec30a7575b273b29",
+      "public_lf_sha256": "39b989471142df322603cb11381e4f692922b619b0f9ba7031a672d5c4927a7d"
+    },
+    {
+      "file": "rollback-audit.json",
+      "public_lf_sha256": "8301832dc05f1eecc1d08f49687b1e6cb5c4cad6e5fd603d715f9c4792c2a7d8"
+    },
+    {
+      "file": "final-engine-qualification.json",
+      "public_lf_sha256": "788ffba24bcdf50463fad25b1d3a34a60d29c425dbc86f96d6549830da90521e"
+    },
+    {
+      "file": "privacy-staged.json",
+      "public_lf_sha256": "376a670721eeb41a68d74abcfaa5ec1ded19f7ea35b4d77739c79b3c2a203703",
+      "scope": "exact143stagedpayloadblobs before adding this report; final full-index scan retained privately"
+    }
+  ],
+  "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "fixture_rows": 247,
+  "previous_development_rows": 4887,
+  "previous_output_changes": 0,
+  "canonical_rules": 132,
+  "new_canonical_rules": 0,
+  "new_exact_normal_phrases": 34,
+  "new_pinyin_normal_phrases": 2,
+  "M1_pending": 132,
+  "decision_blanks": 792,
+  "previous_failed_test_and_performance_logs_retained": [
+    {
+      "file": "tests-pytest-v3_10.txt",
+      "original_log_retained": true
+    },
+    {
+      "file": "tests-pytest-v3_10-r2.txt",
+      "original_log_retained": true
+    },
+    {
+      "file": "tests-pytest-v3_10-r3.txt",
+      "original_log_retained": true
+    }
+  ],
+  "performance": "final3500calls0timeouts; previous two3400 runs each1GCtimeout retained",
+  "full_python": "final659PASS4SKIP98.25%; first1FAIL649PASS4SKIP; intermediate657PASS4SKIP retained",
+  "current_model_3258_input_and_literal_changes": 0,
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

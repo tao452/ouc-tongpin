@@ -1,0 +1,56 @@
+"""Prove whether frozen3.10 model inputs/literal OR apply to candidate3.11."""
+import hashlib
+import json
+import re
+from pathlib import Path
+
+import torch
+
+from qwen4_label_encoding_v1 import LabelEncoder
+from app.services.moderation import ModerationService
+from app.services.moderation_context import context_spans
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+torch.set_num_threads(2)
+source=LAB/'qwen4-margin-context-v2-inputs/features.pt'
+prepared=torch.load(source,map_location='cpu',weights_only=True)
+encoder=LabelEncoder(LAB/'qwen3-4b-instruct2507')
+service=ModerationService(ROOT/'services/algo/app/data/moderation-v3_11-candidate.json')
+rows=[];changes=[];literal_changes=[]
+for row in prepared['records']:
+    chars=[None]*max(w['char_span'][1] for w in row['windows'])
+    for window in row['windows']:
+        rendered=encoder.tokenizer.decode(window['input_ids'],skip_special_tokens=False,clean_up_tokenization_spaces=False)
+        marker='<|im_start|>user\n';start=rendered.index(marker)+len(marker);end=rendered.index('<|im_end|>',start)
+        value=json.loads(rendered[start:end])['text'];left,right=window['char_span']
+        assert len(value)==right-left
+        for index,char in enumerate(value,left):
+            assert chars[index] in [None,char]
+            chars[index]=char
+    assert all(c is not None for c in chars)
+    canonical=''.join(chars)
+    assert hashlib.sha256(canonical.encode()).hexdigest()==row['transformed_sha256']
+    spans=context_spans(canonical,service.variants,tuple(p for p,_,_ in service.numeric_tones),
+        service.known_targeted_quote,service.self_context)
+    protected=set(i for a,b in spans for i in range(a,b))
+    context=re.sub('□+','□',''.join(' ' if i in protected else c for i,c in enumerate(canonical)))
+    digest=hashlib.sha256(context.encode()).hexdigest()
+    if digest!=row['context_transformed_sha256']:changes.append(row['id'])
+    literal=bool(service.check(canonical).hits)
+    if literal!=row['literal_any']:literal_changes.append(row['id'])
+    rows.append(dict(id=row['id'],source_text_sha256=row['source_text_sha256'],
+        canonical_sha256=row['transformed_sha256'],context_sha256=digest,literal_any=literal,
+        previous_literal_any=row['literal_any'],label=row['label'],cohort=row['cohort']))
+assert len(rows)==3258
+report=dict(scope='exact current3.11 context representation and literal flags compared with frozen3.10 inputs; no model inference',
+    rows=rows,full_input_changes=0,context_input_changes=changes,literal_flag_changes=literal_changes,
+    frozen_features_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),dictionary_sha256=service.dictionary_sha256,
+    source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    raw_input_source='complete canonical JSON character windows, reconstructed exactly; no native text published',
+    engine_sha256={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+                   for p in (ROOT/'services/algo/app/services').glob('*.py')},
+    COLD_dev_fetched=False,production_acceptance=False)
+with (LAB/'sandhi-v3_11-model-input-equivalence.json').open('x',encoding='utf-8') as handle:
+    json.dump(report,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=3258,context_changes=len(changes),literal_changes=len(literal_changes))),flush=True)
+raise SystemExit(int(bool(changes or literal_changes)))

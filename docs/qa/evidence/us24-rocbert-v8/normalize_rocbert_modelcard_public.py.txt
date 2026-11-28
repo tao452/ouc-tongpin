@@ -1,0 +1,29 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+PUBLIC = ROOT / 'docs/qa/evidence/us24-rocbert-v8'
+path = PUBLIC / 'base-modelcard.md'
+before = path.read_bytes()
+after = b'\n'.join(line.rstrip(b' \t') for line in before.split(b'\n'))
+assert after != before
+manifest_path = PUBLIC / 'manifest.json'
+manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+entry = next(r for r in manifest['files'] if r['file'] == 'base-modelcard.md')
+assert entry['public_lf_sha256'] == hashlib.sha256(before).hexdigest()
+entry.update(initial_public_lf_sha256=entry['public_lf_sha256'],
+             public_lf_sha256=hashlib.sha256(after).hexdigest(),
+             additional_public_normalization='trim trailing ASCII spaces/tabs only; original private bytes and SHA retained')
+path.write_bytes(after)
+source = Path(__file__)
+data = source.read_bytes().replace(b'\r\n', b'\n')
+name = source.name + '.txt'
+with (PUBLIC / name).open('xb') as handle:
+    handle.write(data)
+manifest['files'].append(dict(file=name, private_path=source.relative_to(LAB).as_posix(),
+                              private_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+                              public_lf_sha256=hashlib.sha256(data).hexdigest()))
+manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
+print(json.dumps(dict(public_files=len(manifest['files']) + 1, original_modelcard_retained=True)))

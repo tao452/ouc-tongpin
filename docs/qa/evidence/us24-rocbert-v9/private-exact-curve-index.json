@@ -1,0 +1,34 @@
+[
+  {
+    "evaluation_path": "epoch-1",
+    "file": "model.csv",
+    "bytes": 1264691,
+    "private_path": "rocbert-v9/epoch-1/exact-score-sweep-v2/model.csv",
+    "sha256": "8a3fc80345042509a782c80ba15552887e382fbcab5b7af926c817c1f5642b7a",
+    "reproduction": "complete public scores and exact-score auditor"
+  },
+  {
+    "evaluation_path": "epoch-1",
+    "file": "literal_or_model.csv",
+    "bytes": 1215116,
+    "private_path": "rocbert-v9/epoch-1/exact-score-sweep-v2/literal_or_model.csv",
+    "sha256": "ecfb472a43f3d78a2a02b30c19cec5d3732c8c9fbb79d97697fc852ed823ae7d",
+    "reproduction": "complete public scores and exact-score auditor"
+  },
+  {
+    "evaluation_path": "epoch-1-phonetic-max",
+    "file": "model.csv",
+    "bytes": 1671744,
+    "private_path": "rocbert-v9/epoch-1-phonetic-max/exact-score-sweep-v2/model.csv",
+    "sha256": "4d83a2e127012e5d30a63684d55f976c4502fc3f305b0f2b2e2d0167ac178b0b",
+    "reproduction": "complete public scores and exact-score auditor"
+  },
+  {
+    "evaluation_path": "epoch-1-phonetic-max",
+    "file": "literal_or_model.csv",
+    "bytes": 1599833,
+    "private_path": "rocbert-v9/epoch-1-phonetic-max/exact-score-sweep-v2/literal_or_model.csv",
+    "sha256": "78481f36d705440f9d83f592515aa46db0936f36da7807d14173732afe09ad82",
+    "reproduction": "complete public scores and exact-score auditor"
+  }
+]

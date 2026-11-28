@@ -1,0 +1,57 @@
+import csv
+import sys
+
+import numpy as np
+
+sys.path.insert(0,'services/algo/scripts')
+from external_corpus import metrics
+
+
+def measure(rows,threshold,ensemble=False):
+    labels=np.array([r['label'] for r in rows],dtype=bool)
+    predicted=np.array([r.get('score',0)>=threshold or ensemble and r['literal_any'] for r in rows],dtype=bool)
+    errors=np.array([bool(r.get('error')) for r in rows],dtype=bool)
+    predicted[errors]=~labels[errors]
+    result=metrics(dict(tp=int((predicted&labels).sum()),fp=int((predicted&~labels).sum()),
+                        fn=int((~predicted&labels).sum()),tn=int((~predicted&~labels).sum())))
+    result['inference_errors']=int(errors.sum())
+    result['broad_benchmark_thresholds_met'] &= not errors.any()
+    return result
+
+
+def operating_point(rows,threshold,ensemble):
+    groups={key:[r for r in rows if r['cohort']==key] for key in ['toxicn_dev','PCR','controls','context_stress']}
+    value={key:measure(group,threshold,ensemble) for key,group in groups.items()}
+    eligible=all(v['false_positive_rate']<.02 and v['inference_errors']==0 for v in value.values())
+    gate=eligible and value['toxicn_dev']['recall']>=.95 and value['PCR']['recall']>=.95 and value['context_stress']['recall']>=.95
+    return dict(threshold=threshold,ensemble=ensemble,cohorts=value,
+                fpr_eligible=eligible,development_gate_met=gate)
+
+
+def rank(point):
+    a,b=point['cohorts']['PCR'],point['cohorts']['toxicn_dev']
+    return (min(a['recall'],b['recall']),a['recall'],b['recall'],
+            -max(v['false_positive_rate'] for v in point['cohorts'].values()),point['threshold'])
+
+
+def summarize(rows,curve_path):
+    best={};fields=['mode','threshold','cohort','tp','fp','fn','tn','recall','precision','fpr','errors']
+    with curve_path.open('x',encoding='utf-8',newline='') as handle:
+        writer=csv.DictWriter(handle,fieldnames=fields,lineterminator='\n');writer.writeheader()
+        for ensemble in [False,True]:
+            mode='literal_or_model' if ensemble else 'model'
+            candidate=None
+            for number in range(1,1000):
+                point=operating_point(rows,number/1000,ensemble)
+                for cohort,m in point['cohorts'].items():
+                    writer.writerow(dict(mode=mode,threshold=number/1000,cohort=cohort,
+                        **m['confusion_matrix'],recall=m['recall'],precision=m['precision'],
+                        fpr=m['false_positive_rate'],errors=m['inference_errors']))
+                if point['fpr_eligible'] and (candidate is None or rank(point)>rank(candidate)):
+                    candidate=point
+            best[mode]=dict(at_0_5=operating_point(rows,.5,ensemble),best_fpr_eligible=candidate)
+    for mode,value in best.items():
+        chosen=value['best_fpr_eligible'] or value['at_0_5']
+        value['by_category']={key:measure([r for r in rows if (r['cohort']+':'+r['category'])==key],
+            chosen['threshold'],chosen['ensemble']) for key in sorted({r['cohort']+':'+r['category'] for r in rows})}
+    return best

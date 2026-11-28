@@ -1,0 +1,104 @@
+[
+  {
+    "id": "QBOUND-01",
+    "text": "举报：'杀了你'请处理",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "QBOUND-02",
+    "text": "举报：'杀了你'请处理。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "QBOUND-03",
+    "text": "有人威胁我：'捅你一刀'让我很害怕",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "QBOUND-04",
+    "text": "有人威胁我：'捅你一刀'让我很害怕。你个蠢逼",
+    "passed": false,
+    "hits": [
+      [
+        "你个蠢逼",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "QBOUND-05",
+    "text": "语言科普：'泼你硫酸'是侮辱性表达",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "QBOUND-06",
+    "text": "语言科普：'泼你硫酸'是侮辱性表达。泼你硫酸",
+    "passed": false,
+    "hits": [
+      [
+        "泼你硫酸",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "QBOUND-07",
+    "text": "举报：‘杀了你’请处理",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "QBOUND-08",
+    "text": "举报：‘杀了你’请处理。杀了你",
+    "passed": false,
+    "hits": [
+      [
+        "杀了你",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "QBOUND-09",
+    "text": "有人威胁我：‘捅你一刀’让我很害怕",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "QBOUND-10",
+    "text": "有人威胁我：‘捅你一刀’让我很害怕。你个蠢逼",
+    "passed": false,
+    "hits": [
+      [
+        "你个蠢逼",
+        "HIGH"
+      ]
+    ]
+  },
+  {
+    "id": "QBOUND-11",
+    "text": "语言科普：‘泼你硫酸’是侮辱性表达",
+    "passed": true,
+    "hits": []
+  },
+  {
+    "id": "QBOUND-12",
+    "text": "语言科普：‘泼你硫酸’是侮辱性表达。泼你硫酸",
+    "passed": false,
+    "hits": [
+      [
+        "泼你硫酸",
+        "HIGH"
+      ]
+    ]
+  }
+]

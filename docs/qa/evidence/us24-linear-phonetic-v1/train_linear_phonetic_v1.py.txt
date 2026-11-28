@@ -1,0 +1,101 @@
+import csv
+import hashlib
+import importlib.metadata
+import json
+import sys
+import time
+import warnings
+from datetime import UTC, datetime
+from pathlib import Path
+
+import joblib
+import numpy as np
+from pypinyin import Style, pinyin
+from scipy.sparse import hstack
+from sklearn.exceptions import ConvergenceWarning
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from threadpoolctl import threadpool_limits
+
+from phonetic_recheck_metrics import summarize
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development, pcr
+from evaluate_comment_model import preprocess
+from evaluate_recall import load_external, source_sha
+from app.services.moderation import ModerationService
+from app.services.normalization import canonicalize
+
+sha=lambda value:hashlib.sha256(value).hexdigest()
+index=LAB/'phonetic-training-v2.index.json'
+prepared=json.loads(index.read_text(encoding='utf-8'))
+policy=prepared['policy']
+for name,digest in policy['engine_sha256'].items():assert source_sha(ROOT/name)==digest
+toxic=load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))
+pcr_rows,excluded=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+assert not excluded
+raw={r['id']:r['text'] for r in [*toxic,*pcr_rows]}
+for version in ['v2','v3']:
+    for row in development(ROOT/f'docs/qa/data/us24-development.{version}.jsonl'):
+        if not row['expected_word']:raw[f'{version}-{row["id"]}']=row['text']
+for row in map(json.loads,(ROOT/'docs/qa/data/us24-context-stress.v1.jsonl').read_text(encoding='utf-8').splitlines()):
+    raw[row['id']]=row['text']
+with (LAB/'cold-official-train.csv').open(encoding='utf-8-sig',newline='') as handle:
+    for number,row in enumerate(csv.DictReader(handle),1):raw[f'COLD-TRAIN-{number:05d}']=row['TEXT']
+literal=ModerationService(ROOT/'services/algo/app/data/moderation-v3_5-candidate.json')
+records=prepared['rows'];assert len(records)==38551
+output=LAB/'linear-phonetic-v1';output.mkdir(exist_ok=False)
+frozen=dict(created_at_utc=datetime.now(UTC).isoformat(),scope='fixed lexical/phonetic supervised development baseline',
+    dataset_policy=policy,index_sha256=sha(index.read_bytes()),training_rows=35293,evaluation_rows=3258,
+    code_sha256={p.name:source_sha(p) for p in [Path(__file__),LAB/'phonetic_recheck_metrics.py']},
+    character_features=dict(analyzer='char',ngram_range=[2,5],min_df=2,max_features=250000,sublinear_tf=True,norm='l2'),
+    phonetic_features=dict(analyzer='word',ngram_range=[1,4],min_df=2,max_features=250000,sublinear_tf=True,norm='l2',
+        reading='one context-first Style.NORMAL reading, no heteronym products'),
+    classifier=dict(solver='liblinear',penalty='l2',C=1.,max_iter=1000,tol=1e-4,class_weight='balanced',random_state=20261124),
+    vocabulary_and_IDF_fit='35293 training rows only',features_combined='equal-weight sparse concatenation',
+    packages={p:importlib.metadata.version(p) for p in ['scikit-learn','scipy','numpy','joblib','threadpoolctl','pypinyin']},
+    selection='same four-cohort FPR<2%,zero inference errors,positive recall>=95% gates; development only',
+    excluded_evaluation_rows=0,production_acceptance=False)
+with (output/'frozen.json').open('x',encoding='utf-8') as handle:json.dump(frozen,handle,ensure_ascii=False,indent=2)
+training=[];evaluation=[];texts=[];sounds=[];started=time.perf_counter()
+for number,row in enumerate(records,1):
+    text=raw[row['id']];assert sha(text.encode())==row['source_text_sha256']
+    transformed=canonicalize(text) if row['cohort']=='training' else preprocess(text,literal,True)['text']
+    assert sha(transformed.encode())==row['transformed_sha256']
+    texts.append(transformed)
+    sounds.append(' '.join(part[0] for part in pinyin(transformed,style=Style.NORMAL,heteronym=False)).lower())
+    if row['cohort']=='training':training.append(number-1)
+    else:evaluation.append(number-1)
+    if number%2000==0:print(f'Prepared sparse inputs {number}/{len(records)}',flush=True)
+assert len(training)==35293 and len(evaluation)==3258
+char=TfidfVectorizer(analyzer='char',ngram_range=(2,5),min_df=2,max_features=250000,sublinear_tf=True,dtype=np.float32)
+phonetic=TfidfVectorizer(analyzer='word',ngram_range=(1,4),min_df=2,max_features=250000,sublinear_tf=True,dtype=np.float32)
+with threadpool_limits(limits=2):
+    train_features=hstack([char.fit_transform([texts[i] for i in training]),phonetic.fit_transform([sounds[i] for i in training])],format='csr')
+    evaluation_features=hstack([char.transform([texts[i] for i in evaluation]),phonetic.transform([sounds[i] for i in evaluation])],format='csr')
+    model=LogisticRegression(solver='liblinear',C=1.,max_iter=1000,tol=1e-4,class_weight='balanced',random_state=20261124)
+    print(f'Fitting training_shape={train_features.shape} nnz={train_features.nnz}',flush=True)
+    with warnings.catch_warnings(record=True) as captured:
+        warnings.simplefilter('always')
+        model.fit(train_features,np.array([records[i]['label'] for i in training],dtype=np.int64))
+    converged=not any(issubclass(w.category,ConvergenceWarning) for w in captured)
+    assert list(model.classes_)==[0,1]
+    probabilities=model.predict_proba(evaluation_features)[:,1].tolist()
+joblib.dump(dict(character_vectorizer=char,phonetic_vectorizer=phonetic,classifier=model),output/'model.joblib',compress=3)
+predictions=[]
+for row_index,score in zip(evaluation,probabilities,strict=True):
+    row={k:v for k,v in records[row_index].items() if k not in {'windows','window_lengths'}}
+    if not np.isfinite(score):row['error']='NonFinite'
+    else:row['score']=float(score)
+    predictions.append(row)
+with (output/'predictions.jsonl').open('x',encoding='utf-8') as handle:
+    for row in predictions:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+result=dict(executed_at_utc=datetime.now(UTC).isoformat(),elapsed_seconds=time.perf_counter()-started,
+    model_sha256=sha((output/'model.joblib').read_bytes()),training_shape=list(train_features.shape),
+    train_nonzero=int(train_features.nnz),vocabulary_counts=dict(char=len(char.vocabulary_),phonetic=len(phonetic.vocabulary_)),
+    converged=converged,iterations=model.n_iter_.tolist(),evaluation_rows=len(predictions),excluded_evaluation_rows=0,
+    metrics=summarize(predictions,output/'thresholds.csv'),production_acceptance=False)
+with (output/'report.json').open('x',encoding='utf-8') as handle:json.dump(result,handle,ensure_ascii=False,indent=2)
+print(json.dumps(dict(converged=converged,best=result['metrics']['literal_or_model']['best_fpr_eligible'])),flush=True)
+raise SystemExit(0 if converged and any(p and p['development_gate_met'] for m in result['metrics'].values() for p in [m['best_fpr_eligible']]) else 1)

@@ -1,0 +1,186 @@
+"""Publish complete registered experiment metadata; all text/token/parameter assets stay private."""
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+ROOT = Path.cwd()
+LAB = ROOT / 'qa-private/us24-recall-20261124'
+PRIVATE = LAB / 'rocbert-v9'
+PUBLIC = ROOT / 'docs/qa/evidence/us24-rocbert-v9'
+SOURCE_COMMIT = 'ab9716f7f8ea502eddb044f0356fff501169a15d'
+
+
+def sha(path):
+    with path.open('rb') as handle:
+        return hashlib.file_digest(handle, 'sha256').hexdigest()
+
+
+def index_rows(path):
+    value = json.loads(path.read_text(encoding='utf-8'))
+    return value['rows'] if isinstance(value, dict) else value
+
+
+def main():
+    complete = json.loads((PRIVATE / 'evaluation-complete.json').read_text(encoding='utf-8'))
+    frozen = json.loads((PRIVATE / 'frozen.json').read_text(encoding='utf-8'))
+    assert complete['frozen'] == frozen
+    assert frozen['epochs'] == 1 and frozen['parent_epoch'] == 3
+    assert frozen['training_rows'] == frozen['training_windows_per_epoch'] == 51278
+    assert frozen['evaluation_rows'] == 3258 and frozen['verified_training_phonetic_views'] == 4745
+    for name, value in frozen['code_sha256'].items():
+        assert hashlib.sha256((LAB / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == value
+    policy = frozen['dataset_policy']
+    for name, value in policy['code_sha256'].items():
+        assert hashlib.sha256((LAB / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == value
+    for name, value in policy['previous_3_10_policy']['evaluation_policy']['current_engine_sha256'].items():
+        data = subprocess.check_output(['git', 'show', SOURCE_COMMIT + ':' + name])
+        assert hashlib.sha256(data.replace(b'\r\n', b'\n')).hexdigest() == value
+    assert sha(LAB / 'rocbert-v9-inputs/features.pt') == frozen['features_sha256']
+    assert sha(LAB / 'rocbert-v9-inputs/index.json') == frozen['index_sha256']
+    index = index_rows(LAB / 'rocbert-v9-inputs/index.json')
+    assert len(index) == len({r['id'] for r in index}) == 54536
+    originals = {}
+    for path in [LAB / 'qwen-homophone-v6-inputs/index.json', LAB / 'qwen-cntp-domain-v7-inputs/index.json']:
+        for row in index_rows(path):
+            if row['cohort'] == 'training':
+                if row['id'] in originals:
+                    assert row['label'] == originals[row['id']]['label']
+                    assert row['transformed_sha256'] == originals[row['id']]['transformed_sha256']
+                originals[row['id']] = row
+    assert len(originals) == 46533
+    by_id = {r['id']: r for r in index}
+    assert originals.keys() <= by_id.keys()
+    for identifier, old in originals.items():
+        for key in ['label', 'transformed_sha256', 'source_text_sha256']:
+            assert old[key] == by_id[identifier][key]
+    forbidden = {'text', 'pinyin', 'input_ids', 'input_shape_ids', 'input_pronunciation_ids'}
+    assert all(not forbidden.intersection(r) and isinstance(r['windows'], int) for r in index)
+    PUBLIC.mkdir(exist_ok=False)
+    entries = []
+
+    def write(data, name, original=None, normalization=None):
+        assert len(data) < 5 * 1024 * 1024
+        target = PUBLIC / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open('xb') as handle:
+            handle.write(data)
+        item = dict(file=name, public_lf_sha256=hashlib.sha256(data).hexdigest())
+        if original:
+            item.update(private_path=original.relative_to(LAB).as_posix(), private_sha256=sha(original))
+        if normalization:
+            item['public_normalization'] = normalization
+        entries.append(item)
+
+    def copy(path, name):
+        data = path.read_bytes().replace(b'\r\n', b'\n')
+        data = b'\n'.join(line.rstrip(b' \t') for line in data.split(b'\n'))
+        write(data, name, path, 'LF plus trailing ASCII whitespace trim; original private SHA retained')
+
+    def jsonl(rows, name):
+        write(''.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) + '\n'
+                      for r in rows).encode(), name)
+
+    for name in ['frozen.json', 'summary.json', 'evaluation-complete.json', 'training-window-order.json']:
+        copy(PRIVATE / name, name)
+    sources = ['train_rocbert_v9.py', 'train_rocbert_v8.py', 'prepare_rocbert_v9.py',
+               'rocbert_encoding_v9.py', 'rocbert_encoding_v8.py', 'rocbert_phonetic_view_v9.py',
+               'phonetic_recheck_metrics.py', 'audit_threshold_grid.py', 'audit_prediction_curves_v9.py',
+               'audit_exact_operating_points_v2.py',
+               'check_syllable_encoder_v9.py', 'check_phonetic_views_v9.py', 'check_phonetic_views_v9_r3.py',
+               Path(__file__).name]
+    for name in sources:
+        copy(LAB / name, name + '.txt')
+    for path, name in [(LAB / 'rocbert-v9-inputs/policy.json', 'input-policy.json'),
+                       (LAB / 'rocbert-v9-inputs/training-view-decisions.json', 'training-view-decisions.json'),
+                       (LAB / 'rocbert-v9-preflight-8.json', 'preflight-8.json'),
+                       (LAB / 'phonetic-views-v9-qualification-r3.json', 'phonetic-views-qualification-r3.json'),
+                       (LAB / 'phonetic-views-v9-qualification.json', 'phonetic-views-qualification-r2.json'),
+                       (LAB / 'v9-phonetic-evaluation-training-overlap.json', 'phonetic-evaluation-training-overlap.json'),
+                       (LAB / 'syllable-v9-qualification.json', 'syllable-qualification.json'),
+                       (LAB / 'rocbert_phonetic_view_v9-r1.py.txt', 'previous-phonetic-helper-r1.py.txt'),
+                       (LAB / 'rocbert_phonetic_view_v9-r2.py.txt', 'previous-phonetic-helper-r2.py.txt'),
+                       (LAB / 'check_syllable_encoder_v9-r1.py.txt', 'previous-syllable-check-r1.py.txt')]:
+        copy(path, name)
+    for name in ['check-phonetic-views-v9-r1.log', 'check-phonetic-views-v9-r2.log',
+                 'check-phonetic-views-v9-r3.log', 'check-syllable-encoder-v9-r1.log',
+                 'check-syllable-encoder-v9-r2.log']:
+        path = LAB / name
+        text = path.read_text(encoding='utf-8').replace('\r\n', '\n')
+        for prefix in [str(ROOT), str(ROOT).replace('/', '\\')]:
+            text = text.replace(prefix, '<workspace>')
+        data = '\n'.join(line.rstrip(' \t') for line in text.split('\n')).encode()
+        write(data, name + '.txt', path, 'local workspace path redacted; LF and trailing ASCII whitespace trim')
+    fields = ['id', 'cohort', 'label', 'category', 'source_id', 'augmentation', 'source_text_sha256',
+              'transformed_sha256', 'representation_sha256', 'windows', 'window_lengths',
+              'latin_syllable_features', 'masked_body_tokens']
+    projection = [{key: row[key] for key in fields if key in row} for row in index]
+    for start in range(0, len(projection), 3500):
+        jsonl(projection[start:start + 3500], f'input-index-{start // 3500 + 1:02d}.jsonl')
+    errors = 0
+    gates = []
+    fixed_grid_gates = []
+    exact_curves = []
+    for name, result in [('epoch-1', complete['full_input']),
+                         ('epoch-1-phonetic-max', complete['phonetic_max'])]:
+        directory = PRIVATE / name
+        predictions = [json.loads(line) for line in (directory / 'predictions.jsonl').read_text(encoding='utf-8').splitlines()]
+        assert len(predictions) == len({r['id'] for r in predictions}) == 3258
+        assert all(not forbidden.intersection(r) and 'windows' not in r for r in predictions)
+        errors += sum(bool(r.get('error')) for r in predictions)
+        assert result['weights_sha256'] == complete['full_input']['weights_sha256']
+        integer = json.loads((directory / 'threshold-grid-gate-audit.json').read_text(encoding='utf-8'))
+        recomputed = json.loads((directory / 'prediction-curve-recomputation.json').read_text(encoding='utf-8'))
+        assert integer['passing_operating_points'] == recomputed['passing_operating_points']
+        if integer['development_gate_met']:
+            fixed_grid_gates.append(name)
+        exact_directory = directory / 'exact-score-sweep-v2'
+        exact = json.loads((exact_directory / 'report.json').read_text(encoding='utf-8'))
+        assert exact['previous_grid_matrices_recomputed'] == 7992
+        if exact['development_gate_met']:
+            gates.append(name)
+        copy(exact_directory / 'report.json', name + '-exact-score-report.json')
+        for file in ['model.csv', 'literal_or_model.csv']:
+            path = exact_directory / file
+            exact_curves.append(dict(evaluation_path=name, file=file, bytes=path.stat().st_size,
+                                     private_path=path.relative_to(LAB).as_posix(), sha256=sha(path),
+                                     reproduction='complete public scores and exact-score auditor'))
+        for file in ['predictions.jsonl', 'report.json', 'thresholds.csv',
+                     'threshold-grid-gate-audit.json', 'prediction-curve-recomputation.json']:
+            copy(directory / file, name + '-' + file)
+    assert sha(PRIVATE / 'epoch-1/model.safetensors') == complete['full_input']['weights_sha256']
+    partials = []
+    for directory in sorted(PRIVATE.glob('partial-*')):
+        item = json.loads((directory / 'progress.json').read_text(encoding='utf-8'))
+        assert item['accuracy_status'] == 'NOT_RUN' and not item['evaluation_run']
+        item['files'] = {p.name: dict(bytes=p.stat().st_size, sha256=sha(p))
+                         for p in directory.iterdir() if p.suffix != '.json'}
+        partials.append(item)
+    jsonl(partials, 'partial-state-index.jsonl')
+    write((json.dumps(exact_curves, ensure_ascii=False, indent=2)+'\n').encode(), 'private-exact-curve-index.json')
+    manifest = dict(scope='completed one-epoch development and both preregistered evaluation paths',
+                    files=entries, source_engine_commit=SOURCE_COMMIT,
+                    input_index_projection_fields=fields, private_full_index_sha256=frozen['index_sha256'],
+                    input_rows=54536, retained_prior_training_rows=46533, new_training_phonetic_views=4745,
+                    training_rows=51278, training_windows=51278, unique_evaluation_comments=3258,
+                    evaluated_input_views=6516, decision_rows_across_two_reports=6516,
+                    excluded_evaluation_rows=0, inference_errors_across_two_reports=errors,
+                    development_gate_passing_paths=gates, fixed_grid_gate_passing_paths=fixed_grid_gates,
+                    exact_curve_policy='full CSV files retained private with SHA/bytes; complete scores and generator public',
+                    parent_epoch=3,
+                    parent_choice='fixed last epoch of v8, not its best development epoch',
+                    old_training_label_conflicts_retained=15, train_eval_representation_overlaps=0,
+                    training_vs_alternative_phonetic_evaluation_overlap_rows=0,
+                    dictionary_sha256='4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722',
+                    base_license='HF weight license undeclared; author code Apache2 separate; no weights redistributed',
+                    private_assets='all corpus text, token windows, base/updated parameters, optimizer/RNG state',
+                    upstream_pretraining_evaluation_exposure='unknown', COLD_dev_fetched=False,
+                    M1_review='PENDING', M3_reproduction='PENDING', production_acceptance=False)
+    with (PUBLIC / 'manifest.json').open('x', encoding='utf-8', newline='\n') as handle:
+        json.dump(manifest, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(dict(files=len(entries)+1, evaluation_comments=3258, evaluated_views=6516,
+                          errors=errors, development_gate_passing_paths=gates)))
+
+
+if __name__ == '__main__':
+    main()

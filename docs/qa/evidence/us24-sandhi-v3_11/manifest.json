@@ -1,0 +1,200 @@
+{
+  "scope": "candidate3.11 literal development, broad gate still failed",
+  "files": [
+    {
+      "file": "existing-sandhi-gap-audit-v1.json",
+      "private_sha256": "5d4fc07574231723e0353bf47140b0e69815157829b4e79dc32947ce3b45c04d",
+      "public_lf_sha256": "fe96cc7e392f3a3088ba09868da07a0b366a374c23c036fe0948bf999f21a355"
+    },
+    {
+      "file": "sandhi-revision-v3_11-probe.json",
+      "private_sha256": "d5f7ef3ad223130ea86afdba0edd71f7bf0422d0aa2088d7a196ccad1fdf6ee6",
+      "public_lf_sha256": "81ab80fdc6983e1631d657e55ddff66301dd0d837b1c87bb1778ead0e818b3b4"
+    },
+    {
+      "file": "sandhi-v3_11-policy.json",
+      "private_sha256": "973a2125a0e10d38f39015cebe7180a61f64a32c3b5ac9b506d44b238c58c895",
+      "public_lf_sha256": "090dcf948c70820e7ce7f3d3eb852307316cb270d640967138067e56fa441b7b"
+    },
+    {
+      "file": "sandhi-v3_11-paired.json",
+      "private_sha256": "13534dc9037eb8bee56dcc897a88d7b571f97e7cc781e3f8525b72e5c69b223b",
+      "public_lf_sha256": "95c3b5f762a8301d38d110ef4407190c6868034b35b7a5475fe630be2ff3240b"
+    },
+    {
+      "file": "sandhi-v3_11-before.jsonl",
+      "private_sha256": "a4d291fe63034bdc9ac658c695d69dab03472619c7eb84e7db7fbc847310702b",
+      "public_lf_sha256": "a4d291fe63034bdc9ac658c695d69dab03472619c7eb84e7db7fbc847310702b"
+    },
+    {
+      "file": "sandhi-v3_11-after.jsonl",
+      "private_sha256": "aa8bc6db468f799b5c5c84d676011d743c0aa8eacadfab64a7ebe365eeb7597d",
+      "public_lf_sha256": "aa8bc6db468f799b5c5c84d676011d743c0aa8eacadfab64a7ebe365eeb7597d"
+    },
+    {
+      "file": "sandhi-v3_11-http.json",
+      "private_sha256": "8b37a0acbeab26c1a328fc4d831428732cdcd83fe301488d43d5553e421c20e5",
+      "public_lf_sha256": "8afbf994dac8128468d2742f4ab8cd146b6d006a3619314b295fbcaeabd3ff41"
+    },
+    {
+      "file": "sandhi-v3_11-performance.json",
+      "private_sha256": "d02b719b5909083f99dafdad1c767d04099ee11fe7dcb2e0b52c1e11942b751c",
+      "public_lf_sha256": "ac005083bc45d8073439b5c77b92dfd98eeec4e414c5f1aa9fb07b635b3815ef"
+    },
+    {
+      "file": "sandhi-v3_11-model-input-equivalence.json",
+      "private_sha256": "694f2c006a5918095d4236d4cfec2dab2ebf544f4b16212f832998eb830549f6",
+      "public_lf_sha256": "b1253607fb7b02225f8f454303c32f78d283d1f446234cbc02b7cc1d6c996e15"
+    },
+    {
+      "file": "sandhi-v3_11-review-structure.json",
+      "private_sha256": "437d3c7f7116b3ade34d1102527ac7b1bcd5529cb6506609826b65a78e2fdcea",
+      "public_lf_sha256": "7e1cd88c2f683320b6b7fcf791bb4723bfd45655039c0c51834060edc94712f4"
+    },
+    {
+      "file": "pytest-sandhi-focused-v3_11.txt",
+      "private_sha256": "0228417b7f16edaf641c145dee1592010be9a9e9d05153a3e064b74375e1f400",
+      "public_lf_sha256": "e0337a13e7931aa17af022b5c999104bff067000f6363f790d6cd04a13dcc4ae",
+      "initial_public_lf_sha256": "042a82ec4a1e11b5533a19c9d97b64b58684b3ffb7c85cec3ef2c509b591c495",
+      "before_trailing_space_normalization_sha256": "08b2d31a5664d5d38205fdaa3abb127a86cfe690363f0fa9bf036a2316d082b0",
+      "additional_normalization": "trailing ASCII spaces only; all test outcomes and original private log retained"
+    },
+    {
+      "file": "pytest-v3_11-r1.txt",
+      "private_sha256": "d149eded8725bd63d61b45b5424a085f37773dc5b8e168e0ee0de77ab5071c6b",
+      "public_lf_sha256": "2d970d6160f3da75be6cdc875a0dfa614bee6c4b0aed3f468dff08539632c685"
+    },
+    {
+      "file": "ruff-v3_11.txt",
+      "private_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "public_lf_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "file": "audit_existing_sandhi_paths_v1.py.txt",
+      "private_sha256": "5d8fd41243bc134396f2483ca6e37648d1f5f1d396d1e4a9b85a7480ad70aa9d",
+      "public_lf_sha256": "5d8fd41243bc134396f2483ca6e37648d1f5f1d396d1e4a9b85a7480ad70aa9d"
+    },
+    {
+      "file": "probe_sandhi_revision_v3_11.py.txt",
+      "private_sha256": "f9975e55baacaae364f89011d02b8032bda81c5886a1dcbb06c13e7f007dd492",
+      "public_lf_sha256": "f9975e55baacaae364f89011d02b8032bda81c5886a1dcbb06c13e7f007dd492"
+    },
+    {
+      "file": "build_sandhi_fixture_v3_11.py.txt",
+      "private_sha256": "0742124bf1a6564dddfa5ec59c676679fc04ac62444b87fc2ec1dd9a1100f5af",
+      "public_lf_sha256": "0742124bf1a6564dddfa5ec59c676679fc04ac62444b87fc2ec1dd9a1100f5af"
+    },
+    {
+      "file": "check_sandhi_revision_v3_11.py.txt",
+      "private_sha256": "c40abfb6eefb5b95ddd7b0c78f09aaf45983af6a66688680bc555533ade1f96f",
+      "public_lf_sha256": "c40abfb6eefb5b95ddd7b0c78f09aaf45983af6a66688680bc555533ade1f96f"
+    },
+    {
+      "file": "benchmark_sandhi_v3_11.py.txt",
+      "private_sha256": "91b56908d25eea53a53de091e805414fbb2d198561098b5e1dde1ecedbd5b9e5",
+      "public_lf_sha256": "91b56908d25eea53a53de091e805414fbb2d198561098b5e1dde1ecedbd5b9e5"
+    },
+    {
+      "file": "qualify_sandhi_model_inputs_v3_11.py.txt",
+      "private_sha256": "b727ab455e106a7dcb4579285404ea61d525cf80b33f6ff84ea090c5551a872c",
+      "public_lf_sha256": "b727ab455e106a7dcb4579285404ea61d525cf80b33f6ff84ea090c5551a872c"
+    },
+    {
+      "file": "check_sandhi_http_v3_11.py.txt",
+      "private_sha256": "46550c92ddccdb9edd81cb1a8410f2615c399bd3eee5d5c03c2fcbfc8783d79a",
+      "public_lf_sha256": "46550c92ddccdb9edd81cb1a8410f2615c399bd3eee5d5c03c2fcbfc8783d79a"
+    },
+    {
+      "file": "publish_sandhi_v3_11.py.txt",
+      "private_sha256": "5332dc7aefef2519049456a8290b01a27b6b9bd3af563c16511cc526021417e0",
+      "public_lf_sha256": "5332dc7aefef2519049456a8290b01a27b6b9bd3af563c16511cc526021417e0"
+    },
+    {
+      "file": "qualify_sandhi_public_v3_11.py.txt",
+      "public_lf_sha256": "307063a553eb339a2181626f795c83a26a5909538d9b7196f5f9c54e2fbd1c43"
+    },
+    {
+      "file": "all-candidate-technical-summary.json",
+      "public_lf_sha256": "83edb2da1a51e87171b3e1200d572d2369cb8e6e579ab2cc0ca118e2d934addb"
+    },
+    {
+      "file": "audit_every_candidate_mapping_v3_11.py.txt",
+      "public_lf_sha256": "769e72d1423ae215facdc4d84f98b1571efe8eeba5105d5cef6086a270509995"
+    },
+    {
+      "file": "publish_candidate_technical_audit_v3_11.py.txt",
+      "public_lf_sha256": "6a687e73690569504901f13f7c29f4f2c43cae8bda7d977cc692b36d49c9ab7b"
+    },
+    {
+      "file": "ci-4964696-qualified.json",
+      "public_lf_sha256": "3f9b6f35ee821507f20d18650394a85cf2f2a09e48737ff3a18f9597cf2ec19f",
+      "before_final_newline_normalization_sha256": "1a62a166d5ca6afd3918165cb5540779bec536fb251b2a9660e377d7f35131bf",
+      "normalization": "single final newline; CI results unchanged"
+    },
+    {
+      "file": "cold-dev-blind-v4.protocol.json",
+      "public_lf_sha256": "e15bd6b74e093f4aa1acea8ae6c920d2535b28fb80372327082d3a039a736c6d"
+    },
+    {
+      "file": "cold-dev-blind-v4.protocol.md",
+      "public_lf_sha256": "d1ed58c8364ec4291f60ca14b1b5eed88d9a53ff1b835ece3b8962ec5b81b996"
+    }
+  ],
+  "dictionary_sha256": "ebc7e259552cd91ac194e60328c86df3f96a36413d018e08e0d8353f92a87429",
+  "rollback_files": [
+    {
+      "file": "words.json",
+      "sha256": "73591bcdea7021a5dc946afd4ea894537409101ec604c8a91e0073e52248981d",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v1.json",
+      "sha256": "6dc578db29748a9714e810fe56b00045726fabb2b891b6ab0b8246bfec51cb0a",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_8-candidate.json",
+      "sha256": "e5dd9cc5bdebffca200476d12c4a2570883cf94f27fdf513d5adf30b70cc3b9c",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_9-candidate.json",
+      "sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+      "byte_identical": true
+    },
+    {
+      "file": "moderation-v3_10-candidate.json",
+      "sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+      "byte_identical": true
+    }
+  ],
+  "candidate_rules": 132,
+  "new_rules": 0,
+  "changed_rules": 5,
+  "added_paths": 6,
+  "development_rows": 84,
+  "historical_rows": 5134,
+  "historical_output_changes": 0,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "M1_pending": 132,
+  "decision_blanks": 792,
+  "COLD_dev_fetched": false,
+  "production_acceptance": false,
+  "log_path_normalization": [
+    {
+      "file": "pytest-sandhi-focused-v3_11.txt",
+      "initial_public_sha256": "042a82ec4a1e11b5533a19c9d97b64b58684b3ffb7c85cec3ef2c509b591c495",
+      "final_public_sha256": "08b2d31a5664d5d38205fdaa3abb127a86cfe690363f0fa9bf036a2316d082b0",
+      "change": "local userhome prefix only; test outcomes unchanged"
+    }
+  ],
+  "technical_mapping_checks": 1263,
+  "CI": {
+    "head": "4964696c9003443db0141d29f0649aaebdec123d",
+    "run_id": 45555354173,
+    "all10success": true,
+    "python668": true,
+    "java144": true
+  }
+}

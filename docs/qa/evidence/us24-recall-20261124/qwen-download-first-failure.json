@@ -1,0 +1,6 @@
+{
+  "expected_bytes": 1503300328,
+  "actual_bytes": 266642140,
+  "reason": "Upstream HTTP stream ended before expected safetensors size; rejected before inference",
+  "used_in_evaluation": false
+}

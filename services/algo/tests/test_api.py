@@ -16,7 +16,7 @@ def test_health_and_contract():
 
 @pytest.mark.parametrize("payload", [
     {}, {"text": ""}, {"text": " "}, {"text": None}, {"text": 123}, {"text": []},
-    {"text": "a" * 2001}, {"text": "hello", "studentId": "TEST-STUDENT-001"},
+    {"text": "hello", "studentId": "TEST-STUDENT-001"},
 ])
 def test_invalid_input_is_rejected_without_echoing_content(payload):
     response = client.post("/api/moderation/check", json=payload)
@@ -30,10 +30,31 @@ def test_malformed_json():
 
 
 def test_length_boundary_and_repeatability():
+    oversized = client.post("/api/moderation/check", json={"text": "好" * 2001})
+    assert oversized.status_code == 400
+    assert oversized.json() == {"detail": "Invalid request"}
     payload = {"text": "好" * 2000}
     first = client.post("/api/moderation/check", json=payload)
     assert first.status_code == 200
     assert first.json() == client.post("/api/moderation/check", json=payload).json()
+
+
+def test_service_input_errors_and_internal_errors_are_distinct(monkeypatch):
+    from app.routers import moderation
+    from app.services.moderation import ModerationInputError
+
+    def input_error(text):
+        raise ModerationInputError("private input")
+
+    monkeypatch.setattr(moderation.service, "check", input_error)
+    assert client.post("/api/moderation/check", json={"text": "synthetic"}).status_code == 400
+
+    def internal_error(text):
+        raise ValueError("internal fault")
+
+    monkeypatch.setattr(moderation.service, "check", internal_error)
+    assert TestClient(app, raise_server_exceptions=False).post(
+        "/api/moderation/check", json={"text": "synthetic"}).status_code == 500
 
 
 def test_wrong_method():

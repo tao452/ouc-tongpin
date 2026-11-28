@@ -1,0 +1,40 @@
+{
+  "failed_ci_run": 45576378926,
+  "failed_commit": "3a3f86478cc64c3ac25f01ea6ec82bf43580391e",
+  "raw_worktree_sha_preserved": true,
+  "git_lf_sha_verified_against_git_blob": true,
+  "old_files_untouched": 23,
+  "line_ending_differences": [
+    "moderation-v3_8-candidate.manifest.json"
+  ],
+  "native_dictionary_and_fixture_labels_changed": false,
+  "function_trace_and_metrics_unchanged_rows": 1038,
+  "audit": {
+    "entries": 80,
+    "levels": {
+      "HIGH": 19,
+      "MEDIUM": 56,
+      "LOW": 5
+    },
+    "historical_rules_accounted": 132,
+    "dispositions": {
+      "RETAIN_WORD": 46,
+      "EXTRACT_WORD": 23,
+      "DEFER_SENTENCE": 31,
+      "MERGE_TO_EXISTING_WORD": 3,
+      "SPLIT_WORDS": 2,
+      "DEFER_MEDICAL": 4,
+      "DEFER_CONTEXTUAL": 19,
+      "DEFER_ANIMAL": 4
+    },
+    "rollback_files_unchanged": 23,
+    "m1_pending": 80,
+    "m1_disposition_pending": 132,
+    "blank_decisions": 1272,
+    "pinyin_keys": 84,
+    "variants": 261,
+    "dictionary_sha256": "3294ab6039e74df504964edcf20c917824a5ba91aba8d99d8bcfad486e11956a"
+  },
+  "new_evaluation_sha256": "88302c505477d5758a2590a4c568b9c725756d60551cc2b488e4456f99d517ee",
+  "current_plan_sha256": "37d83f1c00ca5e0581eb17e33b6bf68a9b4a0cb84535d3e3d871c8af65f84f5d"
+}

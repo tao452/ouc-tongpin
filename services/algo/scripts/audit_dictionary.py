@@ -1,0 +1,84 @@
+"""Per-entry technical checks, separate from M1 business approval and broad recall."""
+
+import argparse
+import json
+import sys
+from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from evaluate_candidate import ROOT, sha  # noqa: E402
+from evaluate_recall import source_sha  # noqa: E402
+
+from app.services.moderation import ModerationService  # noqa: E402
+from app.services.normalization import normalize  # noqa: E402
+from app.services.pronunciation import phrase_readings, pronunciation_keys  # noqa: E402
+
+
+def audit(dictionary):
+    service = ModerationService(dictionary)
+    rows = json.loads(dictionary.read_text(encoding="utf-8-sig"))
+    data = ROOT / "services/algo/app/data"
+    sources = [(name, {r["word"] for r in json.loads((data / file).read_text(encoding="utf-8"))})
+               for name, file in [("baseline5", "words.json"),
+                                  ("pr83_additions41", "moderation-v1.json"),
+                                  ("v2_additions24", "moderation-v2-candidate.json"),
+                                  ("v3_additions50", "moderation-v3-candidate.json")]]
+    seen, findings, entries = {}, [], []
+    for index, row in enumerate(rows, 1):
+        word = row["word"]
+        identifier = f"US24-{index:03}"
+        origin = next((name for name, words in sources if word in words), "current_additions")
+        scoped = [*[(v, row.get("target_required", False))
+                    for v in [word, *row.get("aliases", [])]],
+                  *[(v, True) for v in row.get("targeted_aliases", [])]]
+        own, checks = set(), []
+        for variant, target in scoped:
+            token = normalize(variant)
+            if token in own:
+                findings.append(dict(candidate_id=identifier, kind="normalized_redundancy"))
+            own.add(token)
+            if token in seen and seen[token] != word:
+                findings.append(dict(candidate_id=identifier, kind="variant_conflict"))
+            seen[token] = word
+            attack = "你就是" + variant if target else variant
+            quote = f'举报：“{attack}”请处理'
+            checks.append(dict(
+                variant=variant, positive=word in {h.word for h in service.check(attack).hits},
+                quotation=not service.check(quote).hits,
+                continued_attack=word in {
+                    h.word for h in service.check(quote + "。" + attack).hits}))
+        readings = (phrase_readings(word, row.get("pinyin_readings", []))
+                    if row.get("pinyin") else [])
+        keys = pronunciation_keys(word, row.get("pinyin_readings", []),
+                                  row.get("pinyin_aliases", [])) if row.get("pinyin") else []
+        passed = all(c[k] for c in checks for k in ["positive", "quotation", "continued_attack"])
+        entries.append(dict(candidate_id=identifier, origin=origin, word=word,
+                            level=row["level"], checks=checks, phrase_readings=readings,
+                            pinyin_keys=keys, numeric_tones=row.get("pinyin_tone_numbers", False),
+                            technical_pass=passed,
+                            m1_status="PENDING"))
+    return dict(scope="technical_self_check_only", dictionary_sha256=sha(dictionary),
+                code_sha256=source_sha(Path(__file__)), entry_count=len(rows),
+                origins=dict(Counter(e["origin"] for e in entries)), findings=findings,
+                technical_pass_count=sum(e["technical_pass"] for e in entries), entries=entries,
+                business_approval=False, production_acceptance=False)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dictionary", required=True, type=Path)
+    parser.add_argument("--output", required=True, type=Path)
+    args = parser.parse_args(argv)
+    if args.output.exists():
+        raise FileExistsError("Evidence already exists")
+    result = audit(args.dictionary)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open("x", encoding="utf-8") as handle:
+        json.dump(result, handle, ensure_ascii=False, indent=2)
+    print(json.dumps({k: result[k] for k in ["entry_count", "technical_pass_count", "findings"]}))
+    return int(bool(result["findings"]) or result["technical_pass_count"] != result["entry_count"])
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

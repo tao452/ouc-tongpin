@@ -1,0 +1,1011 @@
+{
+  "scope": "sameV6weights raw-input ablation; all3258 development rows; no parameter updates",
+  "weights_sha256": "ebd3a9e274b00d022ec8a04543fd44ad3464cdd12aa451795553bd04d2228166",
+  "features_sha256": "491fbd6a6aea4602a3326cb433c01595155af2bfa0e310900f6a387eb7bcbded",
+  "input_policy": {
+    "created_at_utc": "2026-11-24T22:57:11.106506+00:00",
+    "scope": "same-weight input ablation; development only; no gradient updates",
+    "hypothesis": "measure information loss and normal-context errors when whole canonical text remains visible",
+    "treatment": "all rows uniformly use canonical original plus contextual pinyin; no context mask; same template/windows",
+    "baseline_features_sha256": "6a1b2040cff91d108f87594575c77b01cc6cff1dfe54f3dce43b31ca283bf361",
+    "engine_policy": {
+      "scope": "same3258 development rows; context3.9 input drift audit, no gradient training",
+      "previous_features_sha256": "b08a29bc194de30bdda961c68fdcbe617690a315b6c991a988eb03ae95aee151",
+      "dictionary_sha256": "93ca8de3042c13fb493af00c60ba71724c50c6e9e53525527b22a0649c65a21b",
+      "evaluation_rows": 3258,
+      "cohorts": {
+        "toxicn_dev": 2399,
+        "PCR": 500,
+        "controls": 257,
+        "context_stress": 102
+      },
+      "transform_changes": [],
+      "literal_changes": [],
+      "excluded_evaluation_rows": 0,
+      "labels_or_sources_changed": false,
+      "code_sha256": "2926b0bdd6ec6f212d776d1099a5ac1e434f9d3f5bd8a93fa3423936276575a1",
+      "current_engine_sha256": {
+        "services/algo/app/services/moderation.py": "8f9fc9bcb67112f024af345ef1ccafff82c4ee86f7dec033030af27230495745",
+        "services/algo/app/services/moderation_context.py": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2",
+        "services/algo/app/services/normalization.py": "268775fa5111defb28f8597c30712a5be095e68c75975771160db23b5c62da80",
+        "services/algo/app/services/pronunciation.py": "11f50c6073419860df70b4a16ba4deaf5ed71e87d855774533b6cbb70b58dbb6",
+        "services/algo/app/services/targeted_matching.py": "355646c83e27e5dbf4c63d03e1865b13cce5f8e0bf42027a86a76d29f41aab7d",
+        "services/algo/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "services/algo/app/models/dictionary.py": "d7e8d021e7915353b6a0eef87ffc505daa4aee5312356117086edb3f9386e474"
+      },
+      "COLD_dev_fetched": false,
+      "M1_review": "PENDING",
+      "production_acceptance": false
+    },
+    "literal_flag_policy": "unchanged sealed current3.9 flags; not new live availability",
+    "code_sha256": {
+      "prepare_qwen_raw_probe_v1.py": "a6f1a356d4ef700733a0d8bcc73ab7e7c9632f850c7ddd4c1f10fbfe71cc0491",
+      "qwen_sequence_encoding_v5.py": "da851bd54e7989a69a48dbb00263f1e00c9718431295314c194b14cc69161482"
+    },
+    "evaluation_rows": 3258,
+    "excluded_evaluation_rows": 0,
+    "transform_changes": [
+      {
+        "id": "v2-DEV-001-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-002-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-003-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-004-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-005-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-006-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-007-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-008-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-009-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-010-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-011-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-012-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-013-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-014-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-015-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-016-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-017-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-018-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-019-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-020-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-021-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-022-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-023-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-024-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-025-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-026-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-027-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-028-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-029-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-030-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-031-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-032-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-033-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-034-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-035-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-036-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-037-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-038-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-039-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-040-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-041-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-042-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-043-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-044-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-045-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-046-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-047-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-048-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-049-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-050-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-051-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-052-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-053-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-054-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-055-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-056-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-057-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-058-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-059-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-060-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-061-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-062-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-063-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-064-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-065-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-066-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-067-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-068-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-069-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-DEV-070-report",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-campus-016",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-campus-017",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-001",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-002",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-003",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-004",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-005",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-006",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-007",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-008",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v2-NEG-context-009",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-001-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-002-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-003-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-005-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-006-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-007-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-009-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-010-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-011-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-012-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-013-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-020-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-021-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-022-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-023-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-024-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-025-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-027-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-028-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-030-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-031-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-032-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-036-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-039-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-040-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-042-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-047-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-050-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-052-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-054-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-055-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-071-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-072-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-073-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-074-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-075-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-076-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-077-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-078-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-079-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-080-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-081-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-082-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-083-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-084-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-085-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-086-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-087-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-088-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-089-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-090-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-091-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-092-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-093-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-094-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-095-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-096-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-097-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-098-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-099-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-100-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-101-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-102-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-103-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-104-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-105-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-106-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-107-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-108-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-109-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-110-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-111-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-112-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-113-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-114-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-115-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-116-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-117-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-118-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-119-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-120-quote",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-NEG-020",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-NEG-021",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-NEG-022",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "v3-R3-NEG-023",
+        "cohort": "controls",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-031",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-032",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-033",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-034",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-035",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-071",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-072",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-073",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-074",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-075",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-076",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-077",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-078",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-079",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-080",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-081",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-082",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-083",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-084",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-085",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-086",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-087",
+        "cohort": "context_stress",
+        "label": 0
+      },
+      {
+        "id": "CONTEXT-N-088",
+        "cohort": "context_stress",
+        "label": 0
+      }
+    ],
+    "changes_by_cohort_label": {
+      "controls:0": 166,
+      "context_stress:0": 23
+    },
+    "COLD_dev_fetched": false,
+    "M1_review": "PENDING",
+    "production_acceptance": false
+  },
+  "code_sha256": {
+    "evaluate_qwen_raw_probe_v1.py": "333710f57d76e57c1c7dbb8c9f3225fd1f78f9ee5a680abda388a0176d91d2ec",
+    "qwen_sequence_model_v6.py": "d64f46ccc3d75e78ec654f0ad0f04fcd186f9d4b9fed78adea151a2708f66088",
+    "train_qwen_sequence_v5d.py": "a01eed975059003671b8fec628f2368ce06588d619de4eea59bd6257c9191c39",
+    "phonetic_recheck_metrics.py": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+  },
+  "excluded_evaluation_rows": 0,
+  "COLD_dev_fetched": false,
+  "production_acceptance": false
+}

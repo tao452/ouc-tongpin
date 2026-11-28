@@ -1,0 +1,3629 @@
+{
+  "scope": "actual loopback HTTP candidate3.13; synthetic literal development only",
+  "cases": [
+    {
+      "id": "AP313-N-001",
+      "request": {
+        "text": "我要打你的电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "我要打你的电话",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-001-other-before",
+      "request": {
+        "text": "操你妈。我要打你的电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈我要打你的电话",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-001-other-after",
+      "request": {
+        "text": "我要打你的电话。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要打你的电话操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-001-same-before",
+      "request": {
+        "text": "我要揍你。我要打你的电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你我要打你的电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-001-same-after",
+      "request": {
+        "text": "我要打你的电话。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要打你的电话我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-002",
+      "request": {
+        "text": "我要打你电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "我要打你电话",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-002-other-before",
+      "request": {
+        "text": "操你妈。我要打你电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈我要打你电话",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-002-other-after",
+      "request": {
+        "text": "我要打你电话。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要打你电话操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-002-same-before",
+      "request": {
+        "text": "我要揍你。我要打你电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你我要打你电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-002-same-after",
+      "request": {
+        "text": "我要打你电话。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要打你电话我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-003",
+      "request": {
+        "text": "再说我就打你电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "再说我就打你电话",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-003-other-before",
+      "request": {
+        "text": "操你妈。再说我就打你电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈再说我就打你电话",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-003-other-after",
+      "request": {
+        "text": "再说我就打你电话。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "再说我就打你电话操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-003-same-before",
+      "request": {
+        "text": "我要揍你。再说我就打你电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你再说我就打你电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-003-same-after",
+      "request": {
+        "text": "再说我就打你电话。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "再说我就打你电话我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-004",
+      "request": {
+        "text": "再说我就打你的电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "再说我就打你的电话",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-004-other-before",
+      "request": {
+        "text": "操你妈。再说我就打你的电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈再说我就打你的电话",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-004-other-after",
+      "request": {
+        "text": "再说我就打你的电话。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "再说我就打你的电话操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-004-same-before",
+      "request": {
+        "text": "我要揍你。再说我就打你的电话"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你再说我就打你的电话",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-004-same-after",
+      "request": {
+        "text": "再说我就打你的电话。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "再说我就打你的电话我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-005",
+      "request": {
+        "text": "ni zhe chu sheng ri qi zen me tian"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "nizhechushengriqizenmetian",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-005-other-before",
+      "request": {
+        "text": "操你妈。ni zhe chu sheng ri qi zen me tian"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈nizhechushengriqizenmetian",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-005-other-after",
+      "request": {
+        "text": "ni zhe chu sheng ri qi zen me tian。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhechushengriqizenmetian操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-005-same-before",
+      "request": {
+        "text": "你个畜生。ni zhe chu sheng ri qi zen me tian"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你个畜生nizhechushengriqizenmetian",
+        "hits": [
+          {
+            "word": "你个畜生",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个畜生",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-005-same-after",
+      "request": {
+        "text": "ni zhe chu sheng ri qi zen me tian。你个畜生"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhechushengriqizenmetian你个畜生",
+        "hits": [
+          {
+            "word": "你个畜生",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个畜生",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-006",
+      "request": {
+        "text": "ni jiu shi chu sheng ti xing yi xia ye hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "nijiushichushengtixingyixiayehao",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-006-other-before",
+      "request": {
+        "text": "操你妈。ni jiu shi chu sheng ti xing yi xia ye hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈nijiushichushengtixingyixiayehao",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-006-other-after",
+      "request": {
+        "text": "ni jiu shi chu sheng ti xing yi xia ye hao。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nijiushichushengtixingyixiayehao操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-006-same-before",
+      "request": {
+        "text": "你是畜生。ni jiu shi chu sheng ti xing yi xia ye hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你是畜生nijiushichushengtixingyixiayehao",
+        "hits": [
+          {
+            "word": "你是畜生",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你是畜生",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-006-same-after",
+      "request": {
+        "text": "ni jiu shi chu sheng ti xing yi xia ye hao。你是畜生"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nijiushichushengtixingyixiayehao你是畜生",
+        "hits": [
+          {
+            "word": "你是畜生",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你是畜生",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-007",
+      "request": {
+        "text": "ni zhe za zhong shui dao zhang de hen hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "nizhezazhongshuidaozhangdehenhao",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-007-other-before",
+      "request": {
+        "text": "操你妈。ni zhe za zhong shui dao zhang de hen hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈nizhezazhongshuidaozhangdehenhao",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-007-other-after",
+      "request": {
+        "text": "ni zhe za zhong shui dao zhang de hen hao。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhezazhongshuidaozhangdehenhao操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-007-same-before",
+      "request": {
+        "text": "你这个杂种。ni zhe za zhong shui dao zhang de hen hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种nizhezazhongshuidaozhangdehenhao",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-007-same-after",
+      "request": {
+        "text": "ni zhe za zhong shui dao zhang de hen hao。你这个杂种"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhezazhongshuidaozhangdehenhao你这个杂种",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-008",
+      "request": {
+        "text": "你这杂种水稻长得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "你这杂种水稻长得很好",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-008-other-before",
+      "request": {
+        "text": "操你妈。你这杂种水稻长得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈你这杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-008-other-after",
+      "request": {
+        "text": "你这杂种水稻长得很好。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这杂种水稻长得很好操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-008-same-before",
+      "request": {
+        "text": "你这个杂种。你这杂种水稻长得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种你这杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-008-same-after",
+      "request": {
+        "text": "你这杂种水稻长得很好。你这个杂种"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这杂种水稻长得很好你这个杂种",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-009",
+      "request": {
+        "text": "你这个杂种水稻长得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "你这个杂种水稻长得很好",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-009-other-before",
+      "request": {
+        "text": "操你妈。你这个杂种水稻长得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈你这个杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-009-other-after",
+      "request": {
+        "text": "你这个杂种水稻长得很好。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种水稻长得很好操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-009-same-before",
+      "request": {
+        "text": "你这个杂种。你这个杂种水稻长得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种你这个杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-009-same-after",
+      "request": {
+        "text": "你这个杂种水稻长得很好。你这个杂种"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种水稻长得很好你这个杂种",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-010",
+      "request": {
+        "text": "ni zhe biao zi hao tai xiao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "nizhebiaozihaotaixiao",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-010-other-before",
+      "request": {
+        "text": "操你妈。ni zhe biao zi hao tai xiao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈nizhebiaozihaotaixiao",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-010-other-after",
+      "request": {
+        "text": "ni zhe biao zi hao tai xiao。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhebiaozihaotaixiao操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-010-same-before",
+      "request": {
+        "text": "你个婊子。ni zhe biao zi hao tai xiao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你个婊子nizhebiaozihaotaixiao",
+        "hits": [
+          {
+            "word": "你个婊子",
+            "level": "HIGH"
+          },
+          {
+            "word": "婊子",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个婊子",
+          "level": "HIGH"
+        },
+        {
+          "word": "婊子",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-010-same-after",
+      "request": {
+        "text": "ni zhe biao zi hao tai xiao。你个婊子"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhebiaozihaotaixiao你个婊子",
+        "hits": [
+          {
+            "word": "你个婊子",
+            "level": "HIGH"
+          },
+          {
+            "word": "婊子",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个婊子",
+          "level": "HIGH"
+        },
+        {
+          "word": "婊子",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-011",
+      "request": {
+        "text": "你这表字号太小"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "你这表字号太小",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-011-other-before",
+      "request": {
+        "text": "操你妈。你这表字号太小"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈你这表字号太小",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-011-other-after",
+      "request": {
+        "text": "你这表字号太小。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这表字号太小操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-011-same-before",
+      "request": {
+        "text": "你个婊子。你这表字号太小"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你个婊子你这表字号太小",
+        "hits": [
+          {
+            "word": "你个婊子",
+            "level": "HIGH"
+          },
+          {
+            "word": "婊子",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个婊子",
+          "level": "HIGH"
+        },
+        {
+          "word": "婊子",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-011-same-after",
+      "request": {
+        "text": "你这表字号太小。你个婊子"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这表字号太小你个婊子",
+        "hits": [
+          {
+            "word": "你个婊子",
+            "level": "HIGH"
+          },
+          {
+            "word": "婊子",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个婊子",
+          "level": "HIGH"
+        },
+        {
+          "word": "婊子",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-012",
+      "request": {
+        "text": "ni zhe gou dong xi de gong ju zen me yong"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "nizhegoudongxidegongjuzenmeyong",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-012-other-before",
+      "request": {
+        "text": "操你妈。ni zhe gou dong xi de gong ju zen me yong"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈nizhegoudongxidegongjuzenmeyong",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-012-other-after",
+      "request": {
+        "text": "ni zhe gou dong xi de gong ju zen me yong。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhegoudongxidegongjuzenmeyong操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-012-same-before",
+      "request": {
+        "text": "你个狗东西。ni zhe gou dong xi de gong ju zen me yong"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "你个狗东西nizhegoudongxidegongjuzenmeyong",
+        "hits": [
+          {
+            "word": "你个狗东西",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个狗东西",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-012-same-after",
+      "request": {
+        "text": "ni zhe gou dong xi de gong ju zen me yong。你个狗东西"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "nizhegoudongxidegongjuzenmeyong你个狗东西",
+        "hits": [
+          {
+            "word": "你个狗东西",
+            "level": "MEDIUM"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你个狗东西",
+          "level": "MEDIUM"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-013",
+      "request": {
+        "text": "wo yao da ni de dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "woyaodanidedianhua",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-013-other-before",
+      "request": {
+        "text": "操你妈。wo yao da ni de dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈woyaodanidedianhua",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-013-other-after",
+      "request": {
+        "text": "wo yao da ni de dian hua。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidedianhua操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-013-same-before",
+      "request": {
+        "text": "我要揍你。wo yao da ni de dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你woyaodanidedianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-013-same-after",
+      "request": {
+        "text": "wo yao da ni de dian hua。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidedianhua我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-014",
+      "request": {
+        "text": "wo yao da ni dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "woyaodanidianhua",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-014-other-before",
+      "request": {
+        "text": "操你妈。wo yao da ni dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈woyaodanidianhua",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-014-other-after",
+      "request": {
+        "text": "wo yao da ni dian hua。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidianhua操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-014-same-before",
+      "request": {
+        "text": "我要揍你。wo yao da ni dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你woyaodanidianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-014-same-after",
+      "request": {
+        "text": "wo yao da ni dian hua。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidianhua我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-015",
+      "request": {
+        "text": "zai shuo wo jiu da ni dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "zaishuowojiudanidianhua",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-015-other-before",
+      "request": {
+        "text": "操你妈。zai shuo wo jiu da ni dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈zaishuowojiudanidianhua",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-015-other-after",
+      "request": {
+        "text": "zai shuo wo jiu da ni dian hua。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanidianhua操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-015-same-before",
+      "request": {
+        "text": "我要揍你。zai shuo wo jiu da ni dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你zaishuowojiudanidianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-015-same-after",
+      "request": {
+        "text": "zai shuo wo jiu da ni dian hua。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanidianhua我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-016",
+      "request": {
+        "text": "zai shuo wo jiu da ni de dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "zaishuowojiudanidedianhua",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-016-other-before",
+      "request": {
+        "text": "操你妈。zai shuo wo jiu da ni de dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈zaishuowojiudanidedianhua",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-016-other-after",
+      "request": {
+        "text": "zai shuo wo jiu da ni de dian hua。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanidedianhua操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-016-same-before",
+      "request": {
+        "text": "我要揍你。zai shuo wo jiu da ni de dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你zaishuowojiudanidedianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-016-same-after",
+      "request": {
+        "text": "zai shuo wo jiu da ni de dian hua。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanidedianhua我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-017",
+      "request": {
+        "text": "zai shuo wo jiu da ni zhe dao ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "zaishuowojiudanizhedaoti",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-017-other-before",
+      "request": {
+        "text": "操你妈。zai shuo wo jiu da ni zhe dao ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈zaishuowojiudanizhedaoti",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-017-other-after",
+      "request": {
+        "text": "zai shuo wo jiu da ni zhe dao ti。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanizhedaoti操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-017-same-before",
+      "request": {
+        "text": "我要揍你。zai shuo wo jiu da ni zhe dao ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你zaishuowojiudanizhedaoti",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-017-same-after",
+      "request": {
+        "text": "zai shuo wo jiu da ni zhe dao ti。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "zaishuowojiudanizhedaoti我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-018",
+      "request": {
+        "text": "wo yao da ni wu mo xing"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "woyaodaniwumoxing",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-018-other-before",
+      "request": {
+        "text": "操你妈。wo yao da ni wu mo xing"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈woyaodaniwumoxing",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-018-other-after",
+      "request": {
+        "text": "wo yao da ni wu mo xing。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodaniwumoxing操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-018-same-before",
+      "request": {
+        "text": "我要揍你。wo yao da ni wu mo xing"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你woyaodaniwumoxing",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-018-same-after",
+      "request": {
+        "text": "wo yao da ni wu mo xing。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodaniwumoxing我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-019",
+      "request": {
+        "text": "da duan ni tui li guo cheng"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "daduannituiliguocheng",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-019-other-before",
+      "request": {
+        "text": "操你妈。da duan ni tui li guo cheng"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈daduannituiliguocheng",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-019-other-after",
+      "request": {
+        "text": "da duan ni tui li guo cheng。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "daduannituiliguocheng操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-019-same-before",
+      "request": {
+        "text": "打断你的腿。da duan ni tui li guo cheng"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "打断你的腿daduannituiliguocheng",
+        "hits": [
+          {
+            "word": "打断你的腿",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "打断你的腿",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-019-same-after",
+      "request": {
+        "text": "da duan ni tui li guo cheng。打断你的腿"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "daduannituiliguocheng打断你的腿",
+        "hits": [
+          {
+            "word": "打断你的腿",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "打断你的腿",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-020",
+      "request": {
+        "text": "gei ni yi dao cai"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "geiniyidaocai",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-020-other-before",
+      "request": {
+        "text": "操你妈。gei ni yi dao cai"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈geiniyidaocai",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-020-other-after",
+      "request": {
+        "text": "gei ni yi dao cai。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaocai操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-020-same-before",
+      "request": {
+        "text": "捅你一刀。gei ni yi dao cai"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "捅你一刀geiniyidaocai",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-020-same-after",
+      "request": {
+        "text": "gei ni yi dao cai。捅你一刀"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaocai捅你一刀",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-021",
+      "request": {
+        "text": "gei ni yi dao ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "geiniyidaoti",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-021-other-before",
+      "request": {
+        "text": "操你妈。gei ni yi dao ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈geiniyidaoti",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-021-other-after",
+      "request": {
+        "text": "gei ni yi dao ti。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaoti操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-021-same-before",
+      "request": {
+        "text": "捅你一刀。gei ni yi dao ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "捅你一刀geiniyidaoti",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-021-same-after",
+      "request": {
+        "text": "gei ni yi dao ti。捅你一刀"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaoti捅你一刀",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-022",
+      "request": {
+        "text": "gei ni yi dao shu xue ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "geiniyidaoshuxueti",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-022-other-before",
+      "request": {
+        "text": "操你妈。gei ni yi dao shu xue ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈geiniyidaoshuxueti",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-022-other-after",
+      "request": {
+        "text": "gei ni yi dao shu xue ti。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaoshuxueti操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-022-same-before",
+      "request": {
+        "text": "捅你一刀。gei ni yi dao shu xue ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "捅你一刀geiniyidaoshuxueti",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-022-same-after",
+      "request": {
+        "text": "gei ni yi dao shu xue ti。捅你一刀"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaoshuxueti捅你一刀",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-023",
+      "request": {
+        "text": "wo jiu dong shou da ni fa lai de dai ma"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "wojiudongshoudanifalaidedaima",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-023-other-before",
+      "request": {
+        "text": "操你妈。wo jiu dong shou da ni fa lai de dai ma"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈wojiudongshoudanifalaidedaima",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-023-other-after",
+      "request": {
+        "text": "wo jiu dong shou da ni fa lai de dai ma。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "wojiudongshoudanifalaidedaima操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-023-same-before",
+      "request": {
+        "text": "我要揍你。wo jiu dong shou da ni fa lai de dai ma"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你wojiudongshoudanifalaidedaima",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-023-same-after",
+      "request": {
+        "text": "wo jiu dong shou da ni fa lai de dai ma。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "wojiudongshoudanifalaidedaima我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-024",
+      "request": {
+        "text": "我就动手打你发来的代码"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "我就动手打你发来的代码",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-024-other-before",
+      "request": {
+        "text": "操你妈。我就动手打你发来的代码"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈我就动手打你发来的代码",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-024-other-after",
+      "request": {
+        "text": "我就动手打你发来的代码。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我就动手打你发来的代码操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-024-same-before",
+      "request": {
+        "text": "我要揍你。我就动手打你发来的代码"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你我就动手打你发来的代码",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-024-same-after",
+      "request": {
+        "text": "我就动手打你发来的代码。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我就动手打你发来的代码我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-025",
+      "request": {
+        "text": "ni zhe ge za zhong shui dao zhang de hen hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "nizhegezazhongshuidaozhangdehenhao",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-025-other-before",
+      "request": {
+        "text": "操你妈。ni zhe ge za zhong shui dao zhang de hen hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈nizhegezazhongshuidaozhangdehenhao",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-025-other-after",
+      "request": {
+        "text": "ni zhe ge za zhong shui dao zhang de hen hao。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhegezazhongshuidaozhangdehenhao操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-025-same-before",
+      "request": {
+        "text": "你这个杂种。ni zhe ge za zhong shui dao zhang de hen hao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种nizhegezazhongshuidaozhangdehenhao",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-025-same-after",
+      "request": {
+        "text": "ni zhe ge za zhong shui dao zhang de hen hao。你这个杂种"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "nizhegezazhongshuidaozhangdehenhao你这个杂种",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-026",
+      "request": {
+        "text": "你這個雜種水稻長得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "你这个杂种水稻长得很好",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-026-other-before",
+      "request": {
+        "text": "操你妈。你這個雜種水稻長得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈你这个杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-026-other-after",
+      "request": {
+        "text": "你這個雜種水稻長得很好。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种水稻长得很好操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-026-same-before",
+      "request": {
+        "text": "你这个杂种。你這個雜種水稻長得很好"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种你这个杂种水稻长得很好",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-026-same-after",
+      "request": {
+        "text": "你這個雜種水稻長得很好。你这个杂种"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "你这个杂种水稻长得很好你这个杂种",
+        "hits": [
+          {
+            "word": "你这个杂种",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "你这个杂种",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-027",
+      "request": {
+        "text": "ＷＯ ＹＡＯ ＤＡ ＮＩ ＤＩＡＮ ＨＵＡ"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "woyaodanidianhua",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-027-other-before",
+      "request": {
+        "text": "操你妈。ＷＯ ＹＡＯ ＤＡ ＮＩ ＤＩＡＮ ＨＵＡ"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈woyaodanidianhua",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-027-other-after",
+      "request": {
+        "text": "ＷＯ ＹＡＯ ＤＡ ＮＩ ＤＩＡＮ ＨＵＡ。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidianhua操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-027-same-before",
+      "request": {
+        "text": "我要揍你。ＷＯ ＹＡＯ ＤＡ ＮＩ ＤＩＡＮ ＨＵＡ"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你woyaodanidianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-027-same-after",
+      "request": {
+        "text": "ＷＯ ＹＡＯ ＤＡ ＮＩ ＤＩＡＮ ＨＵＡ。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidianhua我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-028",
+      "request": {
+        "text": "wo3 yao4 da3 ni3 dian4 hua4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "wo3yao4da3ni3dian4hua4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-028-other-before",
+      "request": {
+        "text": "操你妈。wo3 yao4 da3 ni3 dian4 hua4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈wo3yao4da3ni3dian4hua4",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-028-other-after",
+      "request": {
+        "text": "wo3 yao4 da3 ni3 dian4 hua4。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "wo3yao4da3ni3dian4hua4操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-028-same-before",
+      "request": {
+        "text": "我要揍你。wo3 yao4 da3 ni3 dian4 hua4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要揍你wo3yao4da3ni3dian4hua4",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-028-same-after",
+      "request": {
+        "text": "wo3 yao4 da3 ni3 dian4 hua4。我要揍你"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "wo3yao4da3ni3dian4hua4我要揍你",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-029",
+      "request": {
+        "text": "gei3 ni3 yi2 dao4 cai4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": true,
+        "normalized": "gei3ni3yi2dao4cai4",
+        "hits": []
+      },
+      "error": null,
+      "expected_hits": [],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-029-other-before",
+      "request": {
+        "text": "操你妈。gei3 ni3 yi2 dao4 cai4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "操你妈gei3ni3yi2dao4cai4",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-029-other-after",
+      "request": {
+        "text": "gei3 ni3 yi2 dao4 cai4。操你妈"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "gei3ni3yi2dao4cai4操你妈",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "操你妈",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-029-same-before",
+      "request": {
+        "text": "捅你一刀。gei3 ni3 yi2 dao4 cai4"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "捅你一刀gei3ni3yi2dao4cai4",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-N-029-same-after",
+      "request": {
+        "text": "gei3 ni3 yi2 dao4 cai4。捅你一刀"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "gei3ni3yi2dao4cai4捅你一刀",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-SCOPE-1",
+      "request": {
+        "text": "wo yao da ni，dian hua"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "woyaodanidianhua",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-SCOPE-2",
+      "request": {
+        "text": "gei ni yi dao。ti"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidaoti",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-SCOPE-3",
+      "request": {
+        "text": "我要打你。电话明天再说"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "我要打你电话明天再说",
+        "hits": [
+          {
+            "word": "我要揍你",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "我要揍你",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "AP313-SCOPE-4",
+      "request": {
+        "text": "gei ni yi dao"
+      },
+      "http_status": 200,
+      "dictionary_header_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+      "response": {
+        "passed": false,
+        "normalized": "geiniyidao",
+        "hits": [
+          {
+            "word": "捅你一刀",
+            "level": "HIGH"
+          }
+        ]
+      },
+      "error": null,
+      "expected_hits": [
+        {
+          "word": "捅你一刀",
+          "level": "HIGH"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "rows": 149,
+  "failed_ids": [],
+  "dictionary_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+  "source_sha256": "7542714cb701ef392c456c1c2a569a327d67ee04e5b67797b07a1eaa81786bdc",
+  "production_acceptance": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "COLD_dev_fetched": false
+}

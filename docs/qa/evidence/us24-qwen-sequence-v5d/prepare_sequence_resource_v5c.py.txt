@@ -1,0 +1,77 @@
+import hashlib
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+
+LAB = Path.cwd() / 'qa-private/us24-recall-20261124'
+model = (LAB / 'qwen_sequence_model_v5.py').read_text(encoding='utf-8')
+model += '''
+
+def set_training_activation(model, windows):
+    checkpoint = max(len(window['input_ids']) for window in windows) > 192
+    assert len(model.model.layers) == 28
+    for layer in model.model.layers:
+        assert hasattr(layer, '_gradient_checkpointing_func')
+        layer.gradient_checkpointing = checkpoint
+    return checkpoint
+'''
+with (LAB / 'qwen_sequence_model_v5c.py').open('x', encoding='utf-8', newline='\n') as handle:
+    handle.write(model)
+trainer = (LAB / 'train_qwen_sequence_v5b.py').read_text(encoding='utf-8')
+trainer = trainer.replace('qwen_sequence_model_v5b import create_model, digest, inputs',
+                          'qwen_sequence_model_v5c import create_model, digest, inputs, set_training_activation')
+trainer = trainer.replace("'qwen_sequence_model_v5b.py'", "'qwen_sequence_model_v5c.py'")
+trainer = trainer.replace("'qwen-sequence-v5b-preflight.json'", "'qwen-sequence-v5c-preflight.json'")
+trainer = trainer.replace("output = LAB / 'qwen-sequence-v5b'", "output = LAB / 'qwen-sequence-v5c'")
+trainer = trainer.replace("activation_checkpointing=False", "activation_checkpointing='enabled only for batch maximum length>192'")
+trainer = trainer.replace("reason='early8x4 checkpointed throughput projects beyond120minute budget; all39107 windows retained'",
+    "reason='8x4 checkpointed slow;4x512 uncheckpointed11.34GB exceeds physical GPU;adaptive policy validated before fresh run; all39107 windows retained'")
+start = trainer.index('        # Exercise the four longest training windows; no optimizer or weight update.')
+end = trainer.index("        with (LAB / 'qwen-sequence-v5c-preflight.json')", start)
+trainer = trainer[:start] + '''        # Resource probes only; original training and evaluation windows stay untouched.
+        worst = sorted(training, key=lambda row: len(row[0]['input_ids']), reverse=True)[:4]
+        probes = []
+        for length in [512, 192]:
+            windows = [dict(input_ids=window['input_ids'][:length]) for window, _, _, _ in worst]
+            checkpoint = set_training_activation(model, windows)
+            model.train()
+            torch.cuda.reset_peak_memory_stats()
+            began = time.perf_counter()
+            with torch.autocast('cuda', dtype=torch.bfloat16):
+                logits = model(**inputs(windows)).logits.float()
+                loss = F.cross_entropy(logits, torch.tensor([label for _, label, _, _ in worst], device='cuda'))
+            assert logits.shape == (4, 2) and torch.isfinite(loss)
+            loss.backward()
+            assert any(p.grad is not None and torch.isfinite(p.grad).all() and p.grad.abs().max() > 0 for p in trainable)
+            peak = torch.cuda.max_memory_allocated()
+            total = torch.cuda.get_device_properties(0).total_memory
+            probes.append(dict(length=length,checkpoint=checkpoint,peak_cuda_bytes=peak,physical_total_bytes=total,
+                               seconds=time.perf_counter()-began,within_physical_budget=peak<.92*total))
+            model.zero_grad(set_to_none=True)
+            del logits,loss
+            torch.cuda.empty_cache()
+        metadata.update(resource_probes=probes, optimizer_updates=0, accuracy_evaluated=False)
+        assert all(p['within_physical_budget'] for p in probes), probes
+''' + trainer[end:]
+trainer = trainer.replace("print(json.dumps(dict(preflight='PASS', peak_cuda_bytes=metadata['peak_cuda_bytes'])), flush=True)",
+    "print(json.dumps(dict(preflight='PASS', resource_probes=probes)), flush=True)")
+needle = "        with torch.autocast('cuda', dtype=torch.bfloat16):\n            logits = model(**inputs([window for window, _, _, _ in batch])).logits.float()"
+assert trainer.count(needle) == 1
+trainer = trainer.replace(needle, "        set_training_activation(model, [window for window, _, _, _ in batch])\n" + needle)
+trainer = trainer.replace('deadline = time.monotonic() + 120 * 60', 'deadline = time.monotonic() + 180 * 60')
+trainer = trainer.replace('exceeded120-minute training budget', 'exceeded180-minute training budget')
+trainer = trainer.replace("gradient_clip=1.,", "gradient_clip=1.,training_time_budget_minutes=180,")
+with (LAB / 'train_qwen_sequence_v5c.py').open('x', encoding='utf-8', newline='\n') as handle:
+    handle.write(trainer)
+metadata = json.loads((LAB / 'qwen-sequence-v5b-preflight.json').read_text(encoding='utf-8'))
+assert metadata['peak_cuda_bytes'] == 11344562176
+audit = dict(created_at_utc=datetime.now(UTC).isoformat(), original_run='v5b', replacement_run='v5c',
+    original_outcome='shape/gradient passed, physical VRAM budget failed; no evaluation; NOT_RUN accuracy',
+    peak_cuda_bytes=metadata['peak_cuda_bytes'],physical_device='RTX4060Laptop8GB',
+    original_files={name:hashlib.sha256((LAB/name).read_bytes()).hexdigest() for name in
+        ['train_qwen_sequence_v5b.py','qwen_sequence_model_v5b.py','qwen-sequence-v5b-preflight.json','train-qwen-sequence-v5b.log']},
+    replacement='microbatch4 accumulation8; checkpoint if batch maximum length>192;180minute bounded budget',
+    labels_or_datasets_or_learning_rate_changed=False, production_acceptance=False)
+with (LAB / 'qwen-sequence-v5b-resource-restart.json').open('x',encoding='utf-8') as handle:
+    json.dump(audit,handle,ensure_ascii=False,indent=2)
+print('Prepared adaptive memory policy; original resource attempt preserved')

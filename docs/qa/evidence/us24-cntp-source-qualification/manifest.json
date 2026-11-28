@@ -1,0 +1,87 @@
+{
+  "scope": "source/parent qualification and prepared training inputs; not model accuracy or independent assessment",
+  "files": [
+    {
+      "file": "acquisition-policy.json",
+      "private_path": "cntp-parent-audit-v1/acquisition-policy.json",
+      "private_sha256": "0ee4ad26045506c00274e3a64503b2192e370f6581c7adb08248b991f13aad79",
+      "public_lf_sha256": "f77c853e960c451ec49305db094ba42292345aef1f026f57e060b1f39fec04e7"
+    },
+    {
+      "file": "source-manifest.json",
+      "private_path": "cntp-parent-audit-v1/source-manifest.json",
+      "private_sha256": "30ea4afee398fa2a70166548285e7439e976bcb471e1b0887ae328f25bb1f98d",
+      "public_lf_sha256": "1d6800898d183fa7b1783cb97994024399525a19d615b2401247c408c004c34b"
+    },
+    {
+      "file": "initial-parent-ID-assumption-failure.json",
+      "private_path": "cntp-parent-audit-v1/initial-parent-ID-assumption-failure.json",
+      "private_sha256": "267e2cedeac92de36ebb595583484dae7915c1d1512cfbd822f51428658fdc23",
+      "public_lf_sha256": "bcaba5568a4068cfeb91fe43b4603dd9a772ff9a0581a1288a39bed6d13e80c5"
+    },
+    {
+      "file": "training-parent-audit-r2.json",
+      "private_path": "cntp-parent-audit-v1/training-parent-audit-r2.json",
+      "private_sha256": "bb9f229ee0b8877b81807fb6d36f0768aca078e7dafd3f0fcf94882979c79390",
+      "public_lf_sha256": "88d293deba90a14edc16d022281051aa99220e1a1bca0152c232612d07e8c458"
+    },
+    {
+      "file": "domain-input-policy.json",
+      "private_path": "qwen-cntp-domain-v7-inputs/policy.json",
+      "private_sha256": "dec8b41d2ef232ce6238ba9f32ebbb673bd0aab22bdd3851ad29a8007ae9d308",
+      "public_lf_sha256": "121c13e421d99a38516536d4c37d781df05e3ae388c6e2d34b99e8ccf305abf5"
+    },
+    {
+      "file": "domain-input-new-view-decisions.json",
+      "private_path": "qwen-cntp-domain-v7-inputs/new-view-decisions.json",
+      "private_sha256": "730b0a44003632ff4c338ccb3dea7e546b3facb67631b2a301c7d46f9fc1c4e3",
+      "public_lf_sha256": "cfc990dbe5a6fc03bf07000bf8227bf83282ac1735a8551535d646a97925772b"
+    },
+    {
+      "file": "acquire_cntp_parent_audit_v1.py.txt",
+      "private_path": "acquire_cntp_parent_audit_v1.py",
+      "private_sha256": "9db1bda2f0f556eb1f34f78cbf8823fb27017056052e0ec95150602c9d702705",
+      "public_lf_sha256": "9db1bda2f0f556eb1f34f78cbf8823fb27017056052e0ec95150602c9d702705"
+    },
+    {
+      "file": "audit_cntp_training_parents_v1.py.txt",
+      "private_path": "audit_cntp_training_parents_v1.py",
+      "private_sha256": "f0066498f3bfc93e019061f36345c6edf3f86141cd3114401f9c5d0c98784e4f",
+      "public_lf_sha256": "f0066498f3bfc93e019061f36345c6edf3f86141cd3114401f9c5d0c98784e4f"
+    },
+    {
+      "file": "audit_cntp_training_parents_v1_r2.py.txt",
+      "private_path": "audit_cntp_training_parents_v1_r2.py",
+      "private_sha256": "f2e4ecef2a2ba639c62779a5d75f5213e13a1255755a61f20a8fb5f67d408e5e",
+      "public_lf_sha256": "d9de05a0df2fff09940565372d912157ac68238aa59fce41564043aa98357ab3"
+    },
+    {
+      "file": "prepare_qwen_cntp_domain_v7.py.txt",
+      "private_path": "prepare_qwen_cntp_domain_v7.py",
+      "private_sha256": "1d8cf0df89f84997f684ac3f379bfd899f2979b547dc00db351538e65f68689a",
+      "public_lf_sha256": "1d8cf0df89f84997f684ac3f379bfd899f2979b547dc00db351538e65f68689a"
+    },
+    {
+      "file": "publish_cntp_qualification_v1.py.txt",
+      "private_path": "publish_cntp_qualification_v1.py",
+      "private_sha256": "0c086c7a8750e3d49077628886de5b0098c97c85194a114218c3c87bb5e95c48",
+      "public_lf_sha256": "0c086c7a8750e3d49077628886de5b0098c97c85194a114218c3c87bb5e95c48"
+    }
+  ],
+  "upstream_revision": "b1e6922487785aec59841bfb909bf40326174373",
+  "upstream_homophone_rows": 2533,
+  "upstream_non_toxic_base_rows": 2696,
+  "training_rows": 15698,
+  "training_windows": 15967,
+  "new_positive_views": 1978,
+  "new_normal_views": 2184,
+  "evaluation_rows": 3258,
+  "excluded_evaluation_rows": 0,
+  "model_accuracy": "NOT_RUN",
+  "licence": "repository MIT fingerprint retained; parent ToxiCN CC BY-NC-ND4.0; raw/derived text kept private",
+  "normal_view_labels": "inherited assumptions, not newly annotated gold",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

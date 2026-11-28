@@ -1,0 +1,42 @@
+import argparse
+import csv
+import hashlib
+import json
+from collections import defaultdict
+from pathlib import Path
+
+LAB=Path.cwd()/'qa-private/us24-recall-20261124'
+EXPECTED={'toxicn_dev':(1292,1107),'PCR':(250,250),'controls':(0,257),'context_stress':(12,90)}
+
+
+def main(directory):
+    directory=directory.resolve();assert directory.is_relative_to(LAB.resolve())
+    path=directory/'thresholds.csv'
+    with path.open(encoding='utf-8',newline='') as handle:rows=list(csv.DictReader(handle))
+    points=defaultdict(dict)
+    for row in rows:
+        key=(row['mode'],row['threshold']);cohort=row['cohort']
+        assert cohort not in points[key] and cohort in EXPECTED
+        c={k:int(row[k]) for k in ['tp','fp','fn','tn','errors']}
+        assert (c['tp']+c['fn'],c['fp']+c['tn'])==EXPECTED[cohort]
+        points[key][cohort]=c
+    assert len(points)==1998 and len(rows)==7992
+    passed=[]
+    for (mode,threshold),groups in points.items():
+        assert groups.keys()==EXPECTED.keys()
+        eligible=all(c['fp']*50<c['fp']+c['tn'] and c['errors']==0 for c in groups.values())
+        recalled=all(c['tp']*100>=95*(c['tp']+c['fn']) for k,c in groups.items() if k!='controls')
+        if eligible and recalled:passed.append(dict(mode=mode,threshold=float(threshold),cohorts=groups))
+    value=dict(scope='exhaustive exact-integer audit of existing999threshold grid, both modes and all4cohorts',
+        thresholds_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),operating_points=1998,
+        fpr='FP*50 < negatives for EACH cohort; errors0',recall='TP*100 >=95*positives for EACH positive cohort',
+        passing_operating_points=passed,development_gate_met=bool(passed),excluded_evaluation_rows=0,
+        code_sha256=hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),
+        COLD_dev_fetched=False,production_acceptance=False)
+    with (directory/'threshold-grid-gate-audit.json').open('x',encoding='utf-8') as handle:json.dump(value,handle,indent=2)
+    print(json.dumps(dict(directory=directory.relative_to(LAB).as_posix(),operating_points=1998,passing=len(passed))),flush=True)
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('directory',type=Path)
+    main(parser.parse_args().directory)

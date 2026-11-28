@@ -1,0 +1,45 @@
+import hashlib
+import json
+from pathlib import Path
+from app.services.moderation import ModerationService
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_13-candidate.json'
+entries=json.loads(path.read_text(encoding='utf-8'))
+service=ModerationService(path)
+entry_by_word={e['word']:e for e in entries}
+probe=json.loads((LAB/'alias-normal-homophones-v3_13-first-probe.json').read_text(encoding='utf-8'))
+sources=[dict(id=r['id'],text=r['text']) for r in probe['rows']]
+sources.extend([
+    dict(id='AP313-N-026',text='你這個雜種水稻長得很好'),
+    dict(id='AP313-N-027',text='ＷＯ ＹＡＯ ＤＡ ＮＩ ＤＩＡＮ ＨＵＡ'),
+    dict(id='AP313-N-028',text='wo3 yao4 da3 ni3 dian4 hua4'),
+    dict(id='AP313-N-029',text='gei3 ni3 yi2 dao4 cai4'),
+])
+target_by_id={**{i:'我要揍你' for i in [1,2,3,4,13,14,15,16,17,18,23,24,27,28]},
+    5:'你个畜生',6:'你是畜生',7:'你这个杂种',8:'你这个杂种',9:'你这个杂种',
+    10:'你个婊子',11:'你个婊子',12:'你个狗东西',19:'打断你的腿',20:'捅你一刀',
+    21:'捅你一刀',22:'捅你一刀',25:'你这个杂种',26:'你这个杂种',29:'捅你一刀'}
+rows=[];entry_by_word={e['word']:e for e in entries}
+
+def add(identifier,text,expected_hits,category):
+    word=expected_hits[0]['word'] if expected_hits else '';level=expected_hits[0]['level'] if expected_hits else ''
+    rows.append(dict(id=identifier,text=text,expected_word=word,expected_level=level,expected_hits=expected_hits,
+                     blocked=any(h['level']==entry_by_word[word]['level'] for h in expected_hits),category=category,kind='synthetic_development'))
+
+for index,row in enumerate(sources,1):
+    word=target_by_id[index];expected=service.check(word).model_dump()['hits']
+    assert any(h['word']==word and h['level']==entry_by_word[word]['level'] for h in expected)
+    add(row['id'],row['text'],[],'benign_homophone_context')
+    add(row['id']+'-other-before','操你妈。'+row['text'],[dict(word='操你妈',level='HIGH')],'other_rule_scope')
+    add(row['id']+'-other-after',row['text']+'。操你妈',[dict(word='操你妈',level='HIGH')],'other_rule_scope')
+    add(row['id']+'-same-before',word+'。'+row['text'],expected,'same_rule_scope')
+    add(row['id']+'-same-after',row['text']+'。'+word,expected,'same_rule_scope')
+for index,(text,word) in enumerate([
+    ('wo yao da ni，dian hua','我要揍你'),('gei ni yi dao。ti','捅你一刀'),
+    ('我要打你。电话明天再说','我要揍你'),('gei ni yi dao','捅你一刀'),
+],1):add(f'AP313-SCOPE-{index}',text,[dict(word=word,level='HIGH')],'clause_or_incomplete_exemption')
+fixture=ROOT/'docs/qa/data/us24-development.v3_13.jsonl'
+with fixture.open('x',encoding='utf-8',newline='\n') as handle:
+    for row in rows:handle.write(json.dumps(row,ensure_ascii=False)+'\n')
+print(json.dumps(dict(rules=132,normal_hanzi=7,normal_pinyin=17,fixture_rows=len(rows),negative=29,
+    fixture_sha256=hashlib.sha256(fixture.read_bytes()).hexdigest(),dictionary_sha256=service.dictionary_sha256)),flush=True)

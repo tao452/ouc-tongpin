@@ -1,0 +1,16 @@
+{
+  "created_at_utc": "2026-11-24T20:48:58.225364+00:00",
+  "original_run": "v5c",
+  "replacement_run": "v5d",
+  "original_outcome": "resource throughput restart before complete epoch; no evaluation; NOT_RUN accuracy",
+  "original_files": {
+    "train_qwen_sequence_v5c.py": "4735af299ce27907692e1f128840302d26d7f0142c35692f6c8c8090567372dd",
+    "qwen_sequence_model_v5c.py": "f0bea1a726dab1233c378697bd95d0acf65fa68699ddfa47a784be911daf0dfd",
+    "qwen-sequence-v5c-preflight.json": "25e4cb44d4d0a28e34b8ecf5a3acf909e97376a3ea5fc1ed6cb8931f8530d9d7",
+    "train-qwen-sequence-v5c.log": "de0fbe105e81793fbb265ed9a8ca6a1b364e0c2854972bc03baa286ae052cb73"
+  },
+  "reason": "micro4 adaptive25/9777 batches32.1s projects209min; micro8 checkpointed projected135min; choose larger checkpointed16 after physical-budget probe",
+  "replacement": "micro16 accumulate2; checkpointed; effective batch32;180minute budget; periodic partial state retained",
+  "labels_or_datasets_or_learning_rate_changed": false,
+  "production_acceptance": false
+}

@@ -1,0 +1,192 @@
+{
+  "scope": "fixed zero-gradient instruction-model development; all reused3258 rows; not new independent accuracy",
+  "files": [
+    {
+      "file": "frozen.json",
+      "private_path": "qwen4-label-v1/frozen.json",
+      "private_sha256": "400ca1530ca67510fd9603c67b6011d619c2e97f7d4be2ecff5a66d87c32ed0e",
+      "public_lf_sha256": "2ca2676d2551e6259040b97d3841ed4c71bd50af67692e9856c3629e24106b44"
+    },
+    {
+      "file": "report.json",
+      "private_path": "qwen4-label-v1/report.json",
+      "private_sha256": "8cd7eca0535448ed6f90be4e518705d2b38e6c260e305919b84e8872a2b13057",
+      "public_lf_sha256": "cee440a0204d070f214f15b84aadea608dbfd91e11ed6392713c127dbe491758"
+    },
+    {
+      "file": "predictions.jsonl",
+      "private_path": "qwen4-label-v1/predictions.jsonl",
+      "private_sha256": "752e75191e252f48cad4d69d7b1196d8997a8edb8edc0f2e56cb0730e5d6c8cf",
+      "public_lf_sha256": "2d36e44b2b491b909c42fe081b59e26529a4c56f1be08face4779277b9feee07"
+    },
+    {
+      "file": "thresholds.csv",
+      "private_path": "qwen4-label-v1/thresholds.csv",
+      "private_sha256": "44fe83a6ae689686a881693ad2b0cca6b96f22628daa4cf80ebf57d67c604054",
+      "public_lf_sha256": "44fe83a6ae689686a881693ad2b0cca6b96f22628daa4cf80ebf57d67c604054"
+    },
+    {
+      "file": "prediction-accounting-audit.json",
+      "private_path": "qwen4-label-v1/prediction-accounting-audit.json",
+      "private_sha256": "04aac0ac7ca3e4e6389fc10540fc578ab291bb675c21acd451061bf8e4d8d78e",
+      "public_lf_sha256": "294e7f747f5899855083a9d55120c8247e8343d5c729a1a68b067123de95f922"
+    },
+    {
+      "file": "threshold-grid-gate-audit.json",
+      "private_path": "qwen4-label-v1/threshold-grid-gate-audit.json",
+      "private_sha256": "549a38962e4b681533224892fc1f191ab782be11896a235ebc22303089d6aed7",
+      "public_lf_sha256": "9d2e0508c93c6ee2cbbf21ef2465f5d1b1977cff35d49dc0c2eff1541e3bf9e3"
+    },
+    {
+      "file": "recall-cost-audit.json",
+      "private_path": "qwen4-label-v1/recall-cost-audit.json",
+      "private_sha256": "73a6676ce7a719c187b075885c644406fb8c970f7a56cec2452927a705034b99",
+      "public_lf_sha256": "e9a5c8057a8c46c2eae7520fe5a029beb901cda2a40ec4905579ee52970d96c6"
+    },
+    {
+      "file": "exact-score-report.json",
+      "private_path": "qwen4-label-v1/exact-score-sweep-v2/report.json",
+      "private_sha256": "e1982fba283815bcf7c6a25b68ee1a3426498c23e73a5a6406b29f27a4b522fa",
+      "public_lf_sha256": "e6cd26f3bd5a719c3b3dd14b45e9621fe63c5e34a5d425c3b5f41395ee14b95f"
+    },
+    {
+      "file": "input-policy.json",
+      "private_path": "qwen4-label-v1-inputs/policy.json",
+      "private_sha256": "b4b0aea8f549e57e0192421f7700ad82701adb52f284c7a8e2085fe422b8451d",
+      "public_lf_sha256": "5ec7a630cd2c58ba15a7be657eb6c631a52dc7b3550cf82f395b6635949a75f0"
+    },
+    {
+      "file": "input-index.json",
+      "private_path": "qwen4-label-v1-inputs/index.json",
+      "private_sha256": "4473e2ff274b99ac1bb3c0d3a80d7def38166118bb60f5b31340506ebba352f8",
+      "public_lf_sha256": "d0f94ab9456b6086d78b9c7f75cdbe74ae3be4c8f673f44a6d04c3fe3957e3b6"
+    },
+    {
+      "file": "qwen4-inputs-audit-v1.json",
+      "private_path": "qwen4-inputs-audit-v1.json",
+      "private_sha256": "fb27d39302fa57a8f6449406b2cb5055aa49a0097fd67caaad1e2627f1a89560",
+      "public_lf_sha256": "393f662438fa72e2ca642cb6ec3b6d4f7f339e50e70c12a66299c67999fab5bf"
+    },
+    {
+      "file": "qwen4-label-v1-preflight-8.json",
+      "private_path": "qwen4-label-v1-preflight-8.json",
+      "private_sha256": "99aba3ef8dd1e918109ece50773175bf51c4c3303fd0a60341de6000462149ea",
+      "public_lf_sha256": "bed4361fe0d6b7a72dac522f20450013f0e183260b4f13127f3ad651ada44695"
+    },
+    {
+      "file": "qwen4-instruct-assets-verified.json",
+      "private_path": "qwen4-instruct-assets-verified.json",
+      "private_sha256": "60cd3a18030f214c1f9cb5c6a823e1f4283559b634a175c9f915eb02f92ba5db",
+      "public_lf_sha256": "27fa8c4d52651fd209c959695b8c70d7a83fee7d2c9002cbe6a9ad13798553ff"
+    },
+    {
+      "file": "bnb-nf4-probe-v1.json",
+      "private_path": "bnb-nf4-probe-v1.json",
+      "private_sha256": "32d19ba1501176e0ed9b7a71c619cc33cd5d93ccccb1bfd4c838494b0bb6e3b7",
+      "public_lf_sha256": "492eee534f0c89379110462898b590a30ae4abb1126cb0a3be6afd7ee4183cfb"
+    },
+    {
+      "file": "ci-d5db298-qualified.json",
+      "private_path": "ci-d5db298-qualified.json",
+      "private_sha256": "eced50d2fbf5b75bbdc8d7bbbddf1a7360bfcd3fbd065ffa4d36afaded702f51",
+      "public_lf_sha256": "eced50d2fbf5b75bbdc8d7bbbddf1a7360bfcd3fbd065ffa4d36afaded702f51"
+    },
+    {
+      "file": "prepare_qwen4_label_v1.py.txt",
+      "private_path": "prepare_qwen4_label_v1.py",
+      "private_sha256": "8cbeb3e934f6151bede8226566570540e6a010530c20a21879c8fc05e5860ed8",
+      "public_lf_sha256": "8cbeb3e934f6151bede8226566570540e6a010530c20a21879c8fc05e5860ed8"
+    },
+    {
+      "file": "qwen4_label_encoding_v1.py.txt",
+      "private_path": "qwen4_label_encoding_v1.py",
+      "private_sha256": "0f4eb243d34c92668b989f4c957502838fa16cd1420f81cad44b59d768d1366c",
+      "public_lf_sha256": "0f4eb243d34c92668b989f4c957502838fa16cd1420f81cad44b59d768d1366c"
+    },
+    {
+      "file": "evaluate_qwen4_label_v1.py.txt",
+      "private_path": "evaluate_qwen4_label_v1.py",
+      "private_sha256": "8e4cc615eac8352218c2bb8bb906f6d40cc25c7822e1890cc5cf329208a54776",
+      "public_lf_sha256": "8e4cc615eac8352218c2bb8bb906f6d40cc25c7822e1890cc5cf329208a54776"
+    },
+    {
+      "file": "audit_qwen4_inputs_v1.py.txt",
+      "private_path": "audit_qwen4_inputs_v1.py",
+      "private_sha256": "54bc5844a2340c408c0e148df3652f3266065b53ae732a67e01071f56ef8b56d",
+      "public_lf_sha256": "54bc5844a2340c408c0e148df3652f3266065b53ae732a67e01071f56ef8b56d"
+    },
+    {
+      "file": "audit_qwen4_predictions_v1.py.txt",
+      "private_path": "audit_qwen4_predictions_v1.py",
+      "private_sha256": "ae13e3a7accbb218f4602cb858d5875c88e25da222b53488d93d090ac1e8dbb7",
+      "public_lf_sha256": "ae13e3a7accbb218f4602cb858d5875c88e25da222b53488d93d090ac1e8dbb7"
+    },
+    {
+      "file": "audit_qwen4_recall_cost_v1.py.txt",
+      "private_path": "audit_qwen4_recall_cost_v1.py",
+      "private_sha256": "254f3b25c5025b4638938f3f20ae63d2ee5bd2fd48d57c1964fdc8df3eb27c13",
+      "public_lf_sha256": "254f3b25c5025b4638938f3f20ae63d2ee5bd2fd48d57c1964fdc8df3eb27c13"
+    },
+    {
+      "file": "audit_threshold_grid.py.txt",
+      "private_path": "audit_threshold_grid.py",
+      "private_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5",
+      "public_lf_sha256": "b311daf4ebe257910a3da3f0ada1cb8f2cd963ec57c68e56200c37bfee59d0e5"
+    },
+    {
+      "file": "audit_exact_operating_points_v2.py.txt",
+      "private_path": "audit_exact_operating_points_v2.py",
+      "private_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925",
+      "public_lf_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "private_path": "phonetic_recheck_metrics.py",
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "publish_qwen4_label_v1.py.txt",
+      "private_path": "publish_qwen4_label_v1.py",
+      "private_sha256": "c5c6b409037dafda3bdbd4127b29732bf11252f14038c7df818c9b7c055e7772",
+      "public_lf_sha256": "c5c6b409037dafda3bdbd4127b29732bf11252f14038c7df818c9b7c055e7772"
+    }
+  ],
+  "rows": 3258,
+  "excluded_rows": 0,
+  "gradient_updates": 0,
+  "original_cohorts": [
+    "ToxiCN development2399",
+    "PCR500",
+    "normal257",
+    "context stress102"
+  ],
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "model_source": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507",
+  "license": "Apache-2.0",
+  "quantization": "NF4 double quantization, BF16 compute; all CUDA, no CPU offload",
+  "score_policy": "uncalibrated softmax over explicit0/1 logits; native top token must be a digit",
+  "production_dictionary": "moderation-v3_10-candidate.json",
+  "dictionary_sha256": "4dbc9fed5baab58f0e11f2411eec761d7f01d5f44080cbbaa0e7e7b8ee0c2722",
+  "exact_curves_private": [
+    {
+      "file": "model.csv",
+      "rows": 5664,
+      "bytes": 415162,
+      "sha256": "fa6dd8a68bf601aeed6958588eb13f3ec195e4b4f93a12ff2e98cde639a5322d"
+    },
+    {
+      "file": "literal_or_model.csv",
+      "rows": 5664,
+      "bytes": 414341,
+      "sha256": "413f96aeb281b482d941e72bee7ebaffb49eb9e8000917167a283c17e8a87334"
+    }
+  ],
+  "development_gate_met": false,
+  "COLD_dev_fetched": false,
+  "upstream_pretraining_evaluation_exposure": "unknown",
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false
+}

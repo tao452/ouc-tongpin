@@ -1,0 +1,159 @@
+{
+  "rows": 990,
+  "failures": [
+    {
+      "row": {
+        "id": "LEX4-DEV-0916",
+        "text": "你这2B铅笔很好用",
+        "expected_word": "",
+        "expected_level": "NONE",
+        "blocked": false,
+        "kind": "normal_negative",
+        "category": "ordinary_and_context",
+        "note": ""
+      },
+      "actual": {
+        "passed": true,
+        "normalized": "你这2b铅笔很好用",
+        "hits": [
+          {
+            "word": "二逼",
+            "level": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "row": {
+        "id": "LEX4-DEV-0919",
+        "text": "你这二比一的比分记错了",
+        "expected_word": "",
+        "expected_level": "NONE",
+        "blocked": false,
+        "kind": "normal_negative",
+        "category": "ordinary_and_context",
+        "note": ""
+      },
+      "actual": {
+        "passed": true,
+        "normalized": "你这二比一的比分记错了",
+        "hits": [
+          {
+            "word": "二逼",
+            "level": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "row": {
+        "id": "LEX4-DEV-0923",
+        "text": "草泥马是羊驼的网络称呼",
+        "expected_word": "",
+        "expected_level": "NONE",
+        "blocked": false,
+        "kind": "normal_negative",
+        "category": "ordinary_and_context",
+        "note": ""
+      },
+      "actual": {
+        "passed": false,
+        "normalized": "草泥马是羊驼的网络称呼",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "row": {
+        "id": "LEX4-DEV-0924",
+        "text": "我在抄你码，稍后一起调试",
+        "expected_word": "",
+        "expected_level": "NONE",
+        "blocked": false,
+        "kind": "normal_negative",
+        "category": "ordinary_and_context",
+        "note": ""
+      },
+      "actual": {
+        "passed": false,
+        "normalized": "我在抄你码稍后一起调试",
+        "hits": [
+          {
+            "word": "操你妈",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "row": {
+        "id": "LEX4-DEV-0925",
+        "text": "麻辣隔壁是一家店名",
+        "expected_word": "",
+        "expected_level": "NONE",
+        "blocked": false,
+        "kind": "normal_negative",
+        "category": "ordinary_and_context",
+        "note": ""
+      },
+      "actual": {
+        "passed": false,
+        "normalized": "麻辣隔壁是一家店名",
+        "hits": [
+          {
+            "word": "妈了个逼",
+            "level": "HIGH"
+          }
+        ]
+      }
+    },
+    {
+      "row": {
+        "id": "LEX4-DEV-0926",
+        "text": "我在读白痴小说",
+        "expected_word": "",
+        "expected_level": "NONE",
+        "blocked": false,
+        "kind": "normal_negative",
+        "category": "ordinary_and_context",
+        "note": ""
+      },
+      "actual": {
+        "passed": true,
+        "normalized": "我在读白痴小说",
+        "hits": [
+          {
+            "word": "白痴",
+            "level": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "row": {
+        "id": "LEX4-DEV-0927",
+        "text": "阅读白痴一书的笔记",
+        "expected_word": "",
+        "expected_level": "NONE",
+        "blocked": false,
+        "kind": "normal_negative",
+        "category": "ordinary_and_context",
+        "note": ""
+      },
+      "actual": {
+        "passed": true,
+        "normalized": "阅读白痴一书的笔记",
+        "hits": [
+          {
+            "word": "白痴",
+            "level": "MEDIUM"
+          }
+        ]
+      }
+    }
+  ]
+}

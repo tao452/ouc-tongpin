@@ -1,0 +1,52 @@
+{
+  "scope": "同一词面开发样本的版本对照，非独立评估；整句边界9条不计TN",
+  "rows": 1029,
+  "old_dictionary_sha256": "91ad70bd93d8e0fc68c5bd9408b3b7a8008dd1765e94e8adf77220fba2e9a827",
+  "old_132": {
+    "high_blocking": {
+      "confusion_matrix": {
+        "tp": 213,
+        "fp": 10,
+        "fn": 18,
+        "tn": 788
+      },
+      "offensive_samples": 231,
+      "nonoffensive_samples": 798,
+      "recall": 0.922077922077922,
+      "precision": 0.9551569506726457,
+      "false_positive_rate": 0.012531328320802004,
+      "recall_wilson95": [
+        0.8802027180542084,
+        0.9501447043269741
+      ],
+      "false_positive_rate_wilson95": [
+        0.006820783086218333,
+        0.022912599440246283
+      ],
+      "broad_benchmark_thresholds_met": false
+    },
+    "any_level": {
+      "confusion_matrix": {
+        "tp": 392,
+        "fp": 18,
+        "fn": 262,
+        "tn": 357
+      },
+      "offensive_samples": 654,
+      "nonoffensive_samples": 375,
+      "recall": 0.599388379204893,
+      "precision": 0.9560975609756097,
+      "false_positive_rate": 0.048,
+      "recall_wilson95": [
+        0.5613576794677924,
+        0.6362583239884958
+      ],
+      "false_positive_rate_wilson95": [
+        0.030574999657129995,
+        0.07459157568211004
+      ],
+      "broad_benchmark_thresholds_met": false
+    }
+  },
+  "new_80_report": "function-final.json"
+}

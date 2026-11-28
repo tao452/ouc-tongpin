@@ -1,0 +1,64 @@
+import hashlib
+import json
+import re
+import sys
+from collections import Counter
+from pathlib import Path
+
+import torch
+
+ROOT=Path.cwd();LAB=ROOT/'qa-private/us24-recall-20261124'
+sys.path.insert(0,str(ROOT/'services/algo/scripts'))
+from evaluate_candidate import development,pcr
+from evaluate_comment_model import preprocess
+from evaluate_dataset import HttpModerationService
+from evaluate_recall import load_external,source_sha
+from app.services.moderation import ModerationService
+
+torch.set_num_threads(2)
+old_path=LAB/'qwen-sequence-v5-context39/features.pt'
+previous=torch.load(old_path,map_location='cpu',weights_only=True)
+records=previous['records'];assert len(records)==3258
+raw={r['id']:r['text'] for r in load_external(LAB/'toxcn.csv',json.loads((ROOT/'docs/qa/data/external/toxicn-v3.sealed.json').read_text(encoding='utf-8')))}
+pcr_rows,excluded=pcr(ROOT/'qa-private/us24-m1/PCR-ToxiCN.json',json.loads((ROOT/'docs/qa/data/external/pcr-test.v1.json').read_text(encoding='utf-8')))
+assert not excluded;raw.update({r['id']:r['text'] for r in pcr_rows})
+for version in ['v2','v3']:
+    for r in development(ROOT/f'docs/qa/data/us24-development.{version}.jsonl'):
+        if not r['expected_word']:raw[version+'-'+r['id']]=r['text']
+for r in map(json.loads,(ROOT/'docs/qa/data/us24-context-stress.v1.jsonl').read_text(encoding='utf-8').splitlines()):raw[r['id']]=r['text']
+live={r['id']:r for r in map(json.loads,(LAB/'historical-v3_10-http/predictions.jsonl').read_text(encoding='utf-8').splitlines())}
+assert len(live)==12511 and not any(r.get('error') for r in live.values())
+dictionary=ROOT/'services/algo/app/data/moderation-v3_10-candidate.json'
+literal=ModerationService(dictionary)
+http=HttpModerationService('http://127.0.0.1:19896',literal.dictionary_sha256)
+out=LAB/'qwen-inputs-context3_10';out.mkdir(exist_ok=False)
+ready=[];changes=[];literal_changes=[];index=[]
+for number,row in enumerate(records,1):
+    text=raw[row['id']];assert hashlib.sha256(text.encode()).hexdigest()==row['source_text_sha256']
+    transformed=re.sub('□+','□',preprocess(text,literal,True)['text'])
+    digest=hashlib.sha256(transformed.encode()).hexdigest()
+    if digest!=row['transformed_sha256']:changes.append(row['id'])
+    if row['id'] in live:
+        result=live[row['id']];assert result['source_text_sha256']==row['source_text_sha256'] and result['label']==row['label']
+        flag=result['any_level']
+    else:flag=bool(http.check(text).hits)
+    if flag!=row['literal_any']:literal_changes.append(row['id'])
+    item=dict(row);item['literal_any']=flag
+    if digest!=row['transformed_sha256']:
+        from qwen_sequence_encoding_v5 import SequenceEncoder
+        encoder=SequenceEncoder(LAB/'qwen3-1_7b-tokenizer');item['windows']=encoder.encode(transformed)
+        item['transformed_sha256']=digest
+    ready.append(item);index.append({k:v for k,v in item.items() if k!='windows'})
+    if number%500==0:print(f'Current3.10 input qualification {number}/3258',flush=True)
+policy=dict(scope='same3258 development inputs under current3.10; historical predictions remain immutable',
+    previous_features_sha256=hashlib.sha256(old_path.read_bytes()).hexdigest(),
+    dictionary_sha256=literal.dictionary_sha256,rows=3258,excluded_evaluation_rows=0,
+    current_engine_sha256={p.relative_to(ROOT).as_posix():source_sha(p) for p in [*(ROOT/'services/algo/app/services').glob('*.py'),ROOT/'services/algo/app/models/dictionary.py']},
+    literal_check='actual HTTP3.10 all12511native rows plus359controls/stress; original native report retained',
+    native_http_report_sha256=hashlib.sha256((LAB/'historical-v3_10-http/summary.json').read_bytes()).hexdigest(),
+    transformed_changes=changes,literal_changes=literal_changes,cohorts=dict(Counter(r['cohort'] for r in ready)),
+    labels_and_source_text_changed=False,code_sha256=source_sha(Path(__file__)),
+    COLD_dev_fetched=False,M1_review='PENDING',M3_reproduction='PENDING',production_acceptance=False)
+with (out/'features.pt').open('xb') as f:torch.save(dict(policy=policy,records=ready),f)
+with (out/'input-audit.json').open('x',encoding='utf-8') as f:json.dump(dict(policy=policy,rows=index),f,ensure_ascii=False,indent=2)
+print(json.dumps(dict(rows=3258,transformed_changes=len(changes),literal_changes=len(literal_changes))),flush=True)

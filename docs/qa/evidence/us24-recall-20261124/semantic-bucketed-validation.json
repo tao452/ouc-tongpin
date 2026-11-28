@@ -1,0 +1,34 @@
+{
+  "parent_freeze_commit": "fe510c8",
+  "original_semantic_code_sha256": "2bd9c4148b6d25d8365fda2c944587364d44350ee57f22f884359feece2b82c2",
+  "executed_semantic_code_sha256": "9c718de59c83df36d688fa792163c66a3060b2f2711d7c568d2ef0e8456e9efe",
+  "changes": "Stable length bucketing and row checkpoints; same source rows, weights, windowing and threshold0.5",
+  "dataset_sha256": "e94e50136d8c381b5f2a396fccf11fd824d8a922c7fc5369274e9da4c6537566",
+  "rows": 12011,
+  "excluded_rows": 0,
+  "thresholds": {
+    "0.5": {
+      "confusion_matrix": {
+        "tp": 3425,
+        "fp": 917,
+        "fn": 3036,
+        "tn": 4633
+      },
+      "offensive_samples": 6461,
+      "nonoffensive_samples": 5550,
+      "recall": 0.5301036991177837,
+      "precision": 0.7888070013818517,
+      "false_positive_rate": 0.16522522522522523,
+      "recall_wilson95": [
+        0.5179197205213295,
+        0.5422519020123129
+      ],
+      "false_positive_rate_wilson95": [
+        0.15568674416728956,
+        0.17522681763448045
+      ],
+      "broad_benchmark_thresholds_met": false
+    }
+  },
+  "production_acceptance": false
+}

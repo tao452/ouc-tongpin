@@ -1,0 +1,61 @@
+import csv
+import hashlib
+import json
+import subprocess
+from datetime import UTC, datetime
+from pathlib import Path
+
+ROOT = Path.cwd()
+ids = set()
+sources = {}
+
+
+def walk(value):
+    if isinstance(value, dict):
+        for key in ['id', 'case_id', 'test_id']:
+            if isinstance(value.get(key), str):
+                ids.add(value[key])
+        for child in value.values():
+            walk(child)
+    elif isinstance(value, list):
+        for child in value:
+            walk(child)
+
+
+names = subprocess.check_output(['rg', '--files', 'docs/qa/data']).decode('utf-8').splitlines()
+for name in names:
+    path = ROOT / name
+    if path.suffix not in {'.json', '.jsonl'}:
+        continue
+    data = path.read_bytes()
+    sources[path.relative_to(ROOT).as_posix()] = hashlib.sha256(data).hexdigest()
+    if path.suffix == '.json':
+        walk(json.loads(data.decode('utf-8-sig')))
+    else:
+        for line in data.decode('utf-8-sig').splitlines():
+            walk(json.loads(line))
+table = ROOT / 'docs/qa/US24-v3_9-完整审核清单.csv'
+rows = list(csv.DictReader(table.open(encoding='utf-8-sig', newline='')))
+assert len(rows) == 132 and len({r['candidate_id'] for r in rows}) == 132
+audits = []
+for row in rows:
+    decisions_blank = all(not row[k] for k in
+        ['include', 'agree_level', 'agree_aliases', 'agree_pinyin', 'needs_exemption', 'm1_comments'])
+    assert decisions_blank and row['m1_status'] == 'PENDING'
+    refs = []
+    for reference in row['test_ids'].split(';'):
+        if reference:
+            matches = [i for i in ids if i == reference or
+                reference.endswith('*') and i.startswith(reference[:-1])]
+            refs.append(dict(reference=reference, resolved_ids=len(matches)))
+    audits.append(dict(candidate_id=row['candidate_id'], decisions_blank=decisions_blank,
+        M1_review='PENDING', references=refs, missing=[r['reference'] for r in refs if not r['resolved_ids']]))
+report = dict(created_at_utc=datetime.now(UTC).isoformat(), scope='static fixture traceability only; not business execution',
+    fixture_ids=len(ids), review_entries=len(rows), missing_reference_count=sum(len(a['missing']) for a in audits),
+    CSV_sha256=hashlib.sha256(table.read_bytes()).hexdigest(), source_sha256=sources, entries=audits,
+    M1_approval_inferred=False, counted_in_original120=False)
+assert report['missing_reference_count'] == 0
+output = ROOT / 'docs/qa/evidence/us24-recall-20261124/review-v3_9-reference-audit.json'
+with output.open('x', encoding='utf-8', newline='\n') as handle:
+    json.dump(report, handle, ensure_ascii=False, indent=2)
+print(json.dumps({k:report[k] for k in ['fixture_ids','review_entries','missing_reference_count']}))

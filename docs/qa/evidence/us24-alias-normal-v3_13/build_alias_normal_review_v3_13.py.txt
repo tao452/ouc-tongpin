@@ -1,0 +1,66 @@
+import csv
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path.cwd();QA=ROOT/'docs/qa';LAB=ROOT/'qa-private/us24-recall-20261124'
+path=ROOT/'services/algo/app/data/moderation-v3_13-candidate.json'
+entries=json.loads(path.read_text(encoding='utf-8'))
+policy=json.loads((LAB/'alias-normal-context-v3_13-policy.json').read_text(encoding='utf-8'))
+alias_policy=json.loads((LAB/'alias-phrases-v3_12-policy-r2.json').read_text(encoding='utf-8'))
+digest=hashlib.sha256(path.read_bytes()).hexdigest();assert digest==policy['dictionary_sha256']
+decisions=['include','agree_level','agree_aliases','agree_pinyin','needs_exemption','m1_comments']
+with (QA/'US24-v3_12-完整审核清单.csv').open(encoding='utf-8-sig',newline='') as handle:
+    reader=csv.DictReader(handle);fields=reader.fieldnames;rows=list(reader)
+with (QA/'US24-v3_12-别名拼音映射.csv').open(encoding='utf-8-sig',newline='') as handle:
+    reader=csv.DictReader(handle);variant_fields=reader.fieldnames;variants=list(reader)
+assert len(rows)==len(entries)==132 and len(variants)==27
+for row,entry in zip(rows,entries,strict=True):
+    assert row['word']==entry['word'] and row['suggested_level']==entry['level']
+    assert row['m1_status']=='PENDING' and all(not row[k] for k in decisions)
+    row['allow_phrases']=' / '.join(entry.get('allow_phrases',[]))
+    row['pinyin_allow_phrases']=' / '.join(entry.get('pinyin_allow_phrases',[]))
+    change=next((r for r in policy['suggestions'] if r['candidate_id']==row['candidate_id']),None)
+    if change:
+        row['rationale']+='；对实际出现的同音正常语境误报补充精确登记短语'
+        row['normal_context']+='；本次同音正常语境：'+' / '.join(change['hanzi']+change['pinyin'])
+        row['false_positive_risk']+='；只豁免登记完整短语的具体出现位置，前后同词及其他攻击继续识别'
+        row['test_ids']+=';AP313-N-*;AP313-SCOPE-*'
+    row['technical_self_check']='FUNCTIONAL_PASS; SHARED_BOUND_CHECKED; BUSINESS_PENDING'
+for variant in variants:
+    assert variant['m1_status']=='PENDING' and all(not variant[k] for k in decisions)
+    if any(r['candidate_id']==variant['candidate_id'] for r in policy['suggestions']):
+        variant['normal_context']+='；新增同音正常短语见3.13主表，按词条和位置核对'
+        variant['test_ids']+=';AP313-N-*'
+for name,values,headers in [('US24-v3_13-完整审核清单.csv',rows,fields),
+                            ('US24-v3_13-别名拼音映射.csv',variants,variant_fields)]:
+    with (QA/name).open('x',encoding='utf-8',newline='') as handle:
+        writer=csv.DictWriter(handle,fieldnames=headers,lineterminator='\n');writer.writeheader();writer.writerows(values)
+text=['# US24 v3.13 词库逐条审核表\n',
+    '共132条：原5条、PR83新增41条、v2新增24条、v3新增50条、v3.5新增12条。标准词及建议等级保持相同，沿用3.12的18条规则、27项别名整词拼音；本次为8条增加7个汉字正常短语和17个拼音正常短语。\n',
+    f'词库SHA256：`{digest}`。HIGH47、MEDIUM80、LOW5；HIGH阻断，MEDIUM/LOW放行，默认原5条。132条全部PENDING、792个决定栏留空；27项映射另有162个空白决定栏，见[变体表](US24-v3_13-别名拼音映射.csv)。\n',
+    '正常短语只作用于对应词条及具体出现位置，不扩展为全局白名单；同句或相邻位置继续出现的同词攻击、其他攻击及不完整正常语境继续匹配。每词标准词与别名共享8路径/16键上限，字段最多6个别名，实际最多4个别名/6个数字路径/10个键。\n',
+    '见[本次误报复测](US24-v3_13-正常同音短语与范围复测.md)、[别名映射阶段](US24-v3_12-别名拼音与否定边界复测.md)、[完整CSV](US24-v3_13-完整审核清单.csv)和[模型训练报告](US24-拼音语义分类训练与复测报告.md)。广义95%目标仍未通过，M3独立复现待安排。原[3.12审核表](US24-v3_12-M1逐条审核表.md)保留。\n']
+for row in rows:
+    def value(name):return row[name] or '无'
+    text.extend([f"\n## {row['candidate_id']} · {row['word']}\n",
+        f"来源：{row['origin']}；类别：{row['category']}；等级建议：{row['suggested_level']}；状态：PENDING。\n",
+        f"别名：{value('variants')}。定向别名：{value('targeted_aliases')}。标准词需定向：{row['target_required']}。\n",
+        f"拼音：{row['pinyin']}；标准词整词读音：{value('context_pronunciation')}；数字声调路径：{value('context_numeric_tones')}；完整拼写别名：{value('pinyin_aliases')}；汉字同音：{row['hanzi_homophone']}。\n"])
+    for variant,item in zip(variants,alias_policy['mappings'],strict=True):
+        if variant['candidate_id']==row['candidate_id']:
+            text.append(f"{variant['variant_id']}：{variant['hanzi_alias']}；默认工具路径：{variant['default_tool_numeric_reading']}；建议补充路径：{variant['proposed_additional_whole_phrase_tones'] or '无'}；业务状态：PENDING。\n")
+    text.append(f"精确正常短语：{value('allow_phrases')}；拼音正常短语：{value('pinyin_allow_phrases')}。\n")
+    if row['unicode_variant_ids']:text.append(f"Unicode变体编号：{row['unicode_variant_ids']}；码点：{row['unicode_codepoints']}。\n")
+    text.extend([f"收录理由：{row['rationale']}。\n",f"正常语境：{row['normal_context']}。误报风险：{row['false_positive_risk']}。\n",
+        f"对应测试：{row['test_ids']}。\n\n",'- 是否收录：____\n','- 是否同意等级：____\n',
+        '- 是否同意别名：____\n','- 是否同意拼音规则：____\n','- 是否需要豁免：____\n','- 修改意见：____\n'])
+with (QA/'US24-v3_13-M1逐条审核表.md').open('x',encoding='utf-8',newline='\n') as handle:handle.write('\n'.join(text))
+audit=dict(rules=132,new_canonical_rules=0,changed_normal_context_entries=8,new_hanzi_phrases=7,new_pinyin_phrases=17,
+    dictionary_sha256=digest,M1_pending=132,decision_blanks=sum(not r[k] for r in rows for k in decisions),
+    variant_M1_pending=27,variant_decision_blanks=sum(not r[k] for r in variants for k in decisions),
+    M3_reproduction='PENDING',production_acceptance=False)
+assert audit['decision_blanks']==792 and audit['variant_decision_blanks']==162
+with (LAB/'alias-normal-v3_13-review-structure.json').open('x',encoding='utf-8') as handle:
+    json.dump(audit,handle,ensure_ascii=False,indent=2)
+print(json.dumps(audit,ensure_ascii=False),flush=True)

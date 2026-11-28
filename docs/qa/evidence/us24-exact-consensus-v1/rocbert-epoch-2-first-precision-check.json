@@ -1,0 +1,140 @@
+{
+  "scope": "post-hoc development threshold precision check; same reused rows, not independent accuracy",
+  "source_predictions_sha256": "d536e83d0a403dd08a7dcf4a7c8c8475111b7019d321d7672bb7599c8eb56e65",
+  "original_rows": 3258,
+  "excluded_rows": 0,
+  "unique_finite_scores": 1624,
+  "thresholds_per_mode": 3250,
+  "decision_policy": "one global >=threshold; all actual unique scores and nextafter boundaries in[0,1]",
+  "fpr_policy": "FP*50 < negatives for each cohort; errors0",
+  "recall_policy": "TP*100 >=95*positives for each positive cohort",
+  "results": {
+    "model": {
+      "best_fpr_eligible": {
+        "threshold": 0.9828232526779175,
+        "ensemble": false,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 433,
+              "fp": 17,
+              "fn": 859,
+              "tn": 1090
+            },
+            "recall": 0.3351393188854489,
+            "precision": 0.9622222222222222,
+            "false_positive_rate": 0.015356820234869015,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 30,
+              "fp": 4,
+              "fn": 220,
+              "tn": 246
+            },
+            "recall": 0.12,
+            "precision": 0.8823529411764706,
+            "false_positive_rate": 0.016,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 257
+            },
+            "recall": null,
+            "precision": null,
+            "false_positive_rate": 0.0,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 11,
+              "tn": 89
+            },
+            "recall": 0.08333333333333333,
+            "precision": 0.5,
+            "false_positive_rate": 0.011111111111111112,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": true,
+        "development_gate_met": false
+      },
+      "fpr_eligible_decision_points": 302,
+      "passing_points": 0
+    },
+    "literal_or_model": {
+      "best_fpr_eligible": {
+        "threshold": 0.9845753908157349,
+        "ensemble": true,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 432,
+              "fp": 22,
+              "fn": 860,
+              "tn": 1085
+            },
+            "recall": 0.33436532507739936,
+            "precision": 0.9515418502202643,
+            "false_positive_rate": 0.01987353206865402,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 76,
+              "fp": 3,
+              "fn": 174,
+              "tn": 247
+            },
+            "recall": 0.304,
+            "precision": 0.9620253164556962,
+            "false_positive_rate": 0.012,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 257
+            },
+            "recall": null,
+            "precision": null,
+            "false_positive_rate": 0.0,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 12,
+              "fp": 1,
+              "fn": 0,
+              "tn": 89
+            },
+            "recall": 1.0,
+            "precision": 0.9230769230769231,
+            "false_positive_rate": 0.011111111111111112,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": true,
+        "development_gate_met": false
+      },
+      "fpr_eligible_decision_points": 276,
+      "passing_points": 0
+    }
+  },
+  "passing_points": [],
+  "development_gate_met": false,
+  "old_grid_reports_modified": false,
+  "code_sha256": "da356498d9112b583f665efbb02b21732af947f1f6c0fa3343b0c1034f886bbd",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

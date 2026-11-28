@@ -1,0 +1,75 @@
+import hashlib
+import json
+from collections import defaultdict
+from pathlib import Path
+
+from pypinyin import Style,pinyin
+from transformers import BertTokenizerFast,RoCBertTokenizer
+
+
+class RobustEncoder:
+    def __init__(self,directory):
+        self.directory=Path(directory)
+        self.official=RoCBertTokenizer.from_pretrained(str(directory),local_files_only=True,trust_remote_code=False)
+        self.fast=BertTokenizerFast(vocab_file=str(self.directory/'vocab.txt'),
+            do_lower_case=self.official.do_lower_case,
+            tokenize_chinese_chars=self.official.basic_tokenizer.tokenize_chinese_chars,
+            strip_accents=self.official.basic_tokenizer.strip_accents,
+            unk_token=self.official.unk_token,sep_token=self.official.sep_token,
+            pad_token=self.official.pad_token,cls_token=self.official.cls_token,mask_token=self.official.mask_token)
+        self.shape=json.loads((self.directory/'word_shape.json').read_text(encoding='utf-8'))
+        self.pronunciation=json.loads((self.directory/'word_pronunciation.json').read_text(encoding='utf-8'))
+        candidates=defaultdict(set);support=defaultdict(int);references=0
+        unknown=self.pronunciation[self.official.unk_token]
+        for char,value in self.pronunciation.items():
+            if len(char)!=1 or not ('\u3400'<=char<='\u9fff') or value in {0,unknown}:continue
+            sounds=pinyin(char,style=Style.NORMAL,heteronym=True)
+            sounds=set(sounds[0]) if len(sounds)==1 else set()
+            if len(sounds)!=1:continue
+            sound=next(iter(sounds))
+            if not sound.isascii() or not sound.isalpha():continue
+            candidates[sound].add(value);support[sound]+=1;references+=1
+        self.sound_ids={s:next(iter(v)) for s,v in candidates.items() if len(v)==1 and support[s]>=2}
+        self.mapping_audit=dict(scope='pretrained vocabulary and monophonic contextual-reading references only; no corpus labels',
+            references=references,qualified_sounds=len(self.sound_ids),minimum_reference_support=2,
+            ambiguous_sounds=sorted(s for s,v in candidates.items() if len(v)>1),
+            single_reference_sounds=sorted(s for s,v in candidates.items() if len(v)==1 and support[s]<2),
+            qualified_mapping=self.sound_ids,candidate_id_counts={s:len(v) for s,v in candidates.items()},
+            policy='one whole-text contextual no-tone reading; override only unique pretrained ID with>=2monophonic references; otherwise keep official ID',
+            heteronym_combinations=0)
+        self.mapping_audit['mapping_sha256']=hashlib.sha256(json.dumps(self.sound_ids,sort_keys=True).encode()).hexdigest()
+
+    def encode(self,text):
+        encoded=self.fast(text,add_special_tokens=False,return_offsets_mapping=True,
+            return_attention_mask=False,return_token_type_ids=False,truncation=False,verbose=False)
+        official=self.official(text,add_special_tokens=False,return_attention_mask=False,
+            return_token_type_ids=False,truncation=False,verbose=False)
+        ids=encoded['input_ids'];offsets=encoded['offset_mapping']
+        assert ids==official['input_ids'], 'Fast/official WordPiece IDs differ; no row is omitted'
+        shape=list(official['input_shape_ids']);pron=list(official['input_pronunciation_ids'])
+        tokens=self.fast.convert_ids_to_tokens(ids)
+        assert shape==self.official.convert_tokens_to_shape_ids(tokens)
+        assert pron==self.official.convert_tokens_to_pronunciation_ids(tokens)
+        sounds=[v[0] for v in pinyin(text,style=Style.NORMAL,heteronym=False,errors=lambda value:list(value))]
+        assert len(sounds)==len(text)
+        changed=0
+        for index,(left,right) in enumerate(offsets):
+            if right-left!=1 or not ('\u3400'<=text[left]<='\u9fff'):continue
+            value=self.sound_ids.get(sounds[left])
+            if value is not None and value!=pron[index]:pron[index]=value;changed+=1
+        unknown_shape=self.shape[self.official.unk_token]
+        unknown_pron=self.pronunciation[self.official.unk_token]
+        windows=[];covered=set()
+        starts=range(0,max(1,len(ids)),382)
+        for start in starts:
+            end=min(start+510,len(ids))
+            window=dict(input_ids=[self.official.cls_token_id]+ids[start:end]+[self.official.sep_token_id],
+                input_shape_ids=[unknown_shape]+shape[start:end]+[unknown_shape],
+                input_pronunciation_ids=[unknown_pron]+pron[start:end]+[unknown_pron],
+                token_span=[start,end])
+            assert len(window['input_ids'])<=512
+            windows.append(window);covered.update(range(start,end))
+            if end==len(ids):break
+        assert covered==set(range(len(ids)))
+        return windows,dict(wordpiece_tokens=len(ids),contextual_pronunciation_changes=changed,
+            official_wordpiece_ids_equal=True,all_body_tokens_covered=True)

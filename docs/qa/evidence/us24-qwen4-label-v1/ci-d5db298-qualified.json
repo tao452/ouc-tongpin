@@ -1,0 +1,72 @@
+{
+  "head": "d5db2988cfcebc96f6576db93a8b9dbc3084edbb",
+  "run_id": 45534926014,
+  "all_jobs_success": true,
+  "jobs": [
+    {
+      "id": 138939075507,
+      "name": "guard",
+      "conclusion": "success"
+    },
+    {
+      "id": 138939075755,
+      "name": "changes",
+      "conclusion": "success"
+    },
+    {
+      "id": 138939075823,
+      "name": "stack / Deploy and verify temporary test environment",
+      "conclusion": "success"
+    },
+    {
+      "id": 138939075976,
+      "name": "w1-poc",
+      "conclusion": "success"
+    },
+    {
+      "id": 138939194213,
+      "name": "api-server",
+      "conclusion": "success"
+    },
+    {
+      "id": 138939194239,
+      "name": "algo",
+      "conclusion": "success"
+    },
+    {
+      "id": 138939194243,
+      "name": "admin-web",
+      "conclusion": "success"
+    },
+    {
+      "id": 138939194328,
+      "name": "miniprogram",
+      "conclusion": "success"
+    },
+    {
+      "id": 138940834555,
+      "name": "W3 delivery evidence",
+      "conclusion": "success"
+    },
+    {
+      "id": 138940923441,
+      "name": "quality",
+      "conclusion": "success"
+    }
+  ],
+  "algorithm": {
+    "job_id": 138939194239,
+    "python_pass": 663,
+    "coverage": 98.25,
+    "ruff": "PASS"
+  },
+  "java": {
+    "job_id": 138939194213,
+    "tests": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source": "GitHub workflow job API and actual decoded logs",
+  "production_acceptance": false
+}

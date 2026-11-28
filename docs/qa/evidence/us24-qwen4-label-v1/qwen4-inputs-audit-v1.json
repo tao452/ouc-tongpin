@@ -1,0 +1,25 @@
+{
+  "scope": "all3258 inputs independently reconstructed from original native text; no model inference",
+  "rows": 3258,
+  "windows": 3258,
+  "source_characters": 102345,
+  "excluded_rows": 0,
+  "truncated_characters": 0,
+  "synthetic_encoding_checks": 6,
+  "conflicting_canonical_label_groups": 0,
+  "features_sha256": "e2529111cc9b75875e3119bb543757892a88166ea2aad3f29a5220dc9a40e05b",
+  "index_sha256": "4473e2ff274b99ac1bb3c0d3a80d7def38166118bb60f5b31340506ebba352f8",
+  "code_sha256": "54bc5844a2340c408c0e148df3652f3266065b53ae732a67e01071f56ef8b56d",
+  "cohort_labels": {
+    "toxicn_dev:0": 1107,
+    "toxicn_dev:1": 1292,
+    "PCR:1": 250,
+    "PCR:0": 250,
+    "controls:0": 257,
+    "context_stress:0": 90,
+    "context_stress:1": 12
+  },
+  "COLD_dev_fetched": false,
+  "semantic_accuracy_status": "NOT_RUN",
+  "production_acceptance": false
+}

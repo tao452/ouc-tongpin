@@ -331,6 +331,8 @@ paths:
               properties:
                 text: { type: string, minLength: 1, maxLength: 2000, description: 不允许纯空白 }
       responses:
+        '400':
+          description: 文本超过 2000 个 Unicode 码点，不回显提交内容
         '200':
           description: 检测结果
           content:

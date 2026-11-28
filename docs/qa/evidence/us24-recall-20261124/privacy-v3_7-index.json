@@ -1,0 +1,269 @@
+{
+  "scope": "Exact staged Git blobs; synthetic requests/responses and hash-only model predictions",
+  "files": 52,
+  "unresolved_findings": [],
+  "phone_like_substrings_inside_hashes": 30,
+  "raw_corpus_or_model_hints_included": false,
+  "checked_files": [
+    {
+      "file": ".github/workflows/deploy-test.yml",
+      "bytes": 10505,
+      "sha256": "e6124f40abcc36ec6134e4550380fa9ea8ff849c5be42ad89c3ef611dee4d065"
+    },
+    {
+      "file": "docs/qa/US24-v3_5-M1逐条审核表.md",
+      "bytes": 123346,
+      "sha256": "274be59807cec58bf84b7423a596ddcfc9e89e9b431293bac26189728ebf4883"
+    },
+    {
+      "file": "docs/qa/US24-v3_6-语境修正与复测报告.md",
+      "bytes": 3558,
+      "sha256": "7ecccf08d802c3832fadc105063397f703d731a40b69592c4bbe719346d9ccf6"
+    },
+    {
+      "file": "docs/qa/US24-v3_6-语境逐项审核补充.md",
+      "bytes": 1900,
+      "sha256": "c64f3922079a1a3b3b505833027f536be4ce95440a146850127e6c32126b4673"
+    },
+    {
+      "file": "docs/qa/US24-v3_7-长拼音举报语境与复测.md",
+      "bytes": 3755,
+      "sha256": "d0d74163bbb5271b5df6fe5e9405a42e21f3d023e0999c290a0097e6f00564dc"
+    },
+    {
+      "file": "docs/qa/US24-拼音语义分类开发方案.md",
+      "bytes": 5476,
+      "sha256": "ff3774511d50576f3bf8ed152c218ed244e6ec173d07147c40597e262b15e32b"
+    },
+    {
+      "file": "docs/qa/US24-拼音语义分类训练与复测报告.md",
+      "bytes": 5053,
+      "sha256": "55c883613ebf2fd641f9ab695138ea307986f2a27692e41cdc1fceb01bc75ca8"
+    },
+    {
+      "file": "docs/qa/US24-词库版本变更记录.md",
+      "bytes": 6547,
+      "sha256": "061225d61a42c70656d210ac3b6634e5e2f16fa585a973e848259d4687d18d3a"
+    },
+    {
+      "file": "docs/qa/data/us24-development.v3_7.jsonl",
+      "bytes": 244366,
+      "sha256": "325a5b9bddfd1f2528123712cd7116391fa54be097d20c216089ef64b6a1455b"
+    },
+    {
+      "file": "docs/qa/data/us24-development.v3_7.manifest.json",
+      "bytes": 635,
+      "sha256": "61d9742e5c56030da041e8cfc53aecd0b1e8d135d3156efadda1dd21308a07b2"
+    },
+    {
+      "file": "docs/qa/data/us24-long-pinyin-toneless.v1.json",
+      "bytes": 2473,
+      "sha256": "aebc8f74e5b527bf09d9e6184d5dda3719e815243b38e5de9d78745d6d7f5a40"
+    },
+    {
+      "file": "docs/qa/evidence/us24-linear-phonetic-v1/frozen.json",
+      "bytes": 17474,
+      "sha256": "ac555ee8257201cdda7359d91a2929a259355dc9b35792e63070deb0e87c3ac4"
+    },
+    {
+      "file": "docs/qa/evidence/us24-linear-phonetic-v1/manifest.json",
+      "bytes": 1945,
+      "sha256": "74b7e8bc057c11661dc085eae2158f26922d973abe558b092823b4012125b6bb"
+    },
+    {
+      "file": "docs/qa/evidence/us24-linear-phonetic-v1/phonetic_recheck_metrics.py.txt",
+      "bytes": 3045,
+      "sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "docs/qa/evidence/us24-linear-phonetic-v1/predictions.jsonl",
+      "bytes": 1290678,
+      "sha256": "2de559ffd2f26ae6d2d0ad223f474e72b1e1584a6d89ce32264b27d7b13e40d7"
+    },
+    {
+      "file": "docs/qa/evidence/us24-linear-phonetic-v1/report.json",
+      "bytes": 31357,
+      "sha256": "c565237fa736934a9d27ed08e992426215fbefbc183c411bbe5192e1d789c27a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-linear-phonetic-v1/thresholds.csv",
+      "bytes": 608176,
+      "sha256": "9cc19c621f535cbb9e0f56fb14ca4fe5ca965a590ae0737e400d77f4ce6716ac"
+    },
+    {
+      "file": "docs/qa/evidence/us24-linear-phonetic-v1/train_linear_phonetic_v1.py.txt",
+      "bytes": 6954,
+      "sha256": "8906fbc34391f2db2f1b9fcd68e6f3d1b8d9402894c9b4562c1f05dcbf250668"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/benchmark_long_pinyin_v3_7.py.txt",
+      "bytes": 2799,
+      "sha256": "6007bd78765ca1e4d12882e500c0cf789030dec07af4fd9b07d62e520bfc814e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/build_long_pinyin_cases.py.txt",
+      "bytes": 2299,
+      "sha256": "1553971c3226426d8550aea8bb34a59499509671afb5e26bf31f983d4c22ad4f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/check_long_pinyin_cases.py.txt",
+      "bytes": 2148,
+      "sha256": "cd06722755bb80e8f2f916dae795dfd7f79a4a9e69704ebc87a676ef62b6ea39"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/ci-v3_6-dc04915.json",
+      "bytes": 2105,
+      "sha256": "dfb6edfe09b513e7de9d6342d0544c0336b460c88e99535015a2fbf05ff78de0"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/local-quality-v3_7-final.json",
+      "bytes": 1072,
+      "sha256": "22f8d1679e07d89437a7c01e5969d2caed90763ce9b4039a23ba3fb9f06ad523"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/local-quality-v3_7.json",
+      "bytes": 1050,
+      "sha256": "4fa1f9c26db088ba3744316508382a12d588a7ef7f31b2418879df6f4714f1c5"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-after-function-pinned.json",
+      "bytes": 363960,
+      "sha256": "b424a8060019d3254028ce31da010c2c7438c8dbad5240b56e37a9e02498273e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-after-http.json",
+      "bytes": 363954,
+      "sha256": "c3f2a9cb41876540b1f719d1c33b3c3327263a1c04b55ea5c32d32d8a236f063"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-before-function-pinned.json",
+      "bytes": 372901,
+      "sha256": "b1d5926e9b8d1252e01643e0c359dd821647a8a73e9aa228188a05c04430b707"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-before-harness-qualification.json",
+      "bytes": 396,
+      "sha256": "29ea9ddff5a2c026d516e1e53f5de81e222dc283bfcce547233e47f62b2ce87b"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-before-http.json",
+      "bytes": 372897,
+      "sha256": "1f6baeab3409c5838cbb1daef4cc3b01d6b1a488014aa49b2a668551f5a62576"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-PCR-historical.json",
+      "bytes": 9033,
+      "sha256": "3578e60fa41e1128c6782a6dce1a08a72233aed243bb76ff3c152a8fda9bf616"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-ToxiCN-historical.json",
+      "bytes": 9163,
+      "sha256": "330605881fd908e97c4be08f7635e9c2a47f91cd91a6daf60f2f114d6b937840"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-context-stress-http.json",
+      "bytes": 34354,
+      "sha256": "44bb8abea70fabe6f6af88ee896a54b8027487ede4d56242f2d3439f44d80426"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-per-entry-audit.json",
+      "bytes": 113796,
+      "sha256": "4469c23972ae72eeba6103f980b0988d3068a9de644181d8d16b83053c2519e2"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-performance-environment.json",
+      "bytes": 319,
+      "sha256": "5bc49cdc10785fde23ac007f20067939b5d008fd8cbf855501822df17f91cec8"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-performance-first.json",
+      "bytes": 50755,
+      "sha256": "5eaddcc3515c8c8c7d1a63cd8700b88da643db506843dc67478d9615b42a0424"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-quote-boundaries-http.json",
+      "bytes": 4437,
+      "sha256": "c5bb6150d7196a6a8c8912773344215615bb65377477ba707d1471dfa72238fe"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-self-help-http.json",
+      "bytes": 8983,
+      "sha256": "68ce47ecc888782b0cc44139459d5e59011215eae1b7c438f9bde18eb5034883"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-toneless-http.json",
+      "bytes": 4746,
+      "sha256": "3ec1ad7cbab32e80ff8ce3730880b0f043fdadda6e0c06129101d2e1c4fc9495"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v2-function.json",
+      "bytes": 28828,
+      "sha256": "1500f14fe71f2d243ab6390ab7cb249f03280e5b67cb45359706ecbd3619804f"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v2-http.json",
+      "bytes": 28820,
+      "sha256": "c580b8069b4074d753c624532c5e612aaae95d63a91193341a3b06de7264b48e"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3-function.json",
+      "bytes": 24231,
+      "sha256": "bfaa428d3396fe44f92b309a49db289097506c046138735d419c08b51c209f12"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3-http.json",
+      "bytes": 24227,
+      "sha256": "1dfa5377cb97a82e75934daa8002677b68b807587f1099afbadabef595598a71"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3_3-function.json",
+      "bytes": 9736,
+      "sha256": "afcb2fde07f7177b3f65bf6a221c2baa288e765968cb8ea9dcc84c3479e88433"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3_3-http.json",
+      "bytes": 9732,
+      "sha256": "d3bdf86bd07f5364d5efb8a4cc61bf657c215aa57cb47be8d94aa3f492383854"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3_4-function.json",
+      "bytes": 10661,
+      "sha256": "739b5fb5dac12c7d92b2c83032fcd338955dcccb541fb61597ab92ae163d3e9a"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3_4-http.json",
+      "bytes": 10657,
+      "sha256": "a9817f2aceda6ad438b3ef5f0d227327eeefc4454553079736b9e1b2b1edf4c9"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3_5-function.json",
+      "bytes": 19377,
+      "sha256": "4714793ffbc4ee246d5ceb4d58218af0c1fa48f35853bcf0396e1bd200027e01"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/long-pinyin-v3_7-v3_5-http.json",
+      "bytes": 19372,
+      "sha256": "2eb44dd1592d7c7bf3eaceb68128ce44000cf8fa650b855a147ea98dbc13e9ff"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/quotes-v3_6-per-entry-audit.json",
+      "bytes": 177930,
+      "sha256": "46cdd003bdc73bd2a654be54d71b0fc2e94f565f151e1fa1db42aeeb3588b898"
+    },
+    {
+      "file": "docs/qa/evidence/us24-recall-20261124/verify_long_pinyin_v3_7.py.txt",
+      "bytes": 1495,
+      "sha256": "2f806f1f5459f8963f965c0719cc3110a4b35b99303f53d77123256c78bb2d09"
+    },
+    {
+      "file": "services/algo/app/services/moderation_context.py",
+      "bytes": 4701,
+      "sha256": "870d16c11397293cee8a450b4b86ac66f3044b2bfd429d1b54260604f78be8a2"
+    },
+    {
+      "file": "services/algo/tests/test_long_pinyin_reports.py",
+      "bytes": 2054,
+      "sha256": "aaff96a4e8e92577ecab5cb2528e20485d3dc44fcad1203c726d0fef861c1c50"
+    }
+  ]
+}

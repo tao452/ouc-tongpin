@@ -1,0 +1,143 @@
+{
+  "scope": "complete-score development sweep and independent recomputation of all prior7992 matrices; reused rows, not independent accuracy",
+  "source_predictions_sha256": "7a4b1c0263acc981bb1b2ce5457ae9e3e264a3dde2bca4dee525efb509ca18b4",
+  "original_rows": 3258,
+  "excluded_rows": 0,
+  "reference_input_index_sha256": "cdfe87c0efaf48a14d69fc058ee5137f9d1d68bd6b6de65bf7d35114676d1286",
+  "previous_grid_sha256": "e853269096934b7fe9cc6c95bf644745e034c55b466e8bf61dd1233c3103e573",
+  "previous_grid_matrices_recomputed": 7992,
+  "unique_finite_scores": 1500,
+  "thresholds_per_mode": 4001,
+  "decision_policy": "one global >=threshold; all actual unique scores and nextafter boundaries in[0,1]",
+  "fpr_policy": "FP*50 < negatives for each cohort; errors0",
+  "recall_policy": "TP*100 >=95*positives for each positive cohort",
+  "results": {
+    "model": {
+      "best_fpr_eligible": {
+        "threshold": 0.8984104990959167,
+        "ensemble": false,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 468,
+              "fp": 22,
+              "fn": 824,
+              "tn": 1085
+            },
+            "recall": 0.3622291021671827,
+            "precision": 0.9551020408163265,
+            "false_positive_rate": 0.01987353206865402,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 20,
+              "fp": 3,
+              "fn": 230,
+              "tn": 247
+            },
+            "recall": 0.08,
+            "precision": 0.8695652173913043,
+            "false_positive_rate": 0.012,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 257
+            },
+            "recall": null,
+            "precision": null,
+            "false_positive_rate": 0.0,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 10,
+              "tn": 90
+            },
+            "recall": 0.16666666666666666,
+            "precision": 1.0,
+            "false_positive_rate": 0.0,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": true,
+        "development_gate_met": false
+      },
+      "fpr_eligible_decision_points": 638,
+      "passing_points": 0
+    },
+    "literal_or_model": {
+      "best_fpr_eligible": {
+        "threshold": 0.9193534255027771,
+        "ensemble": true,
+        "cohorts": {
+          "toxicn_dev": {
+            "confusion_matrix": {
+              "tp": 415,
+              "fp": 22,
+              "fn": 877,
+              "tn": 1085
+            },
+            "recall": 0.32120743034055727,
+            "precision": 0.9496567505720824,
+            "false_positive_rate": 0.01987353206865402,
+            "inference_errors": 0
+          },
+          "PCR": {
+            "confusion_matrix": {
+              "tp": 63,
+              "fp": 2,
+              "fn": 187,
+              "tn": 248
+            },
+            "recall": 0.252,
+            "precision": 0.9692307692307692,
+            "false_positive_rate": 0.008,
+            "inference_errors": 0
+          },
+          "controls": {
+            "confusion_matrix": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 257
+            },
+            "recall": null,
+            "precision": null,
+            "false_positive_rate": 0.0,
+            "inference_errors": 0
+          },
+          "context_stress": {
+            "confusion_matrix": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "tn": 90
+            },
+            "recall": 1.0,
+            "precision": 1.0,
+            "false_positive_rate": 0.0,
+            "inference_errors": 0
+          }
+        },
+        "fpr_eligible": true,
+        "development_gate_met": false
+      },
+      "fpr_eligible_decision_points": 532,
+      "passing_points": 0
+    }
+  },
+  "passing_points": [],
+  "development_gate_met": false,
+  "old_grid_reports_modified": false,
+  "code_sha256": "7d615b856cbc5304b625ae75302fd5e69beb9786602beba2e1a4e8ea16b4f925",
+  "COLD_dev_fetched": false,
+  "M1_review": "PENDING",
+  "production_acceptance": false
+}

@@ -1,0 +1,89 @@
+{
+  "scope": "augmented development experiment; every prediction retained; no independent acceptance",
+  "evaluation_rows_per_checkpoint": 3258,
+  "excluded_evaluation_rows": 0,
+  "gradient_training_on_evaluation": false,
+  "raw_text_published": false,
+  "model_or_vocabulary_published": false,
+  "M1_review": "PENDING",
+  "M3_reproduction": "PENDING",
+  "production_acceptance": false,
+  "files": [
+    {
+      "file": "frozen.json",
+      "public_lf_sha256": "26b905d61ba20c31cf2faa9f734ed38f56a57d4a1d8aaea75bc9bde5c617033c",
+      "bytes": 25622,
+      "private_sha256": "aad6df5bc547c923fdf0cec96cb1efb41a4fc4a1f0586337b1988f1d48cb6f4e"
+    },
+    {
+      "file": "summary.json",
+      "public_lf_sha256": "cd8ff1f64ba916d70fb68b40a7346cf7e643aed789b82aebd2a49218d06123ac",
+      "bytes": 64021,
+      "private_sha256": "6c5336ed95d0ae161b5aeaecbcea9178ac245b08ba06ed73026413f6acb0c80b"
+    },
+    {
+      "file": "epoch-1-report.json",
+      "public_lf_sha256": "980106b2b5a44885fbb64e88f0233bee11c916df716bdd6a9df1045c42b9d374",
+      "bytes": 31549,
+      "private_sha256": "972105091659a6c9b55642d914a1eafcbdb9fa0f10ad2bde4efd8888e156c5c2"
+    },
+    {
+      "file": "epoch-1-predictions.jsonl",
+      "public_lf_sha256": "5722d2e62be85f355279c39c35475e56ad50ae469c695a6e9352532c0e2dad5e",
+      "bytes": 1292175,
+      "private_sha256": "f9289c57ba26b75c9385ea3286df834c4d453c9582ce5979e8eaebede7408d16"
+    },
+    {
+      "file": "epoch-1-thresholds.csv",
+      "public_lf_sha256": "7c8569408317545afc7dfe4ddb13b88e83f7a85ae7836534aecd712af4d527f3",
+      "bytes": 632679,
+      "private_sha256": "7c8569408317545afc7dfe4ddb13b88e83f7a85ae7836534aecd712af4d527f3"
+    },
+    {
+      "file": "prepare_phonetic_augmented_v3.py.txt",
+      "public_lf_sha256": "ca6a35b78228a4c3012c8b7c2667f5b06204d3c41204054c474302e84eac6d69",
+      "bytes": 4701,
+      "private_sha256": "ca6a35b78228a4c3012c8b7c2667f5b06204d3c41204054c474302e84eac6d69"
+    },
+    {
+      "file": "train_phonetic_augmented_v3.py.txt",
+      "public_lf_sha256": "3762c591c64277ba7e6e86b7015e7e64189c842c08201cdc8ecdb98f60a6c292",
+      "bytes": 8079,
+      "private_sha256": "4765665630b39aa775ece72e4d69ce957cc44c38f34ac2e3e9a8d9c57cb1ed2e"
+    },
+    {
+      "file": "train_phonetic.py.txt",
+      "public_lf_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668",
+      "bytes": 9189,
+      "private_sha256": "a2140f858c88096bb69ab0b10b8bd5930c7834eff30bb643b8409907e13b2668"
+    },
+    {
+      "file": "phonetic_encoding.py.txt",
+      "public_lf_sha256": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d",
+      "bytes": 2485,
+      "private_sha256": "0cf1ca2e651f47975209a4a3ab919c20aa2a23dfd15bdce1abefc45a73b0ed4d"
+    },
+    {
+      "file": "phonetic_recheck_metrics.py.txt",
+      "public_lf_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377",
+      "bytes": 3045,
+      "private_sha256": "0ed3abe4a1ae4a045789a9c3292980b3f29c49712523a38cf236d2e5b4058377"
+    },
+    {
+      "file": "augmentation-policy.json",
+      "public_lf_sha256": "5bda77897e5c56f1862c1b536476c6693fafb35a96913f4c075955fc6c3ffe02",
+      "bytes": 18238,
+      "private_sha256": "0f46fbf019e9b031702d61184294e664a2abbca9357e9cf71ae1029baf53353a"
+    },
+    {
+      "file": "augmentation-index.jsonl",
+      "public_lf_sha256": "d115278251899c5a3e62560a9f5563a60e5a1ea728eda139a47208789f5fd042",
+      "bytes": 2014271
+    },
+    {
+      "file": "skipped-augmentations.json",
+      "public_lf_sha256": "5285933b02febe65484b8d2d2b995cb45512eb6c315d03418c9704ff608bc6e9",
+      "bytes": 386
+    }
+  ]
+}
