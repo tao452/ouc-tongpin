@@ -1,5 +1,11 @@
 
 <view class="page">
+  <!-- 演示数据标注：当前列表为本地 Mock，后端查询接口尚未接入 -->
+  <view class="demo-notice">
+    <text class="demo-notice-icon">i</text>
+    <text>示例需求 · 演示数据，暂未接入后端查询</text>
+  </view>
+
   <!-- 搜索栏 -->
   <view class="search-bar">
     <view class="search-icon">⌕</view>
@@ -10,7 +16,7 @@
       value="{{searchKeyword}}"
       bindinput="onSearchInput"
     />
-    <view wx:if="{{searchKeyword}}" class="clear-search" bindtap="onSearchInput">×</view>
+    <view wx:if="{{searchKeyword}}" class="clear-search" bindtap="onClearSearch">×</view>
   </view>
 
   <!-- 分类导航 -->

@@ -162,7 +162,8 @@ const OVERSCAN = 2 // 上下各多渲染 2 张卡片
 
 Page({
   data: {
-    allNeeds: testNeeds,
+    // 默认展示 10 条真实感 Mock；testNeeds 仅用于手动验证虚拟列表性能，不作默认数据源。
+    allNeeds: mockNeeds,
     filteredNeeds: [],
     visibleNeeds: [],
 
@@ -367,6 +368,12 @@ Page({
     this.applyFilters()
   },
 
+  // 清空搜索关键词
+  onClearSearch() {
+    this.setData({ searchKeyword: '' })
+    this.applyFilters()
+  },
+
   // 切换分类
   onCategoryChange(e) {
     this.setData({
@@ -499,6 +506,12 @@ Page({
     })
   },
 
+  // 手动加载 1000 条压测数据，用于验证虚拟列表滚动性能；默认展示仍为 10 条 Mock。
+  loadPerfTestData() {
+    this.setData({ allNeeds: testNeeds })
+    this.applyFilters()
+  },
+
   // 下拉刷新
   onPullDownRefresh() {
     this.applyFilters()
@@ -506,12 +519,12 @@ Page({
   },
 
   // 点击需求卡片
-  onNeedTap() {
-    //const id = e.detail.id
-
+  onNeedTap(e) {
+    const id = e.detail && e.detail.id
     wx.showToast({
       title: '需求详情页暂未开发',
       icon: 'none'
     })
+    console.log('[plaza/list] need tapped:', id)
   }
 })

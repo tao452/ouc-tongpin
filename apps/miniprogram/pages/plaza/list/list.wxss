@@ -11,6 +11,32 @@ page {
   box-sizing: border-box;
 }
 
+/* 演示数据标注 */
+.demo-notice {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding: 16rpx 20rpx;
+  margin-bottom: 20rpx;
+  background: #fff7e6;
+  border: 1rpx solid #ffe0a3;
+  border-radius: 12rpx;
+  color: #a06a00;
+  font-size: 24rpx;
+}
+
+.demo-notice-icon {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: #f5b72e;
+  color: #ffffff;
+  font-size: 22rpx;
+  flex-shrink: 0;
+}
+
 /* 搜索栏 */
 .search-bar {
   height: 84rpx;
