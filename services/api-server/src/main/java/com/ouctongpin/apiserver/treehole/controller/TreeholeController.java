@@ -24,6 +24,11 @@ public class TreeholeController {
         return treeholeService.toResponse(treeholeService.createPost(CallerIdentity.require(principal), req));
     }
 
+    @GetMapping("/posts/{id}")
+    public PostResponse detail(@PathVariable Long id) {
+        return treeholeService.getPost(id);
+    }
+
     // 契约：GET /api/treehole/posts?emotionTag&cursor -> { items, nextCursor }
     @GetMapping("/posts")
     public Map<String, Object> list(@RequestParam(required = false) String emotionTag,

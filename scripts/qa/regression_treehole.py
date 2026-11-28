@@ -123,6 +123,10 @@ def register(runner, stack):
         post = create("regression expired content", emotionTag="LONELY")
         identifier = int(post["id"])
         expired.update(id=identifier, content=post["content"])
+        status, detail = client.request(route + f"/{identifier}")
+        expect(status == 200 and detail["content"] == post["content"],
+               "Unexpired detail must have a working positive control")
+        expired["positive_control"] = True
         stack.sql(f"UPDATE treehole_post SET expires_at='2000-01-01' WHERE id={identifier}")
         status, body = client.request(route + "?emotionTag=LONELY")
         expect(
@@ -131,6 +135,15 @@ def register(runner, stack):
         )
 
     runner.run("S1-044", hidden_expiry)
+
+    def expired_detail():
+        expect(expired.get("positive_control"), "Unexpired detail positive control missing")
+        status, detail = client.request(route + f"/{expired['id']}")
+        expect(status == 404 and expired["content"] not in json.dumps(detail),
+               "Expired detail exposed original content")
+        client.observations.append({"unexpired_detail_200": True, "expired_detail_404": True})
+
+    runner.run("S1-045", expired_detail)
 
     def burned_storage():
         expect("id" in expired, "Expiry fixture was not created")
@@ -154,6 +167,12 @@ def register(runner, stack):
             f"SELECT content_hash FROM treehole_archive WHERE post_id={identifier}"
         )
         expect(archived == digest, "Archive differs from original content hash")
+        identity_count = stack.sql(
+            f"SELECT COUNT(*) FROM treehole_identity WHERE post_id={identifier}")
+        expect(identity_count == "0", "Burned private identity mapping was not removed")
+        status, detail = client.request(route + f"/{identifier}")
+        expect(status == 404 and expired["content"] not in json.dumps(detail),
+               "Burned detail remained readable")
         expect(
             stack.redis("ZSCORE", "treehole:burn_queue", str(identifier)) == "",
             "Burned queue entry was not removed",

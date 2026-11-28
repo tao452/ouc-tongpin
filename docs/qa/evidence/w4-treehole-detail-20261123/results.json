@@ -1,0 +1,611 @@
+{
+  "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+  "treehole_main_matches_this_branch": true,
+  "results": [
+    {
+      "case_id": "S1-044",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "POST",
+          "route": "/api/treehole/posts",
+          "http_status": 201,
+          "elapsed_ms": 62.0,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/treehole/posts/30",
+          "http_status": 200,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "anonymous",
+            "authorMask",
+            "content",
+            "createdAt",
+            "emotionTag",
+            "expiresAt",
+            "hugCount",
+            "id"
+          ]
+        },
+        {
+          "method": "GET",
+          "route": "/api/treehole/posts",
+          "http_status": 200,
+          "elapsed_ms": 15.0,
+          "response_keys": [
+            "items",
+            "nextCursor"
+          ]
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "case_id": "S1-045",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/treehole/posts/30",
+          "http_status": 404,
+          "elapsed_ms": 31.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "unexpired_detail_200": true,
+          "expired_detail_404": true
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "case_id": "S1-046",
+      "status": "PASS",
+      "reason": null,
+      "execution_scope": "HTTP + isolated MySQL/Redis, authenticated test account",
+      "observations": [
+        {
+          "method": "GET",
+          "route": "/api/treehole/posts/30",
+          "http_status": 404,
+          "elapsed_ms": 47.0,
+          "response_keys": [
+            "code",
+            "data",
+            "message"
+          ]
+        },
+        {
+          "burned_status": 1,
+          "original_content_removed": true,
+          "archive_hash_matches": true,
+          "queue_entry_removed": true
+        }
+      ],
+      "priority": "P0"
+    },
+    {
+      "case_id": "S1-100",
+      "status": "PASS",
+      "executed": true,
+      "scope": "service integration + real MySQL8/Redis; network HTTP N/A",
+      "http_transport": "N/A",
+      "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+      "duration_seconds": 0.492,
+      "started_at": "2026-11-23T15:48:54.909516800Z",
+      "finished_at": "2026-11-23T15:48:55.387083300Z",
+      "evidence": [
+        {
+          "value": {
+            "post": {
+              "id": 3,
+              "status": 0,
+              "content": "w4-S1-100-b1354ecf-5f94-472a-87b9-e285aae5f6b7",
+              "anonymous_id": "anon_v1_PwUlt_nyAWzwvGMCnjZc2O2jD4yxgTxwJq3mZ3V5RtY"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535334990.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 4,
+              "status": 0,
+              "content": "w4-S1-100-8702fbfb-17b7-42e4-aaa7-dbac3151a302",
+              "anonymous_id": "anon_v1_4ZXu_1DROZCzqwMCK1v6lzHfMdAiNEtQVi5TL-770DI"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535335107.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 3,
+              "status": 0,
+              "content": "w4-S1-100-b1354ecf-5f94-472a-87b9-e285aae5f6b7",
+              "anonymous_id": "anon_v1_PwUlt_nyAWzwvGMCnjZc2O2jD4yxgTxwJq3mZ3V5RtY"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535334990.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 4,
+              "status": 0,
+              "content": "w4-S1-100-8702fbfb-17b7-42e4-aaa7-dbac3151a302",
+              "anonymous_id": "anon_v1_4ZXu_1DROZCzqwMCK1v6lzHfMdAiNEtQVi5TL-770DI"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535335107.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "http": "N/A",
+            "equal_expiry_hidden": 3,
+            "plus_one_visible": 4
+          },
+          "kind": "service_list_at_fixed_time"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 3,
+              "status": 0,
+              "content": "w4-S1-100-b1354ecf-5f94-472a-87b9-e285aae5f6b7",
+              "anonymous_id": "anon_v1_PwUlt_nyAWzwvGMCnjZc2O2jD4yxgTxwJq3mZ3V5RtY"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535334990.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 4,
+              "status": 0,
+              "content": "w4-S1-100-8702fbfb-17b7-42e4-aaa7-dbac3151a302",
+              "anonymous_id": "anon_v1_4ZXu_1DROZCzqwMCK1v6lzHfMdAiNEtQVi5TL-770DI"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535335107.0
+          },
+          "kind": "storage_snapshot"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-101",
+      "status": "PASS",
+      "executed": true,
+      "scope": "service integration + real MySQL8/Redis; network HTTP N/A",
+      "http_transport": "N/A",
+      "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+      "duration_seconds": 0.503,
+      "started_at": "2026-11-23T15:48:55.403395800Z",
+      "finished_at": "2026-11-23T15:48:55.895107300Z",
+      "evidence": [
+        {
+          "value": {
+            "post": {
+              "id": 5,
+              "status": 0,
+              "content": "w4-S1-101-214cc96e-5083-463f-9a61-cc541d1d652f",
+              "anonymous_id": "anon_v1_m49B1QCJtH9v1BYjdOPtsLfia1qFgSWJBBMmwzf4sZA"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535335480.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 5,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [
+              {
+                "post_id": 5,
+                "content_hash": "b6e513455188b80897c1a6fe5309728f"
+              }
+            ],
+            "queue_score": null
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 6,
+              "status": 0,
+              "content": "w4-S1-101-ac2780f6-6a10-4c6f-92e0-8a506ccc0f89",
+              "anonymous_id": "anon_v1_dOL46-72RMtnowSyDwTQuVZyyvUstymNjZEakBynuOI"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535335728.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 6,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [
+              {
+                "post_id": 6,
+                "content_hash": "a3d22ec827a47557c5abc3567591bc37"
+              }
+            ],
+            "queue_score": null
+          },
+          "kind": "storage_snapshot"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-102",
+      "status": "PASS",
+      "executed": true,
+      "scope": "service integration + real MySQL8/Redis; network HTTP N/A",
+      "http_transport": "N/A",
+      "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+      "duration_seconds": 0.8,
+      "started_at": "2026-11-23T15:48:55.908115100Z",
+      "finished_at": "2026-11-23T15:48:56.698328800Z",
+      "evidence": [
+        {
+          "value": {
+            "post": {
+              "id": 7,
+              "status": 0,
+              "content": "w4-S1-102-346c50cc-d10f-4c6a-ab7d-bc4bb33f23e2",
+              "anonymous_id": "anon_v1_g_NuGyYvwmVZUIn_0L6cMHCe8ZufKnLyjX7HAaLN9QU"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535335992.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 7,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [
+              {
+                "post_id": 7,
+                "content_hash": "47725e8e731d48732821408a8169fd40"
+              }
+            ],
+            "queue_score": null
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "real_claims": 2,
+            "successful_workers": 2
+          },
+          "kind": "worker_results"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-103",
+      "status": "PASS",
+      "executed": true,
+      "scope": "service integration + real MySQL8/Redis; network HTTP N/A",
+      "http_transport": "N/A",
+      "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+      "duration_seconds": 0.714,
+      "started_at": "2026-11-23T15:48:56.713842200Z",
+      "finished_at": "2026-11-23T15:48:57.415615800Z",
+      "evidence": [
+        {
+          "value": {
+            "post": {
+              "id": 8,
+              "status": 0,
+              "content": "w4-S1-103-1fc3e966-db33-4297-bb50-6e0921caa94e",
+              "anonymous_id": "anon_v1_2ZQkX78Sv7_z7gDyIPmDJCVxp8LGnNLgj3Zh4mtZvAo"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535336797.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 8,
+              "status": 0,
+              "content": "w4-S1-103-1fc3e966-db33-4297-bb50-6e0921caa94e",
+              "anonymous_id": "anon_v1_2ZQkX78Sv7_z7gDyIPmDJCVxp8LGnNLgj3Zh4mtZvAo"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": "CREATE TABLE w4_guard_8(post_id BIGINT PRIMARY KEY,FOREIGN KEY(post_id) REFERENCES treehole_identity(post_id)) ENGINE=InnoDB",
+          "kind": "owned_guard_ddl"
+        },
+        {
+          "value": "INSERT INTO w4_guard_8 VALUES (8)",
+          "kind": "owned_guard_ddl"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 8,
+              "status": 0,
+              "content": "w4-S1-103-1fc3e966-db33-4297-bb50-6e0921caa94e",
+              "anonymous_id": "anon_v1_2ZQkX78Sv7_z7gDyIPmDJCVxp8LGnNLgj3Zh4mtZvAo"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": "DROP TABLE w4_guard_8",
+          "kind": "owned_guard_ddl"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 8,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [
+              {
+                "post_id": 8,
+                "content_hash": "34b107cdbcae2545011c531b3c76202d"
+              }
+            ],
+            "queue_score": null
+          },
+          "kind": "storage_snapshot"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-104",
+      "status": "PASS",
+      "executed": true,
+      "scope": "service integration + real MySQL8/Redis; network HTTP N/A",
+      "http_transport": "N/A",
+      "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+      "duration_seconds": 0.292,
+      "started_at": "2026-11-23T15:48:57.429682400Z",
+      "finished_at": "2026-11-23T15:48:57.709957700Z",
+      "evidence": [
+        {
+          "value": {
+            "post": {
+              "id": 9,
+              "status": 0,
+              "content": "w4-S1-104-47945350-1f0c-4836-8573-48b5060a3c22",
+              "anonymous_id": "anon_v1_bi_Q8k-IG0HVAE9_z6xJxK6hVgYTOmjzSPvDJuPfaK8"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535337516.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 9,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [
+              {
+                "post_id": 9,
+                "content_hash": "a82c726d31019417426b296e303f0a7c"
+              }
+            ],
+            "queue_score": 1.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 9,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [
+              {
+                "post_id": 9,
+                "content_hash": "a82c726d31019417426b296e303f0a7c"
+              }
+            ],
+            "queue_score": null
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": 2,
+          "kind": "ack_attempts"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-105",
+      "status": "PASS",
+      "executed": true,
+      "scope": "service integration + real MySQL8/Redis; network HTTP N/A",
+      "http_transport": "N/A",
+      "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+      "duration_seconds": 0.221,
+      "started_at": "2026-11-23T15:48:57.724871200Z",
+      "finished_at": "2026-11-23T15:48:57.937783800Z",
+      "evidence": [
+        {
+          "value": {
+            "post": {
+              "id": 10,
+              "status": 0,
+              "content": "w4-S1-105-9c6bf724-4aa2-4371-8a9c-2b3134108087",
+              "anonymous_id": "anon_v1_SOVlZb8nIQaGH0Ik3wtAFBeiIksTJnewnwHPVnxRArE"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535337804.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 10,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [],
+            "queue_score": null
+          },
+          "kind": "storage_snapshot"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-106",
+      "status": "PASS",
+      "executed": true,
+      "scope": "service integration + real MySQL8/Redis; network HTTP N/A",
+      "http_transport": "N/A",
+      "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+      "duration_seconds": 0.38,
+      "started_at": "2026-11-23T15:48:57.948383800Z",
+      "finished_at": "2026-11-23T15:48:58.318115400Z",
+      "evidence": [
+        {
+          "value": {
+            "post": {
+              "id": 11,
+              "status": 0,
+              "content": "w4-S1-106-62ba512d-881f-414c-9c11-ba79221a451f",
+              "anonymous_id": "anon_v1_iDeTl8M5NpKe7p3cTyJz0WCQdvtaDpFF3yNtAMZlZwc"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535338035.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 12,
+              "status": 0,
+              "content": "w4-S1-106-d2bc274c-09f8-4355-b465-66a0b46a93e3",
+              "anonymous_id": "anon_v1_qPYYLlJCrQWGYPyIiLBETtbnQ-N77nUhjY0qcR7RP7E"
+            },
+            "identity_count": 1,
+            "archives": [],
+            "queue_score": 1795535338188.0
+          },
+          "kind": "storage_snapshot"
+        },
+        {
+          "value": 0,
+          "kind": "missing_post_count"
+        },
+        {
+          "value": {
+            "post": {
+              "id": 12,
+              "status": 1,
+              "content": "该内容已焚毁",
+              "anonymous_id": "burned"
+            },
+            "identity_count": 0,
+            "archives": [
+              {
+                "post_id": 12,
+                "content_hash": "f9df7ab987f738145e651a6c5a3b72d5"
+              }
+            ],
+            "queue_score": null
+          },
+          "kind": "storage_snapshot"
+        }
+      ],
+      "reason": null
+    }
+  ]
+}
