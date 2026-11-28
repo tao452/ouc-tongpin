@@ -1,0 +1,140 @@
+
+<view class="page">
+  <!-- 演示数据标注：当前列表为本地 Mock，后端查询接口尚未接入 -->
+  <view class="demo-notice">
+    <text class="demo-notice-icon">i</text>
+    <text>示例需求 · 演示数据，暂未接入后端查询</text>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <view class="search-icon">⌕</view>
+    <input
+      class="search-input"
+      placeholder="搜索你感兴趣的搭子需求"
+      placeholder-class="search-placeholder"
+      value="{{searchKeyword}}"
+      bindinput="onSearchInput"
+    />
+    <view wx:if="{{searchKeyword}}" class="clear-search" bindtap="onClearSearch">×</view>
+  </view>
+
+  <!-- 分类导航 -->
+  <scroll-view class="category-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="category-list">
+      <view
+        wx:for="{{categories}}"
+        wx:key="*this"
+        class="category-item {{activeCategory === item ? 'active' : ''}}"
+        data-value="{{item}}"
+        bindtap="onCategoryChange"
+      >
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 筛选区域 -->
+  <view class="filter-panel">
+    <view class="filter-row">
+      <picker
+        mode="selector"
+        range="{{scenes}}"
+        bindchange="onSceneChange"
+      >
+        <view class="filter-picker">
+          {{activeScene === '全部' ? '活动场景' : activeScene}}
+          <text class="arrow">⌄</text>
+        </view>
+      </picker>
+
+      <picker
+        mode="selector"
+        range="{{times}}"
+        bindchange="onTimeChange"
+      >
+        <view class="filter-picker">
+          {{activeTime === '全部' ? '活动时间' : activeTime}}
+          <text class="arrow">⌄</text>
+        </view>
+      </picker>
+
+      <picker
+        mode="selector"
+        range="{{distances}}"
+        bindchange="onDistanceChange"
+      >
+        <view class="filter-picker">
+          {{activeDistance === '不限' ? '距离不限' : activeDistance}}
+          <text class="arrow">⌄</text>
+        </view>
+      </picker>
+    </view>
+
+    <scroll-view class="tag-scroll" scroll-x="true" show-scrollbar="false">
+      <view class="tag-list">
+        <view
+          wx:for="{{tags}}"
+          wx:key="*this"
+          class="tag-item {{activeTag === item ? 'tag-active' : ''}}"
+          data-value="{{item}}"
+          bindtap="onTagChange"
+        >
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 排序栏 -->
+  <view class="sort-bar">
+    <view
+      wx:for="{{sortOptions}}"
+      wx:key="*this"
+      class="sort-item {{activeSort === item ? 'sort-active' : ''}}"
+      data-value="{{item}}"
+      bindtap="onSortChange"
+    >
+      {{item}}
+    </view>
+  </view>
+
+  <!-- 需求列表 -->
+  <view class="need-list">
+    <block wx:if="{{filteredNeeds.length > 0}}">
+
+      <!-- 顶部占位 -->
+      <view
+        class="virtual-spacer"
+        style="height: {{topSpacerHeight}}px;"
+      ></view>
+
+      <!-- 当前窗口内的卡片 -->
+      <view
+        wx:for="{{visibleNeeds}}"
+        wx:key="id"
+        class="virtual-card"
+        data-id="{{item.id}}"
+      >
+        <need-card
+          item="{{item}}"
+          bind:needtap="onNeedTap"
+        ></need-card>
+      </view>
+
+      <!-- 底部占位 -->
+      <view
+        class="virtual-spacer"
+        style="height: {{bottomSpacerHeight}}px;"
+      ></view>
+
+    </block>
+
+    <!-- 空状态 -->
+    <view wx:else class="empty-state">
+      <view class="empty-icon">⌕</view>
+      <view class="empty-title">暂时没有找到相关需求</view>
+      <view class="empty-description">试试调整筛选条件吧</view>
+    </view>
+  </view>
+</view>

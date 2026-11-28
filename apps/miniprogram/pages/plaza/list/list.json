@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "需求广场",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#F7F8FA",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+    "need-card": "/components/need-card/need-card"
+  }
+}

@@ -1,0 +1,88 @@
+.need-card {
+    padding: 26rpx;
+    margin-bottom: 20rpx;
+    background-color: #ffffff;
+    border-radius: 18rpx;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16rpx;
+  }
+
+  .need-title {
+    flex: 1;
+    margin-right: 16rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #333333;
+  }
+
+  .need-category {
+    padding: 6rpx 14rpx;
+    font-size: 22rpx;
+    color: #5478a8;
+    background-color: #edf3fa;
+    border-radius: 20rpx;
+  }
+
+  .need-description {
+    margin-bottom: 18rpx;
+    font-size: 26rpx;
+    line-height: 1.6;
+    color: #666666;
+  }
+
+  .need-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 18rpx;
+  }
+
+  .need-tag {
+    margin-right: 12rpx;
+    margin-bottom: 10rpx;
+    padding: 6rpx 14rpx;
+    font-size: 22rpx;
+    color: #668b78;
+    background-color: #edf5f0;
+    border-radius: 20rpx;
+  }
+
+  .need-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12rpx;
+    padding: 16rpx 0;
+    border-top: 1rpx solid #f0f0f0;
+  }
+
+  .info-item {
+    font-size: 24rpx;
+    color: #777777;
+  }
+
+  .info-icon {
+    margin-right: 10rpx;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14rpx;
+    border-top: 1rpx solid #f0f0f0;
+  }
+
+  .publish-time {
+    font-size: 22rpx;
+    color: #999999;
+  }
+
+  .people-count {
+    font-size: 24rpx;
+    color: #668b78;
+  }

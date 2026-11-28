@@ -1,0 +1,223 @@
+
+page {
+  background: #f7f8fa;
+  color: #252a34;
+  font-size: 28rpx;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24rpx 28rpx 40rpx;
+  box-sizing: border-box;
+}
+
+/* 演示数据标注 */
+.demo-notice {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding: 16rpx 20rpx;
+  margin-bottom: 20rpx;
+  background: #fff7e6;
+  border: 1rpx solid #ffe0a3;
+  border-radius: 12rpx;
+  color: #a06a00;
+  font-size: 24rpx;
+}
+
+.demo-notice-icon {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: #f5b72e;
+  color: #ffffff;
+  font-size: 22rpx;
+  flex-shrink: 0;
+}
+
+/* 搜索栏 */
+.search-bar {
+  height: 84rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 18rpx;
+  box-sizing: border-box;
+  box-shadow: 0 4rpx 16rpx rgba(30, 50, 80, 0.04);
+}
+
+.search-icon {
+  font-size: 40rpx;
+  color: #8b95a5;
+  margin-right: 16rpx;
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  font-size: 26rpx;
+}
+
+.search-placeholder {
+  color: #a5adba;
+}
+
+.clear-search {
+  padding: 8rpx;
+  color: #8b95a5;
+  font-size: 34rpx;
+}
+
+/* 分类导航 */
+.category-scroll {
+  margin: 28rpx -28rpx 20rpx;
+  white-space: nowrap;
+}
+
+.category-list {
+  display: flex;
+  padding: 0 28rpx;
+  gap: 44rpx;
+}
+
+.category-item {
+  position: relative;
+  padding: 12rpx 0 18rpx;
+  color: #778191;
+  font-size: 29rpx;
+  flex-shrink: 0;
+}
+
+.category-item.active {
+  color: #3978e8;
+  font-weight: 600;
+}
+
+.category-item.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4rpx;
+  width: 36rpx;
+  height: 6rpx;
+  border-radius: 6rpx;
+  background: #3978e8;
+  transform: translateX(-50%);
+}
+
+/* 筛选区域 */
+.filter-panel {
+  padding: 20rpx;
+  background: #ffffff;
+  border-radius: 18rpx;
+  margin-bottom: 20rpx;
+}
+
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12rpx;
+}
+
+.filter-picker {
+  min-width: 140rpx;
+  padding: 12rpx 14rpx;
+  background: #f5f7fa;
+  border-radius: 10rpx;
+  color: #596475;
+  font-size: 23rpx;
+  text-align: center;
+}
+
+.arrow {
+  margin-left: 8rpx;
+  color: #9aa3b1;
+}
+
+.tag-scroll {
+  margin-top: 20rpx;
+  white-space: nowrap;
+}
+
+.tag-list {
+  display: flex;
+  gap: 14rpx;
+}
+
+.tag-item {
+  padding: 10rpx 22rpx;
+  border-radius: 24rpx;
+  background: #f5f7fa;
+  color: #7b8492;
+  font-size: 22rpx;
+  flex-shrink: 0;
+}
+
+.tag-item.tag-active {
+  color: #3978e8;
+  background: #edf3ff;
+}
+
+/* 排序栏 */
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 40rpx;
+  padding: 12rpx 4rpx 22rpx;
+}
+
+.sort-item {
+  color: #8992a0;
+  font-size: 24rpx;
+}
+
+.sort-item.sort-active {
+  color: #3978e8;
+  font-weight: 600;
+}
+
+/* 加载更多 */
+.load-more {
+  padding: 28rpx 0;
+  color: #929baa;
+  text-align: center;
+  font-size: 23rpx;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 100rpx 20rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  color: #b8c2d0;
+  font-size: 76rpx;
+}
+
+.empty-title {
+  margin-top: 20rpx;
+  color: #667181;
+  font-size: 28rpx;
+}
+
+.empty-description {
+  margin-top: 12rpx;
+  color: #a0a8b4;
+  font-size: 23rpx;
+}
+
+/* 虚拟列表上下占位区域 */
+.virtual-spacer {
+  width: 100%;
+  display: block;
+}
+
+/* 虚拟列表卡片容器 */
+.virtual-card {
+  display: flow-root;
+  width: 100%;
+}

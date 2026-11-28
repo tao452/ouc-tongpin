@@ -1,0 +1,42 @@
+<view class="need-card" bindtap="handleTap">
+    <view class="card-header">
+      <text class="need-title">{{item.title}}</text>
+      <text class="need-category">{{item.category}}</text>
+    </view>
+
+    <view class="need-description">
+      {{item.description}}
+    </view>
+
+    <view class="need-tags">
+      <text
+        class="need-tag"
+        wx:for="{{item.tags}}"
+        wx:key="*this"
+      >
+        {{item}}
+      </text>
+    </view>
+
+    <view class="need-info">
+      <view class="info-item">
+        <text class="info-icon">◷</text>
+        {{item.time}}
+      </view>
+
+      <view class="info-item">
+        <text class="info-icon">⌖</text>
+        {{item.location}}
+      </view>
+
+      <view class="info-item">
+        <text class="info-icon">↔</text>
+        距离 {{item.distance}} km
+      </view>
+    </view>
+
+    <view class="card-footer">
+      <text class="publish-time">{{item.publishText}}</text>
+      <text class="people-count">{{item.peopleCount}} 人参与</text>
+    </view>
+  </view>
