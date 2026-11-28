@@ -1,0 +1,31 @@
+{
+  "artifact_type": "DESIGN_EXECUTION_INDEX_VALIDATION",
+  "status": "PASS",
+  "checked_at_utc": "2026-11-22T12:02:09.513369+00:00",
+  "status_counts": {
+    "PASS": 38,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "NOT_RUN": 2
+  },
+  "original38_business_fields_unchanged": true,
+  "confirmed_rule_changes": {
+    "S1-113": {
+      "confirmed": true,
+      "confirmed_by": "tao452",
+      "date": "2026-11-22",
+      "comment_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7078743551"
+    },
+    "S1-114": {
+      "confirmed": true,
+      "confirmed_by": "tao452",
+      "date": "2026-11-22",
+      "comment_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7078743551"
+    }
+  },
+  "historical_80_evidence_unchanged": true,
+  "business_source_matches_execution_commit": true,
+  "source_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018",
+  "network_requests_executed_by_this_validator": 0,
+  "actual_execution_report": "docs/qa/evidence/w4-additional-40/20261122-final/results.json"
+}

@@ -1,0 +1,74 @@
+{
+  "checked_at_utc": "2026-11-22T13:14:27.733611+00:00",
+  "business_confirmation": "M1_CONFIRMED",
+  "business_comment": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7078743551",
+  "M5_implementation_confirmation": null,
+  "cases": {
+    "S1-113": {
+      "business": {
+        "confirmed": true,
+        "confirmed_by": "tao452",
+        "date": "2026-11-22",
+        "comment_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7078743551"
+      },
+      "implementation": {
+        "confirmed": false,
+        "owner": "Raylee06",
+        "comment_url": null,
+        "source_commit": null
+      },
+      "latitude_range": [
+        -90,
+        90
+      ],
+      "longitude_range": [
+        -180,
+        180
+      ],
+      "valid_status": 201,
+      "invalid_status": 400,
+      "observed_post_fix": {
+        "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+        "author": "ATmixiu",
+        "scope": "POST /api/match/needs validation and contract",
+        "M5_implementation_confirmation": false
+      }
+    },
+    "S1-114": {
+      "business": {
+        "confirmed": true,
+        "confirmed_by": "tao452",
+        "date": "2026-11-22",
+        "comment_url": "https://github.com/tao452/ouc-tongpin/pull/92#issuecomment-7078743551"
+      },
+      "implementation": {
+        "confirmed": false,
+        "owner": "Raylee06",
+        "comment_url": null,
+        "source_commit": null
+      },
+      "unit": "unicode_code_points",
+      "maximum": 200,
+      "valid_status": 201,
+      "invalid_status": 400,
+      "observed_post_fix": {
+        "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+        "author": "ATmixiu",
+        "scope": "POST /api/match/needs validation and contract",
+        "M5_implementation_confirmation": false
+      }
+    }
+  },
+  "execution_status": {
+    "S1-113": "PASS",
+    "S1-114": "PASS"
+  },
+  "observed_post_fix_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+  "observed_post_fix_author": "ATmixiu",
+  "post_fix_actual40": {
+    "PASS": 40,
+    "FAIL": 0,
+    "BLOCKED": 0,
+    "NOT_RUN": 0
+  }
+}

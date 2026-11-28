@@ -1,0 +1,98 @@
+{
+  "checked_at_utc": "2026-11-21T17:14:58.233676+00:00",
+  "source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2",
+  "project": "ouc-w4-new40-20261122",
+  "services": [
+    {
+      "Service": "algo",
+      "Image": "ouc-w4-20261118-7c67518-algo:latest",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "api",
+      "Image": "ouc-w4-closeout-api:99712e4",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "mysql",
+      "Image": "mysql:8.0",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "redis",
+      "Image": "redis:7-alpine",
+      "State": "running",
+      "Health": "healthy"
+    },
+    {
+      "Service": "web",
+      "Image": "ouc-w4-20261118-7c67518-web:latest",
+      "State": "running",
+      "Health": "healthy"
+    }
+  ],
+  "images": [
+    {
+      "ID": "sha256:1a4a5a6298233298ef47cda751d0abd3479b79b7b149ec7fd96490bf72e04eea",
+      "ContainerName": "ouc-w4-new40-20261122-web-1",
+      "Repository": "ouc-w4-20261118-7c67518-web",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 26814869,
+      "LastTagTime": "2026-11-18T08:57:24.100761745Z"
+    },
+    {
+      "ID": "sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b",
+      "ContainerName": "ouc-w4-new40-20261122-mysql-1",
+      "Repository": "mysql",
+      "Tag": "8.0",
+      "Platform": "linux/amd64",
+      "Size": 233594134,
+      "LastTagTime": "2026-11-18T09:01:49.354432514Z"
+    },
+    {
+      "ID": "sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe",
+      "ContainerName": "ouc-w4-new40-20261122-redis-1",
+      "Repository": "redis",
+      "Tag": "7-alpine",
+      "Platform": "linux/amd64",
+      "Size": 16432706,
+      "LastTagTime": "2026-11-18T09:01:49.361006683Z"
+    },
+    {
+      "ID": "sha256:1ffddc708330ddacaf9562ee296f28744b4d469f9080a50792ca5484d5682d54",
+      "ContainerName": "ouc-w4-new40-20261122-api-1",
+      "Repository": "ouc-w4-closeout-api",
+      "Tag": "99712e4",
+      "Platform": "linux/amd64",
+      "Size": 169361475,
+      "LastTagTime": "2026-11-21T16:29:51.982671496Z"
+    },
+    {
+      "ID": "sha256:eb203ee1dc505d28395fc6fae5dbe904016be977f6e2c7c1cc562afc862404e5",
+      "ContainerName": "ouc-w4-new40-20261122-algo-1",
+      "Repository": "ouc-w4-20261118-7c67518-algo",
+      "Tag": "latest",
+      "Platform": "linux/amd64",
+      "Size": 56721822,
+      "LastTagTime": "2026-11-18T08:56:58.525477675Z"
+    }
+  ],
+  "volume": {
+    "name": "ouc-w4-new40-20261122_mysql-data",
+    "labels": {
+      "com.docker.compose.config-hash": "63a9ed1e7d93f01a36e73572549290bdce6542557bb31df02512f6796966dbae",
+      "com.docker.compose.project": "ouc-w4-new40-20261122",
+      "com.docker.compose.version": "2.40.3",
+      "com.docker.compose.volume": "mysql-data"
+    }
+  },
+  "api_jar_sha256": "94d0a6c06118bcb7df05ab0cb85d5ff9099e2dc54d72998adb262a4268667a5e",
+  "runtime_provenance": "JRE17 cached runtime + source-equivalent 99712e4 JAR; cached web/algo have unchanged sources from 7c67518; no volumes copied",
+  "shared_database_modified": false,
+  "random_credentials": true,
+  "users": "synthetic only"
+}

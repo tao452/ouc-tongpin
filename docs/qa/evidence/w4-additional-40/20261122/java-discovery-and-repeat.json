@@ -1,0 +1,74 @@
+{
+  "first_ci": "https://github.com/tao452/ouc-tongpin/actions/runs/44928140066",
+  "first_ci_result": "W3 summary rejected 10 default-discovered but environment-disabled tests; Java/algo/stack steps passed",
+  "resolution": "Use Maven *IT convention and explicit -Dtest=W4DatabaseCasesIT with W4_REAL_STACK=true; no gate relaxation",
+  "all_integration_method_bodies_unchanged": true,
+  "previous_execution_report": "https://github.com/tao452/ouc-tongpin/blob/de9766e49e0b7ebb97b300cd4fa398474704ae1b/docs/qa/evidence/w4-additional-40/20261122/results.json",
+  "default_java": {
+    "tests": 144,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "fresh_repeat_initial_state": {
+    "initial_empty_counts": {
+      "users": 0,
+      "auth": 0,
+      "checkin": 0,
+      "treehole_post": 0,
+      "treehole_identity": 0,
+      "treehole_archive": 0,
+      "buddy_demand": 0
+    },
+    "purpose": "fresh-volume explicit IT repeat after discovery rename"
+  },
+  "explicit_it_repeat": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "junit_sha256": "0749a1031e3385865e6e176670b2baaf77fae84a9784ba220f3802d804957a70",
+  "explicit_repeat_execution_times": {
+    "S1-085": {
+      "started_at": "2026-11-21T17:14:25.035139500Z",
+      "finished_at": "2026-11-21T17:14:28.746175Z"
+    },
+    "S1-087": {
+      "started_at": "2026-11-21T17:14:28.829341400Z",
+      "finished_at": "2026-11-21T17:14:31.538595300Z"
+    },
+    "S1-098": {
+      "started_at": "2026-11-21T17:14:31.557598500Z",
+      "finished_at": "2026-11-21T17:14:32.128448700Z"
+    },
+    "S1-100": {
+      "started_at": "2026-11-21T17:14:32.145561900Z",
+      "finished_at": "2026-11-21T17:14:33.322628800Z"
+    },
+    "S1-101": {
+      "started_at": "2026-11-21T17:14:33.367686200Z",
+      "finished_at": "2026-11-21T17:14:33.876604300Z"
+    },
+    "S1-102": {
+      "started_at": "2026-11-21T17:14:33.896715600Z",
+      "finished_at": "2026-11-21T17:14:34.615056400Z"
+    },
+    "S1-103": {
+      "started_at": "2026-11-21T17:14:34.640221300Z",
+      "finished_at": "2026-11-21T17:14:35.337598500Z"
+    },
+    "S1-104": {
+      "started_at": "2026-11-21T17:14:35.352387800Z",
+      "finished_at": "2026-11-21T17:14:35.601988600Z"
+    },
+    "S1-105": {
+      "started_at": "2026-11-21T17:14:35.618205900Z",
+      "finished_at": "2026-11-21T17:14:35.823208400Z"
+    },
+    "S1-106": {
+      "started_at": "2026-11-21T17:14:35.840340500Z",
+      "finished_at": "2026-11-21T17:14:36.179405900Z"
+    }
+  }
+}

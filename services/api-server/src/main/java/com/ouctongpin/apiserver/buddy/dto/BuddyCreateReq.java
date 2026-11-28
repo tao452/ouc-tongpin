@@ -1,10 +1,13 @@
 package com.ouctongpin.apiserver.buddy.dto;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.hibernate.validator.constraints.CodePointLength;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -33,7 +36,7 @@ public class BuddyCreateReq {
     @Size(max = 5, message = "技能标签最多 5 个")
     private List<String> skillTags;
 
-    @Size(max = 200, message = "补充说明不能超过 200 字符")
+    @CodePointLength(max = 200, message = "补充说明不能超过 200 字符")
     private String remark;
 
     @Data
@@ -42,7 +45,11 @@ public class BuddyCreateReq {
         @Size(max = 255, message = "地点地址不能超过 255 字符")
         private String address;
 
+        @DecimalMin(value = "-90", message = "纬度不能小于 -90")
+        @DecimalMax(value = "90", message = "纬度不能大于 90")
         private BigDecimal lat;
+        @DecimalMin(value = "-180", message = "经度不能小于 -180")
+        @DecimalMax(value = "180", message = "经度不能大于 180")
         private BigDecimal lng;
     }
 }

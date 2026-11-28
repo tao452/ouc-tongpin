@@ -1,0 +1,1110 @@
+{
+  "generated_at_utc": "2026-11-22T13:14:27.732612+00:00",
+  "case_count": 120,
+  "status_counts": {
+    "PASS": 103,
+    "FAIL": 0,
+    "BLOCKED": 17,
+    "NOT_RUN": 0
+  },
+  "pass_rate": {
+    "numerator": 103,
+    "denominator": 120,
+    "percent": 85.83,
+    "definition": "PASS / all120 cases; FAIL, BLOCKED and NOT_RUN remain in the denominator"
+  },
+  "historical80_source": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+  "additional40_source": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+  "supplement8_counted_as_new_cases": false,
+  "acceptance": "PENDING_HISTORICAL_BLOCKERS_AND_NON_AUTHOR_REVIEW",
+  "results": [
+    {
+      "case_id": "S1-001",
+      "title": "有效微信 code",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5",
+        "M1"
+      ],
+      "blocked_reason": "未提供真实微信测试应用、授权账号和有效/失效/复用 code；本栈显式使用模拟平台身份，真实 JWT 已运行，不能据此通过真实平台用例。"
+    },
+    {
+      "case_id": "S1-002",
+      "title": "无效 code",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5",
+        "M1"
+      ],
+      "blocked_reason": "未提供真实微信测试应用、授权账号和有效/失效/复用 code；本栈显式使用模拟平台身份，真实 JWT 已运行，不能据此通过真实平台用例。"
+    },
+    {
+      "case_id": "S1-003",
+      "title": "复用 code",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5",
+        "M1"
+      ],
+      "blocked_reason": "未提供真实微信测试应用、授权账号和有效/失效/复用 code；本栈显式使用模拟平台身份，真实 JWT 已运行，不能据此通过真实平台用例。"
+    },
+    {
+      "case_id": "S1-004",
+      "title": "缺少 code",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-005",
+      "title": "新用户标记",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5",
+        "M1"
+      ],
+      "blocked_reason": "未提供真实微信测试应用、授权账号和有效/失效/复用 code；本栈显式使用模拟平台身份，真实 JWT 已运行，不能据此通过真实平台用例。"
+    },
+    {
+      "case_id": "S1-006",
+      "title": "认证提示",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5",
+        "M1"
+      ],
+      "blocked_reason": "未提供真实微信测试应用、授权账号和有效/失效/复用 code；本栈显式使用模拟平台身份，真实 JWT 已运行，不能据此通过真实平台用例。"
+    },
+    {
+      "case_id": "S1-007",
+      "title": "提交校内认证",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5"
+      ],
+      "blocked_reason": "校内认证、绑定或截图授权入口尚未实现；已做本次 HTTP 前置探测，不能完成对应业务步骤。"
+    },
+    {
+      "case_id": "S1-008",
+      "title": "重复绑定",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5"
+      ],
+      "blocked_reason": "校内认证、绑定或截图授权入口尚未实现；已做本次 HTTP 前置探测，不能完成对应业务步骤。"
+    },
+    {
+      "case_id": "S1-009",
+      "title": "缺少学号",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5"
+      ],
+      "blocked_reason": "校内认证、绑定或截图授权入口尚未实现；已做本次 HTTP 前置探测，不能完成对应业务步骤。"
+    },
+    {
+      "case_id": "S1-010",
+      "title": "拒绝原因",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5"
+      ],
+      "blocked_reason": "校内认证、绑定或截图授权入口尚未实现；已做本次 HTTP 前置探测，不能完成对应业务步骤。"
+    },
+    {
+      "case_id": "S1-011",
+      "title": "认证隔离",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5"
+      ],
+      "blocked_reason": "校内认证、绑定或截图授权入口尚未实现；已做本次 HTTP 前置探测，不能完成对应业务步骤。"
+    },
+    {
+      "case_id": "S1-012",
+      "title": "截图隐私",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5"
+      ],
+      "blocked_reason": "校内认证、绑定或截图授权入口尚未实现；已做本次 HTTP 前置探测，不能完成对应业务步骤。"
+    },
+    {
+      "case_id": "S1-013",
+      "title": "开心打卡",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-014",
+      "title": "平静打卡",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-015",
+      "title": "焦虑打卡",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-016",
+      "title": "孤独打卡",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-017",
+      "title": "烦躁打卡",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-018",
+      "title": "低落打卡",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-019",
+      "title": "强度下界",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-020",
+      "title": "强度上界",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-021",
+      "title": "强度过小",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-022",
+      "title": "强度过大",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-023",
+      "title": "非法情绪枚举",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-024",
+      "title": "缺少必要字段",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-025",
+      "title": "备注上界",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-026",
+      "title": "备注超长",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-027",
+      "title": "同日幂等",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-028",
+      "title": "默认当天",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-029",
+      "title": "日期区间",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-030",
+      "title": "连续与断签",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M1"
+      ],
+      "blocked_reason": "已实际建立连续记录并跨缺勤日查询；连续天数与断签归零的最终验收规则仍缺 M1 确认。US-03 折线留空规则不等同于该连续天数规则。"
+    },
+    {
+      "case_id": "S1-031",
+      "title": "默认匿名",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-032",
+      "title": "显式匿名",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-033",
+      "title": "显式实名",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-034",
+      "title": "高风险阻断",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-035",
+      "title": "审核超时",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-036",
+      "title": "内容长度边界",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-037",
+      "title": "内容超长",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-038",
+      "title": "缺少内容",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-039",
+      "title": "缺少情绪标签",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-040",
+      "title": "非法情绪标签",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-041",
+      "title": "按标签浏览",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-042",
+      "title": "游标分页",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-043",
+      "title": "分页末尾",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-044",
+      "title": "焚毁列表",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-045",
+      "title": "焚毁详情",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M5"
+      ],
+      "blocked_reason": "已对同一真实测试帖子在过期前后访问详情，均为 404；详情路由尚未实现，无法把通用 404 作为过期访问拒绝验收。"
+    },
+    {
+      "case_id": "S1-046",
+      "title": "焚毁存储",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-047",
+      "title": "合法搭子需求",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-048",
+      "title": "缺少场景",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-049",
+      "title": "缺少时间",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-050",
+      "title": "缺少地点",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-051",
+      "title": "技能标签上界",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-052",
+      "title": "技能标签超限",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-053",
+      "title": "补充说明上界",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-054",
+      "title": "补充说明超长",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [],
+      "supplement_reference": "docs/qa/evidence/w4-buddy-supplement-20261122/execution.json",
+      "supplement_source_commit": "99712e400ed725060ef8e0b3c44d699c5d1c14f2"
+    },
+    {
+      "case_id": "S1-055",
+      "title": "普通文本",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-056",
+      "title": "HIGH 等级",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-057",
+      "title": "MEDIUM 等级",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M1",
+        "M6"
+      ],
+      "blocked_reason": "MEDIUM HTTP 技术断言通过。M1 已确认 S1 分级放行规则；原历史记录要求的正式词库/业务验收仍未完成，当前默认仍为 5 词示例库。"
+    },
+    {
+      "case_id": "S1-058",
+      "title": "LOW 等级",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M1",
+        "M6"
+      ],
+      "blocked_reason": "LOW HTTP 技术断言通过。M1 已确认 S1 分级放行规则；原历史记录要求的正式词库/业务验收仍未完成，当前默认仍为 5 词示例库。"
+    },
+    {
+      "case_id": "S1-059",
+      "title": "繁简体",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-060",
+      "title": "全角变体",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-061",
+      "title": "指定谐音",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-062",
+      "title": "完整拼音",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-063",
+      "title": "符号插入",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-064",
+      "title": "纯空白",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-065",
+      "title": "字符上界",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-066",
+      "title": "字符超长",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-067",
+      "title": "畸形 JSON",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-068",
+      "title": "请求体超限",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-069",
+      "title": "别名稳定性",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-070",
+      "title": "用户隔离",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-071",
+      "title": "场景隔离",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-072",
+      "title": "换密钥",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-073",
+      "title": "弱密钥拒绝",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-074",
+      "title": "普通日志脱敏",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-075",
+      "title": "异常日志脱敏",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-076",
+      "title": "身份分表与授权",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "M1",
+        "M5",
+        "M3"
+      ],
+      "blocked_reason": "JWT、身份分表、匿名映射和数据库授权技术前置已接入并实际复测；现有 US25 验收要求的 M1/M5 业务材料复核和 M3 独立复现仍未留存，本次保留 BLOCKED。"
+    },
+    {
+      "case_id": "S1-077",
+      "title": "配置与缺失变量",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-078",
+      "title": "全栈启动",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-079",
+      "title": "网关链路",
+      "status": "PASS",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": []
+    },
+    {
+      "case_id": "S1-080",
+      "title": "质量门禁",
+      "status": "BLOCKED",
+      "source_commit": "7c67518fc91583a3983ea265b85f6d2a54d12eab",
+      "result_reference": "docs/qa/evidence/w4-regression-80/results.json",
+      "owners": [
+        "仓库管理员"
+      ],
+      "blocked_reason": "当前 Commit 的 CI/quality 成功；历史故障分支 quality 失败记录已重新读取。develop protection API 仍为 404，rulesets 返回空列表，不能确认实际强制保护；待管理员提供 Settings 证据。本次未新建故障分支。"
+    },
+    {
+      "case_id": "S1-081",
+      "title": "重复 Authorization 头拒绝歧义身份",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-082",
+      "title": "合法长 JWT 的 4096/4097 字符边界",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-083",
+      "title": "iat 缺失与明显未来时间",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-084",
+      "title": "sub 语法与 Long 溢出矩阵",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-085",
+      "title": "不同 JWT 密钥实例隔离",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-086",
+      "title": "有效 JWT 对已不存在账号失效",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-087",
+      "title": "认证查询数据库异常时关闭访问",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-088",
+      "title": "混合有效/无效身份并发不串上下文",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-089",
+      "title": "Cookie 不能替代 Bearer 登录",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-090",
+      "title": "搭子归属不受客户端身份字段影响",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-091",
+      "title": "已存在打卡的不同内容并发重试",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-092",
+      "title": "空状态下不同有效载荷争抢同日首写",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-093",
+      "title": "同用户两日期并发互不合并",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-094",
+      "title": "双用户同日并发且伪造对方 owner",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-095",
+      "title": "有效与非法打卡并发不污染幂等结果",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-096",
+      "title": "提交已成功但响应丢失后的重试",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-097",
+      "title": "并发首次登录后立即同日打卡",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-098",
+      "title": "强制同时首查落空的唯一键兜底",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-099",
+      "title": "24 小时到期与 Redis 毫秒时间一致",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-100",
+      "title": "等于到期时刻也不可见",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-101",
+      "title": "匿名和实名帖焚毁均去身份",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-102",
+      "title": "两个 worker 重复领取同一过期帖",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-103",
+      "title": "身份删除失败时事务回滚并保留重试",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-104",
+      "title": "数据库提交后 Redis 确认失败再重试",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-105",
+      "title": "历史已焚毁记录补清旧映射不新归档",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-106",
+      "title": "队列残留不存在帖子不阻断有效焚毁",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-107",
+      "title": "scene 的 64/65 长度边界",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-108",
+      "title": "address 的 255/256 长度边界",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-109",
+      "title": "location 存在但 address 缺失/空值",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-110",
+      "title": "跨年 UTC 与 +08:00 同时刻落库一致",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-111",
+      "title": "无效闰日和时区偏移拒绝",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-112",
+      "title": "可选字段省略/null/空集合",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-113",
+      "title": "经纬度合法边界与越界（M1口径已确认）",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [
+        "M1",
+        "M5"
+      ],
+      "executed": true
+    },
+    {
+      "case_id": "S1-114",
+      "title": "Emoji 备注长度计数口径（M1口径已确认）",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [
+        "M1",
+        "M5"
+      ],
+      "executed": true
+    },
+    {
+      "case_id": "S1-115",
+      "title": "归一化后的正常短语仍精确豁免",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-116",
+      "title": "多个豁免位置与非豁免命中排列",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-117",
+      "title": "某词豁免不抹掉另一个词命中",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-118",
+      "title": "正常短语与额外 HIGH 在发布链路的正反控制",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-119",
+      "title": "Latin 完整词边界与正常中文上下文混合",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    },
+    {
+      "case_id": "S1-120",
+      "title": "危险或无关 allow_phrases 配置拒绝加载",
+      "status": "PASS",
+      "source_commit": "c9f75e4924fa2bef45047a44ae36045b04e38227",
+      "result_reference": "docs/qa/evidence/w4-additional-40/20261122-minimalfix/results.json",
+      "owners": [],
+      "executed": true
+    }
+  ],
+  "additional40_acceptance": "AUTOMATED_REGRESSION_PASSED_PENDING_NON_AUTHOR_REVIEW",
+  "develop_baseline_commit": "09a0cd6c2abee6cec63b7fa9955027b9a1e8e018",
+  "remaining_alignment": {
+    "query_coordinates": "M5 review/fix outside the approved minimal POST fix",
+    "miniprogram_validation": "M5/M2 alignment review outside this fix"
+  }
+}
