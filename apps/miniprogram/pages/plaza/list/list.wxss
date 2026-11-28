@@ -25,6 +25,18 @@ page {
   font-size: 24rpx;
 }
 
+/* 后端不可用：红色强调，避免把示例误认为真实数据 */
+.demo-notice-error {
+  background: #fff1f0;
+  border-color: #ffccc7;
+  color: #cf1322;
+  font-weight: 600;
+}
+
+.demo-notice-error .demo-notice-icon {
+  background: #cf1322;
+}
+
 .demo-notice-icon {
   width: 30rpx;
   height: 30rpx;
@@ -35,6 +47,14 @@ page {
   color: #ffffff;
   font-size: 22rpx;
   flex-shrink: 0;
+}
+
+/* 游标分页状态 */
+.list-footer {
+  padding: 24rpx 0 8rpx;
+  text-align: center;
+  color: #9aa0aa;
+  font-size: 24rpx;
 }
 
 /* 搜索栏 */

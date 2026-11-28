@@ -232,8 +232,9 @@ Page({
 
       console.log('需求发布结果：', res)
 
+      // 发布后直接进列表页；列表页 onShow 会重新拉第一页，新需求立即可见。
       setTimeout(() => {
-        wx.navigateBack()
+        wx.redirectTo({ url: '/pages/plaza/list/list' })
       }, 1200)
     } catch (err) {
       console.error('需求发布失败：', err)

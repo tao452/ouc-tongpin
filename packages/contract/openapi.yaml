@@ -313,6 +313,42 @@ paths:
           description: >
             内容安全服务不可用，未发布且未落库；审核失败不得静默放行，可稍后重试。
 
+  /api/match/needs/square:
+    post:
+      tags: [match]
+      summary: 搭子广场列表（US-11）
+      description: >
+        游标分页：按自增 id 倒序，首次 cursorId=0，后续用上一页最后一条的 id 作游标；
+        返回条数不足 size 即为末页。关键词、分类、时间、标签筛选与排序在端侧对当前页生效。
+        title/category/time/peopleCount 由既有列派生，不是独立数据库字段。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cursorId: { type: integer, minimum: 0, default: 0 }
+                myLongitude: { type: number, nullable: true }
+                myLatitude: { type: number, nullable: true }
+                radius: { type: integer, minimum: 1, maximum: 50000, default: 5000, description: 单位米 }
+                size: { type: integer, minimum: 1, maximum: 50, default: 10 }
+      responses:
+        '200':
+          description: 广场当前游标页
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code: { type: integer }
+                  message: { type: string }
+                  data:
+                    type: array
+                    items: { $ref: '#/components/schemas/SquareItem' }
+        '400':
+          description: 参数越界（cursorId 为负、size 不在 1..50、radius 不在 1..50000）
+
   # ---------------- 内容风控 US-24 ----------------
   /api/moderation/check:
     post:
@@ -475,6 +511,23 @@ components:
         校验签名、有效期、issuer/audience 及账号状态。缺失或无效凭证返回 401，
         无权限返回 403；角色不从客户端提交或任意 JWT role 声明授予。
   schemas:
+    SquareItem:
+      type: object
+      description: 广场列表项；字段来自 buddy_demand 既有列或其派生值
+      properties:
+        id: { type: string }
+        title: { type: string, description: 由 scene 派生 }
+        description: { type: string, description: 由 remark 派生 }
+        category: { type: string, enum: [学习交流, 生活兴趣, 其他] }
+        scene: { type: string }
+        time: { type: string, description: event_time 格式化文本，或「时间待定」 }
+        location: { type: string, description: location_address，或「地点待定」 }
+        distance: { type: number, nullable: true, description: 单位 km；未传坐标时为 null }
+        tags: { type: array, items: { type: string } }
+        peopleCount: { type: integer, description: 表内无参与人数字段，恒为 1 }
+        publishTime: { type: string, nullable: true }
+        publishText: { type: string }
+        status: { type: string, example: OPEN }
     Checkin:
       type: object
       properties:

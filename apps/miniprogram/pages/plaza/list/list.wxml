@@ -1,9 +1,9 @@
 
 <view class="page">
-  <!-- 演示数据标注：当前列表为本地 Mock，后端查询接口尚未接入 -->
-  <view class="demo-notice">
-    <text class="demo-notice-icon">i</text>
-    <text>示例需求 · 演示数据，暂未接入后端查询</text>
+  <!-- 数据来源标注：真实接口时不显示；回退 Mock 或压测数据时如实提示 -->
+  <view wx:if="{{demoNotice}}" class="demo-notice {{noticeLevel === 'error' ? 'demo-notice-error' : ''}}">
+    <text class="demo-notice-icon">!</text>
+    <text>{{demoNotice}}</text>
   </view>
 
   <!-- 搜索栏 -->
@@ -133,8 +133,18 @@
     <!-- 空状态 -->
     <view wx:else class="empty-state">
       <view class="empty-icon">⌕</view>
-      <view class="empty-title">暂时没有找到相关需求</view>
-      <view class="empty-description">试试调整筛选条件吧</view>
+      <block wx:if="{{dataSource === 'empty'}}">
+        <view class="empty-title">广场还没有需求</view>
+        <view class="empty-description">去发布一条搭子需求吧</view>
+      </block>
+      <block wx:else>
+        <view class="empty-title">暂时没有找到相关需求</view>
+        <view class="empty-description">试试调整筛选条件吧</view>
+      </block>
     </view>
   </view>
+
+  <!-- 游标分页状态 -->
+  <view wx:if="{{dataSource === 'backend' && loadingMore}}" class="list-footer">正在加载更多…</view>
+  <view wx:elif="{{dataSource === 'backend' && !hasNextPage && filteredNeeds.length > 0}}" class="list-footer">已加载全部需求</view>
 </view>
