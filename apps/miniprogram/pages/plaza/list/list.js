@@ -1,3 +1,28 @@
+const { request } = require('../../../utils/request.js')
+
+const PAGE_SIZE = 10
+
+// 后端返回的是 buddy_demand 既有列，这里补齐卡片渲染所需的展示字段。
+function normaliseBackendItem(item) {
+  const distance = typeof item.distance === 'number' ? item.distance : null
+
+  return {
+    id: item.id,
+    title: item.title || item.scene || '搭子需求',
+    description: item.description || '',
+    category: item.category || '其他',
+    scene: item.scene || '',
+    time: item.time || '时间待定',
+    location: item.location || '地点待定',
+    distance,
+    distanceText: distance === null ? '距离未测' : `距离 ${distance} km`,
+    tags: Array.isArray(item.tags) ? item.tags : [],
+    peopleCount: item.peopleCount == null ? 1 : item.peopleCount,
+    publishTime: item.publishTime || '',
+    publishText: item.publishText || '发布时间未知',
+    status: item.status || 'OPEN'
+  }
+}
 
 const mockNeeds = [
     {
@@ -162,10 +187,17 @@ const OVERSCAN = 2 // 上下各多渲染 2 张卡片
 
 Page({
   data: {
-    // 默认展示 10 条真实感 Mock；testNeeds 仅用于手动验证虚拟列表性能，不作默认数据源。
-    allNeeds: mockNeeds,
+    // 启动时请求后端广场接口；失败或空库时回退 Mock，并显式标注数据来源。
+    allNeeds: [],
     filteredNeeds: [],
     visibleNeeds: [],
+
+    dataSource: 'loading',
+    demoNotice: '',
+    noticeLevel: 'info',
+    cursorId: 0,
+    hasNextPage: true,
+    loadingMore: false,
 
     searchKeyword: '',
     activeCategory: '全部',
@@ -175,7 +207,7 @@ Page({
     activeTag: '全部',
     activeSort: '最新发布',
 
-    categories: ['全部', '学习交流', '生活兴趣'],
+    categories: ['全部', '学习交流', '生活兴趣', '其他'],
     scenes: ['全部', '考研学习', '运动健身', '语言学习', '休闲娱乐', '课程项目', '考试复习', '编程学习', '兴趣爱好'],
     times: ['全部', '工作日', '周末'],
     distances: ['不限', '1km内', '3km内', '5km内'],
@@ -195,7 +227,76 @@ Page({
     this.windowHeight = 600
     this.scrollTop = 0
     this.isMeasuring = false
-    this.applyFilters()
+  },
+
+  // 首次进入和从发布页返回都会触发，重新拉第一页，保证新需求立即可见。
+  onShow() {
+    this.fetchSquare(false)
+  },
+
+  // 游标分页：首次 cursorId=0，后续用上一页最后一条的 id 作游标。
+  fetchSquare(append) {
+    if (append && (!this.data.hasNextPage || this.data.loadingMore)) {
+      return Promise.resolve()
+    }
+    this.setData({ loadingMore: append })
+
+    return request({
+      url: '/api/match/needs/square',
+      method: 'POST',
+      data: {
+        cursorId: append ? this.data.cursorId : 0,
+        size: PAGE_SIZE,
+        radius: 5000
+      },
+      showLoading: !append
+    }).then(res => {
+      const rows = Array.isArray(res && res.data) ? res.data : []
+
+      // 后端可达但确实没有需求：显示真实空状态，不再拿示例数据冒充。
+      if (!rows.length && !append) {
+        this.setData({
+          allNeeds: [],
+          filteredNeeds: [],
+          visibleNeeds: [],
+          cursorId: 0,
+          hasNextPage: false,
+          dataSource: 'empty',
+          demoNotice: '',
+          loadingMore: false
+        })
+        return
+      }
+
+      const items = rows.map(normaliseBackendItem)
+      const allNeeds = append ? this.data.allNeeds.concat(items) : items
+      const lastId = items.length ? items[items.length - 1].id : this.data.cursorId
+
+      this.setData({
+        allNeeds,
+        cursorId: lastId,
+        hasNextPage: items.length === PAGE_SIZE,
+        dataSource: 'backend',
+        demoNotice: '',
+        noticeLevel: 'info',
+        loadingMore: false
+      }, () => this.applyFilters())
+    }).catch(() => {
+      // 只有请求真正失败才回退示例数据，并用醒目样式标红提示。
+      this.useMock('后端查询不可用，当前展示示例数据（非真实需求）', 'error')
+    })
+  },
+
+  useMock(notice, level) {
+    this.setData({
+      allNeeds: mockNeeds.slice(),
+      cursorId: 0,
+      hasNextPage: false,
+      dataSource: 'mock',
+      demoNotice: notice,
+      noticeLevel: level || 'info',
+      loadingMore: false
+    }, () => this.applyFilters())
   },
 
   onReady() {
@@ -456,9 +557,12 @@ Page({
         item.time === activeTime
 
       let distanceMatch = true
-      if (activeDistance === '1km内') distanceMatch = item.distance <= 1
-      if (activeDistance === '3km内') distanceMatch = item.distance <= 3
-      if (activeDistance === '5km内') distanceMatch = item.distance <= 5
+      if (activeDistance !== '不限') {
+        const maxDistance = activeDistance === '1km内' ? 1
+          : activeDistance === '3km内' ? 3 : 5
+        // 未传坐标时 distance 为 null，不能把它当作 0 km 参与筛选。
+        distanceMatch = typeof item.distance === 'number' && item.distance <= maxDistance
+      }
 
       const tagMatch = activeTag === '全部' ||
         item.tags.some(tag => tag.includes(activeTag))
@@ -472,12 +576,17 @@ Page({
     })
 
     if (activeSort === '最新发布') {
-      result.sort((a, b) =>
-        new Date(b.publishTime.replace(/-/g, '/') + ':00').getTime() -
-        new Date(a.publishTime.replace(/-/g, '/') + ':00').getTime()
-      )
+      // 兼容 Mock 的 "YYYY-MM-DD HH:mm" 与后端的 "YYYY-MM-DDTHH:mm:ss"。
+      result.sort((a, b) => {
+        const ta = Date.parse(String(a.publishTime || '').replace(/-/g, '/'))
+        const tb = Date.parse(String(b.publishTime || '').replace(/-/g, '/'))
+        return (Number.isNaN(tb) ? 0 : tb) - (Number.isNaN(ta) ? 0 : ta)
+      })
     } else if (activeSort === '距离最近') {
-      result.sort((a, b) => a.distance - b.distance)
+      result.sort((a, b) =>
+        (a.distance == null ? Infinity : a.distance) -
+        (b.distance == null ? Infinity : b.distance)
+      )
     } else if (activeSort === '人数最多') {
       result.sort((a, b) => b.peopleCount - a.peopleCount)
     }
@@ -506,16 +615,27 @@ Page({
     })
   },
 
-  // 手动加载 1000 条压测数据，用于验证虚拟列表滚动性能；默认展示仍为 10 条 Mock。
+  // 手动加载 1000 条压测数据，用于验证虚拟列表滚动性能；明确标注非真实需求。
   loadPerfTestData() {
-    this.setData({ allNeeds: testNeeds })
+    this.setData({
+      allNeeds: testNeeds,
+      dataSource: 'mock',
+      demoNotice: '当前为 1000 条压测数据，非真实需求',
+      hasNextPage: false
+    })
     this.applyFilters()
   },
 
-  // 下拉刷新
+  // 下拉刷新：回到第一页重新拉取
   onPullDownRefresh() {
-    this.applyFilters()
-    wx.stopPullDownRefresh()
+    this.fetchSquare(false).finally(() => wx.stopPullDownRefresh())
+  },
+
+  // 触底加载下一游标页；Mock 模式没有服务端分页。
+  onReachBottom() {
+    if (this.data.dataSource === 'backend') {
+      this.fetchSquare(true)
+    }
   },
 
   // 点击需求卡片

@@ -29,9 +29,13 @@
         {{item.location}}
       </view>
 
-      <view class="info-item">
+      <view wx:if="{{item.distance != null}}" class="info-item">
         <text class="info-icon">↔</text>
         距离 {{item.distance}} km
+      </view>
+      <view wx:else class="info-item">
+        <text class="info-icon">↔</text>
+        距离未测
       </view>
     </view>
 

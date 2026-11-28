@@ -4,6 +4,7 @@ import com.ouctongpin.apiserver.auth.config.CallerIdentity;
 import com.ouctongpin.apiserver.buddy.dto.BuddyCreateReq;
 import com.ouctongpin.apiserver.buddy.dto.BuddyQueryReq;
 import com.ouctongpin.apiserver.buddy.dto.BuddyResponse;
+import com.ouctongpin.apiserver.buddy.dto.SquareItemResponse;
 import com.ouctongpin.apiserver.buddy.service.BuddyService;
 import com.ouctongpin.apiserver.common.Result;
 import jakarta.validation.Valid;
@@ -31,7 +32,7 @@ public class BuddyController {
     // 2. 广场查询接口 (US-11). 异常交给 GlobalExceptionHandler 统一兜底，
     //    不把内部异常明细回显给客户端。
     @PostMapping("/needs/square")
-    public Result<List<BuddyResponse>> getSquareList(@Valid @RequestBody BuddyQueryReq req) {
+    public Result<List<SquareItemResponse>> getSquareList(@Valid @RequestBody BuddyQueryReq req) {
         return Result.ok(buddyService.getSquareList(req));
     }
 }
