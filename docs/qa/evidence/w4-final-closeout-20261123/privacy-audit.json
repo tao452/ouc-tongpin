@@ -1,0 +1,31 @@
+{
+  "scanner": "scripts/qa/pii_scan.py",
+  "lines_scanned": 37671,
+  "final_candidate_findings": [],
+  "initial_candidate_disposition": "Removed an unnecessary upstream NGINX maintainer email/image label and host paths from the public Compose snapshot; raw retained privately",
+  "manual_review": "New SQL/HTTP/Java evidence uses synthetic users. JWT/password/secret fields redacted; no real student names/IDs/phones, key files or raw screenshots submitted. Whole-window GUI screenshot withheld because it contains account avatar.",
+  "files_sha256": {
+    "docs/qa/evidence/w4-final-closeout-20261123/all120.json": "af23b1fe6f70b3693f82729942aac161451912e02b22ace667dedb35bdaa4e9e",
+    "docs/qa/evidence/w4-final-closeout-20261123/ci-status.json": "d4c7ded56b5c1cab624fdd88c46745a73e59f7f71fabfe554bf6da4309b38423",
+    "docs/qa/evidence/w4-final-closeout-20261123/cleanup.json": "5c226f472c4104648ec2504cf3872a04752f682ddc1bc80189ad0cca069125aa",
+    "docs/qa/evidence/w4-final-closeout-20261123/environment-negative-control.json": "30f39f842183fda85299995fe7c5a8a429aa3f49124f92d5f6f9bb5c7a93133d",
+    "docs/qa/evidence/w4-final-closeout-20261123/execution-attempts.json": "9f10ebf87490c037d942602755fd956465371e4a774c80218018042c126b61de",
+    "docs/qa/evidence/w4-final-closeout-20261123/first-attempt-privacy.json": "dd12a0bb08b8114cd9416ebd399f804926a2a5b92cbc376159979aaa5acd04b4",
+    "docs/qa/evidence/w4-final-closeout-20261123/first-attempt-query.json": "76bfbeaa014c4be322cb3c5d85b2484dcb1af376a485bfda5ffa64b0db860013",
+    "docs/qa/evidence/w4-final-closeout-20261123/first-attempt.json": "5cef5f4a6c7e23e488932c69c91c9fae10757da53a3da716343390e8f37deb9d",
+    "docs/qa/evidence/w4-final-closeout-20261123/github-admin-evidence.json": "ca479bd628e41f3a1a02c34fcd0396c9c9ee2219047e6a1b0fa95abfe8f14bdd",
+    "docs/qa/evidence/w4-final-closeout-20261123/history-preservation.json": "28747980376d772e94aadaf80099c2725b9f175c7bb3a0df5ee8281e1dd12730",
+    "docs/qa/evidence/w4-final-closeout-20261123/image-provenance.json": "fec0b693384a742146222dd795a38cf4832c7ef6edc3701a8883269381fa9150",
+    "docs/qa/evidence/w4-final-closeout-20261123/new40.json": "6defe35b58de4b03eba2f02a4e4f3ba42605b1dbb4565321237443a17e7f2226",
+    "docs/qa/evidence/w4-final-closeout-20261123/original80-http.json": "0cd2bcebe686e8d88fe91a9452d17d4d2bb7337fb6b78f81b9a05c617fa9ce71",
+    "docs/qa/evidence/w4-final-closeout-20261123/privacy-final.json": "2504e1389af6f802460bec447e3dd014fffe54f6eede035e6ec6e7e2b11793c0",
+    "docs/qa/evidence/w4-final-closeout-20261123/query-final.json": "dcd2649a2b4aa5fcb452f9a32efdbafff63daa351008c10f09946142405e6665",
+    "docs/qa/evidence/w4-final-closeout-20261123/regular-java-final.json": "baeee14fc641951f3315589376b8fb4d2eb3c9bb056e831f2c59c044649906ca",
+    "docs/qa/evidence/w4-final-closeout-20261123/release-readiness.json": "80a04cd57c46099b2d9e9874bd365b556b4b4cba017a35fd792c79ba4f238e28",
+    "docs/qa/evidence/w4-final-closeout-20261123/sanitizer-execution.json": "14aa24c74e72c9fae537bcc19333297daa0d89772e0b71c03312dcd7dfb038f1",
+    "docs/qa/US25-匿名身份与数据隔离验收-20261123.md": "26c867ed066850ae82f8c5a98283b8148434e9bd64315b89eb5c5b08dd6e68fc",
+    "docs/qa/W4-M3独立复现说明-20261123.md": "832d7ac2d32587863999b7732b13face80990b88dc41138cb5b799f130a52080",
+    "docs/qa/W4-V0.1发布准备-20261123.md": "195c284816793c6527eadb26de6e0fe6d9d38cd4738799bd5b71c4d80b63fece",
+    "docs/qa/W4-最终问题关闭报告.md": "f18c842224bf44152e30e9fef6efc7ed4e50abc61907a60b2add3fdf80b2ee78"
+  }
+}

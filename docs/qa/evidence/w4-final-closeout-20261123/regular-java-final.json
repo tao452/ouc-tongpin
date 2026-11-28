@@ -1,0 +1,108 @@
+{
+  "java_test_totals": {
+    "tests": 149,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "catalogue_results": [
+    {
+      "case_id": "S1-071",
+      "status": "PASS",
+      "priority": "P0",
+      "execution_scope": "Actual Java JUnit; synthetic HMAC/logging fixtures only",
+      "observations": [
+        {
+          "junit_report": "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml",
+          "junit_sha256": "fa3a9539a4ad9019ec7b035e983b033eeb8764e91f6237cbe4e155d24abb85f8",
+          "test_method": "S1_071_purposeIsolation"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-074",
+      "status": "PASS",
+      "priority": "P0",
+      "execution_scope": "Actual Java JUnit; synthetic HMAC/logging fixtures only",
+      "observations": [
+        {
+          "junit_report": "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml",
+          "junit_sha256": "fa3a9539a4ad9019ec7b035e983b033eeb8764e91f6237cbe4e155d24abb85f8",
+          "test_method": "S1_074_consoleRedaction"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-072",
+      "status": "PASS",
+      "priority": "P0",
+      "execution_scope": "Actual Java JUnit; synthetic HMAC/logging fixtures only",
+      "observations": [
+        {
+          "junit_report": "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml",
+          "junit_sha256": "fa3a9539a4ad9019ec7b035e983b033eeb8764e91f6237cbe4e155d24abb85f8",
+          "test_method": "S1_072_keyChange"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-069",
+      "status": "PASS",
+      "priority": "P0",
+      "execution_scope": "Actual Java JUnit; synthetic HMAC/logging fixtures only",
+      "observations": [
+        {
+          "junit_report": "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml",
+          "junit_sha256": "fa3a9539a4ad9019ec7b035e983b033eeb8764e91f6237cbe4e155d24abb85f8",
+          "test_method": "S1_069_stableAlias"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-073",
+      "status": "PASS",
+      "priority": "P0",
+      "execution_scope": "Actual Java JUnit; synthetic HMAC/logging fixtures only",
+      "observations": [
+        {
+          "junit_report": "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml",
+          "junit_sha256": "fa3a9539a4ad9019ec7b035e983b033eeb8764e91f6237cbe4e155d24abb85f8",
+          "test_method": "S1_073_weakKeyRejected"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-075",
+      "status": "PASS",
+      "priority": "P0",
+      "execution_scope": "Actual Java JUnit; synthetic HMAC/logging fixtures only",
+      "observations": [
+        {
+          "junit_report": "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml",
+          "junit_sha256": "fa3a9539a4ad9019ec7b035e983b033eeb8764e91f6237cbe4e155d24abb85f8",
+          "test_method": "S1_075_exceptionRedaction"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "case_id": "S1-070",
+      "status": "PASS",
+      "priority": "P0",
+      "execution_scope": "Actual Java JUnit; synthetic HMAC/logging fixtures only",
+      "observations": [
+        {
+          "junit_report": "TEST-com.ouctongpin.apiserver.privacy.CataloguePrivacyExecutionTest.xml",
+          "junit_sha256": "fa3a9539a4ad9019ec7b035e983b033eeb8764e91f6237cbe4e155d24abb85f8",
+          "test_method": "S1_070_userIsolation"
+        }
+      ],
+      "reason": null
+    }
+  ]
+}

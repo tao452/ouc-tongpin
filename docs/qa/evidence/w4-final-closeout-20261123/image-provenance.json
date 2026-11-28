@@ -1,0 +1,12 @@
+{
+  "source_commit": "29c931691eff2d078eb16be6238ab45ed8319c8b",
+  "built_at_utc": "2026-11-23T15:46:33.940028+00:00",
+  "jar_sha256": "b7d9c924e45d534f57bfb55492046536c166b4b663fabfddf53dcb96df8209e5",
+  "api": "new current-source jar on cached JRE17 base",
+  "algo": "current app copied on same-requirements cached Python image",
+  "web": "cached image; sources verified unchanged since 7c67518",
+  "default_dictionary": "words.json (5 rules)",
+  "candidate_dictionary": "explicit opt-in only",
+  "fresh_volumes": true,
+  "synthetic_identity_provider": true
+}

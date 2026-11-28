@@ -1,0 +1,33 @@
+[
+  {
+    "before": "09a0cd6",
+    "after": "test/w4-additional-40-design-20261118",
+    "paths": [
+      "docs/qa/evidence/regression-20261109",
+      "docs/qa/evidence/w4-regression-80",
+      "docs/qa/evidence/w4-buddy-supplement-20261122"
+    ],
+    "unchanged": true
+  },
+  {
+    "before": "7cace2067ec0b934c737b742fb45c1f72be54702",
+    "after": "test/w4-additional-40-design-20261118",
+    "paths": [
+      "docs/qa/evidence/w4-additional-40/20261122",
+      "docs/qa/evidence/w4-additional-40/20261122-final",
+      "docs/qa/evidence/w4-additional-40/20261122-m1rules",
+      "docs/qa/evidence/w4-additional-40/20261122-minimalfix"
+    ],
+    "unchanged": true
+  },
+  {
+    "before": "backup/us24-pre-closeout-20261123",
+    "after": "feature/US-24-formal-dictionary-evaluation",
+    "paths": [
+      "docs/qa/evidence/us24-20261115",
+      "docs/qa/evidence/us24-20261118",
+      "docs/qa/evidence/us24-20261119"
+    ],
+    "unchanged": true
+  }
+]

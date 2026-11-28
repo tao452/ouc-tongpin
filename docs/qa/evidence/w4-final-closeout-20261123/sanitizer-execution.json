@@ -1,0 +1,7 @@
+{
+  "existing_script": "docs/qa/evidence/w4-regression-80/sanitize-evidence.py",
+  "exit": 0,
+  "target": "private copy of historical evidence",
+  "historical_submitted_files_changed": false,
+  "message": "Private identity SQL evidence redacted; final assertions and counts preserved"
+}

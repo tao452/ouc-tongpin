@@ -1,0 +1,325 @@
+{
+  "checked_at_utc": "2026-11-23T16:00:52.698855+00:00",
+  "pull_requests": [
+    {
+      "pr": 83,
+      "draft": true,
+      "merged": false,
+      "head": "9951fd0add673bb4b2b662503f724ba6ddceaa21",
+      "checks": [
+        {
+          "name": "quality",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137817653486"
+        },
+        {
+          "name": "W3 delivery evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137817517705"
+        },
+        {
+          "name": "Publish existing version tag",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697421/job/137816341170"
+        },
+        {
+          "name": "miniprogram",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814903113"
+        },
+        {
+          "name": "algo",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814902884"
+        },
+        {
+          "name": "admin-web",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814902814"
+        },
+        {
+          "name": "api-server",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814902733"
+        },
+        {
+          "name": "stack / Deploy and verify temporary test environment",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814842183"
+        },
+        {
+          "name": "w1-poc",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814841883"
+        },
+        {
+          "name": "guard",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814841721"
+        },
+        {
+          "name": "changes",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697840/job/137814841138"
+        },
+        {
+          "name": "Build and verify release candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209697421/job/137814840663"
+        }
+      ]
+    },
+    {
+      "pr": 92,
+      "draft": true,
+      "merged": false,
+      "head": "8696c9c9eaea0fe0b7da439f539c8d2137daa213",
+      "checks": [
+        {
+          "name": "quality",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137819361420"
+        },
+        {
+          "name": "W3 delivery evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137819125634"
+        },
+        {
+          "name": "Publish existing version tag",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372677/job/137818616664"
+        },
+        {
+          "name": "admin-web",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817414297"
+        },
+        {
+          "name": "miniprogram",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817413659"
+        },
+        {
+          "name": "api-server",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817411794"
+        },
+        {
+          "name": "algo",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817411783"
+        },
+        {
+          "name": "stack / Deploy and verify temporary test environment",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817250802"
+        },
+        {
+          "name": "guard",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817250405"
+        },
+        {
+          "name": "w1-poc",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817250319"
+        },
+        {
+          "name": "changes",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372926/job/137817249664"
+        },
+        {
+          "name": "Build and verify release candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210372677/job/137817248391"
+        }
+      ]
+    },
+    {
+      "pr": 94,
+      "draft": true,
+      "merged": false,
+      "head": "b7fd9103015a5038a6deec53450ee8064383b086",
+      "checks": [
+        {
+          "name": "W3 delivery evidence",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137816375752"
+        },
+        {
+          "name": "quality",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137816373945"
+        },
+        {
+          "name": "Publish existing version tag",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514160/job/137815363294"
+        },
+        {
+          "name": "admin-web",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814585376"
+        },
+        {
+          "name": "api-server",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814585210"
+        },
+        {
+          "name": "algo",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814584734"
+        },
+        {
+          "name": "miniprogram",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814581468"
+        },
+        {
+          "name": "guard",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814480762"
+        },
+        {
+          "name": "w1-poc",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814480421"
+        },
+        {
+          "name": "stack / Deploy and verify temporary test environment",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814480258"
+        },
+        {
+          "name": "changes",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514148/job/137814479741"
+        },
+        {
+          "name": "Build and verify release candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45209514160/job/137814196203"
+        }
+      ]
+    },
+    {
+      "pr": 95,
+      "draft": true,
+      "merged": false,
+      "head": "c077d9ac6a815579f31941ba3d028354330fb039",
+      "checks": [
+        {
+          "name": "quality",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137819767388"
+        },
+        {
+          "name": "W3 delivery evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137819559063"
+        },
+        {
+          "name": "Publish existing version tag",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349508/job/137818003633"
+        },
+        {
+          "name": "admin-web",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817249369"
+        },
+        {
+          "name": "miniprogram",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817247333"
+        },
+        {
+          "name": "algo",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817245001"
+        },
+        {
+          "name": "api-server",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817244708"
+        },
+        {
+          "name": "stack / Deploy and verify temporary test environment",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817170868"
+        },
+        {
+          "name": "w1-poc",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817170822"
+        },
+        {
+          "name": "guard",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817170557"
+        },
+        {
+          "name": "changes",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349517/job/137817169944"
+        },
+        {
+          "name": "Build and verify release candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/tao452/ouc-tongpin/actions/runs/45210349508/job/137817169916"
+        }
+      ]
+    }
+  ]
+}
