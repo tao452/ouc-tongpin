@@ -69,10 +69,10 @@ Page({
   },
 
   // 查看需求广场
+  // 查看需求广场
   goToNeeds() {
-    wx.showToast({
-      title: '需求列表后续开放',
-      icon: 'none'
+    wx.navigateTo({
+      url: '/pages/plaza/list/list'
     })
   },
 
